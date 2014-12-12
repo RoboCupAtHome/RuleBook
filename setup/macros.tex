@@ -1,0 +1,85 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%          $Id: macros.tex 399 2013-02-14 20:24:02Z holz $
+%%    author(s): RoboCupAtHome Technical Committee(s)
+%%  description: Macros for the RoboCupAtHome rulebook
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./setup/macros_score_sheets.tex}
+\input{./setup/macros_open_demonstrations.tex}
+
+\newcommand{\rulebookVersion}{\STATE\ version for RoboCup \YEAR\xspace(\VERSION)}
+
+\def\RoboCup{{\textsc{RoboCup}}}
+\def\Robocup{{\textsc{RoboCup}}}
+\def\robocup{{\textsc{RoboCup}}}
+\def\AtHome{{\textsc{RoboCup@Home}}}
+\def\MSL{\textsc{Middle Size League}}
+\def\MS{{\textsc{Middle Size}}}
+\def\SSL{\textsc{Soccer Simulation League}}
+\def\SS{\textsc{Soccer Simulation}}
+
+\def\TC{technical committee (TC)}
+\def\OC{organizing committee (OC)}
+
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\labelenumi\arabic{enumii}.}
+\renewcommand{\labelenumiii}{\labelenumii.\arabic{enumiii}.}
+
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+%%                    Developement-Tools                     %%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tbc}[1]{\textbf{\it\color{red}{t.b.c. ...}#1\color{black}}}
+\newcommand{\todo}[1]{\textbf{\it\color{red}{todo: }#1\color{black}}}
+\newcommand{\TODO}[1]{\textbf{\it\color{red}{TODO:\\}#1\color{black}}}
+\newcommand{\chk}[1]{\textbf{\color{red}#1\color{black}}}
+
+\newcommand{\reworkon}{\marginpar{\raggedright\color{red}{$\downarrow$rework}\color{black}}}
+\newcommand{\reworkoff}{\marginpar{\raggedright\color{red}{$\uparrow$rework}\color{black}}}
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  site notes/margin notes
+\def\note#1{\marginpar{\raggedright\tiny#1}}
+\def\mpar#1{\marginpar{\raggedright\tiny#1}}
+\def\rand#1{\marginpar{\raggedright\tiny#1}}
+\setlength{\marginparwidth}{2cm}
+
+\newcommand{\refsec}[1]{Section~\ref{#1}}
+\newcommand{\reftab}[1]{Table~\ref{#1}}
+\newcommand{\reffig}[1]{Figure~\ref{#1}}
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% side-annotation-macros for easy lookup
+% \newcommand{\awardmark}{\marginpar{\centering\includegraphics[width=.34cm]{images/icon_award.pdf}}}
+% \newcommand{\refmark}{\marginpar{\centering\includegraphics[width=.5cm]{images/icon_whistle.pdf}}}
+% \newcommand{\referee}[1]{\emph{#1}\marginpar{\centering\includegraphics[width=.5cm]{images/icon_whistle.pdf}}}
+% \newcommand{\scoremark}{\marginpar{\centering\includegraphics[width=.34cm]{images/icon_score.pdf}}}
+\newcommand{\awardmark}{}
+\newcommand{\refmark}{}
+\newcommand{\referee}[1]{}
+\newcommand{\scoremark}{}
+%\newcommand{\scoring}[1]{\emph{#1}\marginpar{\centering\includegraphics[width=.34cm]{images/icon_score.pdf}}}
+\newcommand{\scoring}[1]{\emph{#1}}
+\newcommand{\timark}{\marginpar{\centering\includegraphics[width=.34cm]{icon_clock.pdf}}}
+
+%\newcommand{\timing}[1]{\emph{#1}\marginpar{\centering\includegraphics[width=.34cm]{images/icon_clock.pdf}}}
+\newcommand{\timing}[1]{\emph{#1}}
+
+\def\revnumtmpfile{.temp_ruleook_version}
+\def\revdattmpfile{.temp_ruleook_date}
+\def\svnRevision{Unknown} %
+\def\svnChangeData{Unknown} %
+\immediate\write18{svnversion . > \revnumtmpfile}
+\IfFileExists{\revnumtmpfile}{\def\svnRevision{\input{\revnumtmpfile}\unskip}}{} 
+\immediate\write18{svn info | grep 'Last Changed Date:' | awk '{print $4}'> \revdattmpfile}
+\IfFileExists{\revdattmpfile}{\def\svnChangeData{\input{\revdattmpfile}\unskip}}{} 
+\newcommand{\VERSION}{Revision \svnRevision, \svnChangeData}
+% \IfFileExists{\revnumtmpfile}{\immediate\write18{rm -f \revnumtmpfile}}{} 
+% \IfFileExists{\revdattmpfile}{\immediate\write18{rm -f \revdattmpfile}}{} 
+% Local Variables:
+% TeX-master: "../../rulebook"
+% End:
