@@ -69,17 +69,14 @@
 %\newcommand{\timing}[1]{\emph{#1}\marginpar{\centering\includegraphics[width=.34cm]{images/icon_clock.pdf}}}
 \newcommand{\timing}[1]{\emph{#1}}
 
-\def\svnRevision{\svnrev} %
-\def\svnChangeData{\svndate} %
-
-%\def\svnRevision{Unknown} %
-%\def\svnChangeData{Unknown} %
-%\def\revnumtmpfile{.temp_ruleook_version}
-%\def\revdattmpfile{.temp_ruleook_date}
-%\immediate\write18{svnversion . > \revnumtmpfile}
-%\IfFileExists{\revnumtmpfile}{\def\svnRevision{\input{\revnumtmpfile}\unskip}}{} 
-%\immediate\write18{svn info | grep 'Last Changed Date:' | awk '{print $4}'> \revdattmpfile}
-%\IfFileExists{\revdattmpfile}{\def\svnChangeData{\input{\revdattmpfile}\unskip}}{} 
+\def\svnRevision{Unknown} %
+\def\svnChangeData{Unknown} %
+\def\revnumtmpfile{.temp_ruleook_version}
+\def\revdattmpfile{.temp_ruleook_date}
+\immediate\write18{svnversion . > \revnumtmpfile}
+\IfFileExists{\revnumtmpfile}{\def\svnRevision{\input{\revnumtmpfile}\unskip}}{} 
+\immediate\write18{svn info | grep 'Last Changed Date:' | awk '{print $4}'> \revdattmpfile}
+\IfFileExists{\revdattmpfile}{\def\svnChangeData{\input{\revdattmpfile}\unskip}}{} 
 % \IfFileExists{\revnumtmpfile}{\immediate\write18{rm -f \revnumtmpfile}}{} 
 % \IfFileExists{\revdattmpfile}{\immediate\write18{rm -f \revdattmpfile}}{} 
 \newcommand{\VERSION}{Revision \svnRevision, \svnChangeData}
