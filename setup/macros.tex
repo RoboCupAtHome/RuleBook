@@ -79,7 +79,7 @@
 \IfFileExists{\revdattmpfile}{\def\svnChangeData{\input{\revdattmpfile}\unskip}}{} 
 % \IfFileExists{\revnumtmpfile}{\immediate\write18{rm -f \revnumtmpfile}}{} 
 % \IfFileExists{\revdattmpfile}{\immediate\write18{rm -f \revdattmpfile}}{} 
-\newcommand{\VERSION}{Revision \svnRevision, \svnChangeData}
+\newcommand{\VERSION}{Revision \svnChangeData\_\svnRevision}
 
 
 % Local Variables:
