@@ -1,0 +1,71 @@
+\subsection{Manipulation and Object recognition}
+
+The robot has to identify, grasp and correctly place several objects at different heights.
+
+\subsubsection{Focus}
+
+This test focuses on object detection, and manipulation; as well as object recognition.
+
+\subsubsection{Setup}
+\paragraph{This test may also be held outside the arena}
+
+\begin{enumerate}
+\item \textbf{Location:} One of the bookcases of the apartment is used for this test. The robot will start at a random distance between 1.0m and 1.5m from the bookcase.
+\footnote{The minimum and maximum distance of the objects in the shelf is still being discussed. This value may change.}
+The bookcase has at least 5 shelves between 0.30m and 1.80m from the ground. One of the shelves in the middle is empty.
+\item \textbf{Objects:} The bookcase contains 5 objects from the set of predefined objects.
+\item \textbf{Object distribution:} The objects are located as follows:
+\begin{enumerate}
+\item An easy-to-grasp (bottle, small cereal box, can, etc...) object on a top shelf.
+\item An easy-to-grasp (bottle, small cereal box, can, etc...) object on a bottom shelf.
+\item A heavy object (1L milk box, big soda bottle, etc...) on a middle shelf.
+\item A hard-to-grasp object (cloth, apple, banana, etc...) on a middle shelf.
+\item A hard-to-reach object (near a corner or a wall) on a middle shelf.
+\end{enumerate}
+Please note that may be more than one object in each shelf.
+\end{enumerate}
+
+\subsubsection{Task}
+\begin{enumerate}
+\item \textbf{Searching for objects:} When told so by an operator, the robot approaches to the shelf and start searching for objects.
+\item \textbf{Grasping objects:} Any object found by the robot may be grasped by it. Before or right after grasping the object, the robot has to announce which object it has found.
+\item \textbf{Placing objects:} After grasping the object, the robot has to safely place it (Section ?.?.?) on the empty shelf a the middle of the bookcase. The object must stay there for at least 10sec.
+\item \textbf{Handling objects multiple times:} Scores can only be gained a single time for each specific object.
+\end{enumerate}
+
+\subsubsection{Additional rules and remarks}
+\begin{enumerate}
+\item \textbf{No setup:} The robot must be ready to start the test with a voice command or start button when requested by the referee. There is no setup time.
+\item \textbf{Startup:} The robot must be started with a single voice command or via a start button (Section ?.?.?). If the robot is unable to start it must be removed immediately.
+\item \textbf{Single try:} The robot must be able to start from the first attempt. There is no restart for this test. If the robot is unable to start it must be removed immediately.
+\item \textbf{Collisions:} Slightly touching the shelves or the bookcase is tolerated. Driving over the objects or any other form of a major collision is not allowed, and the referees directly stop the robot (Section ?.?.?).
+\item \textbf{Object types:} The objects selected from the \textit{Standard Objects Set} will be chosen to be easily detectable and contrasting with the shelf (ex. red or black objects on a white shelf).
+\item \textbf{Recognition report:} After the test is completed or the time has run out, the robot may upload a single PDF report file (Section ?.?.?) including the list of recognized objects with a picture showing the object, the object name, and the bounding box of the object.
+%\item \textbf{QR Codes:} The team may request to use a special set ob objects identified with QR codes if the robot is not able to correctly recognize the objects. The use of this special QR-object-set must be announced to the TC at least on hour before the test starts. When QR Codes are used, no points are given for object recognition.
+\end{enumerate}
+
+\subsubsection{Referee instructions}
+
+The referee needs to
+\begin{itemize}
+\item Place the objects in the bookcase
+\item Make sure there is one empty shelf in the middle of the bookcase
+\end{itemize}
+
+\subsubsection{Score sheet}
+
+The maximum time for this test is 3 minutes.
+
+\begin{tabularx}{\textwidth}{ X r }
+	\textbf{Action} & \textbf{Score} \\ \hline
+	\textbi{Grasping objects} & \\
+	Grasping any object (and successfully lifting it up to at least 5 cm for more than 10 second) & $5 \times 1.0$\\
+	\\
+	\textbi{Placing objects} & \\
+	Placing any object (safely and the objects stands still for more than 10 second) & $5 \times 1.0$\\
+	\\
+	\textbi{Recognizing objects} & \\
+	Every correctly recognized object in the report file & $5 \times 1.0$\\
+	\\ \hline
+	\textbf{Total score} (excluding penalties and bonuses) & \textbf{15.0}
+\end{tabularx}

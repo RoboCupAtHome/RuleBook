@@ -1,0 +1,126 @@
+\subsection{Wake me up test}
+
+The robot's owner has overslept. Knowing the schedule of the owner and noticing it is getting late, the robot helps it's owner to wake up and start the day.
+
+The robot has to help a human in a daily morning task. The task involves interact with a smart house, awake a dormant human, take an order, prepare the breakfast and deliver it to the human.
+
+\subsubsection{Focus}
+
+This test focuses on advanced object manipulation, human pose detection, object recognition and and manipulation; as well as object recognition.
+
+
+\subsubsection{Task}
+
+\begin{enumerate}
+
+\item \textbf{Awakening the owner:} The robot enters the bedroom, approaches to the bed, and starts to awaken the owner (operator lying on the bed) for one minute by playing an alarm-like sound or using it's own voice. Within one minute starting from the first call, the owner will wake up in a natural way (sit on the bed and rub face; sit on bed, rise arms and yawn; stand up etc.), then the robot must announce it has successfully detected the awakening by greeting it's owner.
+\begin{itemize}
+\item \textbf{Turning-on bedroom's lights [Smart-house option]:} After entering to the bedroom, the robot can send a command to the house to turn on the bedroom lights.
+\item \textbf{No annoying sounds:} Alarm-like sounds must be short and clean (no continuous music is allowed), and voice calls must be short and clear. A silence gap of 10 seconds between calls is advised.
+\item \textbf{Show must go on:} One minute after the first call, the owner is awake, so the robot must proceed to the next point.
+\end{itemize}
+
+\item \textbf{Delivering the newspaper [Optional]:} After awakening it's owner, the robot approaches to her and delivers a newspaper into the owner's hand (the owner will face the robot after being awakened and extend her hand to it). Robot must release the newspaper only after the human has grasped it.
+
+\item \textbf{Taking breakfast order:} The robot asks to it's owner for a breakfast of her preference. The order will include: one random fruit/snack, one kind of cereal, and one kind of milk (stating no milk means whole milk), but those can be given in any order. The robot may ask for a confirmation of the order up to three times. If the robot is not able to handle a tray (see below), it must state that breakfast will be delivered to the dining room. Examples of the order are:
+
+\begin{itemize}
+\item Froot-loops with banana and light milk.
+\item Flakes with lactose-free milk and a peach.
+\item Apple and choco-flakes (i.e. one apple, and choco-flakes with whole milk).
+\end{itemize}
+
+\item \textbf{Opening kitchen's door [Optional]:} The kitchen's door is closed. Upon arrival, robot has 1 minute to open the door. It may also give up and request for the door to be opened by a referee.
+
+\item \textbf{Turning-on kitchen light [Smart-house option]:} After entering to the kitchen, the robot can send a command to the house to turn on the kitchen lights and the coffee brewer. Kitchen lights must be turned on every time the robot enters the kitchen.
+
+\item \textbf{Serving the breakfast:} Once in the kitchen, the robot must locate the tray and place into it the requested fruit/snack, a box of the requested type of milk, and a bowl; then pour the requested type of cereal into the bowl. If the robot is not capable of handling a tray, it may serve the breakfast directly at the diner table. The placement order is not relevant.
+
+\item \textbf{Placing the spoon [Optional]:} After placing the cereal bowl on the tray or dining room table, the robot may place a spoon close to it.
+Delivering the tray: After placing objects into the tray, the robot must take the tray and deliver it to the human in the bedroom, leaving it on a table or directly to the owner's hands.
+
+\item \textbf{Turning-off kitchen light [Smart-house option]:} After leaving to the kitchen, the robot can send a command to the house to turn off the kitchen lights. Kitchen lights must be turned off every time the robot leaves the kitchen.
+
+\item \textbf{Doing the bed [Optional]:} After the breakfast has been delivered, the robot may proceed to do the owner's bed. Points are awarded based on a \quotes{Professional Mom} criteria.
+
+\end{enumerate}
+
+\subsubsection{Additional rules and remarks}
+
+\begin{itemize}
+\item \textbf{Smart-house:} The arena-house may have enabled official smart-house devices (Section ?.?.?), there are additional scoring for interacting with the house.
+
+\item \textbf{Optional tasks:} The test includes optional tasks (such as deliver the newspaper, placing the spoon, and doing bed) which are not required to be performed as part of the overall test but brings an additional scoring for solving it. Team leader must contact a TC member to request optional tasks to be available.
+
+\item \textbf{Fruit or snack?:} If the robot is not able to properly handle fruits, it can be replaced by easier-to-manipulate objects from the official object list. Team leader must contact a TC member to request using snacks instead of fruits.
+
+\item \textbf{Two robots:} This is a very challenging test and serving the breakfast is complex and time-consuming task. If a team has more than one robot, up to two robots may collaborate in the \quotes{serving the breakfast} and \quotes{delivering the tray} tasks. Team leader must contact a TC member to inform there will be two robots in the arena.
+
+\item \textbf{Collaborative test:} The team leader may request help from a second team to perform the \quotes{serving the breakfast}, \quotes{delivering the tray} tasks, and \quotes{smart-house} optionals. All score achieved by both robots is given to the main team, but also the points scored by the helping-robot are given to the helping team as a bonus. This cooperation must be informed to the TC at least two hours before the competition.
+\end{itemize}
+
+\subsubsection{Referee instructions}
+
+The referee needs to
+\begin{itemize}
+\item Give a wake-up signal to the operator within a minute starting from the robot started to call her
+\item Generate and provide a random breakfast order for the operator
+\item Type the breakfast order in a qualified typing device when required (Continue rule. Section ?.?.?).
+\item Stop the robot immediately when tray is about to fall
+\end{itemize}
+
+\subsubsection{OC instructions}
+
+\textbf{2 hours before the test}
+\begin{itemize}
+\item Announce the placement of the objects
+\item Announce the placement of the tray
+
+\end{itemize}
+\textbf{During the test}
+\begin{itemize}
+\item Provide teams with the newspaper
+\item Place tray and breakfast objects into the kitchen
+\item Place spoon when needed
+\end{itemize}
+
+\subsubsection{Score sheet}
+The maximum time for this test is 10 minutes.
+
+\begin{tabularx}{\textwidth}{ X r }
+	\textbf{Action} & \textbf{Score} \\ \hline
+	\textbi{Awakening the human}  \\
+	Detect the human awakening & 2.0 \\
+	\\
+	\textbi{Taking the order} \\
+	Understanding whole order & 2.0 \\
+	Understanding whole order on console (typed) & 0.5 \\
+	Robot's own suggestion for breakfast & 0.0 \\
+	\\
+	\textbi{Serving breakfast} \\
+	Placing the bowl & 2.0 \\
+	Placing the milk bottle (½ score on wrong milk type) & 1.0 \\
+	Placing the fruit/snack (½ score if using snack instead of fruit, ½ score on wrong object type) & 2.0 \\
+	Pouring cereal into the bowl (½ score on wrong cereal type) & 3.0 \\
+	Spilling cereal outside the bowl & -1.0 \\
+	Spilling much cereal outside the bowl & -2.0 \\
+	\\
+	\textbi{Delivering breakfast} \\
+	Grasping the tray (and successfully lifting it up to at least 5 cm for more than 10 second) & 3.0 \\
+	Safely transporting the tray (no object inside flipped or fell during transport) & 1.0 \\
+	Placing the tray (safely and the tray stands still for more than 10 second) & 2.0 \\
+	Handing-over the tray to the operator's hands & 4.0 \\
+	Complete the task with complete and correct order & 2.0 \\
+	\\
+	\textbi{Smart-House optionals} \\
+	Turning on bedroom lights on enter & 1.0 \\
+	Turning on kitchen lights and coffee brewer on enter & 1.0 \\
+	Turning off kitchen lights on leave & 1.0 \\
+	\\
+	\textbi{Optional tasks (upt to 20 points)} \\
+	Handing-over the newspaper & 2.0 \\
+	Opening kitchen's door & 5.0 \\
+	Placing the spoon & 3.0 \\
+	Doing bed & 10.0 \\ \hline
+	\textbf{Total score} (excluding optional tasks, penalties, and bonuses) & 25.0 \\
+\end{tabularx}

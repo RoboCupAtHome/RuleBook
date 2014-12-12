@@ -1,0 +1,85 @@
+\subsection{Navigation Test}
+
+The robot must be able navigate through the apartment and avoid some difficult obstacles along the way.
+
+\subsubsection{Focus}
+The navigation test focuses on navigating in a changing environment, where doors can be closed and even paths to goal may get blocked by movable temporary objects. 
+
+Perceiving the obstacles is also critical in safely navigating a home environment.
+
+\subsubsection{Setup}
+
+\begin{enumerate}
+\item \textbf{Location:} One of the arenas (apartment). The apartment is in its normal state.
+\item \textbf{Doors:} All doors in the apartment are open, except for the entry door. The arena/apartment must contain 2 doors within the apartment (thus excluding the entry/exit doors). Any destination in the room should be reachable via either door but not via any other way.
+\end{enumerate}
+
+\subsubsection{Task}
+The robot must visit a set of waypoints and avoid the obstacles on it's path (All waypoints are related to furniture in the arena, such as a table, a couch or a plant etc.). 
+
+\begin{enumerate}
+\item \textbf{Entering the arena:} The robot starts outside the environment and must wait until the door opens.
+\item \textbf{Waypoint A (door):} The robot must navigate to waypoint A. Waypoint A is reachable via several paths that include doors. One of the doors will be shut. The robot may:
+\begin{enumerate}
+\item To take a different path.
+\item Open the closed door.
+\end{enumerate}
+The robot must report whether it reached the waypoint.
+
+\item \textbf{Waypoint B (dynamic obstacles):} After reaching the waypoint A, the robot must navigate to waypoint B which is also reachable via (the same) two doors, one of each may still be closed. On it's path the robot may find a dynamic obstacle (movable people, other robot, pets, etc.) which blocks it's path to waypoint B. The robot may:
+\begin{enumerate}
+\item To take a different path.
+\item Ask the obstacle to move out.
+\item Wait for the object to move away by itself.
+\end{enumerate}
+The robot must report whether it reached the waypoint.
+\item \textbf{Leave the arena:} Go outside the arena through the same the robot started.
+
+\paragraph{Note} Objects will be placed during the test in the robot's path which it must avoid. The closing / opening doors give the Technical Committee the possibility to change the order in which the obstacles are encountered, so there is no predefined order of obstacles encountered. Waypoint A and B are interchangeable.
+\end{enumerate}
+
+\subsubsection{Additional rules and remarks}
+\begin{enumerate}
+
+\item \textbf{Make it fast:} If a robot is absolutely unable to handle one or more obstacles, please inform the TC before the test so no time is wasted.
+\item \textbf{Closing doors:}  The door that will be shut will be the door on the route the robot has committed to. It will be shut right after the robot starts driving towards the door. The door will be closed well before the robot reaches it so the robot has enough time to notice that the door closed.
+\item \textbf{Obstacles:} obstacles may be:
+\begin{enumerate}
+\item [Obstacle 1:] Box sized item placed around a corner. 
+\item [Obstacle 2:] A static obstacle on or very near one of the waypoints. If the robot cannot reach the waypoint, it must report so by speech and continue the test. For example, a person may be standing in front of a couch and a chair may be placed at the table. 
+\item [Obstacle 3:] A bar table, normal table, rolling chair: some object that is wider at its top than on its bottom, thus requiring more than just a laser scanner mounted near the ground to avoid obstacles. This will be placed in the middle of some room, on or near the robots path.
+\end{enumerate}
+\item \textbf{Moving objects:} If the robot finds on it's way a \textit{static movable obstacle} (chair, cubes, toys, etc.) which is capable to move, it may move the object apart with it's manipulator.
+\end{enumerate}
+
+%\subsubsection{Referee instructions}
+%
+%The referee needs to
+%\begin{itemize}
+%\item 
+%\item 
+%\end{itemize}
+
+\subsubsection{Score sheet}
+
+The maximum time for this test is 5 minutes.
+
+\begin{tabularx}{\textwidth}{ X r }
+	\textbf{Action} & \textbf{Score} \\ \hline
+	\textbi{Waypoints} & \\
+	Reaching waypoint A & 1.0\\
+	Reaching waypoint B & 1.0\\
+	\\
+	\textbi{Obstacles} & \\
+	Avoiding obstacle 1 & 2.0 \\
+	Avoiding obstacle 2 & 3.0 \\
+	Avoiding obstacle 3 & 4.0 \\
+	Reporting unreachable waypoint due to an obstacle & $1.0$ \\
+	\\
+	\textbi{Doors} & \\
+	Starting a new path before reaching a closed door & $2 \times 2.0$\\
+	\\ \hline
+	\textbf{Total score} (excluding penalties and bonuses) & \textbf{15.0}
+\end{tabularx}
+
+\footnotetext{The minimum and maximum distance of the objects in the shelf is still being discussed. This value may change. }

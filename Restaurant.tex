@@ -1,0 +1,118 @@
+\subsection{Restaurant}
+The robot is tested in a real environment such as a real restaurant or a shopping mall.
+
+\subsubsection{Focus}
+This test focuses on online mapping, safe navigation in previously unknown environments, gesture detection, human-robot interaction, and manipulation in a real environment.
+
+The robot will need to create it's own map from the environment an then move into it to handle human requests, such as delivering drinks or snacks, while people is walking around.
+
+\subsubsection{Setup}
+\begin{enumerate}
+\item \textbf{Location:} A real restaurant fully equipped with a \quotes{Professional Waiter} and at least three tables with \quotes{Professional Clients}. 
+\end{enumerate}
+
+\subsubsection{Task}
+\begin{enumerate}
+
+\item \textbf{Guide phase:} Starting from the \textit{Kitchen}, the robot is guided through the environment by a \quotes{Professional Waiter} which shows to the robot the location of each of the tables, it's number, and on which side the table is (there is a total of 3 tables). After visiting all the tables, the robot must be guided again to the \textit{Kitchen}.
+\begin{itemize}
+\item \textbf{Own \textit{Professional Waiter} [Optional]:} Team Leader may choose to use their own custom \textit{Professional Waiter} for this test instead of the one provided by the committee. The Team Leader must inform a TC member at least one hour before the competition.
+\item \textbf{Finding the tables [Optional]:} Team Leader may choose not to tell the robot on which side (left or right) is the table, and let the robot find the tables by itself. When using this option, the robot must state where the table is (i.e. by telling: \textit{the table is to my right}).
+\end{itemize}
+
+\item \textbf{Ordering phase:}
+\begin{enumerate}
+\item \textbf{First order (Table A):} Once in the kitchen, the robot shall ask to the \textit{Professional Waiter} to which table go first to take an order from. The robot has to go to the indicated table and ask for an order.
+
+\item \textbf{Detecting a call (Table B or C):} At any time while attending Table A guests (going to fetch an order, asking the client, or returning to the kitchen with the order), a guest in Table B or C will wave to the robot asking for his attention. Robot must state loud that it has detected the call and will attend as soon as possible.
+
+\item \textbf{Second order (Table B or C):} After taking the Table A client's order, and if the request was detected, the robot must go to the table of the waving person and ask for an order.
+
+\item \textbf{Avoiding random citizen:} At any time while going to any of the tables or to the \textit{Kitchen}, a person may step on the robot's path. It is expected the robot to avoid that person or stop and wait for it to move away.
+\end{enumerate}
+
+\textbf{Orders:} The menu offers Beverages and Combos (e.g. a steak with fries, hamburger with fries, steak with vegetables, hamburger with vegetables, etc.). An order may be a Beverage or Combo. One guest will order a Combo while the other will order a Beverage.
+
+\textbf{Note:} Table A, B and C may be any of Table 1, 2, 3, \dots, N in any order.
+
+\item \textbf{Delivering phase:}
+\begin{enumerate}
+\item \textbf{Repeating the order:} Once again in the kitchen, the robot recites the orders for each table, including the table number (e.g. \textit{Hamburger with fries for table 1 and Orange juice for table 2}). This includes determining the table number of the waving person.
+
+\item \textbf{Delivering Beverage:} The robot must grab a can of the appropriate drink from a set of cans on the bar and deliver it to the correct table.
+
+\item \textbf{Delivering Combo:}  The robot must carry a plate with the ordering to the table the food was ordered from. Teams must indicate beforehand whether the robot is able to grasp the plate itself, whether it needs a tray or whether the plate needs to be handed to the robot.
+\end{enumerate}
+
+\item \textbf{Next customer, please:} The task is finished when the robot has delivered both orders and is back at the kitchen.
+\end{enumerate}
+
+\subsubsection{Additional rules and remarks}
+
+\begin{itemize}
+\item \textbf{Safety!} This test takes place in a public area. That is, there may be people standing, sitting or walking around the area throughout the test. The robot is expected to not even slightly touch anything and is immediately stopped in case of danger.
+
+\item \textbf{Referees and guidance:} For safety reasons, the referees in this test are TC members. One of the referees follows the robot and is always in reach of the emergency button.
+
+\item \textbf{Start:} There is no fixed start signal in this test.
+
+\item \textbf{Order:} The way the user provides such information to the robot is up to the robot's team.
+
+\item \textbf{Location:} This test can be arranged in any real restaurant or shopping mall. If this is not possible, the test can be conducted in an arbitrary room containing the appropriate locations. The only requirement is that this room is not part of the arena and that the teams do not know the room beforehand. The exact location, including the object and delivery locations, will be defined by the technical committee on site (and in corporation with the local organization).
+
+\item \textbf{Natural walking:} The operator has to walk \quotes{naturally}, i.e., move forward facing forward. If not mentioned otherwise, the operator is not allowed to walk back, stand still, signal the robot or follow some recalibration procedure.
+
+\item \textbf{Disturbances from outside:} If a person from the audience (severely) interferes with the robot in a way that makes it impossible to solve the task, the team may repeat the test immediately.
+\end{itemize}
+
+% \subsubsection{Referee instructions}
+
+% The referee needs to
+% \begin{itemize}
+% \item 
+% \item 
+% \end{itemize}
+
+% \subsubsection{OC instructions}
+
+% \textbf{2 hours before the test}
+% \begin{itemize}
+% \item 
+% \item 
+% \end{itemize}
+% \textbf{During the test}
+% \begin{itemize}
+% \item 
+% \item 
+% \end{itemize}
+
+\subsubsection{Score sheet}
+The maximum time for this test is 10 minutes.
+
+\begin{tabularx}{\textwidth}{ X r }
+	\textbf{Action} & \textbf{Score} \\ \hline
+	\textbi{Training phase}  \\
+	Learning the location of a table (Professional Waiter) & $3 \times 1.0$ \\
+	Learning the location of a table (Custom Waiter) & $3 \times 0.5$ \\
+	Inferring the side on which a table is & $3 \times 1.0$ \\
+	\\
+	\textbi{Ordering phase}  \\
+	Understanding which table to take an order from & $0.5$ \\
+	Going to the designated table & $1.5$ \\
+	Taking an order from the designated table & $1.0$ \\
+	Noticing a waving person from distance & $2.0$ \\
+	Going to the table of the waving person & $2.0$ \\
+	Taking an order from the waving person & $1.0$ \\
+	Avoiding a person crossing the robots' path & $1.0$ \\
+	\\
+	\textbi{Delivering phase}  \\
+	Reciting both the order and table number for both tables & $2 \times 0.5$ \\
+	Grasping the correct drink & $1.0$ \\
+	Getting close to the correct table with the drink & $1.5$ \\
+	Delivering the drink by placing it on the correct table & $1.5$ \\
+	Picking up the plate & $1.5$ \\
+	Getting close to the correct table with the plate & $1.5$ \\
+	Delivering the plate by placing it on the correct table & $2.0$ \\
+	\\ \hline
+	\textbf{Total score} (excluding penalties and bonuses) & 25.0 \\
+\end{tabularx}

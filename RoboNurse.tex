@@ -1,0 +1,91 @@
+\subsection{Robo-Nurse}
+
+The robot is taking care of a person that has one of five possible ailments. The robot is expected to carry out a diagnosis of the ailment, and perform a task to help the person to feel better.
+
+\subsubsection{Focus}
+
+This test focuses on Human-Robot Interaction and planning.
+
+\subsubsection{Task}
+\begin{enumerate}
+\item \textbf{Reaching the patient}: The patient calls for robot assistance using her voice and by waving arms.
+\begin{itemize}
+\item \textbf{Activity detection [Optional]:} The operator may cough, sneeze, bend over her stomach, etc., during the first minute of the test as a call signal for the robot. Team Leader must contact a TC member to request the operator act symptoms during the test instead of calling the robot.
+\item \textbf{Show must go on:} The robot may ask the patient to approach to it, or, after one minute waving, the operator will approach the robot.
+\end{itemize}
+ 
+\item \textbf{Examination:} The robot should ask the patient for information by ASR means. The patient starts providing information in unspecified sentences such as \quotes{My head hurts}, \quotes{My stomach feels weird}, \quotes{My throat burns},  etc. For this, the team leader should have selected one of this categories:
+\begin{itemize}
+\item \textbf{Category I:} All the information provided by the patient is true, concise, and she is certain all the symptoms.
+\item \textbf{Category I:} The patient is confused because of the pain and the obtained information  may be ambiguous, unknown or contradictory. % (Q: Does it feels like needles? A: Don't know, just hurts!).
+\begin{itemize}
+\item[Q:] \textit{Does it feels like needles?}
+\item[A:] \textit{Don't know, just hurts!.}
+\end{itemize}
+\end{itemize}
+
+\item \textbf{Diagnosis}: The robot must provide an accurate diagnosis by state which kind of disease the patient has, if it is known. Then it shall to briefly explain how has reached to that conclusion. \\ \textit{Because you are sleepy and fever, have violent sneezing; but you feel no pain in throat or stomach, nor your skin has spots, is probably just a common cold \dots}
+
+\item \textbf{Medication \& Help}: After diagnosis, the robot propose something to aid the patient, and carry out such recommendation.\\ \textit{I think you should eat some hot chicken soup. Do you want me to bring it to you? \dots}
+\end{enumerate}
+
+\subsubsection{Additional rules and remarks}
+\begin{enumerate}
+\item \textbf{Continue Rule:} The CONTINUE rule may be applied several times in the Conversation part of the test.
+\item \textbf{Make it fast:} The robot should not ask more than 10 questions in Category I, or 20 questions in Category II. Also, it should not ask confirmation for each answer.
+\end{enumerate}
+
+\subsubsection{Referee instructions}
+
+The referee needs to
+\begin{itemize}
+\item Place the objects in the bookcase
+\item Make sure there is one empty shelf in the middle of the bookcase
+\end{itemize}
+
+\subsubsection{OC instructions}
+
+\textbf{1 month before the test}
+\begin{itemize}
+\item Provide the list of ailments and symptoms
+\end{itemize}
+\textbf{2 hours before the test}
+\begin{itemize}
+\item Announce the placement of the objects
+\item Announce the room where the patient is
+\end{itemize}
+\textbf{During the test}
+\begin{itemize}
+\item Ask the team what category of information is the patient providing
+\item Provide the ailment of the patient
+\item Provide the set of symptoms for the patient
+\item The action to perform by the robot as a recommendation for the patient
+\item Locate objects into their appropriate location
+\end{itemize}
+
+\subsubsection{Score sheet}
+
+The maximum time for this test is 10 minutes.
+
+\begin{tabularx}{\textwidth}{ X r }
+	\textbf{Action} & \textbf{Score} \\ \hline
+	\textbi{Approach person} & \\
+	Detect and get close a human in pain (cough, sneeze, bending) & 5.0\\
+	Detect and get close to calling human & 2.0\\
+	\\
+	\textbi{Examination} & \\
+%	Proper diagnosis (Category I) & 2.5\\
+%	Proper diagnosis (Category II) & 5.0\\
+	Accurate question on Category I (Max score if solved with less than 5 questions) & $5 \times 0.5$\\
+	Accurate question on Category II (Max score if solved with less than 5 questions) & $5 \times 1.0$\\
+	\\
+	\textbi{Diagnosis} & \\
+	State the disease the patient has & 1.0 \\
+	Briefly explain why diagnosis is correct & 4.0 \\
+	\\
+	\textbi{Medication \& Help} & \\
+	Provide recommendation based on correct diagnosis & 1.0 \\
+	Carrying out the recommendation & 4.0 \\
+	\\ \hline
+	\textbf{Total score} (excluding penalties and bonuses) & \textbf{25}
+\end{tabularx}

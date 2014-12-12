@@ -1,0 +1,72 @@
+\subsection{Speech Recognition \& Audio Detection Test}
+
+The robot must be able to properly recognize and answer to a specific set of questions without ask for confirmation. Also, the robot shall be able to react to a speaking operator which is not facing to it.
+
+\subsubsection{Focus}
+
+This test focuses on voice recognition and audio-source localization in a noisy environment, with moving sound sources.
+
+\subsubsection{Setup} \footnote{This test may also be held outside the arena}
+\begin{enumerate}
+\item The apartment is in its normal state.
+\item All doors of the apartment are open, except for the entry door. 
+\end{enumerate}
+
+\subsubsection{Task}
+
+\begin{enumerate}
+\item \textbf{Direct speech recognition: } The robot should move (or be moved) to a previously specified point inside the arena. A TC member will ask 5 questions from the set of 25 predefined questions in front of the robot. The robot should answer the question without asking confirmation.
+\begin{itemize}
+\item The operator shall be standing still and facing to the robot.
+\item The operator shall be between 0.75 and 1.0 meters away from the robot position.
+\item The operator shall be between -60° and 60° meters from the robot's center (front range).
+\end{itemize}
+\item \textbf{indirect speech recognition: } A TC member will ask another 5 question of the same set, but standing outside the front range of the robot at the same distance. The robot should turn towards the speaker and answer the question.
+\begin{itemize}
+\item The robot may answer the question without asking confirmation nor turn towards the operator.
+\item The robot may ask for only one repetition of the question but only after turning toward the operator.
+\end{itemize}
+\end{enumerate}
+
+
+\subsubsection{Additional rules and remarks}
+
+\begin{itemize}
+\item \textbf{Continue rule:} Continue rule (Section ?.?.?) can not be used during this test.
+\item \textbf{Question timeout:} If the robot does not answer within 10 seconds, the question is considered as \textit{missed}, and the TC member will proceed with the next question.
+\end{itemize}
+
+\subsubsection{Referee instructions}
+
+The referee needs to
+\begin{itemize}
+\item avoid shouting to the robot
+\item avoid getting closer to the robot
+\item Speak to the robot loud and clear with plain standard English.
+\end{itemize}
+
+\subsubsection{OC instructions}
+
+\textbf{1 day before the test}
+\begin{itemize}
+\item Provide the set of 25 predefined questions
+\end{itemize}
+\textbf{2 hours before the test}
+\begin{itemize}
+\item Announce the placement of the robots
+\end{itemize}
+
+\subsubsection{Score sheet}
+The maximum time for this test is 5 minutes.
+
+\begin{tabularx}{\textwidth}{ X r }
+	\textbf{Action} & \textbf{Score} \\ \hline
+	\textbi{Operator within the \textit{front range}}  \\
+	Correctly answered question & $5 \times 1.0$ \\
+	\\
+	\textbi{Operator outside the \textit{front range}} \\
+	Correctly answered question (first attempt) & $5 \times 2.0$ \\
+	Correctly answered question after asking operator to repeat (second attempt) & $5 \times 1.0$ \\
+	\\ \hline
+	\textbf{Total score} (excluding penalties and bonuses) & 15.0 \\
+\end{tabularx}
