@@ -1,0 +1,281 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Macros for generating score sheets for RoboCup@Home              %
+% to be used in the rulebook or during the competition             %
+%                                                                  % 
+% Author: Dirk Holz & David Gossow                                 %
+% $Id: macros_score_sheets.tex 429 2013-04-30 10:09:55Z holz $                                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{wasysym}
+\usepackage{chngpage}
+
+
+%%% Counters / temp. variables %%%%%%%%%%%%%%%%%
+
+\newcounter{currTestScore}
+\newcounter{currTestScoreTotal}
+\newcounter{currTestScoreTotalWithoutBonus}
+\newcounter{currOutstandingBonus}
+\newcommand{\scorelistOptions}{}
+\newcommand{\scoresheetOptions}{}
+
+% set \shortScoresheet to true for the rulebook version and to false for the referee's scoresheet
+\newcommand{\shortScoresheet}{true}
+
+% set \retryAvailable to true for a second column in the scoresheet
+\newcommand{\retryAvailable}{true}
+
+% set \continueAvailable to true for CONTINUE sections
+\newcommand{\continueAvailable}{true}
+
+% name of the current test, is set automatically in the rulebook
+\newcommand{\currentTest}{}
+
+% (internal) if-clause shortcut to switch between short rulebook version and full score sheet for referees
+\newcommand{\ifShortScoresheet}[2]{%
+  \ifthenelse{ \equal{\shortScoresheet}{true}}{%
+    #1%
+  }{%
+    #2%
+  }%
+}
+
+\newcommand{\ifEvaluationSheet}[2]{%
+  \ifthenelse{ \equal{\scoresheetOptions}{evaluationSheet}}{%
+    #1%
+  }{%
+    #2%
+  }%
+}
+
+%% commands for overriding internal calculations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% set score counter to arbitrary value
+\newcommand{\setTotalScore}[1]%
+{%
+  \setcounter{currTestScore}{#1}
+}
+
+% set outstanding bonus to arbitrary value
+\newcommand{\setOutstandingBonus}[1]%
+{%
+  \setcounter{currOutstandingBonus}{#1}
+}
+
+
+
+
+%% Score sheet page layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% usage: \begin{scoresheet}[repeatable] ... \end{scoresheet}
+\newenvironment{scoresheet}[1][]{
+  % begin
+  \newpage
+
+  \renewcommand{\scoresheetOptions}{#1}
+  
+  \begin{minipage}[t]{0.8\textwidth}%
+    \vspace{0pt}
+    {\huge \textbf{Score Sheet} }
+    
+    \vspace{2 em}
+    
+    \begin{tabular}{ @{} l l l}
+      \textbf{Test:} & \currentTest \\[.9 em]
+      
+      \ifEvaluationSheet{}{%
+        \textbf{Team name:} & \rule{0.6\linewidth}{.2pt}\\[.9 em]%
+      }%
+      % 
+      \textbf{Referee name:} & \rule{0.6\linewidth}{.2pt}\\[.9 em]%
+      %	
+      %	\ifEvaluationSheet{}{%
+      %   \textbf{Restart:} & \Square ~1st try \hspace{1 em} \Square ~2nd try
+      %	}
+      %	
+      % test repetition checkboxes (for stage 2 tests)
+      \ifthenelse{ \equal{#1}{repeatable} }{%
+	\textbf{Test repetition:} & \Square ~1st \hspace{1 em} \Square ~2nd\\[.9em]%
+      }{}
+    \end{tabular}
+
+    \vspace{0.5 em}
+
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.15\textwidth}%
+    \vspace{0pt}
+    \includegraphics[width=\textwidth]{general/images/logo_RoboCupAtHome.jpg}%
+  \end{minipage}\\
+}
+{
+  % end
+  \vspace{.2 em}
+  \textbf{Remarks:}
+
+  %% signatures of referee / team leader %%%%%%%%%%%%
+  \vfill
+  \ifEvaluationSheet{
+    % team evaluation sheet
+    \begin{tabular}{@{} @{\extracolsep{\fill}} l l @{}}
+      \rule{0.25\linewidth}{.2pt} \hspace{0.05\linewidth} & \rule{0.25\linewidth}{.2pt} \hspace{0.05\linewidth}
+      \\
+      \textit{Date \& time}%
+      & \textit{Referee}
+    \end{tabular}
+  }{
+    % normal sheet
+    \begin{tabular}{@{} @{\extracolsep{\fill}} l l l @{}}
+      \rule{0.25\linewidth}{.2pt} \hspace{0.05\linewidth} & \rule{0.25\linewidth}{.2pt} \hspace{0.05\linewidth} & \rule{0.25\linewidth}{.2pt}
+      \\
+      \textit{Date \& time}%
+      & \textit{Referee} %
+      & \textit{Team leader}
+    \end{tabular}
+  }
+
+  \newpage
+}
+
+
+%% Score list table %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% usage: \begin{scorelist}[openDoorSignal] ... \end{scorelist}
+\newenvironment{scorelist}[1][]{
+  % begin
+
+  % init variables %%%%%%%%%
+  \renewcommand{\scorelistOptions}{#1}
+  \setcounter{currTestScore}{0}
+  \setcounter{currOutstandingBonus}{0}
+
+  % setup table %%%%%%%%%
+  \vspace{0.8 em}
+
+  \ifShortScoresheet {
+    \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.8\linewidth} r @{}}
+      \ifEvaluationSheet{
+        \textbf{Team} & \textbf{Score} \\ \hline 
+      }{%
+        \textbf{Action} & \textbf{Score} \\ \hline 
+      }
+    }{  
+      % else:
+      % \begin{tabular*}{\textwidth}{@{}p{0.65\linewidth}lp{0.15\linewidth}@{}}
+      %   \textbf{Action} & \textbf{Score} & \multicolumn{1}{l}{\textbf{Success}}\\ \hline 
+      \ifEvaluationSheet{
+        \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.7\linewidth} r r @{}}
+          \textbf{Team} & \textbf{Score} & \textbf{Result}\\ \hline 
+        }{
+          \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.6\linewidth} r r r @{}}
+            \textbf{Action} & \textbf{Score} \ifthenelse{\equal{\retryAvailable}{true}}{& \textbf{1st try} & \textbf{2nd try}}{ & \textbf{Only try}} \\ \hline 
+          }
+	}
+      }
+      {
+        % end
+
+	\ifEvaluationSheet{}{%
+          
+          % calculate max. score, outstanding bonus %%%%%%%
+          \ifthenelse{\value{currOutstandingBonus} = 0}{%
+            \setcounter{currOutstandingBonus}{ \value{currTestScore} / 10 }
+          }{}
+          \setcounter{currTestScoreTotal}{ \value{currTestScore} + \value{currOutstandingBonus} }
+          \setcounter{currTestScoreTotalWithoutBonus}{ \value{currTestScore} }
+          
+
+          % Special penalties & bonuses %%%%%%%%%%%%%%%%
+          \scoreheading{Special penalties \& bonuses}
+          \ifShortScoresheet{}{
+          	\ifthenelse {\equal{\continueAvailable}{true}}{\scoreitem[0.75]{0}{1st CONTINUE}}{}
+          
+          	\ifthenelse {\equal{\continueAvailable}{true}}{\scoreitem[0.50]{0}{2nd CONTINUE}}{}
+		  }
+          
+          \scoreitem{-500}{Not attending \ifShortScoresheet{(see sec.~\ref{rule:not_attending})}{}}
+          
+          \ifthenelse{\equal{\scorelistOptions}{openDoorSignal}}{
+            \scoreitem{-100}{Using start button \ifShortScoresheet{(see sec.~\ref{rule:start_button})}{}}
+          }{}
+
+          % \ifthenelse{\value{currOutstandingBonus} = 0}{
+          \scoreitem{\thecurrOutstandingBonus}{Outstanding performance \ifShortScoresheet{(see sec.~\ref{rule:outstanding_performance})}{}}
+          % }{}
+          
+          % Total score %%%%%%%%%%%%%%%%
+          \hline\\
+          % \textbf{Total score} & \scoring{ \thecurrTestScoreTotal } %
+          \ifShortScoresheet {%
+            \textbf{Total score} (excluding penalties and bonuses) & \scoring{ \thecurrTestScoreTotalWithoutBonus } %
+          }{%
+            \textbf{Total score} & \scoring{ \thecurrTestScoreTotalWithoutBonus } %
+          }
+          % add line to put in total:
+          \ifShortScoresheet{}{& \rule{0.08\linewidth}{.2pt} \ifthenelse{\equal{\retryAvailable}{true}}{& \rule{0.08\linewidth}{.2pt}}{}} \\
+          
+	}
+
+      \end{tabular*}
+      
+    }
+
+
+    %% Score sheet table entries %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    % for loop helper
+    % usage: \forloop[step]{counter}{initial_value}{conditional}{code_block} 
+    \newcommand{\forloop}[5][1]%
+    {%
+      \setcounter{#2}{#3}%
+      \ifthenelse{#4}%
+      {%
+ 	#5%
+ 	\addtocounter{#2}{#1}%
+ 	\forloop[#1]{#2}{\value{#2}}{#4}{#5}%
+      }%
+      % else
+      {%
+      }%
+    }
+
+    \newcounter{ct}
+
+    % heading
+    % usage: \scoreheading{text}
+    \newcommand{\scoreheading}[1]{
+      \ifShortScoresheet {%
+        \phantom{.} \\[-4 ex] \multicolumn{2}{@{}l}{\textbf{\textit{#1}}}\\[3pt]
+      }{%
+        \phantom{.} \\[-4 ex] \multicolumn{3}{@{}l}{\textbf{\textit{#1}}}\\[3pt]
+      }
+    }
+
+    % table entry
+    % usage: \scoreitem[multiplicity]{points}{description}
+    \newcommand{\scoreitem}[3][1]{
+
+      % add to max. total score if points > 0
+      \ifthenelse{ #2 > 0 }{
+        \addtocounter{currTestScore}{ #2 * #1 }
+      }{}%
+      % 
+      \begin{minipage}[t]{\linewidth} {#3} \vspace{0.5 em} \end{minipage} & %
+      \scoring{ \ifthenelse{ \equal{#1}{1} }{}{ #1 $\times$} \ifthenelse{ \equal{#2}{0} }{}{ #2}}%
+      % insert check marks:	
+      %	\ifShortScoresheet{}{ & \forloop{ct}{0}{\value{ct} < #1}{ \Square}} \\[3pt]
+      % insert line
+      \ifShortScoresheet{ %
+        \\ 
+      }{ % else
+        & \rule{0.08\linewidth}{.2pt} \ifEvaluationSheet{}{\ifthenelse{\equal{\retryAvailable}{true}}{& \rule{0.08\linewidth}{.2pt}}{}} \\[5pt]
+      }
+    }
+
+
+% Local Variables:
+% TeX-master: "../../rulebook"
+% End:
