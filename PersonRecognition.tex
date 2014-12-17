@@ -26,9 +26,9 @@ This test focuses on people detection and recognition; as well as pose recogniti
 \item \textbf{Crowd size:} The crowd may contain between 5 and 10 people, standing or sitting or lying within an  area of 5 meters (diameter).
 \item \textbf{Crowd position:} The crowd will be located behind the robot at a distance between 2 and 3 meters apart.
 \end{itemize}
-\item \textbf{Find the operator:} Once the crowd has been located, the robot must greet the operator and state the gender, mood (happy, sad, angry, etc.), pose (sitting, standing, rising arms, etc.). Also, it must give a description of the operator; as well as pointing or approaching to it.
+\item \textbf{Find the operator:} Once the crowd has been located, the robot must greet the operator and state the gender, mood (happy, sad, angry, etc.), pose (sitting, standing, rising arms, etc.). Also, it must point or approach to the operator.
 
-\textit{I found you operator. You are the blond smiling girl with blue eyes and red skirt sitting in the middle of the crowd.}
+\textit{I found you operator. You are the smiling girl sitting in the middle of the crowd.}
 
 \item \textbf{Describe the crowd}: Finally, robot must tell the size of the crowd and how many men, women and even children are.
 \end{enumerate}
@@ -68,10 +68,8 @@ The maximum time for this test is 5 minutes.
 \begin{tabularx}{\textwidth}{ X r }
 	\textbf{Action} & \textbf{Score} \\ \hline
 	\textbi{Operator}  \\
-	Approach or point at the operator & 1.0 \\
-	Correctly state operator's gender & 1.0 \\
-	Correctly state operator's appearance (eyes, hair, etc.) & 1.0 \\
-	Correctly state operator's dressing & 1.0 \\
+	Approach or point at the operator & 2.0 \\
+	Correctly state operator's gender & 2.0 \\
 	Correctly state operator's pose & 3.0 \\
 	Correctly state operator's mood & 3.0 \\
 	\\
