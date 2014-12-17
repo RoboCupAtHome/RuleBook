@@ -1,5 +1,10 @@
 \section{Navigation Test}
 
+The robot must enter the arena, visit each one from a set of waypoints, and leave the arena. The path from a waypoint to another is always blocked by an obstacle that requires the robot to take an action to solve the task.
+
+Actions may include: avoid the obstacle, find a different path, or even interact with the obstacle (move it, open it, ask it to move, wait for it to move, etc.).
+
+\subsection{Goal}
 The robot must be able navigate through the apartment and avoid some difficult obstacles along the way.
 
 \subsection{Focus}
@@ -46,7 +51,7 @@ The robot must report whether it reached the waypoint.
 \item \textbf{Obstacles:} obstacles may be:
 \begin{enumerate}
 \item [Obstacle 1:] Box sized item placed around a corner. 
-\item [Obstacle 2:] A static obstacle on or very near one of the waypoints. If the robot cannot reach the waypoint, it must report so by speech and continue the test. For example, a person may be standing in front of a couch and a chair may be placed at the table. 
+\item [Obstacle 2:] A static obstacle on or very near one of the waypoint. If the robot cannot reach the waypoint, it must report so by speech and continue the test. For example, a person may be standing in front of a couch and a chair may be placed at the table. 
 \item [Obstacle 3:] A bar table, normal table, rolling chair: some object that is wider at its top than on its bottom, thus requiring more than just a laser scanner mounted near the ground to avoid obstacles. This will be placed in the middle of some room, on or near the robots path.
 \end{enumerate}
 \item \textbf{Moving objects:} If the robot finds on it's way a \textit{static movable obstacle} (chair, cubes, toys, etc.) which is capable to move, it may move the object apart with it's manipulator.
