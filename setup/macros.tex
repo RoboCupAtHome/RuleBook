@@ -73,9 +73,11 @@
 \def\svnChangeData{Unknown} %
 \def\revnumtmpfile{.temp_ruleook_version}
 \def\revdattmpfile{.temp_ruleook_date}
-\immediate\write18{svnversion . > \revnumtmpfile}
+\immediate\write18{git rev-list HEAD | wc -l > \revnumtmpfile}
+%\immediate\write18{svnversion . > \revnumtmpfile}
 \IfFileExists{\revnumtmpfile}{\def\svnRevision{\input{\revnumtmpfile}\unskip}}{} 
-\immediate\write18{svn info | grep 'Last Changed Date:' | awk '{print $4}'> \revdattmpfile}
+\immediate\write18{git log -1 --date=short  | grep 'Date:' | awk '{print $2}'> \revdattmpfile}
+%\immediate\write18{svn info | grep 'Last Changed Date:' | awk '{print $4}'> \revdattmpfile}
 \IfFileExists{\revdattmpfile}{\def\svnChangeData{\input{\revdattmpfile}\unskip}}{} 
 % \IfFileExists{\revnumtmpfile}{\immediate\write18{rm -f \revnumtmpfile}}{} 
 % \IfFileExists{\revdattmpfile}{\immediate\write18{rm -f \revdattmpfile}}{} 
