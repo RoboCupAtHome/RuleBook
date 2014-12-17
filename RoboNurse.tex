@@ -4,6 +4,19 @@ The robot is taking care of a person that has an ailment.
 \textbf{This test will undergo a major revision. 
 Please see \href{https://github.com/RCAtHome2015/RuleBook/issues/8}{issue 8 on the Rulebook's GitHub page} for general plans}
 
+% Remove diagnosis part from the test. Estimate only patient state
+% Enhance the test to make it less boring (not only dialog).
+% Ask EC for comments on extra interaction (house and patient).
+% Add list of detectable activity situations. Confirm by gesture (yes or no by shaking head).
+% 
+% Robot checks patient, 
+% provides assistance, 
+% after a time checks patient again, 
+% same symptoms, 
+% then the robot calls for the doctor, 
+% opens the door and guides the doctor to the patient. 
+% Robot needs to answer the questions of the doctor about the patient.
+
 \subsection{Focus}
 
 This test focuses on Human-Robot Interaction and planning.
@@ -13,23 +26,38 @@ This test focuses on Human-Robot Interaction and planning.
 \item \textbf{Reaching the patient}: The patient calls for robot assistance using her voice and by waving arms.
 \begin{itemize}
 \item \textbf{Activity detection [Optional]:} The operator may cough, sneeze, bend over her stomach, etc., during the first minute of the test as a call signal for the robot. Team Leader must contact a TC member to request the operator act symptoms during the test instead of calling the robot.
-\item \textbf{Show must go on:} The robot may ask the patient to approach to it, or, after one minute waving, the operator will approach the robot.
+\item \textbf{Show must go on:} The robot may ask the patient to approach to it, or, after one minute of waving, the operator will approach the robot.
 \end{itemize}
  
 \item \textbf{Examination:} The robot should ask the patient for information by ASR means. The patient starts providing information in unspecified sentences such as \quotes{My head hurts}, \quotes{My stomach feels weird}, \quotes{My throat burns},  etc. For this, the team leader should have selected one of this categories:
 \begin{itemize}
-\item \textbf{Category I:} All the information provided by the patient is true, concise, and she is certain all the symptoms.
-\item \textbf{Category I:} The patient is confused because of the pain and the obtained information  may be ambiguous, unknown or contradictory. % (Q: Does it feels like needles? A: Don't know, just hurts!).
+\item \textbf{Category I:} All the information provided by the patient is true, concise, and she is certain of all the symptoms.
+\item \textbf{Category II:} The patient is confused because of the pain and the obtained information  may be ambiguous, unknown or contradictory. % (Q: Does it feels like needles? A: Don't know, just hurts!).
 \begin{itemize}
 \item[Q:] \textit{Does it feels like needles?}
 \item[A:] \textit{Don't know, just hurts!.}
 \end{itemize}
 \end{itemize}
-
-\item \textbf{Diagnosis}: The robot must provide an accurate diagnosis by state which kind of disease the patient has, if it is known. Then it shall to briefly explain how has reached to that conclusion. \\ \textit{Because you are sleepy and fever, have violent sneezing; but you feel no pain in throat or stomach, nor your skin has spots, is probably just a common cold \dots}
-
-\item \textbf{Medication \& Help}: After diagnosis, the robot propose something to aid the patient, and carry out such recommendation.\\ \textit{I think you should eat some hot chicken soup. Do you want me to bring it to you? \dots}
+\item \textbf{Medication \& Help}: After hearing the symptoms, the robot proposes something to aid the patient, and carry out such recommendation.\\ \textit{I think you should take an aspirin. Do you want me to bring you some aspirin?\dots}
+\item Some time passes and the robot is called again
+\item \textbf{Re-examination \& call doctor} 
+\begin{itemize}
+ \item The robot asks for each symptom whether it went away with the given aid (e.g. the asparin).
+ \item The patient may indicate that a symptom went away with nodding or shaking her head. 
+ \item The robot must then report a conclusion and say e.g. ``So you still have \dots but no \dots anymore''.
+ \item At least one symptom will remain and the robot must call a doctor. 
+  (No need to pick up a real phone and dial a number, the robot may indicate that it is calling, e.g. by making a ringing sound)
+\end{itemize}
+\item \textbf{Receive doctor} The doctor arrives and is welcomed into the house by the robot. The robot then guides the doctor to the patient.
+\begin{itemize}
+ \item \textbf{Optional: Doorbell ringing} The doctor rings a doorbell and the robot may not move to the door before this sound is heard.
+ \item \textbf{Optional}: Opening the door for the doctor
+\end{itemize}
+\item \textbf{Help doctor} The doctor asks the robot what symptoms the patient is/was experiencing and what help has been offered.
+The robot then tells ``The patient has \dots, \dots and \dots symptoms, I offered \dots and later the symptoms were \dots and \dots so I called you''
+\item \textit{EC/TC: Suggestions for additional interactions are welcome}
 \end{enumerate}
+
 
 \subsection{Additional rules and remarks}
 \begin{enumerate}
@@ -43,6 +71,8 @@ The referee needs to
 \begin{itemize}
 \item Place the objects in the bookcase
 \item Make sure there is one empty shelf in the middle of the bookcase
+\item Ask the team if the robot will hear the doorbell or that the doctor must just wait to be welcomed/let in.
+\item Ask the team if the robot is able to open the door and open the door for the doctor beforehand if the robot is not able to do this.
 \end{itemize}
 
 \subsection{OC instructions}
@@ -50,6 +80,7 @@ The referee needs to
 \textbf{1 month before the test}
 \begin{itemize}
 \item Provide the list of ailments and symptoms
+\item Provide audio sample of doorbell
 \end{itemize}
 \textbf{2 hours before the test}
 \begin{itemize}
@@ -81,13 +112,17 @@ The maximum time for this test is 10 minutes.
 	Accurate question on Category I (Max score if solved with less than 5 questions) & $5 \times 0.5$\\
 	Accurate question on Category II (Max score if solved with less than 5 questions) & $5 \times 1.0$\\
 	\\
-	\textbi{Diagnosis} & \\
-	State the disease the patient has & 1.0 \\
-	Briefly explain why diagnosis is correct & 4.0 \\
-	\\
 	\textbi{Medication \& Help} & \\
 	Provide recommendation based on correct diagnosis & 1.0 \\
 	Carrying out the recommendation & 4.0 \\
+	\\
+	\textbi{Re-examination} & \\
+	Check existence of symptoms by nodding/shaking head & $3 \times 1$\\
+	\\
+	\textbi{Helping the doctor} & \\
+	Respond to doorbell & 2.0 \\
+	Open the door for the doctor & 5.0 \\
+	Reciting the history of symptoms & 0.5 \\
 	\\ \hline
-	\textbf{Total score} (excluding penalties and bonuses) & \textbf{25}
+	\textbf{Total score} (excluding penalties and bonuses) & \textbf{30}
 \end{tabularx}
