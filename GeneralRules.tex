@@ -123,7 +123,8 @@ These walls will be built up using standard fair construction material.
   Walls will be fixed and are likely to be not modified during the competition (see \refsec{rule:scenario_changes}). 
 {\bf\item Doors:} There will be at least two entry/exit \Term{doors}{Arena doors} connecting the outside of the scenario.
   These doors are used as starting points for the robots (see \refsec{rule:start_position}).
-  At least one of the entrances will be a door with a handle (not a knob).
+  % At least one of the entrances will be a door with a handle (not a knob).\
+  There will be also another door inside the scenario with a handle (not a knob) between any two rooms.
 {\bf\item Floor:} The floor of the arena as well as the doorways of the arena are even.
   That is, there will be no significant steps or even stairways. 
   However, minor unevenness such as carpets, transitions in floor covering between different areas, 
@@ -294,7 +295,8 @@ Any deviations reported to the TC, may result in a penalty for the team (see \re
 {\bf\item Registration:} The maximum \term{number of robots} per team that can be registered for the competitions is \emph{two} (2).
 {\bf\item Regular Tests:} Only one robot is allowed per test. 
   For different tests different robots can be used.
-{\bf\item Open Demonstrations:} In the Open Challenge, the Demo Challenge and the Finals both robots can be used simultaneously.
+{\bf\item Open Demonstrations:} In the Open Challenge and the Finals both robots can be used simultaneously.
+{\bf\item RoboZoo:} In the RoboZoo both robots can be used simultaneously as long as they fit into the cage.
 \end{enumerate}
 
 
@@ -333,23 +335,10 @@ If it is not the only red button, the TC may ask the team to tape over or remove
 \label{rule:start_button}
 
 \begin{enumerate}
-  {\bf\item Requirements:} As stated in \refsec{rule:start_signal}, teams that aren't able to carry out the default start signal
-  (opening the door) have to provide a \iterm{start button} that can be used to start tests. The team needs to announce this to
-  the TC before every test that involves a start signal, including \iterm{Robot Inspection}.
-  {\bf\item Definition:} The start button can be any ``one-button procedure'' that can be easily executed by a referee.  
-  % This includes, for example:
-  % \begin{itemize}
-  % \item the release of the \iterm{emergency button} (\refsec{rule:robots_emergency_button})
-  % \item a hardware button different from the \iterm{emergency button} (e.g., a green button)
-  % \item a software button in a Graphical User Interface (on the robot or on a remote PC connected to the robot)
-  % \end{itemize}
-  This includes, for example, the release of the \iterm{emergency button} (\refsec{rule:robots_emergency_button}), 
-  a hardware button different from the \iterm{emergency button} (e.g., a green button), or 
-  a software button in a Graphical User Interface. 
-  {\bf\item Inspection:} It is during the the \iterm{Robot Inspection} test (see \refsec{sec_robot_inspection}) that the procedure for the start
-  button, if needed, is announced to the TC and inspected. The start button for a robot should be the same for all the tests.
-  {\bf\item Penalty for using start button:} If a team needs to use the start button 
-  in a test where opening the door is the start signal, it receives a penalty (see \refsec{rule:start_signal}).
+  {\bf\item Requirements:} As stated in \refsec{rule:start_signal}, teams that aren't able to carry out the default start signal (opening the door) have to provide a \iterm{start button} that can be used to start tests. The team needs to announce this to the TC before every test that involves a start signal, including \iterm{Robot Inspection}.
+  {\bf\item Definition:} The start button can be any ``one-button procedure'' that can be easily executed by a referee.  This includes, for example, the release of the \iterm{emergency button} (\refsec{rule:robots_emergency_button}), a hardware button different from the \iterm{emergency button} (e.g., a green button), or a software button in a Graphical User Interface. 
+  {\bf\item Inspection:} It is during the the \iterm{Robot Inspection} test (see \refsec{sec_robot_inspection}) that the procedure for the start button, if needed, is announced to the TC and inspected. The start button for a robot should be the same for all the tests.
+  {\bf\item Penalty for using start button:} If a team needs to use the start button in a test where opening the door is the start signal, it may receive a penalty (see \refsec{rule:start_signal}).
 \end{enumerate}
 
 
@@ -389,14 +378,10 @@ by having additional speakers directly on the robot.
 \section{External devices}\label{rule:roobt_external_devices}
 \begin{enumerate}
 {\bf\item Definition:} Everything which is not part of the robot is considered an \iterm{external device}. 
-{\bf\item Inspection:} In general, external devices are not allowed unless 
-  presented and explained to the Technical Committee during the \iterm{Robot Inspection} test (see \refsec{sec_robot_inspection}).
-{\bf\item Supervision:} In regular tests, external devices may only be used under supervision by referees and after approval by the TC. 
-The devices have to be brought to the arena for every test, and removed quickly after the test.
-{\bf\item Open demonstrations:} For the Open Challenge, the Demo Challenge, and the finals, 
-  external devices are allowed, still their use needs to be announced beforehand.
-{\bf\item Wireless devices:} All \iterm{wireless devices} including bluetooth devices, walkie-talkies, and anything else that uses an RF signal to operate need to be announced to the \term{Organizing Committee (OC)}. 
-The use of any wireless device not approved by the TC is strictly prohibited.  
+{\bf\item Inspection:} In general, external devices are not allowed unless presented and explained to the Technical Committee during the \iterm{Robot Inspection} test (see \refsec{sec_robot_inspection}).
+{\bf\item Supervision:} In regular tests, external devices may only be used under supervision by referees and after approval by the TC. The devices have to be brought to the arena for every test, and removed quickly after the test.
+{\bf\item Open demonstrations:} For the Open Challenge, RoboZoo, and the finals, external devices are allowed, still their use needs to be announced beforehand.
+{\bf\item Wireless devices:} All \iterm{wireless devices} including bluetooth devices, walkie-talkies, and anything else that uses an RF signal to operate need to be announced to the \term{Organizing Committee (OC)}. The use of any wireless device not approved by the TC is strictly prohibited.  
 {\bf\item Artificial landmarks:} \iterm{Artificial landmarks} and \iterm{markers} are not allowed.
 {\bf\item Computing devices:} External computers for decentralized computations are allowed, but have to be inside the arena, i.e.,~not on its periphery.
 {\bf\item Wireless LAN:} The use of networks other than the \iterm{arena network} (see \refsec{rule:scenario_wifi}) is strictly prohibited.
@@ -415,19 +400,24 @@ It ends with the finals.
 
 \begin{enumerate}
 {\bf\item Stage~I:} The first days of the competition will be called \iterm{Stage~I}. 
-  All qualified teams can participate in Stage~I. 
+  All qualified teams can participate in Stage~I.
+  Stage~I comprehends a set of \iterm{Ability Tests} and an \iterm{Integration Test}. Those \iterm{Proficency Tests} are performed at least 3 times each one.
   The \iterm{Open Challenge} is the open demonstration in Stage~I.
-{\bf\item Stage~II:} The best \emph{50\% of teams}\footnote{If the total number of teams is less than 20, then the best 10 teams advance to Stage~II.} (after Stage~I) advance to \iterm{Stage~II}. 
+
+% MAURICIO: The advance schema changed. Also no demo challenge for 2015
+%{\bf\item Stage~II:} The best \emph{50\% of teams}\footnote{If the total number of teams is less than 20, then the best 10 teams advance to Stage~II.} (after Stage~I) advance to \iterm{Stage~II}. 
+%  Here, more complex abilities or combinations of abilities are tested. 
+%  The \iterm{Demo Challenge} is the open---but scoped---demonstration in Stage~II.
+{\bf\item Stage~II:} The best \emph{50\% of teams with full integrated capabilities}\footnote{If the total number of teams is less than 20, up to 10 teams may advance to Stage~II} (after Stage~I) advance to \iterm{Stage~II}. 
   Here, more complex abilities or combinations of abilities are tested. 
-  The \iterm{Demo Challenge} is the open---but scoped---demonstration in Stage~II.
-{\bf\item Final demonstration:} The best \emph{five teams} (after Stage~I and Stage~II) advance 
-  to the final round. 
+  In order to advance to Stage~II a team must successfully solve 3 out of 5 of the \iterm{Proficency Tests} in Stage~I
+%  The \iterm{Open Challenge} is the open demonstration in Stage~II.
+{\bf\item Final demonstration:} The best \emph{five teams} (after Stage~I and Stage~II) advance to the final round. 
   The final round features only a single open demonstration.
 \end{enumerate}
-In addition, a Technical Challenge (see \refsec{sec:TechnicalChallenge}) is carried out between Stage~II and the Final Demonstration, and its
-schedule is outside the scope of the Stage system.
-In case of having no considerable score deviation between a team advancing to 
-the next stage and a team dropping out, the TC may announce additional teams advancing to the next stage.
+% MAURICIO: No technical challenge for 2015
+% In addition, a Technical Challenge (see \refsec{sec:TechnicalChallenge}) is carried out between Stage~II and the Final Demonstration, and its schedule is outside the scope of the Stage system.
+In case of having no considerable score deviation between a team advancing to the next stage and a team dropping out, the TC may announce additional teams advancing to the next stage.
 
 
 \subsection{Number of tests}\label{rule:number_of_tests}
@@ -477,7 +467,41 @@ This rule only applies when not having organized \iterm{preparation slots}.
 %  \end{enumerate}
 %\end{enumerate}
 
+% MAURICIO: Explained Score System
+\subsection{Score system}\label{rule:score_system}
 
+\begin{enumerate}
+  {\bf\item Stage~I:} The maximum total score per test in Stage~I is \scoring{90 points}.
+  \begin{enumerate}
+    {\bf\item \iterm{Proficency Tests}:} The maximum total score per test is \scoring{15 points}. It is calculated as the average of the best two runs for that test.
+    {\bf\item Open Challenge:} The maximum score for Open Challenge is \scoring{10 points}.
+    {\bf\item RoboZoo:} The maximum score for RoboZoo is \scoring{5 points}.
+  \end{enumerate}
+  
+  {\bf\item Stage~II:} Test in Stage~II are rewarded on a task-solved scoring basis.
+  \begin{enumerate}
+  \item Each test has a main task. The base score for solving the main task is \scoring{25 points}.
+  \item Optionals and subtasks add bonus points to the main task score.
+  \end{enumerate}
+
+  {\bf\item Finals:} Final score is normalized and special evaluation is used
+
+  {\bf\item Special tests:} Tests may specify a maximum total score deviating from the general maximum total scores.
+  {\bf\item Minimum score:} The minimum total score per test in Stage~I and Stage~II is \scoring{0 points}. That is, if the total score for a test is below zero, the team does not receive any points.
+  {\bf\item Penalties:} An exception to the \emph{minimum score} rule are penalties. Both penalties for not attending (see \refsec{rule:not_attending}) and extraordinary penalties (see \refsec{rule:extraordinary_penalties}) can cause a total negative score. 
+  {\bf\item Partial scores:} All tests---except for the open demonstrations---are rewarded on a partial scoring basis. 
+  \begin{enumerate}
+  \item Tests are split into designated parts.
+  \item Each part is assigned a certain number of points.
+  \item A team that successfully passes a designated part of the test receives points for that part.
+  \item In case of partial success, referees (and TC members) may decide to only award a percentage instead of the full partial score.  
+  \item The total score for a test is the sum of partial scores.
+  \item Partial scores can be negative (e.g.~to penalize failures etc.).
+  \end{enumerate}
+\end{enumerate}
+
+
+% MAURICIO: On 2015, Open Challenge may be moved to Stage 2. There is no Demo Challenge
 \subsection{Open Demonstrations}
 \begin{enumerate}
   {\bf\item Stage~I:} The \iterm{Open Challenge} is the open demonstration in Stage~I.
@@ -487,22 +511,20 @@ This rule only applies when not having organized \iterm{preparation slots}.
   \item The performance is evaluated by a jury consisting of the team leaders of all other teams.
   \item The Open Challenge is described in \refsec{sec:test_open_challenge}.
   \end{enumerate}
-  {\bf\item Stage~II:} The \iterm{Demo Challenge} is the open demonstration in Stage~II.
-  \begin{enumerate}
-  \item To participate in the Demo Challenge, a team needs to participate in at least one regular Stage~II test.
-  \item The scope (and topic) of the Demo Challenge are defined by the TC on a yearly basis.
-  \item Teams can demonstrate freely chosen abilities, but according to the scope. 
-  \item The performance is evaluated by the Technical Committee.
-  \item The Demo Challenge is described in \refsec{sec:test_demo_challenge}.
-  \end{enumerate}
+%  {\bf\item Stage~II:} The \iterm{Demo Challenge} is the open demonstration in Stage~II.
+%  \begin{enumerate}
+%  \item To participate in the Demo Challenge, a team needs to participate in at least one regular Stage~II test.
+%  \item The scope (and topic) of the Demo Challenge are defined by the TC on a yearly basis.
+%  \item Teams can demonstrate freely chosen abilities, but according to the scope. 
+%  \item The performance is evaluated by the Technical Committee.
+%  \item The Demo Challenge is described in \refsec{sec:test_demo_challenge}.
+%  \end{enumerate}
   {\bf\item Finals:} The competition ends with a final demonstration.
   \begin{enumerate}
   \item The concept of the final demonstration is the same as that of the Open Challenge, but the performance evaluation is different. 
-  \item The are two juries---an \emph{external} consisting of three or more people not from the RoboCup @Home league, 
-    and an \emph{internal} formed by the Executive Committee. Both juries have different sets of evaluation criteria.
+  \item The are two juries---an \emph{external} consisting of three or more people not from the RoboCup @Home league, and an \emph{internal} formed by the Executive Committee. Both juries have different sets of evaluation criteria.
   \item Members of the external jury are selected by the Executive Committee on site. 
-  \item The demonstration in the finals does not have to be different from the one shown in the Open or Demo Challenge. 
-    It does not have to be the same either.
+  \item The demonstration in the finals does not have to be different from the one shown in the Open Challenge. It does not have to be the same either.
   \end{enumerate}
 \end{enumerate}
 
@@ -531,7 +553,7 @@ This rule only applies when not having organized \iterm{preparation slots}.
     The only exceptions are tests that require for more team members in the arena.
   {\bf\item Setup:} During the setup of a test, 
     the number of team members inside the arena is not limited. 
-  {\bf\item Open Demonstrations:} During the Open Challenge, the Demo Challenge and the final demonstration, 
+  {\bf\item Open Demonstrations:} During the Open Challenge, and the final demonstration, 
     the number of team members inside the arena is not limited. 
   {\bf\item Moderation:} During a regular test, one team member \emph{must} be available to host and comment the event (see \refsec{rule:moderator}).
 \end{enumerate}
@@ -605,14 +627,11 @@ Robots not obeying the rules are stopped and removed from the arena.
 \subsection{Start signal}\label{rule:start_signal}
 
 \begin{enumerate}
-  {\bf\item Opening the door:} Unless stated otherwise, the cue for the robot to enter the arena 
-  and start the test is the opening of the door by a referee.
-  {\bf\item Start button:} If the robot is not able to automatically start after opening the door, 
-  the team may start the robot using a start button. 
+  {\bf\item Opening the door:} Unless stated otherwise, the cue for the robot to enter the arena and start the test is the opening of the door by a referee.
+  {\bf\item Start button:} If the robot is not able to automatically start after opening the door, the team may start the robot using a start button. 
   \begin{enumerate}
-    \item Using a start button needs to be announced to the referees.
-      It is the responsibility of the team to do so before the test starts.
-    \item There is a penalty for using a start button. 
+    \item Using a start button needs to be announced to the referees. It is the responsibility of the team to do so before the test starts.
+    \item There may be penalties for using a start button in some tests
   \end{enumerate}
 \end{enumerate}
 
@@ -621,8 +640,7 @@ Robots not obeying the rules are stopped and removed from the arena.
 \begin{enumerate}
   {\bf\item Start position:} Unless stated otherwise, the robot starts outside of the arena.
   {\bf\item Entering:} The robot has to autonomously enter the arena.
-  {\bf\item Success:} The robot is said to \emph{have entered} when the door used to enter 
-  can be closed again, and the robot is not blocking the passage.
+  {\bf\item Success:} The robot is said to \emph{have entered} when the door used to enter can be closed again, and the robot is not blocking the passage.
 \end{enumerate}
 
 
@@ -661,9 +679,7 @@ a speech command to set the robot into a special mode for receiving gestures.
 \end{itemize}
 {\bf\item Not showing up:} Not showing up for refereeing (on time) will result in a penalty (see \refsec{rule:extraordinary_penalties}). 
 {\bf\item TC monitoring:} The referee from the TC acts as a main referee. 
-{\bf\item Referee instructions:} Right before each test, referee instructions are conducted by the TC. 
-The referees for all slots need to be present at the arena where the referee instructions are taking place.
-When and where referee instructions are taking place is announced together with the schedule for the slots.
+{\bf\item Referee instructions:} Right before each test, referee instructions are conducted by the TC. The referees for all slots need to be present at the arena where the referee instructions are taking place.When and where referee instructions are taking place is announced together with the schedule for the slots.
 \end{enumerate}
 
 
@@ -767,9 +783,7 @@ Below are some suggested alternatives for ASR:
 {\bf\item Automatic schedule:} All teams are automatically scheduled for all tests.
 {\bf\item Announcement:} If a team cannot participate in a test (for any reason),
 the team leader has to announce this to the OC at least \timing{60 minutes} before the test slot begins.
-{\bf\item Penalties:} A team that is not present at the start position when their scheduled test starts, 
-the team is not allowed to participate in the test anymore. 
-If the team has not announced that it is not going to participate, it gets a penalty of \scoring{500 points}. 
+{\bf\item Penalties:} A team that is not present at the start position when their scheduled test starts, the team is not allowed to participate in the test anymore. If the team has not announced that it is not going to participate, it gets a penalty of \scoring{500 points}. 
 \end{enumerate}
 
 \subsection{Extraordinary penalties}\label{rule:extraordinary_penalties}
