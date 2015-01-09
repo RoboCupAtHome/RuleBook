@@ -22,7 +22,7 @@ This test particularly focuses on the following aspects:
 \item Human-robot interaction (such as: people detection, recognition, and tracking; online training, answering predefined questions).
 \item Robot-Object interaction (such as: object detection, object recognition, and object manipulation).
 \end{itemize}
-The command is composed by three actions, which the robot has to show it has recognized. The robot may repeat the understood command and ask for confirmation. If it can't recognize the command correctly, it can also ask the speaker to repeat the complete command. If the robot fails to understand the given commands, it may ask to the operator to repeat them up to three times, if it fails the team may opt to use the Continue rule (Section \ref{rule:asrcontinue}).
+The command is composed by three actions, which the robot has to show it has recognized. The robot may repeat the understood command and ask for confirmation. If it can't recognize the command correctly, it can also ask the speaker to repeat the complete command. If the robot fails to understand the given commands, it may ask to the operator to repeat them up to three times, if it fails the team may opt to use the Continue rule (Section \ref{rule:asrcontinue}). In case the robot has understood partially the command, it may ask the operator for additional information (e.g. \quotes{did you say apple juice or orange juice?}).
 \item \textbf{Task assignment:} The robot is given the command by the operator and may directly start to work on the task assignment.
 \item \textbf{Exiting the arena:} After accomplishing the assigned task, the robot has to leave the arena.
 \end{enumerate}
@@ -67,13 +67,14 @@ The maximum time for this test is 8 minutes.
 
 	\textbf{Action} & \textbf{Score} \\ \hline
 	\textbi{Performing the task}  \\
-	Understanding the set of actions on the first attempt & 2.0 \\
+	Understanding the set of actions on the first attempt & 4.0 \\
 	Performing the first command correctly & 4.0 \\
-	Performing the first and second command correctly & 4.0 \\
-	Successfully solving the complete task & 5.0 \\
+	Performing the first and second command correctly & 6.0 \\
+	Successfully solving the complete task & 10.0 \\
+	Exiting the arena & 1.0 \\
 	\\
 	\textbi{Penalty for own operator} \\
-	Reduction of points for every command provided by a team member & $0.5 \times -1$ \\
+	Reduction of points for command provided by a team member & $-2.0$ \\
 	\\ \hline
-	\textbf{Total score} (excluding penalties and bonuses) & 15.0 \\
+	\textbf{Total score} (excluding penalties and bonuses) & 25.0 \\
 \end{tabularx}

@@ -79,12 +79,13 @@ The maximum time for this test is 5 minutes.
 	Avoiding obstacle 1 & 2.0 \\
 	Avoiding obstacle 2 & 3.0 \\
 	Avoiding obstacle 3 & 4.0 \\
-	Reporting unreachable waypoint due to an obstacle & $1.0$ \\
+	Reporting unreachable waypoint due to an obstacle (will end the test) & $1.0$ \\
 	\\
 	\textbi{Doors} & \\
-	Starting a new path before reaching a closed door & $2 \times 2.0$\\
+	Starting a new path after reaching a closed door & $2 \times 2.0$\\
+	Opening the door and continue instead of plan a new trajectory& $2 \times 4.5$\\
 	\\ \hline
-	\textbf{Total score} (excluding penalties and bonuses) & \textbf{15.0}
+	\textbf{Total score} (excluding penalties and bonuses) & \textbf{20.0}
 \end{tabularx}
 
 A bonus of 4.0 points will be awarded for opening a door on the robot's path. 
