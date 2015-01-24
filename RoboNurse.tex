@@ -1,87 +1,61 @@
 \newpage
 \section{Robo-Nurse}
 
-The robot is assisting a person that has an ailment.
-
-{\color{red} \paragraph{Important Notice:} This test is going to be SEVERELY modified and requires a MAJOR REVISION. All the structure and scoring may change an probably will.}
+The robot is assisting an elderly person with getting her pills and responding to observed activities.
 
 \subsection{Focus}
 
-This test focuses on Human-Robot Interaction and planning.
+This test focuses mainly on Human-Robot Interaction and Activity Recognition.
 
 \subsection{Task}
 \begin{enumerate}
-\item \textbf{Reaching the patient}: The patient calls for robot assistance using her voice and by waving arms.
-\begin{itemize}
-\item \textbf{Activity detection [Optional]:} The operator may cough, sneeze, bend over her stomach, etc., during the first minute of the test as a call signal for the robot. Team Leader must contact a TC member to request the operator act symptoms during the test instead of calling the robot.
-\item \textbf{Show must go on:} The robot may ask the patient to approach to it, or, after one minute of waving, the operator will approach the robot.
+	\item \textbf{Move to the patient}: The patient (lets call her Granny) calls for robot assistance using her voice or by waving arms.
+	\item \textbf{Asking for pills}: Granny asks the robot for her pills which are in bottles located on a shelf nearby. 
+	\item \textbf{Describe and choose pills}: On the shelf, there are multiple bottles with pills and the robot must asks Granny which bottle she needs.
+	\begin{itemize}
+		\item The robot must indicate what bottles are on the shelf by briefly describing each bottle.
+		\textbf{the faster the robot starts describing (i.e. finished recognizing) after arrival (standing still in front of the shelf) at the shelf, the better: faster recognition gives more points. }
+		\begin{itemize}
+ 			\item ``The leftmost ones''
+  			\item ``The \textit{color} bottle''
+  			\item ``The big/small bottle''
+  			\item Any other description the robot understands and spoke out loud to Granny. E.g. if a robot can do text recognition and read each label to Granny, she may reply with e.g. ``Asperine''.
+ 		\end{itemize}
+ 	\item \textbf{Grasp \& handover pills}: The robot must grasp the indicated bottle of pills and hand them over to Granny. The handover to Granny must be ``natural'', without a voice confirmation of when to let the pills go etc. Granny will take the pills from the robot's hand and the robot must open its hand.
+ 	\item \textbf{Activity Recognition}: One of the activities below happens and the robot must act accordingly:
+ 	\begin{itemize}
+ 		\item \textbf{Drop blanket}: Granny's stands up and sits doen immediately. Her blanket falls over her lap on to the ground. The robot must \textbf{pick up the blanket} and hand it to Granny
+ 		\item \textbf{Fall}: Granny stands up from her chair and falls. The robot must \textbf{hand Granny a phone} or use the Smart Home for that. 
+								The phone will be laying on the coffee table in the living room.
+ 		\item \textbf{Walk and sit}: Granny walks to a table with her walking stick/cane. Robot must follow and take walking stick from Granny after she sits down an a chair closeby.
+ 	\end{itemize}
 \end{itemize}
- 
-\item \textbf{Examination:} The robot should ask the patient for information by ASR means. The patient starts providing information in unspecified sentences such as \quotes{My head hurts}, \quotes{My stomach feels weird}, \quotes{My throat burns},  etc. For this, the team leader should have selected one of this categories:
-\begin{itemize}
-\item \textbf{Category I:} All the information provided by the patient is true, concise, and she is certain of all the symptoms.
-\item \textbf{Category II:} The patient is confused because of the pain and the obtained information  may be ambiguous, unknown or contradictory. % (Q: Does it feels like needles? A: Don't know, just hurts!).
-\begin{itemize}
-\item[Q:] \textit{Does it feels like needles?}
-\item[A:] \textit{Don't know, just hurts!.}
-\end{itemize}
-\end{itemize}
-\item \textbf{Medication \& Help}: After hearing the symptoms, the robot proposes something to aid the patient, and carry out such recommendation.\\ \textit{I think you should take an aspirin. Do you want me to bring you some aspirin?\dots}
-\item Some time passes and the robot is called again
-\item \textbf{Re-examination \& call doctor} 
-\begin{itemize}
- \item The robot asks for each symptom whether it went away with the given aid (e.g. the aspirin).
- \item The patient may indicate that a symptom went away with nodding or shaking her head. 
- \item The robot must then report a conclusion and say e.g. ``So you still have \dots but no \dots anymore''.
- \item At least one symptom will remain and the robot must call a doctor. 
-  (No need to pick up a real phone and dial a number, the robot may indicate that it is calling, e.g. by making a ringing sound)
-\end{itemize}
-\item \textbf{Receive doctor} The doctor arrives and is welcomed into the house by the robot. The robot then guides the doctor to the patient.
-\begin{itemize}
- \item \textbf{Optional: Doorbell ringing} The doctor rings a doorbell and the robot may not move to the door before this sound is heard.
- \item \textbf{Optional}: Opening the door for the doctor
-\end{itemize}
-\item \textbf{Help doctor} The doctor asks the robot what symptoms the patient is/was experiencing and what help has been offered.
-The robot then tells ``The patient has \dots, \dots and \dots symptoms, I offered \dots and later the symptoms were \dots and \dots so I called you''
-\item \textit{EC/TC: Suggestions for additional interactions are welcome}
-\end{enumerate}
-
 
 \subsection{Additional rules and remarks}
 \begin{enumerate}
 \item \textbf{Continue Rule:} The CONTINUE rule may be applied several times in the Conversation part of the test (Section \ref{rule:asrcontinue}).
-\item \textbf{Make it fast:} The robot should not ask more than 10 questions in Category I, or 20 questions in Category II. Also, it should not ask confirmation for each answer.
+\item \textbf{Make it fast:} Description of objects should be fast, as is reflected in the scoring.
+% \item The bottles of pills are not known beforehand and must be recognized and described on the spot by the robot. 
 \end{enumerate}
 
 \subsection{Referee instructions}
 
 The referee needs to
 \begin{itemize}
-\item Place the objects in the bookcase
-\item Make sure there is one empty shelf in the middle of the bookcase
-\item Ask the team if the robot will hear the doorbell or that the doctor must just wait to be welcomed/let in.
-\item Ask the team if the robot is able to open the door and open the door for the doctor beforehand if the robot is not able to do this.
+\item Place the bottles on the shelf.
+\item Lay the phone on the coffee table.
 \end{itemize}
 
 \subsection{OC instructions}
 
-\textbf{1 month before the test}
-\begin{itemize}
-\item Provide the list of ailments and symptoms
-\item Provide audio sample of doorbell
-\end{itemize}
 \textbf{2 hours before the test}
 \begin{itemize}
-\item Announce the placement of the objects
 \item Announce the room where the patient is
 \end{itemize}
 \textbf{During the test}
 \begin{itemize}
-\item Ask the team what category of information is the patient providing
-\item Provide the ailment of the patient
-\item Provide the set of symptoms for the patient
-\item The action to perform by the robot as a recommendation for the patient
-\item Locate objects into their appropriate location
+\item Instruct Granny which pills she wants.
+\item Instruct Granny which of the 3 actions to perform.
 \end{itemize}
 
 \subsection{Score sheet}
@@ -89,28 +63,20 @@ The referee needs to
 The maximum time for this test is 10 minutes.
 
 \begin{tabularx}{\textwidth}{ X r }
-	\textbf{Action} & \textbf{Score} \\ \hline
-	\textbi{Approach person} & \\
-	Detect and get close a human in pain (cough, sneeze, bending) & 2.0\\
-	Detect and get close to calling human & 2.0\\
-	\\
-	\textbi{Examination} & \\
-%	Proper diagnosis (Category I) & 2.5\\
-%	Proper diagnosis (Category II) & 5.0\\
-	Accurate question on Category I (Max score if solved with less than 5 questions) & $5 \times 0.5$\\
-	Accurate question on Category II (Max score if solved with less than 5 questions) & $5 \times 1.0$\\
-	\\
-	\textbi{Medication \& Help} & \\
-	Provide recommendation based on correct diagnosis & 1.0 \\
-	Carrying out the recommendation & 2.0 \\
-	\\
-	\textbi{Re-examination} & \\
-	Check existence of symptoms by nodding/shaking head & $3 \times 1$\\
-	\\
-	\textbi{Helping the doctor} & \\
-	Respond to doorbell & 1.0 \\
-	Open the door for the doctor & 5.0 \\
-	Reciting the history of symptoms & 0.5 \\
-	\\ \hline
-	\textbf{Total score} (excluding penalties and bonuses) & \textbf{25}
+	\textbf{Action} & \textbf{Max. score} \\ \hline
+	Move to the patient after voice call or waving & 2 \\
+	Await command to get pills. & 1 \\
+	\begin{tabular}[c]{@{}l@{}}Describe pills. Speed is important:\\ \\ 4 points can be gained if the robot starts speaking immediately after arriving at the shelf;\\ 3 points if within 5 seconds, 2 with 15 seconds and 1 if within 30 seconds. \\ No points are gained when the information given by the robot to Granny is incorrect.\end{tabular} & 4 \\
+	Choose pills & 4 \\
+	Grasp pills & 2 \\
+	\begin{tabular}[c]{@{}l@{}}Handover pills.\\ The robot must not instruct Granny when to take hold of the pills: \\ the robot must release the bottle when Granny takes them from the robot's gripper.\\ Only 1 point will be awarded when instructions are needed.\end{tabular} & 2 \\
+	\textbf{Activity recognition} &  \\
+	Drop blanket & 5 \\
+	Fall & 5 \\
+	Walk \& sit & 5 \\
+	\textbf{Response to activity} &  \\
+	Pickup and give blanket & 5 \\
+	Grasp phone & 5 \\
+	Take cane & 5 \\ \hline
+	\textbf{Total score (excluding penalties and bonuses)} & 25
 \end{tabularx}
