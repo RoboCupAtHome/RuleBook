@@ -1,0 +1,137 @@
+\chapter{Setup and Preparation}
+\label{chap:setup_and_preparation}
+Prior to the RoboCup@Home competition, all arriving teams will have the opportunity to setup their robots and prepare for the competition in a \iterm{Setup \& Preparation} phase. This phase is scheduled to start on the first day of the competition, i.e., when the venue opens and the teams arrive. During the setup phase, teams can assemble and test their robots. On the last setup day, a \iterm{welcome reception} will be held. To foster the knowledge exchange between teams a conference-like \iterm{poster session} takes place during the reception. All teams have to get their robots inspected by members of the TC to be allowed to participate in the competition.
+
+\paragraph{Regular tests are not conducted during setup \& preparation.} The competition starts with Stage I ( Section \refsec{chap:stage_I}).
+
+\begin{table}[h]
+	\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+	\newcolumntype{S}{C{1.6cm}}
+	\newcolumntype{M}{C{3.2cm}}
+	\caption{Stage System and Schedule (distribution of tests and stages over days may vary)}
+	\begin{tabularx}{13cm}{S|S|S|S|S|S|S|S}
+	\hline
+	% First Row
+		\multicolumn{2}{|M|}{ \cellcolor[HTML]{FFFFC7}Setup \& \newline Preparation} &
+		\multicolumn{2}{M|}{ \cellcolor[HTML]{67FD9A}Stage I} &
+		\multicolumn{2}{M|}{ \cellcolor[HTML]{9698ED}Stage II} &
+		\multicolumn{2}{M|}{ \cellcolor[HTML]{FFCCC9}Finals}
+	\\ \hline
+	% Second row
+		\multicolumn{1}{S|}{} &
+		\multicolumn{2}{M|}{$\xrightarrow{advance}$\newline All teams that \newline passed Inspection} &
+		\multicolumn{2}{M|}{$\xrightarrow{advance}$\newline Best 10 ($<20$) \newline or best 50\% ($\geq 20$)} &
+		\multicolumn{2}{M|}{$\xrightarrow{advance}$\newline Best 5 \newline teams} &
+		\multicolumn{1}{S}{}
+	\\ \cline{2-7}
+\end{tabularx}
+\end{table}
+
+
+\section{General Setup}
+\label{sec:general_setup}
+Depending on the schedule, the \iterm{Setup \& Preparation} phase lasts for one or two days.
+
+\begin{enumerate}
+	{\bf\item Start:} Setup \& Preparation starts when the venue opens for the first time.
+	{\bf\item Intention:} During Setup \& Preparation, teams arrive, bring or receive their robots, and assemble and test them.
+	{\bf\item Tables:} The local organization will setup and randomly assign team tables.
+	{\bf\item Groups:} Depending on the number of teams, the organizing committee (OC) may form multiple groups of teams (usually two) for the first (and second stage). The OC will assign teams to groups and announce the assignment to the teams.
+	{\bf\item Arena:} The arena is available to all teams during Setup \& Preparation. The OC may schedule special test or mapping slots in which arena access is limited to one or more teams exclusively (all teams get slots). Note, however, that the arena may not yet be complete and that last works are conducted in the arena during the setup days.
+	{\bf\item Objects:} The delegation of EC, TC, OC and local organizers will buy the objects (see Section \refsec{rule:scenario_objects}). Note, however, that the objects may not be available at all times and not from the beginning of Setup \& Preparation.
+\end{enumerate}
+
+\section{Welcome Reception}
+\label{sec:welcome_recepion}
+Traditionally --since Eindhoven 2013-- the RoboCup@Home holds an own \iterm{welcome reception} in addition to the official opening ceremony. During the welcome reception, a \iterm{poster session} is held in which teams present their research foci and latest results (see Section \refsec{sec:poster_teaser_session}).
+\begin{enumerate}
+	{\bf\item Time:} The welcome reception is held in the evening of the last setup day.
+	{\bf\item Place:} The welcome reception takes place in the @Home arena and/or in the RoboCup@Home team area.
+	{\bf\item Snacks \& drinks:} During the welcome reception snacks and beverages (beers, sodas, etc.) are served.
+	{\bf\item Organization:} It is the responsibility of the OC and the local organizers to organize the welcome reception \& poster session including
+		\begin{enumerate}
+			\item organizing poster stands (one per team) or alternative to present the posters,
+			\item organizing the snacks and drinks,
+			\item inviting officials, sponsors, local organization and the trustees of the RoboCup Federation to the event.
+		\end{enumerate}
+	{\bf\item Poster presentation:} During the welcome reception, the teams give a poster presentation on their research focus, recent results, and their scientific contribution.
+	% Both the poster and the teaser talk are evaluated by a jury (see Section 4.3).
+\end{enumerate}
+
+\section{Poster Teaser Session}
+\label{sec:poster_teaser_session}
+Before the welcome reception \& poster session, a poster teaser session is held. In this teaser session, each team can give a short presentation of their research and the poster being presented at the poster session.
+
+\subsection{Poster teaser session}
+\begin{enumerate}
+	{\bf\item Presentation:} Each team has a maximum of three minutes to give a short presentation of their poster.
+	{\bf\item Time:} The poster teaser session is to be held before the welcome reception \& poster session (see Section \refsec{sec:welcome_reception}).
+	{\bf\item Place:} The poster session may be held in or around the arena, but should not interfere with the robot inspection (see Section \refsec{sec:}).
+	{\bf\item Evaluation:} The teaser presentation and the poster presentation are evaluated by a jury consisting of members of the other teams. Each team has to provide one person (preferably the team-leader) to follow
+	% and evaluate
+	the entire poster teaser session and the poster session. Not providing a person results in no score for this team in the open challenge.
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% In previous years, scores from teaser session has not been used for scoring
+	% during competition. Therefore, this section has been commented out
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% {\bf\item Criteria:} For each of the following evaluation criteria, a maximum of 10 points is given per jury member:
+	% \begin{enumerate}
+	% 	\item Novelty and scientific contribution
+	% 	\item Relevance for RoboCup@Home
+	% 	\item Presentation (Quality of poster, teaser talk and discussion during poster session)
+	% \end{enumerate}
+	% {\bf\item Score:} The points given by each jury member are scaled to obtain a maximum of 1000 points (i.e., multiplied by $^100/_3}$). The total score for each team is the mean of the jury member scores. To neglect outliers, the N best and worst scores are left out:
+	% $$
+	% score=\frac{\sum \text{team-leader-score}}{\text{number-of-teams}-\left ( 2N+1  \right )},N=\left\{\begin{matrix}
+	% 1, & \text{number-of-teams} \geq 10\\ 
+	% 2, & \text{number-of-teams} < 10
+	% \end{matrix}\right.
+	% $$
+	% {\bf\item Sheet collection:} Evaluation sheets are collected by the OC at a later time (announced beforehand by the OC), allowing teams to continue knowledge exchange during the first days of the competition (Stage I).
+	% {\bf\item OC Instructions:}
+	% \begin{itemize}
+	%	\item Prepare and distribute evaluation sheets (before the poster teaser session.
+	%	\item Collect evaluation sheets.
+	%	\item Organize and manage the poster teaser presentations and the poster session.
+	%\end{itemize}
+\end{enumerate}
+
+\section{Robot Inspection}
+\label{sec:robot_inspection}
+Safety is the most important issue when interacting with humans and operating in the same physical workspace. Because of that all participating robots are inspected before participating in RoboCup@Home. Every team needs to get its robot(s) inspected and approved for participation.
+
+\begin{enumerate}
+	{\bf\item Procedure:} The robot inspection is conducted like a regular test, i.e., starts with the opening of the door (see Section \refsec{rule:start_signal}). One team after another (and one robot after another) has to enter the arena through a designated entry door, move to a designated intermediate way-point in the arena, and then leave the arena to the designated exit door. In between entering and leaving the robot is inspected.
+	{\bf\item Inspectors:} The robots are inspected by the technical committee (TC).
+	{\bf\item Checked aspects:} It is checked if the robots comply with the rules (see Section \refsec{rule:robots}), checking in particular:
+	\begin{itemize}
+		\item emergency button(s)
+		\item start button (if the team is going to require it)
+		\item collision avoidance (a TC member steps in front of the robot),
+		\item robot speaker system (plug for RF Transmission)
+		\item size
+		\item use of external devices (including wireless network)
+		\item other safety issues (cables hanging loose etc.)
+	\end{itemize}
+	{\bf\item Re-inspection:} If the robot is not approved in the inspection, it is the responsibility of the team to get the approval (later). Robots are not allowed to participate in any test before passing the inspection by the TC.
+	{\bf\item Time limit:} The robot inspection is interrupted after three minutes (per robot). When told to so by the TC (in case of time interrupt or failure), the team has to move the robot out of the arena through the designated exit door.
+	{\bf\item Appearance Evaluation:} In addition to the inspection, the TC evaluates the appearance of the robots. Robots are expected to look nice (no duct tape, no cables hanging loose etc.). In case of objection, the TC may penalize the team with a penalty of maximum 50 points.
+	{\bf\item Accompanying team member:} Each robot is accompanied by only one team member (team leader is advised).
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%
+	% We are not really using the registration form. It's a paper waste
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% {\bf\item Registration form:} Every team needs to fill out a registration form which is brought to the TC by the accompanying team member.
+	{\bf\item OC instructions (at least 2h before the Robot Inspection):}
+	\begin{itemize}
+		\item Specify and announce which doors will be used as entry door and exit door.
+		\item Specify and announce the location where the robot should drive to in the arena.
+		\item Specify and announce where and when the poster teaser and the poster presentation session take place.
+		% \item Prepare and distribute registration sheets (external devices etc., place for notes and signatures of TC and team leader).
+		% \item Prepare and distribute poster session evaluation sheets.
+	\end{itemize}
+\end{enumerate}
