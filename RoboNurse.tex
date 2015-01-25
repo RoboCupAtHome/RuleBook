@@ -14,6 +14,7 @@ This test focuses mainly on Human-Robot Interaction and Activity Recognition.
 	\item \textbf{Describe and choose pills}: On the shelf, there are multiple bottles with pills and the robot must asks Granny which bottle she needs.
 	\begin{itemize}
 		\item The robot must indicate what bottles are on the shelf by briefly describing each bottle.
+		\item \textbf{[Optional]:} Describe previously unseen bottles of pills. 
 		\textbf{the faster the robot starts describing (i.e. finished recognizing) after arrival (standing still in front of the shelf) at the shelf, the better: faster recognition gives more points. }
 		\begin{itemize}
  			\item \quotes{The leftmost one}
@@ -23,11 +24,13 @@ This test focuses mainly on Human-Robot Interaction and Activity Recognition.
  		\end{itemize}
  	\end{itemize}
  	\item \textbf{Grasp \& handover pills}: The robot must grasp the indicated bottle of pills and hand them over to Granny. The handover to Granny must be \quotes{natural}, without a voice confirmation of when to let the pills go etc. Granny will take the pills from the robot's hand and the robot must open its hand.
+ 	\item \textbf{[Optional]:} Open bottle and give pills
  	\item \textbf{Activity Recognition}: One of the activities below happens and the robot must act accordingly:
  	\begin{itemize}
  		\item \textbf{Drop blanket}: Granny's stands up and sits doen immediately. Her blanket falls over her lap on to the ground. The robot must \textbf{pick up the blanket} and hand it to Granny
  		\item \textbf{Fall}: Granny stands up from her chair and falls. The robot must \textbf{hand Granny a phone} or use the Smart Home for that. 
 								The phone will be laying on the coffee table in the living room.
+								\textbf{[Optional]:} Use Smart House option instead of calling
  		\item \textbf{Walk and sit}: Granny walks to a table with her walking stick/cane. Robot must follow and take walking stick from Granny after she sits down an a chair closeby.
  	\end{itemize}
 \end{enumerate}
@@ -44,7 +47,7 @@ This test focuses mainly on Human-Robot Interaction and Activity Recognition.
 
 The referee needs to
 \begin{itemize}
-\item Place the bottles (with screw caps) on the shelf.
+\item Place the bottles (with screw caps) on the shelf. Also ask the team whether they want previously unseen bottles or already known ones.
 \item Lay the phone on the coffee table.
 \end{itemize}
 
@@ -63,25 +66,6 @@ The referee needs to
 \subsection{Score sheet}
 
 The maximum time for this test is 10 minutes.
-
-% \begin{tabularx}{\textwidth}{ X r }
-% 	\textbf{Action} & \textbf{Max. score} \\ \hline
-% 	Move to the patient after voice call or waving & 2 \\
-% 	Await command to get pills. & 1 \\
-% 	\begin{tabular}[c]{@{}l@{}}Describe pills. Speed is important:\\ \\ 5 points can be gained if the robot starts speaking immediately after arriving at the shelf;\\ 3 points if within 5 seconds, 2 with 15 seconds and 1 if within 30 seconds. \\ No points are gained when the information given by the robot to Granny is incorrect.\end{tabular} & 5 \\
-% 	Choose pills & 4 \\
-% 	Grasp pills & 2 \\
-% 	\begin{tabular}[c]{@{}l@{}}Handover pills.\\ The robot must not instruct Granny when to take hold of the pills: \\ the robot must release the bottle when Granny takes them from the robot's gripper.\\ Only 1 point will be awarded when instructions are needed.\end{tabular} & 2 \\
-% 	\textbf{Activity recognition} &  \\
-% 	Drop blanket & 5 \\
-% 	Fall & 5 \\
-% 	Walk \& sit & 5 \\
-% 	\textbf{Response to activity} &  \\
-% 	Pickup and give blanket & 4 \\
-% 	Grasp phone & 4 \\
-% 	Take cane & 4 \\ \hline
-% 	\textbf{Total score (excluding penalties and bonuses)} & 25
-% \end{tabularx}
 
 \begin{tabularx}{\textwidth}{ X r }
 	\textbf{Action} & \textbf{Max. score} \\ \hline
@@ -113,14 +97,12 @@ The maximum time for this test is 10 minutes.
 	\textbi{Response to activity} &  \\
 	Pickup the blanket + give the blanket & 3+1 \\
 	Grasp phone + give phone & 3+1 \\
-	Take walking stick / cane & 4 \\ \hline
+	Take walking stick / cane & 4 \\ 
+	\\
+	\textbi{Bonuses} &  \\
+	Using a Smart House option & 2 \\
+	Describe previously unseen pill bottles & 3 \\
+	Opening the pill bottle (with a screw cap) & 4 \\ 
+	Picking a single pill from the bottle & 10 \\ \hline
 	\textbf{Total score (excluding penalties and bonuses)} & 25
 \end{tabularx}
-
-\subsection{Bonuses}
-\begin{itemize}
- \item Using a Smart House option: \textbf{2}
- \item Be able to descibe previously unseen pill bottles: \textbf{3}
- \item Opening the pill bottle (with a screw cap): \textbf{4}
- \item Picking a single pill from the bottle: \textbf{10}. 
-\end{itemize}
