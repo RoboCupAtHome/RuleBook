@@ -24,3 +24,5 @@
 *.and
 *.adx
 *.tex~
+.temp_*
+
