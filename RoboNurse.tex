@@ -44,7 +44,7 @@ This test focuses mainly on Human-Robot Interaction and Activity Recognition.
 
 The referee needs to
 \begin{itemize}
-\item Place the bottles on the shelf.
+\item Place the bottles (with screw caps) on the shelf.
 \item Lay the phone on the coffee table.
 \end{itemize}
 
@@ -99,10 +99,11 @@ The maximum time for this test is 10 minutes.
 	\textbi{Picking pills} \\
 	Choose the correct pills & 4 \\
 	Grasp the correct pills & 2 \\
+	Grasp wrong pills & 0.5 \\
 	\\
 	\textbi{Pills handover} \\
 	Natural delivery (no instructions are given to operator) & 2 \\
-	Asisted delivery (operator instructs robot for delivery) & 1 \\
+	Assisted delivery (operator instructs robot for delivery) & 1 \\
 	\\
 	\textbi{Activity recognition} &  \\
 	Granny trying to reach drop blanket & 5 \\
@@ -110,8 +111,16 @@ The maximum time for this test is 10 minutes.
 	Granny stands up and walk away\& sit & 5 \\
 	\\
 	\textbi{Response to activity} &  \\
-	Pickup and give the blanket & 4 \\
-	Grasp phone & 4 \\
+	Pickup the blanket + give the blanket & 3+1 \\
+	Grasp phone + give phone & 3+1 \\
 	Take walking stick / cane & 4 \\ \hline
 	\textbf{Total score (excluding penalties and bonuses)} & 25
 \end{tabularx}
+
+\subsection{Bonuses}
+\begin{itemize}
+ \item Using a Smart House option: \textbf{2}
+ \item Be able to descibe previously unseen pill bottles: \textbf{3}
+ \item Opening the pill bottle (with a screw cap): \textbf{4}
+ \item Picking a single pill from the bottle: \textbf{10}. 
+\end{itemize}
