@@ -2,74 +2,123 @@
 \section{Team Registration and Qualification}
 
 
-\subsection{Registration and Qualification Process}\label{rule:participation}
+\subsection{Registration and Qualification Process}
+\label{rule:participation}
 
 Each year there are four phases in the process toward participation:
 \begin{enumerate}
-\item \iterm{Intention of Participation} (optional)
-\item \iterm{Preregistration} 
-\item \iterm{Qualification} announcements
-\item Final \iterm{Registration} for qualified teams
+	\item \iterm{Intention of Participation} (optional)
+	\item \iterm{Preregistration} 
+	\item \iterm{Qualification} announcements
+	\item Final \iterm{Registration} for qualified teams
 \end{enumerate}
-Positions 1 and 2 will be announced by a call on the \iterm{RoboCup\char64Home mailing list}.
-Preregistration requires a \iterm{team description paper}, a \Term{video}{qualification video} and a \Term{website}{Team Website}.
+Positions 1 and 2 will be announced by a call on the \iterm{RoboCup@Home mailing list}. Preregistration requires a \iterm{team description paper}, a \Term{video}{qualification video} and a \Term{website}{Team Website}.
 
 \subsection{Qualification Video}
-As a proof of running hardware, each team has to provide a \iterm{qualification video}. 
-As a minimum requirement for qualification, we consider showing the robot(s) successfully 
-solving at least one test of the current or last year's rulebook.
+As a proof of running hardware, each team has to provide a \iterm{qualification video} showing at least all from following abilities (minimum requirement):
+\begin{itemize}
+	\item Human-Robot interaction
+	\item Navigation (safe, indoors with obstacle avoidance).
+	\item Object detection \& manipulation.
+	\item People detection
+	\item Speech recognition.
+	\item speech synthesis (clear and loud).
+\end{itemize}
+
+Showing some of the following abilities is recommended:
+\begin{itemize}
+	\item Activity recognition
+	\item Complex speech recognition
+	\item Complex action planning
+	\item Gesture recognition
+\end{itemize}
+
+For qualification, we consider showing the robot(s) successfully solving at least one test of the last year's or current rulebook (excluding ability tests).
+
+For robots moving slowly, it is much appreciated speed-up videos. When doing so, please specify the speed factor being used (e.g.~2x, 5X, 10X). The same is applied for slow motion scenes.
+
+We encourage teams to produce self-explicative videos for a general audience where complex tasks are solved
+
+Please notice that the videos should not last longer than the average time for a test (max.~\SI{30}{\minute}).
 
 \subsection{Team Website}
 
-The \iterm{Team Website} has to contain photos and videos of the
-robot(s), a description of the approaches, and information on
-scientific achievements, relevant \iterm{publications}, team members,
-and previous participation in RoboCup.
+The \iterm{Team Website} should be designed for a broader audience, but also including scientific material and access to open source code being developed. Requirements are as follows:
 
-The information on the team website has to be in English and should be designed for a broader audience.
+\begin{enumerate}
 
-\subsection{Team Description Paper}\label{rule:website_tdp}
-The \iaterm{team description paper}{TDP} should at least contain the following sections:
+	{\bf\item Multimedia: } Please include as many photos and videos of the robot(s) as possible.
+
+	{\bf\item Language: } The team website has to be in English. Other languages may be also available, but English must be default language.
+
+	{\bf\item Team: } List of the team members including brief profiles.
+
+	{\bf\item RoboCup:} Link to the league website and previous participation of the team in RoboCup.
+
+	{\bf\item Scientific approach: } The team website has to include research lines, description of the approaches, and information on scientific achievements.
+
+	{\bf\item Publications: } Relevant \iterm{publications} from 5 years up to date. Downloadable publications are scored higher during the qualification process.
+
+	{\bf\item Open source material: } Blueprints, designs, repositories or any kind of contribution to the league is highly scored during qualification process.
+\end{enumerate}
+
+
+\subsection{Team Description Paper}
+\label{rule:website_tdp}
+
+The \iaterm{team description paper}{TDP} must have a explained description of your main research, including the scientific contribution, goals, scope, and results.
+
+Preferably, it should also contain the following:
 \begin{itemize}
-\item Name of the team
-\item contact information
-\item website
-\item team members
-\item description of the hardware, including photo(s) of the robot(s)
-\item description of the software
+	\item the focus of research and the contributions in the respective fields, 
+	\item innovative technology (if any), 
+	\item re-usability of the system for other research groups
+	\item applicability of the robot in the real world
+	\item photo(s) of the robot(s)
 \end{itemize}
 
-~\\\noindent Preferably, it should also contain the following:
+~\\\noindent On the last page, after references, please include:
 \begin{itemize}
-\item the focus of research and the contributions in the respective fields, 
-\item innovative technology (if any), 
-\item re-usability of the system for other research groups
-\item applicability of the robot in the real world
+	\item Name of the team
+	\item contact information
+	\item website
+	\item team members
+	\item photo(s) of the robot(s), unless included before.
+	\item description of the hardware used 
+	\begin{itemize}
+		\item Provide a brief compact list (2DOF head, 2x7DOF anthropomorphic arms, Pioneer base, etc.).
+		\item Avoid explaining how your hardware works unless it is part of your research (e.g.~we already know what a Hokuyo Laser or Kinect are used for).
+	\end{itemize}
+	\item description of the software
+	\begin{itemize}
+		\item Provide a brief compact list (ROS, ROS nav2d, Object Recognition Kitchen, OpenCV, etc.).
+		\item Avoid explaining how your software works unless it is part of your research.
+	\end{itemize}
 \end{itemize}
 
-~\\\noindent The TDP has to be in English, up to eight pages in length and formatted according to the guidelines of the RoboCup International Symposium.
-It goes into detail about the technical and scientific approach.
+~\\\noindent The TDP has to be in English, up to eight pages in length and formatted according to the guidelines of the RoboCup International Symposium. It goes into detail about the technical and scientific approach.
+
+Please notice that, during qualification process, TDP will be scored by its scientific value, novelty and contributions.
 
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Qualification}
 \label{rule:qualification}
 
-During the \iterm{qualification process} a selection will be made by the 
-%SVEN: before this was the OC not TC: 'technical committee' changed to OC.
-\iaterm{Organizing Committee}{OC}
-Taken into account and evaluated in this decision process are:
+During the \iterm{qualification process} a selection will be made by the \iaterm{Organizing Committee}{OC} Taken into account and evaluated in this decision process are:
 \begin{itemize}
-\item The information on the team website and the qualification video,
-\item the information in the \iterm{team description paper}, and
-\item the information in the \iterm{RoboCup\char64Home Wiki} (added by the team).
+	\item The content on the team website, scoring higher publications and open content;
+	\item the number of abilities shown in the qualification video,
+	\item the complexity of the tasks shown in the qualification video, and
+	\item the scientific value, novelty and contributions in the \iterm{team description paper}. %, and
+	% \item the information in the \iterm{RoboCup\char64Home Wiki} (added by the team).
 \end{itemize}
 (Additional) evaluation criteria are: 
 \begin{itemize}
-\item the performance in previous competitions, 
-\item the relevant scientific contributions and publications, and
-\item the contributions to the RoboCup@Home league.
+	\item the performance in previous competitions, 
+	\item the relevant scientific contributions and publications, and
+	\item the contributions to the RoboCup@Home league.
 \end{itemize}
-For getting considered in the evaluation, be sure to insert your team's name 
-when adding information to the \iterm{RoboCup\char64Home Wiki}.    
+
+% For getting considered in the evaluation, be sure to insert your team's name when adding information to the \iterm{RoboCup\char64Home Wiki}.    
 
