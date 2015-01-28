@@ -26,7 +26,7 @@ The indoor home setting will be surrounded by high and low \Term{walls}{Arena wa
 
 	{\bf\item Doors:} There will be at least two entry/exit \Term{doors}{Arena doors} connecting the outside of the scenario. These doors are used as starting points for the robots (see \refsec{rule:start_position}).
 	% At least one of the entrances will be a door with a handle (not a knob).\
-	There will be also another door inside the scenario with a handle (not a knob) between any two rooms.
+	There will be also another door inside the scenario with a handle (not a knob) between any two rooms. Doors with handle (not a knob) may be closed at any time, it is expected robots be able to open them.
 
 	{\bf\item Floor:} The floor of the arena as well as the doorways of the arena are even. That is, there will be no significant steps or even stairways. However, minor unevenness such as carpets, transitions in floor covering between different areas, and minor gaps (especially at doorways) must be expected.
 
@@ -70,28 +70,87 @@ Since the robots should be able to function in the real world the scenario is no
 \end{enumerate}
 
 
-\subsection{Predefined objects}
-\label{rule:scenario_objects}
-
-\def\NumObjects{25\ }
+\def\NumObjects{10\ }
 \def\NumLocations{20\ }
 \def\NumNames{20\ }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Objects section.
+%
+% Revisited by Mauricio Matamoros for 2015
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Objects}
+\label{rule:scenario_objects}
 Some tests in the RoboCup@Home league involve the manipulation of objects. These objects resemble items usually found in household environments like, for instances, soda cans, coffee mugs or books. An example of objects used in a previous competition can be seen in \reffig{fig:scenario_objects}.
 
+There are three main categories for the kind of objects used during the competition:
+
 \begin{enumerate}
-	{\bf\item Definition:} The TC will compile a list of \NumObjects objects. There are no restrictions on object size, appearance or weight. % (YES, this sentence is NOT NEW, but have been in the old rulebook!) 
-	However, it can be expected that the selected objects are easily manipulable by a human using a single hand.
-	{\bf\item Object classes:} Each object will be assigned to an \iterm{object class}. The objects \quotes{lemonade} and \quotes{ice tea} may be of class \quotes{beverage} for example.
+	{\bf\item Predefined objects:} 
+	\begin{enumerate}
+		{\bf\item Known objects:} These objects are known beforehand and a copy is available for training before the competition, with no noticeable difference among peers (e.g.~coke cans).
 
-	{\bf\item Object (class) locations:} Each object (class) will be assigned to an \iterm{object location}. Objects of class \quotes{drink} may be usually found on the \quotes{kitchen table} for example.
+		{\bf\item Alike objects:} These objects are partially known beforehand and a specimen is available for training before the competition, however there are slight differences among peers (e.g.~apples).
 
-	{\bf\item Announcement:} The TC makes the set of objects (and their names, classes, and usual locations) available during the setup days.
+	\end{enumerate}
 
-	{\bf\item Known vs.\ unknown}: These objects are used as the \iterm{known objects} in the test specifications; \iterm{unknown objects} are not taken from the set of \iterm{predefined objects}. 
-	
-	{\bf\item Placement:}\nterm{object placement} In manipulation tasks, the objects will be positioned at \iterm{manipulation locations} and less than \SI{15}{\centi\meter} away from the border of the surface they are located at. There will be at least 5cm space around each object.
+	{\bf\item Containers}: These objects can contain smaller objects or be filled with its content. As with \iterm{known objects}, are known beforehand and a copy is available for training before the competition, with no noticeable difference among peers (e.g.~bowl).
+
+	{\bf\item Unknown objects}: Any other object that does not belong to the set of \iterm{container objects} nor \iterm{predefined objects}.
+
+	{\bf\item Special objects}: Objects whose recognition is not important but can be moved or operated by the robot such as: door handles, chairs, walking sticks, poles, etc.
+
 \end{enumerate}
+
+The following general rules for objects apply:
+
+\begin{enumerate}
+	{\bf\item Object classes:} Each object will be assigned to an \iterm{object class}. The objects \quotes{apple} and \quotes{banana} may be of class \quotes{fruits} for example.
+
+	{\bf\item Object (class) locations:} Each object (class) will be assigned to an \iterm{object location}. Objects of class \quotes{fruits} may be usually found on the \quotes{kitchen table}, and objects of class \quotes{unknown} may be usually found on the \quotes{trash bin}, for example.
+
+	{\bf\item Announcement:} The TC makes the set of \iterm{containers} and \iterm{predefined objects}, including their names, classes, and usual locations; available during the setup days. 
+	
+	{\bf\item Placement:} \nterm{object placement} Unless stated otherwise, in manipulation tasks, the objects will be positioned at \iterm{manipulation locations} and less than \SI{15}{\centi\meter} away from the border of the surface they are located at. There will be at least \SI{5}{\centi\meter} space around each object.
+\end{enumerate}
+
+It is not allowed to modify any of the objects provided for training.
+
+\subsubsection{Containers}
+A container is any object capable of store, transport or contain, any other (often smaller) object within, such as trays, bowls, baskets, etc.~The TC will provide at least two containers (a transport container such as a tray and a pouring container such as a bowl) which will be available for training during the setup days.
+
+There are no restrictions on a container size, appearance or weight; however, it can be expected that the selected containers be lightweight, with handles, and easily manipulable by a human using both hands.
+
+\paragraph*{Custom containers.} It is allowed that a team provide a \iterm{custom container} adapted to be used by the robot, considering the following:
+\begin{enumerate}
+	\item Custom containers must be approved by the TC during during the \iterm{Robot Inspection} (see \refsec{sec_robot_inspection}).
+	\item Custom containers must \emph{not} have any kind of artificial marks, sensors, or electronic devices.
+	\item Penalties may apply for the use of custom containers.
+\end{enumerate}
+
+\subsubsection{Predefined objects}
+The TC will compile a list of at least \NumObjects objects which will be available for training during the setup days and are referred as \iterm{known objects} in the test specifications. There are no restrictions on an object size, appearance or weight; however, it can be expected that the selected objects are easily manipulable by a human using a single hand.
+
+For \iterm{known objects}, at least one exact copy of the object will be available for training during setup days (as exact as any other \quotes{equal} object you may buy in any store.
+
+For \iterm{alike objects}, at least one specimen of the object will be available for training during setup days, but the one being use during the competition may differ. For instance, if the predefined objects list includes an \quotes{apple} you may expect any size and color for the apple (even marbled apples); or any brand of local newspaper if one is specified. However, the TC will try to reduce the incertitude for this kind of objects. 
+
+\subsubsection{Unknown objects}
+Objects, referred as \iterm{unknown objects} in the test specifications are those that can be easily manipulable by a human using a single hand but does not belong to the \iterm{containers} and \iterm{predefined objects} sets.
+
+Note that, any object not being listed in the set of \iterm{containers} nor in the set of \iterm{predefined objects} is automatically considered an unknown object for scoring purposes (e.g.~ornamentation).
+
+\subsubsection{Special objects}
+For some tests, special objects are used for the robot to interact with. This interaction includes, but is not limited to: pushing, moving, grasping, hand-grasping, delivering, handling and opening.
+
+With \iterm{special objects} the recognition is not as important as its detection and proper interaction. For instance, when opening a door, having the door open is important, not the door handle itself. The same applies if the robot needs to push a chair in order to navigate through a previously blocked path, or handle a walking stick to the granny.
+
+When possible, the TC in coordination with the OC and the local organization, will try to provide an object of the kind for teams to practice, but this cannot be warrantied.
+
+
 
 
 
@@ -110,7 +169,7 @@ These may include places like a \quotes{bookshelf} or a \quotes{dining table}, a
 
 	{\bf\item Position:} The positions of locations are \emph{not} necessarily fixed (see \refsec{rule:scenario_changes}).
 
-	{\bf\item Manipulation locations:} The TC will mark \NumLocations locations out of the set of predefined locations as being \iterm{manipulation locations}. Whenever a test involves manipulation, the object to manipulate will be placed at one of the manipulation locations. 
+	{\bf\item Manipulation locations:} The TC will mark at least \NumLocations locations out of the set of predefined locations as being \iterm{manipulation locations}. Whenever a test involves manipulation, the object to manipulate will be placed at one of the manipulation locations. 
 \end{enumerate}
 
 
