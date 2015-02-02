@@ -4,7 +4,7 @@ The robot is tested in a real environment such as a real restaurant or a shoppin
 \subsection{Focus}
 This test focuses on online mapping, safe navigation in previously unknown environments, gesture detection, human-robot interaction, and manipulation in a real environment.
 
-The robot will need to create it's own map from the environment an then move into it to handle human requests, such as delivering drinks or snacks, while people are walking around.
+The robot will need to create it's own map from the environment and then move into it to handle human requests, such as delivering drinks or snacks, while people are walking around.
 
 \subsection{Setup}
 \begin{enumerate}
@@ -24,9 +24,9 @@ The robot will need to create it's own map from the environment an then move int
 \begin{enumerate}
 \item \textbf{First order (Table A):} Once in the kitchen, the robot shall ask to the \textit{Professional Waiter} to which table go first to take an order from. The robot has to go to the indicated table and ask for an order.
 
-\item \textbf{Detecting a call (Table B or C):} At any time while attending Table A guests (going to fetch an order, asking the client, or returning to the kitchen with the order), a guest in Table B or C will wave to the robot asking for his attention. Robot must state loud that it has detected the call and will attend as soon as possible.
+\item \textbf{Detecting a call (Table B or C):} At any time while attending Table A guests (going to fetch an order, asking the client, or returning to the kitchen with the order), a guest in Table B or C will ask for the robot's attention by waving and calling it out via voice. Robot must state loud that it has detected the call and will attend as soon as possible.
 
-\item \textbf{Second order (Table B or C):} After taking the Table A client's order, and if the request was detected, the robot must go to the table of the waving person and ask for an order.
+\item \textbf{Second order (Table B or C):} After taking the Table A client's order, and if the request was detected, the robot must go to the table of the waving/calling person and ask for an order.
 
 \item \textbf{Avoiding random citizen:} At any time while going to any of the tables or to the \textit{Kitchen}, a person may step on the robot's path. It is expected the robot to avoid that person or stop and wait for it to move away.
 \end{enumerate}
@@ -37,7 +37,7 @@ The robot will need to create it's own map from the environment an then move int
 
 \item \textbf{Delivering phase:}
 \begin{enumerate}
-\item \textbf{Repeating the order:} Once again in the kitchen, the robot recites the orders for each table, including the table number (e.g.~\textit{Hamburger with fries for table 1 and Orange juice for table 2}). This includes determining the table number of the waving person.
+\item \textbf{Repeating the order:} Once again in the kitchen, the robot recites the orders for each table, including the table number (e.g.~\textit{Hamburger with fries for table 1 and Orange juice for table 2}). This includes determining the table number of the waving/calling person.
 
 \item \textbf{Delivering Beverage:} The robot must grab a can of the appropriate drink from a set of cans on the bar and deliver it to the correct table.
 
@@ -100,9 +100,9 @@ The maximum time for this test is 10 minutes.
 	Understanding which table to take an order from & $0.5$ \\
 	Going to the designated table & $1.5$ \\
 	Taking an order from the designated table & $1.0$ \\
-	Noticing a waving person from distance & $2.0$ \\
-	Going to the table of the waving person & $2.0$ \\
-	Taking an order from the waving person & $1.0$ \\
+	Noticing a waving/calling person from distance & $2.0$ \\
+	Going to the table of the waving/calling person & $2.0$ \\
+	Taking an order from the waving/calling person & $1.0$ \\
 	Avoiding a person crossing the robots' path & $1.0$ \\
 	\\
 	\textbi{Delivering phase}  \\
