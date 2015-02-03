@@ -10,28 +10,37 @@ This test focuses mainly on Human-Robot Interaction and Activity Recognition.
 \subsection{Task}
 \begin{enumerate}
 	\item \textbf{Start}: The robot is in a corner of the living room, the patient is sitting in the same room. 
+
 	\item \textbf{Move to the patient}: The patient (lets call her Granny) calls for robot assistance using her voice or by waving arms.
+
 	\item \textbf{Asking for pills}: Granny asks the robot for her pills which are in bottles located on a shelf nearby. 
+
 	\item \textbf{Describe and choose pills}: On the shelf, there are multiple bottles with pills and the robot must asks Granny which bottle she needs.
 	\begin{itemize}
 		\item The robot must indicate what bottles are on the shelf by briefly describing each bottle.
-		\item \textbf{[Optional]:} Describe previously unseen bottles of pills. 
-		\textbf{the faster the robot starts describing (i.e.~finished recognizing) after arrival (standing still in front of the shelf) at the shelf, the better: faster recognition gives more points. }
+		\textbf{the faster the robot starts describing (i.e.~finished recognizing) after arrival (standing still in front of the shelf) at the shelf, the better:} faster recognition gives more points. 
 		\begin{itemize}
  			\item \quotes{The leftmost one}
   			\item \quotes{The \textit{color} bottle}
   			\item \quotes{The big/small bottle}
   			\item Any other description the robot understands and spoke out loud to Granny. E.g.~if a robot can do text recognition and read each label to Granny, she may reply with e.g.~\quotes{Asperine}.
  		\end{itemize}
+		\item \textbf{Describe unknown pills' bottles [Optional]:}. Team leader may request to use a set of pills' bottles which were not available beforehand for training (unknown to all robots). Additional points may be by Jury if the robot succeed in describing the unknown pills' bottles to Granny.
  	\end{itemize}
+
  	\item \textbf{Grasp \& handover pills}: The robot must grasp the indicated bottle of pills and hand them over to Granny. The handover to Granny must be \quotes{natural}, without a voice confirmation of when to let the pills go etc.~Granny will take the pills from the robot's hand and the robot must open its hand.
- 	\item \textbf{[Optional]:} Open bottle and give pills
+
+ 	\item \textbf{Open pills bottle [Optional]:} After grasping a pills bottle, the robot may try to open it before delivering it to Granny.
+
+ 	\item \textbf{Give a single pill [Optional]:} If the robot succeeds opening the pills bottle, it may try to fecth a single pill from it to delivery to Granny.
+
  	\item \textbf{Activity Recognition}: One of the activities below happens and the robot must act accordingly:
  	\begin{itemize}
- 		\item \textbf{Drop blanket}: Granny's stands up and sits doen immediately. Her blanket falls over her lap on to the ground. The robot must \textbf{pick up the blanket} and hand it to Granny
- 		\item \textbf{Fall}: Granny stands up from her chair and falls. The robot must \textbf{hand Granny a phone} or use the Smart Home for that.
-								The phone will be laying on the coffee table in the living room.
-								\textbf{[Optional]:} Use Smart House option instead of calling.
+ 		\item \textbf{Drop blanket}: Granny's stands up and sits doen immediately. Her blanket falls over her lap on to the ground. The robot must \textbf{pick up the blanket} and hand it to Granny.
+
+ 		\item \textbf{Fall}: Granny stands up from her chair and falls. The robot must \textbf{hand Granny a phone}. The phone will be laying nearby, e.g.~on the coffee table in the living room. \\
+		\textbf{[Optional]:} Robot may use Smart House option to do a phone call instead of delivering the phone to Granny.
+
  		\item \textbf{Walk and sit}: Granny walks to a table with her walking stick/cane. Robot must follow and take walking stick from Granny after she sits down an a chair closeby.
  	\end{itemize}
 \end{enumerate}
@@ -42,28 +51,33 @@ This test focuses mainly on Human-Robot Interaction and Activity Recognition.
 \item \textbf{Continue Rule:} The CONTINUE rule may be applied several times in the Conversation part of the test (Section \refsec{rule:asrcontinue}).
 \item \textbf{Make it fast:} Description of objects should be fast, as is reflected in the scoring.
 % \item The bottles of pills are not known beforehand and must be recognized and described on the spot by the robot. 
+\item \textbf{Opening pill bottles:} Provided pills' bottles will be chosen so they can be opened easily by twist, i.e.~no push and twist, no uncap, no seals nor any other complex opening method.
 \end{enumerate}
 
 \subsection{Referee instructions}
 
 The referee needs to
 \begin{itemize}
-\item Place the bottles (with screw caps) on the shelf. Also ask the team whether they want previously unseen bottles or already known ones.
-\item Lay the phone on the coffee table.
+\item Ask Team Leeader whether they want known or unknown pills' bottles.
+\item Place the bottles on the shelf.
+\item Place the phone on announced position.
 \end{itemize}
 
 \subsection{OC instructions}
 
 \textbf{2 hours before the test}
 \begin{itemize}
-\item Announce the room where the patient is
-\end{itemize}
-\textbf{During the test}
-\begin{itemize}
-\item Instruct Granny which pills she wants.
-\item Instruct Granny which of the 3 actions to perform.
+	\item Announce the room where the patient is.
+	\item Announce the room where the phone is.
 \end{itemize}
 
+\textbf{During the test}
+\begin{itemize}
+	\item Instruct Granny which pills she wants.
+	\item Instruct Granny which of the 3 actions to perform.
+\end{itemize}
+
+\newpage 
 \subsection{Score sheet}
 
 The maximum time for this test is 10 minutes.
@@ -100,9 +114,10 @@ The maximum time for this test is 10 minutes.
 	Grasp phone + give phone & 3+1 \\
 	Take walking stick / cane & 4 \\ 
 	\\
-	\textbi{Bonuses} &  \\
-	Using a Smart House option instead of grasping \& giving phone. These are mutually exclusive& 1 \\
-	Describe previously unseen pill bottles & 3 \\
+	\textbi{Bonuses (up to 18 points)} &  \\
+	Using Smart House to call instead of grasping \& giving the phone & 1 \\
+	(These are mutually exclusive) & \\
+	Describe unknown pills' bottles & 3 \\
 	Opening the pill bottle (with a screw cap) & 4 \\ 
 	Picking a single pill from the bottle & 10 \\ \hline
 	\textbf{Total score (excluding penalties and bonuses)} & 25
