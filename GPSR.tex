@@ -24,7 +24,7 @@ This test particularly focuses on the following aspects:
 		\item \textbf{Category III:} Tasks with a high degree of difficulty (challenging). This category includes counting objects in a shelf or people in a crowd, deal with incomplete information (human-robot interaction), state the gender or gesture or a person, handling clothes, etc.
 	\end{enumerate}
 
-	\item \textbf{Task assignment:} The robot is given the command by the operator and may directly start to work on the task assignment.
+	\item \textbf{Task assignment:} The robot is given the command by the operator and may directly start to work on the task assignment. The robot must must prove it has understood the given command by repeating it.
 	\item \textbf{Exiting the arena:} After accomplishing the assigned task, the robot has to leave the arena.
 \end{enumerate}
 
@@ -62,6 +62,13 @@ Each task assignment contains an action $a \in A$ and, depending on the respecti
 		\item If the robot appears to consistently not be able to understand the operator, the referees ask the team to continue with a custom operator (Section \refsec{rule:operator}).
 		\item With the custom operator, the team can only score 50\% of the points for the respective command.
 	\end{itemize}
+	\item \textbf{Repeating the given command:} The robot must show it has understood the given command by stating all the required information to accomplish the task. This doesn't mean the robot must repeat exactly the same given command. For instance, if the robot is instructed to \textit{\quotes{deliver a coke to Mary in the kitchen}}, the robot may ask: \textit{\quotes{do you want me to go to the kitchen, find Mary and deliver a coke to her?}} or \textit{\quotes{do you want me to find Mary at the kitchen and give her a coke?}} since both sentences involve all given information.
+	\item \textbf{Asking reasonable questions} 
+	\begin{enumerate}
+		\item \textbf{Misunderstood information:} When the robot did not understood part of a command or it is unsure of what has been told, it may ask the operator to repeat or clarify without fall into a new attempt. For instance, if the robot is instructed to \textit{\quotes{bring me the apple juice from the kitchen table}}, a valid question for the robot to ask is \textit{\quotes{did you say apple juice or pineapple juice?}} without considering it as a new attempt for giving the command.
+		\item \textbf{Missing information:} When a given command lacks of information required for accomplishing the task, the robot should request for that missing part. For instance, if the robot is instructed to \textit{\quotes{offer a drink to the person at the door}}, a proper question for the robot to ask is \textit{\quotes{which drink should I deliver to the person at the door?}} It is also possible that the robot simply confirms the command and fetch a random drink at drinks' location, however, no points will be scored for solving that part.
+		% \item \textbf{Nonsenseness:}
+	\end{enumerate}
 	\item \textbf{Following people} 
 	\begin{enumerate}
 		\item \textbf{Instruction:} The robot interacts with the operator, \emph{not} the team. That is, the team is not allowed to briefly instruct the operator.
