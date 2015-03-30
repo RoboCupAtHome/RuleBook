@@ -21,16 +21,16 @@ The \iterm{RoboCup@Home arena} is a realistic home setting consisting of inter-c
 The indoor home setting will be surrounded by high and low \Term{walls}{Arena walls}. These walls will be built up using standard fair construction material.
 
 \begin{enumerate}
-	{\bf\item Walls:} Walls have a minimum height of \SI{60}{\centi\meter}. A maximum height is not specified, but should be chosen so that the audience is able to watch the competition.\\
+	\item \textbf{Walls:} Walls have a minimum height of \SI{60}{\centi\meter}. A maximum height is not specified, but should be chosen so that the audience is able to watch the competition.\\
 	Walls will be fixed and are likely to be not modified during the competition (see \refsec{rule:scenario_changes}). 
 
-	{\bf\item Doors:} There will be at least two entry/exit \Term{doors}{Arena doors} connecting the outside of the scenario. These doors are used as starting points for the robots (see \refsec{rule:start_position}).
+	\item \textbf{Doors:} There will be at least two entry/exit \Term{doors}{Arena doors} connecting the outside of the scenario. These doors are used as starting points for the robots (see \refsec{rule:start_position}).
 	% At least one of the entrances will be a door with a handle (not a knob).\
 	There will be also another door inside the scenario with a handle (not a knob) between any two rooms. Doors with handle (not a knob) may be closed at any time, it is expected robots be able to open them.
 
-	{\bf\item Floor:} The floor of the arena as well as the doorways of the arena are even. That is, there will be no significant steps or even stairways. However, minor unevenness such as carpets, transitions in floor covering between different areas, and minor gaps (especially at doorways) must be expected.
+	\item \textbf{Floor:} The floor of the arena as well as the doorways of the arena are even. That is, there will be no significant steps or even stairways. However, minor unevenness such as carpets, transitions in floor covering between different areas, and minor gaps (especially at doorways) must be expected.
 
-	{\bf\item Appearance:} Floor and walls are mainly uni-colored but can contain texture, e.g., a carpet on the floor, or a poster or picture on the wall.\\
+	\item \textbf{Appearance:} Floor and walls are mainly uni-colored but can contain texture, e.g., a carpet on the floor, or a poster or picture on the wall.\\
 	Although being unlikely at the moment, transparent elements are also possible. 
 \end{enumerate}
 
@@ -63,10 +63,10 @@ A typical arena setup is shown in \reffig{fig:scenario_arena}.
 
 Since the robots should be able to function in the real world the scenario is not fixed and might change without further notice.
 \begin{enumerate}
-	{\bf\item Major changes:} Changes will primarily influence the position of objects such as furniture inside the arena while walls are likely to stay fixed. Multiple changes may take place up to completely restructuring the internals of the apartment. The position of named locations (see \refsec{rule:scenario_names}) are not changed when used in a test, e.g., as navigation goal. \\
+	\item \textbf{Major changes:} Changes will primarily influence the position of objects such as furniture inside the arena while walls are likely to stay fixed. Multiple changes may take place up to completely restructuring the internals of the apartment. The position of named locations (see \refsec{rule:scenario_names}) are not changed when used in a test, e.g., as navigation goal. \\
 	In addition, passages may be blocked and cleared, respectively. One hour before a test slot begins no \iterm{major changes} will be made.
 
-	{\bf\item Minor changes:} In contrast to major changes, \iterm{minor changes} like, for instance, slightly moved chairs cannot be avoided and may happen at any time (even during a test). 
+	\item \textbf{Minor changes:} In contrast to major changes, \iterm{minor changes} like, for instance, slightly moved chairs cannot be avoided and may happen at any time (even during a test). 
 \end{enumerate}
 
 
@@ -160,8 +160,8 @@ These may include places like a \quotes{bookshelf} or a \quotes{dining table}, a
 \label{rule:scenario_rooms}
 Some tests in the RoboCup@Home league involve \iterm{predefined rooms}. 
 \begin{enumerate}
-	{\bf\item Definition:} The TC will compile a list of room names.
-	{\bf\item Announcement:} The TC makes the set of rooms available during the setup days.
+	\item \textbf{Definition:} The TC will compile a list of room names.
+	\item \textbf{Announcement:} The TC makes the set of rooms available during the setup days.
 \end{enumerate}
 
 
@@ -171,11 +171,11 @@ Some tests in the RoboCup@Home league involve \iterm{predefined rooms}.
 Some tests in the RoboCup@Home league involve \iterm{predefined names} of people. 
 
 \begin{enumerate}
-	{\bf\item Definition:} The TC will compile a list of \NumNames predefined names. The names are \SI{50}{\percent} male and \SI{50}{\percent} female, and taken from the (current) most common first names in the United States.\\
+	\item \textbf{Definition:} The TC will compile a list of \NumNames predefined names. The names are \SI{50}{\percent} male and \SI{50}{\percent} female, and taken from the (current) most common first names in the United States.\\
 	In order to ease speech recognition, it is tried to select names to be phonetically different from each other.
 
-	{\bf\item Announcement:} The TC makes the set of names available during the setup days.
-	{\bf\item Assignment:} When a test involves interacting with persons (using a person's name), all involved persons are assigned names by the referees before the test. 
+	\item \textbf{Announcement:} The TC makes the set of names available during the setup days.
+	\item \textbf{Assignment:} When a test involves interacting with persons (using a person's name), all involved persons are assigned names by the referees before the test. 
 \end{enumerate}
 
 Typical names are, for example, James, John, Robert, Michael and William as male names; Mary, Patricia, Linda, Barbara and Elizabeth as female names.
@@ -213,9 +213,9 @@ This list must be announced at least one month prior the competition. In case th
 The list of \iterm{Smart~Home} official devices will include as much technical information as possible. However, before it becomes available you may assume the following considerations:
 
 \begin{enumerate}
-	{\bf\item Interface:} Most Smart~Home devices interface wireless, often via R/F transmitters. When possible, the OC will provide an official interface via the \iterm{arena network}.
-	{\bf\item Operating voltage:} The operating voltage used will be the standard for the place of the competition (e.g.120V/60Hz for North America and 220V/50Hz for Europe). Please note that devices designed for other voltages/frecuencies may burn when plugged to the outlet.
-	{\bf\item Type of devices:} Mostly Smart~Home switches will be used (set on/off, read can not be guaranteed). For high bandwidth devices such as microphones or video cameras, an official interface (such as a ROS topic or web service) will be provided via the \iterm{arena network}.
+	\item \textbf{Interface:} Most Smart~Home devices interface wireless, often via R/F transmitters. When possible, the OC will provide an official interface via the \iterm{arena network}.
+	\item \textbf{Operating voltage:} The operating voltage used will be the standard for the place of the competition (e.g.120V/60Hz for North America and 220V/50Hz for Europe). Please note that devices designed for other voltages/frecuencies may burn when plugged to the outlet.
+	\item \textbf{Type of devices:} Mostly Smart~Home switches will be used (set on/off, read can not be guaranteed). For high bandwidth devices such as microphones or video cameras, an official interface (such as a ROS topic or web service) will be provided via the \iterm{arena network}.
 \end{enumerate}
 
 \subsubsection{Availability \& Scoring}
