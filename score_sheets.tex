@@ -1,0 +1,175 @@
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%          $Id: score_sheets.tex 432 2013-05-21 15:33:27Z stueckler $
+%%    author(s): RoboCup@Home Technical Committee
+%%  description: RoboCup@Home Rulebook: Score Sheets
+%%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt, a4paper]{book}
+
+\usepackage{soul}
+
+\input{./setup/packages.tex}
+
+\usepackage{fullpage}
+\parindent 0cm
+\parskip 0.2cm
+\topmargin -1cm
+\oddsidemargin -1cm
+\evensidemargin -1cm
+\textwidth 18cm
+\textheight 26cm
+
+\input{./active_version.tex}
+\graphicspath{{\YEAR/}{./images/}}
+\input{./setup/macros.tex}                        % defined in macros.tex
+\input{./setup/abbrevix.tex}                      % for list of abbreviations
+
+\hypersetup{
+  pdftitle     = {RoboCup@Home Forms \& Score Sheets},
+  pdfsubject   = {RoboCup@Home Forms \& Score Sheets},
+  pdfauthor    = {RoboCup@Home Technical Committee},
+  pdfkeywords  = {RoboCup, @Home, Rules, Competition},
+  pdfstartpage = {1},                 % 
+  colorlinks   = true,                % Farbige links
+  anchorcolor  = black,               % anchor-text (header)
+  linkcolor    = black,               % content,index,ref/pageref-label
+  urlcolor     = blue,                % URLs - http-Adressedate (auch TeX)
+  pdfcreator   = {pdflatex},
+  pdfproducer  = {latex-pdftex}
+}
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+%%  H E A D I N G S                     %%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+
+%% * Pagestyle
+\fancypagestyle{plain}{
+        \fancyhf{}
+        \fancyhead{}
+        \fancyfoot[C]{\scriptsize \sffamily \footline{}}
+		\renewcommand{\headrulewidth}{0 pt}
+}
+
+\newcommand{\footline}{RoboCup@Home Forms \& Score Sheets / \rulebookVersion}
+
+
+
+\begin{document}
+
+\input{teams.tex}
+
+\begin{titlepage}
+  \begin{center}
+    {
+      \includegraphics[width=.25\textwidth]{images/logo_RoboCupFed.jpg}
+      \hfill
+      \includegraphics[width=.25\textwidth]{images/logo_RoboCupAtHome.jpg}\\[1.23ex]
+    }
+    \vspace{2.7 cm}
+    \hrulefill\par
+    {%
+      \vspace*{.27cm}
+      \Huge{RoboCup@Home}\\[1.23ex]
+      \Large Forms \& Score Sheets\\[2ex]
+    }
+    \hrulefill\par
+    \vfill
+    ~~ Version: \YEAR \quad \svnRevision ~~ \\
+    ~~ Last Build Date: \today \quad Time: \the\time ~~ \\
+    ~~ \svnChangeData ~~ %\\
+    %\vfill
+  \end{center}
+\end{titlepage}
+
+\pagestyle{plain}
+
+\input{registration_form.tex}
+
+\renewcommand{\shortScoresheet}{false}
+
+% \TODO{Write new score sheets}
+
+%%% STAGE I %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\currentTest}{Robo-Zoo}
+\renewcommand{\retryAvailable}{false}
+\renewcommand{\continueAvailable}{false}
+\begin{scoresheet}
+\input{scoresheets/RoboZoo}
+\end{scoresheet}
+
+%%% STAGE 1 TESTS GO HERE %%%
+\renewcommand{\retryAvailable}{false}
+\renewcommand{\continueAvailable}{true}
+
+\renewcommand{\currentTest}{General Purpose Robot}
+\begin{scoresheet}
+\input{scoresheets/GPSR.tex}
+\end{scoresheet}
+
+\renewcommand{\continueAvailable}{false}
+
+
+\renewcommand{\currentTest}{Manipulation}
+\begin{scoresheet}
+\input{scoresheets/Manipulation.tex}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Navigation}
+\begin{scoresheet}
+\input{scoresheets/Navigation.tex}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Person Recognition}
+\begin{scoresheet}
+\input{scoresheets/PersonRecognition.tex}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Speech Recognition}
+\begin{scoresheet}
+\input{scoresheets/SpeechRecognition.tex}
+\end{scoresheet}
+
+
+
+% %%% STAGE II %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% STAGE 2 TESTS GO HERE %%%
+
+\renewcommand{\currentTest}{Open challenge}
+\begin{scoresheet}
+\input{scoresheets/OpenChallenge.tex}
+\end{scoresheet}
+
+\renewcommand{\retryAvailable}{true}
+\renewcommand{\continueAvailable}{true}
+
+\renewcommand{\currentTest}{Restaurant}
+\begin{scoresheet}
+\input{scoresheets/Restaurant.tex}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Robo-Nurse}
+\begin{scoresheet}
+\input{scoresheets/RoboNurse.tex}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Wake Me Up}
+\begin{scoresheet}
+\input{scoresheets/WakeMeUp.tex}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Final Demonstration -- Jury Evaluation}
+\begin{scoresheet}
+\input{scoresheets/FinalsJury.tex}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Final Demonstration -- Executive Committee}
+\begin{scoresheet}
+\input{scoresheets/FinalsExec.tex}
+\end{scoresheet}
+
+\end{document}
+

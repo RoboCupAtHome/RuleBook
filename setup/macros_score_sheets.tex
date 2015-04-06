@@ -108,7 +108,7 @@
   \hfill
   \begin{minipage}[t]{0.15\textwidth}%
     \vspace{0pt}
-    \includegraphics[width=\textwidth]{general/images/logo_RoboCupAtHome.jpg}%
+    \includegraphics[width=\textwidth]{images/logo_RoboCupAtHome.jpg}%
   \end{minipage}\\
 }
 {
@@ -196,10 +196,10 @@
           	\ifthenelse {\equal{\continueAvailable}{true}}{\scoreitem[0.50]{0}{2nd CONTINUE}}{}
 		  }
           
-          \scoreitem{-500}{Not attending \ifShortScoresheet{(see sec.~\ref{rule:not_attending})}{}}
+          \scoreitem{-50}{Not attending \ifShortScoresheet{(see sec.~\ref{rule:not_attending})}{}}
           
           \ifthenelse{\equal{\scorelistOptions}{openDoorSignal}}{
-            \scoreitem{-100}{Using start button \ifShortScoresheet{(see sec.~\ref{rule:start_button})}{}}
+            \scoreitem{-10}{Using start button \ifShortScoresheet{(see sec.~\ref{rule:start_button})}{}}
           }{}
 
           % \ifthenelse{\value{currOutstandingBonus} = 0}{
@@ -248,9 +248,9 @@
     % usage: \scoreheading{text}
     \newcommand{\scoreheading}[1]{
       \ifShortScoresheet {%
-        \phantom{.} \\[-4 ex] \multicolumn{2}{@{}l}{\textbf{\textit{#1}}}\\[3pt]
+        \phantom{.} \\[-4 ex] \multicolumn{2}{@{}l}{\textbf{\textit{#1}}}\\[0pt]
       }{%
-        \phantom{.} \\[-4 ex] \multicolumn{3}{@{}l}{\textbf{\textit{#1}}}\\[3pt]
+        \phantom{.} \\[-4 ex] \multicolumn{3}{@{}l}{\textbf{\textit{#1}}}\\[0pt]
       }
     }
 
@@ -263,7 +263,7 @@
         \addtocounter{currTestScore}{ #2 * #1 }
       }{}%
       % 
-      \begin{minipage}[t]{\linewidth} {#3} \vspace{0.5 em} \end{minipage} & %
+      \begin{minipage}[t]{\linewidth} {#3} \vspace{0.1 em} \end{minipage} & %
       \scoring{ \ifthenelse{ \equal{#1}{1} }{}{ #1 $\times$} \ifthenelse{ \equal{#2}{0} }{}{ #2}}%
       % insert check marks:	
       %	\ifShortScoresheet{}{ & \forloop{ct}{0}{\value{ct} < #1}{ \Square}} \\[3pt]
@@ -271,7 +271,7 @@
       \ifShortScoresheet{ %
         \\ 
       }{ % else
-        & \rule{0.08\linewidth}{.2pt} \ifEvaluationSheet{}{\ifthenelse{\equal{\retryAvailable}{true}}{& \rule{0.08\linewidth}{.2pt}}{}} \\[5pt]
+        & \rule{0.08\linewidth}{.2pt} \ifEvaluationSheet{}{\ifthenelse{\equal{\retryAvailable}{true}}{& \rule{0.08\linewidth}{.2pt}}{}} \\[0pt]
       }
     }
 

@@ -112,37 +112,9 @@ The robot will need to create it's own map from the environment and then move in
 % \item 
 % \end{itemize}
 
+\newpage
 \subsection{Score sheet}
-The maximum time for this test is 10 minutes.
-
-\begin{tabularx}{\textwidth}{ X r }
-	\textbf{Action} & \textbf{Score} \\ \hline
-	\textbi{Training phase}  \\
-	Learning the location of a table (Professional Waiter) & $3 \times 1.0$ \\
-	Learning the location of a table (Custom Waiter) & $3 \times 0.5$ \\
-	Inferring the side on which a table is (Professional Waiter only)& $3 \times 1.0$ \\
-	\\
-	\textbi{Ordering phase}  \\
-	Understanding which table to take an order from & $0.5$ \\
-	Going to the designated table & $1.5$ \\
-	Taking an order from the designated table & $1.0$ \\
-	Noticing a waving/calling person from distance & $2.0$ \\
-	Going to the table of the waving/calling person & $2.0$ \\
-	Taking an order from the waving/calling person & $1.0$ \\
-	Avoiding a person crossing the robots' path & $1.0$ \\
-	\\
-	\textbi{Delivering phase}  \\
-	Reciting both the order and table number for both tables & $2 \times 0.5$ \\
-	Grasping the correct drink & $1.0$ \\
-	Getting close to the correct table with the drink & $1.5$ \\
-	Delivering the drink by placing it on the correct table & $1.5$ \\
-	Picking up the plate & $1.5$ \\
-	Getting close to the correct table with the plate & $1.5$ \\
-	Delivering the plate by placing it on the correct table & $2.0$ \\
-	\\ \hline
-	\textbf{Total score} (excluding penalties and bonuses) & 25.0 \\
-\end{tabularx}
-
+\input{scoresheets/Restaurant.tex}
 
 % Local Variables:
 % TeX-master: "Rulebook"

@@ -155,10 +155,10 @@ dofullpdf:
 	$(SILENT) $(MAKE) dopdflatex
 
 dopdflatex:
-	#$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	#$(SILENT) $(ITEM); $(MSG) "  -- Creating Score Sheets"; $(RESET)
-	#$(PDFLATEX) $(PDFLATEXFLAGS) score_sheets 
-	#$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
+	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
+	$(SILENT) $(ITEM); $(MSG) "  -- Creating Score Sheets"; $(RESET)
+	$(PDFLATEX) $(PDFLATEXFLAGS) score_sheets 
+	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(PDFFILE)' via $(PDFLATEX)"; $(RESET)
 	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(TEXFILE) 
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
