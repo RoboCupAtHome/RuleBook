@@ -16,7 +16,7 @@ Perceiving the obstacles is also critical in safely navigating a home environmen
 
 \begin{enumerate}
 \item \textbf{Location:} One of the arenas (apartment). The apartment is in its normal state.
-\item \textbf{Doors:} All doors in the apartment are open, except for the entry door. The arena/apartment must contain 2 doors within the apartment (thus excluding the entry/exit doors). Any destination in the room should be reachable via either door but not via any other way.
+\item \textbf{Doors:} All doors in the apartment are open, except for the entry door. The arena/apartment has 2 doors inside communicating rooms (i.e.~excluding the entry/exit doors). One of the rooms in the apartment should be reachable via either one door or the other, but not via any other way.
 \end{enumerate}
 
 \subsection{Task}
@@ -24,20 +24,10 @@ The robot must visit a set of waypoints and avoid the obstacles on its path. All
 
 \begin{enumerate}
 \item \textbf{Entering the arena:} The robot starts outside the environment and must wait until the door opens.
-\item \textbf{Waypoint A (door):} The robot must navigate to waypoint A. Waypoint A is reachable via several paths that include doors. One of the doors will be shut. The robot may:
-\begin{enumerate}
-\item To take a different path.
-\item Open the closed door.
-\end{enumerate}
-The robot must report whether it reached the waypoint.
 
-\item \textbf{Waypoint B (dynamic obstacles):} The robot must navigate to waypoint B which is also reachable via (the same) two doors, one of each may still be closed. On it's path the robot may find a dynamic obstacle (movable people, other robot, pets, etc.) which blocks it's path to waypoint B. The robot may:
-\begin{enumerate}
-\item To take a different path.
-\item Ask the obstacle to move out.
-\item Wait for the object to move away by itself.
-\end{enumerate}
-The robot must report whether it reached the waypoint.
+\item \textbf{Waypoint 1:} After entering the arena, the robot must navigate to Waypoint 1, which is randomly chosen to be a Waypoint A or Waypoint B:
+
+\item \textbf{Waypoint 2:} After entering the arena, the robot must navigate to Waypoint 2, which is either A (if B was selected as Waypoint 1) or B (if A was selected as Waypoint 1).
 
 \item \textbf{Waypoint 3 (following a human) [Optional]:} When requested by the team leader, there may be a \iterm{Professional Walker} waiting nearby Waypoint 2 (either A or B). Instead of just leaving the arena, the robot may follow the \iterm{Professional Walker} outside the arena to Waypoint 3 and then navigate back to the starting point.
 
@@ -59,6 +49,24 @@ The robot must report whether it reached the waypoint.
 	\label{fig:navigation}
 \end{figure}
 
+\subsection{Waypoints A \& B}
+\begin{enumerate}
+\item \textbf{Waypoint A (door):} The robot must navigate to waypoint A. Waypoint A is reachable via several paths that include doors. One of the doors will be shut. The robot may:
+\begin{enumerate}
+\item To take a different path.
+\item Open the closed door.
+\end{enumerate}
+The robot must report whether it reached the waypoint.
+
+\item \textbf{Waypoint B (dynamic obstacles):} The robot must navigate to waypoint B which is also reachable via (the same) two doors, one of each may still be closed. On it's path the robot may find a dynamic obstacle (movable people, other robot, pets, etc.) which blocks its path to waypoint B. The robot may:
+\begin{enumerate}
+\item To take a different path.
+\item Ask the obstacle to move out.
+\item Wait for the object to move away by itself.
+\end{enumerate}
+The robot must report whether it reached the waypoint.
+\end{enumerate}
+
 \subsection{Additional rules and remarks}
 \begin{enumerate}
 	\item \textbf{Make it fast:} If a robot is absolutely unable to handle one or more obstacles, please inform the TC before the test so no time is wasted.
@@ -78,13 +86,30 @@ The robot must report whether it reached the waypoint.
 	\end{enumerate}
 \end{enumerate}
 
-%\subsubsection{Referee instructions}
-%
-%The referee needs to
-%\begin{itemize}
-%\item 
-%\item 
-%\end{itemize}
+\subsection{Referee instructions}
+
+The referee needs to
+\begin{itemize}
+	\item Choose Waypoint A or B as Waypoint 1 and the other as Waypoint 2.
+	\item Instruct the OC and volunteers on when and where locate objects.
+	\item Instruct the OC and volunteers on when and which doors must be closed.
+	\item Stop the robot immediately when it is about to collide.
+\end{itemize}
+
+\subsection{OC instructions}
+
+\textbf{2 hours before the test}
+\begin{itemize}
+	\item Announce the locations for waypoint 1, 2, and 3.
+\end{itemize}
+
+\textbf{During the test}
+\begin{itemize}
+	\item Open and close the doors when instructed by the referee.
+	\item Place the obstacles (or act as an obstacle) when instructed by the referee.
+\end{itemize}
+
+\newpage
 
 \subsection{Score sheet}
 \input{scoresheets/Navigation.tex}
