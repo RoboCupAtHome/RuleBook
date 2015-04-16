@@ -21,7 +21,7 @@ This test particularly focuses on the following aspects:
 	\begin{enumerate}
 		\item \textbf{Category I:} Tasks with a low degree of difficulty (easy to solve). This category includes indoor navigation, grasping known objects, answering questions (from the predefined set of questions), etc.
 		\item \textbf{Category II:} Tasks with a moderate degree of difficulty. This category includes following a human, indoor navigation in crowded environments, grasping alike objects, find a calling person (waving or shouting), etc.
-		\item \textbf{Category III:} Tasks with a high degree of difficulty (challenging). This category includes counting objects in a shelf or people in a crowd, deal with incomplete information (human-robot interaction), state the gender or gesture or a person, handling clothes, etc.
+		\item \textbf{Category III:} Tasks with a high degree of difficulty (challenging). This category includes counting objects in a shelf or people in a crowd, deal with incomplete information (human-robot interaction), state the gender or gesture or a person, handling clothes, etc. Also, in this category, the three actions may not be explicitly stated.
 	\end{enumerate}
 
 	\item \textbf{Task assignment:} The robot is given the command by the operator and may directly start to work on the task assignment. The robot must must prove it has understood the given command by repeating it (Please see the remarks about this in section~\ref{sec:gpsr_remarks}).
@@ -43,15 +43,29 @@ Required in this test are:
 Each task assignment contains an action $a \in A$ and, depending on the respective action an object $o \in O$, a location $l \in L$, a question $q \in Q$, a person $p \in P$ to interact with, or a combination of those. The set of actions is not given beforehand, instead, teams should identify the abilities from Stage I by themselves (and find synonyms for that). That is, $L$, $O$ and $Q$ are known in advance (provided during setup days), but $A$ has to be \quotes{found out} by the teams (e.g.~taken from freely available ontologies, synonym searches etc.). For the actions $A$ are going to be used common synonyms (like \quotes{go to}, \quotes{move to}, \quotes{drive to}, and \quotes{navigate to} to describe navigation). For the people $P$, any person willing to operate the robot in a natural way can be expected, however, \quotes{Professional Operators} are more likely to be used.
 
 \paragraph{Command examples}
-\begin{itemize}
-	\item Go to the bedroom, find a person and tell the time.
-	\item Go to the kitchen, find a person and follow her.
-	\item Go to the dinner-table, grasp the crackers, and take them to the side-table.
-	\item Go to the shelf, count the drinks and report to me.
-	\item Take this object and bring it to Susan at the hall.
-	\item Bring a coke to the person in the living room and answer him a question.
-	\item Offer a drink to the person at the door (robot needs to solve which drink will be delivered).
-\end{itemize}
+\begin{enumerate}
+	\item \textbf{Category I}
+	\begin{itemize}
+		\item Go to the bedroom, find a person and tell the time (there is only one person in the bedroom).
+		\item Go to the dinner-table, grasp the crackers, and take them to the side-table.
+		\item Bring a coke to the person in the living room and answer him a question (there is only one person in the bedroom).
+		\item Go to the door, ask the person there for her name and tell it to me.
+	\end{itemize}
+	\item \textbf{Category II}
+	\begin{itemize}
+		\item Go to the bedroom, find the waving person and tell the time (there is more than two people in the bedroom, only one waving).
+		\item Go to the kitchen, find a person and follow her (there is only one person in the kitchen).
+		\item Go to the side-table, grasp the coke, and take it to the dinner table (the way to the bedroom is crowdy and the access to the side-table may be blocked by a human).
+		\item Go to the dinner-table, grasp the banana, and take it to the side-table.
+	\end{itemize}
+	\item \textbf{Category III}
+	\begin{itemize}
+		\item Go to the shelf, count the drinks and report to me.
+		\item Take this object and bring it to Susan at the hall (or \textit{take this object, go to the hall, and deliver it to Susan}. Also, it requires grasping from the operator's hand).
+		\item Offer a drink to the person at the door (or \textit{Go to the door, find a person, and deliver a drink to her}. Also, the robot needs to solve which drink will be delivered).
+		\item Bring a coke to the standing person in the living room and answer him a question (there is more than two people in the living room).
+	\end{itemize} 
+\end{enumerate}
 
 \subsection{Additional rules and remarks}
 \label{sec:gpsr_remarks}
