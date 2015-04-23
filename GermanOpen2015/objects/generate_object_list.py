@@ -1,4 +1,4 @@
-
+#! /usr/bin/env python
 # coding: utf-8
 
 # In each object group directory, run $ 
@@ -42,7 +42,7 @@ def generate_row(group, filepath):
     category = parts[1] if len(parts) > 1 else ""
     return """<tr>
         <td><img src="{3}"/> <td>{0}</td> <td>{1}</td> <td>{2}</td> 
-</tr>""".format(name, category, group, os.path.abspath(filepath))
+</tr>""".format(name, category, group, filepath)
 
 
 # In[7]:
