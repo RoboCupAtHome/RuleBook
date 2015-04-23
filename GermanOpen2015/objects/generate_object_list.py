@@ -16,6 +16,7 @@ import os, sys
 known, alike, special, containers = "known", "alike", "special", "containers"
 groups = [known, alike, special, containers]
 
+placements = {"drink":"cabinet", "food":"stove", "tool":"counter", "decoration":"couchtable", "leisure":"small_table"}
 
 # In[4]:
 
@@ -41,8 +42,8 @@ def generate_row(group, filepath):
     name = parts[0] if len(parts) > 0 else ""
     category = parts[1] if len(parts) > 1 else ""
     return """<tr>
-        <td><img src="{3}"/> <td>{0}</td> <td>{1}</td> <td>{2}</td> 
-</tr>""".format(name, category, group, filepath)
+        <td><img src="{3}"/> <td>{0}</td> <td>{1}</td> <td>{2}</td>  <td>{4}</td> 
+</tr>""".format(name, category, group, filepath, placements.get(category, ""))
 
 
 # In[7]:
