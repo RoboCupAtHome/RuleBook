@@ -12,4 +12,3 @@ Here you can find various definitions, maps, questions etc used in the German Op
 - Open challenge: Because there are so few TCś, the Open challenge will be judged by both TC and Team Leaders.
 - RoboNurse: the time for describing pills starts after the robot stopped in front of the shelf. It stops when the robot starts describing the bottles by speech. 
 - Restaurant: If a robot's cannot detect a call for attention, it may for example ask at each table whether everything is OK and if they want to order. In that case, there are no points awarded for "Noticing a waving/calling person from distance" and no point for "Going to the table of the waving/calling person".
-
