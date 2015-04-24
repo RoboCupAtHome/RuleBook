@@ -1,29 +1,37 @@
 
 The maximum time for this test is 5 minutes.
 
-\begin{scorelist}
+\begin{tabularx}{\textwidth}{X r c c c }
 
-	\scoreheading{Waypoints}
-	\scoreitem{10}{Reaching waypoint A}
-	\scoreitem{10}{Reaching waypoint B}
+	\textbf{Action} & \textbf{Score} & \textbf{$1^{st}$ try} & \textbf{$2^{nd}$ try} & \textbf{$3^{rd}$ try} \\ \hline
+	& & & & \\ 
+	\textit{\textbf{Waypoints}} \\
+	Reaching waypoint 1 & $10$ & \hrulefill & \hrulefill & \hrulefill \\
+	Reaching waypoint 2 & $10$ & \hrulefill & \hrulefill & \hrulefill \\ 
+	& & & & \\ 
+	\textit{\textbf{Obstacles}} \\
+	Avoiding obstacle 1 (Box-sized item) & $20$ & \hrulefill & \hrulefill & \hrulefill \\
+	Avoiding obstacle 2 (Static obstacle near waypoint) & $30$ & \hrulefill & \hrulefill & \hrulefill \\
+	Avoiding obstacle 3 (Difficult-to-see object) & $40$ & \hrulefill & \hrulefill & \hrulefill \\
+	Reporting unreachable waypoint due to an obstacle (will end the test) & $10$ & \hrulefill & \hrulefill & \hrulefill \\
+	& & & & \\ 
+	\textit{\textbf{Waypoint A (Door)}} \\
+	Starting a new path after reaching a closed door & $ 20 $ & \hrulefill & \hrulefill & \hrulefill \\
+	Opening the door and continue instead of plan a new trajectory & $40$ & \hrulefill & \hrulefill & \hrulefill \\
+	& & & & \\ 
+	\textit{\textbf{Waypoint B (Dynamic obstacle)}} \\
+	Starting a new path after reaching the dynamic obstacle & $ 20 $ & \hrulefill & \hrulefill & \hrulefill \\
+	Correctly state the nature of the dynamic obstacle and act in consequence (move a chair or ask person to move out) & $40$ & \hrulefill & \hrulefill & \hrulefill \\
+	& & & & \\ 
+	\textit{\textbf{Optional tasks}} \\
+	Reaching waypoint 3 & $ 10 $ & \hrulefill & \hrulefill & \hrulefill \\
+	Reentering the arena after reaching Waypoint 3 & $40$ & \hrulefill & \hrulefill & \hrulefill \\ \hline
+	& & & & \\ 
+	\textit{\textbf{Score per try}} & $200$ & \hrulefill & \hrulefill & \hrulefill \\ 
+	& & & & \\ 
+	\textbf{Total Score} & $200$ & & & \\ \cline{3-5}
 
-	\scoreheading{Obstacles}
-	\scoreitem{20}{Avoiding obstacle 1}
-	\scoreitem{30}{Avoiding obstacle 2}
-	\scoreitem{40}{Avoiding obstacle 3}
-	\scoreitem{10}{Reporting unreachable waypoint due to an obstacle (will end the test)}
-
-	\scoreheading{Doors}
-	\scoreitem[2]{20}{Starting a new path after reaching a closed door}
-	\scoreitem[2]{45}{Opening the door and continue instead of plan a new trajectory}
-
-	\scoreheading{Optional tasks (up to 50 points)}
-	\scoreitem{10}{Reaching waypoint}
-	\scoreitem{40}{Reentering the arena after reach Waypoint 3}
-
-	\setTotalScore{200}
-\end{scorelist}
-
+\end{tabularx}\\
 
 % Local Variables:
 % TeX-master: "Rulebook"
