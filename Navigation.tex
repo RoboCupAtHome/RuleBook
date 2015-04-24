@@ -20,7 +20,7 @@ Perceiving the obstacles is also critical in safely navigating a home environmen
 \end{enumerate}
 
 \subsection{Task}
-The robot must visit a set of waypoints and avoid the obstacles on its path. All waypoints are related to furniture in the arena, such as a table, a couch or a plant etc, and their order can be reversed.
+The robot must visit a set of waypoints and avoid the obstacles on its path. All waypoints are related to objects (furniture) in the arena, such as a table, a couch or a plant etc, and their order can be reversed.
 
 \begin{enumerate}
 \item \textbf{Entering the arena:} The robot starts outside the environment and must wait until the door opens.
@@ -40,6 +40,7 @@ The robot must visit a set of waypoints and avoid the obstacles on its path. All
 \item \textbf{Leave the arena:} Go outside the arena through the same the robot started.
 
 \paragraph{Note} Objects will be placed during the test in the robot's path which it must avoid. The closing / opening doors give the Technical Committee the possibility to change the order in which the obstacles are encountered, so there is no predefined order of obstacles encountered. Again, waypoint A and B are interchangeable.
+\paragraph{Note} Reaching a waypoint means that the robot is looking at the waypoint-object and that the object is in reach of the robot's arm. 
 \end{enumerate}
 
 \begin{figure}[tbp]
