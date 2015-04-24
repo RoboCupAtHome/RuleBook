@@ -17,11 +17,11 @@ with open("speech_recognition_questions.csv") as f:
         dict_key = "{0}: {1}".format(question_index, q["Question"])
 
         print "Question {0}: {1}.   ----> {2}".format(question_index, q["Question"], q["ANSWER"])
-        key = raw_input("Correct answer? c = correct, i = incorrect: ").strip()
+        key = raw_input("Correct answer? c = correct, i = incorrect: ")
 
         if key == "c":
             answering[dict_key] = 10
-        if key == "i":
+        elif key == "i":
             answering[dict_key] = 0
         else:
             print "Key not allowed"
@@ -50,7 +50,7 @@ with open("speech_recognition_questions.csv") as f:
             key = raw_input("Correct answer in 2nd attempt? c = correct, i = incorrect: ")
             if key == "c":
                 answering[dict_key] = 10
-            if key == "i":
+            elif key == "i":
                 answering[dict_key] = 0
             else:
                 print "Key not allowed"
