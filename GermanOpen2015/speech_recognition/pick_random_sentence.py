@@ -2,8 +2,10 @@
 
 import csv
 import random
+from collections import OrderedDict
+import pprint
 
-answering = {}
+answering = OrderedDict()
 
 with open("speech_recognition_questions.csv") as f:
     reader = csv.DictReader(f, delimiter=";")
@@ -60,6 +62,10 @@ with open("speech_recognition_questions.csv") as f:
         print answering
         print "-" * 20
         print
+
+    pprint.pprint(answering)
+    print "-" * 20, "+"
+
 
     total_score = sum(answering.values())
     print "TOTAL SCORE: {0}".format(total_score)
