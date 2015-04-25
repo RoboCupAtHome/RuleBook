@@ -20,15 +20,20 @@ This test focuses on voice recognition and audio-source localization in a noisy 
 \subsection{Task}
 
 \begin{enumerate}
-\item \textbf{Direct speech recognition: } The robot should move (or be moved) to a previously specified point inside the arena. A TC member will ask 5 questions from the set of 25 predefined questions in front of the robot. The robot should answer the question without asking confirmation.
+\item \textbf{Direct speech recognition: } The robot should move (or be moved) to a previously specified point inside the arena. 
+  A TC member will ask 5 questions from the set of 50 predefined questions in front of the robot. 
+  The robot should answer the question without asking confirmation.
+  A question will only be asked once; there are no repetitions of a question. 
 \begin{itemize}
 \item The operator shall be standing still and facing to the robot.
 \item The operator shall be between 0.75 and 1.0 meters away from the robot position.
 \item The operator shall be between -60$^{\circ}$ and 60$^{\circ}$ from the robot's center (front range).
 \end{itemize}
-\item \textbf{Indirect speech recognition: } A TC member will ask another 5 question of the same set, but standing outside the front range of the robot at the same distance. The robot can do one of two things (each providing different amount of points):
+\item \textbf{Indirect speech recognition: } A TC member will ask another 5 question of the same set, but standing outside the front range of the robot at the same distance. 
+  The robot can do one of two things (each providing different amount of points):
 \begin{itemize}
-\item The robot may turn its microphone towards the operator and ask for only one repetition of the question. The robot should then answer without asking for confirmation.
+\item The robot may turn its microphone towards the operator and ask for only one repetition of the question. 
+  The robot should then answer without asking for confirmation.
 \item The robot may directly answer the question without turning towards the operator and without asking for confirmation.
 \end{itemize}
 \end{enumerate}
@@ -39,6 +44,12 @@ This test focuses on voice recognition and audio-source localization in a noisy 
 \begin{itemize}
 \item \textbf{Continue rule:} Continue rule (Section \refsec{rule:asrcontinue}) can not be used during this test.
 \item \textbf{Question timeout:} If the robot does not answer within 10 seconds, the question is considered as \textit{missed}, and the TC member will proceed with the next question.
+\item \textbf{Answering:} If the answer is not understood by the operator, the answer is considered as incorrect.
+\item \textbf{Answering:} The robot must make clear that it understood a question. 
+  For example: if the robot is asked for the acronym of European Union, 
+  it should answer "The European Union's acronym is E.U." instead of just answering "E.U."
+  One reason is that such a short answer may get lost in the relatively noisy environment that RoboCup can be. It also is more natural.
+\item \textbf{Repeating: } For the Indirect speech recognition, the operator will only repeat the question when the robot asks for that.
 \end{itemize}
 
 \subsection{Referee instructions}
@@ -48,13 +59,14 @@ The referee needs to
 \item avoid shouting to the robot
 \item avoid getting closer to the robot
 \item Speak to the robot loud and clear with plain standard English.
+\item Only repeat a question when the robot asks for it. That is allowed in Indirect speech recognition, not in the Direct speech recognition.
 \end{itemize}
 
 \subsection{OC instructions}
 
 \textbf{1 day before the test}
 \begin{itemize}
-\item Provide the set of 25 predefined questions
+\item Provide the set of 50 predefined questions
 \end{itemize}
 \textbf{2 hours before the test}
 \begin{itemize}
