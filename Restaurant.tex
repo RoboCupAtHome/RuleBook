@@ -25,18 +25,25 @@ The robot will need to create it's own map from the environment and then move in
 
 	\item \textbf{Ordering phase:}
 	\begin{enumerate}
-		\item \textbf{First order (Table A):} Once in the kitchen, the robot shall ask to the \textit{Professional Waiter} to which table go first to take an order from. 
-		  The robot has to go to the indicated table and ask for an order.
+		\item \textbf{Which table to attend:} Once back in the kitchen, the robot shall ask to the \textit{Professional Waiter} to which table go first to take an order from. 
+		  The robot has to go to the indicated table and ask for an order there.
+		  This interaction of telling the robot which table to attend should be natural. 
+		  Just saying ``1'' to the robot is not natural, you would not say this to a person either who has to attend table 1.
+		  
+		\item \textbf{First order (Table A)}: The robot must aks the person what he or she wants to order. See Orders below for details about ordering.
 
 		\item \textbf{Detecting a call (Table B or C):} At any time while attending Table A guests (going to fetch an order, asking the client, or returning to the kitchen with the order), a guest in Table B or C will ask for the robot's attention by waving \emph{and} calling it out using voice. 
 		  The robot must state loud that it has detected the call and that it will attend as soon as possible. 
 
 		\item \textbf{Second order (Table B or C):} After taking the Table A client's order, and if the request was detected, the robot must go to the table of the waving/calling person and ask for an order.
+		  
 
 		\item \textbf{Avoiding random citizen:} At any time while going to any of the tables or to the \textit{Kitchen}, a person may step on the robot's path. It is expected the robot to avoid that person or stop and wait for it to move away.
 	\end{enumerate}
 
-	\textbf{Orders:} The menu offers Beverages and Combos (e.g.~a steak with fries, hamburger with fries, steak with vegetables, hamburger with vegetables, etc.). An order may be a Beverage or Combo. One guest will order a Combo while the other will order a Beverage.
+	\textbf{Orders:} The menu offers Beverages and Combos. An order may be a Beverage or Combo. One guest will order a Combo while the other will order a Beverage.
+	  A Combo is a combination of two of the food items from the set of objects \ref{rule:scenario_objects}.
+	  Guests also prefere to state their order in a natural way, as their would in a restaurant operated by humans. 
 
 	\textbf{Note:} Table A, B and C may be any of Table 1, 2, 3, \dots, N in any order.
 
@@ -68,7 +75,7 @@ The robot will need to create it's own map from the environment and then move in
 
 	\item \textbf{Start:} There is no fixed start signal in this test.
 
-	\item \textbf{Order:} The way the user provides such information to the robot is up to the robot's team.
+	\item \textbf{Order:} The way the user provides information to the robot is up to the robot's team. A natural interaction is preferred.
 
 	\item \textbf{Location:} This test can be arranged in any real restaurant or shopping mall. If this is not possible, the test can be conducted in an arbitrary room containing the appropriate locations. The only requirement is that this room is not part of the arena and that the teams do not know the room beforehand. The exact location, including the object and delivery locations, will be defined by the technical committee on site (and in corporation with the local organization).
 
