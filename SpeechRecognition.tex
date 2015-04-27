@@ -44,22 +44,18 @@ This test focuses on voice recognition and audio-source localization in a noisy 
 \begin{itemize}
 \item \textbf{Continue rule:} Continue rule (Section \refsec{rule:asrcontinue}) can not be used during this test.
 \item \textbf{Question timeout:} If the robot does not answer within 10 seconds, the question is considered as \textit{missed}, and the TC member will proceed with the next question.
-\item \textbf{Answering:} If the answer is not understood by the operator, the answer is considered as incorrect.
-\item \textbf{Answering:} The robot must make clear that it understood a question. 
-  For example: if the robot is asked for the acronym of European Union, 
-  it should answer "The European Union's acronym is E.U." instead of just answering "E.U."
-  One reason is that such a short answer may get lost in the relatively noisy environment that RoboCup can be. It also is more natural.
-\item \textbf{Repeating: } For the Indirect speech recognition, the operator will only repeat the question when the robot asks for that.
+\item \textbf{Understanding the answer:} If the robot's answer is not understood by the operator, it is considered as \textit{incorrect}, and the TC member will proceed with the next question. It is thus advised that the robot provide answers such that it is clear that the robot understood the question. For example, if the question is ``What is the capital of Germany?'', instead of just answering ``Berlin'', it is advised that the robot answers something to the effect of ``The capital of Germany is Berlin''.
+\item \textbf{Question repetition:} In the second phase, if the robot turns towards the operator to be asked once again, it should clearly state that it requires a repetition of the question once it finishes turning, so as to queue the operator to do so.
 \end{itemize}
 
 \subsection{Referee instructions}
 
 The referee needs to
 \begin{itemize}
-\item avoid shouting to the robot
-\item avoid getting closer to the robot
+\item Avoid shouting to the robot.
+\item Avoid getting closer to the robot.
 \item Speak to the robot loud and clear with plain standard English.
-\item Only repeat a question when the robot asks for it. That is allowed in Indirect speech recognition, not in the Direct speech recognition.
+\item Avoid repeating questions for the same robot.
 \end{itemize}
 
 \subsection{OC instructions}

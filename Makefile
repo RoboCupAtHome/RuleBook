@@ -272,3 +272,10 @@ clean:
 # ############################################################################
 #                                                                  END OF FILE
 # ############################################################################
+
+# not really end of file, this is the target that Dirk is using! :)
+dirk:
+	rubber -c 'setlist arguments --shell-escape' --pdf --force Rulebook.tex
+	rubber -c 'setlist arguments --shell-escape' --pdf --force score_sheets.tex
+krid: 
+	rm -f *.aux *.bbl *.blg *.log *.lof *.log *.lot *.out *.synctex.gz *.toc *~ rulebook.dvi rulebook.ps rulebook.pdf score_sheets.dvi score_sheets.ps score_sheets.pdf
