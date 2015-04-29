@@ -140,7 +140,8 @@ ERROR = $(RED)
 ##  R U L E S                           ##
 ## #################################### ##
 
-all: dofullpdf wall
+# all: dofullpdf wall
+all: dirk 
 
 ## ##################### ##
 ##  PDFLATEX (PDF)       ##
