@@ -140,8 +140,7 @@ ERROR = $(RED)
 ##  R U L E S                           ##
 ## #################################### ##
 
-# all: dofullpdf wall
-all: dirk 
+all: dofullpdf wall
 
 ## ##################### ##
 ##  PDFLATEX (PDF)       ##
@@ -156,10 +155,10 @@ dofullpdf:
 	$(SILENT) $(MAKE) dopdflatex
 
 dopdflatex:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Creating Score Sheets"; $(RESET)
-	$(PDFLATEX) $(PDFLATEXFLAGS) score_sheets 
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
+	#$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
+	#$(SILENT) $(ITEM); $(MSG) "  -- Creating Score Sheets"; $(RESET)
+	#$(PDFLATEX) $(PDFLATEXFLAGS) score_sheets 
+	#$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(PDFFILE)' via $(PDFLATEX)"; $(RESET)
 	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(TEXFILE) 
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
@@ -273,10 +272,3 @@ clean:
 # ############################################################################
 #                                                                  END OF FILE
 # ############################################################################
-
-# not really end of file, this is the target that Dirk is using! :)
-dirk:
-	rubber -c 'setlist arguments --shell-escape' --pdf --force Rulebook.tex
-	rubber -c 'setlist arguments --shell-escape' --pdf --force score_sheets.tex
-krid: 
-	rm -f *.aux *.bbl *.blg *.log *.lof *.log *.lot *.out *.synctex.gz *.toc *~ rulebook.dvi rulebook.ps rulebook.pdf score_sheets.dvi score_sheets.ps score_sheets.pdf
