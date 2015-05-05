@@ -31,7 +31,7 @@ Please note that may be more than one object in each shelf to fit all objects in
 
 \subsection{Task}
 \begin{enumerate}
-\item \textbf{Searching for objects:} When told so by an operator, the robot approaches to the shelf and start searching for objects.
+\item \textbf{Searching for objects:} When told so by an operator, the robot approaches to the shelf from its nearby starting position and starts searching for objects.
 \item \textbf{Grasping objects:} Any object found by the robot may be grasped by it. Before or right after grasping the object, the robot has to announce which object it has found.
 \item \textbf{Placing objects:} After grasping the object, the robot has to safely place it (Section \refsec{rule:scenario_objects}) on the empty shelf a the middle of the bookcase. The object must stay there for at least 10sec.
 \item \textbf{Handling objects multiple times:} Scores can only be gained a single time for each specific object.
@@ -47,7 +47,7 @@ Please note that may be more than one object in each shelf to fit all objects in
 \item \textbf{Recognition report:} Robots must create a PDF report file including the list of recognized objects with a picture showing the object and the object name/label.
   This file may be stored on a USB-stick on the robot which is given to the TC after the test. The PDF file name should include the team name and a timestamp. 
   Furthermore, it must be unmistakeable which label belongs to which object. Objects must also be recognizable in the report by a human (TC) so that it can be scored. 
-  An overview of the shelf with bounding boxes and labels attached to the bounding boxes is handy for the TC to score. 
+  An overview of the shelf with bounding boxes and labels attached to the bounding boxes is handy for the TC to score.
   False positives in the report (labeling an object which is not an object but e.g. the edge of the shelf) are penalized.
 %\item \textbf{QR Codes:} The team may request to use a special set ob objects identified with QR codes if the robot is not able to correctly recognize the objects. The use of this special QR-object-set must be announced to the TC at least on hour before the test starts. When QR Codes are used, no points are given for object recognition.
 \end{enumerate}
