@@ -13,11 +13,14 @@ The robot will need to create it's own map from the environment and then move in
 
 \subsection{Task}
 \begin{enumerate}
+	\item \textbf{Instruction:} In case the robot can work with a \quotes{Professional Waiter}, the team should very briefly instruct the waiter how to command the robot, e.g. what to say when a table location must be memorized etc.
+	
 	\item \textbf{Start:} The robot starts at a designated starting position, and waits for the \quotes{Professional} operator. When the referees start the time, the team is allowed to (briefly) instruct the operator. After the instruction, the operator steps in front of the robot and tells it to follow (no start signal).
 
 	\item \textbf{Memorizing the operator:} The robot has to memorize the operator. During this phase, the robot may instruct the operator to follow a certain setup procedure.
 
-	\item \textbf{Guide phase:} Starting from the \textit{Kitchen}, the robot is guided through the environment by a \quotes{Professional Waiter} which shows to the robot the location of each of the tables, it's number, and on which side the table is (there is a total of 3 tables). After visiting all the tables, the robot must be guided again to the \textit{Kitchen}.
+	\item \textbf{Guide phase:} Starting from the \textit{Kitchen}, the robot is guided through the environment by a \quotes{Professional Waiter} which shows to the robot the location of each of the tables, it's number, and on which side the table is (there is a total of 3 tables). After visiting all the tables, the robot must be guided again to the \textit{Kitchen}, to the same place where the guide phase started.
+
 	\begin{itemize}
 		\item \textbf{Own \textit{Professional Waiter} [Optional]:} Team Leader may choose to use their own custom \textit{Professional Waiter} for this test instead of the one provided by the committee. The Team Leader must inform a TC member at least one hour before the competition. When using a custom \textit{Professional Waiter}, no points are earned for state the side of the table.
 		\item \textbf{Finding the tables [Optional]:} Team Leader may choose not to tell the robot on which side (left or right) is the table, and let the robot find the tables by itself. When using this option, the robot must state where the table is (i.e.~by telling: \textit{the table is to my right}).
@@ -32,8 +35,9 @@ The robot will need to create it's own map from the environment and then move in
 		  
 		\item \textbf{First order (Table A)}: The robot must aks the person what he or she wants to order. See Orders below for details about ordering.
 
-		\item \textbf{Detecting a call (Table B or C):} At any time while attending Table A guests (going to fetch an order, asking the client, or returning to the kitchen with the order), a guest in Table B or C will ask for the robot's attention by waving \emph{and} calling it out using voice. 
-		  The robot must state loud that it has detected the call and that it will attend as soon as possible. 
+		\item \textbf{Detecting a call (Table B or C):} At any time while attending Table A's guests (going to fetch an order, asking the client, or returning to the kitchen with the order), a guest at Table B or C will ask for the robot's attention by waving \emph{and} calling it out using voice. 
+		  The robot must state out loud that it has detected the call and that it will attend as soon as possible.
+		  If the robot does not detect such a call, it may be given a command to go to the next table when it is back at the kitchen after finishing table A's order.
 
 		\item \textbf{Second order (Table B or C):} After taking the Table A client's order, and if the request was detected, the robot must go to the table of the waving/calling person and ask for an order.
 		  
@@ -50,6 +54,7 @@ The robot will need to create it's own map from the environment and then move in
 	\item \textbf{Delivering phase:}
 	\begin{enumerate}
 		\item \textbf{Repeating the order:} Once again in the kitchen, the robot recites the orders for each table, including the table number (e.g.~\textit{Hamburger with fries for table 1 and Orange juice for table 2}), to the \textit{Professional Barman}. This includes determining the table number of the waving/calling person. The \textit{Professional Barman} will serve the order and place it into a tray on the Kitchen-bar.
+		  If the barman cannot understand the order that the robot repeats, he cannot hand out the order and no points can be awarded for reciting the order.
 
 		\item \textbf{Delivering Beverage:} The robot must grab a can of the appropriate drink from a set of cans on the Kitchen-bar and deliver it to the correct table.
 
@@ -83,6 +88,8 @@ The robot will need to create it's own map from the environment and then move in
 
 	\item \textbf{Disturbances from outside:} If a person from the audience (severely) interferes with the robot in a way that makes it impossible to solve the task, the team may repeat the test immediately.
 
+	\item \textbf{Learning tables:} Of course, it can only be sure that a robot correctly learned a table when it is able to go there after being commanded so. 
+	
 	\item \textbf{Instruction:} The robot interacts with the operators, not the team. That is, the team is only allowed to (very!) briefly instruct the \textit{Professional Waiter} and \textit{Professional Barman} 
 	\begin{itemize}
 		\item how to the tell the robot to follow,
@@ -92,7 +99,9 @@ The robot will need to create it's own map from the environment and then move in
 	\end{itemize}
 	It is not allowed to the team to instruct the clients on how to get robot's attention. It shall be done in a natural way like when interacting with a human waiter.
 
-	\item \textbf{Kitchen-bar:} The \textit{Kitchen-bar} will be a table located at the restaurant's kitchen, next to the place where the \textit{Guide Phase} started and ended. It has the following setup.
+	\item \textbf{Kitchen-bar:} The \textit{Kitchen-bar} will be a table located at the restaurant's kitchen, next to the place where the \textit{Guide Phase} started and ended. 
+	The robot may ask on which side of the robot the Kitchen-bar is, e.g. on its left or right side. It may ask this at the beginning or the end of the guide phase.
+	It has the following setup.
 	\begin{itemize}
 		\item \textbf{Barman:} A \textit{Professional Barman} (member of the TC) will be at the other side of the Kitchen-bar to take the order provided by the robot and serve it in the official tray.
 		\item \textbf{Beverages:} Beverages will be located on the Kitchen-bar next to the \textit{Professional Barman}.
