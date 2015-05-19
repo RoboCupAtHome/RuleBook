@@ -140,7 +140,8 @@ ERROR = $(RED)
 ##  R U L E S                           ##
 ## #################################### ##
 
-all: dofullpdf wall
+# all: dofullpdf wall
+all: mauCleanAll mauBuild mauClean
 
 ## ##################### ##
 ##  PDFLATEX (PDF)       ##
@@ -271,4 +272,23 @@ clean:
 
 # ############################################################################
 #                                                                  END OF FILE
+# ############################################################################
+
+
+# ############################################################################
+# @Kyordhel: Not really, I'm fixing this mess.
+# ############################################################################
+
+mauBuild:
+	$(SILENT) rubber --pdf --force Rulebook.tex
+	$(SILENT) rubber --pdf --force score_sheets.tex
+
+mauClean:
+	$(SILENT) rm -f *.aux *.bbl *.blg *.log *.lof *.log *.lot *.out *.synctex.gz *.toc *~
+
+mauCleanAll:
+	$(SILENT) rm -f *.pdf *.dvi *.aux *.bbl *.blg *.log *.lof *.log *.lot *.out *.synctex.gz *.toc *~
+
+# ############################################################################
+#                                              NOW THIS IS THE END OF THE FILE
 # ############################################################################
