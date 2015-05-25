@@ -9,23 +9,29 @@ This test focuses mainly on Human-Robot Interaction and Activity Recognition.
 
 \subsection{Task}
 \begin{enumerate}
-	\item \textbf{Start}: The robot is in a corner of the living room, the patient is sitting in the same room. 
+	\item \textbf{Start}: The robot is in a corner of the living room; the patient is sitting in the same room. 
 
 	\item \textbf{Move to the patient}: The patient (lets call her Granny) calls for robot assistance using her voice or by waving arms.
 
 	\item \textbf{Asking for pills}: Granny asks the robot for her pills which are in bottles located on a shelf nearby. 
+	  This is the start command for the robot and may be defined by the team. 
+	  Because this test is an integrated scenario, the command should make sense in the context fo the test.
+	  For example ``Continue'' does not make sense but ``I need my pills, robot'' and ``Robot, please get me my pills'' do make sense.
+	  The team must instruct ``granny'' about what to say.
 
 	\item \textbf{Describe and choose pills}: On the shelf, there are multiple bottles with pills and the robot must asks Granny which bottle she needs.
 	\begin{itemize}
 		\item The robot must indicate what bottles are on the shelf by briefly describing each bottle.
 		\textbf{the faster the robot starts describing (i.e.~finished recognizing) after arrival (standing still in front of the shelf) at the shelf, the better:} faster recognition gives more points. 
+		  For scoring, the time between the robot's arrival and the start of speaking the description is taken.
 		\begin{itemize}
  			\item \quotes{The leftmost one}
   			\item \quotes{The \textit{color} bottle}
   			\item \quotes{The big/small bottle}
   			\item Any other description the robot understands and spoke out loud to Granny. E.g.~if a robot can do text recognition and read each label to Granny, she may reply with e.g.~\quotes{Aspirin}.
  		\end{itemize}
-		\item \textbf{Describe unknown pills' bottles [Optional]:}. Team leader may request to use a set of pills' bottles which were not available beforehand for training (unknown to all robots). Additional points may be given by Jury if the robot succeeds describing the unknown pills' bottles to Granny.
+ 		\item The bottles will be previously unseen by the robots and thus cannot be trained. 
+ 		The descriptions thus have to really be created from observations, on the fly.
  	\end{itemize}
 
  	\item \textbf{Grasp \& handover pills}: The robot must grasp the indicated bottle of pills and hand it over to Granny. The handover to Granny must be \quotes{natural}, without a voice confirmation of when to let the pills go etc.~Granny will take the pills from the robot's hand and the robot must open its hand.
@@ -48,6 +54,10 @@ This test focuses mainly on Human-Robot Interaction and Activity Recognition.
 
 \subsection{Additional rules and remarks}
 \begin{enumerate}
+	\item \textbf{Calling for assistance: } Points will only be scored for attention calling when the robot directly responds to the waving or voice calls.
+	Responding in this case means starting to move toward Granny or the robot should say it detected a call etc. 
+	In any case, it should be clear to the referee that the robot detected the action.
+
 	\item \textbf{Continue Rule:} The CONTINUE rule may be applied several times in the Conversation part of the test (Section \refsec{rule:asrcontinue}).
 
 	\item \textbf{Make it fast:} Description of objects should be fast, as is reflected in the scoring.
@@ -64,8 +74,7 @@ This test focuses mainly on Human-Robot Interaction and Activity Recognition.
 
 The referee needs to
 \begin{itemize}
-	\item Ask Team Leader whether they want known or unknown pills' bottles.
-	\item Place the bottles on the shelf.
+	\item Place the pill bottles on the shelf.
 	\item Place the phone on announced position.
 \end{itemize}
 
@@ -74,6 +83,7 @@ The referee needs to
 \textbf{2 hours before the test}
 \begin{itemize}
 	\item Announce the room where the patient is.
+	\item Find at least 5 items that can serve as pill bottles.
 	\item Announce the room where the phone is.
 \end{itemize}
 

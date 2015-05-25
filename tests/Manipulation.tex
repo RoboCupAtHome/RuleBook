@@ -1,38 +1,37 @@
-\section{Manipulation and Object recognition}
+\section{Manipulation and object recognition}
 
-The robot must reach a bookcase or table in which there are several objects at different heights (top-most or bottom-most shelf) or positions (one very close from other at the table). The robot must then identify and grasp all of those objects and put them all together into a new, easy-to-reach location (middle shelf or another table).
+The robot must reach a bookcase in which there are 10 objects at different shelves in the bookcase. The robot must then identify and grasp and identity 5 of those objects and put those into a new, easy-to-reach shelve that the team/robot may choose.
 
 \subsection{Goal}
 The robot has to identify, grasp and correctly place several objects at different heights or positions.
 
-
 \subsection{Focus}
-
 This test focuses on object detection, and manipulation; as well as object recognition.
 
 \subsection{Setup}
-\paragraph{This test may also be held outside the arena}
+\paragraph{This test may also be held outside the arena.
+  This is in order to have the possibility to run multiple robots in parallel and reduce the total time needed to test all robots.}
 
 \begin{enumerate}
-\item \textbf{Location:} One of the bookcases of the apartment is used for this test. The robot will start at a random distance between 1.0m and 1.5m from the bookcase.
-\footnote{The minimum and maximum distance of the objects in the shelf is still being discussed. This value may change.}
-The bookcase has at least 5 shelves between 0.30m and 1.80m from the ground. One of the shelves in the middle is empty.
-\item \textbf{Objects:} The bookcase contains 5 objects from the set of predefined objects.
+\item \textbf{Location:} One of the bookcases in or around the apartment is used for this test. The robot will start at a random distance between 1.0m and 1.5m from the bookcase.
+The bookcase has at least 5 shelves between 0.30m and 1.80m from the ground. One of the shelves is empty or will be made empty when the team chooses a shelve.
+\item \textbf{Objects:} The bookcase contains 10 objects from the Scenario Objects \ref{rule:scenario_objects}.
+  The robot must grasp 5 objects and identify at least empth{those} 5 objects. 
 \item \textbf{Object distribution:} The objects are located as follows:
 \begin{enumerate}
-\item An easy-to-grasp (bottle, small cereal box, can, etc...) object on a top shelf.
-\item An easy-to-grasp (bottle, small cereal box, can, etc...) object on a bottom shelf.
-\item A heavy object (1L milk box, big soda bottle, etc...) on a middle shelf.
-\item A hard-to-grasp object (cloth, apple, banana, etc...) on a middle shelf.
-\item A hard-to-reach object (near a corner or a wall) on a middle shelf.
+\item Known object in an upper shelf.
+\item Known object in a middle shelf.
+\item Known object in a lower shelf.
+\item Alike object in a middle shelf.
+\item Cloth/tray/bowl in a middle shelf
 \item[Optional] An occluded or hidden object on a middle shelf (e.g.~behind another object or inside a bowl).
 \end{enumerate}
-Please note that may be more than one object in each shelf.
+Please note that may be more than one object in each shelf to fit all objects in.
 \end{enumerate}
 
 \subsection{Task}
 \begin{enumerate}
-\item \textbf{Searching for objects:} When told so by an operator, the robot approaches to the shelf and start searching for objects.
+\item \textbf{Searching for objects:} When told so by an operator, the robot approaches to the shelf from its nearby starting position and starts searching for objects.
 \item \textbf{Grasping objects:} Any object found by the robot may be grasped by it. Before or right after grasping the object, the robot has to announce which object it has found.
 \item \textbf{Placing objects:} After grasping the object, the robot has to safely place it (Section \refsec{rule:scenario_objects}) on the empty shelf a the middle of the bookcase. The object must stay there for at least 10sec.
 \item \textbf{Handling objects multiple times:} Scores can only be gained a single time for each specific object.
@@ -45,7 +44,11 @@ Please note that may be more than one object in each shelf.
 \item \textbf{Single try:} The robot must be able to start from the first attempt. There is no restart for this test. If the robot is unable to start it must be removed immediately.
 \item \textbf{Collisions:} Slightly touching the shelves or the bookcase is tolerated. Driving over the objects or any other form of a major collision is not allowed, and the referees directly stop the robot (Section \refsec{rule:safetyfirst}).
 \item \textbf{Object types:} The objects selected from the \textit{Standard Objects Set} will be chosen to be easily detectable and contrasting with the shelf (ex.~red or black objects on a white shelf).
-\item \textbf{Recognition report:} After the test is completed or the time has run out, the robot may upload a single PDF report file including the list of recognized objects with a picture showing the object, the object name, and the bounding box of the object.
+\item \textbf{Recognition report:} Robots must create a PDF report file including the list of recognized objects with a picture showing the object and the object name/label.
+  This file may be stored on a USB-stick on the robot which is given to the TC after the test. The PDF file name should include the team name and a timestamp. 
+  Furthermore, it must be unmistakeable which label belongs to which object. Objects must also be recognizable in the report by a human (TC) so that it can be scored. 
+  An overview of the shelf with bounding boxes and labels attached to the bounding boxes is handy for the TC to score.
+  False positives in the report (labeling an object which is not an object but e.g. the edge of the shelf) are penalized.
 %\item \textbf{QR Codes:} The team may request to use a special set ob objects identified with QR codes if the robot is not able to correctly recognize the objects. The use of this special QR-object-set must be announced to the TC at least on hour before the test starts. When QR Codes are used, no points are given for object recognition.
 \end{enumerate}
 
@@ -54,7 +57,7 @@ Please note that may be more than one object in each shelf.
 The referee needs to
 \begin{itemize}
 \item Place the objects in the bookcase
-\item Make sure there is one empty shelf in the middle of the bookcase
+\item Make sure there is one empty shelf in the middle of the bookcase. Ask the team which shelve they want to be empty.
 \end{itemize}
 
 \subsection{Score sheet}
