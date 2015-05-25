@@ -1,38 +1,33 @@
 
 The maximum time for this test is 5 minutes.
 
-\begin{tabularx}{\textwidth}{X r c c c }
+\begin{scorelist}
 
-	\textbf{Action} & \textbf{Score} & \textbf{$1^{st}$ try} & \textbf{$2^{nd}$ try} & \textbf{$3^{rd}$ try} \\ \hline
-	& & & & \\ 
-	\textit{\textbf{Waypoint 1}} \\
-	Opening the door and continue instead of plan a new trajectory & $50$ & \hrulefill & \hrulefill & \hrulefill \\
-	Reaching waypoint 1 & $10$ & \hrulefill & \hrulefill & \hrulefill \\
-	& & & & \\ 
-	\textit{\textbf{Waypoint 2}} \\
-	Detecting and asking a person to step aside & $10$ & \hrulefill & \hrulefill & \hrulefill \\
-	Moving aside an object to reach the waypoint & $50$ & \hrulefill & \hrulefill & \hrulefill \\
-	Reaching waypoint 2 (grasp distance) & $10$ & \hrulefill & \hrulefill & \hrulefill \\ 
-	& & & & \\ 
-	\textit{\textbf{Waypoint 3}} \\
-	Start following the \textit{Professional Walker} & $5$ & \hrulefill & \hrulefill & \hrulefill \\
-	Reentering the arena after reaching Waypoint 4 & $20$ & \hrulefill & \hrulefill & \hrulefill \\
-	& & & & \\ 
-	\textit{\textbf{Waypoint 4}} \\
-	Reaching waypoint 4 & $15$ & \hrulefill & \hrulefill & \hrulefill \\
-	& & & & \\ 
-	\textit{\textbf{Avoiding obstacles}} \\
-	Avoiding box-sized object & $10$ & \hrulefill & \hrulefill & \hrulefill \\
-	Avoiding 3D object (Difficult-to-see object) & $10$ & \hrulefill & \hrulefill & \hrulefill \\
-	& & & & \\
-	\textit{\textbf{Leaving the arena}} \\
-	Leaving the arena & $ 10 $ & \hrulefill & \hrulefill & \hrulefill \\ \hline
-	& & & & \\ 
-	\textit{\textbf{Score per try}} & $200$ & \hrulefill & \hrulefill & \hrulefill \\ 
-	& & & & \\ 
-	\textbf{Total Score} & $200$ & & & \\ \cline{3-5}
+	\scoreheading{Waypoint 1}
+	\scoreitem{50}{Opening the door and continue instead of plan a new trajectory}
+	\scoreitem{10}{Reaching waypoint 1}
 
-\end{tabularx}\\
+	\scoreheading{Waypoint 2}
+	\scoreitem{10}{Detecting and asking a person to step aside}
+	\scoreitem{50}{Moving aside an object to reach the waypoint}
+	\scoreitem{10}{Reaching waypoint 2 (grasp distance)}
+
+	\scoreheading{Waypoint 3}
+	\scoreitem{5}{Start following the \textit{Professional Walker}}
+	\scoreitem{20}{Reentering the arena after reaching Waypoint 4}
+
+	\scoreheading{Waypoint 4}
+	\scoreitem{15}{Reaching waypoint 4}
+
+	\scoreheading{Waypoint 3}
+	\scoreitem{10}{Avoiding box-sized object}
+	\scoreitem{10}{Avoiding 3D object (Difficult-to-see object)}
+
+	\scoreheading{Leaving the arena}
+	\scoreitem{10}{Leaving the arena}
+
+	\setTotalScore{200}
+\end{scorelist}
 
 % Local Variables:
 % TeX-master: "Rulebook"

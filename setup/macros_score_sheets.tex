@@ -3,7 +3,8 @@
 % to be used in the rulebook or during the competition             %
 %                                                                  % 
 % Author: Dirk Holz & David Gossow                                 %
-% $Id: macros_score_sheets.tex 429 2013-04-30 10:09:55Z holz $                                                             %
+% Modif : Mauricio Matamoros                                       %
+% $Id: macros_score_sheets.tex 429 2013-04-30 10:09:55Z holz $     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 
@@ -24,6 +25,9 @@
 
 % set \shortScoresheet to true for the rulebook version and to false for the referee's scoresheet
 \newcommand{\shortScoresheet}{true}
+
+% set \threeAttempts to true for three columns in the scoresheet
+\newcommand{\threeAttempts}{false}
 
 % set \retryAvailable to true for a second column in the scoresheet
 \newcommand{\retryAvailable}{true}
@@ -49,6 +53,33 @@
   }{%
     #2%
   }%
+}
+
+% (internal) draws the scoresheet line for score handwritting
+\newcommand{\scoreline}[1][0.08]{\rule{#1\linewidth}{.2pt}}
+
+% (internal) draws the lines for score hadndwritting in the table outline based on the number of attempts
+\newcommand{\attemptScoreLines}{
+  \switchAttempts
+    {\scoreline[0.06] & \scoreline[0.06] & \scoreline[0.06]}
+    {\scoreline & \scoreline}
+    {\scoreline}
+}
+
+% (internal) Select one of the provided arguments based on the number of attempts
+% (3 tries, retry (2) or only try (1))
+\newcommand{\switchAttempts}[3]{
+  \ifthenelse{\equal{\threeAttempts}{true}}{#1}{\ifthenelse{\equal{\retryAvailable}{true}}{#2}{#3}}
+}
+
+% (internal) stores the number of attempts to perform
+\edef\numAttempts{0}
+% (internal) writes on the command \numAttempts the number of attempts to perform
+\newcommand\defNumAttempts{
+  \switchAttempts
+  {\global\edef\numAttempts{3}}
+  {\global\edef\numAttempts{2}}
+  {\global\edef\numAttempts{1}}
 }
 
 %% commands for overriding internal calculations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -87,10 +118,10 @@
       \textbf{Test:} & \currentTest \\[.9 em]
       
       \ifEvaluationSheet{}{%
-        \textbf{Team name:} & \rule{0.6\linewidth}{.2pt}\\[.9 em]%
+        \textbf{Team name:} & \scoreline[0.6]\\[.9 em]%
       }%
       % 
-      \textbf{Referee name:} & \rule{0.6\linewidth}{.2pt}\\[.9 em]%
+      \textbf{Referee name:} & \scoreline[0.6]\\[.9 em]%
       %	
       %	\ifEvaluationSheet{}{%
       %   \textbf{Restart:} & \Square ~1st try \hspace{1 em} \Square ~2nd try
@@ -121,7 +152,7 @@
   \ifEvaluationSheet{
     % team evaluation sheet
     \begin{tabular}{@{} @{\extracolsep{\fill}} l l @{}}
-      \rule{0.25\linewidth}{.2pt} \hspace{0.05\linewidth} & \rule{0.25\linewidth}{.2pt} \hspace{0.05\linewidth}
+      \scoreline[0.25] \hspace{0.05\linewidth} & \scoreline[0.25] \hspace{0.05\linewidth}
       \\
       \textit{Date \& time}%
       & \textit{Referee}
@@ -129,7 +160,7 @@
   }{
     % normal sheet
     \begin{tabular}{@{} @{\extracolsep{\fill}} l l l @{}}
-      \rule{0.25\linewidth}{.2pt} \hspace{0.05\linewidth} & \rule{0.25\linewidth}{.2pt} \hspace{0.05\linewidth} & \rule{0.25\linewidth}{.2pt}
+      \scoreline[0.25] \hspace{0.05\linewidth} & \scoreline[0.25] \hspace{0.05\linewidth} & \scoreline[0.25]
       \\
       \textit{Date \& time}%
       & \textit{Referee} %
@@ -170,11 +201,18 @@
         \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.7\linewidth} r r @{}}
           \textbf{Team} & \textbf{Score} & \textbf{Result}\\ \hline 
         }{
-          \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.6\linewidth} r r r @{}}
+          \ifthenelse{\equal{\threeAttempts}{true}}{
+            \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.6\linewidth} r r r r @{}}
+            \textbf{Action} & \textbf{Score} & \textbf{\small $1^{st}$ try} & \textbf{\small $2^{nd}$ try} & \textbf{\small$3^{rd}$ try} \\ \hline 
+          }
+          %else
+          {
+            \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.6\linewidth} r r r @{}}
             \textbf{Action} & \textbf{Score} \ifthenelse{\equal{\retryAvailable}{true}}{& \textbf{1st try} & \textbf{2nd try}}{ & \textbf{Only try}} \\ \hline 
           }
-	}
+        }
       }
+    }
       {
         % end
 
@@ -210,13 +248,19 @@
           \hline\\
           % \textbf{Total score} & \scoring{ \thecurrTestScoreTotal } %
           \ifShortScoresheet {%
-            \textbf{Total score} (excluding penalties and bonuses) & \scoring{ \thecurrTestScoreTotalWithoutBonus } %
+            % No Score per try in short version
           }{%
-            \textbf{Total score} & \scoring{ \thecurrTestScoreTotalWithoutBonus } %
+            \textbf{\textit{Score per try}} & \scoring{ \thecurrTestScoreTotalWithoutBonus } %
           }
           % add line to put in total:
-          \ifShortScoresheet{}{& \rule{0.08\linewidth}{.2pt} \ifthenelse{\equal{\retryAvailable}{true}}{& \rule{0.08\linewidth}{.2pt}}{}} \\
-          
+          \ifShortScoresheet{}{& \attemptScoreLines} \\   
+          \ifShortScoresheet{
+            \textbf{Total score} (excluding penalties and bonuses) & \scoring{ \thecurrTestScoreTotalWithoutBonus } %
+          }{
+            \defNumAttempts
+            & \\
+            \textbf{Total score}  & \scoring{ \thecurrTestScoreTotalWithoutBonus } & \multicolumn{\numAttempts}{c}{\scoreline[0.20]}
+          } \\
 	}
 
       \end{tabular*}
@@ -271,7 +315,7 @@
       \ifShortScoresheet{ %
         \\ 
       }{ % else
-        & \rule{0.08\linewidth}{.2pt} \ifEvaluationSheet{}{\ifthenelse{\equal{\retryAvailable}{true}}{& \rule{0.08\linewidth}{.2pt}}{}} \\[0pt]
+        \ifEvaluationSheet{}{& \attemptScoreLines} \\[0pt]
       }
     }
 
