@@ -279,6 +279,7 @@ clean:
 # @Kyordhel: Not really, I'm fixing this mess.
 # ############################################################################
 
+dirk:	mauBuild
 mauBuild:
 	$(SILENT) rubber --pdf --force Rulebook.tex
 	$(SILENT) rubber --pdf --force score_sheets.tex
