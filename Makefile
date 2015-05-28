@@ -140,8 +140,8 @@ ERROR = $(RED)
 ##  R U L E S                           ##
 ## #################################### ##
 
-# all: dofullpdf wall
-all: mauCleanAll mauBuild mauClean
+all: dofullpdf wall
+# all: mauCleanAll mauBuild mauClean
 
 ## ##################### ##
 ##  PDFLATEX (PDF)       ##
