@@ -215,10 +215,10 @@ warn2do:
 			&& ($(ERROR); $(MSG) -e "  -> please correct above todos"; $(RESET)) \
 			|| ($(CHECK); $(MSG) "  =) no todo/check-thing found"; $(RESET))
 	$(SILENT) $(MSG) ""
-	$(SILENT) $(ITEM); $(MSG) "  -- '\\ref','\\cite' without leading '~' ..."; $(RESET)
-	$(SILENT) grep -in '\\ref{\|\\cite{' *.tex | grep -v '\~\|\:%\|refmark' \
-			&& ($(ERROR); $(MSG) "  -> please insert missing '~' before each '\\ref','\\cite' listed above"; $(RESET)) \
-			|| ($(CHECK); $(MSG) "  =) no missing '~' before '\ref' or '\cite' found"; $(RESET))
+	$(SILENT) $(ITEM); $(MSG) "  -- ref, cite, etc.  without leading '~' ..."; $(RESET)
+	$(SILENT) grep -in '\\ref{\|\\cite{\|\\refsec\|\\reffig' *.tex | grep -v '\~\|\:%\|refmark' \
+			&& ($(ERROR); $(MSG) "  -> please insert missing '~' before each ref, cite, command listed above"; $(RESET)) \
+			|| ($(CHECK); $(MSG) "  =) no missing '~' before ref, cite, reffig, or refsec command found"; $(RESET))
 	$(SILENT) $(MSG) ""
 	$(SILENT) $(ITEM); $(MSG) "  -- 'e.g.' without following '~' ..."; $(RESET)
 	$(SILENT) grep -in 'e\.g\.' *.tex | grep -v '\~\|\:%\|e\.g\.\,' \
