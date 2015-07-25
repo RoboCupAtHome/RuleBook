@@ -192,26 +192,36 @@ Hand gestures may be used to control the robot in the following way:
 
 Giving commands to the robot is an important part of many tests. RoboCup@Home fosters natural human-robot interaction through gestures and speech, such that speech is the primary modality to give complex commands to the robot. Due to the sequential nature of many tests and the difficulty of ASR in the international competition environment of RoboCup, the team is allowed to take up to 2 alternative means to provide a command to the robot, for which the robot continuously fails to recognize the spoken command. These alternative means should be
 % declared in the registration form and
-approved by the TC during the \iterm{Robot Inspection} test (see \refsec{sec:robot_inspection}).
+approved by and demonstrated to the TC during the \iterm{Robot Inspection} test (see \refsec{sec:robot_inspection}).
 
-In future competitions, this rule will be gradually removed. Hence, solutions are encouraged that either resolve the ASR failure through spoken dialogs or solving the task in an alternative way (no penalty), or that use appealing modalities to provide the command (less penalty than direct typing on the robot).
+% In future competitions, this rule will be gradually removed. Hence, solutions are encouraged that either resolve the ASR failure through spoken dialogs or solving the task in an alternative way (no penalty), or that use appealing modalities to provide the command (less penalty than direct typing on the robot).
+At RoboCup, having active robots is preferred all over passive robots due to failing ASR. 
+Therefore, robots are all required to provide one standardized means of continue rule: a QR-code that encodes the spoken command/sentence.
+A QR-code 
+
+\subsubsection{Procedure}
+\begin{enumerate}
+\item \textbf{Default:} When the referee generates a command for the robot, it will be read out loud by the operator to the robot. 100\% of the points gained in the execution of the command will be awarded.
+\item \textbf{team member: } If this fails, a team member may speak the command to the robot if this was not the case already.  75\% of the points gained in the execution of the command will be awarded, if not stated otherwise.
+\item \textbf{QR-code:} If this fails as well, a QR-code will be generated that encodes the command as plain text and shown to the robot, displayed on either a piece of paper or a computer screen. A penalty of wil be applied, the factor of which must be specified in the test's scoresheet. 25\% of the points gained in the execution of the command will be awarded, if not stated otherwise.
+\end{enumerate}
 
 \begin{enumerate}
-	\item \textbf{Number of Continue's:} Unless stated otherwise, the team leader may request up to two (2) Continue's during a test. 
-	\item \textbf{Procedure:} In case a Continue is allowed, the team may request the Continue only at moments in which the robot is failing at carrying out ASR (no pre-emptive Continue's are allowed). A TC member gives the command through the alternative input modality. S/he provides exactly what the user has spoken. The Continue rule will not be allowed, if the robot does not have a keyboard attached or the alternative input modality was not accepted by the TC, or if it is not able to process ASR commands and alternative commands simultaneously.
+	\item \textbf{Number of Continue's:} Unless stated otherwise, the referee chooses to apply and initate the steps of the procedure listed above.
 	\item \textbf{Time:} The time is neither restarted nor stopped while the Continue rule is applied.
-	\item \textbf{Score:} If one Continue was asked for, the points provided for the ASR part of the test (if any) will be zero and the total points for the test will be multiplied by a factor of 0.5 if the modality of the alternative solution is by typing on a keyboard. To promote other means of interaction, if the modality is different than keyboard typing (i.e.~touch interface), the factor to be applied will be 0.75. If two Continues were asked for, the factor will be applied twice.
+	\item \textbf{Multiple Continue's:} The Continue rule will applied by the referee as often as required to make the robot be active. The penalty involved makes this unpreferable to the team and the usage should not be preferred, incentivizing the team to provide a proper means of ASR.
 \end{enumerate}
 
 \subsubsection{Alternative methods}
-Below are some suggested alternatives for ASR:
+Below are some suggested alternatives for ASR besides the QR-code as specified above:
 \begin{itemize}
  	\item Plug in an USB keyboard
  	\item Type in a designed interface in the onboard computer
-	\item A QR code encoding a text is shown to the robot on a laptop screen.
 	\item The robot hosts a website on which some text can be entered.
 	\item A laptop connects to the robot over e.g.~ssh where some command can be entered. 
 \end{itemize}
+The default penalties may be different and will be decided on by the TC,
+ based on what is demonstrated during the \iterm{Robot Inspection} test (see \refsec{sec:robot_inspection}).
 
 
 % Local Variables:
