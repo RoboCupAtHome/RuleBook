@@ -26,3 +26,4 @@
 *.tex~
 *.pdf
 .temp_*
+*.backup
