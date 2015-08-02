@@ -192,16 +192,21 @@ Hand gestures may be used to control the robot in the following way:
 
 Giving commands to the robot is an important part of many tests. 
 RoboCup@Home fosters natural human-robot interaction through gestures and speech, such that speech is the primary modality to give complex commands to the robot. 
-Due to the sequential nature of many tests and the difficulty of ASR in the international competition environment of RoboCup, 
-  the team is allowed to take up to 2 alternative means to provide a command to the robot, for which the robot continuously fails to recognize the spoken command. 
-These alternative means should be
+Automatic speech recognition (ASR) however can be very difficult in the international competition environment of RoboCup. 
+Because active robots are preferred over robots that are passive due to failing ASR, 
+  the team is allowed to provide means to bypass ASR. 
+The robot can then still continue to a next part of a test, but with a penalty for needing a bypass. 
+The penalty for using such a bypass will be more severe in future competitions.
+
+All robots are \textbf{required to provide QR-codes as a standardized alternative} to ASR. These QR-codes encode the spoken command/sentence as-is. 
+Any punctuation like commas, questionmarks, apostrophes and dots in the (generated) spoken command will also be present in the QR-code. 
+
+Non-standardized alternative means should be
   % declared in the registration form and
   approved by and demonstrated to the TC during the \iterm{Robot Inspection} test (see \refsec{sec:robot_inspection}).
 
-At RoboCup, having active robots is preferred all over passive robots due to failing ASR. 
-Therefore, robots are all required to provide one standardized means of continue rule: a QR-code that encodes the spoken command/sentence.
-
 \subsubsection{Procedure}
+Automatic Speech Recognition is preferred and any command given to the robot will given by voice first.
 \begin{enumerate}
 \item \textbf{Default:} When the referee generates a command for the robot, it will be read out loud by the operator to the robot. 100\% of the points gained in the execution of the command will be awarded.
 \item \textbf{team member: } If this fails, a team member may speak the command to the robot if this was not the case already.  75\% of the points gained in the execution of the command will be awarded, if not stated otherwise.
