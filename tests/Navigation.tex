@@ -68,9 +68,11 @@ After the robot is commanded to stop following, the robot must guide a (differen
 	  the \textit{Professional Walker} will command the robot to stop following him, using the instructions given by the robot in the training phase.
 	
 	\item \textbf{Optional: Guiding a human:} Then, the robot must guide a human back to the starting point (\textit{Waypoint 3}).
-	The human will stand in front of the robot and gives a command to start the guiding (e.g. ``Take me to my appartment'').
-	(The robot must say what the command to start guiding is)
+	The human will stand in front of the robot, which instructs the human on what to say to start the guideing. 
+	After some time, the human gives the command to start the guiding (e.g. ``Take me to my appartment'').
 	The robot must then go back to the starting point (\textit{Waypoint 3}), while checking that the human is still following and has not stopped or has drifted off on a different path.
+	
+	This implies the human is not touching the robot or vice versa. 
 	
 	\begin{itemize}
 	 \item In case the human drifts off, the robot must stop and call the human back. 
