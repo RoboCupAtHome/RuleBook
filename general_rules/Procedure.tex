@@ -174,16 +174,24 @@ Hand gestures may be used to control the robot in the following way:
 \subsection{Restart}
 \label{rule:restart}
 \begin{enumerate}
-	\item \textbf{Number of restarts:} A team may request one (1) restart during a test, unless stated in otherwise. There are tests in which a restart is not allowed.
-	\item \textbf{Procedure:} In case a restart is allowed, the team may request the restart only before 50\% of the time alloted to the test. The complete test is then restarted from the beginning (e.g., with entering the arena). The referees may rearrange the locations of objects/persons if necessary.
-	\item \textbf{Time:} The time is neither restarted nor stopped. The team has 1 minute to restart the test (the same time to start the test); if the team is not able to do so in the allotted time, the test is called as finished by the TC.
-	\item \textbf{Score:} The score of the second run (after the restart) counts. If it is lower than the score of the first run (before the restart), the average score of first and second run is taken.
-	\item \textbf{Forced restart:} The referees and the monitoring TC member may force the team to do a restart:
-	\begin{compactitem}
-		\item if the robot is doing nothing or nothing reasonable for \timing{one minute}, or
-		\item when the robot fails to understand a command for \timing{five times}, or
-		\item after a minor collision
-	\end{compactitem}  
+	\item \textbf{Stage 1} has no restarts but features multiple attempts at a challenge. 
+	If a robot fails during an attempt, the attempt ends. 
+	A robot has several (ideally 3, depending on available time in the scheduele) attempts for each challenge. An attempt cannot be restarted. 
+	E.g. if a robot fails halfway through an attempt at the navigation challenge, the attempt is over, the robot is moved out of the test area and may prepare for the remaining attempts at the challenge.
+
+	\item \textbf{Stage 2} does have restarts for challenges:
+	\begin{enumerate}
+		\item \textbf{Number of restarts:} A team may request one (1) restart during a test, unless stated in otherwise. There are tests in which a restart is not allowed.
+		\item \textbf{Procedure:} In case a restart is allowed, the team may request the restart only before 50\% of the time alloted to the test. The complete test is then restarted from the beginning (e.g., with entering the arena). The referees may rearrange the locations of objects/persons if necessary.
+		\item \textbf{Time:} The time is neither restarted nor stopped. The team has 1 minute to restart the test (the same time to start the test); if the team is not able to do so in the allotted time, the test is called as finished by the TC.
+		\item \textbf{Score:} The score of the second run (after the restart) counts. If it is lower than the score of the first run (before the restart), the average score of first and second run is taken.
+		\item \textbf{Forced restart:} The referees and the monitoring TC member may force the team to do a restart:
+		\begin{compactitem}
+			\item if the robot is doing nothing or nothing reasonable for \timing{one minute}, or
+			\item when the robot fails to understand a command for \timing{five times}, or
+			\item after a minor collision
+		\end{compactitem}  
+	\end{enumerate}
 \end{enumerate}
 
 
@@ -219,17 +227,23 @@ Automatic Speech Recognition is preferred and any command given to the robot wil
 	\item \textbf{Multiple Continue's:} The Continue rule will applied by the referee as often as required to make the robot be active. The penalty involved makes this unpreferable to the team and the usage should not be preferred, incentivizing the team to provide a proper means of ASR.
 \end{enumerate}
 
+
 \subsubsection{Alternative methods}
 Below are some suggested alternatives for ASR besides the QR-code as specified above:
 \begin{itemize}
- 	\item Plug in an USB keyboard
+ 	% \item Plug in an USB keyboard
+ 	\item Other types of natural interaction such as gestures.
  	\item Type in a designed interface in the onboard computer
-	\item The robot hosts a website on which some text can be entered.
-	\item A laptop connects to the robot over e.g.~ssh where some command can be entered. 
+	\item The robot hosts a website/app on which some text can be entered.
+	% \item A laptop connects to the robot over e.g.~ssh where some command can be entered. 
+	\item Other custom alternatives that MUST be intuitive and intended for users with no technological expertise.
 \end{itemize}
-The default penalties may be different and will be decided on by the TC,
- based on what is demonstrated during the \iterm{Robot Inspection} test (see \refsec{sec:robot_inspection}).
 
+The default penalties for ASR alternative methods will be decided on by the TC, during the \iterm{Robot Inspection} test (see \refsec{sec:robot_inspection}).
+
+This rule is loosely defined on purpose: be creative. Consider who may use a service robot, why they might want/need such a robot and what this means for how they might operate a service robot.
+
+\paragraph*{Remark:} Plug-in external devices (keyboard/computer), typing commands in terminal (ssh, rostopic), and complex interfaces will not be allowed. User interfaces MUST be in English (multi-language GUI are allowed).
 
 % Local Variables:
 % TeX-master: "../Rulebook"

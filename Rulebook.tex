@@ -131,21 +131,27 @@
 
 \begin{itshape}
 \iterm{Stage~I} comprehends four \textbf{ability tests} and an \textbf{integration test} along with an open demonstration for the audience. 
-  Each ability test is designed to evaluate the average performance of the robot in one particular skill, providing data for benchmarking. 
-  Meanwhile, the integration test has been designed to evaluate how this abilities work together while solving a common task.
+Each ability test is designed to evaluate the average performance of the robot in one particular skill, providing data for benchmarking. 
+Meanwhile, the integration test has been designed to evaluate how this abilities work together while solving a common task.
 
 The total score for ability and integration tests is the average of the best two performances out of preferably three performances (given the time constraints of a competition).
 The point of this is the both elimate good and bad luck for the robots/teams and to get a more objective view of the performance, 
   not to give teams time to tweak the robot between test performances. 
-  Therefore, the three runs are to be done in direct sequence, i.e. team A goes three times, then team B and so on. 
-  This also means that robot should be ready to start the next run of the same test as fast as possible.
 
+\iterm{RoboZoo} (open demonstration for the audience) have no changes from previous years' competitions and is intended to show to an open audience what domestic robots can do.
 
-\iterm{RoboZoo} (open demonstration for the audience) have no changes from previous years' competitions and is intended to show to an open audience what domestic robots can do. This test grants up to 5 points.
 \end{itshape}
 
-\newpage
-\input{tests/GPSR}
+\subsection{Scheduling}
+For maximal efficiency, teams will be scheduled interleaved: 
+  Team A does an attempt while team B sets up their robot. When A is done, it moves out the way for team B, then B attempts while A sets up the robot again etc.
+
+The preparing team should prepare their robot close to the place of the test, but not interfere with the performing robot.
+Preparing and prepared robots must wait at this preparation location until commanded to start the test.
+When commanded to start, the robot must move automatically to the test (start)position and may start an attempt at the test. 
+
+Robot should be ready to start the next attempt to the same test as fast as possible: 
+  when the performing robot is done with a attempt, the next robot must be ready to go with the start of a button or a voice command.
 
 \newpage
 \input{tests/Manipulation}
@@ -162,6 +168,8 @@ The point of this is the both elimate good and bad luck for the robots/teams and
 \newpage
 \input{tests/SpeechRecognition}
 
+\newpage
+\input{tests/GPSR}
 
 \chapter{Tests in Stage II}
 \label{chap:stage_II}
@@ -185,12 +193,9 @@ For example, in the Restaurant-challenge, if one robot of team A can take the or
 \input{tests/Restaurant}
 
 \newpage
-\input{tests/RoboNurse}
+\input{tests/EEGPSR}
 
 \newpage
-\input{tests/WakeMeUp}
-
-
 \input{tests/Finals}
 
 \input{Appendices}
