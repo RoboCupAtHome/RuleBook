@@ -195,32 +195,55 @@ Hand gestures may be used to control the robot in the following way:
 \end{enumerate}
 
 
-\subsection{Bypassing Automatic Speech Recognition: Continue}
+\subsection{Continue rule: Bypassing Automatic Speech Recognition}
 \label{rule:asrcontinue}
 
-Giving commands to the robot is an important part of many tests. RoboCup@Home fosters natural human-robot interaction through gestures and speech, such that speech is the primary modality to give complex commands to the robot. Due to the sequential nature of many tests and the difficulty of ASR in the international competition environment of RoboCup, the team is allowed to take up to 2 alternative means to provide a command to the robot, for which the robot continuously fails to recognize the spoken command. These alternative means should be
-% declared in the registration form and
-approved by the TC during the \iterm{Robot Inspection} test (see \refsec{sec:robot_inspection}).
+Giving commands to the robot is an important part of many tests. 
+RoboCup@Home fosters natural human-robot interaction through gestures and speech, such that speech is the primary modality to give complex commands to the robot. 
+Automatic speech recognition (ASR) however can be very difficult in the international competition environment of RoboCup. 
+Because active robots are preferred over robots that are passive due to failing ASR, 
+  the team is allowed to provide means to bypass ASR. 
+The robot can then still continue to a next part of a test, but with a penalty for needing a bypass. 
+The penalty for using such a bypass will be more severe in future competitions.
 
-In future competitions, this rule will be gradually removed. Hence, solutions are encouraged that either resolve the ASR failure through spoken dialogs or solving the task in an alternative way (no penalty), or that use appealing modalities to provide the command (less penalty than direct typing on the robot).
+All robots are \textbf{required to provide QR-codes as a standardized alternative} to ASR. These QR-codes encode the spoken command/sentence as-is. 
+Any punctuation like commas, questionmarks, apostrophes and dots in the (generated) spoken command will also be present in the QR-code. 
 
+Non-standardized alternative means should be
+  % declared in the registration form and
+  approved by and demonstrated to the TC during the \iterm{Robot Inspection} test (see \refsec{sec:robot_inspection}).
+
+\subsubsection{Procedure}
+Automatic Speech Recognition is preferred and any command given to the robot will given by voice first.
 \begin{enumerate}
-	\item \textbf{Number of Continue's:} Unless stated otherwise, the team leader may request up to two (2) Continue's during a test. 
-	\item \textbf{Procedure:} In case a Continue is allowed, the team may request the Continue only at moments in which the robot is failing at carrying out ASR (no pre-emptive Continue's are allowed). A TC member gives the command through the alternative input modality. S/he provides exactly what the user has spoken. The Continue rule will not be allowed, if the robot does not have a keyboard attached or the alternative input modality was not accepted by the TC, or if it is not able to process ASR commands and alternative commands simultaneously.
-	\item \textbf{Time:} The time is neither restarted nor stopped while the Continue rule is applied.
-	\item \textbf{Score:} If one Continue was asked for, the points provided for the ASR part of the test (if any) will be zero and the total points for the test will be multiplied by a factor of 0.5 if the modality of the alternative solution is by typing on a keyboard. To promote other means of interaction, if the modality is different than keyboard typing (i.e.~touch interface), the factor to be applied will be 0.75. If two Continues were asked for, the factor will be applied twice.
+\item \textbf{Default:} When the referee generates a command for the robot, it will be read out loud by the operator to the robot. 100\% of the points gained in the execution of the command will be awarded.
+\item \textbf{team member: } If this fails, a team member may speak the command to the robot if this was not the case already.  75\% of the points gained in the execution of the command will be awarded, if not stated otherwise.
+\item \textbf{QR-code:} If this fails as well, a QR-code will be generated that encodes the command as plain text and shown to the robot, displayed on either a piece of paper or a computer screen. A penalty of wil be applied, the factor of which must be specified in the test's scoresheet. 25\% of the points gained in the execution of the command will be awarded, if not stated otherwise.
 \end{enumerate}
 
-\subsubsection{Custom intuitive alternative}
-\label{rule:asr_alternative}
-Teams are encouraged to create a custom alternative to Automatic Speech Recognition to give the robot commands. 
-The ASR alternative has a single, loosly defined constraint:
+\begin{enumerate}
+	\item \textbf{Number of Continue's:} Unless stated otherwise, the referee chooses to apply and initate the steps of the procedure listed above.
+	\item \textbf{Time:} The time is neither restarted nor stopped while the Continue rule is applied.
+	\item \textbf{Multiple Continue's:} The Continue rule will applied by the referee as often as required to make the robot be active. The penalty involved makes this unpreferable to the team and the usage should not be preferred, incentivizing the team to provide a proper means of ASR.
+\end{enumerate}
+
+
+\subsubsection{Alternative methods}
+Below are some suggested alternatives for ASR besides the QR-code as specified above:
 \begin{itemize}
- \item Intuitive to the intended users of service robots, which may be non-experts in technology. 
+ 	% \item Plug in an USB keyboard
+ 	\item Other types of natural interaction such as gestures.
+ 	\item Type in a designed interface in the onboard computer
+	\item The robot hosts a website/app on which some text can be entered.
+	% \item A laptop connects to the robot over e.g.~ssh where some command can be entered. 
+	\item Other custom alternatives that MUST be intuitive and intended for users with no technological expertise.
 \end{itemize}
 
-This loosly defined on purpose: be creative.
-Consider who may use a service robot, why they might want/need such a robot and what this means for how they might operate a service robot. 
+The default penalties for ASR alternative methods will be decided on by the TC, during the \iterm{Robot Inspection} test (see \refsec{sec:robot_inspection}).
+
+This rule is loosely defined on purpose: be creative. Consider who may use a service robot, why they might want/need such a robot and what this means for how they might operate a service robot.
+
+\paragraph*{Remark:} Plug-in external devices (keyboard/computer), typing commands in terminal (ssh, rostopic), and complex interfaces will not be allowed. User interfaces MUST be in English (multi-language GUI are allowed).
 
 % Local Variables:
 % TeX-master: "../Rulebook"
