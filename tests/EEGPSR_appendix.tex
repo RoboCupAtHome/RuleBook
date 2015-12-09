@@ -1,0 +1,144 @@
+\chapter[EEGPSR in detail]{E\textsuperscript{2}GPSR in detail.}
+\label{chap:eegpsr-appendix}
+
+The following section presents detailed examples and descriptions of the skills to be evaluated during the \textit{EEGPSR} test (see \refsec{sec:eegpsr}). Keep in mind that this is provided only as a guideline to illustrate what teams can expect from the test, but it sets no constrains on how the test will be addressed.
+
+\section{Ability examples}
+\begin{itemize}
+	\item \textbf{Advanced manipulation:} The ability of manipulating objects with \textit{two hands} or that require precision and coordination.
+	\begin{itemize}
+		\item Open a bottle (twist, uncap, etc.).
+		\item Pouring cereal in a bowl.
+		\item Placing objects inside a box
+		\item Transporting a tray.
+	\end{itemize}
+
+	\item \textbf{Activity detection:} The ability of detecting human activities is evaluated. This may be needed by the robot to accomplish a given task (e.g. detecting wake up after trying to wake someone up) or triggered by an unexpected event, e.g. when a person faints suddenly. 
+	\begin{itemize}
+		\item A dormant person wakes up.
+		\item Someone is reading a book.
+	\end{itemize}
+
+	\item \textbf{Awareness (see \refsec{sec:eegpsr-awarenes}):} The ability of detecting \textit{unexpected} events and reacting accordingly.
+	\begin{itemize}
+		\item A door on the robot's path is shut.
+		\item The operator calls the robot by waving.
+		\item The person being followed by the robot faints.
+		\item The person being looked for is sitting on the couch.
+		\item The person being looked for is found lying on the floor.
+		\item Someone stands up in front of the robot blocking its path.
+		\item Someone enters the room and sits down or stands up and walks away while the robot is counting people in a room.
+	\end{itemize}
+
+	\item \textbf{Collision-free navigation:} The ability of navigating safely without colliding (even slightly) with the environment. This ability is not commanded, in the sense that the robot is not asked to avoid collisions, but evaluated by the referees while the robot is moving.
+	\begin{itemize}
+		\item Following a person.
+		\item Guiding a person.
+		\item Navigating to...
+	\end{itemize}
+
+	\item \textbf{Complex command understanding:} The ability of understanding complex commands at the first attempt and asking as few questions as possible. For instance the commands 
+		\quotes{\textit{bring me the chips from the kitchen table}} and
+		\quotes{\textit{go to the kitchen table, take the chips, and bring them to me}}
+	are equivalent, but the second representation is more complex. \\
+
+	\item \textbf{Count:} The ability of counting people and objects that are located close to each other in a given location.
+	\begin{itemize}
+		\item Count the snacks in the shelf.
+		\item Count the red apples in the basket.
+		\item Count the people in the entrance hall.
+		\item Count the girls waving in the living room.
+	\end{itemize}
+
+	\item \textbf{Feature recognition:} The ability of properly identifying and describing relevant features in people and objects; as well as finding or interacting with objects or people with the given characteristics.
+	\begin{itemize}
+		\item Bring me the biggest pill bottle.
+		\item Count the red apples in the basket.
+		\item Describe the objects on the drawer.
+		\item Ask the standing person to take a seat.
+		\item Offer something to drink to all the girls in the living room.
+	\end{itemize}
+
+	\item \textbf{Gesture recognition:} the ability of identify and recognize static and dynamic gestures such as pointing or waving.
+
+	\item \textbf{Natural handover:} The ability of taking and placing objects from/into other people's hands.
+	\begin{itemize}
+		\item Take an item from a human using a natural handover.
+		\item Give an item to a human using a natural handover.
+	\end{itemize}
+
+	\item \textbf{Object grasping:} Grasping any object (and successfully lifting it up to at least 5 cm for more than 10 seconds). \\
+
+	\item \textbf{Object placing:} Placing any object (safely and the objects stands still for more than 10 seconds). \\
+
+	\item \textbf{Object recognition:} Properly naming an object or object category. \\
+
+	\item \textbf{Open a door/drawer:} The ability of opening doors either for transit or those of furniture.
+
+	\item \textbf{People finding / learning / recognizing:} The ability of find people and recognize known people.
+	\begin{itemize}
+		\item Find me in the kitchen.
+		\item Please bring Dirk some beer.
+		\item Find James and take him outside.
+		\item Find someone in the bedroom and introduce yourself.
+		\item Go to the entrance door, find a person and guide her to the kitchen.
+	\end{itemize}
+
+	\item \textbf{People following / guiding:} The ability to following and guiding people as described in \refsec{sec:0}
+	\begin{itemize}
+		\item Follow me.
+		\item Find James and take him outside.
+		\item Go to the entrance door, find a person and guide her to the kitchen.
+	\end{itemize}
+
+	\item \textbf{Pour into a bowl:} The ability of pouring a fine-grained dry object (cereals, sugar, coffee, popcorn) and pour it into a bowl.
+	\begin{itemize}
+		\item Pour the flakes into the bowl and bring it to me.
+		\item Bring me some oat, banana and milk in a tray.
+	\end{itemize}
+
+	\item \textbf{Memory and question answering:} The ability of remember changes in the environment and actions, answering questions when required.
+	\begin{itemize}
+		\item[C:] \textit{Please take the apples from the kitchen table to the dinner table}.
+		\item[Q:] \textit{Bring me an apple}. (The robot must look for the apples in the dinner table). \\
+
+		\item[C:] \textit{Bring this newspaper to John at the sofa}. (The sofa is in the living room).
+		\begin{itemize}
+		\item[Q:] \textit{Where is John?}
+		\item[A:] \textit{John is in the living room}. \\
+
+		\item[Q:] \textit{Who has the newspaper?}
+		\item[A:] \textit{John has it}.
+		\end{itemize}
+
+		\item[C:] \textit{Give Dirk a beer}.
+		\begin{itemize}
+		\item[Q:] \textit{What did you just do?}
+		\item[A:] \textit{I was asked to give Dirk a beer, but I couldn't find him}.
+		\end{itemize}
+	\end{itemize}
+
+	\item \textbf{Unknown object description:} The ability of properly identifying and describing relevant features in unknown (and previously untrained) objects.
+
+\end{itemize}
+
+\section{Additional command examples}
+\begin{enumerate}
+	\item Go to the kitchen.
+	\item Go to the bedroom and wake up James.
+	\item Bring me the newspaper.
+	\item Give James the newspaper.
+	\item Pour the cereals in the bowl.
+	\item Go to James and answer his question.
+	\item Tell me what items are in the bookcase.
+	\item Guide me to the kitchen.
+	\item This is James. Remember him.
+	\item Follow me.
+	\item Tell me how many people are in the kitchen.
+	\item Tell me if the guest in the hallway is a boy or girl.
+	\item Bring James a drink.
+	\item Bring a coke to the person in the living room.
+	\item Is there someone in the hallway?
+\end{enumerate}
+
+\subsection{A possible test execution}
