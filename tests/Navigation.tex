@@ -1,133 +1,136 @@
 \section{Navigation Test}
 
-The robot must enter the arena, visit each one from a set of waypoints, and then follow a human outside the arena. After following, the robot must guide a human back to the arena. 
-The path from a waypoint to another often blocked by an obstacle that requires the robot to take an action to solve the task.
-
-Actions may include: avoid the obstacle, find a different path, or even interact with the obstacle (move it, open it, ask it to move, wait for it to move, etc.).
-
-\subsection{Goal}
-This test is about dealing with obstacles and navigating with a human companion. 
-The robot must be able navigate through the apartment, avoiding or interacting obstacles along the way.
-After that, the robot must demonstrate its ability to follow someone and the ability to guide someone. 
+The robot must visit a set of waypoints while avoiding obstacles on its path, following a person outside the arena and, finally, guide that person back to the arena.
 
 \subsection{Focus}
-The navigation test focuses on navigating in a changing environment, where doors can be closed and even paths to goal may get blocked by movable temporary objects.
-Perceiving the obstacles is also critical in safely navigating a home environment.
-
-For a care environment, the ability to follow and guide a human are also important. 
+This test focuses on tracking and recognizing a previously unknown person, obstacle avoidance, obstacle interaction, and safe navigation in dynamic environments in general.
 
 \subsection{Setup}
 
 \begin{enumerate}
-	\item \textbf{Location:} One of the arenas (apartment). The apartment is in its normal state.
 	\item \textbf{Doors:} All doors in the apartment are open, except for the entry door. 
-	The arena will likely contain another door that may be used for this test. 
+	\item \textbf{Location:} One of the arenas (apartment) and its surroundings. The apartment is in its normal state. Part of the test is performed outside the arena in a public space.
+	The arena will likely contain another door that may be used for this test.
+	\item \textbf{Operator:} A \quotes{professional} operator is selected by the TC to test the robot during the guiding phases.
+	\item \textbf{Other people:} There are no restrictions on other people walking by or standing around throughout the complete task.
+	\item \textbf{Path:} A path is setup (but not announced) beforehand.
 \end{enumerate}
 
 \subsection{Task}
-The robot must visit a set of waypoints and avoid the obstacles on its path. Unless stated otherwise, waypoints may be rooms, placement locations, furniture, beacons or landmarks on the floor. 
-The robot must state when it reached a new waypoint or is not able to reach a waypoint. 
-At the last waypoint inside the arena, the robot must follow a human which will lead the robot outside. 
-After the robot is commanded to stop following, the robot must guide a (different) human back to the apartment. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Redundant text. Lets keep it simple. [Mauricio Matamoros]
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The robot must visit a set of waypoints (rooms, placement locations, furniture, beacons, landmarks, etc.) while avoiding the obstacles on its path. Unless stated otherwise, waypoints may be on the floor. The robot must state when it reached a new waypoint or is not able to reach a waypoint. At the last waypoint inside the arena, the robot must follow a human which will lead the robot outside. After the robot is commanded to stop following, the robot must guide a (different) human back to the apartment.
 
 \begin{enumerate}
-	\item \textbf{Entering the arena:} The robot starts outside the environment and must wait until the door opens.
+	\item \textbf{Entering:} The robot enters the arena.
 
-	\item \textbf{Waypoint 1 (door):} After entering the arena, the robot must navigate to \textit{Waypoint 1}, 
-	  which may be any location and is reachable via several paths that may include one of more doors.
-	One of the doors may be shut. The robot may:
+	\item \textbf{Waypoint 1 (path planning):} After entering the arena, the robot must navigate to \textit{Waypoint 1} that is reachable via, at least, two paths, each one requiring the robot to go through a door which will be shut as the robot approaches. The robot may:
 	\begin{itemize}
-		\item To take a different path.
+		\item Take a different path.
 		\item Open the closed door.
 	\end{itemize}
 
-	\item \textbf{Waypoint 2 (obstructed path):} After reaching \textit{Waypoint 1}, the robot must navigate and reach (to within grasp or place distance) 
-	  \textit{Waypoint 2}, which is a placement location, e.g. a table. 
-	However, some sort of obstacle is present at \textit{Waypoint 2} e.g. people or movable furniture (e.g.~ a wheelchair) with which the robot may interact in order to reach its destination. 
-	The robot may:
+	\item \textbf{Waypoint 2 (obstacle interaction):} Immediately after reaching \textit{Waypoint 1}, the robot must reach at grasp (or place) distance \textit{Waypoint 2}, a placement location (e.g. a shelf). A large obstacle will prevent the robot from getting close to its destination, having the robot to identify it and interact with it.
+	Possible actions include:
 	\begin{itemize}
-		\item Move the obstacle (if the obstacle is an object).
-		\item Ask the obstacle to move out (if the obstacle is a human).
-		\item Wait for the object to move away by itself (if the obstacle is another robot).
-		\item Take a different approach to the waypoint. E.g. if the obstacle is a table and one end is unreachable, go to the other end of the table). 
+		\item Gently move the obstacle (e.g.~if the obstacle is an object).
+		\item Gently ask the obstacle to move away (e.g.~if the obstacle is a human).
+		\item Wait for the object to move away by itself (e.g.~if the obstacle is a pet or another robot).
+		% \item Take a different approach to the waypoint. E.g. if the obstacle is a table and one end is unreachable, go to the other end of the table). 
 	\end{itemize}
 
-	\item \textbf{Waypoint 3 (following a human):} After reaching \textit{Waypoint 2}, the robot must navigate to \textit{Waypoint 3}, a landmark or beacon. 
-	Here will be waiting a \textit{Professional Walker} the robot must memorize and follow outside the arena.
-
-	\begin{enumerate}
-	\item \textbf{Memorizing the operator (training phase):} The robot has to memorize the operator.
-	During this phase, the robot may instruct the operator to follow a certain setup procedure and instruct the operator on what to do when the robot needs to stop following.
-	
-	\item \textbf{Following the operator (guiding phase):} 
-	When the robot signals that it is ready to start, the operator starts walking --in a natural way-- through a designated path outside the arena. 
-	The robot needs to follow the operator until the operator asks the robot to stop doing so (\textit{Waypoint 4}).
-	\end{enumerate}
-
-	\item \textbf{Waypoint 4 (stop following):} Upon reaching \textit{Waypoint 4}, 
-	  the \textit{Professional Walker} will command the robot to stop following him, using the instructions given by the robot in the training phase.
-	
-	\item \textbf{Optional: Guiding a human:} Then, the robot must guide a human back to the starting point (\textit{Waypoint 3}).
-	The human will stand in front of the robot, which instructs the human on what to say to start the guideing. 
-	After some time, the human gives the command to start the guiding (e.g. ``Take me to my appartment'').
-	The robot must then go back to the starting point (\textit{Waypoint 3}), while checking that the human is still following and has not stopped or has drifted off on a different path.
-	
-	This implies the human is not touching the robot or vice versa. 
-	
+	\item \textbf{Waypoint 3 (following a human):} After reaching \textit{Waypoint 2}, the robot must navigate to \textit{Waypoint 3}, a landmark or beacon, where a \textit{Professional Walker} will be waiting. The robot must memorize the \textit{Professional Walker} and follow them outside the arena to \textit{Waypoint 4} which location is unknown.
 	\begin{itemize}
-	 \item In case the human drifts off, the robot must stop and call the human back. 
-% 	 \item In case the human drifts off, the robot must get the human, stand in front of him/her, call the human to attention and start guiding further.
-	 \item The guide phase is about 10-20 meters.
-	 \item Once back at \textit{Waypoint 3}, the robot must tell the human he/she is back home. 
-	 \item Attempting the guide-phase gives an additional 5 minutes. 
-	  The guide-phase must finish within 5 minutes. 
+		\item \textbf{Training phase:} The robot has to memorize the operator. During this phase, the robot may instruct the operator to follow a certain setup procedure and instruct the operator on what to do when the robot needs to stop following.
+		
+		\item \textbf{Guiding phase:} When the robot signals that it is ready to start following, the operator starts walking --in a natural way-- through a designated path outside the arena. The robot needs to follow the operator until the operator asks the robot to stop doing so (\textit{Waypoint 4}).
+
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%
+		% People crossing during follow me. [Mauricio Matamoros]
+		%
+		% I would like to add this from previous rulebooks
+		%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		Two people block the direct passage on the way to the \textit{Waypoint 4} (at different positions). The operator guides the robot around the persons. One of the persons starts walking when the robot approaches, and crosses the way between robot and guide. Right in between, the walking person stops for 3 seconds before walking away.
+
+		\item \textbf{Stop following:} Upon reaching \textit{Waypoint 4}, the \textit{Professional Walker} will command the robot to stop following him, using the instructions given by the robot in the training phase.
 	\end{itemize}
 	
-	\item \textbf{Going back:} If the robot is unable to guide a human, it must go back to the starting point (\textit{Waypoint 3}) alone. 
+	\item \textbf{Take me back home:} After reaching \textit{Waypoint 4} the robot must guide back the \textit{Professional Walker} to \textit{Waypoint 3}. If the robot is unable to guide a human, it may go back to \textit{Waypoint 3} alone.
+	\begin{itemize}
+		\item \textbf{Instructing phase:} The robot may instruct the operator to follow a certain setup procedure and give some guidelines while following it back.
+		
+		\item \textbf{Guiding phase:} When the robot signals it is ready to start guiding, the operator starts walking --in a natural way-- following the robot and its instructions until the robot indicates the operator they have reached their destination. The robot may ask to the operator, for instance, to go through a door before it, rise a hand, or wait.
+
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		%
+		% Operator lost during "Take me back home". [Mauricio Matamoros]
+		%
+		% I would like to add this to ensure the robot hasn't lost track of
+		% the operator while stopping or walking away.
+		%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		Two people will board the operator, blocking her path and preventing her from following the robot. The robot must locate its operator and resume taking her back home.
+
+		\item \textbf{End phase:} Once back at \textit{Waypoint 3}, the robot announces the operator is back home. 
+	\end{itemize}
 	
-	\item \textbf{Leave the arena:} The robot must leave the arena through the indicated door.
+	\item \textbf{Leaving the arena:} The robot must leave the arena through the indicated door.
 \end{enumerate}
 
 \begin{figure}[tbp]
 	\centering
 	\includegraphics[width=0.5\columnwidth]{images/navigation.png}
-	\caption{Navigation test: example setup.}
+	\caption{Navigation test: setup and execution example.}
 	\label{fig:restaurant}
 \end{figure}
 
-\paragraph*{Note 1:} Depending on the layout of the arena, waypoint 1 and 2 may be swapped.
-\paragraph*{Note 2:} Reaching a waypoint means that the robot is looking at the waypoint-object and that the object is reachable by the robot's arm. 
+\paragraph*{Remarks:}
+\begin{enumerate}
+	\item Depending on the layout of the arena, waypoint 1 and 2 may be swapped.
+	\item Reaching a waypoint means that the robot is looking at the waypoint-object and that the object is reachable by the robot's arm.
+	\item The distance between Waypoints 3 and 4 is about 10-20 meters.
+\end{enumerate}
 
 \subsection{Obstacles}
-While navigating to waypoints 1 and 2, the robot will find each of the following obstacles on its path:
+While navigating to waypoints 1, 2, and 3 the robot will find each of the following obstacles on its path:
 \begin{itemize}
 		\item \textbf{Small object:} Box sized object (between 5 and 15 cm per edge).  
 		\item \textbf{3D Object:} A bar table, normal table, rolling chair: some object that is wider at its top than on its bottom, 
 		  thus requiring more than just a laser scanner mounted near the ground to avoid obstacles.
-		\item \textbf{Smart obstacle:} A person to whom the robot may speak to and kindly ask to move away. 
-		  When interacting with people, the robot must look at the person and make clear is speaking with him/her.
+		\item \textbf{Smart obstacle:} A person to whom the robot may speak to and kindly ask to move away. When interacting with people, the robot must look at the person and make clear is speaking with him/her.
 	\end{itemize}
 
 \subsection{Additional rules and remarks}
 \begin{enumerate}
+	\item \textbf{Waypoints:} Waypoints may be rooms, placement locations, furniture, beacons, landmarks, etc. The robot must clearly state when it has reached a waypoint or if it was not able to reach the waypoint.
+
 	\item \textbf{Show must go on:} If a robot is unable to reach a waypoint, it must say it and proceed to the next one.
+
 	\item \textbf{Make it fast:} If a robot is absolutely unable to handle one or more obstacles, please inform the TC before the test so no time is wasted.
-	\item \textbf{Closing doors:}  The door that will be shut will be the door on the route the robot has committed to. 
-	  It will be shut right after the robot starts driving towards the door. 
-	  The door will be closed well before the robot reaches it so the robot has enough time to notice that the door closed.	
-	\item \textbf{Moving objects:} If the robot finds on its way a \textit{static movable obstacle} (chair, cubes, toys, etc.) which is capable to move, it may move the object apart with its manipulator.
-	\item \textbf{When following people:} 
+
+	\item \textbf{Closing doors:}  The door that will be shut will be the door on the route the robot has committed to. It will be shut right after the robot starts driving towards the door, but granting enough time to notice that the door is now closed.	
+
+	\item \textbf{Moving objects:} If the robot finds on its way a \textit{static movable obstacle} (chair, cubes, toys, etc.) which is capable to move, it must announce is going to move an obstacle and then proceed to move the object apart with its manipulator, or by \textbf{gently} pushing it with its body.
+
+	\item \textbf{Asking people to move away:} If the robot finds on its way a person blocking its path, it must announce it has found a person, \textit{gently} ask that person to move away and wait for the path to be clear. \textbf{Robots are not allowed to touch people}.
+
+	\item \textbf{Following people:} 
 	\begin{enumerate}
-		\item \textbf{Instruction:} The robot interacts with the operator, \emph{not} the team. That is, the team is not allowed to briefly instruct the operator.
+		\item \textbf{Instruction:} The robot interacts with the operator, \emph{not} the team. That is, the team is not allowed to instruct the operator.
 		\item \textbf{Natural walking:} The operator has to walk \quotes{naturally}, i.e., move forward facing forward. 
-		  The operator is not allowed to walk back, stand still, signal the robot or follow some re-calibration procedure.
+		  The operator is not allowed to walk back, stand still, signal the robot or follow any re-calibration procedure.
 		\item \textbf{Asking for passage:} The robot is allowed to (gently) ask people to step aside.
 	\end{enumerate}
 	
-	\item \textbf{When guiding people:} 
+	\item \textbf{Guiding people:} 
 	\begin{enumerate}
-		\item \textbf{Instruction:} The robot interacts with the follower, \emph{not} the team. 
-		  That is, the team is not allowed to briefly instruct the follower.
+		\item \textbf{Instruction:} The robot interacts with the follower, \emph{not} the team. That is, the team is not allowed to instruct the follower.
+		\item \textbf{Guidance:} The robot is allowed to interact with the operator during the guidance, asking her to stand still, make a gesture, step aside, or walk through a door. However is up to the operator to decide when to attend robot's instructions.
 		\item \textbf{Asking for passage:} The robot is allowed to (gently) ask people to step aside.
 	\end{enumerate}
 \end{enumerate}
@@ -146,7 +149,7 @@ The referee needs to
 \textbf{2 hours before the test}
 \begin{itemize}
 	\item Announce the locations for waypoints 1, 2, and 3.
-	\item Find a location for waypoint 4. 
+	\item Establish location for waypoint 4 and the path for the \textit{follow me} phase. 
 \end{itemize}
 
 \textbf{During the test}

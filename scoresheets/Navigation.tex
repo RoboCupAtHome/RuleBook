@@ -3,30 +3,39 @@ The maximum time for this test is 5 minutes, 5 more for the optional guiding-pha
 
 \begin{scorelist}
 
-	\scoreheading{Waypoint 1}
-	\scoreitem{50}{Opening the door and continue instead of plan a new trajectory}
+	% Up to 55 points
+	\scoreheading{Waypoint 1: Path planning}
+	\scoreitem{5}{Planing new trajectory after the door has been shut}
+	\scoreitem{50}{Opening the door and continue instead of planing a new trajectory}
 	\scoreitem{5}{Reaching waypoint 1}
 
-	\scoreheading{Waypoint 2}
-	\scoreitem{10}{Detecting and asking a person to step aside}
-	\scoreitem{35}{Moving aside an object to reach the waypoint}
-	\scoreitem{5}{Reaching waypoint 2 (grasp/place distance)}
+	% Up to 15 points
+	\scoreheading{Waypoint 2: Obstacle interaction}
+	\scoreitem{10}{Correctly state the nature of the obstacle blocking its path}
+	\scoreitem{5}{Reaching waypoint 2 (to grasp/place distance)}
 
-	\scoreheading{Waypoint 3}
-	\scoreitem{5}{Start following the \textit{Professional Walker}}
-	\scoreitem{10}{Reaching again waypoint 3 after reentering the arena (i.e.~after reaching waypoint 4)}
+	% Up to 30 points
+	\scoreheading{Waypoint 3-4: Follow me}
+	\scoreitem{10}{Leaving the arena while following the \textit{Professional Walker}}
+	\scoreitem{5}{Resume following the \textit{Professional Walker} after a person crosses the way}
+	\scoreitem{5}{Resume following the \textit{Professional Walker} after a person stops on the way}
+	\scoreitem{10}{Reaching waypoint 4}
 
-	\scoreheading{Waypoint 4}
-	\scoreitem{15}{Reaching waypoint 4}
+	% Up to 45 points
+	\scoreheading{Waypoint 4-3: Take me back home}
+	\scoreitem{15}{Locate the operator and resume guiding after two people interference}
+	\scoreitem{20}{Reentering the arena}
+	\scoreitem{10}{Reaching waypoint 3 after reentering the arena (i.e.~after reaching waypoint 4)}
+	\scoreitem[-1]{10}{Penalty for loosing the operator during guidance}
 	
-	g=\scoreheading{Optional: Guiding}
-	\scoreitem{50}{Arrive at waypoint 3 with the human following within 5 minutes of the command to start guiding}
-	\scoreitem{5}{Arrive at waypoint 3 with the human following more than 5 minutes after the command to start guiding}
-
-	\scoreheading{Avoiding objects}
+	% Up to 50 points
+	\scoreheading{Obstacle avoidance}
 	\scoreitem{5}{Avoiding box-sized object}
-	\scoreitem{5}{Avoiding 3D object (Difficult-to-see object)}
+	\scoreitem{10}{Avoiding 3D object (Difficult-to-see object)}
+	\scoreitem{5}{Asking a person to step aside}
+	\scoreitem{30}{Moving away movable object}
 
+	% Up to 5 points
 	\scoreheading{Leaving the arena}
 	\scoreitem{5}{Leaving the arena}
 
