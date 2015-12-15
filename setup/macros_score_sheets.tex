@@ -35,6 +35,9 @@
 % set \continueAvailable to true for CONTINUE sections
 \newcommand{\continueAvailable}{true}
 
+% set \dataRecordingBonus to true for data recording bonus
+\newcommand{\dataRecordingBonus}{true}
+
 % name of the current test, is set automatically in the rulebook
 \newcommand{\currentTest}{}
 
@@ -228,14 +231,14 @@
 
           % Special penalties & bonuses %%%%%%%%%%%%%%%%
           \scoreheading{Special penalties \& bonuses}
-          
-	  \scoreitem{10}{Recording and contributing all listed data}
-	  
+    
           \ifShortScoresheet{}{
-          	\ifthenelse {\equal{\continueAvailable}{true}}{\scoreitem[0.75]{0}{1st CONTINUE}}{}
+            \ifthenelse {\equal{\continueAvailable}{true}}{\scoreitem[0.75]{0}{1st CONTINUE}}{}
           
-          	\ifthenelse {\equal{\continueAvailable}{true}}{\scoreitem[0.50]{0}{2nd CONTINUE}}{}
-		  }
+            \ifthenelse {\equal{\continueAvailable}{true}}{\scoreitem[0.50]{0}{2nd CONTINUE}}{}
+      }
+
+          \ifthenelse {\equal{\dataRecordingBonus}{true}}{\scoreitem{10}{Contributing with recorded data\ifShortScoresheet{(see sec.~\ref{rule:datarecording})}{}}}{}
           
           \scoreitem{-50}{Not attending \ifShortScoresheet{(see sec.~\ref{rule:not_attending})}{}}
           

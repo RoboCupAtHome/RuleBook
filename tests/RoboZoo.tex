@@ -1,55 +1,92 @@
+\newcommand{\roboZooTokens}{$N$}
+
 \section{RoboZoo}
 \label{sec:test_robo_zoo}
 
-The robots of all teams are presented and arranged in a way that all of them form a zoo-type corridor through which the general audience will walk. 
-Each robot is enclosed within a space that it cannot get out of, and it must perform a show for up to one hour, such as dancing or carrying out any menial task. 
-Each member of the audience who enters the corridor will receive 5 tokens which will be given to his/her top 5 favorite robots. 
-The robot who earns the most tokens wins the contest and gets the maximum score. 
-Points are awarded to the other robots based on the amount of tokens they gathered, proportional to the amount of tokens gotten by the robot that won the contest.
+During the RoboZoo teams are encouraged to demonstrate the usefulness of robots in home, hospital and office environment to an open audience.
+
+\subsection{Setup}
+The robots of all teams are presented and arranged in a way that all of them form a zoo-type corridor (or hall) through which the general audience may walk.
+
+The enclosed space is estimated to be around $2 \times 2$ meters. However, teams should expect reasonable deviations in these dimensions, since space in the venue may require smaller enclosed spaces.
+
+\subsection{Task}
+The RoboZoo consist of a demonstration of the usefulness of robots to an open audience. It is an open demonstration which means that the teams may demonstrate anything they like, continuously for up to one hour and without leaving its \textit{security cage}.
+
+General audience evaluates the overall performance and appearance of the robots, while a jury consisting of the TC and EC evaluate the skills demonstrated during the test.
 
 Interaction with the audience is desirable but not mandatory.
 
-\subsection{Enclosed Space Dimension}
-The enclosed space is estimated to be around $2 \times 2$ meters. However, teams should expect reasonable deviations in these dimensions, since space in the venue may require smaller enclosed spaces.
+\subsection{Jury \& evaluation}
+General audience evaluates the overall performance and appearance of the robots. Each member of the audience who enters the corridor will receive \roboZooTokens tokens which will be given to their top favorite robots on both: appearance and performance. Earned tokens are normalized regarding the maximum amount of tokens given to a robot per category. Therefore scoring in each category is proportional to the amount of tokens per category.
+
+A technical Jury (TC and EC) will also evaluate the performance of the robots, granting up to 10 points per ability shown with a maximum of 50 points in the following abilities:
+\begin{itemize}
+\item Gesture recognition.
+\item Human-Robot interaction.
+\item Manipulation (single handed).
+\item Manipulation (two handed).
+\item Object detection and recognition.
+\item People detection and recognition.
+\item Speech recognition.
+\item Task planning.
+\end{itemize}
+
+The final score is as follows.
+
+$$\mbox{score}_i = 25 \times \frac{\mbox{appearance}_i}{max(\mbox{appearance})} + 
+25 \times \frac{\mbox{performance}_i}{max(\mbox{performance})} + min(50, \sum\mbox{abilities-shown}_i)
+$$
 
 \subsection{Security Concerns}
-Security is first priority in this competition. To this effect, one team member is required to be inside the enclosed space to ensure that the robot is performing securely. 
-Physical interaction between audience members and the robot is not allowed (i.e.~robot handing things to people or shaking hands). 
-Interactions such as talking to the robot, or carrying out face recognition are allowed. 
-To not limit the creativity of the teams in their demonstrations, the robot may exchange items with the public via using the one team member inside the enclosed space as a type of proxy. 
-In addition, persons from the general public are not allowed inside the enclosed space at any moment.
+Security is first priority in this competition. To this effect, one team member is required to be inside the enclosed space to ensure that the robot is performing securely. People from the audience won't be allowed inside the enclosed space at any moment.
 
-\paragraph*{Important Note:} Even while people are not allowed to enter the robots' cages, it may happen people (specially small children) get into the cages. 
-  In those cases, robot must be stopped immediately.
+It is not allowed for robots to touch people. Robots \textbf{must not touch people}.
 
-\subsection{Restart and Charging}
-If the robot requires a restart, the one team member inside the enclosed space may tend to it and restart it as many times as required. 
-However, it is important to note that this test is essentially scored by the general public, and it is reasonable to expect that the audience will not be attracted to a robot being constantly fixed. 
-In addition, since this test may last up to one hour, the robot may require a change of batteries or to use a charging station, which is allowed. 
-However, as pointed out before, this may not be attractive to the audience, so it is recommended to reduce the charging necessities to a minimum. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% I removed the restriction of robot handling objects to the audience
+% since in stage 2 now we have handovers. I don't see it happening.
+% Mauricio
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{Important Note:} Even while people are not allowed to enter the robots' cages, it may happen people (specially small children) get into the cages.  In those cases, robot must be stopped immediately.
 
 \subsection{Additional rules and remarks}
 
 \begin{itemize}
-\item \textbf{Gifts:} Robots and team member are \emph{not} allowed to hand out gifts as part of the RoboZoo challenge. 
-\item \textbf{Protagonist robots:} Robots must be able to perform autonomously during the test. 
-Team members are \emph{not} allowed to interact with the audience, teach instructions, take part of the show, etc. 
-In the case that team members are lurking around the cages or interacting with the audience, that team will be disqualified.
 \item \textbf{People in the cage:} At any time, one team member must be inside the cage to take care of the robot. 
-More than one team member inside the cage is \emph{not} allowed.
-\item \textbf{Language:} RoboCup is an international competition. This means all robots have to interact with the audience in a English. 
+
+\item \textbf{Protagonist robots:} Robots must be able to perform autonomously during the test. Team members are \emph{not} allowed to interact with the audience, teach instructions, take part of the show, etc. More than one team member inside the cage is \emph{not} allowed.
+
+\item \textbf{Restart:} There is no restart limit nor penalty for restarting a robot. However, it is important to note that this test is essentially scored by the general public, and it is reasonable to expect that the audience will not be attracted to a robot being constantly fixed. 
+
+\item \textbf{Focus on performance:} We encourage teams to show the best of @home in the RoboZoo, which can be achieved without playing loud music or repetitive (often annoying) sounds or flashlights. 
+
+\item \textbf{Charging:} It is allowed to the team to change robot's batteries or to use a charging station during the RobboZoo, however, all equipment must be inside the cage. 
+
+\item \textbf{Gifts:} Robots and team member are \emph{not} allowed to hand out gifts as part of the RoboZoo challenge. In the case that team members are lurking around the cages or interacting with the audience, that team will be disqualified.
+
+\item \textbf{Language:} RoboCup is an international competition. This means all robots have to interact with the audience in English.
 \end{itemize}
 
 \subsection{Data recording}
-  No data is to recorded during the RoboZoo challenge.
+No data required to be recorded during the RoboZoo challenge.
 
 \subsection{OC instructions}
 
 2h before test:
 \begin{itemize}
-\item{Announce to teams the dimension of the enclosed spaces.}
-\item{Specify where the presentation will take place.}
-\item{Specify which space will be occupied by which robot.}
+\item Announce to teams the dimension of the enclosed spaces.
+\item Announce where the presentation will take place.
+\item Announce which space will be occupied by which robot.
+\end{itemize}
+
+During the test
+\begin{itemize}
+\item Provide tokens to the audience.
+\item Stop unattended robots (by pressing the emergency button).
 \end{itemize}
 
 \subsection{Score Sheet}
