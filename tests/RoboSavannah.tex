@@ -1,0 +1,87 @@
+\newcommand{\roboSavannahTokens}{$N$}
+\section{RoboSavannah}
+\label{sec:test_robo_savannah}
+
+During the RoboSavannah, the robots go into the wild and mix with the audience. The robots must follow and guide an untrained member of the audience through the RoboCup venue. 
+
+\subsection{Setup}
+The robots are lined up in the direct vicinity of the arena, in a publicly accessible area.
+
+\subsection{Task}
+The robots must follow and guide a person around the RoboCup venue. Robots are run in parallel as many as possible at a time, limited by safety guidance. 
+
+\begin{itemize}
+ \item  At any moment when the robot is not following or guiding, it can be commanded to start doing so. The robot may tell it is available for such a task to the audience.
+	In this state it may announce what to say to start/stop following and guiding. 
+ \item 	After receiving the command, the robot must follow/guide the person until it is commanded to stop. 
+ \item \textbf{Following: }	The person may take the robot to any publicly and robot acccessible location within the venue. 
+	If the robot has stopped following (for any reason) the person, the robot must indicate that its available for a command again and wait for a new command. 
+ \item 	\textbf{Guiding: } 	The robot guides the person to the original starting location, i.e the vicinity of the arena. 
+ \item 	This repeats until the time is up.
+\end{itemize}
+
+While following or guiding, it may be that the robot and/or the human is blocked or someone crosses between the follower and guider. 
+
+\subsection{Jury \& evaluation}
+General audience evaluates the following \& guiding performance and appearance of the robots. 
+Each member of the audience who enters the corridor will receive \roboSavannahTokens tokens which will be given to their top favorite robots on both: appearance and performance. 
+Earned tokens are normalized regarding the maximum amount of tokens given to a robot per category. 
+Therefore scoring in each category is proportional to the amount of tokens per category.
+
+\subsection{Security Concerns}
+Robots mixing with the general audience has been avoided previosuly at RoboCup@Home, but to make robots useful, some mixing will be necessary.
+
+\begin{itemize}
+ \item Robots not deemed safe for this challenge by a team member or RoboCup@Home comittee member is excluded from this challenge.
+ \item A team member will accompany the robot at all times in close distance in order to push the emergency if needed. 
+ \item A referee will also accompany the robot when it is following or guiding persons. 
+ \item Robot may not collide with any person or other robot. 
+ \item The audience may not touch the robot. 
+\end{itemize}
+
+\paragraph*{Important Note:} If the robot is headed on a collision course toward a person, robot or anything else, it must be stopped immediately. 
+
+\subsection{Additional rules and remarks}
+\begin{itemize}
+\item \textbf{Protagonist robots:} Robots must be able to perform autonomously during the test. 
+  Team members are only allowed to interact with the audience in order to give very brief instructions, but this must be kept to a minimum.
+  In the case that team members are interacting with the audience too much, the team can be disqualified. 
+  This will be judged by the accompanying referee.
+
+\item \textbf{Restart:} There is no restart limit nor penalty for restarting a robot. 
+  However, it is important to note that this test is essentially scored by the general public, and it is reasonable to expect that the audience will not be attracted to a robot being constantly fixed. 
+
+\item \textbf{Focus on performance:} We encourage teams to show the best of @home in the RoboSavannah, which can be achieved by having well-functioning and clear but polite robots.
+
+\item \textbf{Charging:} It is allowed to the team to change robot's batteries or to use a charging station during the RoboSavannah, however, all equipment must be at the arena.
+
+\item \textbf{Gifts:} Robots and team member are \emph{not} allowed to hand out gifts as part of the RoboSavannah challenge. 
+
+\item \textbf{Language:} RoboCup is an international competition. This means all robots have to interact with the audience in English.
+
+\item \textbf{Asking for passage:} The robot is allowed to (gently) ask individual persons to step aside, but it is not allowed to blindly shout at groups of people.
+\end{itemize}
+
+\subsection{Data recording}
+No data required to be recorded during the RoboSavannah challenge.
+
+\subsection{OC instructions}
+
+2h before test:
+\begin{itemize}
+\item Announce to teams the order in which the robots must start.
+\end{itemize}
+
+During the test
+\begin{itemize}
+\item Provide tokens to the audience.
+\item Stop unattended robots (by pressing the emergency button).
+\end{itemize}
+
+\subsection{Score Sheet}
+\input{scoresheets/RoboSavannah.tex}
+
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:
