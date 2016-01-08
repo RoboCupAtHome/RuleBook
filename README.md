@@ -1,7 +1,7 @@
 RuleBook
 ========
 
-Rulebook for RoboCup @Home 2015
+Rulebook for RoboCup @Home 2016
 
 [Compiled LaTeX version](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=Rulebook.tex)
 
