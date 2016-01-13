@@ -2,7 +2,8 @@
 
 This test is divided in two phases. First the robot must answer a set of questions to an operator at the first attempt without asking for confirmation. The operator is not allowed to move to the robot or shout to the robot.
 
-For the second phase, the Operator will move behind the robot and ask a set of questions which the robot must answer. The robot is allowed to turn to the operator and ask it to repeat the question, and the operator will repeat the question only once before moving again behind the robot and proceed with the next question.
+For the second phase, the robot will be surrounded by a umber of people, which pose a set of questions which the robot must answer. 
+The robot must look at the person asking the question and answer it. 
 
 \subsection{Goal}
 The robot must be able to properly recognize and answer to a specific set of questions without ask for confirmation. Also, the robot shall be able to react to a speaking operator which is not facing to it.
@@ -29,10 +30,11 @@ This test focuses on voice recognition and audio-source localization in a noisy 
 \item The operator shall be between 0.75 and 1.0 meters away from the robot position.
 \item The operator shall be between -60$^{\circ}$ and 60$^{\circ}$ from the robot's center (front range).
 \end{itemize}
-\item \textbf{Indirect speech recognition: } A group of several volunteers will stand around the robot as in Figure \ref{fig:asrsetup}, standing still, facing the robot, and betwen 0.75 to 1.0 meters away from it. The number of volunteers may change from the Figure. A random person of this group will ask a question of the same set described in the first part of the test. Before answering, the robot can do one or both of the following (each providing different amount of points):
+\item \textbf{Indirect speech recognition: } A group of several volunteers will stand around the robot as in Figure \ref{fig:asrsetup}, standing still, facing the robot, and between 0.75 to 1.0 meters away from it. The number of volunteers may change from the Figure. A random person of this group will ask a question of the same set described in the first part of the test. Before answering, the robot can do one or both of the following (each providing different amount of points):
 \begin{itemize}
-\item Turn towards the person that asked the question.
-\item Ask for only one repetition of the question (penalty).
+\item Answer the question,
+\item Turn towards the person that asked the question,
+\item Ask for only one repetition of the question, if needed (penalty).
 \end{itemize}
 This process will repeat 5 times. No attempt may receive negative points. When the robot provides an answer it should not ask for confirmation.
 \end{enumerate}
