@@ -1,10 +1,12 @@
-\section{RoboSavannah}
-In previous years, RoboCup@Home featured the RoboZoo test, as a public outreach. 
-In this test, the robots leave the zoo and roam around the RoboCup venue more or less freely. 
-That is, the robot must follow a person out of the arena and through unknown, dynamic, and crowded regions of the venue. 
+\section{Following \& Guiding}
+
+The robot must follow a person out of the arena and through unknown, dynamic, and crowded regions of the venue. 
 After reaching the destination, the robot must guide the person back to the arena.
 
-This test is intended mostly as an outreach the the audience. They can take pictures of the robots up close and maybe even interact with the robot themselves. 
+\subsection{Focus}
+This test focuses on tracking, recognizing, following and guiding a previously unknown person as well as safe navigation in dynamic environments.
+In addition, continuing the tradition of the RoboZoo test series in the previous years, this test is also intended as an audience outreach.
+Spectators can take pictures of the robots up close and maybe even interact with the robot themselves. 
 
 \subsection{Focus}
 This test focuses on tracking, recognizing, following and guiding a previously unknown person as well as safe navigation in dynamic environments.
@@ -14,36 +16,32 @@ This test focuses on tracking, recognizing, following and guiding a previously u
 \begin{enumerate}
 \item \textbf{Doors:} All doors in the apartment are open.
 \item \textbf{Location:} The test starts and ends in one of the arenas (apartment). During the test, the robots have to safely operate outside the arena in a public space.
-\item \textbf{Operator:} An operator is selected by the TC to test the robot during the following and guiding phases.
-  This operator is selected by the referees and may be another referee or even someone from the general public. 
+\item \textbf{Operator:} An operator is selected by the \TC to test the robot during the following and guiding phases.
 \item \textbf{Other people:} There are no restrictions on other people walking by or standing around throughout the complete task.
-\item \textbf{Path:} A path is setup but not announced beforehand. The paths includes check points and a destination location.
-\item \textbf{Disturbances:} No predefined disturbances are set up. However, this test will take place in the RoboCup venue where some unpredicted disturbances will manifest themselves. 
+\item \textbf{Path:} A path is setup but not announced beforehand. 
+The path includes check points and a destination location.
+\item \textbf{Disturbances:} The path includes defined disturbances during following and guiding (not announced before the test).
+In addition, this test will take place in the RoboCup venue where some unpredicted disturbances will manifest themselves. 
 \end{enumerate}
 
 \subsection{Task}
 
 \begin{enumerate}
-\item \textbf{Initialization:} The robot starts at a predefined \emph{starting location}, the designated \textit{operator} will step in front of the robot and tell the robot to start. 
-  The robot must memorize the \textit{operator} and follow the \emph{operator} to a designated \emph{goal location} outside the arena. 
+\item \textbf{Initialization:} The robot starts at a predefined \emph{starting location}. 
+  The designated \textit{operator} will step in front of the robot and tell the robot to start. 
+\item \textbf{Training phase \& operator instructions:} The robot must memorize the \textit{operator} and follow the \emph{operator} to a designated \emph{goal location} outside the arena. 
   Neither the path taken nor the goal location are announced beforehand.
-\item \textbf{Training phase and operator instructions:} The robot has to memorize the operator. 
-  During this phase, the robot may instruct the operator to follow a certain setup procedure and instruct the operator on what to do when the robot stops following (or ask for help).
+  During the training phase, the robot may instruct the operator to follow a certain setup procedure and what to do when the robot stops following (or ask for help).
 \item \textbf{Following phase:} When the robot signals that it is ready to start following, the operator starts walking---in a natural way---along the designated path. 
   The robot needs to follow the operator until the operator asks the robot to stop doing so, at the \textit{goal location} or some intermediate location chosen by the operator.
-  At this point, a new operator may be selected by the referee (in case of the operator being someone from the audience, this gives more people the change to interact with a robot). 
-  The new operator will also tell the robot to start following.
-  When the robot looses the operator and stops following, the same may happpen in that an new operator maybe selected. 
+  The robot is requested to continue following when told to do so by the operator.
 \item \textbf{Guiding phase:} Upon reaching the \textit{goal location}, the \textit{operator} will command the robot to stop following and to start guiding the \emph{operator} back to the arena.
   This may be a single command and can be specified by the team and included in the operator instructions in the training phase.
   When the robot signals that it is ready to start guiding, the operator starts walking---in a natural way---following the robot and its instructions.
   If the robot is unable to guide a human, it may go back to the \textit{starting location} without an operator. 
-\item \textbf{End of the test:} Once back at \textit{starting location}, the robot announces the operator is back home. 
+\item \textbf{End of the test:} Once back at \textit{starting location}, the robot has to announce that it is back in the arena. 
   After the announcement, the robot has to leave through the exit door.
 \end{enumerate}
-
-Further, the robot is judged by the operator(s) on its appearance and the interaction the operator had with the robot. 
-For example, of the robot is hard to understand, is not polite in its instructions or does not understand the operator very well, this may be scored very low.
 
 \paragraph*{Remarks:}
 \begin{enumerate}
@@ -53,7 +51,6 @@ For example, of the robot is hard to understand, is not polite in its instructio
 
 \subsection{Obstacles and Disturbances}
 During following and guiding, some \emph{disturbances} will occur. 
-Since this test is run ``in the wild'', they cannnot be timed or triggered at specific waypoints. 
 Disturbances may include:
 \begin{compactitem}
 \item A person crosses in between operator and robot (following and guiding), 
@@ -61,7 +58,6 @@ Disturbances may include:
 \item The operator becomes slower (guiding),
 \item The operator stops following,
 \item Audience taking pictures of the robot and its operator,
-\item Etc.
 \end{compactitem}
 In case of disturbances it is expected that the robot continues following or guiding the operator and to find the operator again in case the operator got out of sight.
 
@@ -73,7 +69,7 @@ In case of disturbances it is expected that the robot continues following or gui
   At least one \TC member is always in sight to stop the robot (or tell others to do so).
 \item \textbf{Asking people to move away:} If the robot finds on its way a person blocking its path, it may \textit{gently} ask that person to move away and wait for the path to be clear. 
 \item \textbf{Instructions:} The robot interacts with the operator, \emph{not} the team. 
-That is, the team is not allowed to instruct the follower.
+  That is, the team is not allowed to instruct the follower.
 \item \textbf{Natural walking:} The operator has to walk \quotes{naturally}, i.e., move forward facing forward. 
   The operator is not allowed during the following phase to walk back, stand still, signal the robot or follow any re-calibration procedure.
   During the guiding, the operator follows with constant pace besides the defined disturbances. 
@@ -100,7 +96,7 @@ Please record the following data (See \refsec{rule:datarecording}):
 \newpage
 
 \subsection{Score sheet}
-\input{scoresheets/RoboSavannah.tex}
+\input{scoresheets/following_guiding.tex}
 
 % Local Variables:
 % TeX-master: "Rulebook"
