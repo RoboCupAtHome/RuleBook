@@ -2,7 +2,7 @@
 
 This test is divided in two phases. First the robot must answer a set of questions to an operator at the first attempt without asking for confirmation. The operator is not allowed to move to the robot or shout to the robot.
 
-For the second phase, the focus is to carry out Sound Source Localization (SSL) and Automatic Speech Recognition (ASR) at the same time. To this effect, volunteers will stand around the robot and a randomly chosen volunteer will ask a question. The robot is expected to turn towards that volunteer and answer the question. If the robot is NOT able to carry out SSL and ASR at the same time (e.g. it needs to turn towards volunteer using SSL before doing ASR), the robot is allowed to request to repeat the question (with a penalty). In addition, if SSL cannot be carried out, the robot may still answer the question without turning, but no points will be provided for SSL.
+For the second phase, the focus is to carry out Sound Source Localization (SSL) and Automatic Speech Recognition (ASR) at the same time. To this effect, volunteers will stand around the robot and a randomly chosen volunteer will ask a question. The robot is expected to turn towards that volunteer and answer the question. If the robot is NOT able to carry out SSL and ASR at the same time (e.g. it needs to turn towards the speaking volunteer using SSL before doing ASR), the robot is allowed to request to repeat the question (with a penalty). In addition, if SSL cannot be carried out, the robot may still answer the question without turning, but no points will be provided for SSL.
 
 \subsection{Goal}
 The robot must be able to properly recognize and answer to a specific set of questions without ask for confirmation. Also, the robot shall be able to react to a speaking operator which is not facing towards to.
@@ -53,7 +53,7 @@ This process will repeat 5 times. No attempt may receive negative points. When t
 \item \textbf{Continue rule:} Continue rule (Section \refsec{rule:asrcontinue}) can not be used during this test.
 \item \textbf{Question timeout:} If the robot does not answer within 10 seconds, the question is considered as \textit{missed}, and the TC member will proceed with the next question.
 \item \textbf{Understanding the answer:} If the robot's answer is not understood by the operator, it is considered as \textit{incorrect}, and the TC member will proceed with the next question. It is thus advised that the robot provide answers such that it is clear that the robot understood the question. For example, if the question is ``What is the capital of Germany?'', instead of just answering ``Berlin'', it is advised that the robot answers something to the effect of ``The capital of Germany is Berlin''.
-\item \textbf{Question repetition:} In the second phase, if the robot turns towards the operator to be asked once again, it should clearly state that it requires a repetition of the question once it finishes turning, so as to queue the operator to do so.
+\item \textbf{Question repetition:} In the second phase, if the robot turns towards the operator to be asked once again, it should clearly state that it requires a repetition of the question once it finishes turning, so as to cue the operator to do so.
 \end{itemize}
 
 \subsection{Data recording}

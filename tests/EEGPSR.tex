@@ -56,7 +56,7 @@ This test particularly focuses on the following aspects:
 
 	\item \textbf{Returning:} After accomplishing the assigned task, the robot has to move back to its designated position to wait and retrieve the next command (i.e., go back to 1. without the need of re-entering the arena). The robot can work on at most \eegpsrMaxCmd commands. \\
 
-	\item \textbf{Timing:} The total time allotted to the robot for command retrieval and task execution is \eegpsrMaxTeamTime minutes. If the robot is not at its designated position after the time has expired, it must be moved at its designated position immediately. \\
+	\item \textbf{Timing:} The total time allotted to the robot for command retrieval and task execution is \eegpsrMaxTeamTime minutes. If the robot is not at its designated position after the time has expired, it must be moved at its designated position immediately. See the section on scheduling below as well.\\
 
 	\item \textbf{Exiting the arena:} When commanded to do so, a robot should leave the arena. \\
 
@@ -70,7 +70,7 @@ The following abilities will be scored considering the best execution only (e.g.
 
 \begin{itemize}
 	\item Advanced manipulation (pouring, placing in a box, transporting a tray, etc.).
-	\item Awareness (see \refsec{sec:eegpsr_awarenes}).
+	\item Awareness (see \refsec{sec:eegpsr-awarenes}).
 	\item Complex command understanding (natural language).
 	\item Count people / objects in a given location.
 	\item Feature recognition (color, gender, gesture, pose, size, etc.).
@@ -116,7 +116,7 @@ These \textit{unexpected} events will only occur within the field of view of the
 \subsection{Additional rules and remarks}
 \label{sec:eegpsr-remarks}
 \begin{enumerate}
-	\item \textbf{CONTINUE rule:} Teams are able to use the CONTINUE rule in this test, with all the standard penalties it involves as described in section \refsec{asrcontinue}.
+	\item \textbf{CONTINUE rule:} Teams are able to use the CONTINUE rule in this test, with all the standard penalties it involves as described in section \refsec{rule:asrcontinue}.
 	%The CONTINUE rule can only be used with the custom operator (e.g. both penalties of custom speaker and CONTINUE rule will be applied). \\
 
 	\item \textbf{Number of Teams and Scheduling:} In each test slot, \eegpsrTeams teams will be competing in the arena concurrently. The robots will be tested in an interleaved fashion: The robots will retrieve commands and execute the task one after the other. As stated above, each robot will have a maximum amount of \eegpsrMaxCmdTime minutes per command (including time for retrieving the command and executing it). However, the sum of each of the times it took to carry each command should not exceed \eegpsrMaxTeamTime minutes. This means that if the robot took
@@ -128,8 +128,7 @@ These \textit{unexpected} events will only occur within the field of view of the
 	\item \textbf{Operator:}
 	\begin{itemize}
 		\item The person operating the robot is one of the referees (default operator).
-		\item If the robot appears to consistently not be able to understand the operator, the referees ask the team to continue with a custom operator, reducing the obtained score for that command to 75\% (\refsec{asrcontinue}).
-		\item If the robot appears to consistently not be able to understand the custom operator, the referees ask the team to continue with the alternate method, reducing the obtained score for that command to 25\% (\refsec{asrcontinue}).
+		\item If the robot appears to consistently not be able to understand the operator, the referees ask the team to apply the CONTINUE rule (\refsec{rule:asrcontinue}).
 	\end{itemize}
 
 	\item \textbf{Inoperative robots:} If a robot gets stuck while trying to accomplish a task during a reasonable amount of time (e.g.~30 seconds), the referee may ask the team to move back the robot to its designated position, proceeding with the next robot. \\
