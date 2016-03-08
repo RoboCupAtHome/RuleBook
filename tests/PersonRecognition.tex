@@ -1,6 +1,6 @@
 \section{Person Recognition}
 
-An Operator is introduced to the robot, which needs to learn what the Operator looks like. Once the robot has gathered enough information about the Operator, the Operator mixes within a crowd and the robot needs to find the Operator. Once the robot has found its Operator, it must explain how it must state information about the Operator, such as mood and gender.
+An Operator is introduced to the robot, which needs to learn what the Operator looks like. Once the robot has gathered enough information about the Operator, the Operator mixes within a crowd and the robot needs to find the Operator. Once the robot has found its Operator, it must state some information about the Operator and the crowd, such as mood and genders.
 
 \subsection{Goal}
 The robot has to identify the Operator within a crowd and state information about the Operator and the crowd.
@@ -27,11 +27,11 @@ This test focuses on people detection and recognition; as well as pose recogniti
   When the referees start the time, the team is not allowed to instruct the operator.
 \item \textbf{Memorizing the operator:} The robot has to memorize the operator. 
   During this phase, the robot may instruct the operator to follow a certain setup procedure.
-  \textbf{Learning operator name:} Optionally, the robot may ask the operator for his/her name and make the interaction after finding the operator again more natural.
+\item \textbf{Learning operator name:} Optionally, the robot may ask the operator for his/her name and make the interaction after finding the operator again more natural.
 \item \textbf{Wait for Start Command:} Once the robot states it has finished memorizing the operator, 
   it must wait for a Start Command via ASR (or using the Continue rule if need be; Section \refsec{rule:asrcontinue}) while the operator walks around the robot and moves behind it to blend in with the crowd.
   This test is not concerned with audio and voice recognition. Therefore, the start command may also be given by a single key press.
-\item \textbf{Find the crowd:} After the time elapses, the robot must turn about $180\degree$, approach to the crowd and start looking for the operator.
+\item \textbf{Find the crowd:} After the time elapses, the robot must turn circa $180\degree$, approach the crowd and start looking for the operator.
 \begin{itemize}
 \item \textbf{Crowd size:} The crowd may contain between 5 and 10 people, standing or sitting or lying within an  area of 5 meters (diameter).
 \item \textbf{Crowd position:} The crowd will be located behind the robot at a distance between 2 and 3 meters apart.

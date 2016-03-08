@@ -20,7 +20,7 @@ This test focuses on object detection, and manipulation; as well as object recog
 \item \textbf{Location:} One of the bookcases in or around the apartment is used for this test. The robot will start at a random distance between 1.0m and 1.5m from the bookcase.
 The bookcase has at least 5 shelves between 0.30m and 1.80m from the ground. One of the shelves is empty or will be made empty when the team chooses a shelve.
 \item \textbf{Objects:} The bookcase contains 10 objects from the Scenario Objects \ref{rule:scenario_objects}.
-  The robot must grasp 5 objects and identify at least \emph{those} 5 objects. 
+  The robot must grasp 5 objects and identify at least 5 objects. 
 \item \textbf{Object distribution:} The objects are located as follows:
 \begin{enumerate}
 \item Known object in an upper shelf.
@@ -31,17 +31,18 @@ The bookcase has at least 5 shelves between 0.30m and 1.80m from the ground. One
 \item[Optional] An occluded or hidden object on a middle shelf (e.g.~behind another object or inside a bowl).
 \end{enumerate}
 \item \textbf{Door/drawer:} The bookcase contains a door and a drawer, in which an additional object is placed. Opening the door or drawer gives a bonus. 
-Please note that may be more than one object in each shelf to fit all objects in.
 \end{enumerate}
+
+Please note that there may be more than one object in each shelf to fit all objects in.
 
 \subsection{Task}
 \begin{enumerate}
 \item \textbf{Searching for objects:} When told so by an operator, the robot approaches to the shelf from its nearby starting position and starts searching for objects.
-\item \textbf{Grasping objects:} Any object found by the robot may be grasped by it. Before or right after grasping the object, the robot has to announce which object it has found.
-\item \textbf{Placing objects:} After grasping the object, the robot has to safely place it (Section \refsec{rule:scenario_objects}) on the empty shelf a the middle of the bookcase. 
-  The object must stay there for at least 10sec.
+\item \textbf{Grasping objects:} Any object found by the robot may be grasped by it. Before or right after grasping the object, the robot may announce which object it has found. The scoring only takes the classifications in the report into account. 
+\item \textbf{Placing objects:} After grasping the object, the robot has to safely place it (Section \refsec{rule:scenario_objects}) on the empty shelf. 
+  The object must stay there for at least 10 seconds.
 \item \textbf{Handling objects multiple times:} Scores can only be gained a single time for each specific object.
-\item \textbf{Optional: Opening door or drawer:} The robot may open the door and/or drawer in the bookcase. An additional item is is located behind/in it. 
+\item \textbf{Optional: Opening door or drawer:} The robot may open the door and/or drawer in the bookcase. An additional item is located behind/in it. 
 \end{enumerate}
 
 \subsection{Additional rules and remarks}

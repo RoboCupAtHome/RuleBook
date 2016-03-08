@@ -218,7 +218,7 @@ Automatic Speech Recognition is preferred and any command given to the robot wil
 \begin{enumerate}
 \item \textbf{Default:} When the referee generates a command for the robot, it will be read out loud by the operator to the robot. 100\% of the points gained in the execution of the command will be awarded.
 \item \textbf{team member: } If this fails, a team member may speak the command to the robot if this was not the case already.  75\% of the points gained in the execution of the command will be awarded, if not stated otherwise.
-\item \textbf{QR-code:} If this fails as well, a QR-code will be generated that encodes the command as plain text and shown to the robot, displayed on either a piece of paper or a computer screen. A penalty of wil be applied, the factor of which must be specified in the test's scoresheet. 25\% of the points gained in the execution of the command will be awarded, if not stated otherwise.
+\item \textbf{QR-code:} If this fails as well, as a last resort, a QR-code will be generated that encodes the command as plain text and shown to the robot, displayed on either a piece of paper or a computer screen. A penalty of wil be applied, the factor of which must be specified in the test's scoresheet. 25\% of the points gained in the execution of the command will be awarded, if not stated otherwise. 
 \end{enumerate}
 
 \begin{enumerate}
@@ -231,17 +231,18 @@ Automatic Speech Recognition is preferred and any command given to the robot wil
 \subsubsection{Alternative methods}
 Below are some suggested alternatives for ASR besides the QR-code as specified above:
 \begin{itemize}
+	\item Any custom alternative that MUST be intuitive and intended for users with no technological expertise.
  	% \item Plug in an USB keyboard
  	\item Other types of natural interaction such as gestures.
  	\item Type in a designed interface in the onboard computer
 	\item The robot hosts a website/app on which some text can be entered.
 	% \item A laptop connects to the robot over e.g.~ssh where some command can be entered. 
-	\item Other custom alternatives that MUST be intuitive and intended for users with no technological expertise.
 \end{itemize}
 
 The default penalties for ASR alternative methods will be decided on by the TC, during the \iterm{Robot Inspection} test (see \refsec{sec:robot_inspection}).
+Operating the robot in a very user-friendly way via whatever manner may yield a significant amount of points more than using an user-unfriendly way such as th QR codes. 
 
-This rule is loosely defined on purpose: be creative. Consider who may use a service robot, why they might want/need such a robot and what this means for how they might operate a service robot.
+What a good custom ASR alternative is, is loosely defined on purpose: be creative. Consider who may use a service robot, why they might want/need such a robot and what this means for how they might operate a service robot.
 
 \paragraph*{Remark:} Plug-in external devices (keyboard/computer), typing commands in terminal (ssh, rostopic), and complex interfaces will not be allowed. User interfaces MUST be in English (multi-language GUI are allowed).
 
