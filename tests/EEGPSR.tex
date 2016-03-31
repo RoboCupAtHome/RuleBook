@@ -11,7 +11,7 @@
 % Maximum amount of time given to a team to perform a single command
 \newcommand{\eegpsrMaxCmdTime}{5~}
 % Maximum amount of time given to a team to perform all commands
-\newcommand{\eegpsrMaxTeamTime}{15~}
+\newcommand{\eegpsrMaxTeamTime}{\eegpsrMaxCmd$\times$\eegpsrMaxCmdTime}
 
 \section[EEGPSR]{E\textsuperscript{2}GPSR \\ \normalsize{(Enhanced Endurance General Purpose Service Robot)}}
 \label{sec:eegpsr}
@@ -81,13 +81,13 @@ The following abilities will be scored considering the best execution only (e.g.
 	\item People finding / learning / recognizing.
 	\item People following / guiding.
 	\item Speech recognition.
+	\item Memory and answering questions.
 \end{itemize}
 
 The following abilities will be scored considering the worst execution only (e.g.~colliding once negates all previous scoring achieved for \textit{navigation}):
 
 \begin{itemize}
 	\item Collision-free navigation.
-	\item Memory and answering questions.
 \end{itemize}
 
 
@@ -119,9 +119,11 @@ These \textit{unexpected} events will only occur within the field of view of the
 	\item \textbf{CONTINUE rule:} Teams are able to use the CONTINUE rule in this test, with all the standard penalties it involves as described in section \refsec{rule:asrcontinue}.
 	%The CONTINUE rule can only be used with the custom operator (e.g. both penalties of custom speaker and CONTINUE rule will be applied). \\
 
-	\item \textbf{Number of Teams and Scheduling:} In each test slot, \eegpsrTeams teams will be competing in the arena concurrently. The robots will be tested in an interleaved fashion: The robots will retrieve commands and execute the task one after the other. As stated above, each robot will have a maximum amount of \eegpsrMaxCmdTime minutes per command (including time for retrieving the command and executing it). However, the sum of each of the times it took to carry each command should not exceed \eegpsrMaxTeamTime minutes. This means that if the robot took
-%	4 minutes to carry out its first command and another 4 minutes for its second command, it only has 2 minutes to carry out its third command. However, if it only took
-	2 minutes for the first and 2 minutes for the second, it still only has \eegpsrMaxCmdTime minutes for the third. To facilitate a fluent and untroubled performance of the robots, the other robots must always return or being returned to their designated position before the next robot will be given a command. If a robot moves from its designated position while another robot is working on a command, it must be immediately disabled and moved to its designated position. If a restart is still available to the team, it can be restarted at its designated position. To carry the robot, at most two team members are allowed in the arena, and the robot must be moved as quickly as possible. To start or restart the robot, at most one team member may operate the robot. The team members moving and operating the robots must leave the arena immediately after the robot is placed or started. \\
+	\item \textbf{Number of Teams and Scheduling:} In each test slot multiple teams (preferably \eegpsrTeams teams) may be competing in the arena concurrently. The robots will be tested in an interleaved fashion: The robots will retrieve commands and execute the task one after the other. As stated above, each robot will have a maximum amount of \eegpsrMaxCmdTime minutes per command (including time for retrieving the command and executing it). \\
+	
+	\item \textbf{Returning to designated position:} To facilitate a fluent and untroubled performance of the robots, they must return (or being returned) to their designated position before the \eegpsrMaxCmdTime minutes command time elapses. \textbf{If a robot moves from its designated position while another robot is working on a command, it must be immediately disabled} and moved to its designated position. If a restart is still available to the team, it can be restarted at its designated position. \\
+
+	\item \textbf{Carrying robots:}	To carry the robot, at most two team members are allowed in the arena, and the robot must be moved as quickly as possible. To start or restart the robot, at most one team member may operate the robot. The team members moving and operating the robots must leave the arena immediately after the robot is placed or started. \\
 
 	\item \textbf{Referees:} Since the score system in this test involves a subjective evaluation of the robot's behavior, the referees are EC/TC members. One referee is assigned to each team to judge performance, to measure the time for working on a command, and to keep track of the overall operating time of the robot. \\
 
@@ -133,7 +135,9 @@ These \textit{unexpected} events will only occur within the field of view of the
 
 	\item \textbf{Inoperative robots:} If a robot gets stuck while trying to accomplish a task during a reasonable amount of time (e.g.~30 seconds), the referee may ask the team to move back the robot to its designated position, proceeding with the next robot. \\
 
-	\item \textbf{Restarts/Changing/Charging batteries:} The team may install a charging station at the designated position of the robot, if it does not hinder the other robots. However, the robot must connect itself with the charging station after carrying out a command. Changing batteries or manually connecting the robot with the charging station is allowed during a restart. The general rules for restart apply. \\
+	\item \textbf{Restart:} The number of commands to be given to a robot is three regardless if the restart were used or not. If a restart is required during before the first half of the total time allowed for execute a command elapses, a new command will be generated for the robot to perform. If the first half of the time has elapsed, the team may proceed with the restart but no new command will be generated and the robot must wait for the remaining commands (if any).\\
+
+	\item \textbf{Changing/Charging batteries:} The team may install a charging station at the designated position of the robot, if it does not hinder the other robots. However, the robot must connect itself with the charging station after carrying out a command. Changing batteries or manually connecting the robot with the charging station is allowed during a restart. \\
 
 	\item \textbf{Scoring:} Robots are scored by successfully performed ability and full command completion within time. 
 \end{enumerate}
