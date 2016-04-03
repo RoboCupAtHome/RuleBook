@@ -11,7 +11,6 @@
     Not all types of data are interesting for each challenge and thus each challenge will list which data to record. 
     
     \begin{itemize}
-    
     \item \textbf{Audio: } A .wav file of conversation or commands given by any operator and the result of the automatic speech recognition, if applicable.
       The recording must be made of the same signals that are input to the automatic speech recognition software. 
       \begin{itemize}
@@ -22,7 +21,7 @@
     \item \textbf{Commands: } A text file with the commands as received by the robot. 
       This may be the output of speech recognition or the outcome of any form of the continue rule.
     
-    \item \textbf{Images: } 2D and/or 3D RGB(D) images or pointclouds from the robot's camera(s) while doing any sort of recognition task.
+    \item \textbf{Images: } 2D and/or 3D RGB(D) images from the robot's camera(s) while doing any sort of recognition task.
 			    Record the full field of view. 
     \begin{itemize}
       \item
@@ -34,7 +33,7 @@
       \item
 	\textbf{Depth images: } 
 	\begin{itemize}
-	  \item \textbf{Format: } TeamName\_SensorName\_Timestamp\_depth.png
+	  \item \textbf{Filename: } TeamName\_SensorName\_Timestamp\_depth.png
 	  \item \textbf{Format: } Standard PNG 16bit grayscale
 	\end{itemize}
     \end{itemize}
@@ -47,7 +46,20 @@
     \end{itemize}
     
     For ROS-based robots, the most convenient data format for mapping data (laser scans, occupancy grids etc.) and motion plans are their ROS messages recorded into a ROS Bag file.
-  
+    This ROSBag should then contain:
+     \begin{itemize}
+       \item \textbf{Laser scans: } sensor_msgs/LaserScan
+       \item \textbf{Path(s): } nav_msgs/Path
+       \item \textbf{Map(s): } nav_msgs/OccupancyGrid
+       \item \textbf{Robot pose: } geometry_msgs/PoseStamped
+       \item \textbf{Transformation tree: } tf2_msgs/TFMessage or equivalent
+       \item \textbf{Odometry: } nav_msgs/Odometry
+      \end{itemize}
+    Although not all robots use ROS, this serves as a guideline of the type of data that may be interesting for others. 
+    The RoCKIn robot competition provides a conversion tool that converts to ROS Bag files:
+    \url{http://rockinrobotchallenge.eu/rockin_d2.1.3.pdf}, section 3.4 and 
+    \url{https://github.com/rockin-robot-challenge/benchmark_and_scoring_converter}
+
 %   
 %   5
 % In the following, ‘offline’ identifies data produced by the robot that will be collected by the referees when
