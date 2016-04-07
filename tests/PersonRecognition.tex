@@ -29,7 +29,8 @@ This test focuses on people detection and recognition; as well as pose recogniti
   During this phase, the robot may instruct the operator to follow a certain setup procedure.
 \item \textbf{Learning operator name:} Optionally, the robot may ask the operator for his/her name and make the interaction after finding the operator again more natural.
 \item \textbf{Wait for Start Command:} Once the robot states it has finished memorizing the operator, 
-  it must wait for a Start Command via ASR (or using the Continue rule if need be; Section \refsec{rule:asrcontinue}) while the operator walks around the robot and moves behind it to blend in with the crowd.
+  it must wait for the operator to mix with the crowd. The robot may assume that this is done in ca. 10 seconds. 
+  Alternatively, it may wait for a Start Command via ASR (or using the Continue rule if need be; Section \refsec{rule:asrcontinue}) while the operator walks around the robot and moves behind it to blend in with the crowd.
   This test is not concerned with audio and voice recognition. Therefore, the start command may also be given by a single key press.
 \item \textbf{Find the crowd:} After the time elapses, the robot must turn circa $180\degree$, approach the crowd and start looking for the operator.
 \begin{itemize}
