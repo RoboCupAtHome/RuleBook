@@ -23,13 +23,13 @@ This test particularly focuses on the following aspects:
 \begin{itemize}
 	\item No predefined order of actions to carry out (to get away from state machine-like behavior programming).
 
-	\item Increased complexity in speech recognition (possible commands are less restricted in both actions/operators and arguments/objects, commands can include multiple objects, e.g., \quotes{put the apple on the kitchen table}).
+	\item Increased complexity in speech recognition (possible commands are less restricted in both actions/operators and arguments/objects, commands can include an object and a location, e.g., \quotes{put the apple on the kitchen table}).
 
 	\item More advanced capabilities (e.g. activity detection, unknown object description, pouring, manipulating tray, etc.).
 
 	\item Environmental (high-level) reasoning, including:
   \begin{itemize}
-	\item Memory (robot must remember performed actions).
+	\item Memory (robot must remember performed actions, e.g. ``where did I leave this thing I grabbed earlier'')
 	\item Awareness (events may occur while the robot is waiting for a command).
   \end{itemize}
 
@@ -107,7 +107,7 @@ These \textit{unexpected} events will only occur within the field of view of the
 \begin{itemize}
 	\item \textbf{Waving:} The operator waves to the robot expecting the robot to approach to them, prior to give a command.
 	\item \textbf{Falling down:} The person being followed by the robot suddenly falls down, robot must offer assistance.
-	\item \textbf{Walking away:} One of the people in the crowd being counted suddenly leaves the room. \\ \textbf{Remark: in this case the people count reported by the robot will be valid for both: including and excluding the person who left.}
+	\item \textbf{Walking away:} One of the people in the crowd being counted suddenly leaves the room. The robot must indicate thi clearly somehow. 
 	\item \textbf{Door shutting:} A door is suddenly shut while the robot is on its way to it.
 \end{itemize}
 
@@ -125,7 +125,7 @@ These \textit{unexpected} events will only occur within the field of view of the
 
 	\item \textbf{Carrying robots:}	To carry the robot, at most two team members are allowed in the arena, and the robot must be moved as quickly as possible. To start or restart the robot, at most one team member may operate the robot. The team members moving and operating the robots must leave the arena immediately after the robot is placed or started. \\
 
-	\item \textbf{Referees:} Since the score system in this test involves a subjective evaluation of the robot's behavior, the referees are EC/TC members. One referee is assigned to each team to judge performance, to measure the time for working on a command, and to keep track of the overall operating time of the robot. \\
+	\item \textbf{Referees:} Since the score system in this test involves some subjective criteria while evaluating the robot's behavior, the referees are EC/TC members. One referee is assigned to each team to judge performance, to measure the time for working on a command, and to keep track of the overall operating time of the robot. \\
 
 	\item \textbf{Operator:}
 	\begin{itemize}
@@ -135,11 +135,17 @@ These \textit{unexpected} events will only occur within the field of view of the
 
 	\item \textbf{Inoperative robots:} If a robot gets stuck while trying to accomplish a task during a reasonable amount of time (e.g.~30 seconds), the referee may ask the team to move back the robot to its designated position, proceeding with the next robot. \\
 
-	\item \textbf{Restart:} The number of commands to be given to a robot is three regardless if the restart were used or not. If a restart is required during before the first half of the total time allowed for execute a command elapses, a new command will be generated for the robot to perform. If the first half of the time has elapsed, the team may proceed with the restart but no new command will be generated and the robot must wait for the remaining commands (if any).\\
+	\item \textbf{Restart:} The number of commands to be given to a robot is three regardless if the restart were used or not. 
+	If a restart is required during before the first half of the total time allowed for execute that command elapses, a new command will be generated for the robot to perform. 
+	If the first half of the time has elapsed, the team may proceed with the restart but no new command will be generated and the robot must wait for the remaining commands (if any).
+	E.g.  if the robot fails while executing command 2, it may restart for a new command while retaining the points for command 1 and later getting a command 3 as well.\\
 
 	\item \textbf{Changing/Charging batteries:} The team may install a charging station at the designated position of the robot, if it does not hinder the other robots. However, the robot must connect itself with the charging station after carrying out a command. Changing batteries or manually connecting the robot with the charging station is allowed during a restart. \\
 
 	\item \textbf{Scoring:} Robots are scored by successfully performed ability and full command completion within time. 
+	
+	\item \textbf{Alternatives: } If a robot is not able to perform some part of a command, it may try to find an alternative to achieve the same goal. 
+	  E.g. ask a human to open the door, let a human pour into a bowl etc. 
 \end{enumerate}
 
 \subsection{OC instructions}
@@ -156,7 +162,7 @@ These \textit{unexpected} events will only occur within the field of view of the
 \subsection{Referee instructions}
 \textbf{During the test:}
 \begin{itemize}
-	\item Generate random sentences by an automatic sentence generator.
+	\item Generate commands beforehand. Commands preferably lead to a single sensible scenario that (if successful) yields the same amount of points to each team. 
 	\item Take the command and total time per team.
 \end{itemize}
 
