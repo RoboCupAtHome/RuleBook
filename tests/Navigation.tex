@@ -30,7 +30,7 @@ This test focuses on tracking and recognizing a previously unknown person, obsta
 	\item \textbf{Waypoint 1 (path planning):} After entering the arena, the robot must navigate to \textit{Waypoint 1} that is reachable via, at least, two paths, each one requiring the robot to go through a door which will be shut as the robot approaches. The robot may:
 	\begin{itemize}
 		\item Take a different path.
-		\item Open the closed door.
+		\item Open the closed internal door.
 	\end{itemize}
 
 	\item \textbf{Waypoint 2 (obstacle interaction):} Immediately after reaching \textit{Waypoint 1}, the robot must reach at grasp (or place) distance \textit{Waypoint 2}, a placement location (e.g. a shelf). A large obstacle will prevent the robot from getting close to its destination, having the robot to identify it and interact with it.
@@ -54,11 +54,19 @@ This test focuses on tracking and recognizing a previously unknown person, obsta
 	\end{itemize}
 	
 	\item \textbf{Go back home:} After reaching \textit{Waypoint 4} the robot must go back to \textit{Waypoint 3}.
-	\begin{itemize}
-        \item Reach waypoint 3 again.
-	\end{itemize}
+	  After the human left the apartment to guide the robot to \textit{Waypoint 4}, the external doors of the apartment will be closed (as one would when leaving the house). 
+	  The robot must open a door of the appartment before it can enter and collect the point for reaching \textit{Waypoint 3}. 
+	  \begin{itemize}
+	    \item Reach the external door it left the appartment from.
+	    \item Open that door. The latch of the door will be fixed so that it can't lock into the door frame.
+	      This means the door can be pushed op, as the appartment doors open to the inside of the apartment and the robot comes from the outside. 
+	      The robot is allowed to use its base to push the door further open, but only after it used a manipulator to initially open the door by the handle. 
+	      Rotating the handle is not needed but the robot must show it knows where the door handle is. 
+	      The door must be opened gently, not by bumping into it without stopping first. 
+	    \item Reach waypoint 3 again.
+	  \end{itemize}
 	
-	\item \textbf{Leaving the arena:} The robot must leave the arena through the indicated door.
+	\item \textbf{Leaving the arena:} The robot must finally leave the arena through the indicated door.
 \end{enumerate}
 
 \begin{figure}[tbp]
@@ -90,7 +98,7 @@ While navigating to waypoints 1, 2, and 3 the robot will find one of the followi
 
 	\item \textbf{Show must go on:} If a robot is unable to reach a waypoint, it must say it and proceed to the next one.
 
-	\item \textbf{Closing doors:}  The door that will be shut will be the door on the route the robot has committed to. It will be shut right after the robot starts driving towards the door, but granting enough time to notice that the door is now closed.	
+	\item \textbf{Closing internal doors:}  Theinternal door that will be shut will be the door on the route the robot has committed to. It will be shut right after the robot starts driving towards the door, but granting enough time to notice that the door is now closed.	
 
 	\item \textbf{Moving objects:} If the robot finds on its way a \textit{static movable obstacle} (chair, cubes, toys, etc.) which is capable to move, it must announce is going to move an obstacle and then proceed to move the object apart with its manipulator, or by \textbf{gently} pushing it with its body.
 
@@ -125,6 +133,7 @@ The referee needs to
 
 \textbf{2 hours before the test}
 \begin{itemize}
+        \item Announce the entry and exit doors. 
 	\item Announce the locations for waypoints 1, 2, and 3.
 	\item Establish location for waypoint 4 and the path for the \textit{follow me} phase. 
 \end{itemize}
