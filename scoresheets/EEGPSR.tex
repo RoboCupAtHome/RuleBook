@@ -1,48 +1,86 @@
+{\LARGE\textbf{Given commands:}}\vspace{4mm}
+
+\begin{table}[h]
+\begin{tabularx}{\textwidth}{X r r r r}
+	\textbf{\large Command 1:} & ~ & ~ & ~ & ~ \\ \hline
+	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
+	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
+	Category: 1 2 3 4 5 6 \vspace{8mm} &
+	Restart? & Custom Operator? & Continue? & ASR attempts: 1 2 3 \\
+
+	\textbf{\large Command 1 $\cdot$ 2:} & ~ & ~ & ~ & ~ \\ \hline
+	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
+	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
+	Category: 1 2 3 4 5 6 \vspace{8mm} &
+	Restart? & Custom Operator? & Continue? & ASR attempts: $\Box \Box \Box$ \\
+	
+	\textbf{\large Command 1 $\cdot$ 2 $\cdot$ 3 :} & ~ & ~ & ~ & ~ \\ \hline
+	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
+	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
+	Category: 1 2 3 4 5 6 \vspace{8mm} &
+	Restart? & Custom Operator? & Continue? & ASR attempts: $\Box \Box \Box$ \\
+
+	\textbf{\large Command 1 $\cdot$ 2 $\cdot$ 3 :} & ~ & ~ & ~ & ~ \\ \hline
+	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
+	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
+	Category: 1 2 3 4 5 6 \vspace{8mm} &
+	Restart? & Custom Operator? & Continue? & ASR attempts: $\Box \Box \Box$ \\
+\end{tabularx}
+\end{table}
+\vspace*{\fill}
+
+\textbf{Remark: } Abilities marked with \textbf{*} are subjectively evaluated by  EC/TC members. Scoring is granted proportionally based on robot performance.
+
+\newpage
 The maximum time for this test is 40 minutes.
+
 \begin{scorelist}
 	\scoreheading{Getting instructions}
 	\scoreitem{40}{Understanding the set of actions on the $1^{st}$ attempt}
 	\scoreitem{20}{Understanding the set of actions on the $2^{nd}$ attempt}
 	\scoreitem{10}{Understanding the set of actions on the $3^{rd}$ attempt}
-	\scoreitem[0.5]{-1}{Reduction of points for every command provided by a team member}
-	\scoreitem[0.25]{-1}{Reduction of points for every command given via continue rule}
+	\scoreitem[0.50]{-1}{Command given by custom operator (point reduction to ASR)}
 	
 	\scoreheading{HRI}
 	\scoreitem{05}{Answering a predefined question}
+	\scoreitem{10}{Ask for missing information}
 	\scoreitem{05}{Ask for command after detecting an event}
-	\scoreitem{10}{Correctly state the gender of a person gender}
-	\scoreitem{10}{Correctly state the number of people in a group}
-	\scoreitem{10}{Find a person in a given room}
-	\scoreitem{30}{Recognize a newly learned face correctly}
+	\scoreitem{20}{Explain in detail why the robot could not accomplish a task *}
 	\scoreitem{10}{Natural handover (give or take)}
 
 	\scoreheading{Manipulation}
 	\scoreitem{10}{Grab an item}
-	\scoreitem{50}{Open door/drawer}
+	\scoreitem{50}{Open door/drawer *}
 	\scoreitem{10}{Place an item}
-	\scoreitem{30}{Pour into a bowl}
-	\scoreitem{20}{Two-handed transport of tray/bowl}
+	\scoreitem{30}{Pour into a bowl *}
+	\scoreitem{20}{Two-handed transport of tray/bowl *}
 	
 	\scoreheading{Memory \& Awareness}
-	\scoreitem{25}{Detecting an unexpected event}
-	\scoreitem{25}{Provide information about changes in the environment and/or given commands}
+	\scoreitem{15}{Detect an expected event (within a reasonable amount of time) *}
+	\scoreitem{25}{Detecting an unexpected event*}
+	\scoreitem{25}{Provide information about changes in the environment and/or given commands*}
 
 	\scoreheading{Navigation}
 	\scoreitem{15}{Follow operator until stopped}
-	\scoreitem{20}{Guide a human to correct location without loosing him or colliding}
+	\scoreitem{20}{Guide a human to location without loosing him or colliding}
 	
 	\scoreheading{Object recognition}
 	\scoreitem{25}{Describing a set of unknown objects at a location}
-	\scoreitem{15}{Search for item at correct location}
+	\scoreitem{40}{Find (and grasp) an object from a description *}
 	\scoreitem{10}{Recognize an object's class correctly}
-	\scoreitem{40}{Find (and grasp) an object from a description}
+	\scoreitem{15}{Search for item at location}
 
-	\scoreheading{Pose and activity recognition}
-	\scoreitem{10}{Correctly state the pose of a person}
+	\scoreheading{People, pose and activity recognition}
 	\scoreitem{10}{Detect a calling/waving person}
-	\scoreitem{25}{Detect correct event (within a reasonable amount of time)}
-	\setTotalScore{420}
+	\scoreitem{10}{Find a person in a given room}
+	\scoreitem{30}{Recognize a newly learned face correctly}
+	\scoreitem{10}{State the gender of a person gender}
+	\scoreitem{10}{State the number of people in a group}
+	\scoreitem{10}{State the pose of a person *}
+
+	\setTotalScore{440}
 \end{scorelist}
+
 
 % Local Variables:
 % TeX-master: "Rulebook"

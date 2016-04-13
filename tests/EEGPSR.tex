@@ -16,24 +16,19 @@
 \section[EEGPSR]{E\textsuperscript{2}GPSR \\ \normalsize{(Enhanced Endurance General Purpose Service Robot)}}
 \label{sec:eegpsr}
 
-This test evaluates the abilities of the robot that are required throughout the set of tests in stages I and II of this (2016) and previous years. In this test the robot has to solve multiple tasks upon request over an extended period of time (30-45 minutes). That is, the test is not incorporated into a (predefined) story and there is neither a predefined order of tasks nor a predefined set of actions. The actions that are to be carried out by the robot are chosen randomly by the referees from a larger set of actions. These actions are organized in three categories with different, incremental, complexity. Scoring thereby depends on the complexity class.
+This test evaluates the required robot abilities throughout the Stage I \& II tests this (2016) and previous years' rulebook. In EEGPSR the robot has to solve multiple tasks that are chosen randomly by the referees from a larger set of actions, over an extended period of time (30-45 minutes). In other words, tasks are not incorporated into a (predefined) story and there is neither a predefined order of tasks nor a predefined set of actions.
+The actions to be carried out by the robot are organized in several categories with equivalent complexity but targeting different abilities.
+It is upto the teams to choose how to execute the command and solving the involved tasks according to robot capabilities.
+Scoring thereby depends on the complexity of the abilities shown.
 
 \subsection{Focus}
 This test particularly focuses on the following aspects:
 \begin{itemize}
-	\item No predefined order of actions to carry out (to get away from state machine-like behavior programming).
-
-	\item Increased complexity in speech recognition (possible commands are less restricted in both actions/operators and arguments/objects, commands can include multiple objects, e.g., \quotes{put the apple on the kitchen table}).
-
-	\item More advanced capabilities (e.g. activity detection, unknown object description, pouring, manipulating tray, etc.).
-
-	\item Environmental (high-level) reasoning, including:
-  \begin{itemize}
-	\item Memory (robot must remember performed actions).
-	\item Awareness (events may occur while the robot is waiting for a command).
-  \end{itemize}
-
-  \item Robust long-term operation.
+	\item No predefined order of actions to carry out.
+	\item Increased complexity in speech recognition.
+	\item More advanced capabilities
+	\item Environmental (high-level) reasoning
+	\item Robust long-term operation.
 
 \end{itemize}
 
@@ -42,15 +37,30 @@ This test particularly focuses on the following aspects:
 \begin{enumerate}
 	\item \textbf{Entering and command retrieval:} The robot enters the arena and drives to a designated position where it has to wait for further commands. \\
 
-	\item \textbf{Command generation:} A command is generated randomly depending on the abilities chosen by the team (see \refsec{sec:eegpsr-abilities}) and those which haven't been evaluated yet. The command is composed by up to three actions that the robot has to show it has recognized. The robot may repeat the understood command and ask for confirmation. If it can't recognize the command correctly, it can also ask the speaker to repeat the whole command again.
+	\item \textbf{Command generation:} A command is generated randomly depending on the category chosen by the team (see below). All commands are composed by up to three actions that the robot has to show it has recognized. The robot may repeat the understood command and ask for confirmation. If it can't recognize the command correctly, it can also ask the speaker to repeat the whole command again.
 
-	The command may not include all the information being necessary to accomplish the task. In those cases, the robot can ask questions to retrieve the missing information about the task, but is not required to. In the questions the robot has to make clear what it has already understood, e.g., tell the operator that it has understood to bring a particular beverage can, but not where can is located in the arena. The robot may also simply start searching. \\
+	\begin{enumerate}
+		\item \textbf{Category I:} The command is focused in \textbf{Advanced Manipulation}.
 
-	Each new generated command may require information from the previously given ones. Also, the difficulty of the new commands will be increased with respect of the previously generated ones. \\
+		\item \textbf{Category II:} The command is focused in \textbf{Advanced Object Recognition}.
+
+		\item \textbf{Category III:} The robot gets a command focused in Human-Robot Interaction (\textbf{HRI}) that does not include all the information being necessary to accomplish the task.
+
+		\item \textbf{Category IV:} The command is focused in \textbf{Memory and Awareness}. This category can only be chosen after the team has successfully accomplished another command.
+
+		\item \textbf{Category V:} The command is focused in \textbf{People Recognition} and \textbf{Navigation}.
+
+		\item \textbf{Category VI:} The command is focused in \textbf{simple tasks} involving Manipulation, Object Recognition, and Person Recognition.
+
+	\end{enumerate}
+
+%	 \\
+
+%	Each new generated command may require information from the previously given ones. Also, the difficulty of the new commands will be increased with respect of the previously generated ones. \\
 
 	\item \textbf{Task assignment:} The robot is given a command by the operator and may directly start to work on the task assignment. If a robot is unable to perform a command, it should get back to the operator, and clearly state \textbf{why} it wasn't able to accomplish the task. \\
 
-	\item \textbf{Answering questions:} After the first command has been (partially) accomplished, the operator may ask the robot to provide information about its actions and the environment, such as: what the robot has just accomplished, the location of a person or object, number of people in a given room, the state of a door, what the robot is holding, etc. \\
+%	 \\
 
 	\item \textbf{Task execution:} The robot must stop the execution of a task and return to its designated position within \eegpsrMaxCmdTime minutes. Otherwise the robot must be moved to its designated position immediately. If a restart is still available to the team, it can be restarted at the designated position. \\
 
@@ -61,57 +71,6 @@ This test particularly focuses on the following aspects:
 	\item \textbf{Exiting the arena:} When commanded to do so, a robot should leave the arena. \\
 
 \end{enumerate}
-
-\subsection{Tested abilities \& scoring}
-\label{sec:eegpsr-abilities}
-Each commanded action involves at least one of the following abilities. During the test, all the abilities listed are evaluated. Completing a command within time 
-
-The following abilities will be scored considering the best execution only (e.g.~successfully grasping scores for \textit{grasping}).
-
-\begin{itemize}
-	\item Advanced manipulation (pouring, placing in a box, transporting a tray, etc.).
-	\item Awareness (see \refsec{sec:eegpsr-awarenes}).
-	\item Complex command understanding (natural language).
-	\item Count people / objects in a given location.
-	\item Feature recognition (color, gender, gesture, pose, size, etc.).
-	\item Gesture recognition.
-	\item Object grasping.
-	\item Object placing.
-	\item Object recognition.
-	\item People finding / learning / recognizing.
-	\item People following / guiding.
-	\item Speech recognition.
-	\item Memory and answering questions.
-\end{itemize}
-
-The following abilities will be scored considering the worst execution only (e.g.~colliding once negates all previous scoring achieved for \textit{navigation}):
-
-\begin{itemize}
-	\item Collision-free navigation.
-\end{itemize}
-
-
-The team may choose to be evaluated in the following abilities (one try only):
-\begin{itemize}
-	\item Activity detection (waking up, reading, dancing, etc.).
-	\item Natural handover (take / give).
-	\item Open a door/drawer.
-	\item Unknown object description / recognition.
-\end{itemize}
-
-\subsection{Awareness}
-\label{sec:eegpsr-awarenes}
-Either, while the robot is executing a task or while the robot is waiting for a command, an \textit{unexpected} event may occur, having the robot to \textbf{properly identify it} and react to it.
-
-These \textit{unexpected} events will only occur within the field of view of the robot, and include:
-\begin{itemize}
-	\item \textbf{Waving:} The operator waves to the robot expecting the robot to approach to them, prior to give a command.
-	\item \textbf{Falling down:} The person being followed by the robot suddenly falls down, robot must offer assistance.
-	\item \textbf{Walking away:} One of the people in the crowd being counted suddenly leaves the room. \\ \textbf{Remark: in this case the people count reported by the robot will be valid for both: including and excluding the person who left.}
-	\item \textbf{Door shutting:} A door is suddenly shut while the robot is on its way to it.
-\end{itemize}
-
-\paragraph*{Remark:} for security concerns, team must notify the referees when the robot lacks of awareness.
 
 \subsection{Additional rules and remarks}
 \label{sec:eegpsr-remarks}
@@ -127,6 +86,10 @@ These \textit{unexpected} events will only occur within the field of view of the
 
 	\item \textbf{Referees:} Since the score system in this test involves a subjective evaluation of the robot's behavior, the referees are EC/TC members. One referee is assigned to each team to judge performance, to measure the time for working on a command, and to keep track of the overall operating time of the robot. \\
 
+	\item \textbf{Category selection:} For every of the three commands given to the robot, the team chooses the desired command category. \\
+
+	\item \textbf{Scoring:} Points are scored per ability with the total score of the test being the sum of the points scored in each successfully demonstrated ability while solving the tasks (see score sheet). Abilities will be scored considering the best execution only (e.g.~successfully grasping scores for \textit{grasping}), with the single exception of collision-free navigation. \\
+
 	\item \textbf{Operator:}
 	\begin{itemize}
 		\item The person operating the robot is one of the referees (default operator).
@@ -135,7 +98,7 @@ These \textit{unexpected} events will only occur within the field of view of the
 
 	\item \textbf{Inoperative robots:} If a robot gets stuck while trying to accomplish a task during a reasonable amount of time (e.g.~30 seconds), the referee may ask the team to move back the robot to its designated position, proceeding with the next robot. \\
 
-	\item \textbf{Restart:} The number of commands to be given to a robot is three regardless if the restart were used or not. If a restart is required during before the first half of the total time allowed for execute a command elapses, a new command will be generated for the robot to perform. If the first half of the time has elapsed, the team may proceed with the restart but no new command will be generated and the robot must wait for the remaining commands (if any).\\
+	\item \textbf{Restart:} The number of commands to be given to a robot is three regardless if the restart were used or not. If a restart is required during before the first half of the total time allowed for execute a command elapses, a new command will be generated for the robot to perform. If the first half of the time has elapsed, the team may proceed with the restart but no new command will be generated and the robot must wait for the remaining commands (if any). Robots will be restarted at their designated position, \textbf{it won't be allowed to start outside the arena.} \\
 
 	\item \textbf{Changing/Charging batteries:} The team may install a charging station at the designated position of the robot, if it does not hinder the other robots. However, the robot must connect itself with the charging station after carrying out a command. Changing batteries or manually connecting the robot with the charging station is allowed during a restart. \\
 
@@ -156,7 +119,7 @@ These \textit{unexpected} events will only occur within the field of view of the
 \subsection{Referee instructions}
 \textbf{During the test:}
 \begin{itemize}
-	\item Generate random sentences by an automatic sentence generator.
+	\item Generate random sentences. %by an automatic sentence generator.
 	\item Take the command and total time per team.
 \end{itemize}
 
