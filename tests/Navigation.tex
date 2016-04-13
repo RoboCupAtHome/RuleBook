@@ -59,11 +59,13 @@ This test focuses on tracking and recognizing a previously unknown person, obsta
 	  \begin{itemize}
 	    \item Reach the external door it left the appartment from.
 	    \item Open that door. The latch of the door will be fixed so that it can't lock into the door frame.
-	      This means the door can be pushed op, as the appartment doors open to the inside of the apartment and the robot comes from the outside. 
-	      The robot is allowed to use its base to push the door further open, but only after it used a manipulator to initially open the door by the handle. 
+	      This means the door can be pushed open, as the external doors open to the inside of the apartment and the robot comes from the outside. 
+	      The robot is allowed to use its base to push the door further open, but only after it used a manipulator to initially open the door by the handle.
+	      It also has to announce it will use ``functional touching'' to open the door. 
 	      Rotating the handle is not needed but the robot must show it knows where the door handle is. 
-	      The door must be opened gently, not by bumping into it without stopping first. 
-	    \item Reach waypoint 3 again.
+	      The door must be opened gently, not by bumping into it without stopping first.
+	      The door is considered open only if the robot is able to drive through it to the next waypoint. 
+	    \item Reach waypoint 3 again. The door must be ale to be shut behind the robot. 
 	  \end{itemize}
 	
 	\item \textbf{Leaving the arena:} The robot must finally leave the arena through the indicated door.
