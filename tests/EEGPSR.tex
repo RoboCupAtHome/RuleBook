@@ -46,7 +46,8 @@ This test particularly focuses on the following aspects:
 
 	The command may not include all the information being necessary to accomplish the task. In those cases, the robot can ask a question to retrieve the missing information about the task, but is not required to. In the questions the robot has to make clear what it has already understood, e.g., tell the operator that it has understood to bring a particular beverage can, but not where can is located in the arena. The robot may also simply start searching. \\
 
-	Each new generated command may require information from the previously given ones. Also, the difficulty of the new commands will be increased with respect of the previously generated ones. \\
+	Each new generated command may require information from the previously given ones. E.g. if a robot move an object from A to B, the next time the robot should get this object from location B. 
+	Also, the difficulty of the new commands will be increased with respect of the previously generated ones. \\
 
 	\item \textbf{Task assignment:} The robot is given a command by the operator and may directly start to work on the task assignment. If a robot is unable to perform a command, it should get back to the operator, and clearly state \textbf{why} it wasn't able to accomplish the task. \\
 
