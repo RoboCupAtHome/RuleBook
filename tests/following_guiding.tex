@@ -5,7 +5,7 @@ After reaching the destination, the robot must guide the person back to the aren
 
 \subsection{Goal}
 The goal of this test is mostly an audience outreach, in the tradition of the RoboZoo test series in the previous years. 
-Spectators can take pictures of the robots up close and maybe even interact with the robot themselves. 
+Spectators can take (flash photography) pictures of the robots up close and maybe even interact with the robot themselves.
 This is achieved by taking the robots out of the arena, into the RoboCup venue and performing in that dynamic environment. 
 
 \subsection{Focus}
@@ -34,7 +34,8 @@ In addition, this test will take place in the RoboCup venue where some unpredict
   During the training phase, the robot may instruct the operator to follow a certain setup procedure and what to do when the robot stops following (or ask for help).
 \item \textbf{Following phase:} When the robot signals that it is ready to start following, the operator starts walking---in a natural way---along the designated path. 
   The robot needs to follow the operator until the operator asks the robot to stop doing so, at the \textit{goal location} or some intermediate location chosen by the operator.
-  The robot is requested to continue following when told to do so by the operator.
+  It could be that the operator has to stop walking for some reason. When the operator continues, the robot should continue to follow as well. 
+  The robot can ask for confirmation on whether to continue following or start the next phase. 
 \item \textbf{Guiding phase:} Upon reaching the \textit{goal location}, the \textit{operator} will command the robot to stop following and to start guiding the \emph{operator} back to the arena.
   This may be a single command and can be specified by the team and included in the operator instructions in the training phase.
   When the robot signals that it is ready to start guiding, the operator starts walking---in a natural way---following the robot and its instructions.
@@ -68,12 +69,19 @@ In case of disturbances it is expected that the robot continues following or gui
   The robots are accompanied by referees, \OC members, or \TC members at all times.
   At least one \TC member is always in sight to stop the robot (or tell others to do so).
 \item \textbf{Asking people to move away:} If the robot finds on its way a person blocking its path, it may \textit{gently} ask that person to move away and wait for the path to be clear. 
+  This is prefered over robots waiting indefinitely while standing still. 
 \item \textbf{Instructions:} The robot interacts with the operator, \emph{not} the team. 
   That is, the team is not allowed to instruct the follower.
 \item \textbf{Natural walking:} The operator has to walk \quotes{naturally}, i.e., move forward facing forward. 
   The operator is not allowed during the following phase to walk back, stand still, signal the robot or follow any re-calibration procedure.
   During the guiding, the operator follows with constant pace besides the defined disturbances. 
   The operator is not allowed to move faster to catch up with the robot. 
+\item \textbf{Going back home early: } If the robot is not able to follow or guide the operator all the way to the goal or starting location and looses the operator before that, it may drive back to the starting location alone.
+  The robot must announce it lost the operator and that it will drive back. 
+  The robot can only score points for going back before a waypoint after it passed the waypoint after that. 
+  E.g. if the robot looses the operator shortly after waypoint 3, it cannot score points for waypoint 3 (which it was already close to), only for waypoints 2, 1 and the starting location.
+\item \textbf{Going back to known position: } If the robot lost the operator during following or guiding, it may go back to a previous position where it still had the operator. 
+  It must announce that it is doing so, as to not confuse the referees between this case and the case ``Going back early''. 
 \end{enumerate}
 
 \subsection{Data recording}

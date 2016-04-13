@@ -13,7 +13,7 @@ This test focuses on tracking and recognizing a previously unknown person, obsta
 	The arena will likely contain another door that may be used for this test.
 	\item \textbf{Operator:} A \quotes{professional} operator is selected by the TC to test the robot during the guiding phases.
 	\item \textbf{Other people:} There are no restrictions on other people walking by or standing around throughout the complete task.
-	\item \textbf{Path:} A path is setup (but not announced) beforehand.
+	\item \textbf{Path:} A path is setup beforehand and announced, except for Waypoint 4 (later explained).
 \end{enumerate}
 
 \subsection{Task}
@@ -38,7 +38,7 @@ This test focuses on tracking and recognizing a previously unknown person, obsta
 	\begin{itemize}
 		\item Gently move the obstacle (e.g.~if the obstacle is an object).
 		\item Gently ask the obstacle to move away (e.g.~if the obstacle is a human).
-		\item Wait for the object to move away by itself (e.g.~if the obstacle is a pet or another robot).
+		\item Wait for the object to move away by itself (e.g.~if it is unable to identify the type of obstacle).
 		% \item Take a different approach to the waypoint. E.g. if the obstacle is a table and one end is unreachable, go to the other end of the table). 
 	\end{itemize}
 
@@ -46,16 +46,9 @@ This test focuses on tracking and recognizing a previously unknown person, obsta
 	\begin{itemize}
 		\item \textbf{Training phase:} The robot has to memorize the operator. During this phase, the robot may instruct the operator to follow a certain setup procedure and instruct the operator on what to do when the robot needs to stop following.
 		
-		\item \textbf{Guiding phase:} When the robot signals that it is ready to start following, the operator starts walking --in a natural way-- through a designated path outside the arena. The robot needs to follow the operator until the operator asks the robot to stop doing so (\textit{Waypoint 4}).
+		\item \textbf{Guiding phase:} When the robot signals that it is ready to start following, the operator starts walking --in a natural way-- through a designated path outside the arena. The robot needs to follow the operator until the operator asks the robot to stop doing so (when \textit{Waypoint 4} has been reached).
 
-		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		%
-		% People crossing during follow me. [Mauricio Matamoros]
-		%
-		% I would like to add this from previous rulebooks
-		%
-		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		Two people block the direct passage on the way to the \textit{Waypoint 4} (at different positions). The operator guides the robot around the persons. One of the persons starts walking when the robot approaches, and crosses the way between robot and guide. Right in between, the walking person stops for 3 seconds before walking away.
+		\item \textbf{Resuming:} If the robot loses the \textit{Professional Walker}, it can ask him/her to signal it by waving to resume following, but will be penalized for doing so.
 
 		\item \textbf{Stop following:} Upon reaching \textit{Waypoint 4}, the \textit{Professional Walker} will command the robot to stop following him, using the instructions given by the robot in the training phase.
 	\end{itemize}
@@ -74,7 +67,9 @@ This test focuses on tracking and recognizing a previously unknown person, obsta
 		% the operator while stopping or walking away.
 		%
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		Two people will board the operator, blocking her path and preventing her from following the robot. The robot must locate its operator and resume taking her back home.
+		Two people will board the operator, blocking her path and preventing her from following the robot. The robot must locate its operator and resume taking her back home. 
+		
+		The blocking people will clear again after it is clear the robot has lost the operator and is looking for the operator.
 
 		\item \textbf{End phase:} Once back at \textit{Waypoint 3}, the robot announces the operator is back home. 
 	\end{itemize}
@@ -92,12 +87,12 @@ This test focuses on tracking and recognizing a previously unknown person, obsta
 \paragraph*{Remarks:}
 \begin{enumerate}
 	\item Depending on the layout of the arena, waypoint 1 and 2 may be swapped.
-	\item Reaching a waypoint means that the robot is looking at the waypoint-object and that the object is reachable by the robot's arm.
+	\item Reaching a waypoint also includes the direction in which the robot should be looking when it reaches, which will be announced by the TC during the setup of the path.
 	\item The distance between Waypoints 3 and 4 is about 10-20 meters.
 \end{enumerate}
 
 \subsection{Obstacles}
-While navigating to waypoints 1, 2, and 3 the robot will find each of the following obstacles on its path:
+While navigating to waypoints 1, 2, and 3 the robot will find one of the following obstacles on its path:
 \begin{itemize}
 		\item \textbf{Small object:} Box sized object (between 5 and 15 cm per edge).  
 		\item \textbf{3D Object:} A bar table, normal table, rolling chair: some object that is wider at its top than on its bottom, 
@@ -110,8 +105,6 @@ While navigating to waypoints 1, 2, and 3 the robot will find each of the follow
 	\item \textbf{Waypoints:} Waypoints may be rooms, placement locations, furniture, beacons, landmarks, etc. The robot must clearly state when it has reached a waypoint or if it was not able to reach the waypoint.
 
 	\item \textbf{Show must go on:} If a robot is unable to reach a waypoint, it must say it and proceed to the next one.
-
-	\item \textbf{Make it fast:} If a robot is absolutely unable to handle one or more obstacles, please inform the TC before the test so no time is wasted.
 
 	\item \textbf{Closing doors:}  The door that will be shut will be the door on the route the robot has committed to. It will be shut right after the robot starts driving towards the door, but granting enough time to notice that the door is now closed.	
 
