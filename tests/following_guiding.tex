@@ -51,14 +51,16 @@ In addition, this test will take place in the RoboCup venue where some unpredict
 \end{enumerate}
 
 \subsection{Obstacles and Disturbances}
-During following and guiding, some \emph{disturbances} will occur. 
+During following and guiding, some \emph{disturbances} will occur, quite possibly multiple times. 
 Disturbances may include:
 \begin{compactitem}
 \item A person crosses in between operator and robot (following and guiding), 
+\item A person stops for ca. 3 seconds in between operator and robot (following and guiding), 
 \item The operator disappears behind a group of people (following),
 \item The operator becomes slower (guiding),
 \item The operator stops following,
 \item Audience taking pictures of the robot and its operator,
+\item Operator walking a different direction than (s)he is guided,
 \end{compactitem}
 In case of disturbances it is expected that the robot continues following or guiding the operator and to find the operator again in case the operator got out of sight.
 
@@ -82,6 +84,8 @@ In case of disturbances it is expected that the robot continues following or gui
   E.g. if the robot looses the operator shortly after waypoint 3, it cannot score points for waypoint 3 (which it was already close to), only for waypoints 2, 1 and the starting location.
 \item \textbf{Going back to known position: } If the robot lost the operator during following or guiding, it may go back to a previous position where it still had the operator. 
   It must announce that it is doing so, as to not confuse the referees between this case and the case ``Going back early''. 
+\item \textbf{Calling the robot: } If the robot lost the operator during following or guiding, 
+  the operator may call the robot by e.g. waving or as instructed by the robot to the operator during the training phase. 
 \end{enumerate}
 
 \subsection{Data recording}
@@ -99,6 +103,12 @@ Please record the following data (See \refsec{rule:datarecording}):
 \item Define the path, locations and check points (same for all teams).
 \item Define the types and locations of disturbances (same for all teams).
 \item Announce the \emph{starting locations} for the teams.
+\end{itemize}
+
+\textbf{During the test}
+\begin{itemize}
+\item Let a person cross between robot and operator before entering the public.
+\item Let a person stop for 3 seconds between robot and operator before entering the public.
 \end{itemize}
 
 \newpage
