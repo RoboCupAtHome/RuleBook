@@ -1,19 +1,27 @@
 The maximum time for this test is 5 minutes.
 
-The report will be normalized to the amount of people in the crowd, minus the operator. 
-Let $F$ the amount of females in the crowd, $M$ the amount of males and $N$ be the total amount of people. 
-The points for stating a persons' gender correctly is then normalized to the total amount of people in the crowd. 
+Scoring in this test requires a report in PDF format to be delivered to the TC for further statement validation. Scoring for stating the people gender in the crowd is normalized to the crowd size. 
 
 %% 120 = (150 - 20 - 10)
 \begin{scorelist}
-      \scoreitem{20}{Correctly state operator pose}
-      \scoreitem{10}{Correctly state crowd's size}
-      \scoreitem{120}{Correctly state genders $\frac{1}{N} \times$}
-      \scoreitem{-120}{Incorrectly state genders $\frac{1}{N} \times$}
-      \setTotalScore{150}
+	\scoreheading{Operator}
+	\scoreitem{20}{State operator's gender}
+	\scoreitem{20}{State operator pose}
+	\scoreitem{20}{Approach or point at the operator}
+
+	\scoreheading{Crowd (requires report validation)}
+	\scoreitem{30}{State crowd's size (with no false positives)}
+	\scoreitem{60}{Reporting gender of people in the crowd}
+	\setTotalScore{150}
 \end{scorelist}
 
+\paragraph{Normalization:}
+Let $N$ be the total amount of people in the crowd counting the operator, and $c, i$  the \textbf{c}orrectly and \textbf{i}ncorrectly labeled gender count respectively, excluding the operator. Scoring for \textit{reporting gender of people in the crowd} is calculated by following the next formula:
+$$score = 60 \times \frac{max(c - i, 0)}{N-1}$$
 
+A perfect score is when $C = N-1$ meaning all people in the crowd was correctly identified, but if most people was incorrectly identified, the score is set to zero.
+
+\vspace*{\fill}~
 % Local Variables:
 % TeX-master: "Rulebook"
 % End:
