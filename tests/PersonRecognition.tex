@@ -49,6 +49,20 @@ This test focuses on people detection and recognition; as well as pose recogniti
 
 \subsection{Additional rules and remarks}
 \begin{enumerate}
+\item \textbf{Recognition report:} 
+  Robots must create a PDF report file.
+  This file may be stored on a USB-stick on the robot which is given to the TC after the test. 
+  The PDF file name should include the team name and a timestamp. 
+  Furthermore, it must be unmistakeable which information belongs to which person. 
+  Persons must also be recognizable in the report by a human (TC) so that it can be scored. 
+  An overview of the crowd with bounding boxes and labels attached to the bounding boxes is handy for the TC to score.
+  False positives in the report (labeling an object which is not a person but e.g. a plant) are penalized.
+  The report must include:
+  \begin{compactitem}
+    \item Picture of the operator during training, stating the gender.
+    \item For each person in the crowd: gender, pose and whether the labeled person is the operator.
+  \end{compactitem}
+
 \item \textbf{Preparation:} The robot needs to wait for at least 1 min before the operator appears in front of the robot. During this waiting time the team is not allowed to touch the robot.
 \item \textbf{Disturbances from outside:} If a person from the audience (severely) interferes with the robot in a way that makes it impossible to solve the task, the team may repeat the test immediately.
 \item \textbf{Instruction:} The robot interacts with the operator, not the team. That is, the team is not allowed to instruct the operator.
