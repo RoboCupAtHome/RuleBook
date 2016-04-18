@@ -56,11 +56,12 @@ This test focuses on people detection and recognition; as well as pose recogniti
   Furthermore, it must be unmistakeable which information belongs to which person. 
   Persons must also be recognizable in the report by a human (TC) so that it can be scored. 
   An overview of the crowd with bounding boxes and labels attached to the bounding boxes is handy for the TC to score.
-  False positives in the report (labeling an object which is not a person but e.g. a plant) are penalized.
+%   False positives in the report (labeling an object which is not a person but e.g. a plant) are penalized.
   The report must include:
   \begin{compactitem}
     \item Picture of the operator during training, stating the gender.
-    \item For each person in the crowd: gender, pose and whether the labeled person is the operator.
+    \item For each person in the crowd: gender
+    \item If the person is operator, also state the pose
   \end{compactitem}
 
 \item \textbf{Preparation:} The robot needs to wait for at least 1 min before the operator appears in front of the robot. During this waiting time the team is not allowed to touch the robot.
