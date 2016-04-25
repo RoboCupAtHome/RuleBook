@@ -1,7 +1,7 @@
 \chapter[EEGPSR in detail]{E\textsuperscript{2}GPSR in detail.}
 \label{chap:eegpsr-appendix}
 
-\subsection{Focus explained}
+\section{Focus explained}
 \label{sec:eegpsr-focus-details}
 This test particularly focuses on the following aspects:
 \begin{itemize}
@@ -9,50 +9,278 @@ This test particularly focuses on the following aspects:
 
 	\item Increased complexity in speech recognition (possible commands are less restricted in both actions/operators and arguments/objects, and can include multiple targets, e.g., \quotes{put \textbf{an apple, a banana, and the milk} on the kitchen table} or \quotes{Ask \textbf{Mary} in the kitchen where is \textbf{John}}).
 
-	\item More advanced capabilities (e.g. activity detection, unknown object description, pouring, manipulating a tray, etc.).
+	\item More advanced capabilities (e.g. pose and activity detection, unknown object description, door opening, pouring, manipulating a tray, following people in crowded environments etc.).
 
 	\item Environmental (high-level) reasoning, including:
-  \begin{itemize}
-	\item Memory (robot should be able to remember performed actions and their effects).
-	\item Awareness (unexpected events may occur while the robot is waiting for a command).
-  \end{itemize}
+	  \begin{itemize}
+		\item Memory (robot should be able to remember performed actions and their effects).
+		\item Awareness (unexpected events may occur while the robot is waiting for a command).
+	  \end{itemize}
 
   \item Robust long-term operation.
 
 \end{itemize}
 
-\section{Commands in detail}
-\label{sec:eegpsr-commands-details}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Categories explained
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Categories explained}
+\label{sec:eegpsr-categories-explained}
+This section explain each of the categories of the test and provides examples on how the abilities are scored.
 
-\subsection{Incomplete commands} The command may not include all the information being necessary to accomplish the task. In those cases, the robot can ask questions to retrieve the missing information about the task, but is not required to. In the questions the robot has to make clear what it has already understood, e.g., tell the operator that it has understood to bring a particular beverage can, but not where can is located in the arena. The robot may also simply start searching.
+It is important to remark that there is no script or predefined way to solve the tasks, being most of them of ambiguous nature. It is up to the team to choose how to solve each tasks according with robot capabilities and skills. For instance, consider that the robot is asked to \textbi{serve breakfast}. A simple approach might be to pick up and deliver a single object in the \textit{food} category (scoring for grasp and place only). A more complex approach would be to ask the operator how breakfast must be served, navigating to the kitchen, pouring cereal into a bowl, put the bowl, a fruit and some milk on a tray, and deliver the tray to the operator himself right after closing the kitchen's door (scoring for requesting additional information, grasping, placing, pouring, two-hand transporting, operating a door, and performing natural handover).
 
-\subsection{Memory and questions on past commands:} After the first command has been (partially) accomplished, the operator may ask the robot to provide information about its actions and the environment.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Category I explained
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Category I: Advanced Manipulation}
+\label{sec:eegpsr-categoryI-explained}
+Advanced Manipulation involves two-hand manipulation, eye-hand coordination, and operating knobs, handles, buttons, etc. Most of these tasks require a closed control loop between what the robot sees and its manipulators.
 
-\subsubsection{Example Scenario 1}
-Consider that the robot just delivered the newspaper to John in the livingroom, possible commands may include:
+Some advanced manipulation examples are:
+\begin{itemize}
+	\item Arranging cutlery.
+	\item Opening a bottle (twist, uncap, etc.).
+	\item Opening a door.
+	\item Placing objects inside a box.
+	\item Pouring cereal in a bowl.
+	\item Transporting a tray.
+\end{itemize}
+
+\textbf{Remark:} Teams are allowed (and encouraged) to demonstrate the robot's manipulation skills during this test by performing tasks not mentioned on the rulebook. Such demonstrations, when successfully executed, will be evaluated and scored proportionally by the TC. Please inform a member of such abilities the Technical Committee in advance.
+
+\subsubsection{Category I command examples}
+Below, examples of commands involving advanced manipulation are shown:
+\begin{itemize}
+	\item Bring me something for breakfast.
+	\item Bring me some oat, banana and milk in a tray.
+	\item Open the entrance door.
+	\item Put all the beverages in the dinner table.
+	\item Pour the flakes into the bowl and bring it to me.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Category II explained
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Category II: Advanced Object Recognition}
+\label{sec:eegpsr-categoryII-explained}
+Advanced Object Recognition involves affordance/feature detection and classification, untrained object recognition, and far-distance recognition. Feature detection for description and detection may involve color, shape, relative size, relative position, and special characteristics of the object such as text, logos, patterns, etc.
+
+Some advanced object recognition examples are:
+\begin{itemize}
+	\item Counting objects.
+	\item Describing unknown objects.
+	\item Finding object from far distance.
+	\item Finding objects from a description.
+	\item Infer object's class (category) from features.
+	\item Object detection and recognition of occluded or hidden objects (behind of, inside of, etc.).
+\end{itemize}
+
+\subsubsection{Category II command examples}
+Below, examples of commands involving advanced object recognition are shown:
+\begin{itemize}
+	\item Bring me the biggest pill bottle from the kitchen counter.
+	\item Bring me the bookcase's right-most object.
+	\item Describe the objects on the drawer to me.
+	\item Tell me how many red apples are in the basket on the kitchen table.
+	\item Count the snacks in the shelf and tell me how many there are.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Category III explained
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Category III: HRI \& Incomplete Information}
+\label{sec:eegpsr-categoryIII-explained}
+This category focuses in commands not including all required information necessary to accomplish the task, making necessary for the robot to interact with the operator.
+
+\begin{itemize}
+	\item \textbf{Retrieving missing information:} The robot can ask questions to retrieve the missing information about the task. In the questions, the robot has to make clear what it has already understood and precisely which information is asking for. It is important to remark that several questions may be necessary to fill the gaps in a command.
+
+	\item \textbf{Bypassing ASR:} This category depends heavily in establishing a natural dialog between the robot and the operator, for this reason is highly advised to change of category instead of using the CONTINUE rule \refsec{rule:asrcontinue}.
+
+	\item \textbf{Commands difficulty:} Although incomplete, commands involve solving \textbf{simple tasks} such as Manipulation, Object Recognition, and Person Recognition.
+
+\end{itemize}
+
+\textbf{Remark:} Robots may also attempt to solve the command on their own without asking for additional information. For instance, if the operator asks for a beverage but not stating which, the robot may proceed to search for a random drink from the drinks location.
+
+\subsubsection{Category III command examples}
+Below, examples of commands involving HRI \& Incomplete Information are shown:
+
+\paragraph{Example Scenario 1}
+The robot is asked to \textit{Follow Elizabeth and tell the time}. Robot may:
+\begin{itemize}
+	\item Ask where is Elizabeth and execute the command.
+	\item Look for Elizabeth and, once she has been found, follow her for later telling the time.
+\end{itemize}
+
+\paragraph{Example Scenario 2}
+The robot is asked to \textit{Offer a drink to Ana}. Robot may:
+\begin{itemize}
+	\item Ask where is Ana, go there, ask Ana which drink does she want, and deliver it.
+	\item Ask where is Ana and which drink must be delivered.
+	\item Ask where is Ana, fetch a random drink and deliver it.
+	\item Find a random drink and start looking for Ana.
+\end{itemize}
+
+\paragraph{Example Scenario 3}
+The robot is asked to \textit{Guide James to the table}. Robot may:
+\begin{itemize}
+	\item Ask where is James, to which table should the robot guide him, and execute the command.
+	\item Ask where is James, go there, and guide him to the dinner table.
+	\item Look for James and, once he has been found, guide him to the dinner table.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Category IV explained
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Category IV: Memory and Awareness}
+\label{sec:eegpsr-categoryIV-explained}
+Memory refers to the robot's ability to remember previous executed tasks and its effects. Directly related with memory, Awareness requires the robot to be aware of changes in the environment as consequence of its actions, as well as being able to detect unexpected events either while idle or during the execution of a task.
+
+\textbf{Memory and questions on past commands:} Unlike other categories, this category cannot be chosen by a team until a command from another category has been (partially) executed. It is up to the referees to decide when a robot is eligible for solving this category. After the first command has been (partially) accomplished, the operator may ask the robot to provide information about its actions and the environment.
+
+Some Memory and Awareness examples are:
+\begin{itemize}
+	\item Answering questions about the environment status and changes.
+	\item Approaching a calling (shouting, waving, etc.) operator while idle.
+	\item Detecting the operators fell while guiding the robot.
+	\item Detecting the requested object is taken by another person while grasping.
+	\item Noticing a door has been shut.
+	\item Noticing the operator is not at the designated position.
+	\item Noticing a sleeping person wakes up.
+\end{itemize}
+
+\textbf{Remark:} Teams are allowed (and encouraged) to demonstrate the robot's XXXXX skills during this test by performing tasks not mentioned on the rulebook. Such demonstrations, when successfully executed, will be evaluated and scored proportionally by the Technical Committee. Please inform a member of such abilities the Technical Committee in advance.
+
+\subsubsection{Category IV command examples}
+Below, example scenarios involving Memory and Awareness are shown:
+
+\paragraph{Example Scenario 1}
+Consider that the robot just delivered the newspaper to John in the living room, possible commands may include:
 
 \begin{itemize}
 	\item Go to the \textit{dinner table}, find \textit{Anna} and tell her who has the newspaper.
 	\item Go to the \textit{coach}, find \textit{James} and answer a \textit{question}.
 	\begin{itemize} 
-		\item[\textbf{Q:}] The question may be \quotes{where is the newspaper}.
-		\item[\textbf{R:}] A valid answer is \quotes{The newspaper is in the livingroom}
-		\item[\textbf{R:}] Another valid answer is \quotes{I gave it to John in the livingroom}.
+		\item[\textbf{Q:}] The question may be \quotes{where is the newspaper?}
+		\item[\textbf{A:}] A valid answer is \quotes{The newspaper is in the living room}.
+		\item[\textbf{A:}] Another valid answer is \quotes{I gave it to John in the living room}.
 	\end{itemize}
 \end{itemize}
 
-\subsubsection{Example Scenario 2}
+\paragraph{Example Scenario 2}
 The robot has been asked to \textit{Go with the waving person in the dinning room and ask for their name}, which is \textit{Jessica}. Possible commands may include:
 
 \begin{itemize}
 	\item Bring an \textit{apple} to \textit{Jessica}.
 	\item Go to the \textit{coach}, find \textit{James} and answer a \textit{question}.
 	\begin{itemize} 
-		\item[\textbf{Q:}] The question may be \quotes{where is the newspaper}.
-		\item[\textbf{R:}] A valid answer is \quotes{The newspaper is in the livingroom}
-		\item[\textbf{R:}] Another valid answer is \quotes{I gave it to John in the livingroom}.
+		\item[\textbf{Q:}] The question may be \quotes{where is Jessica?}
+		\item[\textbf{A:}] A valid answer is \quotes{Jessica is in the dinning room}.
 	\end{itemize}
 \end{itemize}
+
+\paragraph{Example Scenario 3}
+The robot has been asked to \textit{Take the biggest flask from the shelf and put it on the kitchen table}. Possible commands may include:
+
+\begin{itemize}
+	\item Bring me the flask.
+	\item Find John standing next to the \textit{lamp} and answer a \textit{question}.
+	\begin{itemize} 
+		\item[\textbf{Q:}] The question may be \quotes{How many objects there are in the shelf?} (Assume there were 4 before the robot took one).
+		\item[\textbf{A:}] A valid answer is \quotes{There are 3 objects in the shelf}.
+	\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Category IV explained
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Category V: People Recognition and Navigation}
+\label{sec:eegpsr-categoryV-explained}
+This category focuses mostly in People Recognition, but considering that guiding and following people involves navigation skills, this ability is also considered. People Recognition involves detecting, remembering, and recognizing people and their characteristics such as gender, age, clothing, size, pose, gestures and activities.
+
+Some People Recognition examples are:
+\begin{itemize}
+	\item Counting people in a crowd.
+	\item Counting people in a crowd with an specific pose, gender, age, etc.
+	\item Detecting people pose and gestures.
+	\item Finding and recognizing people from far distance.
+	\item Finding people matching a description (tallest, sitting, wearing specific color, etc.).
+	\item Detecting and recognizing occluded people (behind of, wearing sun glasses, etc.).
+	\item Remembering and later recognizing new people.
+\end{itemize}
+
+\textbf{Remark:} Teams are allowed (and encouraged) to demonstrate the robot's People Recognition skills during this test by performing tasks not mentioned on the rulebook. Such demonstrations, when successfully executed, will be evaluated and scored proportionally by the Technical Committee. Please inform a member of such abilities the Technical Committee in advance.
+
+\subsubsection{Category V command examples}
+Below, examples of commands involving People Recognition are shown:
+\begin{itemize}
+	\item Bring a coke to the person with black T-shirt in the couch.
+	\item Go to the living room and follow the waving person.
+	\item Offer something to drink to all the girls in the living room.
+	\item Tell me how many girls are in the living room.
+	\item Tell me how many standing men are in the dinning room.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Category IV explained
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Category VI: Mastering simple skills}
+\label{sec:eegpsr-categoryVI-explained}
+This category, instead of requiring advanced skills, requires mastering the simple ones, for simple task must be solved as quick as possible. In this category, speed is the key.
+
+\subsubsection{Category VI command examples}
+Below, examples of commands involving XXXX are shown:
+\begin{itemize}
+	\item Look for Jennifer in the couch and tell her how many apples are in the kitchen counter.
+	\item Find James in the living room, tell the time, and guide him to the Exit.
+	\item Put the chips on the dinner table, go to the entrance, and guide Samantha to the dinning room.
+	\item Take the milk, look for a person in the corridor and answer a question.
+	\item Grasp the coke from the shelf, bring it to the kitchen table, and follow the person in front of you.
+	\item Get the coke from the dinner table and deliver it to Luis at the bathroom.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \section{Commands in detail}
+% \label{sec:eegpsr-commands-details}
+
+
+
+
+
+
 
 % \subsection{Tested abilities \& scoring}
 % \label{sec:eegpsr-abilities}
