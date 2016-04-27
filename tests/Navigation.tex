@@ -47,7 +47,7 @@ This test focuses on tracking and recognizing a previously unknown person, obsta
 	\begin{itemize}
 		\item \textbf{Training phase:} The robot has to memorize the operator. During this phase, the robot may instruct the operator to follow a certain setup procedure and instruct the operator on what to do when the robot needs to stop following.
 		
-		\item \textbf{Guiding phase:} When the robot signals that it is ready to start following, the operator starts walking --in a natural way-- through a designated path outside the arena. The robot needs to follow the operator until the operator asks the robot to stop doing so (when \textit{Waypoint 4} has been reached).
+		\item \textbf{Following phase:} When the robot signals that it is ready to start following, the operator starts walking --in a natural way-- through a designated path outside the arena. The robot needs to follow the operator until the operator asks the robot to stop doing so (when \textit{Waypoint 4} has been reached).
 
 		\item \textbf{Resuming:} If the robot loses the \textit{Professional Walker}, it can ask him/her to signal it by waving to resume following, but will be penalized for doing so.
 
@@ -101,7 +101,7 @@ While navigating to waypoints 1, 2, and 3 the robot will find one of the followi
 
 	\item \textbf{Show must go on:} If a robot is unable to reach a waypoint, it must say it and proceed to the next one.
 
-	\item \textbf{Closing internal doors:}  Theinternal door that will be shut will be the door on the route the robot has committed to. It will be shut right after the robot starts driving towards the door, but granting enough time to notice that the door is now closed.	
+	\item \textbf{Closing internal doors:}  The internal door that will be shut will be the door on the route the robot has committed to. It will be shut right after the robot starts driving towards the door, but granting enough time to notice that the door is now closed.	
 
 	\item \textbf{Moving objects:} If the robot finds on its way a \textit{static movable obstacle} (chair, cubes, toys, etc.) which is capable to move, it must announce is going to move an obstacle and then proceed to move the object apart with its manipulator, or by \textbf{gently} pushing it with its body.
 
