@@ -218,8 +218,9 @@ Automatic Speech Recognition is preferred and any command given to the robot wil
 \begin{enumerate}
 \item \textbf{Default:} When the referee generates a command for the robot, it will be read out loud by the operator to the robot. 100\% of the points gained in the execution of the command will be awarded.
 \item \textbf{team member: } If this fails, a team member may speak the command to the robot if this was not the case already.  75\% of the points gained in the execution of the command will be awarded, if not stated otherwise.
-\item \textbf{QR-code:} If this fails as well, as a last resort, a QR-code will be generated that encodes the command as plain text and shown to the robot, displayed on either a piece of paper or a computer screen. 90\% of the total points for command execution will be awarded if a QR-code was necessary. 
-      For some examples, see Appendix \ref{chap:qr-code-examples}.
+\item \textbf{QR-code:} If this fails as well, as a last resort, a QR-code will be generated that encodes the command as plain text and shown to the robot, displayed on either a piece of paper or a computer screen. 50\% of the total points for command execution will be awarded if a QR-code was necessary.
+			This is a large penalty, meant to be used as a last resort when everything else has already failed. It is preferred that teams provide a better alternative method as explained below.
+      For some example QR codes, see Appendix \ref{chap:qr-code-examples}.
 \end{enumerate}
 
 \begin{enumerate}
@@ -230,6 +231,7 @@ Automatic Speech Recognition is preferred and any command given to the robot wil
 
 
 \subsubsection{Alternative methods}
+\label{rule:asralternative}
 Below are some suggested alternatives for ASR besides the QR-code as specified above:
 \begin{itemize}
 	\item Any custom alternative that MUST be intuitive and intended for users with no technological expertise.
