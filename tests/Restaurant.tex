@@ -4,7 +4,7 @@ The robot is tested in a real environment such as a real restaurant or a shoppin
 \subsection{Focus}
 This test focuses on online mapping, safe navigation in previously unknown environments, gesture detection, human-robot interaction, and manipulation in a real environment.
 
-The robot will need to create its own map from the environment and then move into it to handle human requests, such as delivering drinks or snacks, while people are walking around.
+The robot will need to create its own map from the environment and then move within it to handle human requests, such as delivering drinks or snacks, while people are walking around.
 
 \subsection{Setup}
 \begin{enumerate}
@@ -19,7 +19,7 @@ The robot will need to create its own map from the environment and then move int
 
 	\item \textbf{Memorizing the operator:} The robot has to memorize the operator. During this phase, the robot may instruct the operator to follow a certain setup procedure.
 
-	\item \textbf{Guide phase:} Starting from the \textit{Kitchen}, the robot is guided through the environment by a \quotes{Professional Waiter} which shows to the robot the location of each of the tables, its number, and on which side the table is (there is a total of 3 tables). After visiting all the tables, the robot must be guided again to the \textit{Kitchen}, to the same place where the guide phase started.
+	\item \textbf{Guide phase:} Starting from the \textit{Kitchen}, the robot is guided through the environment by a \quotes{Professional Waiter} which shows the robot the location of each of the tables, its number, and on which side the table is (there is a total of 3 tables). After visiting all the tables, the robot must be guided again to the \textit{Kitchen}, to the same place where the guiding phase started.
 
 	\begin{itemize}
 		\item \textbf{Own \textit{Professional Waiter} [Optional]:} Team Leader may choose to use their own custom \textit{Professional Waiter} for this test instead of the one provided by the committee.
@@ -29,25 +29,25 @@ The robot will need to create its own map from the environment and then move int
 
 	\item \textbf{Ordering phase:}
 	\begin{enumerate}
-		\item \textbf{Which table to attend:} Once back in the kitchen, the robot shall ask to the \textit{Professional Waiter} to which table go first to take an order from. 
+		\item \textbf{Which table to attend:} Once back in the kitchen, the robot shall ask the \textit{Professional Waiter} which table to go to first to take an order from. 
 		  The robot has to go to the indicated table and ask for an order there.
 		  This interaction of telling the robot which table to attend should be natural.
 		  
-		\item \textbf{First order (Table A)}: The robot must aks the person what he or she wants to order. See Orders below for details about ordering.
+		\item \textbf{First order (Table A)}: The robot must ask the person what he or she wants to order. See Orders below for details about ordering.
 
 		\item \textbf{Detecting a call (Table B or C):} At any time while attending Table A's guests (going to fetch an order, asking the client, or returning to the kitchen with the order), a guest at Table B or C will ask for the robot's attention by waving \emph{and} calling it out using voice. 
 		  The robot must state out loud that it has detected the call and that it will attend as soon as possible.
 		  If the robot does not detect such a call, it may be given a command to go to the next table when it is back at the kitchen after finishing table A's order.
 
-		\item \textbf{Second order (Table B or C):} After taking the Table A client's order, and if the request was detected, the robot must go to the table of the waving/calling person and ask for an order.
+		\item \textbf{Second order (Table B or C):} After taking Table A client's order, and if the request was detected, the robot must go to the table of the waving/calling person and ask for an order before going back to the kitchen.
 		  
 
-		\item \textbf{Avoiding random citizen:} At any time while going to any of the tables or to the \textit{Kitchen}, a person may step on the robot's path. It is expected the robot to avoid that person or stop and wait for it to move away.
+		\item \textbf{Avoiding random citizen:} At any time while going to any of the tables or to the \textit{Kitchen}, a person may step on the robot's path. It is expected of the robot to avoid that person or stop and wait for it to move away.
 	\end{enumerate}
 
 	\textbf{Orders:} The menu offers Beverages and Combos. An order may be a Beverage or Combo. One guest will order a Combo while the other will order a Beverage.
 	  A Combo is a combination of two of the food items from the set of objects \ref{rule:scenario_objects}, e.g. ``noodles with peanuts'' or ``noodles and peanuts''. 
-	  Guests also prefere to state their order in a natural way, as their would in a restaurant operated by humans. 
+	  Guests also prefere to state their order in a natural way, as they would in a restaurant operated by humans. 
 
 	\textbf{Note:} Table A, B and C may be any of Table 1, 2, 3, \dots, N in any order.
 
