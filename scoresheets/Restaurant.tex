@@ -1,34 +1,42 @@
 The maximum time for this test is 15 minutes.
 
 \small\begin{scorelist}
+	\scoreheading{Start}
+	\scoreitem{5}{Infer on which side the bar is}
+	% 5
 
-	\scoreheading{Training phase}
-	\scoreitem[3]{10}{Learning the location of a table (Professional Waiter)}
-	\scoreitem[3]{5}{Learning the location of a table (Custom Waiter)}
-	\scoreitem[3]{10}{Inferring the side on which a table is (Professional Waiter only)}
+
+	\scoreheading{Calling phase}
+	\scoreitem[2]{10}{Noticing a call}
+	% 10
 	
 	\scoreheading{Ordering phase}
-	\scoreitem{5}{Understanding which table to take an order from}
-	\scoreitem{15}{Going to the designated table}
-	\scoreitem{10}{Taking an order from the designated table}
-	\scoreitem{20}{Noticing a waving/calling person from distance}
-	\scoreitem{20}{Going to the table of the waving/calling person}
-	\scoreitem{10}{Taking an order from the waving/calling person}
-	\scoreitem{10}{Avoiding a person crossing the robots' path}
+	\scoreitem[2]{5}{Arriving at the table of the calling person}
+	\scoreitem[2]{10}{Looking at the calling person}
+	\scoreitem[2]{10}{Taking an order}
+	\scoreitem[2]{10}{Avoiding a person crossing the robots' path}
+	% 35
+	
+	\scoreheading{Grabbing phase}
+	\scoreitem[2]{5}{Reciting the order for the table}
+	\scoreitem[2]{15}{Grasping the correct drink}
+	\scoreitem[2]{20}{Picking up the plate}
+	% 40
+	
+	\scoreheading{Delivery phase}
+	\scoreitem[2]{10}{Getting close to the correct table with an order}
+	% 10
+	
+	\scoreitem[2]{15}{Delivering the drink by placing it on the correct table}
+	\scoreitem[2]{5}{Delivering the drink by handing it over conveniently for the client}
+	% 20
+	
+	\scoreitem[2]{20}{Delivering the plate by placing it on the correct table}
+	\scoreitem[2]{5}{Delivering the plate by handing it over conveniently for the client}
+	% 25
 
-	\scoreheading{Delivering phase}
-	\scoreitem[2]{5}{Reciting both the order and table number for both tables}
-	\scoreitem{10}{Grasping the correct drink}
-	\scoreitem{15}{Getting close to the correct table with the drink}
-	\scoreitem{15}{Delivering the drink by placing it on the correct table}
-	\scoreitem{15}{Picking up the plate}
-	\scoreitem{15}{Getting close to the correct table with the plate}
-	\scoreitem{20}{Delivering the plate by placing it on the correct table}
-
-	\setTotalScore{250}
+	\setTotalScore{285}
 \end{scorelist}
-
-
 
 % Local Variables:
 % TeX-master: "Rulebook"
