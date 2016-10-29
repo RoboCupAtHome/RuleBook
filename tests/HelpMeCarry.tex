@@ -1,0 +1,59 @@
+\section{Help-me-carry}
+The robot's owner went shopping for groceries and needs help carrying the groceries from the car into the home.
+
+\subsection{Goal}
+The robot must bring some of the items from outside the arena inside the arena.
+
+\subsection{Focus}
+This test focuses on following and navigation in an unknown environment. 
+
+\subsection{Setup}
+The robot starts waiting inside the arena. 
+The owner has a set of bags and boxes tht need to be carried from a place outside the arena back inside. 
+
+\begin{enumerate}
+\item \textbf{Start:} Starting location of the robot. %%Close to the front door of the appartment?
+\item \textbf{Car:} The robots owner has put the groceries in the trunk of the car after shopping. The owner parked the car outside the home.
+\item \textbf{Destination:} The items must be transported to a place where they can be stored.  
+\end{enumerate}
+
+\subsection{Task}
+\begin{enumerate}
+\item \textbf{Start:} The robot is waiting somewhere in the apartment. The owner approaches the robot and tells it to follow.
+\item \textbf{Following:} The robot starts following the owner, who guides the robot to the car with the groceries. 
+\item \textbf{Handover groceries:} When the owner stops at the car, the owner gives the robot a command to carry something, e.g. a box or a bag.  The robot puts up its arms and the owner gives the item to the robot.
+\item \textbf{Delivery:} The robot then goes inside the house to deliver the item to the destination. 
+\item \textbf{Repeat until time is up:} Then, the robot goes back to the car to bring another item inside. 
+\end{enumerate}
+%% Possible extensions: 
+%% - allow the owner to tell for each item where it should go
+%% - At the destination room, there is a person waving, waiting for the robot to bring the items so (s)he can take them
+%% - Points for a natural handover. E.g. the human is holding a box and the robot moves in to take it over instead of the humans placing it in the robots arms. Same for the bag
+
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}
+  \item \textbf{Delivering items:} At the destination, the robot may place the bag or box at a convenient location: the floor or a table
+  \item \textbf{Obstacle avoidance:} The robot will encounter some human(s) on the way between the two locations.  
+\end{enumerate}
+
+\subsection{Platform differentation}
+No meaningful alterations to the task can be made to make it more feasible for the standard platforms described in \refsec{rule:standard_platforms}. 
+
+\subsection{Data recording}
+  Please record the following data (See \refsec{rule:datarecording}):
+  \begin{itemize}
+   \item Maps
+   \item Plans
+  \end{itemize}
+
+\subsection{Referee instructions}
+
+The referee needs to
+\begin{itemize}
+\item Distribute some objects over some boxes and shopping bags.
+\item Destignate a few ``car parking locations'' from which the objects must be carried.
+\end{itemize}
+
+\subsection{Score sheet}
+\input{scoresheets/HelpMeCarry.tex}
