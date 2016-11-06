@@ -1,0 +1,88 @@
+\section{Storing Groceries}
+
+The robot must help put the newly bought groceries in the right place.
+The owner of the robot will put the items on a table and the robot helps the owner by putting the groceries in the right place in the cupboard.
+What the right place for an item is defined by the objects already in the cupboard: objects of the same type must be placed together.
+For example, the new pack of cookies from the table must be placed by the almost empty pack cookies in the cupboard.
+
+In the cupboard and on the table, there will be both known and unknown objects. 
+
+\subsection{Example}
+For example, say the known objects include the classes ``Chips'', ``Apple'', ``Milk'', ``Coffee'' and ``Tea''. 
+There are three unknown object classes: ``Pear'', ``Cookies'' and ``Butter''.
+These class names are unknown to the robot, but a human wll immediately infer the class names.
+For the robot's recognition, it suffices to be able to give the ``Cookies'' all the same label, eg. ``label0''. 
+
+\subsection{Goal}
+The robot has to identify, grasp and correctly place several objects at different heights or positions.
+To start the storing the groceries, the robot needs to open the cupboard. 
+
+\subsection{Focus}
+This test focuses on object detection, manipulation and object recognition.
+
+\subsection{Setup}
+In the arena, there will be a table and cupboard close together, where the robot does not have to spend a lot of time driving between the two. 
+
+\begin{enumerate}
+\item \textbf{Location:} One of the bookcases or cupboards in the apartment is used for this test, one where a table is near or can be put. 
+The robot will start somewhere between the cupboard and the table. 
+The cupboard has at least 5 shelves between 0.30m and 1.80m from the ground. 
+One of the shelves is empty or will be made empty when the team chooses a shelve.
+\item \textbf{Objects:} The cupboard contains 10 objects from the Scenario Objects \ref{rule:scenario_objects}.
+\item \textbf{Door:} The cupboard has a single door, which is closed initially. Requiring human help to open the cupboard door gives a penalty. 
+The robot must ask a human to open the door, after which a referee will open the door. 
+\end{enumerate}
+
+Please note that there may be more than one object in each shelf to fit all objects in.
+
+\subsection{Task}
+\begin{enumerate}
+\item \textbf{Opening door or drawer:} The cupboard's door is closed and must be opened.
+\item \textbf{Searching for objects:} When told so by an operator, the robot approaches the table from its nearby starting position and starts searching for objects. 
+\item \textbf{Grasping objects:} Any object found on the table by the robot may be grasped by it. 
+  Before or right after grasping the object, the robot may announce which object it has found. 
+  % The scoring only takes the classifications in the report into account. 
+\item \textbf{Placing objects:} After grasping the object, the robot has to safely place it (Section \refsec{rule:scenario_objects}) near the item of the same class in the cupboard. 
+  The object must stay there for at least 10 seconds.
+\end{enumerate}
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}
+\item \textbf{No setup:} The robot must be ready to start the test with a voice command or start button when requested by the referee. There is no setup time.
+\item \textbf{Startup:} The robot must be started with a single voice command or via a start button (Section \refsec{rule:start_signal}). If the robot is unable to start it must be removed immediately.
+\item \textbf{Single try:} The robot must be able to start from the first attempt. 
+`There is no restart for this test. If the robot is unable to start it must be removed immediately.
+\item \textbf{Collisions:} Slightly touching the the cupboard is tolerated.
+  Driving over the objects or any other form of a major collision is not allowed, and the referees directly stop the robot (Section \refsec{rule:safetyfirst}).
+\item \textbf{Object types:} The objects selected from the \textit{Standard Objects Set} will be chosen to be easily detectable and contrasting with the shelf (ex.~red or black objects on a white shelf).
+\item \textbf{Recognition report:} Robots must create a PDF report file including the list of recognized objects with a picture showing the object and the object name/label.
+  This file may be stored on a USB-stick on the robot which is given to the TC after the test. The PDF file name should include the team name and a timestamp. 
+  Furthermore, it must be unmistakeable which label belongs to which object. Objects must also be recognizable in the report by a human (TC) so that it can be scored. 
+  An overview of the shelf with bounding boxes and labels attached to the bounding boxes is handy for the TC to score.
+  False positives in the report (labeling an object which is not an object but e.g. the edge of the shelf) are penalized.
+%\item \textbf{QR Codes:} The team may request to use a special set ob objects identified with QR codes if the robot is not able to correctly recognize the objects. The use of this special QR-object-set must be announced to the TC at least on hour before the test starts. When QR Codes are used, no points are given for object recognition.
+  \item \textbf{Clear area: } The robot may assume that the direct vicinity of the cupboard is clear and that the robot can move slightly backwards for its task. 
+\end{enumerate}
+
+\subsection{Data recording}
+  Please record the following data (See \refsec{rule:datarecording}):
+  \begin{itemize}
+   \item Images
+   \item Plans
+  \end{itemize}
+
+\subsection{Referee instructions}
+
+The referee needs to
+\begin{itemize}
+\item Place the objects in the cupboard and a few of the same class on the table. New items can be placed on the table when the robot asks for that. 
+\item Close the door of the cupboard. 
+\item 5 of the objects in the cupboard must be unknown objects.
+\end{itemize}
+
+\subsection{Score sheet}
+\input{scoresheets/StoringGroceries.tex}
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:
