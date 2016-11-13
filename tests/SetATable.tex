@@ -1,0 +1,70 @@
+\section{Set a Table}
+
+The robot must set a table using items stored in various places of the kitchen. Some of these items are easly accessible (e.g., over the kitchen counter) while others may require the opening of doors (e.g., inside a cloret). Furthermore, some of these items may contrain the way they are handled by the robot (e.g., avoid pouring contents of a container). These items must be placed on a table following social conventions in terms of their positions on the table. Midway during placement, the robot owner may change/adjust the position of some of the items; the robot is expected to handle appropriately the situation.
+
+\subsection{Example}
+
+The table must be set for breakfast. Several items must be placed on the table: a plate, cutlery, a cup, napkins, a basket with bread, a cereal box, etc. The basket with bread, a napkin, and the cereal box are on the kitchen counter; the plate, the cutlery, and the cup are inside a closet. The robot starts moving these items from their original position to the table. Some of these objects pose specific challenges to robot manipulation: the napkin is a flexible object, the bread basket contains bread, thus the robot must hold it with care, the items inside the closet require the closet door to be opened, and the cutlery is non-trivial to grasp. After the bread basket is placed on the table, the robot owner decides to move its place, so the positioning of remaining objects must have this in consideration.
+
+\subsection{Goal}
+
+The robot has to move a predefined list of objects onto the a predefined table in the kitchen. The placement of these objects has to be appropriate from a social point of view.
+
+\subsection{Focus}
+
+This test focuses on object perception and manipulation.
+
+\subsection{Setup}
+
+Half of the objects are placed on the kitchen counter, while the remaining ones inside a predefined closet, which is closed before the robot entering the arena. The table should be initially cleared of any object. The robot will start at least two meters away from any object and from the table.
+
+\subsection{Task}
+
+\begin{enumerate}
+\item \textbf{Searching for objects:} The robot must detect which objects are still missing on the table and search for them either on the kitchen counter on inside the closet.
+\item \textbf{Grasping objects:} The robot must grasp any missing object and move it to the table.
+\item \textbf{Placing objects:} Each object must be placed in a socially accepted position, not coliding with any object there.
+\item \textbf{Changing objects position:} The operator will change the position of two objects on the table at any time, before the placement of the last one.
+\end{enumerate}
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}
+\item \textbf{No setup:} The robot must be ready to start the test with a voice command or start button when requested by the referee. There is no setup time.
+\item \textbf{Startup:} The robot must be started with a single voice command or via a start button (Section \refsec{rule:start_signal}). If the robot is unable to start it must be removed immediately.
+\item \textbf{Single try:} The robot must be able to start from the first attempt. 
+`There is no restart for this test. If the robot is unable to start it must be removed immediately.
+\item \textbf{Collisions:} Slightly touching the table.
+  Driving over the objects or any other form of a major collision is not allowed, and the referees directly stop the robot (Section \refsec{rule:safetyfirst}).
+\item \textbf{Object types:} The objects selected from the \textit{Standard Objects Set} will be chosen to be easily detectable and contrasting with the background (kitchen counter or closet).
+\item \textbf{Recognition report:} Robots must create a PDF report file including the list of recognized objects with a picture showing the object and the object name/label.
+  This file may be stored on a USB-stick on the robot which is given to the TC after the test. The PDF file name should include the team name and a timestamp. 
+  Furthermore, it must be unmistakeable which label belongs to which object. Objects must also be recognizable in the report by a human (TC) so that it can be scored. 
+%  An overview of the shelf with bounding boxes and labels attached to the bounding boxes is handy for the TC to score.
+False positives in the report (labeling an object which is not an object but e.g. the edge of the shelf) are penalized.
+%\item \textbf{QR Codes:} The team may request to use a special set ob objects identified with QR codes if the robot is not able to correctly recognize the objects. The use of this special QR-object-set must be announced to the TC at least on hour before the test starts. When QR Codes are used, no points are given for object recognition.
+  \item \textbf{Clear area:} The robot may assume that there are no obstacles between the table, the kitchen counter, and the closet.
+    \item \textbf{Object list:} A total of 6 objects is considered, 3 of them considered easy to grasp (e.g., a cereal box, a cup, and a plate), while the remaining 3 hard to grasp (e.g., cutlery, napkins, and a basket with bread).
+\end{enumerate}
+
+\subsection{Data recording}
+  Please record the following data (See \refsec{rule:datarecording}):
+  \begin{itemize}
+   \item Images of recognized objects
+   \item List of moved items
+  \end{itemize}
+
+\subsection{Referee instructions}
+
+The referee needs to
+\begin{itemize}
+\item Clean up any remaining object on the table.
+\item Place the objects on either the kitchen counter or inside the closet, half of them in each one of these two locations. Each one of these locations must contain at least one easy to grasp and one hard to grasp object.
+\item Close the closet door.
+\end{itemize}
+
+\subsection{Score sheet}
+\input{scoresheets/SetATable.tex}
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:

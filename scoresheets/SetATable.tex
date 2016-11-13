@@ -1,0 +1,53 @@
+
+The maximum time for this test is 5 minutes.
+
+\begin{scorelist}
+% Grasp (any object): 10
+% Place (anywhere in the cupboard): 10
+% Place in correct place: 15
+% Recognize known object correctly (without grasping/placing something of that class): 10
+% Label two unknown objects of the same class with the same label (e.g. ``class0''): 15
+
+% Place known object near known object of same class: 40
+% Place unknown object near unknown object of the same class: 50
+
+
+	\scoreheading{Grasping objects}
+	\scoreitem[5]{10}{For each successful grasp of any object (lifting it up to at least 5 cm for more than 10 seconds)}
+	\scoreitem[5]{20}{For each successful grasp of an hard to grasp object (lifting it up to at least 5 cm for more than 10 seconds)}
+
+	\scoreheading{Placing objects}
+	\scoreitem[5]{10}{For each successful placement of any object anywhere on the table (safely stands still for more than 10 seconds)}
+	\scoreitem[5]{20}{For each successful placement of an hard to grasp object anywhere on the table (safely stands still for more than 10 seconds)}
+	\scoreitem[5]{-5}{For each placement of an object on a clearly inappropriate position}
+
+	\scoreheading{Recognizing objects}
+	\scoreitem[5]{10}{Every correctly recognized known object in the report file}
+	% ??? \scoreitem[5]{15}{Every correctly label 2 unknown objects of the same class with the same label in the report file}
+	\scoreitem[5]{-5}{False positive label}
+	
+% 	\scoreheading{Total task}
+% 	\scoreitem[5]{40}{Place known object near known object of same class}
+% 	\scoreitem[5]{50}{Place unknown object near unknown object of same class}
+
+	\scoreheading{Penalty}
+	\scoreitem[1]{-20}{Require a human to open the closet door}  % Or make this a bonus, but then there is a time issue as opening the door takes time. I think a penalty provides a better incentive
+
+	% (+ (* 6 (+ 10 10)) (* 3 (+ 20 20)) (* 6 10))
+	\setTotalScore{300}
+\end{scorelist}
+
+\subsection{Score examples} 
+% \begin{itemize}
+%  \item Robot A fails at all manipulation attemps but makes an excelent report, with the 5 known objects labeled correctly and the 5 pairs of unknown objects correctly, will get 
+% $5*10 + 5*15 = 125$ points. 
+%  \item Robot B that fails to recognize anything but does move all the objects from the table to anywhere in the cupboard receives $5*10 + 5*10 = 100$ points.
+%  \item Robot C grasps a single unknown item (``Cookies''), places it at the correct position near the other ``Cookies'' and also makes the same excelent report as robot A will get 
+% 10 points for grasping, 10 foor placing anywhere and an additional 5 for placing at the right location, so 25 for that single object.
+% The  total for robot C is then 150 points.
+% \end{itemize} 
+
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:
