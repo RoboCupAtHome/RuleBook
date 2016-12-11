@@ -1,6 +1,6 @@
 \section{Restaurant}
-The robot is tested in a real environment such as a real restaurant or a shopping mall.
-This means there are \emph{two} robots helping clients in the restaurant. 
+The robots are tested in a real environment such as a real restaurant or a shopping mall.
+Tthere are \emph{two} robots helping clients in the restaurant at the same time.
 
 \subsection{Focus}
 This test focuses on online mapping, safe navigation in previously unknown environments, gesture detection, human-robot interaction, and manipulation in a real environment.
@@ -19,12 +19,16 @@ As this test is performed with 2 robots in parallel, the robots will also have t
 	  The location of the tables is not taught to the robot via some training phase. 
 	
 	\item \textbf{Calling:} A guest will ask for the robot's attention by waving \emph{and} calling it out using voice. 
-	  The robot must state out loud that it has detected the call. 
+	  The robot must state out loud that it has detected the call.
+	  % A robot must also indicate roughly where it has detected the call (e.g. ``to my left'')
 	  In case both robots notice the same call, the \textit{Professional Barman} will tell one of the robots to take the order. 
 	  The barman will say the robot's name followed by ``Take the order'', e.g. ``R2D2, take the order''. 
 	  The other robot will simply have to wait for another call. 
 	  If the robot \textit{not} commanded to take the order still goes, it will be commanded to wait (e.g. ``C3PO, Wait''). 
 	  In case the robot keeps going after that, the emergency button will be used to stop the robot. 
+	
+% 	\item \textbf{Parallel orders:} It may occur that two guests want to order something at the same time and thus wave at the same time. 
+% 	  The referees will arange these two guests such that each is clearly visible to (in front of) one of the robots. 
 	
 	\item \textbf{Ordering}: The robot must ask the person what he or she wants to order. See Orders below for details about ordering.
 	\item \textbf{Avoiding random person:} At any time while going to any of the tables or to the \textit{Kitchen}, a person may step on the robot's path. 
