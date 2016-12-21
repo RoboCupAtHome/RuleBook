@@ -1,5 +1,6 @@
 \section{Help-me-carry}
 The robot's owner went shopping for groceries and needs help carrying the groceries from the car into the home.
+The whole family helps, as well as the robot. 
 
 \subsection{Goal}
 The robot must bring some items from outside the arena inside the arena.
@@ -9,24 +10,44 @@ This test focuses on following and navigation in an unknown environment.
 
 \subsection{Setup}
 The robot starts waiting inside the arena. 
-The owner has a set of bags and boxes tht need to be carried from a place outside the arena back inside. 
+The owner has a set of bags and boxes that need to be carried from a place outside the arena back inside. 
 
 \begin{enumerate}
-\item \textbf{Start:} Starting location of the robot. %%Close *to* the front door of the appartment?
-\item \textbf{Car:} The robots owner has put the groceries in the trunk of the car after shopping. The owner parked the car outside the home.
-\item \textbf{Destination:} The items must be transported to a place where they can be stored.  
+  \item \textbf{Location:} One of the arenas (apartment) and its surroundings. The apartment is in its normal state. Part of the test is performed outside the arena in a public space.
+  \item \textbf{Start:} Starting location of the robot. %%Close *to* the front door of the appartment?
+  \item \textbf{Car:} The robots owner has put the groceries in the trunk of the car after shopping. The owner parked the car outside the home.
+  \item \textbf{Destinations:} The items must be transported to places where they can be stored. The destinations are various rooms of the arena. 
+  \item \textbf{Doors:} All doors in the apartment are open.
+  \item \textbf{Operator:} A \quotes{professional} operator is selected by the TC to act as the owner of the robot. 
+  \item \textbf{Other people:} There are no restrictions on other people walking by or standing around throughout the complete task. 
 \end{enumerate}
 
 \subsection{Task}
 \begin{enumerate}
 \item \textbf{Start:} The robot is waiting somewhere in the apartment. The owner approaches the robot and tells it to follow.
-\item \textbf{Following:} The robot starts following the owner, who guides the robot to the car with the groceries. 
-\item \textbf{Handover groceries:} When the owner stops at the car, the owner gives the robot a command to carry something, e.g. a box or a bag.  The robot puts up its arms and the owner gives the item to the robot.
+\item \textbf{Following:} The robot starts following the owner, who guides the robot to the car containing the groceries. 
+\item \textbf{Arrive at car:} When at the car, the owner tells the robot they have reached the car and to remember this location.
+\item \textbf{Handover groceries:} The owner gives the robot a command to carry something, e.g. a box or a bag.  
+  The robot puts up its arms and the owner gives the item to the robot.
+\item \textbf{Command destination:} The owner of the robot tells where the given item should go, one of the rooms in the arena. 
 \item \textbf{Delivery:} The robot then goes inside the house to deliver the item to the destination. 
-\item \textbf{Repeat until time is up:} Then, the robot goes back to the car to bring another item inside. 
+\item \textbf{Repeat until time is up:} Then, the robot goes back to the car (by itself, as it already knows where the car is) to bring another item inside. 
 \end{enumerate}
+
+The robot may encounter some obstacles while navigating and the robot must deal and avoid or otherwise deal with the obstacle. 
+The possible obstacles are:
+\begin{itemize}
+	\item \textbf{Small object:} Small object. For example, someone has dropped a piece of fruit (like an apple or mandarin) while carrying the groceries inside.
+	\item \textbf{3D Object:} A bar table, normal table, rolling chair: some object that is wider at its top than on its bottom, 
+	  thus requiring more than just a laser scanner mounted near the ground to avoid obstacles. 
+	\item \textbf{Smart obstacle:} A person to whom the robot may speak to and kindly ask to move away. 
+	  When interacting with people, the robot must look at the person and make clear is speaking with him/her.
+	\item \textbf{Moving people:} As the whole family living in the house is helping getting the groceries from the car, 
+	  additional to the robot there will be some people also going back and forth between the car and various rooms. 
+	  The robot will encounter these and deal with them. These people are friendly to the robot and will not actively block it but the robot must also not block them. 
+\end{itemize}
 %% Possible extensions: 
-%% - allow the owner to tell for each item where it should go
+%% - DONE: allow the owner to tell for each item where it should go
 %% - At the destination room, there is a person waving, waiting for the robot to bring the items so (s)he can take them
 %% - Points for a natural handover. E.g. the human is holding a box and the robot moves in to take it over instead of the humans placing it in the robots arms. Same for the bag
 %% - Close the appartment door when the robot is inside?
