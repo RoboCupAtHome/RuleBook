@@ -4,6 +4,8 @@ Setting up a table for a meal and cleaning it up afterwards is one of the most r
 
 The task comprises two phases: in phase~I, the robot is asked to set up the table, according to an optional variation given by the referee, and in the phase~II, the robot is supposed to cleanup the table, returning all placed objects to their original location, including detecting and clearningspills with a cleaning cloth.
 
+This task takes place on a single room, designated \emph{kitchen,} with a \emph{table,} where the relevant objects are stored, some of then on an open closet and other on a closed closet.
+
 In phase~I, the operator requests the robot to setup the table for a meal. In this request, the operator may specify one variation of the meal, e.g., milk or coffee, bread or cookies. The robot should then set the table using items stored in various places of the kitchen, and afterwards it must clean it up, including small spills on the table. Some of the items are easly accessible (e.g., over the kitchen counter) while others may require the opening of doors (e.g., inside a cloret). Furthermore, some of these items may contrain the way they are handled by the robot (e.g., avoid pouring contents of a container). These items must be placed on a table reasonably following social conventions in terms of their positions on the table\footnote{Strict adherence to any social convention is out of the scope of the competition, and thus will not be evaluated.}. Midway during placement, the robot owner may change/adjust the position of some of the items; the robot is expected to handle appropriately the situation.
 
 In phase~II, the operator requests the robot to clean up the table. This includes both returning the placed objects to their original location, and cleaning up dirt and spills using a cleaning cloth. This requires the robot ro memorize the location the objects were originally recognized.
@@ -11,7 +13,7 @@ In phase~II, the operator requests the robot to clean up the table. This include
 
 \subsection{Example}
 
-The operator requests the robot to set the table for breakfast. Then, the robot replies asking whether the operator prefers bread of cookies, to which the operator replies prefering bread.  Several items are placed on the table: a plate, cutlery, a cup, napkins, a basket with bread, a cereal box, etc. The basket with bread, a napkin, and the cereal box are on the kitchen counter; the plate, the cutlery, and the cup are inside a closet. The robot starts moving these items, one by one, from their original position to the table. Some of these objects pose specific challenges to robot manipulation: the napkin is a flexible object, the bread basket contains bread, thus the robot must hold it with care, the items inside the closet require the closet door to be opened, and the cutlery is non-trivial to grasp. After the bread basket is placed on the table, the robot owner decides to move its place, so the positioning of remaining objects must have this in consideration. Then the robot will await an instruction by the operator to clean up the table. While taking his/her meal, the table gets dirty with a spill. The robot must detect the spill and clean it up using a cleaning cloth. Then, all of the other items are returned to their original locations. The task concludes once the table returns to its original state.
+The operator requests the robot to set the table for breakfast. Then, the robot replies asking whether the operator prefers bread or cookies, to which the operator replies prefering bread.  Several items are placed on the table: a plate, cutlery, a cup, napkins, a basket with bread, a cereal box, etc. The basket with bread, a napkin, and the cereal box are on the kitchen counter; the plate, the cutlery, and the cup are inside a closet. The robot starts moving these items, one by one, from their original position to the table. Some of these objects pose specific challenges to robot manipulation: the napkin is a flexible object, the bread basket contains bread, thus the robot must hold it with care, the items inside the closet require the closet door to be opened, and the cutlery is non-trivial to grasp. After the bread basket is placed on the table, the robot owner decides to move its place, so the positioning of remaining objects must have this in consideration. Then the robot will await an instruction by the operator to clean up the table. While taking his/her meal, the table gets dirty with a spill. The robot must detect the spill and clean it up using a cleaning cloth. Then, all of the other items are returned to their original locations. The task concludes once the table returns to its original state.
 
 \subsection{Goal}
 
@@ -40,6 +42,7 @@ Half of the objects are placed on the kitchen counter, while the remaining ones 
 \end{enumerate}
 
 \subsection{Additional rules and remarks}
+\label{sattu:add}
 \begin{enumerate}
 \item \textbf{No setup:} The robot must be ready to start the test with a voice command or start button when requested by the referee. There is no setup time.
 \item \textbf{Startup:} The robot must be started with a single voice command or via a start button (Section \refsec{rule:start_signal}). If the robot is unable to start it must be removed immediately.
@@ -47,7 +50,7 @@ Half of the objects are placed on the kitchen counter, while the remaining ones 
 `There is no restart for this test. If the robot is unable to start it must be removed immediately.
 \item \textbf{Collisions:} Slightly touching the table.
   Driving over the objects or any other form of a major collision is not allowed, and the referees directly stop the robot (Section \refsec{rule:safetyfirst}).
-\item \textbf{Object types:} The objects selected from the \textit{Standard Objects Set} will be chosen to be easily detectable and contrasting with the background (kitchen counter or closet). A maximum of 6 objects is considered for this task, where two of them is hard to grasp, e.g., cutlery, and another two must be handled upright, e.g., cup.
+\item\label{sattu:objs} \textbf{Object types:} The objects selected from the \textit{Standard Objects Set} will be chosen to be easily detectable and contrasting with the background (kitchen counter or closet). A maximum of 6 objects is considered for this task, where two of them is hard to grasp, e.g., cutlery, and another two must be handled upright, e.g., cup.
 \item \textbf{Recognition report:} Robots must create a PDF report file including the list of recognized objects with a picture showing the object and the object name/label.
   This file may be stored on a USB-stick on the robot which is given to the TC after the test. The PDF file name should include the team name and a timestamp. 
   Furthermore, it must be unmistakeable which label belongs to which object. Objects must also be recognizable in the report by a human (TC) so that it can be scored. 
@@ -75,6 +78,15 @@ The referee needs to
 \item Close the closet door.
 \item Ask the team whether they implemented a meal variation, and if yes, choose randomly one of the options, not disclosing the choice.
 \end{itemize}
+
+\subsection{OC instructions}
+
+The Organization must provide:
+\begin{itemize}
+\item the objects, as specified in item~\ref{sattu:objs} of section~\ref{sattu:add}
+\item both an open closet and a closet with a door in the kitchen room
+\end{itemize}
+
 
 \subsection{Score sheet}
 \input{scoresheets/SetATableTidyUp.tex}
