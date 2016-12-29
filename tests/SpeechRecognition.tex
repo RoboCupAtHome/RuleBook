@@ -4,12 +4,21 @@ This test is divided in two phases. First the robot must answer a set of questio
 
 For the second phase, the focus is to carry out Sound Source Localization (SSL) and Automatic Speech Recognition (ASR) at the same time. To this effect, volunteers will stand around the robot and a randomly chosen volunteer will ask a question. The robot is expected to turn towards that volunteer and answer the question. If the robot is NOT able to carry out SSL and ASR at the same time (e.g. it needs to turn towards the speaking volunteer using SSL before doing ASR), the robot is allowed to request to repeat the question (with a penalty). In addition, if SSL cannot be carried out, the robot may still answer the question without turning, but no points will be provided for SSL.
 
+The questions the robot must answer will be a small set of predefined trivia questions, some questions about objects in the arena and some questions will be about the persons surrounding the robot.
+
 \subsection{Goal}
-The robot must be able to properly recognize and answer to a specific set of questions without ask for confirmation. Also, the robot shall be able to react to a speaking operator which is not facing towards to.
+The robot must be able to properly recognize and answer to a limited set of questions (according to a grammar) without asking for confirmation. 
+Also, the robot shall be able to react to a speaking operator which is not facing towards to.
+
+After recognizing the speech of a question, the robot must be able to deduce the answer from available knowledge or find a way to answer the question by looking around.
 
 \subsection{Focus}
+This test focuses on voice recognition, natural language understanding and audio-source localization in a noisy environment, with moving sound sources\footnote{This test may also be held outside the arena}.
+Additionally, the test requires the robot to consult and gather information about the (direct) environment.
+This involves the appearance and locations of objects in the arena as well as features of the persons around the robot. 
 
-This test focuses on voice recognition and audio-source localization in a noisy environment, with moving sound sources\footnote{This test may also be held outside the arena}.
+For the information about the arena, the robot is assumed to already possess the needed knowledge. It should not drive away. 
+When answering questions about persons, the robot may gather the information on the spot, i.e. it should look around. 
 
 \subsection{Setup}
 \begin{enumerate}
@@ -21,7 +30,7 @@ This test focuses on voice recognition and audio-source localization in a noisy 
 
 \begin{enumerate}
 \item \textbf{Direct speech recognition: } The robot should move (or be moved) to a previously specified point inside the arena. 
-  A TC member will ask 5 questions from the set of 50 predefined questions in front of the robot. 
+  A TC member will ask 8 questions in front of the robot. 
   The robot should answer the question without asking confirmation.
   A question will only be asked once; there are no repetitions of a question. 
 \begin{itemize}
@@ -35,16 +44,16 @@ This test focuses on voice recognition and audio-source localization in a noisy 
 \item Turn towards the person that asked the question,
 \item Ask for only one repetition of the question, if needed (penalty).
 \end{itemize}
-This process will repeat 5 times. No attempt may receive negative points. When the robot provides an answer it should not ask for confirmation.
+This process will repeat 8 times. No attempt may receive negative points. When the robot provides an answer it should not ask for confirmation.
 \end{enumerate}
 
 \subsubsection{Questions}
 % In previous years, the robots only had to answer questions from a list of pre-defined trivia questions. 
-In addition to 10 predefined trivia-questions, the robot will be asked some questions about the RoboCup arena and the objects within it, i.e. the scenario. 
+In addition to 10 predefined trivia-questions, the robot will be asked some questions about the RoboCup arena and about the persons surrounding the robot. 
 
-The questions will be about the colour, shape, size and type of the scenario objects \refsec{rule:scenario_objects} and where each object is usually found. 
+The arena-questions will be about the color, shape, size and type of the scenario objects \refsec{rule:scenario_objects} and where each object is usually found. 
 For example:
-\begin{itemize}
+\begin{enumerate}
  \item What color is the shampoo? $\rightarrow$ The shampoo is blue.
  \item What is the color of the sponge $\rightarrow$ The sponge is green.
  \item What type of thing is the beer? $\rightarrow$ Beer a kind of drink. 
@@ -52,11 +61,25 @@ For example:
  \item Tell me where the plates are. $\rightarrow$ The plate is in the cupboard. 
  \item How big is the egg? $\rightarrow$ The egg is a couple of centimeters big.
  \item What shape is the egg? $\rightarrow$ It is egg-shaped of course. 
- \item What shape is the soap? $\rightarrow$ The soap is a flat block. 
  \item Where is the shampoo? $\rightarrow$ The shampoo is in the closet. 
  \item What objects are in the closet? $\rightarrow$ The shampoo, soap, the sponge and a cloth. \textbf{Or:} The closet contains toiletries.
-\end{itemize}
-Note theat the robot does not have to go and find out the answer; it should be able to infer the answers from knowledge it already has. 
+ \item What is the color of \textit{them}? $\rightarrow$ They are blue. 
+ \item Where is the shampoo? $\rightarrow$ In the closet. 
+ \item What is \textit{it}'s color? $\rightarrow$ The shampoo is blue. 
+\end{enumerate}
+Note that the robot does not have to go and find out the answer; it should be able to infer the answers from knowledge it already has. 
+
+The person related questions can be about gender, age and pose (sitting, standing, raised arm).
+For example: 
+\begin{enumerate}
+ \item What age is the standing person? $\rightarrow$ 25.
+ \item Is/was \textit{that} a boy or a girl? $\rightarrow$ The standing person is a woman. 
+ \item How old do you think I am? $\rightarrow$ 23.
+ \item Is the sitting person a man or woman? $\rightarrow$ A man.
+ \item Am I a man or a woman? $\rightarrow$ You're the man!
+\end{enumerate}
+
+Please note that some these questions refer to the previous answer. 
 
 \begin{figure}[!h]
 	\centering
@@ -81,6 +104,7 @@ Note theat the robot does not have to go and find out the answer; it should be a
   \begin{itemize}
    \item Audio
    \item Commands
+   \item Images
   \end{itemize}
 
 \subsection{Referee instructions}
@@ -99,11 +123,12 @@ The referee needs to
 \textbf{1 day before the test}
 \begin{itemize}
 \item Provide the set of 10 predefined questions
-\item Prepare a set of questions about the RoboCup scenario. 
+\item Prepare a set of questions about the RoboCup scenario and persons
 \end{itemize}
 \textbf{2 hours before the test}
 \begin{itemize}
 \item Announce the placement of the robots
+\item Appoint persons to stand around the robots to ask questions. 
 \end{itemize}
 
 \subsection{Score sheet}
