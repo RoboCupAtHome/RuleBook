@@ -1,6 +1,11 @@
 \chapter{GPSR in detail}
 \label{chap:gpsr-appendix}
 
+\section{Command Generation}
+General Purpose Service Robot commands are generated randomly using the official [EE]GPSR Command Generator and grammars publicly available at https://github.com/kyordhel/GPSRCmdGen. The official [EE]GPSR Command Generator and the official grammars will be made available two months before the competition. However, teams must be aware that the categories, objects and other data is provided for testing purposes only.
+
+For each command to be executed, the Team Leader must choose a Command Category, namely Category I, Category II, or Category III. If the Team Leader knows \textit{a priori} that the robot won't be able to execute the generated command, is advised to inform the opperator immediately in order to proceed with the next command, saving this way valuable time for the task execution.
+
 \section{Command retrieval explained}
 The robot has to show it has understood te given command by stating all the required information to accomplish the task. For this purpose, the robot may repeat the understood command and ask for confirmation. It is not required to repeat the command word by word; reprasing the command is allowed. For instance, if the robot is instructed to \quotes{place a coke onto the tray}, the robot may either say: \textit{\quotes{You want me to place a coke on the tray. Is that correct?}} or \textit{\quotes{do you want me to deliver a coke to the tray?}}.
 
