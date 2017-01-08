@@ -1,0 +1,30 @@
+%% %%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Wireless network}
+\label{rule:scenario_wifi}
+
+For wireless communication, an \iterm{arena network} is provided. The actual infrastructure depends on the local organization. 
+
+\begin{itemize}
+	\item To avoid interference with other leagues, this \iterm{arena network} has to be used for communication only. It is not allowed to use the above or any other WiFi network for personal use at the venue.
+	\item During the competitions, only the active team is allowed to use the \iterm{arena network}. 
+	\item The organizers cannot guarantee reliability and performance of wireless communication. Therefore, teams are required to be ready to setup, start their robots and run the tests even if, for any reason, network is not working properly.
+\end{itemize}
+
+Preferred situation:
+\begin{itemize}
+	\item The \iterm{arena network} consists of of several Virtual Local Area Networks (VLANs), one for each team. 
+	\item The traffic from the robot inside the arena is separated into the corresponding team's VLAN as soon as possible, e.g. at the wireless acces point.This may require that each team has it's own SSID, each of which gets routed into the corresponding VLAN. Each team has a network cable routed to their team area, which is also connected to the teams VLAN. On this cable, the team can set up their own router/switch/hub etc. which will be inside the team's VLAN. This way, one team's traffic and devices are completely separated from any other team, while any team can set up their own DHCP server etc. if they desire. 
+	\item An Internet connection is preferably also available for every team. 
+\end{itemize}
+Each team has to bring its own LAN hub/switch and cables for routing inside the team area. 
+
+In case the \iterm{arena network} is not functioning at the end of the first setup day, teams are allowed to set up their own networking equipment and wireless networks.
+
+\paragraph*{Important note:} Different countries have different regulations for wireless equipment and the \iterm{arena network} has to obey these. 
+It is up to the teams to have networking equipment that also adheres to these regulations. For example, if due to local regulations various WiFi channels are prohibited, it is a team's responsibility to be able to use different, allowed channels.
+
+\paragraph*{Important note:} Any unapproved wireless device may be removed by the TC at any time.
+
+% Local Variables:
+% TeX-master: "../Rulebook"
+% End:

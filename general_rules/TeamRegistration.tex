@@ -15,7 +15,7 @@ Each year there are four phases in the process toward participation:
 Positions 1 and 2 will be announced by a call on the \iterm{RoboCup@Home mailing list}. Preregistration requires a \iterm{team description paper}, a \Term{video}{qualification video} and a \Term{website}{Team Website}.
 
 \subsection{Qualification Video}
-As a proof of running hardware, each team has to provide a \iterm{qualification video} showing at least all from following abilities (minimum requirement):
+As a proof of running hardware, each team has to provide a \iterm{qualification video} showing at least two from the following abilities (minimum requirement):
 \begin{itemize}
 	\item Human-Robot interaction
 	\item Navigation (safe, indoors with obstacle avoidance).
@@ -33,13 +33,12 @@ Showing some of the following abilities is recommended:
 	\item Gesture recognition
 \end{itemize}
 
-For qualification, we consider showing the robot(s) successfully solving at least one test of the last year's or current rulebook (excluding ability tests).
 
-For robots moving slowly, it is much appreciated speed-up videos. When doing so, please specify the speed factor being used (e.g.~2x, 5X, 10X). The same is applied for slow motion scenes.
+Videos should be self-explicative and designed for a general audience, showing the  robot solving complex tasks. The minimum to qualify requires proving the robot is able to solve successfully at least one test of the current or last year's rulebook. For robots moving slowly, we suggest to speed-up videos. When doing so, please specify the speed factor being used (e.g.~2x, 5X, 10X). The same applies for slow motion scenes. 
 
-We encourage teams to produce self-explicative videos for a general audience where complex tasks are solved
+Please notice that the videos should not last longer than the average time for a test (max.~\SI{10}{\minute}).
 
-Please notice that the videos should not last longer than the average time for a test (max.~\SI{30}{\minute}).
+\paragraph{Important note to Standard Platform sub-leagues:} The qualification video must show an unmodified robot in normal operation (See \refsec{rule:spl-mods}).
 
 \subsection{Team Website}
 
@@ -65,8 +64,7 @@ The \iterm{Team Website} should be designed for a broader audience, but also inc
 
 \subsection{Team Description Paper}
 \label{rule:website_tdp}
-
-The \iaterm{team description paper}{TDP} must have a explained description of your main research, including the scientific contribution, goals, scope, and results.
+The \iaterm{team description paper}{TDP} is an 8-pages long scientific paper which must have a explained description of your main research, including the scientific contribution, goals, scope, and results.
 
 Preferably, it should also contain the following:
 \begin{itemize}
@@ -77,27 +75,20 @@ Preferably, it should also contain the following:
 	\item photo(s) of the robot(s)
 \end{itemize}
 
-~\\\noindent On the last page, after references, please include:
+~\\\noindent As addendum in the 9th page (after references) please include:
 \begin{itemize}
-	\item Name of the team
-	\item contact information
-	\item website
-	\item team members
+	\item Team name
+	\item Contact information
+	\item Website url
+	\item Team members' names
 	\item photo(s) of the robot(s), unless included before.
 	\item description of the hardware used 
-	\begin{itemize}
-		\item Provide a brief compact list (2DOF head, 2x7DOF anthropomorphic arms, Pioneer base, etc.).
-		\item Avoid explaining how your hardware works unless it is part of your research (e.g.~we already know what a Hokuyo Laser or Kinect are used for).
-	\end{itemize}
-	\item description of the software
-	\begin{itemize}
-		\item Provide a brief compact list (ROS, ROS nav2d, Object Recognition Kitchen, OpenCV, etc.).
-		\item Avoid explaining how your software works unless it is part of your research.
-		\item List the \iterm{external computing resources} (See \refsec{rule:robot_external_computing}), if any. State their purpose and URL/IP-address. 
-	\end{itemize}
+	\item Brief, compact list of \iterm{external devices} (See \refsec{rule:robot_external_computing}), if any.
+	\item Brief, compact list of 3rd party reused software packages (e.g. ROS' \texttt{object\_recognition} should be listed, but not OpenCV).
+	\item \textbf{[Open Platform only]} Brief description of the hardware ued by the robot(s).
 \end{itemize}
 
-~\\\noindent The TDP has to be in English, up to eight pages in length and formatted according to the guidelines of the RoboCup International Symposium. It goes into detail about the technical and scientific approach.
+~\\\noindent The TDP has to be in English, up to eight pages in length and formatted according to the guidelines of the RoboCup International Symposium without altering margins or spacing. It goes into detail about the technical and scientific approach.
 
 Please notice that, during qualification process, TDP will be scored by its scientific value, novelty and contributions.
 
@@ -108,7 +99,7 @@ Please notice that, during qualification process, TDP will be scored by its scie
 
 During the \iterm{qualification process} a selection will be made by the \iaterm{Organizing Committee}{OC} Taken into account and evaluated in this decision process are:
 \begin{itemize}
-	\item The content on the team website, scoring higher publications and open content;
+	\item The content on the team website, scoring higher publications and open source resources;
 	\item the number of abilities shown in the qualification video,
 	\item the complexity of the tasks shown in the qualification video, and
 	\item the scientific value, novelty and contributions in the \iterm{team description paper}. %, and
@@ -120,6 +111,8 @@ During the \iterm{qualification process} a selection will be made by the \iaterm
 	\item the relevant scientific contributions and publications, and
 	\item the contributions to the RoboCup@Home league.
 \end{itemize}
+
+\paragraph{Important note to Standard Platform sub-leagues:} Only unmodified robots may compete in Standard Platform sub-leagues. Any \textit{slight} modification made to the robot found in the Qualification Material will automatically disqualify the team, for which registration to the international competition will not be possible  (See \refsec{rule:spl-mods}).
 
 % For getting considered in the evaluation, be sure to insert your team's name when adding information to the \iterm{RoboCup\char64Home Wiki}.    
 
