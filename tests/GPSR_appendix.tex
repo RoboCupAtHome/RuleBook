@@ -4,17 +4,17 @@
 \section{Command Generation}
 General Purpose Service Robot commands are generated randomly using the official [EE]GPSR Command Generator and grammars publicly available at https://github.com/kyordhel/GPSRCmdGen. The official [EE]GPSR Command Generator and the official grammars will be made available two months before the competition. However, teams must be aware that the categories, objects and other data is provided for testing purposes only.
 
-For each command to be executed, the Team Leader must choose a Command Category, namely Category I, Category II, or Category III. If the Team Leader knows \textit{a priori} that the robot won't be able to execute the generated command, is advised to inform the opperator immediately in order to proceed with the next command, saving this way valuable time for the task execution.
+For each command to be executed, the Team Leader must choose a Command Category, namely Category I, Category II, or Category III. If the Team Leader knows \textit{a priori} that the robot won't be able to execute the generated command, is advised to inform the operator immediately in order to proceed with the next command, saving this way valuable time for the task execution.
 
 \section{Command retrieval explained}
-The robot has to show it has understood te given command by stating all the required information to accomplish the task. For this purpose, the robot may repeat the understood command and ask for confirmation. It is not required to repeat the command word by word; reprasing the command is allowed. For instance, if the robot is instructed to \quotes{place a coke onto the tray}, the robot may either say: \textit{\quotes{You want me to place a coke on the tray. Is that correct?}} or \textit{\quotes{do you want me to deliver a coke to the tray?}}.
+The robot has to show it has understood the given command by stating all the required information to accomplish the task. For this purpose, the robot may repeat the understood command and ask for confirmation. It is not required to repeat the command word by word; rephrasing the command is allowed. For instance, if the robot is instructed to \quotes{place a coke onto the tray}, the robot may either say: \textit{\quotes{You want me to place a coke on the tray. Is that correct?}} or \textit{\quotes{do you want me to deliver a coke to the tray?}}.
 
 If The robot can't correctly recognize the given command, it is allowed to request the operator to repeat the command up to three times. After three failed attempts, a new command is generated. Th team may opt to use a custom operator or the Continue rule (Section Section 3.8.15).
 
 When a robot has partially understood the command, it is allowed to ask the operator for additional information (e.g. \textit{\quotes{did you say apple juice or pineapple juice?}}).
 
 \subsection{Missing information}
-When a given command lacks of information required for accomplishing the task, the robot should request for that missing part. For instance, if the robot is instructed to \textit{\quotes{offer a drink to the person at the door}}, it may ask \textit{\quotes{which drink should I deliver to the person at the door?}} It is also possible that the robot simply confirms the command and takes a random drink from the drinks location, but in those cases, the command will be considered by the jury of an inferior category.
+When a given command lacks of information required for accomplishing the task, the robot should request for that missing part. For instance, if the robot is instructed to \textit{\quotes{offer a drink to the person at the door}}, it may ask \textit{\quotes{which drink should I deliver to the person at the door?}} It is also possible that the robot simply confirms the command and takes a random drink from the drinks location, but in those cases, the jury will consider the command as if it were from an inferior/lower category.
 
 \subsection{Wrong information}
 Some Category III commands contains erroneous information. In these cases, the robot should
@@ -23,16 +23,17 @@ Some Category III commands contains erroneous information. In these cases, the r
 	\item be able to solve the problem by means of an alternative, reasonable solution.
 \end{itemize}
 
-For example, lets assume the robot is commanded to \textit{\quotes{move the organge juice from the fridge to the dinner table}}, but in the fridge there are only the apple juice and the milk, while the orange juice lies in the stove. The robot may either explain to the operator that there are no orange juices in the fridge, or search the kitchen for the orange juice, grasp it from the stove and deliver it to the dinner table.
+For example, lets assume the robot is commanded to \textit{\quotes{move the orange juice from the fridge to the dinner table}}, but in the fridge there are only the apple juice and the milk, while the orange juice lies in the stove. The robot may either explain to the operator that there are no orange juices in the fridge, or search the kitchen for the orange juice, grasp it from the stove and deliver it to the dinner table.
 
 \section{Command categories explained}
-All possible actions has been classified previously by the TC according to their difficulty. For each command the team may choose from the following three categories:
+All possible actions has been classified previously by the TC according to their difficulty. For each of the three given command, the team may choose from the following categories:
 
 \subsection{Category I}
 This category comprehends easy-to-solve tasks with a low difficulty degree, involving indoor navigation, grasping known objects, answering questions (from the predefined set of questions), etc.
 
 Some examples are:
 \begin{itemize}
+	\item \textit{How many beverages are red?}
 	\item \textit{Put the crackers on the kitchen table.}
 	\item \textit{Tell the time to Ana at the bedroom.}
 	\item \textit{Tell me the name of the person at the door.}
