@@ -5,25 +5,25 @@
 	\textbf{\large Command 1:} & ~ & ~ & ~ & ~ \\ \hline
 	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
 	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
-	Category: 1 2 3 4 5 6 \vspace{8mm} &
+	Category: 1 2 3 4 5 6 7 \vspace{8mm} &
 	Restart? & Custom Operator? & Continue? & ASR attempts: 1 2 3 \\
 
 	\textbf{\large Command 1 $\cdot$ 2:} & ~ & ~ & ~ & ~ \\ \hline
 	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
 	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
-	Category: 1 2 3 4 5 6 \vspace{8mm} &
+	Category: 1 2 3 4 5 6 7 \vspace{8mm} &
 	Restart? & Custom Operator? & Continue? & ASR attempts: $\Box \Box \Box$ \\
 	
 	\textbf{\large Command 1 $\cdot$ 2 $\cdot$ 3 :} & ~ & ~ & ~ & ~ \\ \hline
 	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
 	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
-	Category: 1 2 3 4 5 6 \vspace{8mm} &
+	Category: 1 2 3 4 5 6 7 \vspace{8mm} &
 	Restart? & Custom Operator? & Continue? & ASR attempts: $\Box \Box \Box$ \\
 
 	\textbf{\large Command 1 $\cdot$ 2 $\cdot$ 3 :} & ~ & ~ & ~ & ~ \\ \hline
 	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
 	\multicolumn{5}{c}{\vspace{5mm}~}  \\ \hline
-	Category: 1 2 3 4 5 6 \vspace{8mm} &
+	Category: 1 2 3 4 5 6 7 \vspace{8mm} &
 	Restart? & Custom Operator? & Continue? & ASR attempts: $\Box \Box \Box$ \\
 \end{tabularx}
 \end{table}
@@ -35,50 +35,59 @@
 The maximum time for this test is 40 minutes.
 
 \begin{scorelist}
-	\scoreheading{Getting instructions}
-	\scoreitem{40}{Understanding the set of actions on the $1^{st}$ attempt}
-	\scoreitem{20}{Understanding the set of actions on the $2^{nd}$ attempt}
-	\scoreitem{10}{Understanding the set of actions on the $3^{rd}$ attempt}
-	\scoreitem[0.50]{-1}{Command given by custom operator (point reduction to ASR)}
+	\scoreheading{Performance}
+	\scoreitem{0}{Understanding the command the $1^{st}$ attempt}
+	\scoreitem{0}{Random category successfully solved}
+	\scoreitem{0}{Mixing categories (bonus for each extra category)}
 	
 	\scoreheading{HRI}
-	\scoreitem{05}{Answering a predefined question}
-	\scoreitem{10}{Ask for missing information}
-	\scoreitem{05}{Ask for command after detecting an event}
-	\scoreitem{20}{Explain in detail why the robot could not accomplish a task *}
-	\scoreitem{10}{Natural handover (give or take)}
+	\scoreitem{0}{Answering a predefined question}
+	\scoreitem{0}{Ask for missing information}
+	\scoreitem{0}{Ask for command after detecting an event}
+	\scoreitem{0}{Explain in detail why the robot could not accomplish a task *}
+	\scoreitem{0}{Natural handover (give or take)}
 
 	\scoreheading{Manipulation}
-	\scoreitem{10}{Grab an item}
-	\scoreitem{50}{Open door/drawer *}
-	\scoreitem{10}{Place an item}
-	\scoreitem{30}{Pour into a bowl *}
-	\scoreitem{20}{Two-handed transport of tray/bowl *}
+	\scoreitem{ 5}{Grab/place an object}
+	\scoreitem{15}{Grab/place a stacked object}
+	\scoreitem{30}{Manipulation in narrow spaces}
+	\scoreitem{50}{Open/close a bottle/can *}
+	\scoreitem{30}{Open/close a door/drawer *}
+	\scoreitem{30}{Manipulation of buttons/levers/panels}
+	\scoreitem{30}{Manipulation of tiny/heavy/slippery objects}
+	\scoreitem{50}{Pour into a bowl *}
+	\scoreitem{30}{Two-handed manipulation *}
 	
 	\scoreheading{Memory \& Awareness}
-	\scoreitem{15}{Detect an expected event (within a reasonable amount of time) *}
-	\scoreitem{25}{Detecting an unexpected event*}
-	\scoreitem{25}{Provide information about changes in the environment and/or given commands*}
+	\scoreitem{0}{Detect an expected event (within a reasonable amount of time) *}
+	\scoreitem{0}{Detecting an unexpected event*}
+	\scoreitem{0}{Provide information about changes in the environment and/or given commands*}
 
 	\scoreheading{Navigation}
-	\scoreitem{15}{Follow operator until stopped}
-	\scoreitem{20}{Guide a human to location without loosing him or colliding}
+	\scoreitem{0}{Follow operator until stopped}
+	\scoreitem{0}{Guide a human to location without loosing him or colliding}
 	
 	\scoreheading{Object recognition}
-	\scoreitem{25}{Describing a set of unknown objects at a location}
-	\scoreitem{40}{Find (and grasp) an object from a description *}
-	\scoreitem{10}{Recognize an object's class correctly}
-	\scoreitem{15}{Search for item at location}
+	\scoreitem{10}{Counting overall objects}
+	\scoreitem{30}{Counting objects in category}
+	\scoreitem{50}{Counting objects matching description *}
+	\scoreitem{30}{Describing an unknown object}
+	\scoreitem{30}{Find (and grasp) an object from a description *}
+	\scoreitem{30}{Find occluded object (>50\% occlusion)}
+	\scoreitem{50}{Find hidden object (100\% occlusion)}
+	\scoreitem{50}{Infer unknown object's class (category) from features}
+	\scoreitem{15}{Recognize alike object}
+	\scoreitem{ 5}{Recognize known object}
 
 	\scoreheading{People, pose and activity recognition}
-	\scoreitem{10}{Detect a calling/waving person}
-	\scoreitem{10}{Find a person in a given room}
-	\scoreitem{30}{Recognize a newly learned face correctly}
-	\scoreitem{10}{State the gender of a person}
-	\scoreitem{10}{State the number of people in a group}
-	\scoreitem{10}{State the pose of a person *}
+	\scoreitem{0}{Detect a calling/waving person}
+	\scoreitem{0}{Find a person in a given room}
+	\scoreitem{0}{Recognize a newly learned face correctly}
+	\scoreitem{0}{State the gender of a person}
+	\scoreitem{0}{State the number of people in a group}
+	\scoreitem{0}{State the pose of a person *}
 
-	\setTotalScore{440}
+	\setTotalScore{0}
 \end{scorelist}
 
 
