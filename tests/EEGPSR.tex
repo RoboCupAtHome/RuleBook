@@ -13,62 +13,61 @@
 % Maximum amount of time given to a team to perform all commands
 \newcommand{\eegpsrMaxTeamTime}{\eegpsrMaxCmd$\times$\eegpsrMaxCmdTime}
 
-\section[EEGPSR]{E\textsuperscript{2}GPSR \\ \normalsize{(Enhanced Endurance General Purpose Service Robot)}}
+% \section[EEGPSR]{E\textsuperscript{2}GPSR \\ \normalsize{(Enhanced Endurance General Purpose Service Robot)}}
+\section[EEGPSR]{Enhanced Endurance General Purpose Service Robot}
 \label{sec:eegpsr}
 
-This test evaluates the required robot abilities throughout the Stage I \& II tests this (\YEAR) and previous years' rulebook. In EEGPSR the robot has to solve multiple tasks that are chosen randomly by the referees from a larger set of actions, over an extended period of time (30-45 minutes). In other words, tasks are not incorporated into a (predefined) story and there is neither a predefined order of tasks nor a predefined set of actions.
-The actions to be carried out by the robot are organized in several categories with equivalent complexity but targeting different abilities.
-It is upto the teams to choose how to execute the command and solving the involved tasks according to robot capabilities.
-Scoring thereby depends on the complexity of the abilities shown.
+%
+% MAURICIO @2017
+% Short instructions based on GPSR
+%
+This test evaluates the abilities of the robot that are required throughout the set of tests in stage II of this and previous years' RuleBooks. In this test the robot has to solve multiple tasks upon request over an extended period of time (30-45 minutes). That is, the test is not incorporated into a (predefined) story and there is neither a predefined order of tasks nor a predefined set of actions. The actions that are to be carried out by the robot are chosen randomly by the referees from a larger set of actions. These actions are organized in several categories targeting an special ability. Scoring depends on the abilities shown.
 
 \subsection{Focus}
 This test particularly focuses on the following aspects:
 \begin{itemize}
-	\item No predefined order of actions to carry out.
+	\item No predefined order of actions to carry out (to get away from state machine-like behavior programming).
 	\item Increased complexity in speech recognition.
-	\item More advanced capabilities
-	\item Environmental (high-level) reasoning
+	\item Environmental (high-level) reasoning.
 	\item Robust long-term operation.
-
 \end{itemize}
+
 
 \subsection{Task}
 
 \begin{enumerate}
 	\item \textbf{Entering and command retrieval:} The robot enters the arena and drives to a designated position where it has to wait for further commands. \\
 
-	\item \textbf{Command generation:} A command is generated randomly depending on the category chosen by the team (see below). All commands are composed by up to three actions that the robot has to show it has recognized. The robot may repeat the understood command and ask for confirmation. If it can't recognize the command correctly, it can also ask the speaker to repeat the whole command again.
+	\item \textbf{Command generation:} A command is generated randomly, depending on the command category chosen by the team (see below). \\
 
 	\begin{enumerate}
-		\item \textbf{Category I:} The command is focused in \textbf{Advanced Manipulation}.
+		\item \textbf{Category I: Advanced Manipulation.} The task requires handling objects into small or narrow spaces, manipulate tools, buttons, panels, and doors; two-handed manipulation, or eye-hand coordination.
 
-		\item \textbf{Category II:} The command is focused in \textbf{Advanced Object Recognition}.
+		\item \textbf{Category II: Advanced Object Recognition.} The task requires describing unknown objects, recognize objects from description, identify occluded objects and from the distance.
 
-		\item \textbf{Category III:} The robot gets a command focused in Human-Robot Interaction (\textbf{HRI}) that does not include all the necessary information to accomplish the task.
+		\item \textbf{Category III: Navigation & People Tracking.} The task involves following or guiding people in crowded environments or through narrow spaces. The navigation may take place either inside or outside the arena.
 
-		\item \textbf{Category IV:} The command is focused in \textbf{Memory and Awareness}. This category can only be chosen after the team has successfully accomplished another command.
+		\item \textbf{Category IV: People & Activity Recognition.} The task requires memorizing a person's features, describing unknown people, recognize people from description, and being able to find people hiding or from the distance.
 
-		\item \textbf{Category V:} The command is focused in \textbf{People Recognition} and \textbf{Navigation}.
+		% \item \textbf{Category III: Incomplete and Obfuscated Information.} The robot gets a command that does not include all the information necessary to accomplish the task, or the information is obfuscated and needs to be elucidated or deducted.
 
-		\item \textbf{Category VI:} The command is focused in \textbf{simple tasks} involving Manipulation, Object Recognition, and Person Recognition.
+		\item \textbf{Category V: Incomplete Information.} The robot gets a command that does not include all the information necessary to accomplish the task.
 
+		\item \textbf{Category VI: Erroneous information.} The command contains erroneous information. The robot should be able to realize what went wrong and, when to carry on an alternative solution, it must go back to the operator and clearly state \text{why} it wasn't able to accomplish the task.
+
+		\item \textbf{Category VII: Memory and Environmental Reasoning.} The command requires remembering previously executed tasks. The robot should be able to realize previously performed changes to the environment and, when unable to solve the task, it must go back to the operator and clearly state \text{why} it wasn't able to accomplish the task.
+
+		\item \textbf{Category VIII: Three at once.} The command is composed by \textit{three simple actions}, which the robot has to show it has recognized. The robot may repeat the understood command and ask for confirmation. If it can't recognize the command correctly, it can also ask the speaker to repeat the complete command.
 	\end{enumerate}
 
-%	 \\
-
-%	Each new generated command may require information from the previously given ones. Also, the difficulty of the new commands will be increased with respect of the previously generated ones. \\
-
-	\item \textbf{Task assignment:} The robot is given a command by the operator and may directly start to work on the task assignment. If a robot is unable to perform a command, it should get back to the operator, and clearly state \textbf{why} it wasn't able to accomplish the task. \\
-
-%	 \\
+	\item \textbf{Task assignment:} The robot is given the command by the operator and may directly start to work on the task assignment.
 
 	\item \textbf{Task execution:} The robot must stop the execution of a task and return to its designated position within \eegpsrMaxCmdTime minutes. Otherwise the robot must be moved to its designated position immediately. If a restart is still available to the team, it can be restarted at the designated position. \\
 
-	\item \textbf{Returning:} After accomplishing the assigned task, the robot has to move back to its designated position to wait and retrieve the next command (i.e., go back to 1. without the need of re-entering the arena). The robot can work on at most \eegpsrMaxCmd commands. \\
+	\item \textbf{Returning:} After accomplishing the assigned task, the robot has to move back to its designated position to wait and retrieve the next command (i.e., go back to 1. without the need of re-entering the arena). \\
+	% The robot can work on at most \eegpsrMaxCmd commands. \\
 
-	\item \textbf{Timing:} The total time allotted to the robot for command retrieval and task execution is \eegpsrMaxTeamTime minutes. If the robot is not at its designated position after the time has expired, it must be moved at its designated position immediately. See the section on scheduling below as well.\\
-
-	\item \textbf{Exiting the arena:} When commanded to do so, a robot should leave the arena. \\
+	\item \textbf{Timing:} The total time allotted to the robot for command retrieval and task execution is \eegpsrMaxTeamTime minutes. If the robot is not at its designated position after the time has expired, it must be moved at its designated position immediately.\\
 
 \end{enumerate}
 
@@ -79,17 +78,15 @@ This test particularly focuses on the following aspects:
 	%The CONTINUE rule can only be used with the custom operator (e.g. both penalties of custom speaker and CONTINUE rule will be applied). 
 	\\
 
-	\item \textbf{Number of Teams and Scheduling:} In each test slot multiple teams (preferably \eegpsrTeams teams) may be competing in the arena concurrently. The robots will be tested in an interleaved fashion: The robots will retrieve commands and execute the task one after the other. As stated above, each robot will have a maximum amount of \eegpsrMaxCmdTime minutes per command (including time for retrieving the command and executing it). \\
+	\item \textbf{Mixed or random category.} There are extra points if the robot is able to solve a command combining abilities from two or more categories, or if the team chooses the robot to solve a command from a random category. Mixing categories must be requested to the TC two hours before the test.\\
+
+	\item \textbf{Number of Teams and Scheduling:} In each test slot, \eegpsrTeams teams may be competing in the arena concurrently. The robots will be tested in an interleaved fashion: The robots will retrieve commands and execute the task one after the other. As stated above, each robot will have a maximum amount of \eegpsrMaxCmdTime minutes per command (including time for retrieving the command and executing it). \\
 	
 	\item \textbf{Returning to designated position:} To facilitate a fluent and untroubled performance of the robots, they must return (or being returned) to their designated position before the \eegpsrMaxCmdTime minutes command time elapses. \textbf{If a robot moves from its designated position while another robot is working on a command, it must be immediately disabled} and moved to its designated position. If a restart is still available to the team, it can be restarted at its designated position. \\
-
-	\item \textbf{Carrying robots:}	To carry the robot, at most two team members are allowed in the arena, and the robot must be moved as quickly as possible. To start or restart the robot, at most one team member may operate the robot. The team members moving and operating the robots must leave the arena immediately after the robot is placed or started. \\
 
 	\item \textbf{Referees:} Since the score system in this test involves a subjective evaluation of the robot's behavior, the referees are EC/TC members. One referee is assigned to each team to judge performance, to measure the time for working on a command, and to keep track of the overall operating time of the robot. \\
 
 	\item \textbf{Category selection:} For every of the three commands given to the robot, the team chooses the desired command category. Please do note that points for showing an ability can only be scored once, as also detailed in the next point.\\
-
-	\item \textbf{Scoring:} Points are scored per ability with the total score of the test being the sum of the points scored in each successfully demonstrated ability while solving the tasks (see score sheet). Abilities will be scored considering the best execution only (e.g.~successfully grasping scores for \textit{grasping}), with the single exception of collision-free navigation. \\
 
 	\item \textbf{Operator:}
 	\begin{itemize}
@@ -99,7 +96,7 @@ This test particularly focuses on the following aspects:
 
 	\item \textbf{Inoperative robots:} If a robot gets stuck while trying to accomplish a task during a reasonable amount of time (e.g.~30 seconds), the referee may ask the team to move back the robot to its designated position, proceeding with the next robot. \\
 
-	\item \textbf{Restart:} The number of commands to be given to a robot is three regardless if the restart were used or not. If a restart is required during before the first half of the total time allowed for execute a command elapses, a new command will be generated for the robot to perform. If the first half of the time has elapsed, the team may proceed with the restart but no new command will be generated and the robot must wait for the remaining commands (if any). Robots will be restarted at their designated position, \textbf{it won't be allowed to start outside the arena.} \\
+	\item \textbf{Restart:} Robots will be restarted at their designated position (starting outside the arena is prohibited). If a robot requires a restart, the referee will proceed with the next robot.\\
 
 	\item \textbf{Changing/Charging batteries:} The team may install a charging station at the designated position of the robot, if it does not hinder the other robots. However, the robot must connect itself with the charging station after carrying out a command. Changing batteries or manually connecting the robot with the charging station is allowed during a restart. \\
 
