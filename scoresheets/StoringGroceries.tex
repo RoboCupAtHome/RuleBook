@@ -2,6 +2,9 @@
 The maximum time for this test is 3 minutes.
 
 \begin{scorelist}
+% There are 5 filled shelves
+% On each shelf, there can fit 4 objects: 2 originally there, in the corners. As each object may get a 'companion' put there by the robot, there are 2 more objects per shelf.
+
 % Grasp (any object): 10
 % Place (anywhere in the cupboard): 10
 % Place in correct place: 15
@@ -20,8 +23,9 @@ The maximum time for this test is 3 minutes.
 	\scoreitem[5]{5}{For each successful placement of an object at correct place (near an object of the same class)}
 
 	\scoreheading{Recognizing objects}
-	\scoreitem[5]{10}{Every correctly recognized known object in the report file}
-	\scoreitem[5]{15}{Every correctly label 2 unknown objects of the same class with the same label in the report file}
+	\scoreitem[5]{10}{Every correctly recognized known or alike object in the report file}
+	\scoreitem[5]{15}{Corresponding labels for pairs of unknown objects of the same class, in the report file 
+            \footnote{Suppose there is a rubber ducky as an unknown object class. Two rubber duckies must be given the same label (e.g. ``label0'') to receive these points}}
 	\scoreitem[5]{-5}{False positive label}
 	
 % 	\scoreheading{Total task}
@@ -29,20 +33,10 @@ The maximum time for this test is 3 minutes.
 % 	\scoreitem[5]{50}{Place unknown object near unknown object of same class}
 
 	\scoreheading{Bonus}
-	\scoreitem[1]{20}{Open the door without human help}  % Or make this a bonus, but then there is a time issue as opening the door takes time. I think a penalty provides a better incentive
+	\scoreitem[1]{20}{Open the door without human help}
 	
 	\setTotalScore{250}
 \end{scorelist}
-
-\subsection{Score examples} 
-\begin{itemize}
- \item Robot A fails at all manipulation attempts but makes an excellent report, with the 5 known objects labeled correctly and the 5 pairs of unknown objects correctly, will get 
-$5*10 + 5*15 = 125$ points. 
- \item Robot B that fails to recognize anything but does move all the objects from the table to anywhere in the cupboard receives $5*10 + 5*10 = 100$ points.
- \item Robot C grasps a single unknown item (``Cookies''), places it at the correct position near the other ``Cookies'' and also makes the same excelent report as robot A will get 
-10 points for grasping, 10 for placing anywhere and an additional 5 for placing at the right location, so 25 for that single object.
-The  total for robot C is then 150 points.
-\end{itemize} 
 
 
 % Local Variables:
