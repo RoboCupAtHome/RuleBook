@@ -2,8 +2,12 @@
 The maximum time for this test is 3 minutes.
 
 \begin{scorelist}
-% There are 5 filled shelves
-% On each shelf, there can fit 4 objects: 2 originally there, in the corners. As each object may get a 'companion' put there by the robot, there are 2 more objects per shelf.
+% There are 5 filled shelves, originally with 2 objects, 1 in each corner.
+% The table also has 10 objects, that the robot should move to the shelf.
+% So 20 objects in total
+% This can be a tight fit, as there will be potentially 4 objects per shelf, as the robots moves them from the table one by one
+
+% The robots are not fast enough though to do more than 5 objects in the given time.
 
 % Grasp (any object): 10
 % Place (anywhere in the cupboard): 10
@@ -23,10 +27,10 @@ The maximum time for this test is 3 minutes.
 	\scoreitem[5]{5}{For each successful placement of an object at correct place (near an object of the same class)}
 
 	\scoreheading{Recognizing objects}
-	\scoreitem[5]{10}{Every correctly recognized known or alike object in the report file}
+	\scoreitem[10]{5}{Every correctly recognized known or alike object in the report file}
 	\scoreitem[5]{15}{Corresponding labels for pairs of unknown objects of the same class, in the report file 
             \footnote{Suppose there is a rubber ducky as an unknown object class. Two rubber duckies must be given the same label (e.g. ``label0'') to receive these points}}
-	\scoreitem[5]{-5}{False positive label}
+	\scoreitem[10]{-5}{False positive label}
 	
 % 	\scoreheading{Total task}
 % 	\scoreitem[5]{40}{Place known object near known object of same class}
