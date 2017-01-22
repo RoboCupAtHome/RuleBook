@@ -15,7 +15,7 @@ The operator (the robot's owner) has a set of bags and boxes that need to be car
 \begin{enumerate}
   \item \textbf{Location:} One of the arenas (apartment) and its surroundings. The apartment is in its normal state. Part of the test is performed outside the arena in a public space.
   \item \textbf{Start:} Starting location of the robot. %%Close *to* the front door of the appartment?
-  \item \textbf{Car:} The robots operator has put the groceries in the trunk of the car after shopping. The operator parked the car outside the home.
+  \item \textbf{Car:} The robots operator has put the groceries in the trunk of the car after shopping. The car is parked outside the home.
   \item \textbf{Destinations:} The items must be transported to places where they can be stored. The destinations are various rooms of the arena. 
   \item \textbf{Doors:} All doors in the apartment are open.
   \item \textbf{Operator:} A \quotes{professional} operator is selected by the TC to act as the operator of the robot. 
@@ -24,14 +24,14 @@ The operator (the robot's owner) has a set of bags and boxes that need to be car
 
 \subsection{Task}
 \begin{enumerate}
-\item \textbf{Start:} The robot is waiting somewhere in the apartment. The operator approaches the robot and tells it to follow.
+\item \textbf{Start:} The robot is waiting somewhere in the apartment. The operator approaches the robot and tells it to follow. E.g. ``Robot, follow me''
 \item \textbf{Following:} The robot starts following the operator, who guides the robot to the car containing the groceries. 
-\item \textbf{Arrive at car:} When at the car, the operator tells the robot they have reached the car and to remember this location.
-\item \textbf{Handover groceries:} The operator gives the robot a command to carry something, e.g. a box or a bag.  
+\item \textbf{Arrive at car:} When at the car, the operator tells the robot they have reached the car and to remember this location. E.g. ``Remember: this location is the car''. 
+\item \textbf{Handover groceries:} The operator gives the robot a command to carry something, e.g. a box or a bag.  E.g. ``Carry this box''
   The robot puts up its arms and the operator gives the item to the robot.
-\item \textbf{Command destination:} The operator of the robot tells where the given item should go, one of the rooms in the arena. 
+\item \textbf{Command destination:} The operator tells where the given item should go, one of the rooms in the arena. E.g. ``Bring this to the kitchen''
 \item \textbf{Delivery:} The robot then goes inside the house to deliver the item to the destination. 
-\item \textbf{Repeat until time is up:} Then, the robot goes back to the car (by itself, as it already knows where the car is) to bring another item inside. 
+\item \textbf{Repeat until time is up:} Then, the robot goes back to the car (by itself, as it must remember where the car is) to bring another item inside. 
 \end{enumerate}
 
 The robot may encounter some obstacles while navigating and the robot must deal and avoid or otherwise deal with the obstacle. 
