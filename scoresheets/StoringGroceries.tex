@@ -31,8 +31,11 @@ In case the robot opens the door within the minute, the robot has a small time a
 
 	\scoreheading{Recognizing objects}
 	\scoreitem[10]{5}{Every correctly recognized known or alike object in the report file}
-	\scoreitem[5]{15}{Corresponding labels for pairs of unknown objects of the same class, in the report file 
-            \footnote{Suppose there is a rubber ducky as an unknown object class. Two rubber duckies must be given the same label (e.g. ``label0'') to receive these points}}
+	% TODO: Split up scores over these 3 variants of a correct label:
+	% 1: As unknown, instead of wrongly applying a label from the known or alike objects (e.g. use an Open World assumption in your classifier)
+	% 2: Label all instances of the same unknwon class with the same generated label, e.g. label0, so distinguish between different onknown objects
+	% 3: Label the unknown objects with a meaningful label, eg. cookies in case its a sort of cookies. I.e. use a classifier that knows many classes. 
+	\scoreitem[5]{15}{Correctly label unknown objects}
 	\scoreitem[10]{-5}{False positive label}
 	
 % 	\scoreheading{Total task}

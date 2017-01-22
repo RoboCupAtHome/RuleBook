@@ -7,12 +7,6 @@ For example, the new pack of cookies from the table must be placed by the almost
 
 In the cupboard and on the table, there will be both known, alike and unknown objects. 
 
-\subsection{Example}
-For example, say the known objects include the classes ``Chips'', ``Apple'', ``Milk'', ``Coffee'' and ``Tea''. 
-There are three unknown object classes: ``Pear'', ``Cookies'' and ``Butter''.
-These class names are unknown to the robot, but a human will immediately infer the class names.
-For the robot's recognition, it suffices to be able to give the ``Cookies'' all the same label, eg. ``label0''. 
-
 \subsection{Goal}
 The robot has to identify, grasp and correctly place several objects at different heights or positions.
 To start the storing the groceries, the robot needs to open the cupboard. 
@@ -61,7 +55,13 @@ Please note that there may be more than one object in each shelf to fit all obje
   An overview of the shelf and/or table with bounding boxes and labels attached to the bounding boxes is handy for the TC to score.
   False positives in the report (labeling an object which is not an object but e.g. the edge of the shelf) are penalized.
 %\item \textbf{QR Codes:} The team may request to use a special set ob objects identified with QR codes if the robot is not able to correctly recognize the objects. The use of this special QR-object-set must be announced to the TC at least on hour before the test starts. When QR Codes are used, no points are given for object recognition.
-  \item \textbf{Clear area: } The robot may assume that the direct vicinity of the cupboard and table are clear and that the robot can move slightly backwards for its task. 
+  \item \textbf{Clear area: } The robot may assume that the direct vicinity of the cupboard and table are clear and that the robot can move slightly backwards for its task.
+  \item \textbf{Unknown objects:} A significant amount of objects are unknown objects. A correct label for these may constitute be: 
+  \begin{itemize}
+   \item Simply labeling those as ``Unknown'' as opposed to wrongly applying a label from the known or alike objects
+   \item Labeling pairs of unknown objects of the same class with the same label (which may be e.g. ``label0'' for one pair and ``label1'' for another). 
+   \item Labeling unknown objects with a new, sensible label for objects.
+  \end{itemize}
 \end{enumerate}
 
 \subsection{Data recording}
