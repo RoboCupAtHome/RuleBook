@@ -1,34 +1,28 @@
 
 The maximum time for this test is \textbf{10 minutes}. A maximum of 6 objects is
-considered in this scoresheet.
+considered in this score sheet.
 
 \begin{scorelist}
-% Grasp (any object): 10
-% Place (anywhere in the cupboard): 10
-% Place in correct place: 15
-% Recognize known object correctly (without grasping/placing something of that class): 10
-% Label two unknown objects of the same class with the same label (e.g. ``class0''): 15
-
-% Place known object near known object of same class: 40
-% Place unknown object near unknown object of the same class: 50
 
   \scoreheading{Meal variation}
   \scoreitem[1]{10}{For asking for the meal variation and confirming the choice}
 
 	\scoreheading{Grasping objects}
 	\scoreitem[12]{10}{For each successful grasp of any object (lifting it up to at least 5 cm for more than 10 seconds)}
-	\scoreitem[12]{20}{For each successful grasp of an hard to
+	\scoreitem[12]{15}{For each successful grasp of an hard to
           grasp object (lifting it up to at least 5 cm for more than
           10 seconds)}
+        % Grasping = (* 12 (+ 10 15)) = 300
 
 	\scoreheading{Placing objects}
 	\scoreitem[6]{10}{For each successful placement of any object anywhere on the table (safely stands still for more than 10 seconds)}
 	\scoreitem[6]{20}{For each successful placement of an hard to
           grasp object anywhere on the table (safely stands still for
           more than 10 seconds)}
-        \scoreitem[1]{100}{For appropriately executing the operator's choice}
+        \scoreitem[1]{30}{For appropriately executing the operator's choice}
 	\scoreitem[6]{-5}{For each collision of an object with another
         one on the table}
+        % Placing = (+ (* 6 (+ 10 20)) 30) = 210
 
       \scoreheading{Cleaning up the  table}
 	\scoreitem[6]{10}{For each successful placement of any object
@@ -36,7 +30,7 @@ considered in this scoresheet.
 	\scoreitem[6]{20}{For each successful placement of an hard to
           grasp object to its original location(safely stands still for
           more than 10 seconds)}
-        \scoreitem[1]{100}{For successfully cleaning up dirt and spill on
+        \scoreitem[1]{40}{For successfully cleaning up dirt and spill on
           the table}
         % Cleaning = (+ (* 6 (+ 10 20)) 40) = 220
 	
@@ -44,11 +38,11 @@ considered in this scoresheet.
 % 	\scoreitem[5]{40}{Place known object near known object of same class}
 % 	\scoreitem[5]{50}{Place unknown object near unknown object of same class}
 
-	\scoreheading{Penalty}
-	\scoreitem[6]{-15}{Require a human to open the closet door}  % Or make this a bonus, but then there is a time issue as opening the door takes time. I think a penalty provides a better incentive
+        \scoreheading{Bonus}
+        \scoreitem[1]{15}{Open the door without human help}
 
-	% (+ 10 (* 12 (+ 10 20)) (* 6 (+ 10 20)) 100 (* 6 (+ 10 20)) 100 (* 6 10))
-	\setTotalScore{990}
+	% (+ 10 Grasping Placing Cleaning Bonus))
+	\setTotalScore{745}
 \end{scorelist}
 
 % \subsection{Score examples} 
