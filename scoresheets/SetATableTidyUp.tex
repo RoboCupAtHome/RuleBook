@@ -1,58 +1,40 @@
 
 The maximum time for this test is \textbf{10 minutes}. A maximum of 6 objects is
-considered in this scoresheet.
+considered in this score sheet. 3 of those are easy to grasp, 3 are difficult to grasp (for a robot)
 
 \begin{scorelist}
-% Grasp (any object): 10
-% Place (anywhere in the cupboard): 10
-% Place in correct place: 15
-% Recognize known object correctly (without grasping/placing something of that class): 10
-% Label two unknown objects of the same class with the same label (e.g. ``class0''): 15
-
-% Place known object near known object of same class: 40
-% Place unknown object near unknown object of the same class: 50
 
   \scoreheading{Meal variation}
-  \scoreitem[1]{10}{For asking for the meal variation and confiming the choice}
+  \scoreitem[1]{10}{For asking for the meal variation and confirming the choice}
 
 	\scoreheading{Grasping objects}
-	\scoreitem[12]{10}{For each successful grasp of any object (lifting it up to at least 5 cm for more than 10 seconds)}
-	\scoreitem[12]{20}{For each successful grasp of an hard to
-          grasp object (lifting it up to at least 5 cm for more than
-          10 seconds)}
+	\scoreitem[6]{10}{For each successful grasp of an \textbf{easy}-to-grasp object (lifting it up to at least 5 cm for more than 10 seconds)}
+	\scoreitem[6]{15}{For each successful grasp of an \textbf{hard}-to-grasp object (lifting it up to at least 5 cm for more than 10 seconds)}
+        % Grasping = (* 6 (+ 10 15)) = 150
 
 	\scoreheading{Placing objects}
-	\scoreitem[6]{10}{For each successful placement of any object anywhere on the table (safely stands still for more than 10 seconds)}
-	\scoreitem[6]{20}{For each successful placement of an hard to
-          grasp object anywhere on the table (safely stands still for
-          more than 10 seconds)}
-        \scoreitem[1]{100}{For appropriately executing the opertor choice}
+	\scoreitem[3]{10}{For each successful placement of an \textbf{easy}-to-grasp object anywhere on the table (safely stands still for more than 10 seconds)}
+	\scoreitem[3]{20}{For each successful placement of an \textbf{hard}-to-grasp object anywhere on the table (safely stands still for more than 10 seconds)}
+        \scoreitem[1]{30}{For appropriately executing the operator's choice}
 	\scoreitem[6]{-5}{For each collision of an object with another
         one on the table}
+        % Placing = (+ (* 3 (+ 10 20)) 30) = 105
 
       \scoreheading{Cleaning up the  table}
-	\scoreitem[6]{10}{For each successful placement of any object
-          to its original location}
-	\scoreitem[6]{20}{For each successful placement of an hard to
-          grasp object to its original location(safely stands still for
-          more than 10 seconds)}
-        \scoreitem[1]{100}{For successfully cleaning up dirt and spill on
-          the table}
-
-	\scoreheading{Recognizing objects}
-	\scoreitem[6]{10}{Every correctly recognized known object in the report file}
-	% ??? \scoreitem[5]{15}{Every correctly label 2 unknown objects of the same class with the same label in the report file}
-	\scoreitem[6]{-5}{False positive label}
+	\scoreitem[3]{10}{For each successful placement of an \textbf{easy}-to-grasp object to its original location (safely stands still for more than 10 seconds)}
+	\scoreitem[3]{20}{For each successful placement of an \textbf{hard}-to-grasp object to its original location (safely stands still for more than 10 seconds)}
+        \scoreitem[1]{40}{For successfully cleaning up dirt and spill on the table}
+        % Cleaning = (+ (* 3 (+ 10 20)) 40) = 110
 	
 % 	\scoreheading{Total task}
 % 	\scoreitem[5]{40}{Place known object near known object of same class}
 % 	\scoreitem[5]{50}{Place unknown object near unknown object of same class}
 
-	\scoreheading{Penalty}
-	\scoreitem[6]{-15}{Require a human to open the closet door}  % Or make this a bonus, but then there is a time issue as opening the door takes time. I think a penalty provides a better incentive
+        \scoreheading{Bonus}
+        \scoreitem[1]{15}{Open the door without human help}
 
-	% (+ 10 (* 12 (+ 10 20)) (* 6 (+ 10 20)) 100 (* 6 (+ 10 20)) 100 (* 6 10))
-	\setTotalScore{990}
+	% (+ 10 150 105 110 15)
+	\setTotalScore{390}
 \end{scorelist}
 
 % \subsection{Score examples} 
