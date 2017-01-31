@@ -8,15 +8,12 @@ For example, the new pack of cookies from the table must be placed by the almost
 In the cupboard and on the table, there will be both known, alike and unknown objects. 
 
 \subsection{Goal}
-The robot has to identify, grasp and correctly place several objects at different heights or positions.
-To start the storing the groceries, the robot needs to open the cupboard. 
+The robot has to correctly identify and manipulate objects at different heights, grouping them by category and likelihood.
 
 \subsection{Focus}
-This test focuses on object detection, manipulation and object recognition.
+This test focuses on the detection and recognition of objects and their features, as well as object manipulation.
 
 \subsection{Setup}
-In the arena, there will be a table and cupboard close together, where the robot does not have to spend a lot of time driving between the two. 
-
 \begin{enumerate}
 \item \textbf{Location:} One of the bookcases or cupboards in the apartment is used for this test, one where a table is near or can be put. 
 The robot will start somewhere between the cupboard and the table. 
@@ -71,14 +68,28 @@ Please note that there may be more than one object in each shelf to fit all obje
    \item Plans
   \end{itemize}
 
-\subsection{Referee instructions}
+\subsection{OC instructions}
 
+\textbf{2 hours before the test}
+\begin{itemize}
+    \item Anounce the startup location for robots.
+\end{itemize}
+
+\subsection{Referee instructions}
 The referee needs to
 \begin{itemize}
 \item Place the objects in the cupboard and a few of the same class on the table. New items can be placed when there is room or the robot asks for more objects. 
 \item Close the door of the cupboard. 
 \item Put objects in the table and corresponding ones in the cupboard: 3 known objects, 2 alike and 5 unknown objects. 
 \end{itemize}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.25\textwidth]{images/storing_groceries.png}
+  \vspace{-10pt}
+  \label{fig:storing_groceries}
+  \caption{Example shelf where objects will be placed.}
+\end{figure}
 
 \subsection{Score sheet}
 \input{scoresheets/StoringGroceries.tex}
