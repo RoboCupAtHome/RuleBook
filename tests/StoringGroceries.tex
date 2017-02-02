@@ -1,7 +1,7 @@
 \section{Storing Groceries}
 
 The robot must help put the newly bought groceries in the right place.
-The owner of the robot will put the items on a table and the robot helps the owner by putting the groceries in the right place in the cupboard.
+The owner of the robot will put the items on a table and the robot helps the owner by moving the groceries from a table to the right place in the cupboard.
 What the right place for an item is defined by the objects already in the cupboard: objects of the same type must be placed together.
 For example, the new pack of cookies from the table must be placed by the almost empty pack cookies in the cupboard.
 
@@ -20,8 +20,8 @@ In the arena, there will be a table and cupboard close together, where the robot
 \begin{enumerate}
 \item \textbf{Location:} One of the bookcases or cupboards in the apartment is used for this test, one where a table is near or can be put. 
 The robot will start somewhere between the cupboard and the table. 
-The cupboard has at least 5 shelves between 0.30m and 1.80m from the ground. 
-\item \textbf{Cupboard:} The cupboard contains 10 objects from the Scenario Objects \ref{rule:scenario_objects}.
+The cupboard has ca. 5 shelves between 0.30m and 1.80m from the ground. 
+\item \textbf{Cupboard:} The cupboard contains 10 objects from the Scenario Objects \ref{rule:scenario_objects}. 
 \item \textbf{Door:} The cupboard has a single door, which is closed initially.
 The robot may ask a human to open the door, after which a referee will open the door. 
 \item \textbf{Table:} 10 objects from the Scenario Objects \ref{rule:scenario_objects} will be placed on the table. If not all 10 objects fit the on the table, remaining objects can be added during the test.
@@ -30,15 +30,14 @@ The robot may ask a human to open the door, after which a referee will open the 
 Please note that there may be more than one object in each shelf to fit all objects in, especially after the robot fills the shelves. 
 
 \subsection{Task}
+\textbf{Opening door:} The cupboard's door is closed and must be opened at some point in the challenge. Note that quickly opening the door also yields a small time advantage.
 \begin{enumerate}
-\item \textbf{Opening door:} The cupboard's door is closed and must be opened. Note that quickly opening the door also yields a small time advantage. 
 \item \textbf{Searching for objects:} The robot approaches the table from its nearby starting position and starts searching for objects. 
 \item \textbf{Grasping objects:} Any object found on the table by the robot may be grasped by it. 
   Before or right after grasping the object, the robot may announce which object it has found. 
   % The scoring only takes the classifications in the report into account. 
 \item \textbf{Placing objects:} After grasping the object, the robot has to safely place it (Section \refsec{rule:scenario_objects}) near the item of the same class in the cupboard. 
   The object must stay there for at least 10 seconds.
-\item 
 \item \textbf{Repeat:} This repeats until the time is up or all groceries are stored. 
 \end{enumerate}
 
@@ -56,7 +55,7 @@ Please note that there may be more than one object in each shelf to fit all obje
   False positives in the report (labeling an object which is not an object but e.g. the edge of the shelf) are penalized.
 %\item \textbf{QR Codes:} The team may request to use a special set ob objects identified with QR codes if the robot is not able to correctly recognize the objects. The use of this special QR-object-set must be announced to the TC at least on hour before the test starts. When QR Codes are used, no points are given for object recognition.
   \item \textbf{Clear area: } The robot may assume that the direct vicinity of the cupboard and table are clear and that the robot can move slightly backwards for its task.
-  \item \textbf{Unknown objects:} A significant amount of objects are unknown objects. A correct label for these may constitute be: 
+  \item \textbf{Unknown objects:} A significant amount of objects are unknown objects. A correct label for these may be constituted by: 
   \begin{itemize}
    \item Simply labeling those as ``Unknown'' as opposed to wrongly applying a label from the known or alike objects
    \item Labeling pairs of unknown objects of the same class with the same label (which may be e.g. ``label0'' for one pair and ``label1'' for another). 
@@ -77,7 +76,7 @@ The referee needs to
 \begin{itemize}
 \item Place the objects in the cupboard and a few of the same class on the table. New items can be placed when there is room or the robot asks for more objects. 
 \item Close the door of the cupboard. 
-\item Put objects in the table and corresponding ones in the cupboard: 3 known objects, 2 alike and 5 unknown objects. 
+\item Put objects on the table and the corresponding objects in the cupboard: 3 known objects, 2 alike and 5 unknown objects. 
 \end{itemize}
 
 \subsection{Score sheet}
