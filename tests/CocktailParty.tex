@@ -1,0 +1,82 @@
+\section{Cocktail Party [SSPL only]}
+
+The robot has to learn and recognize previously unknown people, and fetch orders.
+
+\subsection{Focus}
+
+This test focuses on human detection and recognition, safe navigation and human-robot interaction with unknown people.
+
+\subsection{Setup}
+	\item \textbf{Guests:} Five people are distributed in a predefined \quotes{party room} either sitting or standing, some of them forming groups of 2 or 3 people. At least one guest out of the five is sitting. Three out of five guests have drinks orders assigned by the referees. The sitting person always has an assigned drink.
+
+\subsection{Task}
+
+\begin{enumerate}
+
+	\item \textbf{Entering:} The robot enters the arena and navigates to the party room and waits for being called.
+
+	\item \textbf{Getting called:} The guests call the robot simultaneously, either rising an arm, waving, or shouting. The robot has to approach one of them.
+	% Remark: Themself is the correct word used instead of himself/herself  when person gender is unknown.
+	The calling person introduces themself by name before giving the order of a drink. The robot leads the dialogue to learn the person and retrieve their drink order. \\
+
+	The robot can decide to skip the detection of the calling and ask one person to walk in front of it. In this case, the referees determine the person to approach the robot.
+
+	\item \textbf{Sitting person:} At least one person is sitting and minding their own business (i.e. not looking directly to the robot). The robot must locate that person and ask if the person wants something to drink. The robot must also ask for the person's name and memorize them (i.e. execute a learning procedure of the name and the person's features).
+
+	\item \textbf{Taking the order:} The guest asks for a specific drink to the robot. The robot can fetch more orders (i.e.~ find next calling guest or looking for the sitting one) or proceed to place the order. In the first case, the robot searches for the remaining calling people. During the search process, the robot is allowed to either ask people to call for it again, or to ask people to come to it and to give a new order. In both cases the robot may call into the room.
+
+	\item \textbf{Getting the drinks:} The robot has to navigate to a designated location in another \quotes{storage room} where drinks are stored. The robot may grasp any number of drinks, e.g., all the drinks ordered, or just one, and return to the party room.
+
+	\item \textbf{Delivering the drinks:} While the robot fetches drinks, the people may change their places within the party room (on request of the referees). The robot has to search for people, recognize found people, and deliver the correct drink if there is an order for the recognized person. If the robot comes to the place the person ordered and the person is not there, then it could call the person loud, the person should respond (either sound or waving hand) and the robot must go to that place (check the person identity).
+
+	\item \textbf{Leaving the arena:} After delivering all the drinks, the robot has to leave the arena.
+\end{enumerate}
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}
+	\item \textbf{Repeating names:} The robot may ask to repeat the name if it has not understood it.
+
+	\item \textbf{Misunderstood names:} If the robot misunderstands the name, the understood (wrong) name is used in the remainder of this test.
+
+	\item \textbf{Misunderstood order:} If the robot does not understand the order, it can continue with an own assignment of drinks to people or with a wrong, misunderstood assignment.
+
+	\item \textbf{Approaching non-calling people:} If the robot approaches a person that is not calling and asks for an order, the person indicates that she/he does not want to order anything. No points can be scored for understanding names or orders, or for grasping or delivery for a non-calling person.
+
+	\item \textbf{Changing places:} After giving the order (when the robot is not in the party room), the referees may re-arrange the people including their body posture. That is, a sitting person may change to a standing posture and vice versa.
+
+	\item \textbf{Positions and orientations:} All people roughly stay where they are (if not asked to move by the referees), but they are allowed to move in certain limits (e.g. turn around, make a step aside). They do not need to look at the robot, but are requested to do so, when instructed by the robot.
+
+	\item \textbf{Asking for help:} If the robot fails to grasp a drink, the robot may ask for help and a referee can hand over the object (loosing points for grasping). The robot has to clearly indicate that it has recognized the correct drink, e.g., by facing the drink, naming it and telling its rough position (e.g., leftmost, rightmost etc.) relative to the other drinks on the table.
+
+	\item \textbf{Correct delivery:} The drinks do not have to be handed over to the user. Putting them on the ground or asking the user to grab them from some kind of tray is allowed. When taking a drink from the robot, a sitting person may stand up in order to get it. However, in case the robot is carrying more than one object at a time, a delivery is only considered successful when there is an easily comprehensible mapping from grasped objects to recognized people. The robot must be close to the person (within 1 m) for delivery and indicate uniquely which person it addresses by calling it by name and either facing her/him or pointing at her/him (e.g., with object in hand). When putting all the drinks on a tray, the robot has to name the correct drink and indicate its rough position relative to the others.
+
+	\item \textbf{Empty arena:} During the test, only the robot and only 5 people are in the arena. The door opener, the referees and other personnel that is not assigned as test people will be outside the scenario.
+
+	\item \textbf{Calling instruction:} The team needs to specify before the test which ways of getting the attention of the robot are allowed. This can be waving, calling or both of them. The robot can also decide to skip this part, by asking for people to get close to it.
+
+	\item \textbf{Announcement of locations:} Both the locations of the drinks and the rooms where the test takes place are announced beforehand. Note that there may be more objects at the drink location than the ordered drinks.
+\end{enumerate}
+
+\subsection{Referee instructions}
+
+The referees need to
+\begin{itemize}
+	\item select 5 people and their names from the list of person names (see Section 3.2.8),
+	\item arrange (and re-arrange) people in the party room,
+	\item place 5 drinks at the pick location in the storage room,
+	\item select the ordering 3 people and the orders to give,
+	\item in case the robot skips the calling detection, select the ordering person to approach the robot,
+	\item write down the understood names and drinks during an order and update the order accordingly.
+\end{itemize}
+
+\subsection{OC instructions}
+
+2h before test:
+\begin{itemize}
+	\item Specify and announce the rooms where the test takes place.
+	\item Specify and announce the location where the drinks are placed.
+\end{itemize}
+
+% \newpage 
+% \subsection{Score sheet}
+% \input{scoresheets/CocktailParty.tex}
