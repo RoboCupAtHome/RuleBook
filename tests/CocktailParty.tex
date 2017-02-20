@@ -39,9 +39,11 @@ This test focuses on human detection and recognition, safe navigation and human-
 		\item A description of unique characteristics of that person that allow the \textit{Barman} to find them (e.g. gender, hair colour, how is dressed, etc).
 	\end{enumerate}
 
-	While the robot places the orders, the people may change their places within the party room (on request of the referees).
+	While the robot places the orders, the people in the \quotes{party room} may change their places within the party room (on request of the referees).
 
-	\item \textbf{Correcting the order:} One of the ordered drinks is not available. The barman will clearly state which of the beverages is not available and provide a list of 3 alternatives. The robot should navigate back to the \quotes{party room}, find the person whose drink is missing and provide the alternatives for they to choose.\\
+	\item \textbf{Missing beverage:} One of the ordered drinks is not available, therefore, missing from the bar. The robot should realize this inconvenience and tell the \textit{Barman}, providing a list of 3 alternatives considering the other drinks it needs to deliver. If the robot can't detect which drink is missing, the \textit{Barman} will clearly state which of the beverages is not available and provide a list of 3 alternatives.
+
+	\item \textbf{Correcting an order:} The robot should navigate back to the \quotes{party room}, find the person whose drink is missing and provide the alternatives for they to choose.\\
 
 	If the robot comes to the place the person ordered and the person is not there, it can call that person loud, the person should respond (either sound or waving hand) and the robot must go to that place (check the person identity).
 
