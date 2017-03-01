@@ -9,7 +9,7 @@ For each command to be executed, the Team Leader must choose a Command Category,
 \section{Command retrieval explained}
 The robot has to show it has understood the given command by stating all the required information to accomplish the task. For this purpose, the robot may repeat the understood command and ask for confirmation. It is not required to repeat the command word by word; rephrasing the command is allowed. For instance, if the robot is instructed to \quotes{place a coke onto the tray}, the robot may either say: \textit{\quotes{You want me to place a coke on the tray. Is that correct?}} or \textit{\quotes{do you want me to deliver a coke to the tray?}}.
 
-If The robot can't correctly recognize the given command, it is allowed to request the operator to repeat the command up to three times. After three failed attempts, a new command is generated. Th team may opt to use a custom operator or the Continue rule (Section Section 3.8.15).
+If The robot can't correctly recognize the given command, it is allowed to request the operator to repeat the command up to three times. After three failed attempts, a new command is generated. The team may opt to use a custom operator or bypassing speech recognition (\refsec{rule:asrcontinue}) at any time, but each generated command will be given to the robot no more than three times. Only three different commands are generated for a robot, if the robot fails to recognize all three commands (i.e. nine attempts), the test ends immediately.
 
 When a robot has partially understood the command, it is allowed to ask the operator for additional information (e.g. \textit{\quotes{did you say apple juice or pineapple juice?}}).
 
