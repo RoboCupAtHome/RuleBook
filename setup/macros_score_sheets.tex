@@ -231,12 +231,6 @@
 
           % Special penalties & bonuses %%%%%%%%%%%%%%%%
           \scoreheading{Special penalties \& standard bonuses}
-    
-          \ifShortScoresheet{}{
-            \ifthenelse {\equal{\continueAvailable}{true}}{\scoreitem[0.75]{0}{1st CONTINUE}}{}
-          
-            \ifthenelse {\equal{\continueAvailable}{true}}{\scoreitem[0.50]{0}{2nd CONTINUE}}{}
-      }
 
           \ifthenelse {\equal{\dataRecordingBonus}{true}}{\scoreitem{10}{Contributing with recorded data ($\frac{\sum gathered\ points}{max\ points} \times$) \ifShortScoresheet{(see sec.~\ref{rule:datarecording})}{}}}{}
           

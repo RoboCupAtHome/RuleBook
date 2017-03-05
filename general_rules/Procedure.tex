@@ -202,63 +202,6 @@ Hand gestures may be used to control the robot in the following way:
 	\end{enumerate}
 \end{enumerate}
 
-
-\subsection{Continue rule: Bypassing Automatic Speech Recognition}
-\label{rule:asrcontinue}
-
-Giving commands to the robot is an important part of many tests. 
-RoboCup@Home fosters natural human-robot interaction through gestures and speech, such that speech is the primary modality to give complex commands to the robot. 
-Automatic speech recognition (ASR) however can be very difficult in the international competition environment of RoboCup. 
-Because active robots are preferred over robots that are passive due to failing ASR, 
-  the team is allowed to provide means to bypass ASR via an Alternative method for HRI (\refsec{rule:asralternative}).
-Points for getting accommand are only given if the robot understoond the command through speech.
-
-\subsubsection{Procedure}
-Automatic Speech Recognition is preferred and any command given to the robot will given by voice first.
-\begin{enumerate}
-\item \textbf{Default:} When the referee generates a command for the robot, it will be read out loud by the operator to the robot. 100\% of the points for getting the command will be awarded, if not stated otherwise.
-\item \textbf{team member: } If this fails, a team member may speak the command to the robot if this was not the case already. 
-    75\% of the points for getting the command will be awarded, if not stated otherwise.
-\end{enumerate}
-
-\begin{enumerate}
-	\item \textbf{Number of Continue's:} Unless stated otherwise, the referee chooses to apply and initate the steps of the procedure listed above.
-	\item \textbf{Time:} The time is neither restarted nor stopped while the Continue rule is applied.
-	\item \textbf{Multiple Continue's:} The Continue rule will applied by the referee as often as required to make the robot be active. The penalty involved makes this unpreferable to the team and the usage should not be preferred, incentivizing the team to provide a proper means of ASR.
-\end{enumerate}
-
-
-\subsubsection{Alternative methods for Human-Robot Interaction (HRI)}
-\label{rule:asralternative}
-Alternative methods for HRI offer a way for a robot to start or complete a task. 
-Any reasonable method may be used, with the following criteria:
-\begin{itemize}
- \item \textbf{Intuitive to use and self-explanatory:} a manual should not be needed. Teams are not allowed to explain how to interface with the robot. %you immediately know how to use it after a quick glance
- \item \textbf{Effortless use:} Must be as easy to use as uttering a command. %is as easy to use as it is uttering a command
- \item \textbf{Is smart and preemptive:} The interface adapts to the user input, displaying only the options that make sense or that the robot can actually perform.
- \item Exploits the best of the device being used (eg. touch screen, display area, speakers, etc.)
-\end{itemize}
-
-Preferably, the alternative HRI is also adapted to the user. 
-Consider localization (with English as the default), but also potential users of service robots at their home. For example: elderly people and people with physical disabilities.
-
-Further:
-\begin{itemize}
- \item \textbf{Award:} The best alternative is awarded the Best Human-Robot Interface award (\refsec{award:hri}).
- \item \textbf{Points:} Using an Alternative method for HRI does \textbf{not} yield points for understanding a command. 
-    This is justified, as the amount of points for getting a command is relatively small compared to executing a command. 
-    Without offering an alternative, the robot would be unable to continue and thus score no points at all. 
-\end{itemize}
-
-Below are some suggested alternatives for ASR:
-\begin{itemize}
-  \item A touch-sensitive designed interface.
-  \item Other types of natural interaction such as gestures.
-  \item ...
-\end{itemize}
-
-What a good custom ASR alternative is loosely defined on purpose to foster and allow creativity. 
-
 % Local Variables:
 % TeX-master: "../Rulebook"
 % End:
