@@ -38,7 +38,7 @@ The operator (the robot's owner) has a set of bags and boxes that need to be car
   \begin{enumerate}
     \item \textbf{Bag pick-up:} The operator hands a bag to the robot to carry.
 
-    \item \textbf{Bag delivery:} The robot delivers the bag to the instructed destination. It may place the bag in the floor or onto the placement location.
+    \item \textbf{Bag delivery:} The robot delivers the bag to the instructed destination. It may place the bag on the floor or onto the placement location.
 
     \item \textbf{Asking for help:} Close to the delivery location is another person. The robot must face at them and kindly ask them to help carrying groceries into the house.
   \end{enumerate}
@@ -70,13 +70,13 @@ The operator (the robot's owner) has a set of bags and boxes that need to be car
 The robot will encounter some obstacles while navigating and the robot must deal and avoid or otherwise deal with the obstacle. 
 The possible obstacles are:
 \begin{itemize}
-  \item \textbf{3D Object:} A had-to see object that requires more than a laser scanner to be detected such as a bar table (wider at its top than on its bottom), rolling chair, lamp, etc.
+  \item \textbf{3D Object:} A hard to see object that requires more than a laser scanner to be detected such as a bar table (wider at its top than on its bottom), rolling chair, lamp, etc.
 
   \item \textbf{Small object:} Small object. For example, someone has dropped a piece of fruit (like an apple or mandarin) while carrying the groceries inside.
 
-  \item {[DSPL and OPL]} \textbf{Moveable Object:} An blocking the robot's path which the robot can manipulate or push away (such a rolling chair). When interacting with moveable objects, the robot must state clearly that the object will be pushed or moved away.
+  \item {[DSPL and OPL]} \textbf{Moveable Object:} An object blocking the robot's path which the robot can manipulate or push away (such a rolling chair). When interacting with moveable objects, the robot must state clearly that the object will be pushed or moved away.
 
-  \item {[SPL Only]} \textbf{\textit{Smart} obstacle:} A person blocking the robot's path to whom the robot may speak to and kindly ask to move away. When interacting with people, the robot must look at the person and make clear is speaking with them.
+  \item {[SPL Only]} \textbf{\textit{Smart} obstacle:} A person blocking the robot's path to whom the robot may speak to and kindly ask to move away. When interacting with people, the robot must look at the person and make clear it is speaking with them.
 \end{itemize}
 %% Possible extensions: 
 %% - DONE: allow the operator to tell for each item where it should go
@@ -93,12 +93,12 @@ The possible obstacles are:
 
   \item \textbf{Instruction:} The robot interacts with the operator, not the team.
 
-  \item \textbf{Calling the operator back:} During the following phase, then the robot has lost the operator, it may call the operator back once.
+  \item \textbf{Calling the operator back:} During the following phase, when the robot has lost the operator, it may call the operator back once.
 
-  \item \textbf{Bag pick-up:} If the robot can't handover the bag from the operator (i.e.~take it from the operator's hand) it may pick another bag from the surroundings. Additional bags might be either in the floor or over a table.
+  \item \textbf{Bag pick-up:} If the robot can't handover the bag from the operator (i.e.~take it from the operator's hand) it may pick another bag from the surroundings. Additional bags might be either on the floor or on a table.
 
   \item \textbf{Obstacle avoidance:} The robot will encounter several obstacles it must evade on its path between the car and the target destination.
-  The robot might be allowed to collide (but not crush) with the small object without the test to be immediately stop. For example, is allowed to push aside a block of wood, but won't be allowed to even touch a mandarin of soda can.
+  The robot might be allowed to collide (but not crush) with the small object without the test to be immediately stop. For example, it is allowed to push aside a block of wood, but it won't be allowed to even touch a mandarin or soda can.
 
   \item \textbf{Opening door:} If unable to open the door, the robot may ask the person being guided to open it (no points are scored).
 
