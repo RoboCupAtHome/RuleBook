@@ -1,33 +1,18 @@
 
-The maximum time for this test is 3 minutes.
-The robot is given 1 extra minute to open the cupboard door. 
+The maximum time for this test is 1+3 minutes.
+The first minute is for the robot to open the Cupboard's door on its own.
 If the robot is not able to open the door within that minute, it will be opened by the referee. 
 In case the robot opens the door within the minute, the robot has a small time advantage. 
 
 \begin{scorelist}
-% There are 5 filled shelves, originally with 2 objects, 1 in each corner.
-% The table also has 10 objects, that the robot should move to the shelf.
-% So 20 objects in total
-% This can be a tight fit, as there will be potentially 4 objects per shelf, as the robots moves them from the table one by one
+	\scoreheading{Opening the door}
+	\scoreitem[1]{20}{Opening the door without human help}
 
-% The robots are not fast enough though to do more than 5 objects in the given time.
+	\scoreheading{Moving objects}
+	\scoreitem[5]{10}{Successfully grasping an object (5 cm for more than 10 seconds)}
 
-% Grasp (any object): 10
-% Place (anywhere in the cupboard): 10
-% Place in correct place: 15
-% Recognize known object correctly (without grasping/placing something of that class): 10
-% Label two unknown objects of the same class with the same label (e.g. ``class0''): 15
-
-% Place known object near known object of same class: 40
-% Place unknown object near unknown object of the same class: 50
-
-
-	\scoreheading{Grasping objects}
-	\scoreitem[5]{10}{For each successful grasp of any object (lifting it up to at least 5 cm for more than 10 seconds)}
-
-	\scoreheading{Placing objects}
-	\scoreitem[5]{10}{For each successful placement of an object anywhere in the cupboard (safely stands still for more than 10 seconds)}
-	\scoreitem[5]{5}{For each successful placement of an object at correct place (near an object of the same class)}
+	\scoreitem[5]{10}{Successfully placing an object near to another of the same class}
+	\scoreitem[5]{ 5}{Successfully placing an object anywhere else}
 
 	\scoreheading{Recognizing objects}
 	\scoreitem[10]{5}{Every correctly recognized known or alike object in the report file}
@@ -42,8 +27,6 @@ In case the robot opens the door within the minute, the robot has a small time a
 % 	\scoreitem[5]{40}{Place known object near known object of same class}
 % 	\scoreitem[5]{50}{Place unknown object near unknown object of same class}
 
-	\scoreheading{Bonus}
-	\scoreitem[1]{20}{Open the door without human help}
 	
 	\setTotalScore{250}
 \end{scorelist}
