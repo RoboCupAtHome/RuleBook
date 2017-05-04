@@ -7,20 +7,28 @@ In case the robot opens the door within the minute, the robot has a small time a
 \begin{scorelist}
 	\scoreheading{Opening the door}
 	\scoreitem[1]{20}{Opening the door without human help}
+	% Total: 20
 
 	\scoreheading{Moving objects}
 	\scoreitem[5]{10}{Successfully grasping an object (5 cm for more than 10 seconds)}
+	% Total: 50
 
 	\scoreitem[5]{10}{Successfully placing an object near to another of the same class}
 	\scoreitem[5]{ 5}{Successfully placing an object anywhere else}
+	% Total: 50
 
-	\scoreheading{Recognizing objects}
-	\scoreitem[10]{5}{Every correctly recognized known or alike object in the report file}
-	% TODO: Split up scores over these 3 variants of a correct label:
-	% 1: As unknown, instead of wrongly applying a label from the known or alike objects (e.g. use an Open World assumption in your classifier)
-	% 2: Label all instances of the same unknwon class with the same generated label, e.g. label0, so distinguish between different onknown objects
-	% 3: Label the unknown objects with a meaningful label, eg. cookies in case its a sort of cookies. I.e. use a classifier that knows many classes. 
-	\scoreitem[5]{15}{Correctly label unknown objects}
+	\scoreheading{Recognizing known or alike objects}
+	\scoreitem[10]{5}{Every correctly recognized known or alike object in the report file} 
+	% Total: 50
+	
+	\scoreheading{Recognizing unknown objects}
+	\scoreitem[10]{5}{Correctly label unknown object as ``Unknown''}
+	\scoreitem[5]{20}{Label a \textit{pair} of unknown objects with the same label (e.g label each of the 2 papayas both as e.g "class A")}
+	\scoreitem[10]{15}{Label unknown object as correct category (e.g. label a papaya as fruit)}
+	\scoreitem[10]{15}{Label unknown object as correct class (e.g. label a papaya as papaya)}
+	% Total: 150
+	
+	\scoreheading{Incorrect recognitions}
 	\scoreitem[10]{-5}{False positive label}
 	
 % 	\scoreheading{Total task}
@@ -28,7 +36,7 @@ In case the robot opens the door within the minute, the robot has a small time a
 % 	\scoreitem[5]{50}{Place unknown object near unknown object of same class}
 
 	
-	\setTotalScore{250}
+	\setTotalScore{320}
 \end{scorelist}
 
 
