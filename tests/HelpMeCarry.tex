@@ -12,13 +12,13 @@ This test focuses on safe, robust navigation, people following and navigation in
 \end{itemize}
 
 \subsection{Setup}
-The operator (the robot's owner) has a set of bags and boxes that need to be carried from a place outside the arena back inside. 
+The operator (the robot's owner) has a set of bags (and possibly other objects) that need to be carried from a place outside the arena back inside. 
 
 \begin{enumerate}
   \item \textbf{Location:} One of the arenas (apartment) and its surroundings. The apartment is in its normal state. Part of the test is performed outside the arena in a public space.
   \item \textbf{Start:} The robot starts waiting inside the arena.
-  \item \textbf{Car:} The car is any landmark chosen (but \emph{not} announced) beforehand outside the arena. Several bags with groceries are located where the car is parked. 
-  \item \textbf{Doors:} All doors in the apartment are open.
+  \item \textbf{Car:} The car is any landmark chosen (but \emph{not} announced) beforehand outside the arena. Several bags (see \refsec{rule:scenario_objects}) with groceries are located where the car is parked. 
+  \item \textbf{Doors:} All doors in the apartment are initially open.
   \item \textbf{Operator:} A \quotes{professional} operator is selected by the TC to act as the operator of the robot. 
   \item \textbf{Uncontrolled environment:} There are no restrictions on other people walking by or standing around throughout the complete task. 
 \end{enumerate}
@@ -76,9 +76,9 @@ The possible obstacles are:
 
   \item \textbf{Small object:} Small object. For example, someone has dropped a piece of fruit (like an apple or mandarin) while carrying the groceries inside.
 
-  \item {[DSPL and OPL]} \textbf{Movable Object:} An object blocking the robot's path which the robot can manipulate or push away (such a rolling chair). When interacting with moveable objects, the robot must state clearly that the object will be pushed or moved away.
+  \item {[DSPL and OPL]} \textbf{Movable Object:} An object blocking the robot's path which the robot can manipulate or push away (such a rolling chair). When interacting with movable objects, the robot must state clearly that the object will be pushed or moved away.
 
-  \item {[SPL Only]} \textbf{\textit{Smart} obstacle:} A person blocking the robot's path to whom the robot may speak to and kindly ask to move away. When interacting with people, the robot must look at the person and make clear it is speaking with them.
+  \item {[SSPL Only]} \textbf{\textit{Smart} obstacle:} A person blocking the robot's path to whom the robot may speak to and kindly ask to move away. When interacting with people, the robot must look at the person and make clear it is speaking with them.
 \end{itemize}
 %% Possible extensions: 
 %% - DONE: allow the operator to tell for each item where it should go
@@ -96,6 +96,8 @@ The possible obstacles are:
   \item \textbf{Instruction:} The robot interacts with the operator, not the team.
 
   \item \textbf{Calling the operator back:} During the following phase, when the robot has lost the operator, it may call the operator back once.
+
+  \item \textbf{Groceries:} Any kind of objects can be bound lying around the location designated as the \textit{Car}, such as boxes, sacs, plastic bags, crates, and the groceries itself to give realism to the test. Regardless what objects are present, the robot shall carry an \textbf{official shopping bag} as described below and in \refsec{rule:scenario_objects}.
 
   \item \textbf{Bag handles:} The handles of the bag are always clear and standing up. See Figure \ref{fig:scenario_container_bag} in \refsec{rule:scenario_objects} for bag description. \footnote{This may change in the future. Then, a soft handle may be used which folds down}
   
@@ -119,7 +121,7 @@ The possible obstacles are:
 
 The referee needs to
 \begin{itemize}
-  \item Distribute some objects over some boxes and shopping bags.
+  \item Distribute some objects over the shopping bags.
   \item Designate a few \quotes{car parking locations} from which the objects must be carried.
 \end{itemize}
 
