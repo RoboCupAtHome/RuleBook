@@ -29,12 +29,9 @@ This test focuses on HRI, semantic mapping, object perception and manipulation.
 	\begin{enumerate}
 		\item \textbf{Fetching command:} The operator requests the robot to set up the table. Optionally, the robot may ask the operator \textit{what has to be served}. The operator replies with the randomly selected (and undisclosed) option.
 
-		% I find this unnecessary, the table must be clear already or this test will take forever.
-		\item \textbf{Clearing the table:} The robot must analyze the table and remove all unnecessary objects.
-
 		\item \textbf{Setting the table:} The robot must safely and neatly place (i.e. without colliding with any existing object) all missing objects required for the meal. For example, carpet, fork, knife, spoon, and dish.
 
-		% A remark is required here. If the robot will serve a cereals, only carpet, bowl, and spoon is necessary; while for toast is a dish, fork, and knife. How the table is set must depend on the requested meal (this will also save time).
+		% A remark is required here. If the robot will serve cereals, only carpet, bowl, and spoon would be necessary; while toast require dish, fork, and knife. How the table is set must depend on the requested meal (this will also save time).
 		\item \textbf{Serving the meal:} If the robot asked the operator what to serve, it must proceed to place the order requested by the operator (e.g. pour cereal and milk in the bowl, or placing some slices of bread in the dish).
 
 		% Yet another waste of time. First let's make sure robots can serve a proper breakfast, then we poke them.
@@ -45,7 +42,7 @@ This test focuses on HRI, semantic mapping, object perception and manipulation.
 	\begin{enumerate}
 		\item \textbf{Fetching command:} After the meal, the operator requests the robot to clean up the table.
 
-		% Actually this does not make any sense, the dishes should be taken to the sink or dishwasher!
+		% Actually this does not make any sense! Dirty dishes should be taken to the sink or dishwasher! The robot can be requested to distinguish between dirty and clean in a couple of years, maybe.
 		\item \textbf{Clean the table:} After being instructed, the robot returns the objects to their original location, \textit{i.e.,} where they were found in the first place.
 		% \item \textbf{Clean the table:} The robot must take all the dishes to the sink or dishwasher, as it was instructed.
 
