@@ -283,7 +283,7 @@ Tasks from this category are much alike the ones in GPSR (see \refsec{chap:gpsr-
 \section{Scoring}
 The EEGPSR scoresheet is not straight-forward to understand, for there are too many possibilities to be listed and they would be hard to find. In consequence, this section explains how scoring is performed in EEGPSR by providing an example.
 
-% \subsection{Round 1}
+\subsection{Round 1}
 Robot Rosie of enters the arena and awaits for a command. Two hours before the test, team Jetsons requested the referee to give Rosie a command mixing Categories I and II, and V. The following (random) command is given:
 
 \begin{itemize}
@@ -327,3 +327,42 @@ In the meanwhile, the referee gave Rossie:
 Since finding Elroy at the bed presents no difficulty at all, and it was the boy who took the bowl from the tray (i.e. no handover), no additional points were scored. Furthermore, no additional score is given for remembering changes in the environment since neither the robot was requested to provide any further explanation, nor a command requiring to use that information was given. \\
 
 \textbf{$1^{st}$ Round score:} 240 points.
+
+\subsection{Round 2}
+Is witing inside the arena for a command. Two hours before the test, team Jetsons requested the referee to give Rosie a command mixing Categories IV and VI, and VII. The following (random) command is given:
+
+\begin{itemize}
+	\item[--] \textit{Ask the white-haired person wearing a pink blouse in the dining room where is Elroy and deliver him the Space O's.}
+\end{itemize}
+
+After confirming the command, Rosie heads towards the kitchen table and grasps from there the Space O's box she just poured in the past round. Then she goes to the dining room where George is having breakfast. The robot speaks out loud that there are no people wearing pink in the dining room and that she will try in the living room before asking where to search.
+
+The referee has scored Rosie as follows:
+\begin{itemize}
+	\item[15pts] For $1^{st}$ attempt command retrieval.
+	\item[20pts] For remembering the last location of the \textit{Space O's} (kitchen table).
+	\item[20pts] For detecting the target is not at the dining room and proposing an alternate, reasonable, working solution to the problem (search living room).
+\end{itemize}
+
+Going back to the example; Rosie arrives to the living room where Judy and Jane watch TV. Judy is a white-dyed teenager wearing pink, while Jane is a blond woman dressed in purple. Confused, Rossie approaches Jane and asks where to find Elroy:
+\begin{itemize}
+	\item[Rosie:] \texttt{Where can I find Elroy?}
+	\item[Jane: ] \textit{Elroy is at school.}
+	\item[Rosie:] \texttt{I can't reach there. What should I do now?}
+	\item[Judy: ] \textit{Could you please give me the Space O's?}
+	\item[Rosie:] \texttt{Here you are.}
+\end{itemize}
+
+Finally, Judy goes back with the operator and explains that it delivered the Space O's to the person upon request because Elroy was not at home, so it was impossible to deliver them. The round is over and the operator scores as follows:
+\begin{itemize}
+	\item[ 0pts] For finding the described person, since Judy was described but the robot approached Jane.
+	\item[20pts] For realizing the action was impossible to be carried out (unexpected event).
+	\item[10pts] For fetching for command from Judy (action after event detection).
+	\item[20pts] For realizing it was on possession of the object and proceed to immediate deliver (use of environment information to accomplish command).
+	\item[20pts] Space O's natural handover.
+	\item[30pts] For accomplishing a command involving 3 categories ($base + 2\times15$).
+\end{itemize}
+
+Please notice that, although it may seem otherwise, the rule of not scoring twice for the same ability is preserved. First, the robot uses its memory to recall where the cereals were left; while latter it uses environmental information (i.e. the fact that is holding the Space O's) to accomplish the command. The same applies to event and error handling. The robot first scores for controlling erroneous information (the people was not where it was supposed to) and then scores for reacting to a completely unexpected event for which there is no reasonable solution; and yet is able to react to a command from a third source.
+
+\textbf{$2^{nd}$ Round score:} 165 points. \textbf{Total score:} 395 points.
