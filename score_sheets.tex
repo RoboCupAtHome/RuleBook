@@ -128,63 +128,92 @@
 % \TODO{Write new score sheets}
 
 \renewcommand{\currentTest}{Poster Session}
-\renewcommand{\retryAvailable}{false}
-\renewcommand{\continueAvailable}{false}
 \begin{scoresheet}
-\input{scoresheets/PosterSession}
+\input{scoresheets/PosterSession.tex}
 \end{scoresheet}
+
 
 %%% STAGE I %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\retryAvailable}{false}
+\renewcommand{\threeAttempts}{true}
 
 %%% STAGE 1 TESTS GO HERE %%%
-\renewcommand{\retryAvailable}{false}
-\renewcommand{\continueAvailable}{true}
 
-\renewcommand{\threeAttempts}{true}
-\renewcommand{\currentTest}{General Purpose Robot}
-\begin{scoresheet}
-\input{scoresheets/GPSR.tex}
-\end{scoresheet}
-
-\renewcommand{\continueAvailable}{false}
-
-\ifNotSSPL{
-  \renewcommand{\currentTest}{Storing Groceries}
-  \begin{scoresheet}
-  \input{scoresheets/StoringGroceries.tex}
-  \end{scoresheet}
-}
-
+% Cocktail Party
 \ifSSPL{
+  \renewcommand{\continueAvailable}{true}
   \renewcommand{\currentTest}{Cocktail Party}
   \begin{scoresheet}
   \input{scoresheets/CocktailParty.tex}
   \end{scoresheet}
 }
 
-% Speech and Person Recognition
-\renewcommand{\currentTest}{Speech and Person Recognition}
+% GPSR
+\renewcommand{\continueAvailable}{true}
+\renewcommand{\currentTest}{General Purpose Robot}
 \begin{scoresheet}
-\input{scoresheets/SPR.tex}
+\input{scoresheets/GPSR.tex}
 \end{scoresheet}
 
+% Help me carry
+\renewcommand{\continueAvailable}{true}
 \renewcommand{\currentTest}{Help-me-carry}
 \begin{scoresheet}
 \input{scoresheets/HelpMeCarry.tex}
 \end{scoresheet}
 
-\renewcommand{\threeAttempts}{false}
+% Speech and Person Recognition
+\renewcommand{\continueAvailable}{false}
+\renewcommand{\currentTest}{Speech and Person Recognition}
+\begin{scoresheet}
+\input{scoresheets/SPR.tex}
+\end{scoresheet}
 
-% %%% STAGE II %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% STAGE 2 TESTS GO HERE %%%
+% Storing Groceries
 \ifNotSSPL{
-  \renewcommand{\currentTest}{TidyUp}
+  \renewcommand{\continueAvailable}{false}
+  \renewcommand{\currentTest}{Storing Groceries}
   \begin{scoresheet}
-  \input{scoresheets/TidyUp.tex}
+  \input{scoresheets/StoringGroceries.tex}
   \end{scoresheet}
 }
 
+
+% %%% STAGE II %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\threeAttempts}{false}
+\renewcommand{\retryAvailable}{true}
+\renewcommand{\continueAvailable}{true}
+
+%%% STAGE 2 TESTS GO HERE %%%
+
+
+% EEGPSR
+\renewcommand{\currentTest}{EEGPSR}
+\begin{scoresheet}
+\input{scoresheets/EEGPSR.tex}
+\end{scoresheet}
+
+% Open Challenge
+\renewcommand{\currentTest}{Open Challenge}
+\begin{scoresheet}
+\input{scoresheets/OpenChallenge.tex}
+\end{scoresheet}
+
+% Restaurant
+\renewcommand{\currentTest}{Restaurant}
+\begin{scoresheet}
+\input{scoresheets/Restaurant.tex}
+\end{scoresheet}
+
+% Set a table and clean it up
+\ifNotSSPL{
+  \renewcommand{\currentTest}{Set a table and clean it up}
+  \begin{scoresheet}
+  \input{scoresheets/SetATableTidyUp.tex}
+  \end{scoresheet}
+}
+
+% Tour Guide
 \ifSSPL{
   \renewcommand{\currentTest}{Tour Guide}
   \begin{scoresheet}
@@ -192,29 +221,16 @@
   \end{scoresheet}
 }
 
-\renewcommand{\currentTest}{Open Challenge}
-\begin{scoresheet}
-\input{scoresheets/OpenChallenge.tex}
-\end{scoresheet}
 
-\renewcommand{\retryAvailable}{true}
-\renewcommand{\continueAvailable}{true}
+% %%% FINALS   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\renewcommand{\currentTest}{Restaurant}
-\begin{scoresheet}
-\input{scoresheets/Restaurant.tex}
-\end{scoresheet}
-
-\renewcommand{\currentTest}{EEGPSR}
-\begin{scoresheet}
-\input{scoresheets/EEGPSR.tex}
-\end{scoresheet}
-
+% Final (Jury)
 \renewcommand{\currentTest}{Final Demonstration -- Jury Evaluation}
 \begin{scoresheet}
 \input{scoresheets/FinalsJury.tex}
 \end{scoresheet}
 
+% Final (EC)
 \renewcommand{\currentTest}{Final Demonstration -- Executive Committee}
 \begin{scoresheet}
 \input{scoresheets/FinalsExec.tex}
