@@ -41,7 +41,7 @@ TGZFILE = $(PREFIX).tgz
 TBZFILE = $(PREFIX).tbz
 
 RMFILES = *~ *.toc *.idx *.ilg *.ind *.bbl *.blg *.out *.aux *.synctex.gz \
-	  *.tmp *.log *.lot *.lof *.adx *.and *.abb *.ldx $(PREFIX).pdf score_sheets.pdf .temp* $(TARFILE)
+	  *.tmp *.log *.lot *.lof *.adx *.and *.abb *.ldx $(PREFIX).pdf score_sheets*.pdf .temp* $(TARFILE)
 
 ## OPTIONS ################
 
@@ -158,7 +158,9 @@ dofullpdf:
 dopdflatex:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- Creating Score Sheets"; $(RESET)
-	$(PDFLATEX) $(PDFLATEXFLAGS) score_sheets 
+	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_OPL.pdf' '\def\league{OPL}\input' score_sheets 
+	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_DSPL.pdf' '\def\league{DSPL}\input' score_sheets 
+	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_SSPL.pdf' '\def\league{SSPL}\input' score_sheets 
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(PDFFILE)' via $(PDFLATEX)"; $(RESET)
 	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(TEXFILE) 
@@ -282,7 +284,12 @@ clean:
 dirk:	mauBuild
 mauBuild:
 	$(SILENT) rubber --pdf --force Rulebook.tex
-	$(SILENT) rubber --pdf --force score_sheets.tex
+	$(SILENT) for league in OPL DSPL SSPL ; do \
+	    (echo "\def\league{$$league}\input" ; cat score_sheets.tex ) > "score_sheets_$$league.tex" ; \
+		rubber --pdf --force "score_sheets_$$league.tex" ; \
+		rm -f  "score_sheets_$$league.tex" "score_sheets_$$league.out" "score_sheets_$$league.log" "score_sheets_$$league.aux"; \
+	done
+	
 
 mauClean:
 	$(SILENT) rm -f *.aux *.bbl *.blg *.log *.lof *.log *.lot *.out *.synctex.gz *.toc *~
