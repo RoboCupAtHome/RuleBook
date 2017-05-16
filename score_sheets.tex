@@ -41,6 +41,43 @@
 }
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+%%  L E A G U E S                       %%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+\ifdefined\league
+\else%
+  % Provided for compatibility with older versions
+  \input{teams/teams.tex}
+  \newcommand{\league}{}
+  \newcommand{\leagueFullName}{}
+\fi
+
+\ifthenelse{\equal{\league}{OPL}}{
+  \input{teams/OPL.tex}
+  \newcommand{\leagueFullName}{Open Platform League}
+}{}
+\ifthenelse{\equal{\league}{DSPL}}{
+  \input{teams/DSPL.tex}
+  \newcommand{\leagueFullName}{Domestic Standard Platform League}
+  }{}
+\ifthenelse{\equal{\league}{SSPL}}{
+  \input{teams/SSPL.tex}
+  \newcommand{\leagueFullName}{Social Standard Platform League}}{}
+
+\newcommand{\ifNotSSPL}[1]{
+  \ifthenelse{\equal{\league}{} \OR \equal{\league}{OPL} \OR \equal{\league}{DSPL}}{#1}{}
+}
+
+\newcommand{\ifSSPL}[1]{
+  \ifthenelse{\equal{\league}{} \OR \equal{\league}{SSPL}}{#1}{}
+}
+
+\newcommand{\ifLeague}[2]{
+  \ifNotSSPL{#1}
+  \ifSSPL{#2}
+}
+% \expandafter\expandafter\newcommand\TEAMSSTAGEONE{\csname TEAMS\league \endcsname}
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
 %%  H E A D I N G S                     %%
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
 
@@ -49,7 +86,7 @@
         \fancyhf{}
         \fancyhead{}
         \fancyfoot[C]{\scriptsize \sffamily \footline{}}
-		\renewcommand{\headrulewidth}{0 pt}
+    \renewcommand{\headrulewidth}{0 pt}
 }
 
 \newcommand{\footline}{RoboCup@Home Forms \& Score Sheets / \rulebookVersion}
@@ -57,8 +94,6 @@
 
 
 \begin{document}
-
-\input{teams.tex}
 
 \begin{titlepage}
   \begin{center}
@@ -72,6 +107,7 @@
     {%
       \vspace*{.27cm}
       \Huge{RoboCup@Home}\\[1.23ex]
+      \ifthenelse{\equal{\league}{}}{}{\huge{\leagueFullName}\\[1.23ex]}
       \Large Forms \& Score Sheets\\[2ex]
     }
     \hrulefill\par
@@ -112,15 +148,19 @@
 
 \renewcommand{\continueAvailable}{false}
 
-\renewcommand{\currentTest}{Storing Groceries}
-\begin{scoresheet}
-\input{scoresheets/StoringGroceries.tex}
-\end{scoresheet}
+\ifNotSSPL{
+  \renewcommand{\currentTest}{Storing Groceries}
+  \begin{scoresheet}
+  \input{scoresheets/StoringGroceries.tex}
+  \end{scoresheet}
+}
 
-\renewcommand{\currentTest}{Cocktail Party}
-\begin{scoresheet}
-\input{scoresheets/CocktailParty.tex}
-\end{scoresheet}
+\ifSSPL{
+  \renewcommand{\currentTest}{Cocktail Party}
+  \begin{scoresheet}
+  \input{scoresheets/CocktailParty.tex}
+  \end{scoresheet}
+}
 
 % Speech and Person Recognition
 \renewcommand{\currentTest}{Speech and Person Recognition}
@@ -138,15 +178,19 @@
 % %%% STAGE II %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% STAGE 2 TESTS GO HERE %%%
-\renewcommand{\currentTest}{TidyUp}
-\begin{scoresheet}
-\input{scoresheets/TidyUp.tex}
-\end{scoresheet}
+\ifNotSSPL{
+  \renewcommand{\currentTest}{TidyUp}
+  \begin{scoresheet}
+  \input{scoresheets/TidyUp.tex}
+  \end{scoresheet}
+}
 
-\renewcommand{\currentTest}{Tour Guide}
-\begin{scoresheet}
-\input{scoresheets/TourGuide.tex}
-\end{scoresheet}
+\ifSSPL{
+  \renewcommand{\currentTest}{Tour Guide}
+  \begin{scoresheet}
+  \input{scoresheets/TourGuide.tex}
+  \end{scoresheet}
+}
 
 \renewcommand{\currentTest}{Open Challenge}
 \begin{scoresheet}
