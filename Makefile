@@ -40,6 +40,7 @@ TARFILE = $(PREFIX).tar
 TGZFILE = $(PREFIX).tgz
 TBZFILE = $(PREFIX).tbz
 
+RMSOME  = *~ 
 RMFILES = *~ *.toc *.idx *.ilg *.ind *.bbl *.blg *.out *.aux *.synctex.gz \
 	  *.tmp *.log *.lot *.lof *.adx *.and *.abb *.ldx $(PREFIX).pdf score_sheets*.pdf .temp* $(TARFILE)
 
@@ -140,7 +141,7 @@ ERROR = $(RED)
 ##  R U L E S                           ##
 ## #################################### ##
 
-all: dofullpdf wall
+all: dofullpdf wall mauClean
 # all: mauCleanAll mauBuild mauClean
 
 ## ##################### ##
@@ -158,9 +159,9 @@ dofullpdf:
 dopdflatex:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- Creating Score Sheets"; $(RESET)
-	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_OPL.pdf' '\def\league{OPL}\input' score_sheets 
-	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_DSPL.pdf' '\def\league{DSPL}\input' score_sheets 
-	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_SSPL.pdf' '\def\league{SSPL}\input' score_sheets 
+	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_OPL' '\def\league{OPL}\input' score_sheets 
+	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_DSPL' '\def\league{DSPL}\input' score_sheets 
+	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_SSPL' '\def\league{SSPL}\input' score_sheets 
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(PDFFILE)' via $(PDFLATEX)"; $(RESET)
 	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(TEXFILE) 
