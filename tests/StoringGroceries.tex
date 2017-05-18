@@ -7,18 +7,30 @@ The robot has to correctly identify and manipulate objects at different heights,
 \subsection{Focus}
 This test focuses on the detection and recognition of objects and their features, as well as object manipulation.
 
-\subsection{Setup}
-\begin{enumerate}
-	\item \textbf{Location:} One of the bookcases or cupboards in the apartment is used for this test, one where a table is near or can be put. 
-	\item \textbf{Start position:} The robot will start between the cupboard and the table in a random orientation, but facing towards the Cupboard.
-	. 
-	\item \textbf{Cupboard:} The cupboard has 5 shelves between 0.30m and 1.80m from the ground and contains several objects (See \ref{rule:scenario_objects}).
-	\begin{itemize}
-	 	\item \textbf{Door:} The cupboard has a single door, which is closed initially.
-	\end{itemize} 
-	\item \textbf{Table:} A table near to the Cupboard has 10 objects (See \ref{rule:scenario_objects}). If not all fit the on the table, they will be added during the test. The maximum distance between the Table and the Cupboard is 2m.
-	\item \textbf{Objects:} Objects on the Cupboard and on the Table can be known, alike, or unknown. Also, there will be more than one object in each shelf. 
-\end{enumerate}
+\begin{minipage}{0.70\textwidth}
+	\subsection{Setup}
+	\begin{enumerate}
+		\item \textbf{Location:} One of the bookcases or cupboards in the apartment is used for this test, one where a table is near or can be put. 
+		\item \textbf{Start position:} The robot will start between the cupboard and the table in a random orientation, but facing towards the Cupboard.
+		. 
+		\item \textbf{Cupboard:} The cupboard has 5 shelves between 0.30m and 1.80m from the ground and contains several objects (See \ref{rule:scenario_objects}).
+		\begin{itemize}
+		 	\item \textbf{Door:} The cupboard has a single door, which is closed initially.
+		\end{itemize} 
+		\item \textbf{Table:} A table near to the Cupboard has 10 objects (See \ref{rule:scenario_objects}). If not all fit the on the table, they will be added during the test. The maximum distance between the Table and the Cupboard is 2m.
+		\item \textbf{Objects:} Objects on the Cupboard and on the Table can be known, alike, or unknown. Also, there will be more than one object in each shelf. 
+	\end{enumerate}
+\end{minipage}\hfill
+\begin{minipage}{0.25\textwidth}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{images/storing_groceries.png}%
+		\vspace{-10pt}
+		\label{fig:storing_groceries}
+		%\caption{Example shelf where objects will be placed.}
+		\caption{Shelf}
+	\end{figure}
+\end{minipage}
 
 
 \subsection{Task}
@@ -72,11 +84,11 @@ This test focuses on the detection and recognition of objects and their features
 \end{enumerate}
 
 \subsection{Data recording}
-  Please record the following data (See \refsec{rule:datarecording}):
-  \begin{itemize}
-   \item Images
-   \item Plans
-  \end{itemize}
+Please record the following data (See \refsec{rule:datarecording}):
+\begin{itemize}
+	\item Images
+	\item Plans
+\end{itemize}
 
 \subsection{OC instructions}
 
@@ -88,18 +100,11 @@ This test focuses on the detection and recognition of objects and their features
 \subsection{Referee instructions}
 The referee needs to
 \begin{itemize}
-\item Place the objects in the cupboard and a few of the same class on the table. New items can be placed when there is room or the robot asks for more objects. 
-\item Close the door of the cupboard. 
-\item Put objects on the table and the corresponding objects in the cupboard: 3 known objects, 2 alike and 5 unknown objects. 
+	\item Place the objects in the cupboard and a few of the same class on the table. New items can be placed when there is room or the robot asks for more objects. 
+	\item Close the door of the cupboard. 
+	\item Put objects on the table and the corresponding objects in the cupboard: 3 known objects, 2 alike and 5 unknown objects. 
 \end{itemize}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.25\textwidth]{images/storing_groceries.png}
-  \vspace{-10pt}
-  \label{fig:storing_groceries}
-  \caption{Example shelf where objects will be placed.}
-\end{figure}
 
 \newpage
 \subsection{Score sheet}
