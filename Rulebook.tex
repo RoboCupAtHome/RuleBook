@@ -94,8 +94,6 @@
 		\renewcommand{\headrulewidth}{0 pt}
 }
 
-\newcommand{\quotes}[1]{``#1''}
-\newcommand{\textbi}[1]{\textbf{\textit{#1}}}
 %\newcommand{\sectionbreak}{\clearpage}
 %\newcommand{\subsectionbreak}{\clearpage}
 
@@ -154,23 +152,19 @@ Robot should be ready to start the next attempt to the same test as fast as poss
   when the performing robot is done with a attempt, the next robot must be ready to go with the start of a button or a voice command.
 
 \newpage
-\input{tests/StoringGroceries}
-
-\newpage
 \input{tests/CocktailParty}
 
-% \newpage
-% \input{tests/Navigation}
-
 \newpage
-% Speech and Person Recognition
-\input{tests/SPR}
+\input{tests/GPSR}
 
 \newpage
 \input{tests/HelpMeCarry}
 
 \newpage
-\input{tests/GPSR}
+\input{tests/SPR}
+
+\newpage
+\input{tests/StoringGroceries}
 
 \chapter{Tests in Stage II}
 \label{chap:stage_II}
@@ -180,7 +174,7 @@ All ability and integration tests in \iterm{Stage~II}  are performed only once. 
 
 In the \iterm{Open Challenge} the robot must be able to show to the \iaterm{Technical Committee}{TC} the achievements on the main research line of its own team. This test grants up to 250 points.
 
-\section{Robot \& team cooperation}
+\section*{Robot \& team cooperation}
 We encourage robots and teams to work together when performing tests.
 For scoring, points are awarded per subtask. The robot (and thus team) performing the subtask gets the points.
 For example, in the Restaurant test, if one robot of team A can take the order and another robot of team B delivers the order, then the points for taking the order go to team A, while the points for delivering go to team B. 
@@ -189,10 +183,7 @@ Of course, team A \& B can both perform the test in their own turn.
 \end{itshape}
 
 \newpage
-\input{tests/SetATableTidyUp}
-
-\newpage
-\input{tests/TourGuide.tex}
+\input{tests/EEGPSR}
 
 \newpage
 \input{tests/OpenChallenge}
@@ -201,7 +192,10 @@ Of course, team A \& B can both perform the test in their own turn.
 \input{tests/Restaurant}
 
 \newpage
-\input{tests/EEGPSR}
+\input{tests/SetATableTidyUp}
+
+\newpage
+\input{tests/TourGuide.tex}
 
 \newpage
 \input{tests/Finals}
