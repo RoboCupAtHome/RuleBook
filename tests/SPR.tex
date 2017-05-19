@@ -17,7 +17,8 @@ This test focuses on human detection, sound localization, speech recognition, an
 
     \item \textbf{Waiting and turn:} After stating that it wants \textit{to play a riddle game}, the robot waits for 10 seconds while a crowd is merged on it's back. When the time elapses, the robot must turn around (about $180\degree$) and find the crowd.
 
-    \item \textbf{Requesting an operator:} After turning around, the robot must state the size of the crowd (male and female count) and request for an operator (e.g.~\textit{who want to play riddles with me?}). The crowd will move and surround the robot, letting the operator to stand in front of the robot.
+    \item \textbf{Requesting an operator:} After turning around, the robot must state the size of the crowd (including male and female count\footnotemark) and request for an operator (e.g.~\textit{who want to play riddles with me?}). The crowd will move and surround the robot, letting the operator to stand in front of the robot.
+    \footnotetext{It is possible to state the number of people whose gender couldn't be determined by the robot, therefore stating correctly the size of the crowd and, possibly, one of the gender groups.}
 
     \item \textbf{The riddle game:} Standing in front of the robot, the operator will ask 5 questions.\\
     The robot must answer the question without asking confirmation. Questions will only be asked only once; no repetitions are allowed. 
@@ -28,7 +29,7 @@ This test focuses on human detection, sound localization, speech recognition, an
         \item Directly answer the question without turning
         \item Turn towards the person and ask them to repeat the question
     \end{itemize}
-    The game will end when the 6th question has been made, following the same distribution of questions as in the riddle game. The robot must answer the question without asking confirmation. Questions may be repeated once.
+    The game will end when the 5th question has been made, following the same distribution of questions as in the riddle game. The robot must answer the question without asking confirmation. Questions may be repeated once.
 
     \item \textit{Leave:} The robot leaves the room through the designated door.
 \end{itemize}
