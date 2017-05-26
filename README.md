@@ -7,10 +7,23 @@ RuleBook for RoboCup @Home 2017
 
 RoboCup@Home teams and team members are welcome to post GitHub issues for clarifications, questions etc. 
 
-Improvements are also welcome in the form of pull requests. 
+Improvements are also welcome in the form of pull requests (see [guidelines](https://github.com/RoboCupAtHome/RuleBook/wiki/Guidelines)). 
 
 [Score sheets](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=score_sheets.tex)
 
+### FAQ
+See the Frequently Asked Questions [here](https://github.com/RoboCupAtHome/RuleBook/wiki/FAQ:-Frequently-Asked-Questions).
+
+### Question, issues, and contribution Guidelines
+- When asking questions [please follow these Guidelines](https://github.com/RoboCupAtHome/RuleBook/wiki/Guidelines:-Questions).
+- Guidelines for setting up an issue are [here](https://github.com/RoboCupAtHome/RuleBook/wiki/Guidelines:-Issues). Open an issue for:
+  - Typos, misspellings, and broken references.
+  - The rules are unclear or poorly specified.
+  - One rule contradicts another.
+  - The RuleBook contains outdated information
+  - Scoresheets are cryptic of hard to read.
+  - Compilation and build errors.
+- To contribute directly with the rulebook (Pull Requests), please read the conventions in the [Contribution Guidelines](https://github.com/RoboCupAtHome/RuleBook/wiki/Guidelines:-Contributing) and in the [Workflow Guidelines](https://github.com/RoboCupAtHome/RuleBook/wiki/Guidelines:-Workflow)
 
 ### RoboCup
 RoboCup
