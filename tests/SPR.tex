@@ -23,14 +23,26 @@ This test focuses on human detection, sound localization, speech recognition, an
     \item \textbf{The riddle game:} Standing in front of the robot, the operator will ask 5 questions.\\
     The robot must answer the question without asking confirmation. Questions will only be asked only once; no repetitions are allowed. 
 
-    \item \textbf{The blind man's bluff game:} A random person from the crowd surrounding the robot will ask a question. The robot may
+    \item \textbf{The blind man's bluff game:}
     \begin{itemize}
-        \item Turn towards the person who asked the question and answer the question
-        \item Directly answer the question without turning
-        \item Turn towards the person and ask them to repeat the question
+        \item {[DSPL only]} \textbf{Crowd line up:} The crowd will reposition, lining up in front of the robot. A random person from the crowd standing in front of the robot will ask a question. The robot may
+        \begin{itemize}
+            \item Turn towards the person who asked the question and answer the question
+            \item Directly answer the question without turning
+            \item Turn towards the person and ask them to repeat the question
+        \end{itemize}
+        This process is repeated with 10 (possibly) different people. 
+        The game will end when the 10th question has been made, following a similar distribution of questions as in the riddle game. The robot must answer the question without asking confirmation. Questions may be repeated once.
+
+        \item {[OPL \& SSPL]} \textbf{Circling crowd:} The crowd will reposition, making a circle around the robot. A random person from the crowd surrounding the robot will ask a question. The robot may
+        \begin{itemize}
+            \item Turn towards the person who asked the question and answer the question
+            \item Directly answer the question without turning
+            \item Turn towards the person and ask them to repeat the question
+        \end{itemize}
+        This process is repeated with 5 (possibly) different people. 
+        The game will end when the 5th question has been made, following the same distribution of questions as in the riddle game. The robot must answer the question without asking confirmation. Questions may be repeated once.
     \end{itemize}
-    This process is repeated with 5 (possibly) different people. 
-    The game will end when the 5th question has been made, following the same distribution of questions as in the riddle game. The robot must answer the question without asking confirmation. Questions may be repeated once.
     
     \item \textbf{Leave} The robot must leave the arena/test area after all questions have been asked or when instructed to do so.
 \end{itemize}
