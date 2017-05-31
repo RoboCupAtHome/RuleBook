@@ -6,13 +6,13 @@ This test focuses on human detection, sound localization, speech recognition, an
 
 \subsection{Setup}
 \begin{enumerate}
-    \item \textbf{Location:} One room of the arena is used for this test.\footnote{This test may also be held outside the arena}.
+    \item \textbf{Location:} One room of the arena is used for this test\footnote{This test may also be held outside the arena}.
     \item \textbf{Crowd:} There is a crowd of 5 to 10 people in the designated room. People may be standing, sitting, lying, and in any pose.
     \item \textbf{Doors:} All doors of the apartment are open, except for the entry door. 
 \end{enumerate}
 
 \subsection{Task}
-\begin{itemize}
+\begin{enumerate}
     \item \textbf{Start:} The robot starts at a designated starting position and announces it wants \textit{to play riddles}.
 
     \item \textbf{Waiting and turn:} After stating that it wants \textit{to play a riddle game}, the robot waits for 10 seconds while a crowd is merged on it's back. When the time elapses, the robot must turn around (about $180\degree$) and find the crowd.
@@ -23,33 +23,33 @@ This test focuses on human detection, sound localization, speech recognition, an
     \item \textbf{The riddle game:} Standing in front of the robot, the operator will ask 5 questions.\\
     The robot must answer the question without asking confirmation. Questions will only be asked only once; no repetitions are allowed. 
 
-    \item \textbf{The blind man's bluff game:}
+    \newcounter{enumTempSPR}
+    \setcounter{enumTempSPR}{\theenumi}
+    \item {[DSPL only]} \textbf{Blind man's bluff game: Crowd line-up.} The crowd will reposition, lining up in front of the robot. A random person from the crowd standing in front of the robot will ask a question. The robot may
     \begin{itemize}
-        \item {[DSPL only]} \textbf{Crowd line up:} The crowd will reposition, lining up in front of the robot. A random person from the crowd standing in front of the robot will ask a question. The robot may
-        \begin{itemize}
-            \item Turn towards the person who asked the question and answer the question
-            \item Directly answer the question without turning
-            \item Turn towards the person and ask them to repeat the question
-        \end{itemize}
-        This process is repeated with 10 (possibly) different people. 
-        The game will end when the 10th question has been made, following a similar distribution of questions as in the riddle game. The robot must answer the question without asking confirmation. Questions may be repeated once.
-
-        \item {[OPL \& SSPL]} \textbf{Circling crowd:} The crowd will reposition, making a circle around the robot. A random person from the crowd surrounding the robot will ask a question. The robot may
-        \begin{itemize}
-            \item Turn towards the person who asked the question and answer the question
-            \item Directly answer the question without turning
-            \item Turn towards the person and ask them to repeat the question
-        \end{itemize}
-        This process is repeated with 5 (possibly) different people. 
-        The game will end when the 5th question has been made, following the same distribution of questions as in the riddle game. The robot must answer the question without asking confirmation. Questions may be repeated once.
+        \item Turn towards the person who asked the question and answer the question
+        \item Directly answer the question without turning
+        \item Turn towards the person and ask them to repeat the question
     \end{itemize}
+    This process is repeated with 10 (possibly) different people. 
+    The game will end when the 10th question has been made, following a similar distribution of questions as in the riddle game. The robot must answer the question without asking confirmation. Questions may be repeated once.
+
+    \setcounter{enumi}{\theenumTempSPR}
+    \item {[OPL \& SSPL]} \textbf{Blind man's bluff game: Circling Crowd.} The crowd will reposition, making a circle around the robot. A random person from the crowd surrounding the robot will ask a question. The robot may
+    \begin{itemize}
+        \item Turn towards the person who asked the question and answer the question
+        \item Directly answer the question without turning
+        \item Turn towards the person and ask them to repeat the question
+    \end{itemize}
+    This process is repeated with 5 (possibly) different people. 
+    The game will end when the 5th question has been made, following the same distribution of questions as in the riddle game. The robot must answer the question without asking confirmation. Questions may be repeated once.
     
     \item \textbf{Leave} The robot must leave the arena/test area after all questions have been asked or when instructed to do so.
-\end{itemize}
+\end{enumerate}
 
 \subsection{Additional rules and remarks}
 
-\begin{itemize}
+\begin{enumerate}
     \item \textbf{Bypassing ASR:} Bypassing Automated Speech Recognition via the CONTINUE rule (Section \refsec{rule:asrcontinue}) is not allowed during this test.
     \item \textbf{Asked questions:} The distribution of questions to be randomly asked is a follows:
     \begin{itemize}
@@ -65,7 +65,7 @@ This test focuses on human detection, sound localization, speech recognition, an
     \item \textbf{Question timeout:} If the robot does not answer within 10 seconds, the question is considered as \textit{missed}, and referee will proceed with the next one.
     \item \textbf{Standing still operators} Operators are not allowed to move to or turn towards the robot or shout to the robot.
     \item \textbf{Water-clear answers:} If the referee is unable to hear or understand the robot's answer, the question is considered as \textit{incorrect}. Single-word and short answers should be avoided
-\end{itemize}
+\end{enumerate}
 
 \begin{figure}[!h]
 	\centering
