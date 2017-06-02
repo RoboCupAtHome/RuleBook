@@ -1,7 +1,9 @@
 RuleBook for RoboCup @Home 2017
 ===============================
 
-**Please note: this is a draft and many things will change until the final version is published**
+**Please note: the final version is Live now!**
+Only minor corrections and layout fixes will be committed.
+All work for the Rulebook of 2018 will be pushed into to 2018/Rulebook.
 
 [Compiled LaTeX version](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=Rulebook.tex)
 
