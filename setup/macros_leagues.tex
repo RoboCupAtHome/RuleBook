@@ -1,0 +1,88 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%          $Id: macros_leagues.tex 399 2017-06-04 13:36:00Z matamoros $
+%%    author(s): RoboCupAtHome Technical Committee(s)
+%%  description: Macros for the RoboCupAtHome rulebook
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifdefined\league
+\else%
+    % Provided for compatibility with older versions
+    \newcommand\teamsListFile{teams/teams.tex}
+    \newcommand{\league}{}
+    \newcommand{\leagueFullName}{}
+\fi
+
+%% Import team from the Open Standard Platform League %%%%%%%%%%% %%
+\ifthenelse{\equal{\league}{OPL}}{
+    \newcommand\teamsListFile{teams/OPL.tex}
+    \newcommand{\leagueFullName}{Open Platform League}
+}{}
+
+%% Import team from the Domestic Standard Platform League %%%%%%% %%
+\ifthenelse{\equal{\league}{DSPL}}{
+    \newcommand\teamsListFile{teams/DSPL.tex}
+    \newcommand{\leagueFullName}{Domestic Standard Platform League}
+}{}
+
+%% Import team from the Social Standard Platform League %%%%%%%%% %%
+\ifthenelse{\equal{\league}{SSPL}}{
+    \newcommand\teamsListFile{teams/SSPL.tex}
+    \newcommand{\leagueFullName}{Social Standard Platform League}
+}{}
+
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+%%  Per league macros                                             %%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+
+%% Domestic Standard Platform League %%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+\newcommand{\ifDSPL}[1]{
+    \ifthenelse{\equal{\league}{} \OR \equal{\league}{DSPL}}{#1}{}
+}
+
+\newcommand{\ifNotDSPL}[1]{
+    \ifthenelse{\equal{\league}{} \OR \equal{\league}{OPL} \OR \equal{\league}{SSPL}}{#1}{}
+}
+
+
+%% Open Platform League %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+\newcommand{\ifOPL}[1]{
+    \ifthenelse{\equal{\league}{} \OR \equal{\league}{OPL}}{#1}{}
+}
+
+\newcommand{\ifNotOPL}[1]{
+    \ifthenelse{\equal{\league}{} \OR \equal{\league}{DSPL} \OR \equal{\league}{SSPL}}{#1}{}
+}
+
+
+%% Open Standard Platform League %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+\newcommand{\ifSSPL}[1]{
+    \ifthenelse{\equal{\league}{} \OR \equal{\league}{SSPL}}{#1}{}
+}
+
+\newcommand{\ifNotSSPL}[1]{
+    \ifthenelse{\equal{\league}{} \OR \equal{\league}{OPL} \OR \equal{\league}{DSPL}}{#1}{}
+}
+
+% \newcommand{\ifLeague}[2]{
+%     \ifNotSSPL{#1}
+%     \ifSSPL{#2}
+% }
+
+
+
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+%%  List of teams import macro                                    %%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
+
+\newcommand{\loadTeamsListFile}{%
+    \input{\teamsListFile}
+}
+
+% \expandafter\expandafter\newcommand\TEAMSSTAGEONE{\csname TEAMS\league \endcsname}
+
+% Local Variables:
+% TeX-master: "../Rulebook"
+% End:
