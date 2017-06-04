@@ -11,19 +11,23 @@ The maximum time for this test is 5 minutes.
 	\scoreitem[ 5]{5}{Correctly answered a question}
 	\scoreitem{ 5}{Answering all 5 riddle game question}
 
+\ifDSPL{
 	\scoreheading{[DSPL only] Blind man's bluff game} % Max 130
 	\scoreitem[10]{ 5}{Understanding question on the first attempt}   % 50
 	\scoreitem[10]{ 2}{Understanding question on the second attempt}  % -- (20)
 	\scoreitem[10]{ 2}{Correctly answered a question}                 % 20
 	\scoreitem[10]{ 5}{Turned towards person asking the question}     % 50
 	\scoreitem{10}{Answering all 10 blind man's bluff questions}      % 10
+}
 
+\ifNotDSPL{
 	\scoreheading{[OPL \& SSPL] Blind man's bluff game} % Max 130
 	\scoreitem[ 5]{10}{Understanding question on the first attempt}   % 50
 	\scoreitem[ 5]{ 5}{Understanding question on the second attempt}  % -- (25)
 	\scoreitem[ 5]{ 5}{Correctly answered a question}                 % 25
 	\scoreitem[ 5]{10}{Turned towards person asking the question}     % 50
 	\scoreitem{ 5}{Answering all 5 blind man's bluff questions}       %  5	
+}
 
 	\setTotalScore{200}	
 \end{scorelist}
