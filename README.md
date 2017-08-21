@@ -1,9 +1,8 @@
-RuleBook for RoboCup @Home 2017
+RuleBook for RoboCup @Home 2018
 ===============================
 
-**Please note: the final version is Live now!**
-Only minor corrections and layout fixes will be committed.
-All work for the Rulebook of 2018 will be pushed into to 2018/Rulebook.
+This is a **DRAFT**.
+All work for the Rulebook of 2019 will be pushed into to 2019/Rulebook.
 
 [Compiled LaTeX version](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=Rulebook.tex)
 
@@ -41,7 +40,8 @@ Contributions and improvements to the rulebook are always welcome in the form of
 
 ### More information
 - @Home Website: [http://robocupathome.org/](http://robocupathome.org/)
-- RoboCup 2017 Website [http://robocup2017.org/](http://robocup2017.org/)
-- RoboCup @Home Wiki [http://wiki.robocup.org/@Home_League](http://wiki.robocup.org/@Home_League)
+- RoboCup 2017 Website [http://robocup2018.org/](http://robocup2017.org/)
 - [General mailing list](http://lists.robocup.org/cgi-bin/mailman/listinfo/robocup-athome)
+- [Youtube channel](https://www.youtube.com/channel/UChkdCpT0xrFMMt-_N8wSVew/)
 - [Facebook Page](https://www.facebook.com/robocupathome/)
+- RoboCup @Home Wiki (Deprecated) [http://wiki.robocup.org/@Home_League](http://wiki.robocup.org/@Home_League)
