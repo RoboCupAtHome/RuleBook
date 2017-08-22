@@ -40,7 +40,7 @@ Contributions and improvements to the rulebook are always welcome in the form of
 
 ### More information
 - @Home Website: [http://robocupathome.org/](http://robocupathome.org/)
-- RoboCup 2018 Website [http://robocup2018.org/](http://robocup2017.org/)
+- RoboCup 2018 Website [http://robocup2018.org/](http://robocup2018.org/)
 - [General mailing list](http://lists.robocup.org/cgi-bin/mailman/listinfo/robocup-athome)
 - [Youtube channel](https://www.youtube.com/channel/UChkdCpT0xrFMMt-_N8wSVew/)
 - [Facebook Page](https://www.facebook.com/robocupathome/)
