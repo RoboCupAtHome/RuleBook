@@ -6,12 +6,6 @@ EEGPSR commands are generated randomly using the official [EE]GPSR Command Gener
 
 For each command to be executed, the Team Leader must choose a Command Category. If the Team Leader knows \textit{a priori} that the robot won't be able to execute the generated command, is advised to inform the operator immediately in order to proceed with the next command, saving this way valuable time for the task execution.
 
-\subsection{Random Category Selection}
-The team leader may request \textbf{once} to the referee to give to the robot a command from a random category. Extra points are given if the robot is able to successfully execute the given command. The random category selection is a \textit{one-time} request.
-
-\subsection{Mixing Categories}
-The team leader may request to the Technical Committee to test the robot with commands involving abilities from two or more categories. Mixing categories must be requested to the TC two hours before the test, and once requested there is no step back. Extra points are given if the robot is able to successfully execute the given command.
-
 
 \section{Command retrieval explained}
 The robot has to show it has understood the given command by stating all the required information to accomplish the task. For this purpose, the robot may repeat the understood command and ask for confirmation. It is not required to repeat the command word by word; rephrasing the command is allowed. For instance, if the robot is instructed to \quotes{place a coke onto the tray}, the robot may either say: \textit{\quotes{You want me to place a coke on the tray. Is that correct?}} or \textit{\quotes{do you want me to deliver a coke to the tray?}}.
@@ -27,9 +21,10 @@ When a robot has partially understood the command, it is allowed to ask the oper
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Categories explained}
 \label{sec:eegpsr-categories-explained}
-This section explain each of the categories of the test and provides examples on the given commands and expected abilities.
+This section explain each of the categories of the test and provides examples on how the abilities are scored.
 
 It is important to remark that there is no script or predefined way to solve the tasks, being most of them of ambiguous nature. It is up to the team to choose how to solve each tasks accordingly with the robot's capabilities.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,235 +32,8 @@ It is important to remark that there is no script or predefined way to solve the
 % Category I explained
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Category I: Advanced Manipulation}
+\subsection{Category I: Three at once}
 \label{sec:eegpsr-category1-explained}
-Tasks from this category require handling objects into small or narrow spaces, manipulate tools, buttons, panels, and doors; two-handed manipulation, or eye-hand coordination. 
-
-\subsubsection{Task examples}
-\begin{itemize}
-	\item Grasping objects from a box.
-	\item Placing objects into a microwave.
-	\item Shutdown the TV using its remote control.
-	\item Transporting a tray.
-	\item Pouring cereal in a bowl.
-	\item Opening a bottle (twist, uncap, etc.).
-\end{itemize}
-
-\subsubsection{Command examples}
-\begin{itemize}
-	\item Hand me a coke from the fridge (the coke is inside the fridge).
-	\item Bring me some flakes in a bowl.
-	\item Put this book into the drawer.
-	\item Turn off the TV.
-	\item Put all the beverages on the dinner table.
-\end{itemize}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Category II explained
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Category II: Advanced Object Recognition}
-\label{sec:eegpsr-category2-explained}
-Tasks from this category require describing unknown objects, recognize objects from description, identify occluded objects and from the distance.
-
-\subsubsection{Task examples}
-\begin{itemize}
-	\item Counting objects in a shelf.
-	\item Describing unknown objects.
-	\item Finding object from far distance.
-	\item Finding objects from a description.
-	\item Infer unknown object's class (category, e.g. snacks) from features.
-	\item Object detection and recognition of occluded or hidden objects (behind of, inside of, etc.).
-\end{itemize}
-
-\subsubsection{Command examples}
-\begin{itemize}
-	\item Bring me the biggest pill bottle from the kitchen counter.
-	\item Bring me the bookcase's right-most object.
-	\item Describe the objects on the drawer to me.
-	\item Tell me how many red apples are in the basket on the kitchen table.
-	\item Count the snacks in the shelf and tell me how many there are.
-\end{itemize}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Category III explained
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Category III: Navigation \& People Tracking}
-\label{sec:eegpsr-category3-explained}
-Tasks from this category require following or guiding people in crowded environments or through narrow spaces. The navigation may take place either inside or outside the arena.
-
-\subsubsection{Task examples}
-\begin{itemize}
-	\item Following a person inside an elevator.
-	\item Guiding a person to the toilet.
-	\item Going through a multitude while following or guiding a person without loosing them.
-	\item Avoiding people crossing or standing by while guiding or following.
-	\item Performing real time mapping and localization.
-\end{itemize}
-
-\subsubsection{Command examples}
-\begin{itemize}
-	\item Guide the person at the entrance to the kitchen.
-	\item 
-	\item Follow the person in front of you and go to the bedroom (operator will guide the robot outside the arena, so it will need to go back). 
-\end{itemize}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Category IV explained
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Category IV: People \& Activity Recognition}
-\label{sec:eegpsr-category4-explained}
-Tasks from this category require memorizing a person's features, describing unknown people, recognize people from description, and being able to find people hiding or from the distance.
-
-\subsubsection{Task examples}
-\begin{itemize}
-	\item Describing a person in certain specific location.
-	\item Delivering objects to a person that matches the given description.
-	\item Reporting number of people in a room matching given description.
-	\item Finding people performing certain activity.
-	\item Finding people whose face or body or partially occluded or not facing the robot.
-\end{itemize}
-
-\subsubsection{Command examples}
-\begin{itemize}
-	\item Describe the person at the door.
-	\item Ask Joe to come here (Joe is sleeping in the sofa).
-	\item Take this coke to the girl [in the living room] wearing a red sweater.
-	\item Tell me how many standing people there are in the dining room.
-	\item Go to the living room and follow the waving person.
-	\item Tell me what John is doing (John is reading a book).
-\end{itemize}
-
-\subsubsection{Meeting new people}
-Say the generated command is \textit{ask Joe to come here}, since the robot has no knowledge of who is Joe, it is expected to ask \quotes{\textit{how can I recognize Joe?}} Two answers are possible:
-\begin{itemize}
-	\item \textbi{Meet Joe:} The person named \textit{Joe} will stand in front of the robot and follow robot's (not team's) instructions for training. The robot must announce when it has completed memorizing that person before proceeding to execute the command.
-	\item \textbi{Joe is the...} A description indicating how to recognize \textit{Joe} is given to the robot. Retrieved information must be confirmed.
-\end{itemize}
-
-\paragraph{Remark: Category III Overlap.} There may be given extra points for requesting further information about a named person and conducting a training or associating the name with the description.
-
-\paragraph{Remark: Category IV Overlap.} Referees will use the same names for the same people, for which the robot may interact with the same person more than once. There are extra points if the robot can identify in a later command a previously learned name and successfully recognize that (same) person without training or asking for description (see score sheet).
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Category V explained
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Category V: Incomplete
-% and Obfuscated
-Information}
-\label{sec:eegpsr-category5-explained}
-In this category, the commands given do not include all the information necessary to accomplish the task
-%, or the information is obfuscated and needs to be elucidated or deducted.
-
-\subsubsection{Incomplete information}
-The robot gets a command that does not include all the information necessary to accomplish the task. The actual commands will be under-specified by, for example:
-\begin{itemize}
-	\item only giving the class of the object (\quotes{bring me a drink}) or location (\quotes{guide me to the table}), and not the actual object or location, or
-	\item not providing the location (or its class).
-\end{itemize}
-
-The robot can ask questions to retrieve the missing information about the task, but is not required to. In the questions the robot has to make clear what it has already understood, e.g., tell the operator that it has understood \textit{to bring a particular beverage can}, but not \textit{where the can is} located in the arena. The robot may also simply start searching.
-
-% \subsubsection{Obfuscated information}
-% The robot gets a command that requires further processing to extract or infer the information necessary to accomplish the task (e.g. co-reference resolution), for example:
-% \begin{itemize}
-% 	\item 
-% 	\item 
-% \end{itemize}
-% 
-% The robot can ask questions to retrieve the missing information about the task, but is not required to. In the questions the robot has to make clear what it has already understood, e.g., tell the operator that it has understood to bring a particular beverage can, but not where can is located in the arena. The robot may also simply start searching.
-
-\subsubsection{Task examples}
-Tasks from this category are the same of GPSR (see \refsec{chap:gpsr-appendix-cat1} and \refsec{chap:gpsr-appendix-cat2}), it is how the robot is commanded what changes.
-
-\subsubsection{Command examples}
-\begin{itemize}
-	\item Bring me a drink (unspecified which drink).
-	\item Guide a person to the kitchen (unspecified where is that person).
-	\item Bring some snacks to the table (unspecified which table).
-% 	\item Find John and Ana at the living room. Tell her the time.
-% 	\item Ask Mary at the sofa,
-% 	\item 
-% 	\item 
-\end{itemize}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Category VI explained
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Category VI: Erroneous Information}
-\label{sec:eegpsr-category6-explained}
-The robot gets a command that contains erroneous information. The robot should be able to realize such an error while trying to carry out the task, and try to carry on an alternative solution. If the robot is unable to solve the problem, it must go back to the operator, and clearly state \textit{why} it wasn't able to accomplish the task.
-
-\subsubsection{Task examples}
-Tasks from this category are very much like the ones in GPSR (see \refsec{chap:gpsr-appendix-cat1}, \refsec{chap:gpsr-appendix-cat2} and \refsec{chap:gpsr-appendix-cat3}).
-
-\subsubsection{Command examples}
-\begin{itemize}
-	\item Bring me a coke from the fridge. \\
-	The coke is on the kitchen table. \\
-
-	\item Take Ana from the sofa to her bed. \\
-	Ana is lying on the floor, unconscious, next to the sofa. \\
-\end{itemize}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Category VII explained
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Category VII: Memory and Environmental Reasoning}
-\label{sec:eegpsr-category7-explained}
-The robot gets a command that does not include all the information necessary to accomplish the task, assuming that the missing information is already known by the robot or can be (easily) obtained from the environment, for example:
-\begin{itemize}
-	\item Requesting to interact with an object or person (\quotes{bring a coke to Mary}) with which the robot has interacted before (the robot guided Mary to the bedroom).
-	\item Requesting to observe the environment to gather the information required to accomplish the task.
-	% \item Requesting to modify the environment to get what is needed to accomplish the task.
-\end{itemize}
-
-The robot should be able to realize previously performed changes to the environment. If the robot is unable to solve the problem, it must go back to the operator, and clearly state \textit{why} it wasn't able to accomplish the task.
-
-
-\subsubsection{Task examples}
-Tasks from this category are very much like the ones in GPSR (see \refsec{chap:gpsr-appendix-cat1}, \refsec{chap:gpsr-appendix-cat2} and \refsec{chap:gpsr-appendix-cat3}), it is how the robot is commanded what changes.
-
-\subsubsection{Command examples}
-\begin{itemize}
-	\item Take the orange juice from the shelf and give it to Mary. \\
-	The robot just guided Mary to the bedroom. \\
-
-	\item Bring me the coke from the fridge. \\
-	The operator already has the coke on their hand. \\
-
-	\item Check which beverages there are in the counter and offer one to James at the sofa. \\
-	Counter has milk, beer, crackers, and apples.
-\end{itemize}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Category VIII explained
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Category VIII: Three at once}
-\label{sec:eegpsr-category8-explained}
 Command from this category are composed of \textit{three simple actions}, which the robot has to show it has recognized. The robot may repeat the understood command and ask for confirmation. If it can't recognize the command correctly, it can also ask the speaker to repeat the complete command.
 
 Tasks from this category are much alike the ones in GPSR (see \refsec{chap:gpsr-appendix-cat1} and \refsec{chap:gpsr-appendix-cat2}), requiring to master basic skills. Since commands must be accomplished as quick as possible, in this category speed is the key.
@@ -279,94 +47,158 @@ Tasks from this category are much alike the ones in GPSR (see \refsec{chap:gpsr-
 \end{itemize}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Category II explained
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Category II: People}
+\label{sec:eegpsr-category2-explained}
+Tasks from this category require memorizing a person's features, describing unknown people, recognize people from description, and find people from the distance; as well as following or guiding a person in crowded environments or through narrow spaces. The navigation may take place either inside or outside the arena.
 
-\section{Scoring}
-The EEGPSR scoresheet is not straight-forward to understand, for there are too many possibilities to be listed and they would be hard to find. In consequence, this section explains how scoring is performed in EEGPSR by providing an example.
-
-It is important to remark that in EEGPSR, that points for each demonstrated ability be scored only once. Exception to this rule are Speech Recognition, Natural Language Understanding, and Error and Event Handling; key abilities that are core of this test. being often considered. The referees will often consider the best execution of a given demonstrated ability (e.g. object recognition) as long as the performance looks consistent and not simply a lucky strike.
-
-Another important remark is that referees can grant partial points for a demonstrated ability regarding the performance of the robot (e.g. precision, accuracy, speed, consistency) and the difficulty of the task. In the same way, referees can forfeit points if the task execution looks tweaked or over scripted, as well in those cases in which the robot is performing actions to harvest points or exploiting the rules instead of trying to efficiently solve the task.
-
-\subsection{Example round 1}
-Robot Rosie enters the arena and awaits for a command. Two hours before the test, team Jetsons requested the referee to give Rosie a command mixing Categories I and II, and V. The following (random) command is given:
-
+\subsubsection{Task examples}
 \begin{itemize}
-	\item[--] \textit{Bring some food to Elroy.}
+	\item Describing a person in certain specific location.
+	\item Delivering objects to a person that matches the given description.
+	\item Reporting number of people in a room matching given description.
+	\item Finding people performing certain activity.
+	\item Finding people whose face or body or partially occluded or not facing the robot.
+	\item Following a person inside an elevator.
+	\item Guiding a person to the toilet.
+	\item Going through a multitude while following or guiding a person without loosing them.
+	\item Avoiding people crossing or standing by while guiding or following.
+	\item Performing real time mapping and localization.
 \end{itemize}
 
-As Rosie has no idea which kind of food she should deliver to Elroy nor where he is, she asks for the missing information:
-
+\subsubsection{Command examples}
 \begin{itemize}
-	\item[--] \texttt{Where can I find Elroy?}
-	\item[--] \textit{Elroy is at the bed.}
-	\item[--] \texttt{Which kind of food should I give to him?}
-	\item[--] \textit{Some Space O's in a bowl.}
+	\item Offer a beer to all the adults in the living room.
+	\item Meet the person at the door. If their name is John guide him to the kitchen, ask him to leave otherwise.
+	\item Guide the person at the entrance to the kitchen.
+	\item Find John in the kitchen, he wearing black.
+	\begin{itemize}
+		\item[Kitchen:] Robot, follow me (goes outside to car).
+		\item[Car:] Please ask Jerry and Jimmy at the sofa to help carrying out the groceries.
+	\end{itemize}
+	\item Describe the person at the door to the woman in the Kitchen.
+	\item Take this coke to the girl [in the living room] wearing a red sweater.
+	\item Tell me how many standing people there are in the dining room.
+	\item Go to the living room and follow the waving person.
+	\item Tell me what John is doing (John is reading a book).
 \end{itemize}
 
-After answering Rosie's questions the referee scores 25 points to the Jetsons; fifteen for understanding the command at the very first attempt, and only ten for retrieving missing information even though the Robot asked two questions. This is because a robot can score only once per demonstrated ability and Rosie has proven it can request missing information. Rosie will score no more points for making questions.
-
-Continuing with the example; Rosie navigates then to the kitchen and starts looking for the \textit{bowl} and \textit{Space O's cereals}. Since Rosie is a nice maid, she places the bowl in a tray she just put on the table. However, the cereals are nowhere within sight or where they should be, so Rosie looks deeper for them and opens one of the doors of the cupboard, finding finally the Space O's. Rosie takes the box, drives back to the table and pours the cereals into the bowl, spilling some of them in the tray, and leaving the box on the table.
-
-In the meanwhile, the referee gave Rosie:
+\subsubsection{Meeting new people}
+Say the generated command is \textit{ask Joe to come here}, since the robot has no knowledge of who is Joe, it is expected to ask \quotes{\textit{how can I recognize Joe?}} Two answers are possible:
 \begin{itemize}
-	\item[30pts] For placing the tray on the table (2-handed manipulation).
-	\item[20pts] For manipulating the the bowl.
-	\item[20pts] For opening the cupboard's door.
-	\item[50pts] For finding the Space O's cereals (hidden object).
-	\item[ 5pts] For picking the Space O's cereals from the cupboard.
-	\item[ 5pts] For safely placing the Space O's cereals on the table.
-	\item[25pts] For pouring the Space O's cereals into the bowl but spilling.
+	\item \textbi{Meet Joe:} The person named \textit{Joe} will stand in front of the robot and follow robot's (not team's) instructions for training. The robot must announce when it has completed memorizing that person before proceeding to execute the command.
+	\item \textbi{Joe is the...} A description indicating how to recognize \textit{Joe} is given to the robot. Retrieved information must be confirmed.
 \end{itemize}
 
-Please note that no points are given for recognizing the tray or placing it on the table, as well as no bonus is given for placing the bowl on top of the tray as using the tray was not requested; however, the referee gives 20 points to Rosie for handling (pick and place) the bowl as its round shape makes it hard to manipulate. For pouring the cereals, Rosie could have achieved up to 50 points, but she spilled the content so only partial scoring is given. 
 
-Continuing with the example; Rosie announces that the bowl is harder than the tray for her to transport, so she will deliver the bowl using the tray. After successfully picking up the tray, Rosie heads towards Elroy's room, where she finds the boy who takes the bowl from the tray. After completing the command, Rosie goes back to the start point, and finishes the round. Yet she explains to the operator what she did, making emphasis in the fact that the Space O's were not on its place, but hidden.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Category III explained
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Category III: Objects}
+\label{sec:eegpsr-category3-explained}
+Tasks from this category require handling objects into small or narrow spaces, opening doors and drawers, describing unknown objects, recognize objects from description, identify occluded objects and from the distance. 
 
-In the meanwhile, the referee gave Rosie:
+\subsubsection{Task examples}
 \begin{itemize}
-	\item[30pts] For moving the tray (2-handed manipulation) as it was reasonable and required by the robot.
-	\item[30pts] For accomplishing a command involving 3 categories ($base + 2\times15$).
+	\item Setting up a table.
+	\item Cleaning up spots or spills.
+	\item Grasping objects from a box.
+	\item Placing objects into a microwave or fridge.
+	\item Transporting a tray.
+	\item Pouring cereal in a bowl.
+	\item Retrieving objects from a given description.
+	\item Counting and describing objects.
+	\item Finding objects from distance or inside drawers.
 \end{itemize}
 
-Since finding Elroy at the bed presents no difficulty at all, and it was the boy who took the bowl from the tray (i.e. no handover), no additional points were scored. Furthermore, no additional score is given for remembering changes in the environment since neither the robot was requested to provide any further explanation, nor a command requiring to use that information was given. \\
-
-\textbf{$1^{st}$ Round score:} 240 points.
-
-\subsection{Example round 2}
-The robot is waiting inside the arena for a command. Two hours before the test, team Jetsons requested the referee to give Rosie a command mixing Categories IV and VI, and VII. The following (random) command is given:
-
+\subsubsection{Command examples}
 \begin{itemize}
-	\item[--] \textit{Ask the white-haired person wearing a pink blouse in the dining room where is Elroy and deliver him the Space O's.}
+	\item Hand me a coke from the fridge (the coke is inside the fridge).
+	\item Bring me some flakes in a bowl.
+	\item Put this book into the drawer.
+	\item Bring me the biggest pill bottle from the kitchen counter.
+	\item Bring me the bookcase's right-most object.
+	\item Describe the objects on the drawer to me.
+	\item Tell me how many red apples are in the basket on the kitchen table.
+	\item Count the snacks in the shelf and tell me how many there are.
+	\item Set up the table and serve some toasts.
 \end{itemize}
 
-After confirming the command, Rosie heads towards the kitchen table and grasps from there the Space O's box she just poured in the past round. Then she goes to the dining room where George is having breakfast. The robot speaks out loud that there are no people wearing pink in the dining room and that she will try in the living room before asking where to search.
 
-The referee has scored Rosie as follows:
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Scenarios explained
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Scenarios explained}
+\label{sec:eegpsr-categories-explained}
+A different scenario applies to each randomly generated command in the category chosen by the team. The scenario is chosen by the referees in a semi-random fashion so all the robots try all three scenarios described below.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Scenario: incomplete information
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Incomplete commands}
+\label{sec:eegpsr-incomplete-command}
+The commands given do not include all the information necessary to accomplish the task. The actual commands are under-specified by, for example:
 \begin{itemize}
-	\item[15pts] For $1^{st}$ attempt command retrieval.
-	\item[20pts] For remembering the last location of the \textit{Space O's} (kitchen table).
-	\item[20pts] For detecting the target is not at the dining room and proposing an alternate, reasonable, working solution to the problem (search living room).
+	\item only giving the class of the object (\quotes{bring me a drink}) or location (\quotes{guide me to the table}), and not the actual object or location, or
+	\item not providing the location (or its class).
 \end{itemize}
 
-Going back to the example; Rosie arrives to the living room where Judy and Jane watch TV. Judy is a white-dyed teenager wearing pink, while Jane is a blond woman dressed in purple. Confused, Rosie approaches Jane and asks where to find Elroy:
+The robot can ask questions to retrieve the missing information about the task, but is not required to. In the questions the robot has to make clear what it has already understood, e.g., tell the operator that it has understood \textit{to bring a particular beverage can}, but not \textit{where the can is} located in the arena. The robot may also simply start searching.
+
+\subsubsection{Examples}
 \begin{itemize}
-	\item[Rosie:] \texttt{Where can I find Elroy?}
-	\item[Jane: ] \textit{Elroy is at school.}
-	\item[Rosie:] \texttt{I can't reach there. What should I do now?}
-	\item[Judy: ] \textit{Could you please give me the Space O's?}
-	\item[Rosie:] \texttt{Here you are.}
+	\item Go to the kitchen counter, take the drink, and bring it to me (unspecified which drink).
+	\item Find a person, guide them to the kitchen and follow them (unspecified where the person can be found).
+	\item Bring me some drink in a bowl (unspecified which drink).
+	\item Put the biggest pill bottle in kitchen counter on the table (unspecified table).
+	\item Offer them a beer (unspecified to who and where are they).
+	\item Guide Joe here (unspecified where is Joe and how to recognize him).
 \end{itemize}
 
-Finally, Rosie goes back with the operator and explains that it delivered the Space O's to the person upon request because Elroy was not at home, so it was impossible to deliver them. The round is over and the operator scores as follows:
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Scenario: erroneous and misleading information
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Erroneous and misleading commands}
+\label{sec:eegpsr-erroneous-command}
+The robot gets a command that contains erroneous information. The robot should be able to realize such an error while trying to carry out the task, and try to carry on an alternative solution. If the robot is unable to solve the problem, it must go back to the operator, and clearly state \textit{why} it wasn't able to accomplish the task.
+
+If on the contrary the robot was able to solve the task, it also must explain what went wrong and how it was solved.
+
+\subsubsection{Examples}
+Below some examples are presented. For each example command, one or more possible problems are depicted.
 \begin{itemize}
-	\item[ 0pts] For finding the described person, since Judy was described but the robot approached Jane.
-	\item[20pts] For realizing the action was impossible to be carried out.
-	\item[10pts] For fetching for command from Judy (action after event detection).
-	\item[20pts] For realizing it was in possession of the object and proceed to immediate deliver (use of environment information to accomplish command).
-	\item[20pts] Space O's natural handover.
-	\item[30pts] For accomplishing a command involving 3 categories ($base + 2\times15$).
+	\item Set up the table (and serve some choco flakes).
+	\begin{itemize}
+		\item The cuttlery is in another drawer in cupboard.
+		\item Choco-flakes box is empty, but there are normal flakes.
+	\end{itemize}
+
+	\item Bring to Ana at the coach the water from the cupboard.
+	\begin{itemize}
+		\item The water is on the dinner table.
+		\item Ana is lying on the bed.
+	\end{itemize}
+
+	\item Find James in the living room and guide him to the car.
+	\begin{itemize}
+		\item James is in the bedroom.
+		\item James is lying unconscious in the living room's floor.
+	\end{itemize}
 \end{itemize}
-
-Please notice that, although it may seem otherwise, the rule of not scoring twice for the same ability is preserved. First, the robot uses its memory to recall where the cereals were left; while latter it uses environmental information (i.e. the fact that is holding the Space O's) to accomplish the command. The same applies to event and error handling. The robot first scores for controlling erroneous information that can be controlled (the people was not where it was supposed to) and scores for controlling a situation for which there is no reasonable solution, also able to react to a command from a third source.
-
-\textbf{$2^{nd}$ Round score:} 165 points. \textbf{Total score:} 395 points.
