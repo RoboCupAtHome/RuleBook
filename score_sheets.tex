@@ -154,6 +154,14 @@
 
 %%% STAGE 2 TESTS GO HERE %%%
 
+% Dishwasher master
+\ifNotSSPL{
+  \renewcommand{\continueAvailable}{false}
+  \renewcommand{\currentTest}{Filling the Dishwasher}
+  \begin{scoresheet}
+  \input{scoresheets/DishwasherMaster.tex}
+  \end{scoresheet}
+}
 
 % EEGPSR
 \renewcommand{\currentTest}{EEGPSR}

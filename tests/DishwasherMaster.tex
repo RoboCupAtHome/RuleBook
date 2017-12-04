@@ -1,0 +1,85 @@
+\section{Sp{\"u}lmaschinemeister [DSPL \& OPL]}
+The robot helps by placing all dirty dishes inside the dishwasher.
+
+\subsection{Goal}
+The robot has to correctly identify and manipulate cutlery, kitchenware, and tableware, taking them from the sink and safely placing them in the dishwasher rack, as well as leave the dishwasher ready to be set in motion.
+
+\subsection{Focus}
+This test focuses on object recognition and manipulation, paying particular attention in orientating objects for an adequate placement in narrow spaces.
+
+\subsection{Setup}
+\begin{enumerate}
+	\item \textbf{Dishwasher:} The dishwasher has its door closed and some utensils already inside.
+	\item \textbf{Location:} This test takes place in the kitchen of the arena.
+	\item \textbf{Sink:} The sink has 12 utensils (See \ref{rule:tableware_kitchenware}) in it. There are at least three dishes (or bowls) three mugs (or glasses, or cups), two cooking pan (or pot), and two spoons (or any other cutlery).
+	\item \textbf{Start position:} The robot will start somewhere between the \textit{sink} and the \textit{dishwasher}.
+\end{enumerate}
+
+
+\subsection{Task}
+The robot must execute the following tasks in any order as long as there are utensils in the sink.
+\begin{itemize}
+	\item \textbf{Place cutlery:} The robot takes any cutlery from the sink and safely places it in the cutlery basket of the dishwasher.
+
+	\item \textbf{Place cooking pans:} The robot takes any cooking pan (or pot, or utensil) from the sink and safely places it in the the dishwasher.
+
+	\item \textbf{Place dishes and bowls:} The robot takes any dish (or bowl) from the sink and safely places it in the corresponding rack in the dishwasher.
+
+	\item \textbf{Place glasses, mugs, and cups:} The robot takes any glass (or cup, or mug) from the sink and safely places it in the corresponding rack in the dishwasher.
+
+	\item \textbf{Place soap tab:} The robot takes a dishwasher soap tab from the bag in a nearby counter and places it inside the corresponding compartment in the dishwasher. The robot may ask for help to open and close the tab compartment.
+\end{itemize}
+
+Additionally, the robot may execute the following tasks to score extra points.
+\begin{itemize}
+	\item \textbf{Opening the dishwasher:} When requested by the team, the robot can open the dishwasher door before start to placing objects inside.
+
+	\item \textbf{Opening the dishwasher:} The robot must open the tab compartment door before placing the dishwasher soap tab.
+
+	\item \textbf{Closing the dishwasher:} The robot must close the tab compartment door immediately after placing the dishwasher soap tab.
+
+	\item \textbf{Closing the dishwasher:} When requested by the team, the robot can close the dishwasher door before starting the washing cycle.
+\end{itemize}
+
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}
+	\item \textbf{Bypassing Manipulation:} Bypassing object manipulation via the CONTINUE rule (Section \refsec{rule:mancontinue}) is not allowed during this test.
+	\item \textbf{No setup:} There is no setup time.
+	\item \textbf{Startup:} The robot can be started with a simple voice command or via a start button (Section \refsec{rule:start_signal}). 
+	\item \textbf{Single try:} The robot must be able to start from the first attempt. There is no restart for this test. If the robot is unable to start it must be removed immediately.
+	\item \textbf{Collisions:} Slightly touching the the dishwasher is tolerated (but not advised). Crushing objects or any other form of a major collision terminates the test immediately (See section \refsec{rule:safetyfirst}).
+	\item \textbf{Safely placing:} All objects must be allocated in a smart-way, maximizing the number of dishes to fit in, but without obstructing the functioning of the moving parts of the dishwasher (i.e., a human-like behavior is expected). For example, dishes should be placed vertically in the bottom tray, with pans lying horizontally, and glasses and mugs in the upper rack. It is understood that all liquid containers must be placed upside down.
+\end{enumerate}
+
+\subsection{Data recording}
+Please record the following data (See \refsec{rule:datarecording}):
+\begin{itemize}
+	\item Images
+	\item Plans
+\end{itemize}
+
+\subsection{OC instructions}
+
+\textbf{2 hours before the test}
+\begin{itemize}
+    \item Announce the approximated startup location for robots.
+    \item Announce the location of the sink.
+    \item Announce the location of the counter with the bag of dishwasher soap tabs.
+\end{itemize}
+
+\subsection{Referee instructions}
+The referee needs to
+\begin{itemize}
+	\item Place the objects in the sink and a few of the same class on the dishwasher. 
+	\item Place help the robot by opening and closing the dishwasher door and soap compartment as required. 
+\end{itemize}
+
+
+\newpage
+\subsection{Score sheet}
+\input{scoresheets/DishwasherMaster.tex}
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:
