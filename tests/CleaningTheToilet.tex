@@ -1,0 +1,89 @@
+\section{Filling the Dishwasher [DSPL \& OPL]}
+The robot is able to remove dirt from a toilet using a brush or a sponge.
+
+\subsection{Goal}
+The robot has to correctly identify a dark spot over a white surface close to water and rub it with an appropriate tool until is removed.
+
+\subsection{Focus}
+This test focuses on spot recognition (substances, texture and color) as well as manipulation in narrow spaces using specialized tools.
+
+\subsection{Setup}
+\begin{enumerate}
+
+	\item \textbf{Location:} This test takes place in the bathroom. 
+	\item \textbf{Start position:} The robot starts outside the bathroom next to the door.
+	\item \textbf{Toilet:} The toilet is partially full with water. Close to the water surface there is an artificial spot (chocolate syrup, peanut butter, jam, etc). There is no water in the deposit.
+	\item \textbf{Tool:} A standard toilet-cleaning brush or sponge is located next to the toilet.
+\end{enumerate}
+
+
+\subsection{Task}
+The robot must execute the following tasks in any logical order, aiming to remove the spot.
+\begin{itemize}
+	\item \textbf{Enter the bathroom:} The robot locates itself in the apartment and navigates inside the bathroom.
+	
+	\item \textbf{Identify the spot:} The robot inspects the toilet and finds the spot, pointing at it, and stating that requires to be cleaned.
+	
+	\item \textbf{Grasp the tool:} The robot locates and grasps the cleaning tool, lifting is from its base and placing the cleaner inside the toilet.
+	
+	\item \textbf{Clean the spot:} The robot makes contact with the spot and rubs it until it has disappeared.
+
+	\item \textbf{Flush:} After cleaning the spot, the robot flushes the toilet, rinsing the tool.
+
+	\item \textbf{Place the tool:} The robot returns the cleaning tool to its base.
+
+	\item \textbf{Leave the bathroom:} After completing the cleaning, the robot leaves bathroom.
+\end{itemize}
+
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}
+	\item \textbf{Bypassing Manipulation:} Bypassing object manipulation via the CONTINUE rule (Section \refsec{rule:mancontinue}) is not allowed during this test.
+	\item \textbf{No setup:} There is no setup time.
+	\item \textbf{Custom tool:} Teams are allowed to use their own customized cleaning tools for this task.
+	\item \textbf{Tool handover:} If the robot is unable to find and grasp the tool, it may request to the referee to hand-over it.
+	\item \textbf{Startup:} The robot can be started with a simple voice command or via a start button (Section \refsec{rule:start_signal}). 
+	\item \textbf{Single try:} The robot must be able to start from the first attempt. There is no restart for this test. If the robot is unable to start it must be removed immediately.
+	\item \textbf{Collisions:} Slightly touching the the toilet is tolerated (but not advised). Crushing the cleaning tool or any other form of a major collision terminates the test immediately (See section \refsec{rule:safetyfirst}). The same applies for spilling water outside.
+\end{enumerate}
+
+\subsection{Data recording}
+Please record the following data (See \refsec{rule:datarecording}):
+\begin{itemize}
+	\item Images
+	\item Plans
+\end{itemize}
+
+\subsection{OC instructions}
+
+\textbf{2 hours before the test}
+\begin{itemize}
+	\item Announce the approximated startup location for robots.
+	\item Fill the toilet with water to an average level.
+\end{itemize}
+
+\textbf{During the test}
+\begin{itemize}
+	\item Announce the approximated startup location for robots.
+	\item Clean the toilet and cleaning tool when necessary.
+\end{itemize}
+\textbf{After the test}
+\begin{itemize}
+	\item Drain all the water from the toilet.
+\end{itemize}
+
+\subsection{Referee instructions}
+The referee needs to
+\begin{itemize}
+	\item Place the spots in the toilet.
+	\item Hand the tool to the robot when requested by it.
+\end{itemize}
+
+
+\newpage
+\subsection{Score sheet}
+\input{scoresheets/CleaningTheToilet.tex}
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:
