@@ -12,7 +12,6 @@ This test focuses on object recognition and manipulation, paying particular atte
 	\item \textbf{Dishwasher:} The dishwasher has its door closed and some utensils already inside.
 	\item \textbf{Location:} This test takes place in the kitchen of the arena.
 	\item \textbf{Sink:} The sink has 12 utensils (See \ref{rule:tableware_kitchenware}) in it. There are at least three dishes (or bowls) three mugs (or glasses, or cups), two cooking pan (or pot), and two spoons (or any other cutlery).
-	\item \textbf{Start position:} The robot will start somewhere between the \textit{sink} and the \textit{dishwasher}.
 \end{enumerate}
 
 
@@ -45,10 +44,11 @@ Additionally, the robot may execute the following tasks to score extra points.
 \subsection{Additional rules and remarks}
 \begin{enumerate}
 	\item \textbf{Bypassing Manipulation:} Bypassing object manipulation via the CONTINUE rule (Section \refsec{rule:mancontinue}) is not allowed during this test.
-	\item \textbf{No setup:} There is no setup time.
-	\item \textbf{Startup:} The robot can be started with a simple voice command or via a start button (Section \refsec{rule:start_signal}). 
-	\item \textbf{Single try:} The robot must be able to start from the first attempt. There is no restart for this test. If the robot is unable to start it must be removed immediately.
+
+	\item \textbf{Startup:} The robot starts normally (outside the arena, waiting for the door to be open). 
+
 	\item \textbf{Collisions:} Slightly touching the the dishwasher is tolerated (but not advised). Crushing objects or any other form of a major collision terminates the test immediately (See section \refsec{rule:safetyfirst}).
+
 	\item \textbf{Safely placing:} All objects must be allocated in a smart-way, maximizing the number of dishes to fit in, but without obstructing the functioning of the moving parts of the dishwasher (i.e., a human-like behavior is expected). For example, dishes should be placed vertically in the bottom tray, with pans lying horizontally, and glasses and mugs in the upper rack. It is understood that all liquid containers must be placed upside down.
 \end{enumerate}
 
