@@ -1,0 +1,75 @@
+\section{Replicating a Configuration of Objects}
+
+The robot has to understand relationships between objects, instruct a human to replicate that configuration of objects, and fix errors that the human makes.
+
+\subsection{Focus}
+
+This test focuses on object detection, recognition, and description, as well as goal-oriented human-robot collaboration.
+
+\subsection{Setup}
+\begin{itemize}
+	\item \textbf{Robot Starting Room}: any room.
+	\item \textbf{Human Starting Room}: a room adjacent to Robot Starting Room.
+	\item \textbf{Human Collaborator}: The human collaborator is in the Human Starting Room.
+	\item \textbf{Robot Objects} 10 objects are arranged in a space in front of the robot, potentially on top of a table or other furniture.
+	\item \textbf{Human Objects:} In this room there are the identical objects as in the other room, but arranged differently.
+\end{itemize}
+
+\subsection{Task Part 1}
+
+\begin{enumerate}
+
+	\item \textbf{Analyzing:} Robot views the object configuration in front of it.
+
+	\item \textbf{Description:} Robot describes the configuration to the human collaborator.  The robot can use relational languae or any other means of description.
+
+	For example, "Place the green can on top of the yellow plate that is in the center of the table."
+
+	During this time, the human collaborator listens to the instructions and arranges their objects appropriately.
+
+\end{enumerate}
+
+\subsection{Task Part 2}
+\begin{enumerate}
+
+\item \textbf{Artificial Error:} A tournament official will go to the human's configuration and introduce at least one additional error that the the robot will have to correct.
+
+\item \textbf{Robot enters human room:}  The tournament official goes to the robot and asks it to follow it.  The official then leads it to the human room, and tells it to correct the human's arrangement.
+
+\item \textbf{Analyzing}: The robot inspects the situation.
+
+\item \textbf{Assessment and additional instructions}: The robot gives further instructions to the human to fix the scene, such as "There should not be a coke bottle in this scene" or "The water bottle should be on the red plate, not the yellow plate.
+
+\item \textbf{Declaration of correctness}: When the robot determines that the configuration is correct, it declares so.
+
+\end{enumerate}
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}
+	\item \textbf{Objects:} Objects can be arena objects or furniture.  Objects can differ in size, color, and shape.
+
+	\item \textbf{Human Collaborator:} while the robot is the in the Robot Starting Room, the Human Collaborator cannot see the robot or the robot's objects, but can hear what the robot is saying.  This may require a sound amplification device or other means.
+
+	\item \textbf{Timing:} Five minutes should be given for Part 1 and 10 minutes for Part 2.
+
+\end{enumerate}
+
+\subsection{Referee instructions}
+
+The referees need to
+\begin{itemize}
+	\item arrange the "configured" and "unconfigured" objects in adjacent rooms
+	\item ensure robot and human starting locations satisfy constraint of non-visibility
+	\item ensure robot and human starting locations satisfy constraint of human being able to hear robot (can use additional equipment if necessary)
+\end{itemize}
+
+\subsection{OC instructions}
+
+2h before test:
+\begin{itemize}
+	\item Specify and announce the rooms where the test takes place.
+\end{itemize}
+
+\newpage
+\subsection{Score sheet}
+\input{scoresheets/ObjectConfiguration.tex}
