@@ -12,6 +12,7 @@ This test focuses on object recognition and manipulation, paying particular atte
 	\item \textbf{Dishwasher:} The dishwasher has the door open and its bottom rack half way outside, ready to be filled in.
 	\item \textbf{Location:} This test takes place in the kitchen of the arena. 
 	\item \textbf{Sink:} The sink has 10 utensils (See \ref{rule:tableware_kitchenware}) in it. There are at least two dishes (or bowls) two mugs (or glasses, or cups), one cooking pan (or pot), and one spoon (or any other cutlery).
+	\item \textbf{Stove:} The stove has 2 cooking pans (or pots) in it (See \ref{rule:tableware_kitchenware}).
 	\item \textbf{Start position:} The robot will start somewhere between the \textit{sink} and the \textit{dishwasher}.
 \end{enumerate}
 
@@ -20,7 +21,7 @@ This test focuses on object recognition and manipulation, paying particular atte
 The robot must execute the following tasks in any order as long as there are utensils in the sink.
 \begin{itemize}
 	\item \textbf{Place cutlery:} The robot takes any cutlery from the sink and safely places it in the cutlery basket of the dishwasher.
-	\item \textbf{Place cooking pans:} The robot takes any cooking pan (or pot, or utensil) from the sink and safely places it in the the dishwasher.
+	\item \textbf{Place cooking pans:} The robot takes any cooking pan (or pot, or utensil) from the stove and safely places it in the the dishwasher.
 	\item \textbf{Place dishes and bowls:} The robot takes any dish (or bowl) from the sink and safely places it in the corresponding rack in the dishwasher.
 	\item \textbf{Place glasses, mugs, and cups:} The robot takes any glass (or cup, or mug) from the sink and safely places it in the corresponding rack in the dishwasher.
 \end{itemize}
@@ -33,6 +34,8 @@ The robot must execute the following tasks in any order as long as there are ute
 	\item \textbf{Startup:} The robot can be started with a simple voice command or via a start button (Section \refsec{rule:start_signal}). 
 	\item \textbf{Single try:} The robot must be able to start from the first attempt. There is no restart for this test. If the robot is unable to start it must be removed immediately.
 	\item \textbf{Collisions:} Slightly touching the the dishwasher is tolerated (but not advised). Crushing objects or any other form of a major collision terminates the test immediately (See section \refsec{rule:safetyfirst}).
+	\item \textbf{Maximum distances:} The maximum distance between the dishwasher and the sink, as well as between the dishwasher and the stove will be 1.5 meters at most. There is no restriction regarding the distance between the sink and the stove.
+	\item \textbf{Sink and Stove:} Although it is desirable to use the arena's sink and stove, the TC may assign any table for that function.
 	\item \textbf{Safely placing:} All objects must be allocated in a smart-way, maximizing the number of dishes to fit in, but without obstructing the functioning of the moving parts of the dishwasher (i.e., a human-like behavior is expected). For example, dishes should be placed vertically in the bottom tray, with pans lying horizontally, and glasses and mugs in the upper rack. It is understood that all liquid containers must be placed upside down.
 \end{enumerate}
 
@@ -48,7 +51,7 @@ Please record the following data (See \refsec{rule:datarecording}):
 \textbf{2 hours before the test}
 \begin{itemize}
     \item Announce the approximated startup location for robots.
-    \item Announce the location of the sink.
+    \item Announce the location of the sink and stove.
 \end{itemize}
 
 \subsection{Referee instructions}
