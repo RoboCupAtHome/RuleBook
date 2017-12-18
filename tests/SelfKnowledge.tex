@@ -1,0 +1,58 @@
+\section{Pepper Self Knowledge and Human Understandable Communication}
+
+This is a SSPL-only task.
+
+Pepper has to understand the meaning of actions it is being asked to perform, and describe it in a human-understandable fashion.
+
+\subsection{Focus}
+
+This test focuses on logging, high-level understanding, and human-understandable communication.
+
+\subsection{Setup}
+\begin{itemize}
+	\item \textbf{Misc}: If any setup is required for specific tasks, the tournament officials may set such up.  Nothing is specifically required.
+\end{itemize}
+
+\subsection{Pepper Executes Commands}
+
+\begin{enumerate}
+
+	\item \textbf{Setup:} The robot is given a "Start" command.  (Teams may specify the appropriate command to the tournament official who will say it.)  At this point, the robot will start tracking what it is doing, and take note of its own actions.
+
+	\item \textbf{Commands:} Tournament officials will have prepared a series of low-level commands that are not known by teams beforehand.  These command could include standard verbal commands, or anything in the standard naoqi API, that will be fed to Pepper as a script.
+	\item \textbf{Execution:} Pepper carries out the commands.
+	\item \textbf{Done Tracking:} Pepper is told to stop tracking its actions.
+
+\end{enumerate}
+
+\subsection{Pepper Describes What it Has Done}
+Pepper is asked to describe what it has done in the previous tracked period, in a high-level, human understandable way.  For example, if a command was issued to rotate Pepper's shoulder a certain number of degrees, Pepper might say, "I raised my arm," or "I wave hello in greeting."  If such a higher-level meaning doesn't make sense in context, however, points may be deducted.
+
+Timing starts during this section, and not during the tracking section itself.
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}
+	\item \textbf{Commands:} Officials will divide the commands into 40 "units" of importance.  A unit should correspond to a somewhat consistent degree of expected description.  For example, a complex command (such as some of the posture commands) might be represented as 4 units, and multiple small commands (a series of commands to move various joints in specific ways to produce an overall effect) could collectively add up to one unit.   These 40 units will be used to normalize the score.
+
+	\item \textbf{Timing:} Five minutes should be given for "Pepper Describes What it Has Done".  Pepper executing commands is not timed, since this is dependent on the commands issued and not on teams' implementations.
+
+\end{enumerate}
+
+\subsection{Referee instructions}
+
+The referees need to
+\begin{itemize}
+	\item ensure the robot is in an appropriate starting location
+	\item ensure any required items are present (there may be none)
+    \item ensure the script or commands are ready to be run
+\end{itemize}
+
+\subsection{OC instructions}
+
+\begin{itemize}
+	\item Before the tournament, come up with lists of commands to run on each robot.
+\end{itemize}
+
+\newpage
+\subsection{Score sheet}
+\input{scoresheets/SelfKnowledge.tex}
