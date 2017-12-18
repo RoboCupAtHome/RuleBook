@@ -1,0 +1,73 @@
+\section{Balloon Sorting}
+
+The robot has to understand it's environment with regards to the distribution of balloon objects across those rooms, understand human instructions to modify that distribution (bring balloons from one to the other), and manipulate the balloons accordingly.
+
+\subsection{Focus}
+
+This test focuses on object detection, environemnt awareness, environment and object memory, human-robot verbal interaction, and manipulation.
+
+\subsection{Setup}
+\begin{itemize}
+	\item \textbf{Room 1}: Any labeled room.
+	\item \textbf{Room 2}: Any labeled room adjacent to Room 1.
+	\item \textbf {Ceiling:} A an artificial ceiling is constructed in (at least) room 1 and room 2 at a maximum height of 8 feet to constrain balloons.  This can be a wire mesh so that it can still be seen through.
+	\item \textbf{Balloons:} There are 10 balloons that start in Room 1.  Balloons are yellow, red, green, and blue, in any number of each color.  Balloons are constrained, height wise, by the artificicial ceiling.  Each balloon has a string with a loop on the bottom that can serve as a handle for grabbing.
+	\item \textbf{Human Operator}: The human operator that will be giving instructions.  A tournament official.
+\end{itemize}
+
+\subsection{Environment Exploration and Initial Instruction}
+
+\begin{enumerate}
+
+	\item \textbf{Analyzing:} Robot takes note of the rooms and determines what the balloons are in each room
+
+	\item \textbf{Handle Operator Request:} The operator gives the robot instructions regarding bringing balloons from room 1 to room 2.  For example, "please bring the red balloons to the living room" or "please bring 3 balloons to the living room."  The robot should fulfill these instructions
+	 % self narration is good
+
+\end{enumerate}
+
+\subsection{Additional Operator Instructions}
+
+After a minute, the operator will give further instructions.
+
+Instructions may conflict with earlier instructions.  In this case, the robot is expected to satisfy the most recent instruction (as well as previous non-conflicting instructions).
+
+The Operator will issue no more than 5 instructions total over the course of the task.
+
+Instructions could take the following forms:
+\begin{enumerate}
+	\item piecemeal: "Please bring 3 red balloons.  Now, please bring 2 blue balloons."
+	\item expansive: "Please bring all balloons to the living room."
+	\item explicitly contradicting previous command: "I want 4 red balloons, not 3"
+	\item implicitly contradicting previous command: "I want there to be 4 balloons in the living room."
+	\item and they can involve removing balloons from Room 2 as well: "Remove the yellow balloons from the living room!"
+\end{enumerate}
+
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}
+	\item \textbf{Balloons in SSPL:} In the SSPL league, the loop is guaranteed to be approximately at the height of Pepper's head, and constructed so that it is possible for Pepper to grab it.
+
+	\item \textbf{Timing:} The robot will have 10 minutes to complete the task.
+
+\end{enumerate}
+
+\subsection{Referee instructions}
+
+The referees need to
+\begin{itemize}
+	\item setup balloons in Room 1
+	\item ensure that ceilings are situated appropriately
+	\item ensure that all balloon handles are manipulable (in SSPL, by Pepper specifically)
+\end{itemize}
+
+\subsection{OC instructions}
+
+2h before test:
+\begin{itemize}
+	\item Specify and announce the rooms where the test takes place.
+\end{itemize}
+
+\newpage
+\subsection{Score sheet}
+\input{scoresheets/BalloonSorting.tex}
