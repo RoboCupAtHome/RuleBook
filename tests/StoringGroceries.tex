@@ -1,5 +1,5 @@
 \section{Storing Groceries [DSPL \& OPL]}
-The robot helps by storing newly bought groceries in the cupboard next to the objects of the same kind that are already there; for instance by placing fresh apples where the other apples are.
+The robot helps by storing newly bought groceries in the cupboard next to the objects of the same kind that are already there; for instance by placing fresh apples near other apples.
 
 \subsection{Goal}
 The robot has to correctly identify and manipulate objects at different heights, grouping them by category and likelihood.
@@ -12,14 +12,13 @@ This test focuses on the detection and recognition of objects and their features
 	\begin{enumerate}
 		\item \textbf{Location:} One of the bookcases or cupboards in the apartment is used for this test, one where a table is near or can be put. 
 		\item \textbf{Start position:} The robot will start between the cupboard and the table in a random orientation, but facing towards the Cupboard.
-		. 
 		\item \textbf{Cupboard:} The cupboard has 5 shelves between 0.30m and 1.80m from the ground and contains several objects (See \ref{rule:scenario_objects}).
 		\begin{itemize}
 		 	\item \textbf{Door:} The cupboard has a single door, which is closed initially.
-		 	This door encloses some of the objects, covering up to one half of the cupboard (e.g. the left or bottom half), as indicated by the hatched area in the image.
+		 	This door encloses some of the objects, covering up to one half of the cupboard (e.g. the left or bottom half), as indicated by the hatched area in Figure \ref{fig:storing_groceries_shelf}.
 		\end{itemize} 
-		\item \textbf{Table:} A table near to the Cupboard has 10 objects (See \ref{rule:scenario_objects}). If not all fit the on the table, they will be added during the test. The maximum distance between the Table and the Cupboard is 2m.
-		\item \textbf{Objects:} Objects on the Cupboard and on the Table can be known, alike, or unknown. Also, there will be more than one object in each shelf. 
+		\item \textbf{Table:} A table near to the Cupboard has 10 objects (See \ref{rule:scenario_objects}). If not all objects fit on the table, they will be added during the test. The maximum distance between the Table and the Cupboard is 2m.
+		\item \textbf{Objects:} Objects in the Cupboard and on the Table can be known, alike, or unknown. Also, there will be more than one object on each shelf. 
 	\end{enumerate}
 \end{minipage}\hfill
 \begin{minipage}{0.25\textwidth}
@@ -38,7 +37,7 @@ This test focuses on the detection and recognition of objects and their features
 \begin{enumerate}
 	\item \textbf{Opening door:} The robot starts opening the Cupboard's door. If the robot is unable to open the door, it may ask the Referee to do it instead.
 	\item \textbf{Cupboard inspection:} The robot inspects the cupboard locating and categorizing existing groceries.
-	\item \textbf{Finding the table:} The turns around and locates the table.  
+	\item \textbf{Finding the table:} The robot turns around and locates the table.  
 	\item \textbf{Table inspection:} The robot approaches the table starts analyzing the newly bought groceries (i.e. objects).
 	\item \textbf{Moving objects:} The robot chooses which object to move first from the Table to the Cupboard, allocating similar objects all together.
 	\begin{itemize}
@@ -57,7 +56,7 @@ This test focuses on the detection and recognition of objects and their features
 	\item \textbf{No setup:} There is no setup time.
 	\item \textbf{Startup:} The robot can be started with a simple voice command or via a start button (Section \refsec{rule:start_signal}). 
 	\item \textbf{Single try:} The robot must be able to start from the first attempt. There is no restart for this test. If the robot is unable to start it must be removed immediately.
-	\item \textbf{Collisions:} Slightly touching the the cupboard is tolerated (but not advised). Crushing objects or any other form of a major collision terminates the test immediately (Section \refsec{rule:safetyfirst}).
+	\item \textbf{Collisions:} Slightly touching the cupboard is tolerated (but not advised). Crushing objects or any other form of a major collision terminates the test immediately (Section \refsec{rule:safetyfirst}).
 	\item \textbf{Recognition report:} Robots must create a PDF report file including
 		\begin{enumerate}
 			\item The name of the team.
