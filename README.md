@@ -38,6 +38,23 @@ The RoboCup @Home Organizing Committee is always looking for volunteers to assis
 
 Contributions and improvements to the rulebook are always welcome in the form of pull requests.
 
+### Recorded data
+Data is recorded from the robots during the competition. It is available through the following links:
+
+**European Open 2016**
+
+- [All challenges](https://mega.nz/#!FhMnAYQS!P22mTNvfDjU2GHf02G3omgmS715dQSURFTLuUfkdxic)
+
+**Leipzig 2016**
+- [Finals](https://mega.nz/#!Y4czyLST!2TotbyL53DA2iIG6oZ9QkcEf94ktpm2_btJltj_J2dE)
+- [Following & Guding](https://mega.nz/#!dwU1XRQB!czz2BtGLM5-ewaviBdtUIl62kECn3dJXljk50KB_7t4)
+- [GPSR](https://mega.nz/#!UlFk3ZCQ!ooe0V2yksQ-3X35uIk8d-on8Plzh-CGbwDPoyvVa43Q)
+- [Manipulation & Object Recognition](https://mega.nz/#!5k1FxAzY!DgtpcSjdOQmfQUVRm5iYoOuZ8r7h7G2GXMtjORsNjME)
+- [Navigation](https://mega.nz/#!As9XiIzD!wYAWcquTKl6jBf2IifpnliRNQ34Ddhwe0X-pyEhebeE)
+- [Open Challenge](https://mega.nz/#!R4EVwKKQ!2RgqoO2Fm8ba87yFcZKgIpI6mwHcaAvyo7_FR9_KNfE)
+- [Restaurant](https://mega.nz/#!lpFjQTAS!wOO0ieAedr-JDrh166dOOqilMWBGsA3_Ij5t4an1mdI)
+- [Speech Recognition](https://mega.nz/#!ts02iYRQ!L3McBFzodJG0UTmauCj2crSapmAr8GWwtB4FLGzQlEs)
+
 ### More information
 - @Home Website: [http://robocupathome.org/](http://robocupathome.org/)
 - RoboCup 2018 Website [http://robocup2018.org/](http://robocup2018.org/)
