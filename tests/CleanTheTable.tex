@@ -1,71 +1,52 @@
-\section{Set a table and clean it up [DSPL \& OPL]}
-The robot has to set the table for a meal, and clean it up afterwards.
+\section{Clean up the table [DSPL \& OPL]}
+The robot has to remove all dishes from a table (presumably after dinner), and clean it up.
 
 \subsection{Focus}
 This test focuses on HRI, semantic mapping, object perception and manipulation.
 
 \subsection{Setup}
 \begin{itemize}
-	\item \textbf{Location:} This test takes place inside the apartment, in a room with a table of the kind people sit to have a meal (e.g. kitchen's table).
-	\item \textbf{Cutlery:} Cutlery and other appliances like carpets and napkins are stored inside a closed cupboard or similar type of furniture (e.g. inside a drawer).
+	\item \textbf{Location:} This test takes place in the arena. A dining table is located close to the sink.
 	\item \textbf{Food:} Food and cleaning utensils are placed close to the table (e.g. in a rack or locker).
-	\item \textbf{Cupboard:} The cupboard used to store the cutlery is located close to the table.
-	\item \textbf{Table:} The table may have some objects on top of it, like a carpet or a plate.
+	\item \textbf{Sink:} The sink (or dishwasher) is near the table, preferably located in the same room.
+	\item \textbf{Table setting:} The table has several objects disposed in a typical setting for a meal for one person. These objects include tableware (e.g. place mats, napkins, dishes, glasses), silverware (e.g. forks, spoons, knives), and food leftovers.
+	\item \textbf{Spot:} There is a spot on the table next to the table setting.
 \end{itemize}
 
 \subsection{Task}
-\label{sattu:task}
-%\begin{figure}[tbp]
-\begin{figure}[h!]
-	\centering
-	\subfloat[Typical arena]{\label{fig:sattu_table1}\includegraphics[height=46mm]{images/tablesetting1.jpg}} ~
-	\subfloat[Typical objects]{\label{fig:sattu_table2}\includegraphics[height=46mm]{images/tablesetting2.jpg}}
-	\caption{Table settings: (a) occidental, and (b) Japanese.}
-	\label{fig:arena}
-\end{figure}
-
-\begin{itemize}
-	\item[Part I:] Setting up the table
 	\begin{enumerate}
-		\item \textbf{Fetching command:} The operator requests the robot to set up the table. Optionally, the robot may ask the operator \textit{what has to be served}. The operator replies with the randomly selected (and undisclosed) option. \label{sattu:option}
-
-		\item \textbf{Setting the table:} The robot must safely and neatly place (i.e. without colliding with any existing object) all missing objects required for the meal. For example, carpet, fork, knife, spoon, and dish.
-
-		% A remark is required here. If the robot will serve cereals, only carpet, bowl, and spoon would be necessary; while toast require dish, fork, and knife. How the table is set must depend on the requested meal (this will also save time).
-		\item \textbf{Serving the meal:} If the robot asked the operator what to serve, it must proceed to place the order requested by the operator (e.g. pour cereal and milk in the bowl, or placing some slices of bread in the dish).
-
-		% Yet another waste of time. First let's make sure robots can serve a proper breakfast, then we poke them.
-		\item \textbf{Correcting object positions:} The operator will change the position of two objects on the table at any time before the placement of the last one. The robot must realize this change and rearrange the table to look neat.
+		\item \textbf{Entering the arena:} The robot enters the arena and navigates to the designated location.
+		\item \textbf{Fetching command:} The operator requests the robot to clean up the table.
+		\item \textbf{Clean the table:} The robot takes all the tableware and cutlery to the sink or dishwasher, as instructed (team's choice). Food leftovers are either disposed in the trash bin or taken to their predefined location (e.g. fridge).
+		\item \textbf{Scrub spots and spills:} The robot detects spots and spills on the table and clean them up using the cleaning cloth or sponge it has retrieved previously.
+		\item \textbf{Leave the arena:} The robot leaves the arena once it has finished cleaning.
 	\end{enumerate}
-
-	\item[Part II:] Cleaning up the table
-	\begin{enumerate}
-		\item \textbf{Fetching command:} After the meal, the operator requests the robot to clean up the table.
-
-		% Actually this does not make any sense! Dirty dishes should be taken to the sink or dishwasher! The robot can be requested to distinguish between dirty and clean in a couple of years, maybe.
-		\item \textbf{Clean the table:} After being instructed, the robot returns the objects to their original location, \textit{i.e.,} where they were found in the first place.
-		% \item \textbf{Clean the table:} The robot must take all the dishes to the sink or dishwasher, as it was instructed.
-
-		\item \textbf{Scrub spots and spills:} The robot must detect spots and spills on the table and clean them up using a cleaning cloth.
-	\end{enumerate}
-\end{itemize}
 
 \subsection{Additional rules and remarks}
-\label{sattu:add}
 \begin{enumerate}
-	\item \textbf{Startup:} The robot starts with a single voice command or via a start button (Section \refsec{rule:start_signal}). If the robot is unable to start it must be removed immediately.
-
 	\item \textbf{Collisions:} Slightly touching the table is allowed, as well as slightly pushing some objects. However, driving over the objects or any other form of a major collision is not allowed, and the referees directly stop the robot (Section \refsec{rule:safetyfirst}).
 
-	\item \textbf{Custom food:} Teams are allowed to provide their own food for preparing meal. However, it must be inspected by the TC at least 2 hours before the test.
+	\item \textbf{Objects:} A total of 6 objects are used in this test following the distribution shown below:
+	\begin{itemize}
+		\item\textit{Silverware}: Any two objects.
+		\item\textit{Tableware}: Any two objects, excluding silverware. At least one must be a dish or a bowl.
+		\item\textit{Food leftovers}: Any two edible or drinkable objects, regardless its category. One shall be disposed and the other stored for later use.
+	\end{itemize}
+	All objects used in this test are taken from the list of standard objects (See \ref{rule:scenario_objects}). Tableware and silverware are considered to be known to the robot.
 
-	\item \textbf{Object list:} A total of 6 objects is considered, 3 of them considered easy to grasp (e.g., a cereal box, a cup, and a plate), while the remaining 3 hard to grasp (e.g., cutlery, napkins, and a basket with bread).
+	\item \textbf{Spots and Spills:} The referees must place a spot (e.g. jam or chocolate syrup) or spill some liquid (e.g.milk) on the table before the test stats. The substance used to create the spot shall be clearly visible and contrasting with the table. When cleaning it, it must be clear the robot has detected the spot and is trying actively to clean it. The selection of the cleaning tool (sponge or cloth) is made by the team.
 
-	\item \textbf{Opening the door:} If the robot is unable to open the door by itself, it may kindly ask the operator to do so.
+	\item \textbf{Sink and dishwasher:} Is up to the team to decide whether the robot will place the objects in the sink or in the dishwasher (when available). It is acceptable if the robot stacks the dishes next to the sink instead of placing them inside it.
 
-	\item \textbf{Spots and Spills:} The referees will mess up the table right after it has been set, by spreading breadcrumbs, spilling some liquid, adding spots of jam, etc. It must be clear the robot has detected them and is trying actively to clean them, even though the cleaning may be unsuccessful.
+	\item \textbf{Human-Robot Interaction:} The robot is allowed to
+	\begin{enumerate*}[label={\alph*)}]
+	\item indicate the location of the cloth or sponge,
+	\item ask the human operator what to do with food leftovers,
+	and
+	\item request operator's help to find the spot (e.g. pointing at it).
+	\end{enumerate*}
+	This interaction is extensible to any kind of reasonable request from the robot when attempting to solve the task.
 
-	\item \textbf{Task variation:} The team may provide the referees a written set of at least 2 options for serving a meal (e.g. cereal and milk, sandwiches, toasts, Coffee and bread, etc.). These options must be written as possible answers to the robot question (step~\ref{sattu:option} in section~\ref{sattu:task}). The correct execution of the specified variation should be clearly visible, e.g., choice of an object placed on the table.
 \end{enumerate}
 
 \subsection{Data recording}
@@ -79,29 +60,23 @@ This test focuses on HRI, semantic mapping, object perception and manipulation.
 
 The referee needs to
 \begin{itemize}
-	\item Clean up any remaining object on the table.
-	\item Place the objects the predefined locations.
-	\item Close the closet door.
-	\item Choose a random meal variation (when available).
-	\item Ask the team whether they implemented a meal variation and choose randomly one of them.
+	\item Place the table setting.
+	\item Clean spots smudged by the robot.
+	\item Place spots to be clean.
+	\item Recover objects from the trash bin.
 \end{itemize}
 
 \subsection{OC instructions}
 During Setup days:
 \begin{itemize}
-	\item Provide official cutlery and appliances for training.
-\end{itemize}
-
-One day before the test:
-\begin{itemize}
-	\item Announce the food location.
-	\item Announce the location for the cutlery and appliances.
+	\item Provide official cutlery and tableware for training.
 \end{itemize}
 
 2 hours before the test:
 \begin{itemize}
-	\item Collect from teams the set of meals their robot can serve.
-	\item Place all objects and clear the table.
+	\item Announce the predefined location to take the command.
+	\item Announce which food leftovers shall be stored.
+	\item Announce which food leftovers shall be disposed.
 \end{itemize}
 
 \newpage

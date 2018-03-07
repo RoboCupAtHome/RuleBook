@@ -1,55 +1,24 @@
 
-The maximum time for this test is \textbf{10 minutes}. A maximum of 6 objects is
-considered in this score sheet. 3 of those are easy to grasp, 3 are difficult to grasp (for a robot)
+The maximum time for this test is \textbf{10 minutes}.
 
 \begin{scorelist}
 
-  \scoreheading{Meal variation}
-  \scoreitem[1]{10}{For asking for the meal variation and confirming the choice}
+	\scoreheading{Clearing the table} %190 pts
+	\scoreitem{20}{Successfully dumping disposable food leftovers in the bin}
+	\scoreitem{20}{Successfully placing other edibles in their predefined location}
+	\scoreitem[2]{35}{Safely placing a tableware item in the sink}
+	\scoreitem[2]{40}{Safely placing a cutlery item in the sink}
 
-	\scoreheading{Grasping objects}
-	\scoreitem[6]{10}{For each successful grasp of an \textbf{easy}-to-grasp object (lifting it up to at least 5 cm for more than 10 seconds)}
-	\scoreitem[6]{15}{For each successful grasp of an \textbf{hard}-to-grasp object (lifting it up to at least 5 cm for more than 10 seconds)}
-        % Grasping = (* 6 (+ 10 15)) = 150
+	\scoreheading{Cleaning the spot} %50 pts
+	\scoreitem{50}{Successfully cleaning the spot}
+	\scoreitem[-1]{20}{Receiving operator's assistance to find the spot}
+	\scoreitem[-1]{20}{Smudging the spot while trying to clean it}
 
-	\scoreheading{Placing objects}
-	\scoreitem[3]{10}{For each successful placement of an \textbf{easy}-to-grasp object anywhere on the table (safely stands still for more than 10 seconds)}
-	\scoreitem[3]{20}{For each successful placement of an \textbf{hard}-to-grasp object anywhere on the table (safely stands still for more than 10 seconds)}
-        \scoreitem[1]{30}{For appropriately executing the operator's choice}
-	\scoreitem[6]{-5}{For each collision of an object with another
-        one on the table}
-        % Placing = (+ (* 3 (+ 10 20)) 30) = 105
+	\scoreheading{Leave the arena} %10 pts
+	\scoreitem{10}{Autonomously leave the arena before the time elapses}
 
-      \scoreheading{Cleaning up the  table}
-	\scoreitem[3]{10}{For each successful placement of an \textbf{easy}-to-grasp object to its original location (safely stands still for more than 10 seconds)}
-	\scoreitem[3]{20}{For each successful placement of an \textbf{hard}-to-grasp object to its original location (safely stands still for more than 10 seconds)}
-        \scoreitem[1]{40}{For successfully cleaning up dirt and spill on the table}
-        % Cleaning = (+ (* 3 (+ 10 20)) 40) = 110
-	
-% 	\scoreheading{Total task}
-% 	\scoreitem[5]{40}{Place known object near known object of same class}
-% 	\scoreitem[5]{50}{Place unknown object near unknown object of same class}
-
-        \scoreheading{Bonus}
-        \scoreitem[1]{15}{Open the door without human help}
-
-	% (+ 10 150 105 110 15)
-	\setTotalScore{390}
+	\setTotalScore{250}
 \end{scorelist}
-
-% \subsection{Score examples} 
-
-% TODO
-
-% \begin{itemize}
-%  \item Robot A fails at all manipulation attemps but makes an excelent report, with the 5 known objects labeled correctly and the 5 pairs of unknown objects correctly, will get 
-% $5*10 + 5*15 = 125$ points. 
-%  \item Robot B that fails to recognize anything but does move all the objects from the table to anywhere in the cupboard receives $5*10 + 5*10 = 100$ points.
-%  \item Robot C grasps a single unknown item (\quotes{Cookies}), places it at the correct position near the other \quotes{Cookies} and also makes the same excelent report as robot A will get 
-% 10 points for grasping, 10 foor placing anywhere and an additional 5 for placing at the right location, so 25 for that single object.
-% The  total for robot C is then 150 points.
-% \end{itemize} 
-
 
 % Local Variables:
 % TeX-master: "Rulebook"
