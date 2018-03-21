@@ -18,10 +18,10 @@ The operator (the robot's owner) has a set of bags (and possibly other objects) 
 \begin{enumerate}
   \item \textbf{Location:} One of the arenas (apartment) and its surroundings. The apartment is in its normal state. Part of the test is performed outside the arena in a public space.
   \item \textbf{Start:} The robot starts waiting inside the arena.
-  \item \textbf{Car:} The car is any landmark chosen (but \emph{not} announced) beforehand outside the arena. Several bags (see \refsec{rule:scenario_objects}) with groceries are located where the car is parked. 
+  \item \textbf{Car:} The car is any landmark chosen (but \emph{not} announced) beforehand outside the arena. Several bags (see \refsec{rule:scenario_objects}) with groceries are located where the car is parked.
   \item \textbf{Doors:} All doors in the apartment are initially open.
-  \item \textbf{Operator:} A \quotes{professional} operator is selected by the TC to act as the operator of the robot. 
-  \item \textbf{Uncontrolled environment:} There are no restrictions on other people walking by or standing around throughout the complete task. 
+  \item \textbf{Operator:} A \quotes{professional} operator is selected by the TC to act as the operator of the robot.
+  \item \textbf{Uncontrolled environment:} There are no restrictions on other people walking by or standing around throughout the complete task.
 \end{enumerate}
 
 \subsection{Task}
@@ -37,8 +37,8 @@ The operator (the robot's owner) has a set of bags (and possibly other objects) 
   \item {[DSPL \& OPL]} \textbf{Bring the groceries in} \\
   The robot is asked to deliver a bag with groceries  to a specific location (e.g. \quotes{Take this bag to the kitchen table}).
   \begin{enumerate}
-    \item \textbf{Bag pick-up:} The robots gets the bag. For this there are several options to achieve this: 
-      \textbf{a)} Human puts bag in robot's hand, 
+    \item \textbf{Bag pick-up:} The robots gets the bag. For this there are several options to achieve this:
+      \textbf{a)} Human puts bag in robot's hand,
       \textbf{b)} robot picks up bag on floor,
       \textbf{c)} Robot takes bag from operator's hand
     \item \textbf{Bag delivery:} The robot delivers the bag to the instructed destination. It may place the bag on the floor or onto the placement location.\\
@@ -70,7 +70,7 @@ The operator (the robot's owner) has a set of bags (and possibly other objects) 
 \end{enumerate}
 
 \subsection{Obstacles}
-The robot will encounter some obstacles while navigating and the robot must deal and avoid or otherwise deal with the obstacle. 
+The robot will encounter some obstacles while navigating and the robot must deal and avoid or otherwise deal with the obstacle.
 The possible obstacles are:
 \begin{itemize}
   \item \textbf{3D Object:} A hard to see object that requires more than a laser scanner to be detected such as a bar table (wider at its top than on its bottom), rolling chair, lamp, etc.
@@ -81,7 +81,7 @@ The possible obstacles are:
 
   \item {[SSPL Only]} \textbf{\textit{Smart} obstacle:} A person blocking the robot's path to whom the robot may speak to and kindly ask to move away. When interacting with people, the robot must look at the person and make clear it is speaking with them.
 \end{itemize}
-%% Possible extensions: 
+%% Possible extensions:
 %% - DONE: allow the operator to tell for each item where it should go
 %% - At the destination room, there is a person waving, waiting for the robot to bring the items so (s)he can take them
 
@@ -91,7 +91,7 @@ The possible obstacles are:
   \begin{minipage}{0.65\textwidth}
   \item \textbf{Asking for passage:} The robot is allowed to (gently) ask individual people to step aside, but it is not allowed to blindly shout at groups of people.
 
-  \item \textbf{Bag handles:} The handles of the bag are always clear and standing up. See Figure \ref{fig:scenario_container_bag} in \refsec{rule:scenario_objects} for bag description. \footnotemark 
+  \item \textbf{Bag handles:} The handles of the bag are always clear and standing up. See Figure \ref{fig:scenario_container_bag} in \refsec{rule:scenario_objects} for bag description. \footnotemark
 
   \item \textbf{Bag pick-up:} If the robot can't handover the bag from the operator (i.e.~take it from the operator's hand) it may pick another bag from the surroundings. Additional bags might be either on the floor or on a table. It is expected the robot to actively try to grasp the bag from the operator's hand, and not passively waiting for the bag to be hanged on it. Shall the robot wait for the operator to hang the bag themself, the robot must clearly state it has detected the bag has been placed.
 
@@ -122,9 +122,9 @@ The possible obstacles are:
   \item \textbf{Disturbances from outside:} If a person from the audience (severely) interferes with the robot in a way that makes it impossible to solve the task, the team may repeat the test immediately.
 
   \item \textbf{Groceries:} Any kind of objects can be found lying around the location designated as the \textit{Car}, such as boxes, sacs, plastic bags, crates, and the groceries itself to give realism to the test. Regardless what objects are present, the robot shall carry an \textbf{official shopping bag} as described below and in \refsec{rule:scenario_objects}.
-  
+
   \item \textbf{Instruction:} The robot interacts with the operator, not the team.
-  
+
   \item \textbf{Natural walking:} The operator has to walk \quotes{naturally}, i.e., move forward facing forward. If not mentioned otherwise, the operator is not allowed to walk back, stand still, signal the robot or follow some re-calibration procedure.
 
   \item \textbf{Obstacle avoidance:} The robot will encounter several obstacles it must evade on its path between the car and the target destination.
@@ -135,12 +135,12 @@ The possible obstacles are:
 \end{enumerate}
 \footnotetext{This may change in the future. Then, a soft handle may be used which folds down}
 
-\subsection{Data recording}
-  Please record the following data (See \refsec{rule:datarecording}):
-\begin{itemize}
- \item Maps
- \item Plans
-\end{itemize}
+% \subsection{Data recording}
+%   Please record the following data (See \refsec{rule:datarecording}):
+% \begin{itemize}
+%  \item Maps
+%  \item Plans
+% \end{itemize}
 
 \subsection{Referee instructions}
 

@@ -10,15 +10,15 @@ This test focuses on the detection and recognition of objects and their features
 \begin{minipage}{0.70\textwidth}
 	\subsection{Setup}
 	\begin{enumerate}
-		\item \textbf{Location:} One of the bookcases or cupboards in the apartment is used for this test, one where a table is near or can be put. 
+		\item \textbf{Location:} One of the bookcases or cupboards in the apartment is used for this test, one where a table is near or can be put.
 		\item \textbf{Start position:} The robot will start between the cupboard and the table in a random orientation, but facing towards the Cupboard.
 		\item \textbf{Cupboard:} The cupboard has 5 shelves between 0.30m and 1.80m from the ground and contains several objects (See \ref{rule:scenario_objects}).
 		\begin{itemize}
 		 	\item \textbf{Door:} The cupboard has a single door, which is closed initially.
 		 	This door encloses some of the objects, covering up to one half of the cupboard (e.g. the left or bottom half), as indicated by the hatched area in Figure \ref{fig:storing_groceries_shelf}.
-		\end{itemize} 
+		\end{itemize}
 		\item \textbf{Table:} A table near to the Cupboard has 10 objects (See \ref{rule:scenario_objects}). If not all objects fit on the table, they will be added during the test. The maximum distance between the Table and the Cupboard is 2m.
-		\item \textbf{Objects:} Objects in the Cupboard and on the Table can be known, alike, or unknown. Also, there will be more than one object on each shelf. 
+		\item \textbf{Objects:} Objects in the Cupboard and on the Table can be known, alike, or unknown. Also, there will be more than one object on each shelf.
 	\end{enumerate}
 \end{minipage}\hfill
 \begin{minipage}{0.25\textwidth}
@@ -37,7 +37,7 @@ This test focuses on the detection and recognition of objects and their features
 \begin{enumerate}
 	\item \textbf{Opening door:} The robot starts opening the Cupboard's door. If the robot is unable to open the door, it may ask the Referee to do it instead.
 	\item \textbf{Cupboard inspection:} The robot inspects the cupboard locating and categorizing existing groceries.
-	\item \textbf{Finding the table:} The robot turns around and locates the table.  
+	\item \textbf{Finding the table:} The robot turns around and locates the table.
 	\item \textbf{Table inspection:} The robot approaches the table starts analyzing the newly bought groceries (i.e. objects).
 	\item \textbf{Moving objects:} The robot chooses which object to move first from the Table to the Cupboard, allocating similar objects all together.
 	\begin{itemize}
@@ -46,7 +46,7 @@ This test focuses on the detection and recognition of objects and their features
 		\item If the Cupboard has no similar object, the robot must clearly state its decision on how to solve the problem. For instance, the robot can define a place for the newly found Category (e.g. Food was found but there is no other food in the cupboard), or group all new objects together (e.g. placing all Unknown objects together).
 	\end{itemize}
 
-	\textbf{Note:} Either before or after grasping an object the robot may announce the name of the object found. 
+	\textbf{Note:} Either before or after grasping an object the robot may announce the name of the object found.
 	\item \textbf{Repeat:} This repeats until the time is up or all groceries are stored.
 \end{enumerate}
 
@@ -54,7 +54,7 @@ This test focuses on the detection and recognition of objects and their features
 \begin{enumerate}
 	\item \textbf{Bypassing Manipulation:} Bypassing object manipulation via the CONTINUE rule (Section \refsec{rule:asrcontinue}) is not allowed during this test.
 	\item \textbf{No setup:} There is no setup time.
-	\item \textbf{Startup:} The robot can be started with a simple voice command or via a start button (Section \refsec{rule:start_signal}). 
+	\item \textbf{Startup:} The robot can be started with a simple voice command or via a start button (Section \refsec{rule:start_signal}).
 	\item \textbf{Single try:} The robot must be able to start from the first attempt. There is no restart for this test. If the robot is unable to start it must be removed immediately.
 	\item \textbf{Collisions:} Slightly touching the cupboard is tolerated (but not advised). Crushing objects or any other form of a major collision terminates the test immediately (Section \refsec{rule:safetyfirst}).
 	\item \textbf{Recognition report:} Robots must create a PDF report file including
@@ -73,22 +73,22 @@ This test focuses on the detection and recognition of objects and their features
 
 		\textbf{Remark:} False positives in the report (labeling an object which is not an object but e.g. the edge of the shelf) are penalized.
 
-		\textbf{Unknown objects:} A significant amount of objects are unknown objects. A correct label for these may be constituted by: 
+		\textbf{Unknown objects:} A significant amount of objects are unknown objects. A correct label for these may be constituted by:
 		\begin{itemize}
 			\item Simply labeling those as \quotes{Unknown} as opposed to wrongly applying a label from the known or alike objects
-			\item Labeling pairs of unknown objects of the same class with the same label (which may be e.g. \quotes{type\_X} for one pair and \quotes{relevant-feature\_Y} for another). 
+			\item Labeling pairs of unknown objects of the same class with the same label (which may be e.g. \quotes{type\_X} for one pair and \quotes{relevant-feature\_Y} for another).
 			\item Labeling unknown objects with a new, sensible label for objects.
 	 	\end{itemize}
 
 	\item \textbf{Clear area:} The robot may assume that the direct vicinity of the cupboard and table are clear, and that the robot can move slightly backwards for its task.
 \end{enumerate}
 
-\subsection{Data recording}
-Please record the following data (See \refsec{rule:datarecording}):
-\begin{itemize}
-	\item Images
-	\item Plans
-\end{itemize}
+% \subsection{Data recording}
+% Please record the following data (See \refsec{rule:datarecording}):
+% \begin{itemize}
+% 	\item Images
+% 	\item Plans
+% \end{itemize}
 
 \subsection{OC instructions}
 
@@ -100,9 +100,9 @@ Please record the following data (See \refsec{rule:datarecording}):
 \subsection{Referee instructions}
 The referee needs to
 \begin{itemize}
-	\item Place the objects in the cupboard and a few of the same class on the table. New items can be placed when there is room or the robot asks for more objects. 
-	\item Close the door of the cupboard. 
-	\item Put objects on the table and the corresponding objects in the cupboard: 3 known objects, 2 alike and 5 unknown objects. 
+	\item Place the objects in the cupboard and a few of the same class on the table. New items can be placed when there is room or the robot asks for more objects.
+	\item Close the door of the cupboard.
+	\item Put objects on the table and the corresponding objects in the cupboard: 3 known objects, 2 alike and 5 unknown objects.
 \end{itemize}
 
 
