@@ -7,18 +7,22 @@ The robot has to correctly identify and manipulate objects at different heights,
 \subsection{Focus}
 This test focuses on the detection and recognition of objects and their features, as well as object manipulation.
 
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Setup
+%
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{minipage}{0.70\textwidth}
 	\subsection{Setup}
 	\begin{enumerate}
-		\item \textbf{Location:} One of the bookcases or cupboards in the apartment is used for this test, one where a table is near or can be put.
-		\item \textbf{Start position:} The robot will start between the cupboard and the table in a random orientation, but facing towards the Cupboard.
-		\item \textbf{Cupboard:} The cupboard has 5 shelves between 0.30m and 1.80m from the ground and contains several objects (See \ref{rule:scenario_objects}).
+		\item \textbf{Location:} This test can take place either inside or outside the arena. The testing area must have a bookcase or cupboard, and a nearby table. The maximum distance between the Table and the Cupboard is 2 meters.
+		\item \textbf{Start position:} The robot starts between the cupboard and the table in a random orientation, but facing towards the Cupboard.
+		\item \textbf{Cupboard:} The cupboard has 5 shelves between 0.0m and 1.80m from the ground and contains several objects grouped by category or likeliness (See \ref{rule:scenario_objects}). The cupboard has at least one free space for starting a new set.
 		\begin{itemize}
 		 	\item \textbf{Door:} The cupboard has a single door, which is closed initially.
 		 	This door encloses some of the objects, covering up to one half of the cupboard (e.g. the left or bottom half), as indicated by the hatched area in Figure \ref{fig:storing_groceries_shelf}.
 		\end{itemize}
-		\item \textbf{Table:} A table near to the Cupboard has 10 objects (See \ref{rule:scenario_objects}). If not all objects fit on the table, they will be added during the test. The maximum distance between the Table and the Cupboard is 2m.
-		\item \textbf{Objects:} Objects in the Cupboard and on the Table can be known, alike, or unknown. Also, there will be more than one object on each shelf.
+		\item \textbf{Table:} The table has at least 5 objects (but no more than 10). If not all objects fit on the table, they will be added as the robot frees up space.
 	\end{enumerate}
 \end{minipage}\hfill
 \begin{minipage}{0.25\textwidth}
@@ -32,24 +36,71 @@ This test focuses on the detection and recognition of objects and their features
 	\end{figure}
 \end{minipage}
 
-
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Task
+%
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Task}
 \begin{enumerate}
-	\item \textbf{Opening door:} The robot starts opening the Cupboard's door. If the robot is unable to open the door, it may ask the Referee to do it instead.
-	\item \textbf{Cupboard inspection:} The robot inspects the cupboard locating and categorizing existing groceries.
-	\item \textbf{Finding the table:} The robot turns around and locates the table.
-	\item \textbf{Table inspection:} The robot approaches the table starts analyzing the newly bought groceries (i.e. objects).
-	\item \textbf{Moving objects:} The robot chooses which object to move first from the Table to the Cupboard, allocating similar objects all together.
+	\item \textbf{Evaluating the situation:} The robot inspects its surrounding and analyzing the best course of action. In any order, the robot has to:
+	\begin{itemize}
+		\item \textit{Inspect the cupboard} (locating and categorizing existing groceries).
+		\item \textit{Open the cupboard's door.} If the robot can't open the door, it may ask the Referee to do it.
+		\item \textit{Find the table}
+		\item \textit{Inspect the table} (analyze the newly bought groceries, i.e. objects).
+	\end{itemize}
+
+	\item \textbf{Moving objects:} The robot moves as many objects as possible in the given time
+	(only the first five score)
+	from the Table to the Cupboard, allocating similar objects all together.
+	Stacking is allowed.
 	\begin{itemize}
 		\item Objects of the same type (i.e. identical known objects or akin alike objects) must be placed one next to the other.
 		\item If the Cupboard has no object of the same type, then objects must be grouped by category (e.g. drinks with drinks, snacks with snacks, etc)
-		\item If the Cupboard has no similar object, the robot must clearly state its decision on how to solve the problem. For instance, the robot can define a place for the newly found Category (e.g. Food was found but there is no other food in the cupboard), or group all new objects together (e.g. placing all Unknown objects together).
+		\item If the Cupboard has no similar object, the robot must clearly state its decision on how to solve the problem. For instance, the robot can start a new set in a free space for either all unknown objects or all objects sharing a particular feature (color, shape, function, etc.).
+		\item Moving two objects at a time (2-handed manipulation) is allowed.
 	\end{itemize}
 
 	\textbf{Note:} Either before or after grasping an object the robot may announce the name of the object found.
 	\item \textbf{Repeat:} This repeats until the time is up or all groceries are stored.
 \end{enumerate}
 
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% PDF Recognition Report
+%
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{PDF Recognition Report}
+To validate results and justify theirs decisions, robots may create a PDF report in a USB-stick (highly advised). This report must be delivered to the referee (or may be collected by them) right after the test, and be named with the following format: \texttt{TeamName\_RunNumber.pdf}.
+
+The PDF Recognition Report will be only considered if the robot successfully placed at least one object in the cupboard and must include the following elements:
+\begin{itemize}
+	\item The name of the team.
+	\item The try number (to identify between runs).
+	\item The date and time.
+	\item Picture of the cupboard in its initial state with bounding boxes enclosing each group and human-readable labels to identify them.
+	\item For each step: Picture of the cupboard in its current state after placing the object(s). with bounding boxes enclosing each group and human-readable labels to identify them. In a similar way, moved objects shall be highlighted inside an easy-to-distinguish bounding box with a label stating the object's name, category, and any other relevant information used to categorize the object.
+	\item
+\end{itemize}
+
+A significant amount of objects can be unknown to the robot (See \ref{rule:scenario_objects}). A correct label for these may be:
+\begin{itemize}
+	\item Simply labeling those as \quotes{Unknown} as opposed to wrongly applying a label from the known or alike objects
+	\item Labeling pairs of unknown objects of the same class with the same label (which may be e.g. \texttt{type\_X} for one pair and \texttt{relevant-feature\_Y} for another).
+	\item Labeling unknown objects with a new, sensible label for objects.
+\end{itemize}
+
+\textbf{Remark:} It must be unmistakable which label belongs to which object. Objects must also be easily recognizable in the report by a human (TC) for scoring purposes.
+
+% \textbf{Remark:} False positives in the report (labeling an object which is not an object but e.g. the edge of the shelf) are penalized.
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Additional Rules
+%
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Additional rules and remarks}
 \begin{enumerate}
 	\item \textbf{Bypassing Manipulation:} Bypassing object manipulation via the CONTINUE rule (Section \refsec{rule:asrcontinue}) is not allowed during this test.
@@ -57,30 +108,13 @@ This test focuses on the detection and recognition of objects and their features
 	\item \textbf{Startup:} The robot can be started with a simple voice command or via a start button (Section \refsec{rule:start_signal}).
 	\item \textbf{Single try:} The robot must be able to start from the first attempt. There is no restart for this test. If the robot is unable to start it must be removed immediately.
 	\item \textbf{Collisions:} Slightly touching the cupboard is tolerated (but not advised). Crushing objects or any other form of a major collision terminates the test immediately (Section \refsec{rule:safetyfirst}).
-	\item \textbf{Recognition report:} Robots must create a PDF report file including
-		\begin{enumerate}
-			\item The name of the team.
-			\item The try number (to identify between runs).
-			\item The date and time.
-			\item Picture of the cupboard in its initial state with bounding boxes enclosing each group and a human-readable labels to identify them.
-			\item The list of moved objects; each one with a picture showing the object inside a bounding box with a label stating the object's name, category, and any other relevant information used to categorize the object.
-			\item Picture of the cupboard in its final state with bounding boxes enclosing each group and a human-readable labels to identify them.
-		\end{enumerate}
-
-		The report file must be stored on a USB-stick on the robot, which will be collected by the TC immediately after the test. The PDF file must be named with the following format: \texttt{TeamName\_RunNumber.pdf}\\
-
-		\textbf{Remark:} It must be unmistakable which label belongs to which object. Objects must also be easily recognizable in the report by a human (TC) so that it can be scored. \\
-
-		\textbf{Remark:} False positives in the report (labeling an object which is not an object but e.g. the edge of the shelf) are penalized.
-
-		\textbf{Unknown objects:} A significant amount of objects are unknown objects. A correct label for these may be constituted by:
-		\begin{itemize}
-			\item Simply labeling those as \quotes{Unknown} as opposed to wrongly applying a label from the known or alike objects
-			\item Labeling pairs of unknown objects of the same class with the same label (which may be e.g. \quotes{type\_X} for one pair and \quotes{relevant-feature\_Y} for another).
-			\item Labeling unknown objects with a new, sensible label for objects.
-	 	\end{itemize}
-
 	\item \textbf{Clear area:} The robot may assume that the direct vicinity of the cupboard and table are clear, and that the robot can move slightly backwards for its task.
+	\item \textbf{Objects:} The 10 objects are evenly distributed in random fashion including
+	3 known objects,
+	3 alike objects,
+	2 unknown objects, and
+	2 special objects (bowl, cloth, dish, etc.).
+	% \item \textbf{Timing:} The robot has to successfully place the first object within the first two minutes, otherwise the test is ended. If the robot opens the cupboard door by on its own, one additional minute is added to the 2-minutes limit. The maximum time for this test is 5 minutes.
 \end{enumerate}
 
 % \subsection{Data recording}
