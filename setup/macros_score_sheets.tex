@@ -1,11 +1,11 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Macros for generating score sheets for RoboCup@Home              %
 % to be used in the rulebook or during the competition             %
-%                                                                  % 
+%                                                                  %
 % Author: Dirk Holz & David Gossow                                 %
 % Modif : Mauricio Matamoros                                       %
 % $Id: macros_score_sheets.tex 429 2013-04-30 10:09:55Z holz $     %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \usepackage{calc}
@@ -36,7 +36,7 @@
 \newcommand{\continueAvailable}{true}
 
 % set \dataRecordingBonus to true for data recording bonus
-\newcommand{\dataRecordingBonus}{true}
+\newcommand{\dataRecordingBonus}{false}
 
 % name of the current test, is set automatically in the rulebook
 \newcommand{\currentTest}{}
@@ -110,26 +110,26 @@
   \newpage
 
   \renewcommand{\scoresheetOptions}{#1}
-  
+
   \begin{minipage}[t]{0.8\textwidth}%
     \vspace{0pt}
     {\huge \textbf{Score Sheet} }
-    
+
     \vspace{2 em}
-    
+
     \begin{tabular}{ @{} l l l}
       \textbf{Test:} & \currentTest \\[.9 em]
-      
+
       \ifEvaluationSheet{}{%
         \textbf{Team name:} & \scoreline[0.6]\\[.9 em]%
       }%
-      % 
+      %
       \textbf{Referee name:} & \scoreline[0.6]\\[.9 em]%
-      %	
+      %
       %	\ifEvaluationSheet{}{%
       %   \textbf{Restart:} & \Square ~1st try \hspace{1 em} \Square ~2nd try
       %	}
-      %	
+      %
       % test repetition checkboxes (for stage 2 tests)
       \ifthenelse{ \equal{#1}{repeatable} }{%
 	\textbf{Test repetition:} & \Square ~1st \hspace{1 em} \Square ~2nd\\[.9em]%
@@ -192,26 +192,26 @@
   \ifShortScoresheet {
     \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.8\linewidth} r @{}}
       \ifEvaluationSheet{
-        \textbf{Team} & \textbf{Score} \\ \hline 
+        \textbf{Team} & \textbf{Score} \\ \hline
       }{%
-        \textbf{Action} & \textbf{Score} \\ \hline 
+        \textbf{Action} & \textbf{Score} \\ \hline
       }
-    }{  
+    }{
       % else:
       % \begin{tabular*}{\textwidth}{@{}p{0.65\linewidth}lp{0.15\linewidth}@{}}
-      %   \textbf{Action} & \textbf{Score} & \multicolumn{1}{l}{\textbf{Success}}\\ \hline 
+      %   \textbf{Action} & \textbf{Score} & \multicolumn{1}{l}{\textbf{Success}}\\ \hline
       \ifEvaluationSheet{
         \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.7\linewidth} r r @{}}
-          \textbf{Team} & \textbf{Score} & \textbf{Result}\\ \hline 
+          \textbf{Team} & \textbf{Score} & \textbf{Result}\\ \hline
         }{
           \ifthenelse{\equal{\threeAttempts}{true}}{
             \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.6\linewidth} r r r r @{}}
-            \textbf{Action} & \textbf{Score} & \textbf{\small $1^{st}$ try} & \textbf{\small $2^{nd}$ try} & \textbf{\small$3^{rd}$ try} \\ \hline 
+            \textbf{Action} & \textbf{Score} & \textbf{\small $1^{st}$ try} & \textbf{\small $2^{nd}$ try} & \textbf{\small$3^{rd}$ try} \\ \hline
           }
           %else
           {
             \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.6\linewidth} r r r @{}}
-            \textbf{Action} & \textbf{Score} \ifthenelse{\equal{\retryAvailable}{true}}{& \textbf{1st try} & \textbf{2nd try}}{ & \textbf{Only try}} \\ \hline 
+            \textbf{Action} & \textbf{Score} \ifthenelse{\equal{\retryAvailable}{true}}{& \textbf{1st try} & \textbf{2nd try}}{ & \textbf{Only try}} \\ \hline
           }
         }
       }
@@ -220,22 +220,22 @@
         % end
 
 	\ifEvaluationSheet{}{%
-          
+
           % calculate max. score, outstanding bonus %%%%%%%
           \ifthenelse{\value{currOutstandingBonus} = 0}{%
             \setcounter{currOutstandingBonus}{ \value{currTestScore} / 10 }
           }{}
           \setcounter{currTestScoreTotal}{ \value{currTestScore} + \value{currOutstandingBonus} }
           \setcounter{currTestScoreTotalWithoutBonus}{ \value{currTestScore} }
-          
+
 
           % Special penalties & bonuses %%%%%%%%%%%%%%%%
           \scoreheading{Special penalties \& standard bonuses}
 
           \ifthenelse {\equal{\dataRecordingBonus}{true}}{\scoreitem{10}{Contributing with recorded data ($\frac{\sum gathered\ points}{max\ points} \times$) \ifShortScoresheet{(see sec.~\ref{rule:datarecording})}{}}}{}
-          
+
           \scoreitem{-50}{Not attending \ifShortScoresheet{(see sec.~\ref{rule:not_attending})}{}}
-          
+
           \ifthenelse{\equal{\scorelistOptions}{openDoorSignal}}{
             \scoreitem{-10}{Using start button \ifShortScoresheet{(see sec.~\ref{rule:start_button})}{}}
           }{}
@@ -243,7 +243,7 @@
           % \ifthenelse{\value{currOutstandingBonus} = 0}{
           \scoreitem{\thecurrOutstandingBonus}{Outstanding performance \ifShortScoresheet{(see sec.~\ref{rule:outstanding_performance})}{}}
           % }{}
-          
+
           % Total score %%%%%%%%%%%%%%%%
           \hline\\
           % \textbf{Total score} & \scoring{ \thecurrTestScoreTotal } %
@@ -253,7 +253,7 @@
             \textbf{\textit{Score per try}} & \scoring{ \thecurrTestScoreTotalWithoutBonus } %
           }
           % add line to put in total:
-          \ifShortScoresheet{}{& \attemptScoreLines} \\   
+          \ifShortScoresheet{}{& \attemptScoreLines} \\
           \ifShortScoresheet{
             \textbf{Total score} (excluding penalties and bonuses) & \scoring{ \thecurrTestScoreTotalWithoutBonus } %
           }{
@@ -264,14 +264,14 @@
 	}
 
       \end{tabular*}
-      
+
     }
 
 
     %% Score sheet table entries %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     % for loop helper
-    % usage: \forloop[step]{counter}{initial_value}{conditional}{code_block} 
+    % usage: \forloop[step]{counter}{initial_value}{conditional}{code_block}
     \newcommand{\forloop}[5][1]%
     {%
       \setcounter{#2}{#3}%
@@ -306,14 +306,14 @@
       \ifthenelse{ #2 > 0 }{
         \addtocounter{currTestScore}{ #2 * #1 }
       }{}%
-      % 
+      %
       \begin{minipage}[t]{\linewidth} {#3} \vspace{0.1 em} \end{minipage} & %
       \scoring{ \ifthenelse{ \equal{#1}{1} }{}{ #1 $\times$} \ifthenelse{ \equal{#2}{0} }{}{ #2}}%
-      % insert check marks:	
+      % insert check marks:
       %	\ifShortScoresheet{}{ & \forloop{ct}{0}{\value{ct} < #1}{ \Square}} \\[3pt]
       % insert line
       \ifShortScoresheet{ %
-        \\ 
+        \\
       }{ % else
         \ifEvaluationSheet{}{& \attemptScoreLines} \\[0pt]
       }
