@@ -1,44 +1,30 @@
 
-The maximum time for this test is 1+2+2 minutes.
-The first minute is for the robot to open the Cupboard's door on its own.
-If the robot is not able to open the door within that minute, it will be opened by the referee. 
-In case the robot opens the door within the minute, the robot has a small time advantage. 
-Then, the robot has 2 minutes to recognize objects and manipulate items.
-If an item is manipulated within that time, 2 more minutes are added to the test time. 
-If not, the test ends.
+The maximum time for this test is 5 minutes.
+The robot must place the first object within the first 2 minutes (+1 minute if the robot opens the door).
 
 \begin{scorelist}
 	\scoreheading{Opening the door}
-	\scoreitem[1]{20}{Opening the door without human help}
+	\scoreitem{20}{Autonomously opening the door}
 	% Total: 20
-	\scoreheading{Moving objects}
-	\scoreitem[5]{10}{Successfully grasping an object (5 cm for more than 10 seconds)}
-	% Total: 50
 
-	\scoreitem[5]{10}{Successfully placing an object near to another of the same class}
-	\scoreitem[5]{ 5}{Successfully placing an object anywhere else}
-	% Total: 50
+	\scoreheading{Arranging objects}
+	\scoreitem{20}{Successfully placing the \textbf{1st} object next to another of its same class}
+	\scoreitem{30}{Successfully placing a \textbf{2nd} object next to another of its same class}
+	\scoreitem{40}{Successfully placing a \textbf{3rd} object next to another of its same class}
+	\scoreitem{50}{Successfully placing a \textbf{4th} object next to another of its same class}
+	\scoreitem{60}{Successfully placing a \textbf{5th} object next to another of its same class}
+	% Total 150
 
-	\scoreheading{Recognizing known or alike objects}
-	\scoreitem[10]{5}{\small Every correctly recognized known or alike object in the report file} 
-	% Total: 50
-	
-	\scoreheading{Recognizing unknown objects}
-	\scoreitem[10]{5}{Correctly label unknown object as \quotes{Unknown}}
-	\scoreitem[5]{20}{Label a \textit{pair} of unknown objects with the same label (e.g label both papayas both as \quotes{class A})}
-	\scoreitem[10]{15}{\footnotesize Label unknown object as correct category (e.g. label a papaya as fruit)}%
-	\scoreitem[10]{15}{\footnotesize Label unknown object as correct class (e.g. label a papaya as papaya)}%
-	% Total: 150
-	
-	\scoreheading{Incorrect recognitions}
-	\scoreitem[10]{-5}{False positive label}
-	
-% 	\scoreheading{Total task}
-% 	\scoreitem[5]{40}{Place known object near known object of same class}
-% 	\scoreitem[5]{50}{Place unknown object near unknown object of same class}
+	\scoreheading{Wrong placements}
+	\scoreitem[5]{10}{Successfully placing an object on the cupboard}
+	% Total 0
 
-	
-	\setTotalScore{320}
+	% \scoreheading{Other placements}
+	% \scoreitem[5]{50}{Each correctly arranged object after the 5th one}
+	% Total 250
+
+
+	\setTotalScore{220}
 \end{scorelist}
 
 
