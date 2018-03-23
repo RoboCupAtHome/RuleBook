@@ -31,7 +31,7 @@
   pdfsubject   = {RoboCup@Home Forms \& Score Sheets},
   pdfauthor    = {RoboCup@Home Technical Committee},
   pdfkeywords  = {RoboCup, @Home, Rules, Competition},
-  pdfstartpage = {1},                 % 
+  pdfstartpage = {1},                 %
   colorlinks   = true,                % Farbige links
   anchorcolor  = black,               % anchor-text (header)
   linkcolor    = black,               % content,index,ref/pageref-label
@@ -167,19 +167,19 @@
 \input{scoresheets/OpenChallenge.tex}
 \end{scoresheet}
 
+% Set a table and clean it up
+\ifNotSSPL{
+  \renewcommand{\currentTest}{Procter \& Gamble Dishwasher Challenge}
+  \begin{scoresheet}
+  \input{scoresheets/PnG.tex}
+  \end{scoresheet}
+}
+
 % Restaurant
 \renewcommand{\currentTest}{Restaurant}
 \begin{scoresheet}
 \input{scoresheets/Restaurant.tex}
 \end{scoresheet}
-
-% Set a table and clean it up
-\ifNotSSPL{
-  \renewcommand{\currentTest}{Set a table and clean it up}
-  \begin{scoresheet}
-  \input{scoresheets/SetATableTidyUp.tex}
-  \end{scoresheet}
-}
 
 % Tour Guide
 \ifSSPL{
