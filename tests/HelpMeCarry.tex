@@ -25,6 +25,7 @@ The operator (the robot's owner) has a set of bags (and possibly other objects) 
 \end{enumerate}
 
 \subsection{Task}
+\textbf{Remark:} Obstacles obstructing robot's path can be found anytime. See \ref{sec:helpmecarry_obstacles} for details.
 \begin{enumerate}
   \item \textbf{Start:} The robot starts at a designated starting position in the arena, and waits for the \textit{professional} operator. The operator steps in front of the robot and tells it to follow (e.g. by saying \quotes{follow me}). The team is \emph{not} allowed to instruct the operator.
 
@@ -70,16 +71,23 @@ The operator (the robot's owner) has a set of bags (and possibly other objects) 
 \end{enumerate}
 
 \subsection{Obstacles}
-The robot will encounter some obstacles while navigating and the robot must deal and avoid or otherwise deal with the obstacle.
-The possible obstacles are:
+\label{sec:helpmecarry_obstacles}
+Several obstacles are placed obstructing the robot's path. This can happen anytime and the robot has to react accordingly.
 \begin{itemize}
-  \item \textbf{3D Object:} A hard to see object that requires more than a laser scanner to be detected such as a bar table (wider at its top than on its bottom), rolling chair, lamp, etc.
+  \item \textbf{3D Object:} A hard-to-perceive object
+  % that requires more than a laser scanner to be detected
+  (e.g. coat rack, rolling chair, lamp, etc).
 
-  \item \textbf{Small object:} Small object. For example, someone has dropped a piece of fruit (like an apple or mandarin) while carrying the groceries inside.
+  \item \textbf{Small object:} Small object
+  (e.g. apple, glass, lego brick, etc).
 
-  \item {[DSPL and OPL]} \textbf{Movable Object:} An object blocking the robot's path which the robot can manipulate or push away (such a rolling chair). When interacting with movable objects, the robot must state clearly that the object will be pushed or moved away.
+  \item {[DSPL and OPL]} \textbf{Movable Object:} Something that can be moved or pushed away
+  (e.g. coat rack, rolling chair, lamp, etc).
+  The robot must clearly state it is about to push the object.
 
-  \item {[SSPL Only]} \textbf{\textit{Smart} obstacle:} A person blocking the robot's path to whom the robot may speak to and kindly ask to move away. When interacting with people, the robot must look at the person and make clear it is speaking with them.
+  \item {[SSPL Only]} \textbf{\textit{Smart} obstacle:} A person to whom the robot may kindly ask to step aside.
+  The person can be standing, lying, or sitting (chair or floor).
+  The robot must look at the person and make clear who is interacting with.
 \end{itemize}
 %% Possible extensions:
 %% - DONE: allow the operator to tell for each item where it should go
@@ -127,8 +135,8 @@ The possible obstacles are:
 
   \item \textbf{Natural walking:} The operator has to walk \quotes{naturally}, i.e., move forward facing forward. If not mentioned otherwise, the operator is not allowed to walk back, stand still, signal the robot or follow some re-calibration procedure.
 
-  \item \textbf{Obstacle avoidance:} The robot will encounter several obstacles it must evade on its path between the car and the target destination.
-  The robot might be allowed to collide (but not crush) with the small object without the test to be immediately stop. For example, it is allowed to push aside a block of wood, but it won't be allowed to even touch a mandarin or soda can.
+  \item \textbf{Obstacle avoidance:} The robot is allowed to push (but not crush) the small object indefinitely without damaging it.
+  Driving over, squeezing, crushing, breaking, etc., the small object immediately finishes the test.
 
   \item \textbf{Opening door:} If unable to open the door, the robot may ask the person being guided to open it (no points are scored).
 
