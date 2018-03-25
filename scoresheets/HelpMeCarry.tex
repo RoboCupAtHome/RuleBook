@@ -6,14 +6,15 @@ The maximum time for this test is 5 minutes.
 	\scoreitem{10}{Follow operator outside the arena}
 	\scoreitem{15}{Follow operator to the car}
 	\scoreitem{ 5}{Understand the destination}
-	
+
 \ifNotSSPL{
 	% These are mutually exclusive, max score is thus 20
 	\scoreheading{Bag pick-up (OPL \& DSPL only)}
-	\scoreitem{0}{Put up hand, closing it after waiting time elapses}
-	\scoreitem{2}{Put up hand, closing it right after the bag is inserted}
-	\scoreitem{5}{Pick up the bag from the floor}
-	\scoreitem{20}{Take bag from operator's hand (natural handover)}
+	\scoreitem{+0}{Bag hanged. Gripper closes on timeout}
+	\scoreitem{ 2}{Bag hanged. Gripper closes on hang}
+	\scoreitem{ 5}{Pick up the bag from the floor}
+	\scoreitem{10}{Scripted handover (hand/bag detection only)}
+	\scoreitem{20}{Natural handover (active grasping + object release detection)}
 
 	\scoreheading{DSPL \& OPL Tasks} % 80 pts
 	\scoreitem{10}{Re-enter the arena}
@@ -32,7 +33,7 @@ The maximum time for this test is 5 minutes.
 	\scoreitem{10}{Guide operator outside the arena}
 	\scoreitem{30}{Guide operator to the car}
 }
-	
+
 	\scoreheading{Obstacle avoidance} % 70 pts
 	\scoreitem{20}{Avoiding small (box-sized) object}
 	\scoreitem{20}{Avoiding 3D (hard-to-see) object}
@@ -42,7 +43,7 @@ The maximum time for this test is 5 minutes.
 \ifNotSSPL{%
 	\scoreitem{30}{[DSPL \& OPL] Moving away movable object}
 }%
-	
+
 	\setTotalScore{200}
 \end{scorelist}
 }
