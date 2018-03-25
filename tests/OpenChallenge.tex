@@ -15,7 +15,10 @@ The performance of the teams is evaluated by a jury consisting of all team leade
 \subsection{Presentation} 
 During the demonstration, the team can present the addressed problem and the demonstrated approach.
 \begin{itemize}
-\item A video projector or screen, if available, may be used to present a brief (max. 1 minute) introduction to what will be shown. 
+\item A video projector or screen, if available, may be used to present a brief (max. 2 minute) presentation relevant to the demonstration.
+\item Teams may omit the video, use a more brief video, or have the robot act over the video in order to make more time for the robot demo. 
+\item There may be no human presenter. This is intended to be a demonstration of the robot's capabilities and not a research talk. The robot may present for itself (e.g., describing what it is doing or providing a narrative for the presentation on its own).
+\item Humans may interact with the robot during the interaction, but are not to act as presenters. This judgement is left to the jury.
 \item The team can also visualize robot's internals, e.g., percepts. 
 \end{itemize}
 
@@ -28,19 +31,15 @@ It is important to note that the jury may decide to end the demonstration if the
   \item \textbf{Jury of team leaders:} All teams have to provide \emph{one} person 
   (preferably the team-leader) to follow and evaluate the entire Open Challenge.
   \item \textbf{Evaluation:} Both the demonstration of the robot(s), and the answers of the team in the interview part are evaluated.\\ 
-  For each of the following \emph{evaluation criteria}, a maximum of \scoring{10 points} is given per jury member:
+  For each of the following \emph{evaluation criteria}, each jury member submits a score from $0-100$:
   \begin{enumerate}
-  \item Overall demonstration
-  \item Human-robot interaction in the demonstration
-  \item Robot autonomy in the demonstration
-  \item Realism and \emph{usefulness for daily life} (Can this robot become a product?)
-  \item Novelty and (scientific) contribution (+contribution to the community)
-  \item Difficulty and success of the demonstration 
+  \item Novelty and (scientific) contribution
+  \item Success of the demonstration 
   \end{enumerate}
   A jury member is not allowed to evaluate and give points for the own team.
   \item \textbf{Normalization and outliers}: 
   \begin{enumerate}
-    \item The points given by each jury member are scaled to obtain a maximum of \scoring{250 points} (i.e., multiplied by $\nicefrac{25}{6}$). 
+    \item The points given by each jury member are scaled to obtain a score from $0.0-1.0$. This score is multipled by the highest score achieved on any task in Stage 2 to arrive at the \scoring{final score} for the task. 
     \item The total score for each team is the mean of the jury member scores.
       To neglect outliers, the $N$ best and worst scores are left out:
       $$\mbox{score} = \frac{\sum\mbox{team-leader-score}}{\mbox{number-of-teams} - (2N+1)},
