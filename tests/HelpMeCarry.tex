@@ -35,16 +35,12 @@ The operator (the robot's owner) has a set of bags (and possibly other objects) 
 
   \newcounter{enumTemp}
   \setcounter{enumTemp}{\theenumi}
-  \item {[DSPL \& OPL]} \textbf{Bring the groceries in} \\
-  The robot is asked to deliver a bag with groceries  to a specific location (e.g. \quotes{Take this bag to the kitchen table}).
+  \item {[DSPL \& OPL]} \textbf{Bringing groceries in}
+  The operator asks the robot to take a bag to a specific location (e.g. \quotes{Take this bag to the kitchen table}).
   \begin{enumerate}
-    \item \textbf{Bag pick-up:} The robots gets the bag. For this there are several options to achieve this:
-      \textbf{a)} Human puts bag in robot's hand,
-      \textbf{b)} robot picks up bag on floor,
-      \textbf{c)} Robot takes bag from operator's hand
-    \item \textbf{Bag delivery:} The robot delivers the bag to the instructed destination. It may place the bag on the floor or onto the placement location.\\
-
-    \item \textbf{Asking for help:} Close to the delivery location is another person. The robot must face at them and kindly ask them to help carrying groceries into the house.
+    \item \textbf{Bag pick-up:} The robots picks up the bag via natural handover (See remarks).
+    \item \textbf{Bag delivery:} The robot takes the bag to the instructed destination. It may place the bag on the floor or onto the placement location.
+    \item \textbf{Asking for help:} Close to the delivery location is another person. Facing that person, the robot must kindly request for help carrying groceries into the house.
   \end{enumerate}
 
   \setcounter{enumi}{\theenumTemp}
@@ -101,7 +97,9 @@ Several obstacles are placed obstructing the robot's path. This can happen anyti
 
   \item \textbf{Bag handles:} The handles of the bag are always clear and standing up. See Figure \ref{fig:scenario_container_bag} in \refsec{rule:scenario_objects} for bag description. \footnotemark
 
-  \item \textbf{Bag pick-up:} If the robot can't handover the bag from the operator (i.e.~take it from the operator's hand) it may pick another bag from the surroundings. Additional bags might be either on the floor or on a table. It is expected the robot to actively try to grasp the bag from the operator's hand, and not passively waiting for the bag to be hanged on it. Shall the robot wait for the operator to hang the bag themself, the robot must clearly state it has detected the bag has been placed.
+  \item \textbf{Bag pick-up:} The robot should actively try to grasp the bag from the operator's hand.
+  If the robot can't take the bag from operator's hand (handover) it may request the operator to place or hang the bag on its manipulator, or place it on the floor for pickup.
+  The robot must clearly state whether it has detected the operator's hand, bag release, etc.
 
   \item \textbf{Calling the operator back:} During the following phase, when the robot has lost the operator, it may call the operator back once.
   \end{minipage}\hfill%
