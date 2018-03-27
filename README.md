@@ -62,4 +62,5 @@ Data is recorded from the robots during the competition. It is available through
 - [Youtube channel](https://www.youtube.com/channel/UChkdCpT0xrFMMt-_N8wSVew/)
 - [Facebook Page](https://www.facebook.com/robocupathome/)
 - [RoboCup @Home Wiki](https://github.com/RoboCupAtHome/AtHomeCommunityWiki/wiki)
+- [Forum](https://athome.forum.robocup.org/)
 - [Gitter.im chat](https://gitter.im/RoboCupAtHome/Lobby)
