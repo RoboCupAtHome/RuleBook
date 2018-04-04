@@ -13,19 +13,22 @@
 \begin{center}
 \begingroup
 \newcommand\tableTEAMS{}
-% \def\do#1{\appto\tableTEAMS{#1 & & &  \\\hline}}%
-\def\do#1{\appto\tableTEAMS{#1 & &  \\\hline}}%
+\def\do#1{\appto\tableTEAMS{#1 & & & & \\\hline}}%
+% \def\do#1{\appto\tableTEAMS{#1 & &  \\\hline}}%
 \expandafter\docsvlist\expandafter{\TEAMSSTAGETWO}
-% \begin{tabular}{|l|c|c|c|}
-\begin{tabular}{|l|c|c|}
+\begin{tabular}{|l|c|c|c|c|}
+% \begin{tabular}{|l|c|c|}
 	\hline
-	\multirow{3}{*}{Team}
+	\multicolumn{1}{|c|}{\multirow{3}{*}{Team}}
+	& Novelty/Scientific & Difficulty of the & \multirow{2}{*}{Success} &  Overall  \\
+	&    contribution    &  presented task   &                          &   demo    \\
+	&      (0-100)       &       (0-100)     &          (0-100)         &  (0-100)  \\
 %	& Novelty/Scientific & Success of &  Overall  \\
 %	&    contribution    &  the Demo  &   demo    \\
 %	&      (0-100)       &  (0-100)   &  (0-100)  \\
-	& Novelty/Scientific & Success of \\
-	&    contribution    &  the Demo  \\
-	&      (0-100)       &  (0-100)   \\
+%	& Novelty/Scientific & Success of \\
+%	&    contribution    &  the Demo  \\
+%	&      (0-100)       &  (0-100)   \\
 	\hline
 	\hline
 	\tableTEAMS
