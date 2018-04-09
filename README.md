@@ -6,14 +6,46 @@ All work for the Rulebook of 2019 will be pushed into to 2019/Rulebook.
 
 [Compiled LaTeX version](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=Rulebook.tex)
 
-RoboCup@Home teams and team members are welcome to post GitHub issues for clarifications, questions etc. 
+RoboCup@Home teams and team members are welcome to post GitHub issues for clarifications, questions etc.
 
-Improvements are also welcome in the form of pull requests (see [guidelines](https://github.com/RoboCupAtHome/RuleBook/wiki/Guidelines)). 
+Improvements are also welcome in the form of pull requests (see [guidelines](https://github.com/RoboCupAtHome/RuleBook/wiki/Guidelines)).
 
 [Score sheets](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=score_sheets.tex)
 
 ### FAQ
 See the Frequently Asked Questions [here](https://github.com/RoboCupAtHome/RuleBook/wiki/FAQ:-Frequently-Asked-Questions).
+
+### Change log
+**Finals**
+- Bronze Finals: 4th and 3rd match up for the 3rd place trophy
+
+**Stage 2**
+- Open Challenge:
+  - Score normalized to Stage 2 highest one.
+  - Evaluation metrics updated.
+- Set the Table: Replaced with P&G Challenge
+- P&G Challenge: Clean up a table by placing tableware in dishwasher.
+- EEGPSR: Reduced number of categories from 8 to 3
+  - Three at once, object-related, and people-related
+  - One of each, normal, incomplete and erroneous commands (given randomly)
+
+**Stage 1**
+- Storing Groceries:
+  - Per moved object scoring
+  - Score for opening door increased
+  - PDF report optional
+- Help me carry: Unless crushing, pushing the small object won-t finish the test
+
+**General Rules**
+- DSPL backpack
+  - DSPL teams can use official laptop in provided backpack
+- External Devices: ECRA Rule
+  - No people around external devices
+  - Mobile must be removed, others chained
+  - No keyboards, mouses, or screens attached
+- Removed bonus for data recording
+- Teams encouraged to provide annotated recording of spoken interactions
+
 
 ### Question, issues, and contribution Guidelines
 - When asking questions [please follow these Guidelines](https://github.com/RoboCupAtHome/RuleBook/wiki/Guidelines:-Questions).
