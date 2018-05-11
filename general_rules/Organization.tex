@@ -8,14 +8,18 @@ The competition features a \iterm{stage system}. It is organized in two stages e
 
 \begin{enumerate}
 	\item \textbf{Stage~I:} The first days of the competition will be called \iterm{Stage~I}. 
-	All qualified teams can participate in \iterm{Stage~I}. Stage~I comprehends a set of \iterm{Ability Tests}, an \iterm{Integration Test}, and an audience demonstration called \iterm{Following \& Guiding}. 
-	Those \iterm{Proficency Tests} (\iterm{Ability Tests}, and \iterm{Integration Test}) are performed multiple times (See \refsec{rule:score_system}). 
+	All qualified teams can participate in \iterm{Stage~I}. Stage~I comprehends of a set of \iterm{Proficiency Tests}.
+	Those \iterm{Proficiency Tests} are performed multiple times (See \refsec{rule:score_system}). 
 
 % MAURICIO @2017: With the inclusion of SPL only 6 teams per league advance to the second stage (leagues are intended to have 13 teams).
-	\item \textbf{Stage~II:} The best \emph{50\% of teams with full integrated capabilities}\footnote{If the total number of teams is less than 12, up to 6 teams may advance to Stage~II} (after Stage~I) advance to \iterm{Stage~II}. Here, more complex abilities or combinations of abilities are tested. In order to advance to Stage~II a team must successfully solve 3 out of \iterm{Proficency Tests} in Stage~I. \\
-	The \iterm{Open Challenge} is the open demonstration in Stage~II.
+	\item \textbf{Stage~II:} The best \emph{50\% of teams with full integrated capabilities}\footnote{If the total number of teams is less than 12, up to 6 teams may advance to Stage~II} (after Stage~I) advance to \iterm{Stage~II}. Here, more complex abilities or combinations of abilities are tested. 
+	
+% In order to advance to Stage~II a team must successfully solve 3 out of \iterm{Proficiency Tests} in Stage~I.
+% Johannes for this to work we need to explicitly label proficency tests and define what solving means 
+
+	The \iterm{Open Challenge} is an open demonstration in Stage~II.
 % MAURICIO @2017: With the inclusion of SPL, we want the finals with no more than 6 teams. At this point, the best two of each league advance to the finals.
-	\item \textbf{Final demonstration:} The best \emph{two teams} of each league, the ones with the highest score after Stage~II, advance to the final round. The final round features only a single open demonstration.
+	\item \textbf{Final demonstration:} The best \emph{four teams} of each league, the ones with the highest score after Stage~II, advance to the final round. The final round features only a single open demonstration.
 \end{enumerate}
 
 % MAURICIO: No Technical Challenge since 2015
@@ -25,7 +29,7 @@ In case of having no considerable score deviation between a team advancing to th
 
 % MAURICIO @2017: With the inclusion of SPL, we make mandatory participating in at least one Stage II test to advance to the finals
 \subsection{Number of tests}\label{rule:number_of_tests}
-None of the tests is mandatory, except for the \iterm{Robot Inspection} test (see \refsec{sec:robot_inspection}). However, in order to participate in the finals, a team must have participated in at least one test of the Stage~II.
+None of the tests is mandatory, except for the \iterm{Robot Inspection} test (see \refsec{sec:robot_inspection}). However, in order to participate in the finals, a team must have participated in at least one test of Stage~II.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,18 +75,16 @@ This rule only applies when not having organized \iterm{preparation slots}.
 \label{rule:score_system}
 
 \begin{enumerate}
-	\item \textbf{Stage~I:} The maximum total score (excluding special penalties and bonuses) in \iterm{Stage~I} is \scoring{1150 points}.
+	\item \textbf{Stage~I:} The maximum total score (excluding special penalties and bonuses) in \iterm{Stage~I} is \scoring{885 points} for OPL and DSPL and \scoring{920 points} for SSPL.
 	% \item \textbf{Stage~I:} The maximum total score (excluding special penalties and bonuses) in \iterm{Stage~I} is \scoring{1050 points}.
 	\begin{enumerate}
-		\item \textbf{\iterm{Proficency Tests}:} Each proficiency test is attempted three times. The maximum total score is calculated as the average of the best two attempts for that test.
+		\item \textbf{\iterm{Proficiency Tests}:} Each proficiency test is attempted three times unless the time schedule only allows for less. The maximum total score is calculated as the average of the best two attempts for that test.
 		% \item \textbf{Poster Session:} The Poster Session score is counted in Stage~I and may grant up to \scoring{50 points}.
 	\end{enumerate}
 
-	\item \textbf{Stage~II:} Test in \iterm{Stage~II} are rewarded on a task-solved scoring basis.
+	\item \textbf{Stage~II:} The maximum total score (excluding special penalties and bonuses and the \iterm{Open Challenge}) in \iterm{Stage~II} is \scoring{935 points} for OPL and DSPL and \scoring{975 points} for SSPL.
 	\begin{enumerate}
-		\item Each test but the \iterm{Open Challenge} has a main task. The base score for solving the main task is \scoring{250 points}.
-		\item The maximum score for \iterm{Open Challenge} is \scoring{250 points}.
-		\item Optionals and subtasks add bonus points to the main task score.
+		\item The score for \iterm{Open Challenge} depends on the highest achieved score in \iterm{Stage~II} (see \refsec{sec:test_open_challenge:scoring}).
 	\end{enumerate}
 
 	\item \textbf{\iterm{Finals}:} Final score is normalized and special evaluation is used
@@ -116,7 +118,6 @@ This rule only applies when not having organized \iterm{preparation slots}.
 	\begin{enumerate}
 		\item To participate in the \iterm{Open Challenge}, a team needs to participate in at least one regular \iterm{Stage~II} test.
 		\item Teams can demonstrate freely chosen abilities. 
-		\item The performance is evaluated by a jury consisting of the \iaterm{Technical Committee}{TC}.
 		\item The \iterm{Open Challenge} is described in \refsec{sec:test_open_challenge}.
 	\end{enumerate}
 
@@ -132,8 +133,9 @@ This rule only applies when not having organized \iterm{preparation slots}.
 	\item \textbf{\iterm{Finals}:} The competition ends with a final demonstration.
 	\begin{enumerate}
 		\item The concept of the final demonstration is the same as that of the \iterm{Open Challenge}, but the performance evaluation is different. 
-		\item The are two juries---an \emph{external} consisting of three or more people not from the RoboCup @Home league, and an \emph{internal} formed by the \iaterm{Executive Committee}{EC}. Both juries have different sets of evaluation criteria.
-		\item Members of the external jury are selected by the \iaterm{Executive Committee}{EC} on site. 
+		\item The formation of the jury is explained in \refsec{final:jury}.
+		%\item There are two juries---an \emph{external} consisting of three or more people not from the RoboCup @Home league, and an \emph{internal} formed by the \iaterm{Executive Committee}{EC}. Both juries have different sets of evaluation criteria.
+		% Johannes this
 		\item The demonstration in the \iterm{Finals} does not have to be different from the one shown in the \iterm{Open Challenge}. It does not have to be the same either.
 	\end{enumerate}
 \end{enumerate}
