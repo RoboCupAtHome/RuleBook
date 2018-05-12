@@ -9,46 +9,48 @@ This test focuses on human detection and recognition, safe navigation and human-
 \subsection{Setup}
 \begin{itemize}
 	\item \textbf{Party room}: any (large) room inside the apartment when normally a party would be held.
-	\item \textbf{Guests:} At least five people are distributed in a predefined \quotes{party room} either sitting or standing, some of them forming groups of 2 or 3 people, from which at least one is sitting. Three of the guests have drink orders assigned by the referees. The sitting person always has an assigned drink.
-	\item \textbf{Bar:} The bar is any flat surface where objects can be placed, in a room other than the \quotes{party room}. All available beverages are on top of the bar for the robot can see them.
-	\item \textbf{Barman:} The Barman bay be standing either behind the bar or next to it, depending on the arena setup.
+	\item \textbf{Guests:} At least five people are distributed in a predefined \quotes{party room} either sitting or standing.
+                Three of the guests have drink orders.
+	\item \textbf{Bar:} The bar is any flat surface where objects can be placed, in a room other than the \quotes{party room}.
+                All available beverages are on top of the bar.
+	\item \textbf{Barman:} The Barman may be standing either behind the bar or next to it, depending on the arena setup.
 \end{itemize}
 
 \subsection{Task}
 
 \begin{enumerate}
 
-	\item \textbf{Entering:} The robot enters the arena and navigates to the party room and waits for being called.
+	\item \textbf{Entering:} The robot enters the arena and navigates to the party room.
 
-	\item \textbf{Getting called:} The guests call the robot simultaneously, either rising an arm, waving, or shouting. The robot has to approach one of them.
-	% Remark: Themself is the correct word used instead of himself/herself  when person gender is unknown.
-	The calling person introduces themself by name before giving the order of a drink. The robot leads the dialogue to learn the person and retrieve their drink order. \\
+	\item \textbf{Getting called:} The guests call the robot simultaneously, either rising an arm, waving, or shouting.
+	The robot has to approach one of them.
+        The robot can decide to skip the detection of the calling and ask one person to walk in front of it. In this case, the referees determine the person to approach the robot.
 
-	The robot can decide to skip the detection of the calling and ask one person to walk in front of it. In this case, the referees determine the person to approach the robot.
 
-	\item \textbf{Taking the order:} After the robot has fetched the order of the first guest, it can either fetch more orders (i.e.~ find next calling guest or looking for the sitting one) or proceed to place the order. In the first case, the robot searches for the remaining calling people. During the search process, the robot is allowed to either ask people to call for it again, or to ask people to come to it and to give a new order. In both cases the robot may call into the room.
+	The calling person introduces themself by name before giving the order of a drink.
+	The robot leads the dialogue to learn the person and retrieve their drink order. \\
 
-	\item \textbf{Sitting person:} At least one person is sitting and minding their own business (i.e. not looking directly to the robot). The robot must locate that person and ask if the person wants something to drink. The robot must also ask for the person's name and memorize them (i.e. execute a learning procedure of the name and the person's features). \\
 
-	\textbf{Remark:} At least one sitting person has an order to place. No sitting person will attend to the robot's call
-	(i.e. robot has to approach to them).
+	\item \textbf{Taking the order:} After the robot has took the order of the first guest, it can either take more orders or proceed to place the order.
 
-	\item \textbf{Placing the orders:} The robot has to navigate to the \textit{Bar}, a designated location in another room where drinks are served. The robot must repeat each order to the \textit{Barman}, clearly stating:
+	\item \textbf{Placing the orders:} The robot has to navigate to the \textit{Bar}. The robot must repeat each order to the \textit{Barman}, clearly stating:
 	\begin{enumerate}
 		\item The person's name,
 		\item The person's chosen drink,
 		\item A description of unique characteristics of that person that allow the \textit{Barman} to find them (e.g. gender, hair colour, how is dressed, etc).
 	\end{enumerate}
 
-	While the robot places the orders, the people in the \quotes{party room} may change their places within the party room (on request of the referees).
+	While the robot places the orders, the people in the \quotes{party room} change their places within the party room (on request of the referees).
 
-	\item \textbf{Missing beverage:} One of the ordered drinks is not available, therefore, missing from the bar. The robot should realize this inconvenience and tell the \textit{Barman}, providing a list of 3 alternatives considering the other drinks it needs to deliver. If the robot can't detect which drink is missing, the \textit{Barman} will clearly state which of the beverages is not available and provide a list of 3 alternatives.
+	\item \textbf{Missing beverage:} One of the ordered drinks is not available, therefore, missing from the bar.
+	The robot should realize this inconvenience and tell the \textit{Barman}, providing a list of 3 alternatives considering the other drinks it needs to deliver.
+	If the robot can't detect which drink is missing, the \textit{Barman} will clearly state which of the beverages is not available and provide a list of 3 alternatives.
 
-	\item \textbf{Correcting an order:} The robot should navigate back to the \quotes{party room}, find the person whose drink is missing and provide the alternatives for they to choose.\\
+	\item \textbf{Correcting an order:} The robot should navigate back to the \quotes{party room}, find the person whose drink is missing and provide the alternatives for them to choose.\\
 
 	If the robot comes to the place the person ordered and the person is not there, it can call that person loud, the person should respond (either sound or waving hand) and the robot must go to that place (check the person identity).
 
-	\item \textbf{Placing the corrected order:} The robot has to navigate to the \textit{Bar} and inform the change on the guest's order. This time only the guest's name and drink can be provided.
+	\item \textbf{Placing the corrected order:} The robot has to navigate to the \textit{Bar} and inform the change on the guest's order.
 \end{enumerate}
 
 \subsection{Additional rules and remarks}
@@ -70,16 +72,19 @@ This test focuses on human detection and recognition, safe navigation and human-
 	\item \textbf{Empty arena:} During the test, only the robot, the guest, and the Barman are in the arena. The door opener, the referees and other personnel that is not assigned as test people will be outside the scenario.
 
 	\item \textbf{Calling instruction:} The team needs to specify before the test which ways of getting the attention of the robot are allowed. This can be waving, calling or both of them. The robot can also decide to skip this part, by asking for people to get close to it.
+	
+	\item \textbf{Sitting persons:} Sitting persons are not actively calling the robot.
 \end{enumerate}
 
 \subsection{Referee instructions}
 
 The referees need to
 \begin{itemize}
-	\item select 5 people and their names from the list of person names (see Section 3.2.8),
-	\item arrange (and re-arrange) people in the party room,
+	\item select at least 5 volunteers and assign names from the list of person names (see Section 3.2.8),
+	\item assign orders to the selected persons
+	\item arrange (and re-arrange) people in the party room. At least one is sitting.
 	\item select the person (barman) who will serve the drinks,
-	\item select the ordering 3 people and the orders to give,
+	\item place drings at the bar while one drink is missing
 	\item in case the robot skips the calling detection, select the ordering person to approach the robot,
 	\item write down the understood names and drinks during an order and update the order accordingly.
 \end{itemize}
