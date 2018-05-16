@@ -43,13 +43,13 @@ Some examples are:
 
 \subsection{Category II:}
 \label{chap:gpsr-appendix-cat2}
-Tasks with a moderate difficulty degree. This category involves following a human, indoor navigation in crowded environments, manipulation and recognition of alike objects, find a calling person (waving or shouting), etc. 
+Tasks with a moderate difficulty degree. This category involves following a human, indoor navigation in crowded environments, manipulation and recognition of alike objects, find a calling person (waving or shouting), etc.
 
 Some examples are:
 \begin{itemize}
 	\item \textit{Tell me how many beverages in the shelf are red.}
 	\item \textit{Put the banana on the kitchen table.}
-	\item \textit{Count the waiving people in the livingroom.}
+	\item \textit{Count the waiving people in the living room.}
 	\item \textit{Follow Ana at the entrance.}
 	\item \textit{Tell me the name of the woman in the kitchen.}
 \end{itemize}
@@ -87,7 +87,28 @@ Some examples are:
 	\item \textit{Follow me and then go to the kitchen} (Operator takes the robot to the audience area).
 	\item \textit{Give me the left most object from the shelf.}
 	\item \textit{Count the drinks on the table.}
-	\item \textit{Tell me how many girls there are in the livingroom.}
+	\item \textit{Tell me how many girls there are in the living room.}
 \end{itemize}
 
 
+\section{Bypassing commands and alternate solutions}
+The General Purpose Service Robot is a goal-driven test in which the final results has priority over how the command is executed.
+This adds several degrees of freedom to make a plan and execute a command accordingly with the robot's capabilities.
+
+For instance, consider the following command:
+
+\begin{center}
+\noindent\textit{Bring me a coke}
+\end{center}
+
+It is clear that the operator wants a coke and cares little about how the coke is retrieved. Now, let's say that the robot's manipulator is broken, so it won't be able to handle a coke. In this case, several scenarios become evident:
+
+\begin{itemize}
+	\item \textbf{Skipping command:} The robot says \quotes{I understood you want me to bring you a coke, but I cannot grasp objects, so I'll skip this command}. Since the robot is not executing the task, no score is given.
+
+	\item \textbf{Continue Rule:} The robot more or less reaches the position, fuzzily points at the object, and then requests to a human assistant to deliver the coke for it. In this case, the referee might grant up to $\frac{1}{3}$ of the points, if any.
+
+	\item \textbf{Requesting human assistance:} Taking advantage of the Continue Rule, the robot requests assistance from a human to grasp the object, requesting later to follow it. During the guiding phase, the robot actively tracks the human to the operator's position and supervises the delivery (e.g. telling it noticed the operator has received the coke). In this case, and regarding the execution of the tasks, the referee may grant a full score.
+
+	\item \textbf{Social alternative:} The robot looks for another person in the arena, finds them, and convinces them (or socially bribes them) to deliver a coke to the operator using natural language dialogs. In these rare cases, the referee may grant a full score depending on the success of the interaction.
+\end{itemize}
