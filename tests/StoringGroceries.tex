@@ -66,34 +66,6 @@ This test focuses on the detection and recognition of objects and their features
 \end{enumerate}
 
 
-% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% PDF Recognition Report
-%
-% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{PDF Recognition Report}
-To validate results and justify theirs decisions, robots may create a PDF report in a USB-stick (highly advised). This report must be delivered to the referee (or may be collected by them) right after the test, and be named with the following format: \texttt{TeamName\_RunNumber.pdf}.
-
-The PDF Recognition Report will be only considered if the robot successfully placed at least one object in the cupboard and must include the following elements:
-\begin{itemize}
-	\item The name of the team.
-	\item The try number (to identify between runs).
-	\item The date and time.
-	\item Picture of the cupboard in its initial state with bounding boxes enclosing each group and human-readable labels to identify them.
-	\item For each step: Picture of the cupboard in its current state after placing the object(s). with bounding boxes enclosing each group and human-readable labels to identify them. In a similar way, moved objects shall be highlighted inside an easy-to-distinguish bounding box with a label stating the object's name, category, and any other relevant information used to categorize the object.
-	\item
-\end{itemize}
-
-A significant amount of objects can be unknown to the robot (See \ref{rule:scenario_objects}). A correct label for these may be:
-\begin{itemize}
-	\item Simply labeling those as \quotes{Unknown} as opposed to wrongly applying a label from the known or alike objects
-	\item Labeling pairs of unknown objects of the same class with the same label (which may be e.g. \texttt{type\_X} for one pair and \texttt{relevant-feature\_Y} for another).
-	\item Labeling unknown objects with a new, sensible label for objects.
-\end{itemize}
-
-\textbf{Remark:} It must be unmistakable which label belongs to which object. Objects must also be easily recognizable in the report by a human (TC) for scoring purposes.
-
-% \textbf{Remark:} False positives in the report (labeling an object which is not an object but e.g. the edge of the shelf) are penalized.
 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
