@@ -11,7 +11,7 @@ The robot has to show it has understood the given command by stating all the req
 
 If The robot can't correctly recognize the given command, it is allowed to request the operator to repeat the command up to three times. After three failed attempts, a new command is generated. The team may opt to use a custom operator or bypassing speech recognition (\refsec{rule:asrcontinue}) at any time, but each generated command will be given to the robot no more than three times. Only three different commands are generated for a robot, if the robot fails to recognize all three commands (i.e. nine attempts), the test ends immediately.
 
-When a robot has partially understood the command, it is allowed to ask the operator for additional information (e.g. \textit{\quotes{did you say apple juice or pineapple juice?}}).
+When a robot has partially understood the command, it is allowed to ask the operator for additional information (e.g.~\textit{\quotes{did you say apple juice or pineapple juice?}}).
 
 \subsection{Missing information}
 When a given command lacks of information required for accomplishing the task, the robot should request for that missing part. For instance, if the robot is instructed to \textit{\quotes{offer a drink to the person at the door}}, it may ask \textit{\quotes{which drink should I deliver to the person at the door?}} It is also possible that the robot simply confirms the command and takes a random drink from the drinks location, but in those cases, the jury will consider the command as if it were from an inferior/lower category.
@@ -108,7 +108,7 @@ It is clear that the operator wants a coke and cares little about how the coke i
 
 	\item \textbf{Continue Rule:} The robot more or less reaches the position, fuzzily points at the object, and then requests to a human assistant to deliver the coke for it. In this case, the referee might grant up to $\frac{1}{3}$ of the points, if any.
 
-	\item \textbf{Requesting human assistance:} Taking advantage of the Continue Rule, the robot requests assistance from a human to grasp the object, requesting later to follow it. During the guiding phase, the robot actively tracks the human to the operator's position and supervises the delivery (e.g. telling it noticed the operator has received the coke). In this case, and regarding the execution of the tasks, the referee may grant a full score.
+	\item \textbf{Requesting human assistance:} Taking advantage of the Continue Rule, the robot requests assistance from a human to grasp the object, requesting later to follow it. During the guiding phase, the robot actively tracks the human to the operator's position and supervises the delivery (e.g.~telling it noticed the operator has received the coke). In this case, and regarding the execution of the tasks, the referee may grant a full score.
 
 	\item \textbf{Social alternative:} The robot looks for another person in the arena, finds them, and convinces them (or socially bribes them) to deliver a coke to the operator using natural language dialogs. In these rare cases, the referee may grant a full score depending on the success of the interaction.
 \end{itemize}

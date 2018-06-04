@@ -27,16 +27,16 @@ The operator (the robot's owner) has a set of bags (and possibly other objects) 
 \subsection{Task}
 \textbf{Remark:} Obstacles obstructing robot's path can be found anytime. See~\ref{sec:helpmecarry_obstacles} for details.
 \begin{enumerate}
-  \item \textbf{Start:} The robot starts at a designated starting position in the arena, and waits for the \textit{professional} operator. The operator steps in front of the robot and tells it to follow (e.g. by saying \quotes{follow me}). The team is \emph{not} allowed to instruct the operator.
+  \item \textbf{Start:} The robot starts at a designated starting position in the arena, and waits for the \textit{professional} operator. The operator steps in front of the robot and tells it to follow (e.g.~by saying \quotes{follow me}). The team is \emph{not} allowed to instruct the operator.
 
   \item \textbf{Memorizing the operator:} The robot has to memorize the operator. During this phase, the robot may instruct the operator to follow a certain setup procedure.
 
-  \item \textbf{Following the operator:} When the robot signals that it is ready to start, the operator starts walking --in a natural way-- towards the car. Upon arrival, the operator will indicate the robot when they have reached their destination as instructed by the robot (e.g. by saying \quotes{here is the car} or \quotes{stop following me}).
+  \item \textbf{Following the operator:} When the robot signals that it is ready to start, the operator starts walking --in a natural way-- towards the car. Upon arrival, the operator will indicate the robot when they have reached their destination as instructed by the robot (e.g.~by saying \quotes{here is the car} or \quotes{stop following me}).
 
   \newcounter{enumTemp}
   \setcounter{enumTemp}{\theenumi}
   \item {[DSPL \& OPL]} \textbf{Bringing groceries in}
-  The operator asks the robot to take a bag to a specific location (e.g. \quotes{Take this bag to the kitchen table}).
+  The operator asks the robot to take a bag to a specific location (e.g.~\quotes{Take this bag to the kitchen table}).
   \begin{enumerate}
     \item \textbf{Bag pick-up:} The robots picks up the bag via natural handover (See remarks).
     \item \textbf{Bag delivery:} The robot takes the bag to the instructed destination. It may place the bag on the floor or onto the placement location.
@@ -45,7 +45,7 @@ The operator (the robot's owner) has a set of bags (and possibly other objects) 
 
   \setcounter{enumi}{\theenumTemp}
   \item {[SSPL only]} \textbf{Look for help} \\
-  The robot is asked to find a person in a given room and ask them to assist carrying the groceries (e.g. \quotes{Look for Louise in the Kitchen and ask her to help us}).
+  The robot is asked to find a person in a given room and ask them to assist carrying the groceries (e.g.~\quotes{Look for Louise in the Kitchen and ask her to help us}).
   \begin{enumerate}
     \item \textbf{Entering the house:} While on its way back to the house, the robot deals with different obstacles along it's path.
     \begin{itemize}[leftmargin=3cm]
@@ -72,13 +72,13 @@ Several obstacles are placed obstructing the robot's path. This can happen anyti
 \begin{itemize}
   \item \textbf{3D Object:} A hard-to-perceive object
   % that requires more than a laser scanner to be detected
-  (e.g. coat rack, rolling chair, lamp, etc).
+  (e.g.~coat rack, rolling chair, lamp, etc).
 
   \item \textbf{Small object:} Small object
-  (e.g. apple, glass, lego brick, etc).
+  (e.g.~apple, glass, lego brick, etc).
 
   \item {[DSPL and OPL]} \textbf{Movable Object:} Something that can be moved or pushed away
-  (e.g. coat rack, rolling chair, lamp, etc).
+  (e.g.~coat rack, rolling chair, lamp, etc).
   The robot must clearly state it is about to push the object.
 
   \item {[SSPL Only]} \textbf{\textit{Smart} obstacle:} A person to whom the robot may kindly ask to step aside.
