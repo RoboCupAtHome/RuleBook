@@ -1,8 +1,8 @@
-RuleBook for RoboCup @Home 2018
+RuleBook for RoboCup @Home 2019
 ===============================
 
-This is the **FINAL VERSION**.
-All work for the Rulebook of 2019 shall be pushed into to 2019/Rulebook (to be merged after Montreal).
+This is a **DRAFT**.
+All work for the Rulebook of 2020 will be pushed into to 2020/Rulebook.
 
 [On-the-fly compiled LaTeX version](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=Rulebook.tex)
 
@@ -18,37 +18,7 @@ Improvements are also welcome in the form of pull requests (see [guidelines](htt
 See the Frequently Asked Questions [here](https://github.com/RoboCupAtHome/RuleBook/wiki/FAQ:-Frequently-Asked-Questions).
 
 ### Change log
-(Update required)
-
-**Finals**
-- Bronze Finals: 4th and 3rd match up for the 3rd place trophy
-
-**Stage 2**
-- Open Challenge:
-  - Score normalized to Stage 2 highest one.
-  - Evaluation metrics updated.
-- Set the Table: Replaced with P&G Challenge
-- P&G Challenge: Clean up a table by placing tableware in dishwasher.
-- EEGPSR: Reduced number of categories from 8 to 3
-  - Three at once, object-related, and people-related
-  - One of each, normal, incomplete and erroneous commands (given randomly)
-
-**Stage 1**
-- Storing Groceries:
-  - Per moved object scoring
-  - Score for opening door increased
-  - PDF report optional
-- Help me carry: Unless crushing, pushing the small object won-t finish the test
-
-**General Rules**
-- DSPL backpack
-  - DSPL teams can use official laptop in provided backpack
-- External Devices: ECRA Rule
-  - No people around external devices
-  - Mobile must be removed, others chained
-  - No keyboards, mouses, or screens attached
-- Removed bonus for data recording
-- Teams encouraged to provide annotated recording of spoken interactions
+No changes so far
 
 
 ### Question, issues, and contribution Guidelines
