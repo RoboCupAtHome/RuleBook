@@ -1,8 +1,8 @@
 # ############################################################################
-#     www.  //        //''                         //    '' //''//''          
-#    //''' //' //'// //' '''// ////   //''' //''' //'// // //' //' //'// //'' 
-#   ///// //  ///// //  ///// // //  ///// //    // // // //  //  ///// //    
-#  ,,,// /// //,,, //  //,// // //, ,,,// //,,, // // // //  //  //,,, // .de 
+#     www.  //        //''                         //    '' //''//''
+#    //''' //' //'// //' '''// ////   //''' //''' //'// // //' //' //'// //''
+#   ///// //  ///// //  ///// // //  ///// //    // // // //  //  ///// //
+#  ,,,// /// //,,, //  //,// // //, ,,,// //,,, // // // //  //  //,,, // .de
 # ############################################################################
 #
 #            $Id: Makefile 269 2012-06-03 23:41:12Z holz $
@@ -40,7 +40,7 @@ TARFILE = $(PREFIX).tar
 TGZFILE = $(PREFIX).tgz
 TBZFILE = $(PREFIX).tbz
 
-RMSOME  = *~ 
+RMSOME  = *~
 RMFILES = *~ *.toc *.idx *.ilg *.ind *.bbl *.blg *.out *.aux *.synctex.gz \
 	  *.tmp *.log *.lot *.lof *.adx *.and *.abb *.ldx $(PREFIX).pdf score_sheets*.pdf .temp* $(TARFILE)
 
@@ -71,10 +71,10 @@ SPELL       = aspell
 SPELL_OPT   = --lang=en --mode=tex --extra-dicts=./extra_dict.pws -p ./extra_dict.pws
 SPELL_ADDITIONAL_OPT = --add-tex-command="nolinkurl p" --add-tex-command="refsec p"
 ## either check file, prompting for action
-SPELL_CMD   = -c 
+SPELL_CMD   = -c
 ## or just list mispelled words
-#SPELL_CMD   = list < 
-SPELL_WARN  = list < 
+#SPELL_CMD   = list <
+SPELL_WARN  = list <
 
 
 ## VIEW ###################
@@ -159,18 +159,18 @@ dofullpdf:
 dopdflatex:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- Creating Score Sheets"; $(RESET)
-	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_OPL' '\def\league{OPL}\input' score_sheets 
-	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_DSPL' '\def\league{DSPL}\input' score_sheets 
-	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_SSPL' '\def\league{SSPL}\input' score_sheets 
+	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_OPL' '\def\league{OPL}\input' score_sheets
+	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_DSPL' '\def\league{DSPL}\input' score_sheets
+	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_SSPL' '\def\league{SSPL}\input' score_sheets
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(PDFFILE)' via $(PDFLATEX)"; $(RESET)
-	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(TEXFILE) 
+	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(TEXFILE)
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 
 dopdf2ps:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- Running '$(PDF2PS)' on '$(PDFFILE)'"; $(RESET)
-	$(SILENT) $(PDF2PS) $(PDF2PSFLAGS) $(PDFFILE)  
+	$(SILENT) $(PDF2PS) $(PDF2PSFLAGS) $(PDFFILE)
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 
 ## ##################### ##
@@ -180,19 +180,19 @@ dopdf2ps:
 dobibtex:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- Running bibtex on '$(PREFIX)'"; $(RESET)
-	$(SILENT) $(BIBTEX) $(PREFIX)  
+	$(SILENT) $(BIBTEX) $(PREFIX)
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 
 domakeidx:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- Running makeindex on '$(IDXFILE)'"; $(RESET)
-	$(SILENT) $(MAKEIDX) $(IDXFILE) 
+	$(SILENT) $(MAKEIDX) $(IDXFILE)
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 
 domakeadx:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- Running makeindex on '$(ADXFILE)' (abbreviations)"; $(RESET)
-	$(SILENT) $(MAKEIDX) $(ADXFILE) -o $(ANDFILE) -s ./setup/abbrevix.ist  
+	$(SILENT) $(MAKEIDX) $(ADXFILE) -o $(ANDFILE) -s ./setup/abbrevix.ist
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 
 ## ##################### ##
@@ -200,14 +200,14 @@ domakeadx:
 ## ##################### ##
 
 #wall: warntex warn2do
-wall: warn2do warnspell summary 
+wall: warn2do warnspell summary
 
 warntex:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- grep LaTeX/pdfTeX Warnings in '$(TEXFILE)' ..."; $(RESET)
 	$(SILENT) $(LATEX) $(TEXFILE) | grep -i -A 1 "tex warning" \
 			&& ($(ERROR); $(MSG) "  -> please take care of the above TeX-warnings\n"; $(RESET)) \
-			|| ($(CHECK); $(MSG) "  =) TeX generated NO warnings"; $(RESET))  
+			|| ($(CHECK); $(MSG) "  =) TeX generated NO warnings"; $(RESET))
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 
 warn2do:
@@ -286,11 +286,11 @@ dirk:	mauBuild
 mauBuild:
 	$(SILENT) rubber --pdf --force Rulebook.tex
 	$(SILENT) for league in OPL DSPL SSPL ; do \
-	    (echo "\def\league{$$league}\input" ; cat score_sheets.tex ) > "score_sheets_$$league.tex" ; \
+	    (echo "\def\league{$$league}" ; cat score_sheets.tex ) > "score_sheets_$$league.tex" ; \
 		rubber --pdf --force "score_sheets_$$league.tex" ; \
 		rm -f  "score_sheets_$$league.tex" "score_sheets_$$league.out" "score_sheets_$$league.log" "score_sheets_$$league.aux"; \
 	done
-	
+
 
 mauClean:
 	$(SILENT) rm -f *.aux *.bbl *.blg *.log *.lof *.log *.lot *.out *.synctex.gz *.toc *~
