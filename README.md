@@ -1,8 +1,8 @@
 RuleBook for RoboCup @Home 2018
 ===============================
 
-This is a **DRAFT**.
-All work for the Rulebook of 2019 will be pushed into to 2019/Rulebook.
+This is the **FINAL VERSION**.
+All work for the Rulebook of 2019 shall be pushed into to 2019/Rulebook (to be merged after Montreal).
 
 [Compiled LaTeX version](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=Rulebook.tex)
 
@@ -16,6 +16,8 @@ Improvements are also welcome in the form of pull requests (see [guidelines](htt
 See the Frequently Asked Questions [here](https://github.com/RoboCupAtHome/RuleBook/wiki/FAQ:-Frequently-Asked-Questions).
 
 ### Change log
+(Update required)
+
 **Finals**
 - Bronze Finals: 4th and 3rd match up for the 3rd place trophy
 

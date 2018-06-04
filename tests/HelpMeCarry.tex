@@ -18,25 +18,25 @@ The operator (the robot's owner) has a set of bags (and possibly other objects) 
 \begin{enumerate}
   \item \textbf{Location:} One of the arenas (apartment) and its surroundings. The apartment is in its normal state. Part of the test is performed outside the arena in a public space.
   \item \textbf{Start:} The robot starts waiting inside the arena.
-  \item \textbf{Car:} The car is any landmark chosen (but \emph{not} announced) beforehand outside the arena. Several bags (see \refsec{rule:scenario_objects}) with groceries are located where the car is parked.
+  \item \textbf{Car:} The car is any landmark chosen (but \emph{not} announced) beforehand outside the arena. Several bags (see~\refsec{rule:scenario_objects}) with groceries are located where the car is parked.
   \item \textbf{Doors:} All doors in the apartment are initially open.
-  \item \textbf{Operator:} A \quotes{professional} operator is selected by the TC to act as the operator of the robot.
+  \item \textbf{Operator:} A \enquote{professional} operator is selected by the TC to act as the operator of the robot.
   \item \textbf{Uncontrolled environment:} There are no restrictions on other people walking by or standing around throughout the complete task.
 \end{enumerate}
 
 \subsection{Task}
-\textbf{Remark:} Obstacles obstructing robot's path can be found anytime. See \ref{sec:helpmecarry_obstacles} for details.
+\textbf{Remark:} Obstacles obstructing robot's path can be found anytime. See~\ref{sec:helpmecarry_obstacles} for details.
 \begin{enumerate}
-  \item \textbf{Start:} The robot starts at a designated starting position in the arena, and waits for the \textit{professional} operator. The operator steps in front of the robot and tells it to follow (e.g. by saying \quotes{follow me}). The team is \emph{not} allowed to instruct the operator.
+  \item \textbf{Start:} The robot starts at a designated starting position in the arena, and waits for the \textit{professional} operator. The operator steps in front of the robot and tells it to follow (e.g.~by saying \enquote{follow me}). The team is \emph{not} allowed to instruct the operator.
 
   \item \textbf{Memorizing the operator:} The robot has to memorize the operator. During this phase, the robot may instruct the operator to follow a certain setup procedure.
 
-  \item \textbf{Following the operator:} When the robot signals that it is ready to start, the operator starts walking --in a natural way-- towards the car. Upon arrival, the operator will indicate the robot when they have reached their destination as instructed by the robot (e.g. by saying \quotes{here is the car} or \quotes{stop following me}).
+  \item \textbf{Following the operator:} When the robot signals that it is ready to start, the operator starts walking --in a natural way-- towards the car. Upon arrival, the operator will indicate the robot when they have reached their destination as instructed by the robot (e.g.~by saying \enquote{here is the car} or \enquote{stop following me}).
 
   \newcounter{enumTemp}
   \setcounter{enumTemp}{\theenumi}
   \item {[DSPL \& OPL]} \textbf{Bringing groceries in}
-  The operator asks the robot to take a bag to a specific location (e.g. \quotes{Take this bag to the kitchen table}).
+  The operator asks the robot to take a bag to a specific location (e.g.~\enquote{Take this bag to the kitchen table}).
   \begin{enumerate}
     \item \textbf{Bag pick-up:} The robots picks up the bag via natural handover (See remarks).
     \item \textbf{Bag delivery:} The robot takes the bag to the instructed destination. It may place the bag on the floor or onto the placement location.
@@ -45,7 +45,7 @@ The operator (the robot's owner) has a set of bags (and possibly other objects) 
 
   \setcounter{enumi}{\theenumTemp}
   \item {[SSPL only]} \textbf{Look for help} \\
-  The robot is asked to find a person in a given room and ask them to assist carrying the groceries (e.g. \quotes{Look for Louise in the Kitchen and ask her to help us}).
+  The robot is asked to find a person in a given room and ask them to assist carrying the groceries (e.g.~\enquote{Look for Louise in the Kitchen and ask her to help us}).
   \begin{enumerate}
     \item \textbf{Entering the house:} While on its way back to the house, the robot deals with different obstacles along it's path.
     \begin{itemize}[leftmargin=3cm]
@@ -72,13 +72,13 @@ Several obstacles are placed obstructing the robot's path. This can happen anyti
 \begin{itemize}
   \item \textbf{3D Object:} A hard-to-perceive object
   % that requires more than a laser scanner to be detected
-  (e.g. coat rack, rolling chair, lamp, etc).
+  (e.g.~coat rack, rolling chair, lamp, etc).
 
   \item \textbf{Small object:} Small object
-  (e.g. apple, glass, lego brick, etc).
+  (e.g.~apple, glass, lego brick, etc).
 
   \item {[DSPL and OPL]} \textbf{Movable Object:} Something that can be moved or pushed away
-  (e.g. coat rack, rolling chair, lamp, etc).
+  (e.g.~coat rack, rolling chair, lamp, etc).
   The robot must clearly state it is about to push the object.
 
   \item {[SSPL Only]} \textbf{\textit{Smart} obstacle:} A person to whom the robot may kindly ask to step aside.
@@ -95,7 +95,7 @@ Several obstacles are placed obstructing the robot's path. This can happen anyti
   \begin{minipage}{0.65\textwidth}
   \item \textbf{Asking for passage:} The robot is allowed to (gently) ask individual people to step aside, but it is not allowed to blindly shout at groups of people.
 
-  \item \textbf{Bag handles:} The handles of the bag are always clear and standing up. See Figure \ref{fig:scenario_container_bag} in \refsec{rule:scenario_objects} for bag description. \footnotemark
+  \item \textbf{Bag handles:} The handles of the bag are always clear and standing up. See Figure~\ref{fig:scenario_container_bag} in~\refsec{rule:scenario_objects} for bag description. \footnotemark
 
   \item \textbf{Bag pick-up:} The robot should actively try to grasp the bag from the operator's hand.
   If the robot can't take the bag from operator's hand (handover) it may request the operator to place or hang the bag on its manipulator, or place it on the floor for pickup.
@@ -127,11 +127,11 @@ Several obstacles are placed obstructing the robot's path. This can happen anyti
   \end{minipage}
   \item \textbf{Disturbances from outside:} If a person from the audience (severely) interferes with the robot in a way that makes it impossible to solve the task, the team may repeat the test immediately.
 
-  \item \textbf{Groceries:} Any kind of objects can be found lying around the location designated as the \textit{Car}, such as boxes, sacs, plastic bags, crates, and the groceries itself to give realism to the test. Regardless what objects are present, the robot shall carry an \textbf{official shopping bag} as described below and in \refsec{rule:scenario_objects}.
+  \item \textbf{Groceries:} Any kind of objects can be found lying around the location designated as the \textit{Car}, such as boxes, sacs, plastic bags, crates, and the groceries itself to give realism to the test. Regardless what objects are present, the robot shall carry an \textbf{official shopping bag} as described below and in~\refsec{rule:scenario_objects}.
 
   \item \textbf{Instruction:} The robot interacts with the operator, not the team.
 
-  \item \textbf{Natural walking:} The operator has to walk \quotes{naturally}, i.e., move forward facing forward. If not mentioned otherwise, the operator is not allowed to walk back, stand still, signal the robot or follow some re-calibration procedure.
+  \item \textbf{Natural walking:} The operator has to walk \enquote{naturally}, i.e., move forward facing forward. If not mentioned otherwise, the operator is not allowed to walk back, stand still, signal the robot or follow some re-calibration procedure.
 
   \item \textbf{Obstacle avoidance:} The robot is allowed to push (but not crush) the small object indefinitely without damaging it.
   Driving over, squeezing, crushing, breaking, etc., the small object immediately finishes the test.
@@ -142,7 +142,7 @@ Several obstacles are placed obstructing the robot's path. This can happen anyti
 \footnotetext{This may change in the future. Then, a soft handle may be used which folds down}
 
 % \subsection{Data recording}
-%   Please record the following data (See \refsec{rule:datarecording}):
+%   Please record the following data (See~\refsec{rule:datarecording}):
 % \begin{itemize}
 %  \item Maps
 %  \item Plans
@@ -153,7 +153,7 @@ Several obstacles are placed obstructing the robot's path. This can happen anyti
 The referee needs to
 \begin{itemize}
   \item Distribute some objects over the shopping bags.
-  \item Designate a few \quotes{car parking locations} from which the objects must be carried.
+  \item Designate a few \enquote{car parking locations} from which the objects must be carried.
 \end{itemize}
 
 \subsection{OC instructions}
