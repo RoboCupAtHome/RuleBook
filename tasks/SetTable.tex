@@ -1,0 +1,76 @@
+\section{Set the Table [House Holder]}
+The robot has to set the table (presumably for dinner) for one person.
+
+% \subsection{Focus}
+% This test focuses on object perception, manipulation, and planning.
+
+\subsection{Main Goal}
+Neatly lay tableware and cutlery on the dining table. Knife and spoon go on the right of the dish with the mug or cup in front of them; fork and napkin go on the left side; and the bowl is stacked on top of the dish.
+
+The following distribution is used:
+\begin{itemize}[nosep]
+	\item\textit{Silverware}: Any two different objects (fork, knife, or spoon).
+	\item\textit{Tableware}: A dish and any other object (bowl, cup, or mug).
+	\item\textit{Napkin}: A cloth or paper napkin.
+\end{itemize}
+
+\noindent\textbf{Reward:} 1000pts
+
+
+
+\subsection{Bonus rewards}
+\begin{enumerate}[nosep]
+	\item Opening the cupboard drawer (300pts)
+	\item Picking all utensils from the cupboard drawer (100pts each, max 500pts)
+	\item Closing the cupboard drawer (100pts)
+	\item Laying a place mat first (100pts)
+	% \item Leaving the arena (100pts)
+\end{enumerate}
+
+\subsection{Setup}
+\begin{itemize}[nosep]
+	\item \textbf{Location:} This test takes place in the arena, in a table close to the cupboard.
+	\item \textbf{Table:} Chairs may be placed around the table and won't be removed.
+	\item \textbf{Cupboard:} The cupboard doors and drawers are initially closed.
+	\item \textbf{Objects:} The objects used in this test can be found in the cupboard, not in their predefined locations.
+\end{itemize}
+
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Safe placing:} Objects must be placed with care. It must be clear that the robot is trying to place the object, not throwing or dropping it.
+
+	\item \textbf{Cupboard drawers:} The team decides whether the objects are inside one of the cupboard drawers (and which) or placed on the cupboard.
+	When no drawers are available, objects can be placed inside the cupboard. The cupboard door is used instead.
+
+\end{enumerate}
+
+\subsection{Referee instructions}
+
+The referee needs to
+\begin{itemize}
+	\item Remove all objects from the table
+	\item Place objects in the right place as requested by team (in the drawer or on the cupboard)
+	\item Close all open doors and drawers
+\end{itemize}
+
+\subsection{OC instructions}
+During Setup days:
+\begin{itemize}
+	\item Provide official cutlery and tableware for training.
+	\item Announce the default location of the cutlery and tableware on the cupboard.
+\end{itemize}
+
+% 2 hours before the test:
+% \begin{itemize}
+% 	\item Announce the predefined location to take the command.
+% \end{itemize}
+
+% \newpage
+% \subsection{Score sheet}
+% \input{scoresheets/SetTable.tex}
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:
+
