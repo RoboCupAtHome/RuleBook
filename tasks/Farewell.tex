@@ -1,0 +1,89 @@
+\section{Farewell [Party Host]}
+It's raining outside. The robot takes tired guests to their cab/über. Ladies go first.
+
+% \subsection{Focus}
+% This test focuses on human detection and recognition, safe navigation and human-robot interaction with unknown people.
+
+\subsection{Main Goal}
+Some guests are tired, so they call the robot to retrieve their coat.
+It's raining outside and there is only one umbrella, so the robot takes the guests one by one to their cab and returns with the umbrella.
+
+\noindent\textbf{Reward:} 600pts (300pts per guest).
+
+\subsection{Bonus rewards}
+\begin{enumerate}[nosep]
+	\item Delivering the right coat (150pts each, max 300pts)
+	\item Identifying the female calling person and escorting her first (100pts)
+\end{enumerate}
+
+
+\subsection{Setup}
+\begin{itemize}
+	\item \textbf{Location}: The test takes place inside and outside the arena.
+	Guests are in the living room.
+
+	\item \textbf{Start Location}: The robot starts inside the arena at a predefined location near the entrance door.
+
+	\item \textbf{Guests}: Initially there are five people in the living room, three sitting and two standing.
+	At least two guests are female.
+	All guests have a name and coat color assigned.
+
+	\item \textbf{Calling guests:} Only two guests are willing to leave. Both guests, male and female, will call the robot by waving or shouting at the same time.
+\end{itemize}
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Partial scoring:} The main task allows partial scoring.
+	Robot score per guest upon reentering the arena.
+
+	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per guest as follows.
+	\begin{enumerate}[nosep]
+		\item \textbf{Indicating leaving guest:} Telling the robot which guest is leaving (e.g. verbally or pointing at her) causes a reduction of 10\% in scoring for that particular guest.
+
+		\item \textbf{Guiding to the cab location:} Guiding the robot where the Cab Driver is standing causes a reduction of 40\% in scoring for that particular guest.
+
+		\item \textbf{Guiding back to the house:} Guiding the robot back to the house causes a reduction of 40\% in scoring for that particular guest.
+
+		\item \textbf{Coat handover:} Handing over a coat to the robot (i.e. no hook off) causes a reduction of 50\% of the scoring bonus.
+	\end{enumerate}
+
+	\item \textbf{Kicking out guests:} Non-calling guests will refuse to leave the house. The robot must confirm that the guest was calling and willing to leave.
+	
+	\item \textbf{Identifying the Cab:} There will be no cab, taxi, or any other vehicle parked outside the arena.
+	The cab location is identifiable by the \emph{Cab Driver}.
+
+	\item \textbf{Cab Driver:} The cab driver is an unknown person waving, wearing high-visibility clothing (e.g. fluorescent vest), and standing under an open umbrella.
+	The distance between the cab driver and the arena cannot exceed 15m.
+	
+	\item \textbf{Delivering coats:} Coats are hanging on a coat rack near the exit door.
+	The robot is supposed to autonomously hook off the coats and bring them back to the right person.
+\end{enumerate}
+
+
+\subsection{Referee instructions}
+
+The referees need to
+\begin{itemize}
+	\item Select at least 5 volunteers and assign them name and a color coat.
+	\item Choose the calling people.
+	\item Relocate the Cab Driver
+	\item Mind the robot when it goes outside the arena.
+\end{itemize}
+
+\subsection{OC instructions}
+During Setup days
+\begin{itemize}
+	\item Provide coats for training
+	\item Provide umbrella for training
+	\item Provide Cab Driver's high-visibility clothing for training
+\end{itemize}
+
+2h before test:
+\begin{itemize}
+	\item Select and announce the robot starting point
+	\item Help to relocate the Cab Driver
+\end{itemize}
+
+% \newpage
+% \subsection{Score sheet}
+% \input{scoresheets/Receptionist.tex}
