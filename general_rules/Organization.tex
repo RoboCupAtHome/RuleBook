@@ -48,6 +48,43 @@ In case of having no considerable score deviation between a team advancing to th
 	\item \textbf{Participation is default:} Teams have to indicate to the \iaterm{Organizing Committee}{OC} when they are \emph{skipping} a test slot. Without such indication, they may receive a penalty when not attending (see~\refsec{rule:not_attending}).
 \end{enumerate}
 
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+\begin{table}[h]
+	\centering\small
+	\newcommand{\teams}{%
+		\tiny
+		\begin{tabular}{c}%
+			\textit{Test slot 1}\\
+			$\vdots$\\
+			\textit{Test slot $n$}\\
+		\end{tabular}
+	}
+	\begin{tabular}{r|%
+		>{\columncolor[HTML]{9AFF99}}c |%
+		>{\columncolor[HTML]{9AFF99}}c |%
+		>{\columncolor[HTML]{CBCEFB}}c |%
+		>{\columncolor[HTML]{CBCEFB}}c |%
+	}
+	 \multicolumn{1}{ c }{}
+		& \multicolumn{1}{ c }{\cellcolor{white} Day 1 }
+		& \multicolumn{1}{ c }{\cellcolor{white} Day 2 }
+		& \multicolumn{1}{ c }{\cellcolor{white} Day 3 }
+		& \multicolumn{1}{ c }{\cellcolor{white} Day 4 }
+		\\ \hline 
+	\multicolumn{1}{|c|}{Block 1}                      & House Holder & Party Host & House Holder & Party Host   \\
+	\multicolumn{1}{|c|}{\footnotesize( 9:00 - 12:00)} & \teams       & \teams     & \teams       & \teams       \\ \hline
+	\multicolumn{5}{ c }{}                                                                                       \\
+	\multicolumn{1}{ c }{}                             & \multicolumn{4}{ c }{\color{gray}Lunch}                 \\
+	\multicolumn{5}{ c }{}                                                                                       \\ \hline
+	\multicolumn{1}{|c|}{Block 2}                      & House Holder & Party Host & Party Host   & House Holder \\
+	\multicolumn{1}{|c|}{\footnotesize(15:00 - 18:00)} & \teams       & \teams     & \teams       & \teams       \\ \hline
+	
+	& \multicolumn{2}{c|}{\cellcolor[HTML]{9AFF99}Stage 1} & \multicolumn{2}{c|}{\cellcolor[HTML]{CBCEFB}Stage 2}\\ \cline{2-5}
+	\end{tabular}
+\end{table}
+
 
 \subsection{Score system}
 \label{rule:score_system}
