@@ -35,15 +35,17 @@ In case of having no considerable score deviation between a team advancing to th
 \label{rule:schedule}
 
 \begin{enumerate}
-	\item \textbf{Scenario blocks:} Each scenario is split in two \iterm{blocks}: morning and afternoon.
-	Each block lasts two hours.
-	The \iaterm{Organizing Committee}{OC} announces the schedule during the setup days.
+	\item \textbf{Thematic scenario blocks:} Each \iterm{thematic scenario} or \iterm{theme} is split in two \iterm{blocks}.
+	At least two blocks are scheduled per day, having each block an assigned theme and lasting no less than two hours.
+	The \iaterm{Organizing Committee}{OC} announces the schedule during the setup days (see Table \ref{tbl:schedule}).
 
 	\item \textbf{Slots:} The \iaterm{Organizing Committee}{OC} assigns at least two \iterm{test slots} of 5 minutes to each team in each block.
-	A team is allowed to try to solve one task during its test slot.
-	Remaining block time can be used to assign testing slots to interested teams.
+	A team can solve any task during its test slot.
+	Remaining block time can be used to assign additional testing slots to interested teams.
+	Testing slots are randomly assigned to teams in each block.
 
-	\item \textbf{Tests:} Teams must announce to the referees which task will they solve during their test slots.
+	\item \textbf{Tests:} Teams must inform the OC in advance which task(s) will try to solve.
+	Only one task can be attempted per test slot.
 
 	\item \textbf{Participation is default:} Teams have to indicate to the \iaterm{Organizing Committee}{OC} when they are \emph{skipping} a test slot. Without such indication, they may receive a penalty when not attending (see~\refsec{rule:not_attending}).
 \end{enumerate}
@@ -53,36 +55,65 @@ In case of having no considerable score deviation between a team advancing to th
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[h]
 	\centering\small
-	\newcommand{\teams}{%
+	\newcommand{\teams}[3]{%
 		\tiny
 		\begin{tabular}{c}%
-			\textit{Test slot 1}\\
+			\textit{Test slot 1, team $#1$}\\
+			\textit{Test slot 2, team $#2$}\\
 			$\vdots$\\
-			\textit{Test slot $n$}\\
+			\textit{Test slot $n$, team $#3$}\\
 		\end{tabular}
 	}
-	\begin{tabular}{r|%
+	\newcommand{\wcell}[2]{%
+		\parbox[c]{2.5cm}{%
+			\vspace{#1}%
+			\centering%
+			#2%
+			\vspace{#1}%
+		}%
+	}
+	\newcommand{\cell}[1]{\wcell{0.2\baselineskip}{#1}}
+
+
+	\begin{tabular}{
+		>{\centering\arraybackslash}m{2.5cm}|%
 		>{\columncolor[HTML]{9AFF99}}c |%
 		>{\columncolor[HTML]{9AFF99}}c |%
 		>{\columncolor[HTML]{CBCEFB}}c |%
 		>{\columncolor[HTML]{CBCEFB}}c |%
 	}
-	 \multicolumn{1}{ c }{}
+	\multicolumn{1}{ c }{}
 		& \multicolumn{1}{ c }{\cellcolor{white} Day 1 }
 		& \multicolumn{1}{ c }{\cellcolor{white} Day 2 }
 		& \multicolumn{1}{ c }{\cellcolor{white} Day 3 }
 		& \multicolumn{1}{ c }{\cellcolor{white} Day 4 }
-		\\ \hline 
-	\multicolumn{1}{|c|}{Block 1}                      & House Holder & Party Host & House Holder & Party Host   \\
-	\multicolumn{1}{|c|}{\footnotesize( 9:00 - 12:00)} & \teams       & \teams     & \teams       & \teams       \\ \hline
-	\multicolumn{5}{ c }{}                                                                                       \\
-	\multicolumn{1}{ c }{}                             & \multicolumn{4}{ c }{\color{gray}Lunch}                 \\
-	\multicolumn{5}{ c }{}                                                                                       \\ \hline
-	\multicolumn{1}{|c|}{Block 2}                      & House Holder & Party Host & Party Host   & House Holder \\
-	\multicolumn{1}{|c|}{\footnotesize(15:00 - 18:00)} & \teams       & \teams     & \teams       & \teams       \\ \hline
-	
-	& \multicolumn{2}{c|}{\cellcolor[HTML]{9AFF99}Stage 1} & \multicolumn{2}{c|}{\cellcolor[HTML]{CBCEFB}Stage 2}\\ \cline{2-5}
+		\\\cline{2-5}
+	\cell{Block 1\\\footnotesize(9:00 - 12:00)}
+		& \cell{House Holder\\\teams{i}{j}{i}}
+		& \cell{Party Host\\\teams{k}{i}{k}}
+		& \cell{House Holder\\\teams{i}{j}{i}}
+		& \cell{Party Host\\\teams{j}{k}{j}}\\\cline{2-5}
+
+	\multicolumn{1}{ c }{}
+		& \multicolumn{4}{ c }{\wcell{0.5\baselineskip}{\color{gray}Lunch}}\\\cline{2-5}
+
+	\cell{Block 2\\\footnotesize(9:00 - 12:00)}
+		& \cell{House Holder\\\teams{i}{k}{i}}
+		& \cell{Party Host\\\teams{k}{j}{k}}
+		& \cell{Party Host\\\teams{i}{i}{k}}
+		& \cell{House Holder\\\teams{k}{j}{j}}\\\cline{2-5}
+
+	\multicolumn{1}{ c }{}
+		& \multicolumn{2}{ c }{\wcell{0.5\baselineskip}{\color[HTML]{029734}Stage 1}}
+		& \multicolumn{2}{ c }{\wcell{0.5\baselineskip}{\color[HTML]{6668e5}Stage 2}}\\
 	\end{tabular}
+
+	\caption{Example schedule.
+		Each team has assigned at least two test slots in every block.
+		At least two blocks are scheduled per day with an assigned theme.
+		A team can choose a different task in each test, meaning at least 4 different tests per stage.
+	}
+	\label{tbl:schedule}
 \end{table}
 
 
