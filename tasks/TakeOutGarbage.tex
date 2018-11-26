@@ -1,0 +1,61 @@
+\section{Take Out the Garbage [House Holder]}
+The robot has to take out the trash, recycling and compost.
+
+% \subsection{Focus}
+% This test focuses on object perception, manipulation, and planning.
+
+\subsection{Main Goal}
+All garbage in the apartment has has been deposited into the correct exterior bin.
+
+\noindent\textbf{Reward:} 450pts (150pts per type of garbage)
+
+\subsection{Bonus rewards}
+\begin{enumerate}[nosep]
+	\item Opening the apartment door (100pts)
+	\item Closing the apartment door (100pts)
+\end{enumerate}
+
+\subsection{Setup}
+\begin{itemize}[nosep]
+	\item \textbf{Location:} This test takes place in the arena and its immediate exterior.
+	\item \textbf{Interior Bins:} There are three bins in the apartment for trash, recycling and compost.
+	\item \textbf{Exterior Bins:} There are three larger bins outside the apartment. They may have lids covering their contents.
+\end{itemize}
+
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Door:} The team decides whether the apartment door starts open or closed.
+	\item \textbf{Exterior bin lids:} If the robot is unable or has failed to open an exterior bin lid, it must clearly say so. The robot may then leave the bag or interior bin next to the exterior bin for a reduction of 30\% in scoring for that type of garbage.
+
+\end{enumerate}
+
+\subsection{Referee instructions}
+
+The referee needs to
+\begin{itemize}
+	\item Place the bins in the predefined locations
+	\item Place sealed bags with some light contents in the interior trash and compost bins
+	\item Place a handful of items in the recycling bin
+	\item If the exterior bins have lids, ensure than a random bin has the lid closed and that the others are open
+\end{itemize}
+
+\subsection{OC instructions}
+During Setup days:
+\begin{itemize}
+	\item Provide official interior and exterior bins for training.
+\end{itemize}
+
+2 hours before the test:
+\begin{itemize}
+	\item Announce the predefined locations of the bins.
+\end{itemize}
+
+% \newpage
+% \subsection{Score sheet}
+% \input{scoresheets/SetTable.tex}
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:
+
