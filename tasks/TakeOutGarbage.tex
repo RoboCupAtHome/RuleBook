@@ -1,32 +1,34 @@
 \section{Take Out the Garbage [House Holder]}
-The robot has to take out the trash, recycling and compost.
+The robot has to take out the trash bags from the two bins in the apartment.
 
 % \subsection{Focus}
 % This test focuses on object perception, manipulation, and planning.
 
 \subsection{Main Goal}
-All garbage in the apartment has has been deposited into the correct exterior bin.
+All garbage bins in the apartment are empty and the garbage has been moved to the specified collection zone.
 
-\noindent\textbf{Reward:} 450pts (150pts per type of garbage)
+\noindent\textbf{Reward:} 600pts (300pts per bag)
 
 \subsection{Bonus rewards}
 \begin{enumerate}[nosep]
-	\item Opening the apartment door (100pts)
-	\item Closing the apartment door (100pts)
+	\item Moving a bag to the exterior collection zone (400pts, max one)
 \end{enumerate}
 
 \subsection{Setup}
 \begin{itemize}[nosep]
-	\item \textbf{Location:} This test takes place in the arena and its immediate exterior.
-	\item \textbf{Interior Bins:} There are three bins in the apartment for trash, recycling and compost.
-	\item \textbf{Exterior Bins:} There are three larger bins outside the apartment. They may have lids covering their contents.
+	\item \textbf{Location:} This test takes place in the arena and, optionally, in its immediate exterior.
+	\item \textbf{Bins:} There are two small trash bins in different rooms of the apartment. They are roughly cylindrical and open at the top. The space above the bin will be free of obstructions. The bin may be placed against a wall.
+	\item \textbf{Bags:} Each bin contains a tied garbage bag with some light contents. The color of the bag is different from the color of the bin.
+	\item \textbf{Collection Zones:} The interior collection zone is a rectangular region abutting an arena wall and with area not less than 1 square meter. The exterior zone is immediately adjacent to one of the arena entrances with area not less than 1 square meter. 
 \end{itemize}
 
 
 \subsection{Additional rules and remarks}
 \begin{enumerate}[nosep]
-	\item \textbf{Door:} The team decides whether the apartment door starts open or closed.
-	\item \textbf{Exterior bin lids:} If the robot is unable or has failed to open an exterior bin lid, it must clearly say so. The robot may then leave the bag or interior bin next to the exterior bin for a reduction of 30\% in scoring for that type of garbage.
+	\item \textbf{Bag placement:} Bags not placed at least partially within the collection zone are penalized 40\% of their score.
+	\item \textbf{Manipulation:}  Tipping over a bin or tearing the bag will result in a 20\% penalty for the score of that bag.
+	\item \textbf{Exterior Placement:} The team leader may request that the exterior collection zone be used for a bag.
+	\item \textbf{Doors}: The arena entrance doors start closed.
 
 \end{enumerate}
 
@@ -35,20 +37,19 @@ All garbage in the apartment has has been deposited into the correct exterior bi
 The referee needs to
 \begin{itemize}
 	\item Place the bins in the predefined locations
-	\item Place sealed bags with some light contents in the interior trash and compost bins
-	\item Place a handful of items in the recycling bin
-	\item If the exterior bins have lids, ensure than a random bin has the lid closed and that the others are open
+	\item Place sealed bags with some light contents in the bins
 \end{itemize}
 
 \subsection{OC instructions}
 During Setup days:
 \begin{itemize}
-	\item Provide official interior and exterior bins for training.
+	\item Provide official bins and bags for training.
 \end{itemize}
 
 2 hours before the test:
 \begin{itemize}
-	\item Announce the predefined locations of the bins.
+	\item Announce the locations of the bins.
+	\item Announce the collection zones.
 \end{itemize}
 
 % \newpage
