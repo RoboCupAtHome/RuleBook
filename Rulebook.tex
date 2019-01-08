@@ -10,41 +10,9 @@
 
 %%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{./setup/packages.tex}
-\usepackage[titletoc]{appendix}
-\usepackage{enumitem}
-\usepackage{mathtools}
-\usepackage{gensymb}
-\setlist{noitemsep}
+\input{./setup/config.tex}
+\input{./setup/styling.tex}
 
-%%% SubfigureSetup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\renewcommand{\subfigtopskip}{5pt}        % default is 10pt
-%\renewcommand{\subfigbottomskip}{5pt}     % default is 10pt
-%\renewcommand{\subfigcapskip}{3pt}        % default is 10pt
-%\renewcommand{\subfigcapmargin}{7pt}      % default is 10pt
-
-%%% TweakList-Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\itemhook}{%                 % modify itemize-spacing
-  \setlength{\topsep}{2pt}%
-  \setlength{\partopsep}{1pt}%
-  \setlength{\itemsep}{-1pt}%
-}
-\renewcommand{\enumhook}{%                 % modify enumerate-spacing
-  \setlength{\topsep}{2pt}%
-  \setlength{\partopsep}{1pt}%
-  \setlength{\itemsep}{-1pt}%
-}
-\renewcommand{\descripthook}{%             % modify description-spacing
-  \setlength{\topsep}{2pt}%
-  \setlength{\partopsep}{1pt}%
-  \setlength{\itemsep}{-1pt}%
-}
-
-\setkomafont{title}{\normalfont}
-\setkomafont{sectioning}{\normalfont\bfseries}
-\addtokomafont{caption}{\small}
-\setkomafont{captionlabel}{\small\bfseries}
-\setkomafont{descriptionlabel}{\normalfont\bfseries}
-\renewcommand*{\chapterformat}{\LARGE{Chapter \thechapter}}
 
 %%% MACROS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{./setup/active_version.tex}
@@ -57,50 +25,13 @@
 \makeindex                                % generate index
 \makeabbex                                % generate abbreviations
 
-%%% DOCUMENTINFO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\hypersetup{
-  pdftitle     = {RoboCup@Home Rules and Regulations},
-  pdfsubject   = {RoboCup@Home Rulebook},
-  pdfauthor    = {RoboCup@Home Technical Committee},
-  pdfkeywords  = {RoboCup, @Home, Rules, Competition},
-  colorlinks   = true,
-  anchorcolor  = blue,
-  linkcolor    = blue,
-  urlcolor     = blue,
-}
 
-%%% HEADINGS & PAGE STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\footline}{RoboCup@Home Rulebook / \rulebookVersion}
-\pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter. \ #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection \ #1}{}\renewcommand{\currentTest}{#1}}
-\fancyhf{}
-\fancyhead[LE,RO]{\thepage}
-\fancyhead[RE]{\sffamily\rightmark}
-\fancyhead[LO]{\sffamily\leftmark}
-\fancyfoot[C]{\scriptsize \sffamily \footline{}}
-\fancypagestyle{plain}{
-        \fancyhf{}
-        \fancyhead[LE,RO]{\thepage}
-        \fancyhead[RE]{\sffamily\rightmark}
-        \fancyhead[LO]{\sffamily\leftmark}
-        \fancyfoot[C]{\scriptsize \sffamily \footline{}}
-		\renewcommand{\headrulewidth}{0.5 pt}
-}
-\fancypagestyle{empty}{
-        \fancyhf{}
-        \fancyhead{}
-        \fancyfoot[C]{\scriptsize \sffamily \footline{}}
-		\renewcommand{\headrulewidth}{0 pt}
-}
+
+
 
 %\newcommand{\sectionbreak}{\clearpage}
 %\newcommand{\subsectionbreak}{\clearpage}
 
-
-%%%%%%%%%%%%%%%%%%%\renewcommand{%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 

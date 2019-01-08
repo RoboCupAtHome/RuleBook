@@ -99,6 +99,7 @@ RMF      = rm -f
 RMRF     = rm -rf
 DBG      = echo
 MSG      = echo
+HASRUBBER=$(shell which rubber)
 
 ## COLORS #################
 
@@ -141,7 +142,14 @@ ERROR = $(RED)
 ##  R U L E S                           ##
 ## #################################### ##
 
-all: dofullpdf wall mauClean
+all:
+ifndef HASRUBBER
+	$(SILENT) $(MAKE) dofullpdf
+else
+	$(SILENT) $(MAKE) mauBuild
+endif
+	$(SILENT) $(MAKE) wall
+	$(SILENT) $(MAKE) mauClean
 # all: mauCleanAll mauBuild mauClean
 
 ## ##################### ##

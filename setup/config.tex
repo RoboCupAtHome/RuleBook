@@ -1,0 +1,50 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%          $Id: config.tex 2019-01-08 09:00:00 kyordhel $
+%%    author(s): RoboCupAtHome Technical Committee(s)
+%%  description: Package configuration for the RoboCupAtHome rulebook
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlist{noitemsep}
+
+%%% SubfigureSetup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand{\subfigtopskip}{5pt}        % default is 10pt
+%\renewcommand{\subfigbottomskip}{5pt}     % default is 10pt
+%\renewcommand{\subfigcapskip}{3pt}        % default is 10pt
+%\renewcommand{\subfigcapmargin}{7pt}      % default is 10pt
+
+%%% TweakList-Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\itemhook}{%                 % modify itemize-spacing
+	\setlength{\topsep}{2pt}%
+	\setlength{\partopsep}{1pt}%
+	\setlength{\itemsep}{-1pt}%
+}
+\renewcommand{\enumhook}{%                 % modify enumerate-spacing
+	\setlength{\topsep}{2pt}%
+	\setlength{\partopsep}{1pt}%
+	\setlength{\itemsep}{-1pt}%
+}
+\renewcommand{\descripthook}{%             % modify description-spacing
+	\setlength{\topsep}{2pt}%
+	\setlength{\partopsep}{1pt}%
+	\setlength{\itemsep}{-1pt}%
+}
+
+\setkomafont{title}{\normalfont}
+\setkomafont{sectioning}{\normalfont\bfseries}
+\addtokomafont{caption}{\small}
+\setkomafont{captionlabel}{\small\bfseries}
+\setkomafont{descriptionlabel}{\normalfont\bfseries}
+\renewcommand*{\chapterformat}{\LARGE{Chapter \thechapter}}
+
+%%% DOCUMENTINFO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{
+	pdftitle     = {RoboCup@Home Rules and Regulations},
+	pdfsubject   = {RoboCup@Home Rulebook},
+	pdfauthor    = {RoboCup@Home Technical Committee},
+	pdfkeywords  = {RoboCup, @Home, Rules, Competition},
+	colorlinks   = true,
+	anchorcolor  = blue,
+	linkcolor    = blue,
+	urlcolor     = blue,
+}
