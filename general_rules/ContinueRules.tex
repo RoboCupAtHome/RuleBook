@@ -51,7 +51,7 @@ In this example the robot has to clean the table but is unable to grasp the spoo
 
 \subsection{Scoring}
 \label{rule:continue_scoring}
-There is no limit in the amount of times a robot can request human assistance, but score reduction applies every its requested.
+There is no limit in the amount of times a robot can request human assistance, but score reduction applies every time it is requested.
 
 \begin{enumerate}
 	\item \textbf{Partial execution:} A reduction of 10\% of the maximum attainable score is applied when the robot request a partial solution (e.g. pointing to the person the robot is looking for or placing an object within grasping distance).
@@ -65,7 +65,7 @@ There is no limit in the amount of times a robot can request human assistance, b
 
 	\item \textbf{Score reduction overlap:} The score reduction for multiple requests of the same kind do not stack, but overlap.
 	The total reduction applied correspond to the worse execution (higher reduction of all akin help requests).
-	This means, a robot won't be reduced again for requesting help to transport a second object, but a second reduction will aply when the robot asks for a door to be opened.
+	This means, a robot won't be reduced again for requesting help to transport a second object, but a second reduction will apply when the robot asks for a door to be opened.
 \end{enumerate}
 
 \subsection{Bypassing Automatic Speech Recognition}
