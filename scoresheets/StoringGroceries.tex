@@ -1,18 +1,24 @@
 
 The maximum time for this test is 5 minutes.
 
-\begin{scorelist}
+\begin{scorelist}[attempts=4,%
+datarecording=true,%
+datarecordingbonus=5000,%
+outstanding=true,%
+outstandingpc=20,%
+]
 	\scoreheading{Main Goal}
 	\scoreitem{500}{Move 5 objects next to their peers in the shelf}
-	\scoreitem[5]{-30}{Receiving human help (point at target location)}
-	\scoreitem[5]{-100}{Receiving human help (move object)}
+	\penaltyitem[5]{-30}{Receiving human help (point at target location)}
+	\penaltyitem[5]{-100}{Receiving human help (move object)}
 
 	\scoreheading{Bonus rewards}
 	\scoreitem{300}{Opening the shelf door without human help}
 	\scoreitem{100}{Moving a \emph{tiny} object}
 	\scoreitem{100}{Moving a \emph{heavy} object}
 
-	\setTotalScore{1000}
+	% No longer necessary, computes automatically
+	% \setTotalScore{1000}
 \end{scorelist}
 
 
