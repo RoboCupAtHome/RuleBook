@@ -23,6 +23,12 @@
 % Sets the total penalty for not showing up
 \newcommand{\notattendingpenalty}{500}
 
+% Set to true to display the "Using start button" penalty item
+\newcommand{\startbuttonpenalized}{true}
+
+% Sets the total penalty for not using start button instead of door
+\newcommand{\startbuttonpenalty}{100}
+
 % Set to true to display the the outstanding performance bonus item
 \newcommand{\outstandingPerformanceBonus}{true}
 
@@ -106,6 +112,11 @@
 %                        outstanding performance bonus
 %	- outstandingbonus   Integer. Arbitrary value for the
 %                        outstanding performance bonus
+%	- startbutton        Boolean. Toggles the "Using start button"
+%                        item under Special penalties and standard
+%                        bonuses.
+%	- startbuttonpenalty Integer. Arbitrary value for the Using
+%                        start button penalty.
 %   - firstcolcaption    String. Caption for the first column of
 %                        the scoresheet (default="Action")
 %   - secondcolcaption   String. Caption for the second column of
@@ -311,6 +322,8 @@
 		outstanding = \outstandingPerformanceBonus,
 		outstandingpc = \outstandingPerformanceBonusPercentage,
 		outstandingbonus = 0,
+		startbutton = \startbuttonpenalized,
+		startbuttonpenalty = \startbuttonpenalty,
 		firstcolcaption = \firstColumnCaption,
 		secondcolcaption = \secondColumnCaption,
 		singletrycc = \singleTryColumnCaption,
@@ -325,6 +338,8 @@
 	outstanding/.estore in = \scorelistOutstanding,
 	outstandingpc/.estore in = \scorelistOutstandingPercentage,
 	outstandingbonus/.estore in = \scorelistOutstandingBonus,
+	startbutton/.estore in = \scorelistStartButton,
+	startbuttonpenalty/.estore in = \scorelistStartButtonPenalty,
 	firstcolcaption/.estore in = \scorelistFirstColCaption,
 	secondcolcaption/.estore in = \scorelistSecondColCaption,
 	singletrycc/.estore in = \scorelistSingleTryCC,
@@ -527,6 +542,11 @@
 	% not showing up penalty %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\penaltyitem{\notattendingpenalty}{Not attending \ifShortScoresheet{(see sec.~\ref{rule:not_attending})}{}}
 
+	% require signal for door opening %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\ifthenelse{ \equal{\scorelistStartButton}{true} }{
+	  \penaltyitem{\scorelistStartButtonPenalty}{Using start button \ifShortScoresheet{(see sec.~\ref{rule:start_button})}{}}
+	}{}
+
 	% data recording bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\ifthenelse{%
 		\thecurrDataRecordingBonus>0 \AND %
@@ -534,11 +554,6 @@
 	}{%
 		\bonusitem{\thecurrDataRecordingBonus}{Contributing with recorded data ($\frac{\sum gathered~points}{max~points} \times$) \ifShortScoresheet{(see sec.~\ref{rule:datarecording})}{}}%
 	}{}%
-
-	% require signal for door opening %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	% \ifthenelse{\equal{\scorelistOptions}{openDoorSignal}}{
-	%   \scoreitem{-10}{Using start button \ifShortScoresheet{(see sec.~\ref{rule:start_button})}{}}
-	% }{}
 
 	% outstanding performance bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\ifthenelse{%
