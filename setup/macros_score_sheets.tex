@@ -83,9 +83,11 @@
 %
 % -= Snippet (my_score_sheet.tex) =-
 %     \begin[options]{scorelist}
-%         \scoreheading{Main goal}
-%         \scoreitem[multiplier]{score}{Description}
-%         \scoreitem[multiplier]{score}{Description}
+%       \scoreheading{Main goal}
+%       \scoreitem[multiplier]{score}{Description}
+%       % These do not contribute to automatic scoring calculation
+%       \scorebonus[multiplier]{score}{Description}
+%       \scorepenalty[multiplier]{score}{Description}
 %     \end{scorelist}
 % -= End Snippet =-
 %
@@ -95,27 +97,27 @@
 % optional arguments:
 %   - score              Integer. Sets the test total score to an
 %                        arbitrary value (disables autocalc)
-%   - attempts           Integer. Number of attempts for the 
+%   - attempts           Integer. Number of attempts for the
 %                        scoresheet (default is \global\attempts)
-%	- continue           Not implemented
-%	- datarecording      Boolean. Toggles the "Data Recording"
+%   - continue           Not implemented
+%   - datarecording      Boolean. Toggles the "Data Recording"
 %                        item under Special penalties and standard
 %                        bonuses
-%	- datarecordingpc    Integer. Percentage for the data
+%   - datarecordingpc    Integer. Percentage for the data
 %                        recording bonus
-%	- datarecordingbonus Integer. Arbitrary value for the data
+%   - datarecordingbonus Integer. Arbitrary value for the data
 %                        recording bonus
-%	- outstanding        Boolean. Toggles the "Outstanding
+%   - outstanding        Boolean. Toggles the "Outstanding
 %                        Performance" item under Special penalties
 %                        and standard bonuses
-%	- outstandingpc      Integer. Percentage for the
+%   - outstandingpc      Integer. Percentage for the
 %                        outstanding performance bonus
-%	- outstandingbonus   Integer. Arbitrary value for the
+%   - outstandingbonus   Integer. Arbitrary value for the
 %                        outstanding performance bonus
-%	- startbutton        Boolean. Toggles the "Using start button"
+%   - startbutton        Boolean. Toggles the "Using start button"
 %                        item under Special penalties and standard
 %                        bonuses.
-%	- startbuttonpenalty Integer. Arbitrary value for the Using
+%   - startbuttonpenalty Integer. Arbitrary value for the Using
 %                        start button penalty.
 %   - firstcolcaption    String. Caption for the first column of
 %                        the scoresheet (default="Action")
@@ -130,7 +132,7 @@
 %
 %
 %
-% scoreitem
+% scoreitem, scorebonus, and scorepenalty arguments
 %   #1 multiplier   A number indicating how many times the mark
 %                   can be scored. It is printed at the left of
 %                   the score followed by the \times symbol.
@@ -315,7 +317,7 @@
 	/scorelist/.is family, /scorelist,
 	default/.style={
 		attempts = \attempts,
-		continue = true, 
+		continue = true,
 		datarecording = \dataRecordingBonus,
 		datarecordingpc = \dataRecordingBonusPercentage,
 		datarecordingbonus = 0,
@@ -365,7 +367,7 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% environment commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
+
 	% heading %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\newcommand{\scoreheading}[1]{%
 		\ifShortScoresheet{%
@@ -388,14 +390,14 @@
 	\newcommand{\penaltyitem}[3][1]{%
 		\@scoreitem[##1]{-\absval{##2}}{##3}%
 	}
-	
+
 	\newcommand{\bonusitem}[3][1]{%
 		\@scoreitem[##1]{##2}{##3}%
 	}
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% Commands for overriding internal calculations %%%%%%%%%%%%%%%
- 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	% set score counter to arbitrary value %%%%%%%%%%%%%%%%%%%%%%%%
 	\newcommand{\setTotalScore}[1]%
@@ -577,4 +579,4 @@
 % Local Variables:
 % TeX-master: "../Rulebook"
 % End:
-% 
+%
