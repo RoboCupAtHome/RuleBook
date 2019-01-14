@@ -114,8 +114,6 @@
 %   - secondtrycc        String. Caption of the second column for
 %                        referee scoring when attempts=2
 %
-% Remark: Booleans can be any of [true|false|yes|no]
-%
 %
 %
 % scoreitem
@@ -547,39 +545,6 @@
 
 }
 \makeatother%
-
-%% Score sheet table entries %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% heading
-% usage: \scoreheading{text}
-% \newcommand{\scoreheading}[1]{
-%   \ifShortScoresheet {%
-%     \phantom{.} \\[-4 ex] \multicolumn{2}{@{}l}{\textbf{\textit{#1}}}\\[0pt]
-%   }{%
-%     \phantom{.} \\[-4 ex] \multicolumn{3}{@{}l}{\textbf{\textit{#1}}}\\[0pt]
-%   }
-% }
-
-% table entry
-% usage: \scoreitem[multiplicity]{points}{description}
-% \newcommand{\scoreitem}[3][1]{
-%   % add to max. total score if points > 0
-%   \ifthenelse{ #2 > 0 }{
-%     \addtocounter{currTestScore}{ #2 * #1 }
-%   }{}%
-%   %
-%   \begin{minipage}[t]{\linewidth} {#3} \vspace{0.1 em} \end{minipage} & %
-%   \scoring{ \ifthenelse{ \equal{#1}{1} }{}{ #1 $\times$} \ifthenelse{ \equal{#2}{0} }{}{ #2}}%
-%   % insert check marks:
-%   % \ifShortScoresheet{}{ & \forloop{ct}{0}{\value{ct} < #1}{ \Square}} \\[3pt]
-%   % insert line
-%   \ifShortScoresheet{ %
-%     \\
-%   }{ % else
-%     \ifEvaluationSheet{}{& \attemptScoreLines} \\[0pt]
-%   }
-% }
-
 
 % Local Variables:
 % TeX-master: "../Rulebook"
