@@ -20,6 +20,9 @@
 % The global number of attempts per test
 \newcommand{\attempts}{3}
 
+% Sets the total penalty for not showing up
+\newcommand{\notattendingpenalty}{500}
+
 % Set to true to display the the outstanding performance bonus item
 \newcommand{\outstandingPerformanceBonus}{true}
 
@@ -202,7 +205,8 @@
 % (internal) draws the scoresheet line for score handwritting
 \newcommand{\scoreline}[1][0.08]{\rule{#1\linewidth}{.2pt}}
 
-
+% (internal) returns absolute value of argument
+\newcommand{\absval}[1]{\ifnum#1<0 -\fi#1}
 
 
 
@@ -367,7 +371,7 @@
 	}
 
 	\newcommand{\penaltyitem}[3][1]{%
-		\@scoreitem[##1]{-##2}{##3}%
+		\@scoreitem[##1]{-\absval{##2}}{##3}%
 	}
 	
 	\newcommand{\bonusitem}[3][1]{%
@@ -520,6 +524,9 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\scoreheading{Special penalties \& standard bonuses}
 
+	% not showing up penalty %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\penaltyitem{\notattendingpenalty}{Not attending \ifShortScoresheet{(see sec.~\ref{rule:not_attending})}{}}
+
 	% data recording bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\ifthenelse{%
 		\thecurrDataRecordingBonus>0 \AND %
@@ -527,9 +534,6 @@
 	}{%
 		\bonusitem{\thecurrDataRecordingBonus}{Contributing with recorded data ($\frac{\sum gathered~points}{max~points} \times$) \ifShortScoresheet{(see sec.~\ref{rule:datarecording})}{}}%
 	}{}%
-
-	% not showing up penalty %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\bonusitem{-50}{Not attending \ifShortScoresheet{(see sec.~\ref{rule:not_attending})}{}}
 
 	% require signal for door opening %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% \ifthenelse{\equal{\scorelistOptions}{openDoorSignal}}{
