@@ -406,23 +406,25 @@
 	}
 
 	% [INTERNAL] writes down the line for the final total score %%%
-	\newcommand{\scoreTotal}[1]{%
+	\newcommand{\scoreTotal}{%
 		\\%
-		\textbf{Total score}~%
-		\ifShortScoresheet{(excluding penalties and bonuses)}{} & %
-		\textit{##1}%
-		\ifShortScoresheet{}{%
-			& \multicolumn{\scorelistAttempts}{c}{\scoreline[0.20]}
+		\textbf{Total score~}%
+		\ifShortScoresheet{%
+			(excluding penalties and bonuses) &%
+			\textit{\thecurrTestScoreTotalWithoutBonus}%
+		}{%
+			&\textit{\thecurrTestScoreTotal}
+			&\multicolumn{\scorelistAttempts}{c}{\scoreline[0.20]}%
 		}\\[0pt]%
 	}
 
 	% [INTERNAL] writes down the lines for the total score per try
-	\newcommand{\scorePerTry}[1]{%
+	\newcommand{\scorePerTry}{%
 		\\%
 		\ifShortScoresheet{}{%
 			\ifthenelse{ \attempts > 1 }{%
 				\textbi{Score per try} &%
-				\textit{##1} &%
+				\textit{\thecurrTestScoreTotalWithoutBonus} &%
 				\attemptScoreLines{\scorelistAttempts}%
 				\\[0pt]%
 			}{}%
@@ -493,17 +495,24 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% calculate max. score, and bonuses %%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\ifthenelse{ \equal{\thecurrOutstandingBonus}{0} }{%
-	 	\setcounter{currOutstandingBonus}{ \thecurrTestScore*\scorelistOutstandingPercentage/100 }
-	}{}
-	 	% \setcounter{currOutstandingBonus}{ \thecurrTestScore/10 }%
-	\ifthenelse{ \equal{\thecurrDataRecordingBonus}{0} }{%
-	 	\setcounter{currDataRecordingBonus}{ \thecurrTestScore*\scorelistDataRecordingPercentage/100 }%
-	}{}
-	\setcounter{currTestScoreTotal}{%
-		\thecurrTestScore + \thecurrOutstandingBonus + \thecurrDataRecordingBonus%
-	}
-		% + \thecurrDataRecordingBonus
+	% base total score (accumulative) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\setcounter{currTestScoreTotal}{\thecurrTestScore}
+	% outstanding performance bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\ifthenelse{\equal{\scorelistOutstanding}{true}}{%
+		\ifthenelse{ \equal{\thecurrOutstandingBonus}{0} }{%
+			\setcounter{currOutstandingBonus}{ \thecurrTestScore*\scorelistOutstandingPercentage/100 }
+		}{}%
+		\setcounter{currTestScoreTotal}{%
+			\thecurrTestScoreTotal + \thecurrOutstandingBonus}%
+	}{}%
+	% data recording bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\ifthenelse{\equal{\scorelistDataRecording}{true}}{%
+		\ifthenelse{ \equal{\thecurrDataRecordingBonus}{0} }{%
+			\setcounter{currDataRecordingBonus}{ \thecurrTestScore*\scorelistDataRecordingPercentage/100 }%
+		}{}%
+		\setcounter{currTestScoreTotal}{%
+			\thecurrTestScoreTotal + \thecurrOutstandingBonus}%
+	}{}%
 	\setcounter{currTestScoreTotalWithoutBonus}{ \thecurrTestScore }
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -513,7 +522,7 @@
 
 	% data recording bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\ifthenelse{%
-		% \thecurrDataRecordingBonus>0 \AND %
+		\thecurrDataRecordingBonus>0 \AND %
 		\equal{\scorelistDataRecording}{true}%
 	}{%
 		\bonusitem{\thecurrDataRecordingBonus}{Contributing with recorded data ($\frac{\sum gathered~points}{max~points} \times$) \ifShortScoresheet{(see sec.~\ref{rule:datarecording})}{}}%
@@ -537,8 +546,8 @@
 	%
 	% Total score %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\\[-1em]\hline
-	\scorePerTry{\thecurrTestScoreTotalWithoutBonus}
-	\scoreTotal{\thecurrTestScoreTotal}
+	\scorePerTry
+	\scoreTotal
 
 	\end{tabularx}
 	% \endtabularx
