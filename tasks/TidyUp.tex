@@ -1,0 +1,66 @@
+\section{Tidy Up a Room}
+The robot has to tidy up a room inside the arena.
+
+% \subsection{Focus}
+% This test focuses on object perception, manipulation, and planning.
+
+\subsection{Main Goal}
+Inside one room in the arena are some misplaced objects. The robot has to find each one and bring them to their predefined locations. Unknown objects have to be thrown into the bin. Near the arena entrance will be an operator who can tell the robot which room is messy and will open the entrance door if the robot requests it.
+
+\noindent\textbf{Reward:} 500pts (100pts per object).
+
+\subsection{Bonus Rewards}
+\begin{enumerate}[nosep]
+	\item Opening the entrance door autonomously (150pts)
+	\item Moving a \emph{tiny} object (50pts)
+	\item Moving a \emph{heavy} object (50pts)
+\end{enumerate}
+
+
+\subsection{Setup}
+\begin{itemize}[nosep]
+	\item \textbf{Location:} A random room in the arena.
+
+	\item \textbf{Objects:} There are misplaced objects at random locations in the room.
+	Objects can be anywhere, including the floor, seats, and on furniture.
+	All objects are clearly visible (i.e. no occlusions) and can be:
+	\begin{itemize}[nosep]
+		\item\textit{Known objects}: Regular and alike objects.
+		\item\textit{Unknown objects}: Unknown object at grasping distance (i.e. no decorations).
+	\end{itemize}
+\end{itemize}
+
+\subsection{Additional Rules and Remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per object as follows:
+	\begin{itemize}[nosep]
+		\item Telling the robot where an object can be found causes a reduction of 30\% in scoring for that particular object.
+
+		\item Pointing at an object to be picked up causes a reduction of 40\% in scoring for that particular object.
+		
+		\item Guiding the robot nearby the location where an object can be found causes a reduction of 20\% in scoring for that particular object.
+
+		\item Telling the robot where the object should be placed or the object's category causes a reduction of 30\% in scoring for that particular object.
+
+		\item Having a human physically interacting with an object causes a reduction of 60\% in scoring for that particular object.
+	\end{itemize}
+	
+	\item \textbf{Heavy and tiny objects:} Objects used in this test are lightweight and average-sized.
+	The team leader can, however, request a tiny and a heavy object to be used and score additional points for picking them.
+	
+	\item \textbf{Bin:} Objects must be placed inside the bin, not thrown or dropped.	
+\end{enumerate}
+
+\subsection{Referee instructions}
+The referee needs to
+\begin{itemize}
+	\item Place the objects in the room.
+	\item Recover disposed objects from the bin.
+	\item Ask teams whether they want a heavy or tiny object.
+\end{itemize}
+
+\subsection{OC instructions}
+2 hours before the test:
+\begin{itemize}
+	\item Announce the starting location of the robot.
+\end{itemize}
