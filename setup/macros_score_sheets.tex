@@ -408,7 +408,7 @@
 	% set outstanding bonus counter to arbitrary value %%%%%%%%%%%%
 	\newcommand{\setOutstandingBonus}[1]%
 	{%
-		\setcounter{currOutstandingBonus}{##1}
+		\setcounter{currOutstandingBonus}{##1}%
 	}
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -498,7 +498,6 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% setup table %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	% \par First column width: \@fcwidth\\
 	\vspace{0.8 em}%
 	\noindent%
 	\begin{tabularx}{\textwidth}{ @{}X @{}r *{\scorelistAttempts}{c}}
@@ -571,8 +570,6 @@
 	\scoreTotal
 
 	\end{tabularx}
-	% \endtabularx
-
 }
 \makeatother%
 
