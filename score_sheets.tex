@@ -106,39 +106,43 @@
 
 %%% STAGE 1 TESTS GO HERE %%%
 
-% Cocktail Party
-\ifSSPL{
-  \renewcommand{\currentTest}{Cocktail Party}
-  \begin{scoresheet}
-  \input{scoresheets/CocktailParty.tex}
-  \end{scoresheet}
-}
-
-% GPSR
-\renewcommand{\currentTest}{General Purpose Robot}
+% Clean Up
+\renewcommand{\currentTest}{Clean Up}
 \begin{scoresheet}
-\input{scoresheets/GPSR.tex}
+%\input{scoresheets/CleanUp.tex}
 \end{scoresheet}
 
-% Help me carry
-\renewcommand{\currentTest}{Help-me-carry}
+
+% Take out the Garbage
+\renewcommand{\currentTest}{Take Out the Garbage}
 \begin{scoresheet}
-\input{scoresheets/HelpMeCarry.tex}
+%\input{scoresheets/TakeOutGarbage.tex}
 \end{scoresheet}
 
-% Speech and Person Recognition
-\renewcommand{\currentTest}{Speech and Person Recognition}
+% Receptionist
+\renewcommand{\currentTest}{Receptionist}
 \begin{scoresheet}
-\input{scoresheets/SPR.tex}
+%\input{scoresheets/Receptionist.tex}
+\end{scoresheet}
+
+% Farewell
+\renewcommand{\currentTest}{Farewell}
+\begin{scoresheet}
+%\input{scoresheets/Farewell.tex}
+\end{scoresheet}
+
+% Serving Drinks
+\renewcommand{\currentTest}{Serving Drinks}
+\begin{scoresheet}
+%\input{scoresheets/ServingDrinks.tex}
 \end{scoresheet}
 
 % Storing Groceries
-\ifNotSSPL{
-  \renewcommand{\currentTest}{Storing Groceries}
-  \begin{scoresheet}
-  \input{scoresheets/StoringGroceries.tex}
-  \end{scoresheet}
-}
+\renewcommand{\currentTest}{Storing Groceries}
+\begin{scoresheet}
+\input{scoresheets/StoringGroceries.tex}
+\end{scoresheet}
+
 
 
 % %%% STAGE II %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -147,39 +151,30 @@
 %%% STAGE 2 TESTS GO HERE %%%
 
 
-% EEGPSR
-\renewcommand{\currentTest}{EEGPSR}
-\begin{scoresheet}
-\input{scoresheets/EEGPSR.tex}
-\end{scoresheet}
-
-% Open Challenge
-\renewcommand{\currentTest}{Open Challenge}
-\begin{scoresheet}
-\input{scoresheets/OpenChallenge.tex}
-\end{scoresheet}
-
-% Set a table and clean it up
-\ifNotSSPL{
-  \renewcommand{\currentTest}{Procter \& Gamble Dishwasher Challenge}
-  \begin{scoresheet}
-  \input{scoresheets/PnG.tex}
-  \end{scoresheet}
-}
-
 % Restaurant
 \renewcommand{\currentTest}{Restaurant}
 \begin{scoresheet}
-\input{scoresheets/Restaurant.tex}
+%\input{scoresheets/Restaurant.tex}
 \end{scoresheet}
 
-% Tour Guide
-\ifSSPL{
-  \renewcommand{\currentTest}{Tour Guide}
-  \begin{scoresheet}
-  \input{scoresheets/TourGuide.tex}
-  \end{scoresheet}
-}
+% GPSR
+\renewcommand{\currentTest}{General Purpose Service Robot}
+\begin{scoresheet}
+%\input{scoresheets/GPSR.tex}
+\end{scoresheet}
+
+% P&G Dishwasher
+\renewcommand{\currentTest}{P\&G Dishwasher Challenge}
+\begin{scoresheet}
+%\input{scoresheets/Dishwasher.tex}
+\end{scoresheet}
+
+% House Guide
+\renewcommand{\currentTest}{House Guide}
+\begin{scoresheet}
+%\input{scoresheets/HouseGuide.tex}
+\end{scoresheet}
+
 
 
 % %%% FINALS   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
