@@ -1,34 +1,35 @@
-\section{Take Out the Garbage [House Holder]}
+\section{Take Out the Garbage}
+\enlargethispage{\baselineskip} %Makes the task fit on one page in current form. Remove if not necessary anymore.
 The robot has to take out the trash bags from the two bins in the apartment.
 
 % \subsection{Focus}
 % This test focuses on object perception, manipulation, and planning.
 
 \subsection{Main Goal}
-All garbage bins in the apartment are empty and the garbage has been moved to the specified collection zone.
+All garbage bins in the apartment are emptied and the garbage has been moved to a specified collection zone.
 
-\noindent\textbf{Reward:} 600pts (300pts per bag)
+\noindent\textbf{Reward:} 500pts (250pts per bag)
 
 \subsection{Bonus rewards}
 \begin{enumerate}[nosep]
-	\item Moving a bag to the exterior collection zone (400pts, max one)
+	\item Removing the lid of a bin. (100pts per bin) 
+	\item Transporting both bags at once. (300pts)
 \end{enumerate}
 
 \subsection{Setup}
 \begin{itemize}[nosep]
-	\item \textbf{Location:} This test takes place in the arena and, optionally, in its immediate exterior.
-	\item \textbf{Bins:} There are two small trash bins in different rooms of the apartment. They are roughly cylindrical and open at the top. The space above the bin will be free of obstructions. The bin may be placed against a wall.
+	\item \textbf{Location:} This test takes place inside the arena.
+	\item \textbf{Bins:} There are two small trash bins in different rooms of the apartment. They are roughly cylindrical and open at the top. The space above the bin will be free of obstructions. The bin may be placed against a wall. Bin locations are part of the communicated arena setup.
 	\item \textbf{Bags:} Each bin contains a tied garbage bag with some light contents. The color of the bag is different from the color of the bin.
-	\item \textbf{Collection Zones:} The interior collection zone is a rectangular region abutting an arena wall and with area not less than 1 square meter. The exterior zone is immediately adjacent to one of the arena entrances with area not less than 1 square meter. 
+	\item \textbf{Collection Zones:} The collection zone is a designated area near the entrance. 
 \end{itemize}
 
 
 \subsection{Additional rules and remarks}
 \begin{enumerate}[nosep]
-	\item \textbf{Bag placement:} Bags not placed at least partially within the collection zone are penalized 40\% of their score.
+	\item \textbf{Bag placement:} Bags not placed at least partially within the collection zone are penalized by 40\% of their score.
 	\item \textbf{Manipulation:}  Tipping over a bin or tearing the bag will result in a 20\% penalty for the score of that bag.
-	\item \textbf{Exterior Placement:} The team leader may request that the exterior collection zone be used for a bag.
-	\item \textbf{Doors}: The arena entrance doors start closed.
+	\item \textbf{Closed bins:} The team leader may request to place a lid on one or both of the bins to score the bonus points.
 
 \end{enumerate}
 
@@ -36,8 +37,9 @@ All garbage bins in the apartment are empty and the garbage has been moved to th
 
 The referee needs to
 \begin{itemize}
-	\item Place the bins in the predefined locations
 	\item Place sealed bags with some light contents in the bins
+	\item Ask team leader whether bins should be closed.
+	\item Make sure collection zone is clear.
 \end{itemize}
 
 \subsection{OC instructions}
@@ -48,7 +50,6 @@ During Setup days:
 
 2 hours before the test:
 \begin{itemize}
-	\item Announce the locations of the bins.
 	\item Announce the collection zones.
 \end{itemize}
 
