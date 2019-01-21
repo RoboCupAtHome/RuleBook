@@ -1,33 +1,41 @@
 \section{Find My Mates [Party Host]}
 
-The robot starts in a room and waits for someone to approach it. The guest knows the name of other guests at the party but doesn’t know how these people look like and where the people are. The robot will gather this information for the guest.
+The robot fetches the information of the party guests for the operator who knows only the names of the guests.
 
 
 \subsection{Main Goal}
-The robot provides the location and unique description of 3 guests of the party as required by another guest.
 
-\noindent\textbf{Reward:} 750 points (250 points per guest).
+The robot reports to the operator the description and location of at least two party guests.
+
+\noindent\textbf{Reward:} 500 points (150 pts for description and 100 pts for location per guest).
 
 \subsection{Bonus rewards}
 \begin{enumerate}[nosep]
-	\item Robot providing unique description of a person without having asked such information (75 points)
+	\item For reporting the third guest, 300 pts for description and 200 pts for location.
 \end{enumerate}
 
 
 \subsection{Setup}
 \begin{itemize}
-	\item \textbf{Location}: The robot is in a predefined room at least one person that will approach it.
+	\item \textbf{Location}: This test takes place inside the arena in a predefined room (e.g. living room).
 
-	\item \textbf{People}: 5 people distributed around the house.
+	\item \textbf{People}: 4 people distributed in the room.
 \end{itemize}
 
 \subsection{Additional rules and remarks}
 \begin{enumerate}[nosep]
 	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per guest.
+	\begin{itemize}
+		\item -75 pts if a person has to wave the robot in order to be found
+		\item -75 pts if a person has to tell the robot where is she sitting/standing
+		\item -150 pts if a person has to approach to the robot (e.g. walk and stand in front of it).
+	\end{itemize}
 
-	\item \textbf{Calling the operator for the final answer:} 50\% reduction if the robot does not go back autonomously to the operator to report the information.
+	\item \textbf{Reporting:} Points are scored only when the robot goes back to the operator and delivers the report in time.
 	
-	\item \textbf{Penalty:} If the robot talks to an empty room or does not clearly face a person or crowd when talking (e.g. speaks to a wall), -75 points of penalty.
+	\item \textbf{Description of a Person:} The description of a person may include information about gender, clothing, skin, face, hair, pose, etc. It should be a unique description i.e. not shared with any other guest.
+	
+	\item \textbf{Description of Location:} The robot provides relative location of a person in the room i.e. with respect to the objects in the room (like, PersonX is sitting on the coach, PersonY is standing beside the lamp, etc.). 
 \end{enumerate}
 
 
@@ -35,9 +43,8 @@ The robot provides the location and unique description of 3 guests of the party 
 
 The referees need to
 \begin{itemize}
-	\item Make sure there every person has a name.
-	\item Make sure people stay roughly in the same place.
-	\item Distribute the people in the rooms.
+	\item Make sure every person has a name.
+	\item Make sure people stay at the designated place.
 \end{itemize}
 
 \subsection{OC instructions}
@@ -45,6 +52,8 @@ The referees need to
 2h before test:
 \begin{itemize}
 	\item Announce the location where the robot will be instructed.
+	\item Assign names to the guests.
+	\item Announce the room in which the test takes place.
 \end{itemize}
 
 % \newpage
