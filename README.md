@@ -78,7 +78,7 @@ Data is recorded from the robots during the competition. It is available through
     - @Home Website (backup): [http://robocupathome.org/](http://robocupathome.org/)
 - **Telegram group** for Q&A and rules discussion: [https://t.me/RoboCupAtHome](https://t.me/RoboCupAtHome)
 - Whatsapp group: Please join the Telegram group
-- RoboCup 2018 Website [http://robocup2019.org/](http://robocup2019.org/)
+- RoboCup 2019 Website [https://2019.robocup.org](https://2019.robocup.org)
 - [General mailing list](http://lists.robocup.org/cgi-bin/mailman/listinfo/robocup-athome)
 - [Youtube channel](https://www.youtube.com/channel/UChkdCpT0xrFMMt-_N8wSVew/)
 - [Facebook Page](https://www.facebook.com/robocupathome/)
