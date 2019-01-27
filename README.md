@@ -17,38 +17,20 @@ Improvements are also welcome in the form of pull requests (see [guidelines](htt
 ### FAQ
 See the Frequently Asked Questions [here](https://github.com/RoboCupAtHome/RuleBook/wiki/FAQ:-Frequently-Asked-Questions).
 
+Or ask us via Telegram: [https://t.me/RoboCupAtHome](https://t.me/RoboCupAtHome)
+
 ### Change log
-(Update required)
+The Rulebook is being completely restructured. 
+Changes are being pushed to the [2019/restructure](https://github.com/RoboCupAtHome/RuleBook/tree/2019/restructure) branch until the rulebook reaches a Draft state.
 
-**Finals**
-- Bronze Finals: 4th and 3rd match up for the 3rd place trophy
+#### Highlights
+- **Less stressful competition:** Each competition day will have 2 *testing blocks* (e.g.from 9:00 to 12:00 and from 15:00 to 18:00), giving time to teams to eat, rest, and prepare.
+- **Thematic *free* testing:** Each *testing block* will have assigned a *scenario*, namely cleaning the house or hosting a party. Teams will have assigned at least 2 testing slots to solve the *task* of their choise.
+- **Task-driven testing:** Tests are no more. The rulebook will have a battery of tasks featuring different abilities from which teams can choose which to solve. It won't be possible to solve all tasks.
+- **Goal-driven scoring:** A robot can only score by accomplishing the *main goal* of a *task*. In addition to the *main goal*, several bonus objectives are available with juicy rewards, but will be only considered if the *main goal* is completed.
+- **Unlimited *Continues*:** The continue rule is no more. Instead, robots may call for a *Deus Ex Machina* and have human assistant helping it to solve the task. There is no limit on the number of times a robot can ask for help, and the nature of the help is unconstrained. Nonetheless, a proportional score reduction applies.
 
-**Stage 2**
-- Open Challenge:
-  - Score normalized to Stage 2 highest one.
-  - Evaluation metrics updated.
-- Set the Table: Replaced with P&G Challenge
-- P&G Challenge: Clean up a table by placing tableware in dishwasher.
-- EEGPSR: Reduced number of categories from 8 to 3
-  - Three at once, object-related, and people-related
-  - One of each, normal, incomplete and erroneous commands (given randomly)
-
-**Stage 1**
-- Storing Groceries:
-  - Per moved object scoring
-  - Score for opening door increased
-  - PDF report optional
-- Help me carry: Unless crushing, pushing the small object won-t finish the test
-
-**General Rules**
-- DSPL backpack
-  - DSPL teams can use official laptop in provided backpack
-- External Devices: ECRA Rule
-  - No people around external devices
-  - Mobile must be removed, others chained
-  - No keyboards, mouses, or screens attached
-- Removed bonus for data recording
-- Teams encouraged to provide annotated recording of spoken interactions
+These changes obey to one objective: **robots must succeed**. 
 
 
 ### Question, issues, and contribution Guidelines
@@ -92,8 +74,11 @@ Data is recorded from the robots during the competition. It is available through
 - [Speech Recognition](https://mega.nz/#!ts02iYRQ!L3McBFzodJG0UTmauCj2crSapmAr8GWwtB4FLGzQlEs)
 
 ### More information
-- @Home Website: [http://robocupathome.org/](http://robocupathome.org/)
-- RoboCup 2018 Website [http://robocup2018.org/](http://robocup2018.org/)
+- **@Home Website**: [http://athome.robocup.org/](http://athome.robocup.org/)
+    - @Home Website (backup): [http://robocupathome.org/](http://robocupathome.org/)
+- **Telegram group** for Q&A and rules discussion: [https://t.me/RoboCupAtHome](https://t.me/RoboCupAtHome)
+- Whatsapp group: Please join the Telegram group
+- RoboCup 2018 Website [http://robocup2019.org/](http://robocup2019.org/)
 - [General mailing list](http://lists.robocup.org/cgi-bin/mailman/listinfo/robocup-athome)
 - [Youtube channel](https://www.youtube.com/channel/UChkdCpT0xrFMMt-_N8wSVew/)
 - [Facebook Page](https://www.facebook.com/robocupathome/)
