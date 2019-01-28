@@ -1,0 +1,91 @@
+\section{I Want This [Party Host]}
+A guest at the party speaks English, but with only a limited vocabulary. They want a drink, an hors d'oeuvre, and a set of utensils, but do not know the words to describe them. As such, they will ask the robot for one through gesturing, and will ask for recommendations made by the robot through gestures. They will also discuss a picture on the wall, which the robot will determine by analyzing their gaze.
+
+\subsection{Focus}
+Joint attention is a well-studied and important task in Human-Robot Interaction. The goal of this task is to really challenge the teams to perform a hard HRI task.
+
+\subsection{Main Goal}
+The robot must interpret 3 point gestures of varying difficulty, must produce the same 3 point gestures, and must interpret the human's gaze gesture as well as generate one, and interpret the establishment of mutual gaze.
+
+\noindent\textbf{Reward:} 1000pts\\
+
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Setup
+%
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Setup}
+\begin{enumerate}
+	\item \textbf{Surfaces:} The test area must have 3 surfaces with items arranged an equal distance apart on them.
+
+	\item \textbf{Items:} We need 3 different drinks, three different food items, and three different utensils arranged on each surface. The first surface should have items about 2 feet apart. The second should have them about 1.5 feet apart. The last should have them about 9 inches apart.
+
+	\item \textbf{Pictures:} Three pictures should be hung along the broadest wall of the arena. They should be 2 feet apart.
+
+	\item \textbf{Floor Markings:} Markings should be made about 2-3 feet in front of each surface, where the robot or person is intended to stand during their points. A marking should be made about 5 feet from the middle picture.
+
+\end{enumerate}
+
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Setup
+%
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Procedure}
+\begin{enumerate}
+	\item \textbf{Who to help?} At the start of the test, two people will be standing at opposite sides of one of the tables. The robot should recognize which is looking at it within 1 minute. If successful, the robot will be awarded 200 points. If not, the person will start the robot's next stage by saying, \textit{Please help me pick a drink.}
+
+	\item \textbf{The person picks} We start by testing the robot's gesture understanding, in which the person picks things to drink, eat, and use for eating.
+
+	\item \textbf{Picking drinks:} The person that is being helped will stand on the mark, look and point at one of the drinks, and say \textit{That one!}. The robot must then say, \textit{Do you mean the one to the [left, middle, right]?} If correct, the robot gets 100 points.
+
+	\item \textbf{Picking hors d'oeuvres and utensils :} The procedure repeats for the hors d'oeuvres and utensils, with 100 points awarded for each.
+
+	\item \textbf{The robot suggests} Now the other person must interpret the robot's gestures correctly.
+
+	\item \textbf{Picking drinks:} The robot will now stand on the marking and the person will say, \textit{Which should I choose!}. The robot must then point to, \textit{[left, middle, or right]?} The judge will determine which item is being indicated. If correct, the robot gets 100 points.
+
+	\item \textbf{Picking hors d'oeuvres and utensils :} The procedure repeats for the hors d'oeuvres and utensils, with 100 points awarded for each.
+
+	\item \textbf{What am I looking at?} The person will now move to the mark in front of the three pictures and look at one of them. The will say, \textit{What is this?} The robot will then give a plain English description of the picture. If correct, the robot gets 100 points.
+
+	\item \textbf{What is the robot looking at?} The person will now move off of the mark, allowing the robot to move to it. The will say, \textit{This one is my favorite.} The person will then say, \textit{You mean the [left | middle | right] picture?} If correct, the robot gets 100 points.
+
+\end{enumerate}
+
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Additional Rules
+%
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Additional rules and remarks}
+\begin{enumerate}
+	\item \textbf{No clarification through dialog:} The purpose of this test is to test the gesture generation and understanding abilities. Therefore, no dialog should be used to clarify, as this would be easy to program and defeat the purpose of the test.
+
+\end{enumerate}
+
+\subsection{OC instructions}
+
+\textbf{Before setup days}
+\begin{itemize}
+	\item Announce the items to be used for the test.
+  \item Place the pictures into the arena.
+  \item Place the markings on the floor.
+\end{itemize}
+
+\subsection{Referee instructions}
+\begin{itemize}
+	\item Clarification is fine, but only through gesturing. \textit{Did you mean this one?} once or twice, not the use of language to clarify.
+\end{itemize}
+
+
+\newpage
+\subsection{Score sheet}
+\input{scoresheets/IWantThis.tex}
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:
