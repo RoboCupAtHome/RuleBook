@@ -1,0 +1,85 @@
+\section{Serving Drinks [Party Host]}
+The robot has to take orders and deliver drinks.
+
+% \subsection{Focus}
+
+% This test focuses on human detection and recognition, safe navigation and human-robot interaction with unknown people.
+
+\subsection{Main Goal}
+All people in the party must have a drink of their choice.
+The robot must find all 3 people who has no drink and bring them the one of their choice.
+
+\noindent\textbf{Reward:} 750pts (250pts per delivered drink).
+
+\subsection{Bonus rewards}
+\begin{enumerate}[nosep]
+	\item Preemptively informing a guest that the ordered drink is not available (250pts)
+\end{enumerate}
+
+\subsection{Setup}
+\begin{itemize}
+	\item \textbf{Location}: The test takes place in the living room.
+	Initially there is one person sitting here whom the robot already knows.
+	This person is referred as \emph{default guest}.
+
+	\item \textbf{Start Location}: The robot starts inside the arena at a predefined location near the entrance door.
+
+	\item \textbf{Guests:} There are at least 5 guests in the living room, two standing and three sitting.
+	Each guest has assigned a predefined name and has either a drink or a drink request (choice and alternative).
+
+	\item \textbf{Bar:} The bar can be any flat surface where objects can be placed, in any other room but the living room.
+	All available beverages are on top of the bar.
+	One of the drink requests is not available.
+	
+	\item \textbf{Bartender:} The Bartender may be standing either behind the bar or next to it, depending on the arena setup.
+\end{itemize}
+
+
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}
+	\item \textbf{Partial scoring:} The main task allows partial scoring.
+	Robot score per correct delivered drink.
+
+	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per guest as follows.
+	\begin{itemize}[nosep]
+		\item \textbf{Actively placing order:} Approaching to the robot to place an order causes a reduction of 40\% in scoring for that particular guest.
+
+		\item \textbf{Calling to place order:} Calling (either by shouting or waving) to the robot to place an order causes a reduction of 20\% in scoring for that particular guest.
+
+		\item \textbf{Revealing unavailable drink:} Telling the robot which drink is unavailable causes a reduction of 40\% in scoring for that particular guest.
+	\end{itemize}
+
+	\item \textbf{Delivering drinks:} When delivering a drink, the robot must greet the guest by stating her name and remembering the chosen drink.
+	The robot may either hand-over drinks or have attached a tray.
+	When a tray is used, the robot must be sure that the guest is taking the correct drink (guests may try to take the wrong one).
+
+	\item \textbf{Misunderstood names:} If the robot misunderstands the name, the understood (wrong) name is used in the remainder of this test.
+
+	\item \textbf{Changing places:} After giving the order (when the robot is not in the living room), the referees may re-arrange the people.
+
+	\item \textbf{Empty arena:} For this task only the robot, the guests, and the Bartender are allowed to be in the arena.
+\end{enumerate}
+
+\subsection{Referee instructions}
+
+The referees need to
+\begin{itemize}
+	\item Select at least 5 volunteers and assign predefined names. 
+	\item Assign a preferred drink and an alternative to three guests
+	\item Give drinks to the other guests
+	\item Select the person (bartender) who will serve the drinks
+	\item Tell guests when to switch places
+	\item Make sure one preferred drink is missing
+\end{itemize}
+
+\subsection{OC instructions}
+
+2h before test:
+\begin{itemize}
+	\item Specify and announce the bar location
+\end{itemize}
+
+% \newpage
+% \subsection{Score sheet}
+% \input{scoresheets/ServingDrinks.tex}

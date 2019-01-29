@@ -1,0 +1,67 @@
+\section{Take Out the Garbage [Housekeeper]}
+The robot has to take out the trash bags from the two bins in the apartment.
+
+% \subsection{Focus}
+% This test focuses on object perception, manipulation, and planning.
+
+\subsection{Main Goal}
+All garbage bins in the apartment are emptied and the garbage has been moved to a specified collection zone.
+
+\noindent\textbf{Reward:} 500pts (250pts per bag)
+
+\subsection{Bonus rewards}
+\begin{enumerate}[nosep]
+	\item Removing the lid of a bin. (100pts per bin) 
+	\item Transporting both bags at once. (300pts)
+\end{enumerate}
+
+\subsection{Setup}
+\begin{itemize}[nosep]
+	\item \textbf{Location:} This test takes place inside the arena.
+	\item \textbf{Bins:} There are two small trash bins in different rooms of the apartment. They are roughly cylindrical and open at the top. The space above the bin will be free of obstructions. The bin may be placed against a wall. Bin locations are part of the communicated arena setup.
+	\item \textbf{Bags:} Each bin contains a tied garbage bag with some light contents. The color of the bag is different from the color of the bin.
+	\item \textbf{Collection Zones:} The collection zone is a designated area near the entrance. 
+\end{itemize}
+
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per bag as follows:
+	\begin{itemize}[nosep]
+		\item Handing a bag over to the robot results in a 80\% score reduction for that bag.
+	\end{itemize}
+
+	\item \textbf{Bag placement:} Bags not placed at least partially within the collection zone are penalized by 40\% of their score.
+	\item \textbf{Manipulation:}  Tipping over a bin or tearing the bag will result in a 20\% penalty for the score of that bag.
+	\item \textbf{Closed bins:} The team leader may request to place a lid on one or both of the bins to score the bonus points.
+
+\end{enumerate}
+
+\subsection{Referee instructions}
+
+The referee needs to
+\begin{itemize}
+	\item Place sealed bags with some light contents in the bins
+	\item Ask team leader whether bins should be closed.
+	\item Make sure collection zone is clear.
+\end{itemize}
+
+\subsection{OC instructions}
+During Setup days:
+\begin{itemize}
+	\item Provide official bins and bags for training.
+\end{itemize}
+
+2 hours before the test:
+\begin{itemize}
+	\item Announce the collection zones.
+\end{itemize}
+
+\newpage
+\subsection{Score sheet}
+\input{scoresheets/TakeOutGarbage.tex}
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:
+

@@ -7,319 +7,573 @@
 % $Id: macros_score_sheets.tex 429 2013-04-30 10:09:55Z holz $     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                  %
+% GLOBAL OPTIONS                                                   %
+%                                                                  %
+% %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{calc}
-\usepackage{ifthen}
-\usepackage{wasysym}
-\usepackage{chngpage}
+% Set \shortScoresheet to true for the rulebook version
+% Set \shortScoresheet to false for the referee's scoresheet
+\newcommand{\shortScoresheet}{true}
 
+% The global number of attempts per test
+\newcommand{\attempts}{3}
+
+% Sets the total penalty for not showing up
+\newcommand{\notattendingpenalty}{500}
+
+% Set to true to display the "Using start button" penalty item
+\newcommand{\startbuttonpenalized}{true}
+
+% Sets the total penalty for not using start button instead of door
+\newcommand{\startbuttonpenalty}{100}
+
+% Set to true to display the the outstanding performance bonus item
+\newcommand{\outstandingPerformanceBonus}{true}
+
+% Percentage of the outstanding performance bonus (ommit % symbol)
+\newcommand{\outstandingPerformanceBonusPercentage}{10}
+
+% Set to true to display the data recording bonus item
+\newcommand{\dataRecordingBonus}{false}
+
+% Percentage of the data recording bonus (ommit % symbol)
+\newcommand{\dataRecordingBonusPercentage}{10}
+
+% Sets the name of the column for referee scoring when \attempts=1
+\newcommand{\singleTryColumnCaption}{Single try}
+
+% Sets the first column's name for referee scoring when \attempts=2
+\newcommand{\firstTryColumnCaption}{First try}
+
+% Sets the second column's name for referee scoring when \attempts=2
+\newcommand{\secondTryColumnCaption}{Restart}
+
+% Sets the name of the column for referee scoring when \attempts=1
+\newcommand{\firstColumnCaption}{Action}
+
+% Sets the second column's name for referee scoring when \attempts=2
+\newcommand{\secondColumnCaption}{Score}
+
+% %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                  %
+% USAGE                                                            %
+%                                                                  %
+% %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% A scoresheet must be in a separated tex file. Scoring marks are
+% presented as a list within the {scorelist} environment. Each
+% mark is enlisted using the \scoreitem macro. Headings can be
+% defined with the \scoreheading macro. Within the scoresheet
+% booklet the {scorelist} environment shall be placed inside the
+% {scoresheet} environment that adds the footer and heading required
+% by the referee.
+%
+% -= Snippet (rulebook.tex) =-
+%     \newpage%
+%     \input{my_score_sheet.tex}
+% -= End Snippet =-
+%
+% -= Snippet (score_sheets.tex) =-
+%     \begin[options]{scoresheet}
+%     \input{my_score_sheet.tex}
+%     \end{scoresheet}
+% -= End Snippet =-
+%
+% -= Snippet (my_score_sheet.tex) =-
+%     \begin[options]{scorelist}
+%       \scoreheading{Main goal}
+%       \scoreitem[multiplier]{score}{Description}
+%       % These do not contribute to automatic scoring calculation
+%       \scorebonus[multiplier]{score}{Description}
+%       \scorepenalty[multiplier]{score}{Description}
+%     \end{scorelist}
+% -= End Snippet =-
+%
+%
+% scorelist options:
+% The scorelist environment supports the following comma-separated
+% optional arguments:
+%   - score              Integer. Sets the test total score to an
+%                        arbitrary value (disables autocalc)
+%   - attempts           Integer. Number of attempts for the
+%                        scoresheet (default is \global\attempts)
+%   - continue           Not implemented
+%   - datarecording      Boolean. Toggles the "Data Recording"
+%                        item under Special penalties and standard
+%                        bonuses
+%   - datarecordingpc    Integer. Percentage for the data
+%                        recording bonus
+%   - datarecordingbonus Integer. Arbitrary value for the data
+%                        recording bonus
+%   - outstanding        Boolean. Toggles the "Outstanding
+%                        Performance" item under Special penalties
+%                        and standard bonuses
+%   - outstandingpc      Integer. Percentage for the
+%                        outstanding performance bonus
+%   - outstandingbonus   Integer. Arbitrary value for the
+%                        outstanding performance bonus
+%   - startbutton        Boolean. Toggles the "Using start button"
+%                        item under Special penalties and standard
+%                        bonuses.
+%   - startbuttonpenalty Integer. Arbitrary value for the Using
+%                        start button penalty.
+%   - firstcolcaption    String. Caption for the first column of
+%                        the scoresheet (default="Action")
+%   - secondcolcaption   String. Caption for the second column of
+%                        the scoresheet (default="Score")
+%   - singletrycc        String. Caption of the first column for
+%                        referee scoring when attempts=1
+%   - firsttrycc         String. Caption of the first column for
+%                        referee scoring when attempts=2
+%   - secondtrycc        String. Caption of the second column for
+%                        referee scoring when attempts=2
+%
+%
+%
+% scoreitem, scorebonus, and scorepenalty arguments
+%   #1 multiplier   A number indicating how many times the mark
+%                   can be scored. It is printed at the left of
+%                   the score followed by the \times symbol.
+%   #2 score        Scoring points. Printed at the right of the
+%                   description
+%   #3 description  A description for the score mark
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+% %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                  %
+% FROM HERE ON, THERE IS NOTHING TO CHANGE                         %
+%                                                                  %
+% %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%% Counters / temp. variables %%%%%%%%%%%%%%%%%
-
 \newcounter{currTestScore}
 \newcounter{currTestScoreTotal}
 \newcounter{currTestScoreTotalWithoutBonus}
 \newcounter{currOutstandingBonus}
-\newcommand{\scorelistOptions}{}
-\newcommand{\scoresheetOptions}{}
+\newcounter{currDataRecordingBonus}
 
-% set \shortScoresheet to true for the rulebook version and to false for the referee's scoresheet
-\newcommand{\shortScoresheet}{true}
-
-% set \threeAttempts to true for three columns in the scoresheet
-\newcommand{\threeAttempts}{false}
-
-% set \retryAvailable to true for a second column in the scoresheet
-\newcommand{\retryAvailable}{true}
 
 % set \continueAvailable to true for CONTINUE sections
 \newcommand{\continueAvailable}{true}
 
-% set \dataRecordingBonus to true for data recording bonus
-\newcommand{\dataRecordingBonus}{false}
 
 % name of the current test, is set automatically in the rulebook
 \newcommand{\currentTest}{}
 
 % (internal) if-clause shortcut to switch between short rulebook version and full score sheet for referees
 \newcommand{\ifShortScoresheet}[2]{%
-  \ifthenelse{ \equal{\shortScoresheet}{true}}{%
-    #1%
-  }{%
-    #2%
-  }%
-}
-
-\newcommand{\ifEvaluationSheet}[2]{%
-  \ifthenelse{ \equal{\scoresheetOptions}{evaluationSheet}}{%
-    #1%
-  }{%
-    #2%
-  }%
+	\ifthenelse{ \equal{\shortScoresheet}{true} }{#1}{#2}%
 }
 
 % (internal) draws the scoresheet line for score handwritting
 \newcommand{\scoreline}[1][0.08]{\rule{#1\linewidth}{.2pt}}
 
-% (internal) draws the lines for score hadndwritting in the table outline based on the number of attempts
-\newcommand{\attemptScoreLines}{
-  \switchAttempts
-    {\scoreline[0.06] & \scoreline[0.06] & \scoreline[0.06]}
-    {\scoreline & \scoreline}
-    {\scoreline}
-}
-
-% (internal) Select one of the provided arguments based on the number of attempts
-% (3 tries, retry (2) or only try (1))
-\newcommand{\switchAttempts}[3]{
-  \ifthenelse{\equal{\threeAttempts}{true}}{#1}{\ifthenelse{\equal{\retryAvailable}{true}}{#2}{#3}}
-}
-
-% (internal) stores the number of attempts to perform
-\edef\numAttempts{0}
-% (internal) writes on the command \numAttempts the number of attempts to perform
-\newcommand\defNumAttempts{
-  \switchAttempts
-  {\global\edef\numAttempts{3}}
-  {\global\edef\numAttempts{2}}
-  {\global\edef\numAttempts{1}}
-}
-
-%% commands for overriding internal calculations %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% set score counter to arbitrary value
-\newcommand{\setTotalScore}[1]%
-{%
-  \setcounter{currTestScore}{#1}
-}
-
-% set outstanding bonus to arbitrary value
-\newcommand{\setOutstandingBonus}[1]%
-{%
-  \setcounter{currOutstandingBonus}{#1}
-}
+% (internal) returns absolute value of argument
+\newcommand{\absval}[1]{\ifnum#1<0 -\fi#1}
 
 
 
 
-%% Score sheet page layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% usage: \begin{scoresheet}[repeatable] ... \end{scoresheet}
-\newenvironment{scoresheet}[1][]{
-  % begin
-  \newpage
 
-  \renewcommand{\scoresheetOptions}{#1}
 
-  \begin{minipage}[t]{0.8\textwidth}%
-    \vspace{0pt}
-    {\huge \textbf{Score Sheet} }
 
-    \vspace{2 em}
 
-    \begin{tabular}{ @{} l l l}
-      \textbf{Test:} & \currentTest \\[.9 em]
 
-      \ifEvaluationSheet{}{%
-        \textbf{Team name:} & \scoreline[0.6]\\[.9 em]%
-      }%
-      %
-      \textbf{Referee name:} & \scoreline[0.6]\\[.9 em]%
-      %
-      %	\ifEvaluationSheet{}{%
-      %   \textbf{Restart:} & \Square ~1st try \hspace{1 em} \Square ~2nd try
-      %	}
-      %
-      % test repetition checkboxes (for stage 2 tests)
-      \ifthenelse{ \equal{#1}{repeatable} }{%
-	\textbf{Test repetition:} & \Square ~1st \hspace{1 em} \Square ~2nd\\[.9em]%
-      }{}
-    \end{tabular}
 
-    \vspace{0.5 em}
 
-  \end{minipage}
-  \hfill
-  \begin{minipage}[t]{0.15\textwidth}%
-    \vspace{0pt}
-    \includegraphics[width=\textwidth]{images/logo_RoboCupAtHome.jpg}%
-  \end{minipage}\\
-}
-{
-  % end
-  \vspace{.2 em}
-  \textbf{Remarks:}
 
-  %% signatures of referee / team leader %%%%%%%%%%%%
-  \vfill
-  \ifEvaluationSheet{
-    % team evaluation sheet
-    \begin{tabular}{@{} @{\extracolsep{\fill}} l l @{}}
-      \scoreline[0.25] \hspace{0.05\linewidth} & \scoreline[0.25] \hspace{0.05\linewidth}
-      \\
-      \textit{Date \& time}%
-      & \textit{Referee}
-    \end{tabular}
-  }{
-    % normal sheet
-    \begin{tabular}{@{} @{\extracolsep{\fill}} l l l @{}}
-      \scoreline[0.25] \hspace{0.05\linewidth} & \scoreline[0.25] \hspace{0.05\linewidth} & \scoreline[0.25]
-      \\
-      \textit{Date \& time}%
-      & \textit{Referee} %
-      & \textit{Team leader}
-    \end{tabular}
-  }
 
-  \newpage
+
+
+% %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                  %
+% ENVIRONMENT: scoresheet                                          %
+% Scoresheet page layout                                           %
+%                                                                  %
+% %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{scoresheet}{%
+% \begin{scoresheet}
+	\newpage%
+	%
+	% Test, team, and referee info
+	%
+	\begin{minipage}[t]{0.85\textwidth}%
+		\vspace{0pt}%
+		{\huge \textbf{Score Sheet} }%
+		\vspace{2 em}%
+
+		\begin{tabular}{ @{} l l l}
+			\textbf{Test:} & \currentTest \\[.9 em]%
+			\textbf{Team name:} & \scoreline[0.6]\\[.9 em]%
+			\textbf{Referee name:} & \scoreline[0.6]\\[.9 em]%
+		\end{tabular}%
+		\vspace{0.5 em}%
+
+	\end{minipage}
+	\hfill
+	%
+	% @Home Logo
+	%
+	\begin{minipage}[t]{0.15\textwidth}%
+		\vspace{0pt}%
+		\includegraphics[width=\textwidth]{images/logo_RoboCupAtHome.jpg}%
+	\end{minipage}\\%
+}{
+% \end{scoresheet}
+	\vspace{0.5 em}%
+	\textbf{Remarks:}%
+
+	%
+	% Signatures of referee / team leader %%%%%%%%%%%%
+	%
+	\vfill
+	\begin{tabular*}{\linewidth}{@{} @{\extracolsep{\fill}} l l l @{}}
+		\scoreline[0.25] \hspace{0.05\linewidth}%
+			& \scoreline[0.25] \hspace{0.05\linewidth}%
+			& \scoreline[0.25]%
+		\\
+		\textit{Date \& time}%
+			& \textit{Referee} %
+			& \textit{Team leader}%
+	\end{tabular*}
+
+	\newpage
 }
 
 
-%% Score list table %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% usage: \begin{scorelist}[openDoorSignal] ... \end{scorelist}
-\newenvironment{scorelist}[1][]{
-  % begin
-
-  % init variables %%%%%%%%%
-  \renewcommand{\scorelistOptions}{#1}
-  \setcounter{currTestScore}{0}
-  \setcounter{currOutstandingBonus}{0}
-
-  % setup table %%%%%%%%%
-  \vspace{0.8 em}
-
-  \ifShortScoresheet {
-    \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.8\linewidth} r @{}}
-      \ifEvaluationSheet{
-        \textbf{Team} & \textbf{Score} \\ \hline
-      }{%
-        \textbf{Action} & \textbf{Score} \\ \hline
-      }
-    }{
-      % else:
-      % \begin{tabular*}{\textwidth}{@{}p{0.65\linewidth}lp{0.15\linewidth}@{}}
-      %   \textbf{Action} & \textbf{Score} & \multicolumn{1}{l}{\textbf{Success}}\\ \hline
-      \ifEvaluationSheet{
-        \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.7\linewidth} r r @{}}
-          \textbf{Team} & \textbf{Score} & \textbf{Result}\\ \hline
-        }{
-          \ifthenelse{\equal{\threeAttempts}{true}}{
-            \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.6\linewidth} r r r r @{}}
-            \textbf{Action} & \textbf{Score} & \textbf{\small $1^{st}$ try} & \textbf{\small $2^{nd}$ try} & \textbf{\small$3^{rd}$ try} \\ \hline
-          }
-          %else
-          {
-            \begin{tabular*}{\textwidth}{@{} @{\extracolsep{\fill}} p{0.6\linewidth} r r r @{}}
-            \textbf{Action} & \textbf{Score} \ifthenelse{\equal{\retryAvailable}{true}}{& \textbf{1st try} & \textbf{2nd try}}{ & \textbf{Only try}} \\ \hline
-          }
-        }
-      }
-    }
-      {
-        % end
-
-	\ifEvaluationSheet{}{%
-
-          % calculate max. score, outstanding bonus %%%%%%%
-          \ifthenelse{\value{currOutstandingBonus} = 0}{%
-            \setcounter{currOutstandingBonus}{ \value{currTestScore} / 10 }
-          }{}
-          \setcounter{currTestScoreTotal}{ \value{currTestScore} + \value{currOutstandingBonus} }
-          \setcounter{currTestScoreTotalWithoutBonus}{ \value{currTestScore} }
 
 
-          % Special penalties & bonuses %%%%%%%%%%%%%%%%
-          \scoreheading{Special penalties \& standard bonuses}
 
-          \ifthenelse {\equal{\dataRecordingBonus}{true}}{\scoreitem{10}{Contributing with recorded data ($\frac{\sum gathered\ points}{max\ points} \times$) \ifShortScoresheet{(see sec.~\ref{rule:datarecording})}{}}}{}
 
-          \scoreitem{-50}{Not attending \ifShortScoresheet{(see sec.~\ref{rule:not_attending})}{}}
 
-          \ifthenelse{\equal{\scorelistOptions}{openDoorSignal}}{
-            \scoreitem{-10}{Using start button \ifShortScoresheet{(see sec.~\ref{rule:start_button})}{}}
-          }{}
 
-          % \ifthenelse{\value{currOutstandingBonus} = 0}{
-          \scoreitem{\thecurrOutstandingBonus}{Outstanding performance \ifShortScoresheet{(see sec.~\ref{rule:outstanding_performance})}{}}
-          % }{}
 
-          % Total score %%%%%%%%%%%%%%%%
-          \hline\\
-          % \textbf{Total score} & \scoring{ \thecurrTestScoreTotal } %
-          \ifShortScoresheet {%
-            % No Score per try in short version
-          }{%
-            \textbf{\textit{Score per try}} & \scoring{ \thecurrTestScoreTotalWithoutBonus } %
-          }
-          % add line to put in total:
-          \ifShortScoresheet{}{& \attemptScoreLines} \\
-          \ifShortScoresheet{
-            \textbf{Total score} (excluding penalties and bonuses) & \scoring{ \thecurrTestScoreTotalWithoutBonus } %
-          }{
-            \defNumAttempts
-            & \\
-            \textbf{Total score}  & \scoring{ \thecurrTestScoreTotalWithoutBonus } & \multicolumn{\numAttempts}{c}{\scoreline[0.20]}
-          } \\
+
+
+
+
+
+% %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                  %
+% ENVIRONMENT: scorelist                                           %
+% Score list table                                                 %
+%                                                                  %
+% %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{pgfkeys}
+\pgfkeys{
+	/scorelist/.is family, /scorelist,
+	default/.style={
+		attempts = \attempts,
+		continue = true,
+		datarecording = \dataRecordingBonus,
+		datarecordingpc = \dataRecordingBonusPercentage,
+		datarecordingbonus = 0,
+		outstanding = \outstandingPerformanceBonus,
+		outstandingpc = \outstandingPerformanceBonusPercentage,
+		outstandingbonus = 0,
+		startbutton = \startbuttonpenalized,
+		startbuttonpenalty = \startbuttonpenalty,
+		firstcolcaption = \firstColumnCaption,
+		secondcolcaption = \secondColumnCaption,
+		singletrycc = \singleTryColumnCaption,
+		firsttrycc = \firstTryColumnCaption,
+		secondtrycc = \secondTryColumnCaption,
+	},
+	attempts/.estore in = \scorelistAttempts,
+	continue/.estore in = \scorelistContinue,
+	datarecording/.estore in = \scorelistDataRecording,
+	datarecordingpc/.estore in = \scorelistDataRecordingPercentage,
+	datarecordingbonus/.estore in = \scorelistDataRecordingBonus,
+	outstanding/.estore in = \scorelistOutstanding,
+	outstandingpc/.estore in = \scorelistOutstandingPercentage,
+	outstandingbonus/.estore in = \scorelistOutstandingBonus,
+	startbutton/.estore in = \scorelistStartButton,
+	startbuttonpenalty/.estore in = \scorelistStartButtonPenalty,
+	firstcolcaption/.estore in = \scorelistFirstColCaption,
+	secondcolcaption/.estore in = \scorelistSecondColCaption,
+	singletrycc/.estore in = \scorelistSingleTryCC,
+	firsttrycc/.estore in = \scorelistFirstTryCC,
+	secondtrycc/.estore in = \scorelistSecondTryCC,
+}
+
+\makeatletter%
+\NewEnviron{scorelist}[1][]{
+% \begin{scorelist}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% read options
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\pgfkeys{/scorelist, default, #1}%
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% init variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\setcounter{currTestScore}{0}
+	\setcounter{currOutstandingBonus}{\scorelistOutstandingBonus}
+	\setcounter{currDataRecordingBonus}{\scorelistDataRecordingBonus}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% environment commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% heading %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\newcommand{\scoreheading}[1]{%
+		\ifShortScoresheet{%
+			\xdef\@scoreheadingcolspan{2}%
+		}{%
+			\xdef\@scoreheadingcolspan{\the\numexpr2+\scorelistAttempts\relax}%
+		}%
+		\phantom{.} \\[-12pt]%
+		\multicolumn{\@scoreheadingcolspan}{@{}l}{\textbi{##1}}\\[0pt]%
 	}
 
-      \end{tabular*}
+	\newcommand{\scoreitem}[3][1]{%
+		\ifthenelse{ ##2 > 0 }{%
+			\addtocounter{currTestScore}{ ##2 * ##1 }%
+		}{}%
+		%
+		\@scoreitem[##1]{##2}{##3}%
+	}
 
-    }
+	\newcommand{\penaltyitem}[3][1]{%
+		\@scoreitem[##1]{-\absval{##2}}{##3}%
+	}
+
+	\newcommand{\bonusitem}[3][1]{%
+		\@scoreitem[##1]{##2}{##3}%
+	}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Commands for overriding internal calculations %%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% set score counter to arbitrary value %%%%%%%%%%%%%%%%%%%%%%%%
+	\newcommand{\setTotalScore}[1]%
+	{%
+		\setcounter{currTestScore}{##1}%
+	}
+
+	% set outstanding bonus counter to arbitrary value %%%%%%%%%%%%
+	\newcommand{\setOutstandingBonus}[1]%
+	{%
+		\setcounter{currOutstandingBonus}{##1}%
+	}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% environment internal commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	% table entry %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\newcommand{\@scoreitem}[3][1]{%
+		##3\vspace{0.1em} &%
+		\textit{%
+			\ifthenelse{ \equal{##2}{0} }{~}{% else
+				\ifthenelse{ \equal{##1}{1} }{}{##1$\times$}%
+			##2}%
+		}%
+		\ifShortScoresheet{}{&\attemptScoreLines{\scorelistAttempts}}\\[0pt]%
+	}
+
+	% [INTERNAL] writes down the line for the final total score %%%
+	\newcommand{\scoreTotal}{%
+		\\%
+		\textbf{Total score~}%
+		\ifShortScoresheet{%
+			(excluding penalties and standard bonuses) &%
+			\textit{\thecurrTestScoreTotalWithoutBonus}%
+		}{%
+			&\textit{\thecurrTestScoreTotal}
+			&\multicolumn{\scorelistAttempts}{c}{\scoreline[0.20]}%
+		}\\[0pt]%
+	}
+
+	% [INTERNAL] writes down the lines for the total score per try
+	\newcommand{\scorePerTry}{%
+		\\%
+		\ifShortScoresheet{}{%
+			\ifthenelse{ \attempts > 1 }{%
+				\textbi{Score per try} &%
+				\textit{\thecurrTestScoreTotalWithoutBonus} &%
+				\attemptScoreLines{\scorelistAttempts}%
+				\\[0pt]%
+			}{}%
+		}%
+	}
+
+	% [INTERNAL] draws a line for referee scoring %%%%%%%%%%%%%%%%%
+	\gdef\@marklinewidth{0.06}
+	\newcommand{\markline}{\rule{\@marklinewidth\linewidth}{.2pt}}
+
+	% [INTERNAL] draws all the line for referee scoring %%%%%%%%%%%
+	\newcommand{\attemptScoreLines}[1]{%
+		\protected@xdef\@scorelines{\markline}%
+		\ifthenelse{##1 > 1}{%
+			\foreach \i in {2,...,##1}{%
+				\protected@xdef\@scorelines{\@scorelines & \markline}%
+			}%
+		}{}%
+		\@scorelines%
+	}
+
+	% [INTERNAL] writes down the headings for referee scoring %%%%%
+	\newcommand{\attemptHeadings}[1]{%
+		\ifthenelse{\equal{##1}{1}}{%
+			\gdef\@attemptheadings{\textbf{\scorelistSingleTryCC}}%
+			\gdef\@marklinewidth{0.1}%
+		}{}%
+		\ifthenelse{\equal{##1}{2}}{%
+			\gdef\@attemptheadings{\textbf{\scorelistFirstTryCC} & \textbf{\scorelistSecondTryCC}}%
+			\gdef\@marklinewidth{0.08}%
+		}{}%
+		\ifthenelse{##1 > 2}{
+			\protected@xdef\@attemptheadings{%
+				\textbf{\small$1^{st}$~try} &%
+				\textbf{\small$2^{nd}$~try} &%
+				\textbf{\small$3^{rd}$~try}}%
+		}{}%
+		\ifthenelse{##1 > 3}{
+			\foreach \i in {4,...,##1}{%
+				\protected@xdef\@attemptheadings{%
+					\@attemptheadings &%
+					\textbf{\small$\i^{th}$~try}%
+				}%
+			}%
+			\gdef\@marklinewidth{0.06}%
+		}{}%
+		\@attemptheadings%
+	}
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% setup table %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\vspace{0.8 em}%
+	\noindent%
+	\begin{tabularx}{\textwidth}{ @{}X @{}r *{\scorelistAttempts}{c}}
+		\textbf{\scorelistFirstColCaption} &%
+		\textbf{\scorelistSecondColCaption}%
+		\ifShortScoresheet{}{&\attemptHeadings{\scorelistAttempts}}
+	\\\hline
 
 
-    %% Score sheet table entries %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    % for loop helper
-    % usage: \forloop[step]{counter}{initial_value}{conditional}{code_block}
-    \newcommand{\forloop}[5][1]%
-    {%
-      \setcounter{#2}{#3}%
-      \ifthenelse{#4}%
-      {%
- 	#5%
- 	\addtocounter{#2}{#1}%
- 	\forloop[#1]{#2}{\value{#2}}{#4}{#5}%
-      }%
-      % else
-      {%
-      }%
-    }
+\BODY
 
-    \newcounter{ct}
 
-    % heading
-    % usage: \scoreheading{text}
-    \newcommand{\scoreheading}[1]{
-      \ifShortScoresheet {%
-        \phantom{.} \\[-4 ex] \multicolumn{2}{@{}l}{\textbf{\textit{#1}}}\\[0pt]
-      }{%
-        \phantom{.} \\[-4 ex] \multicolumn{3}{@{}l}{\textbf{\textit{#1}}}\\[0pt]
-      }
-    }
 
-    % table entry
-    % usage: \scoreitem[multiplicity]{points}{description}
-    \newcommand{\scoreitem}[3][1]{
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% calculate max. score, and bonuses %%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% base total score (accumulative) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\setcounter{currTestScoreTotal}{\thecurrTestScore}
+	% outstanding performance bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\ifthenelse{\equal{\scorelistOutstanding}{true}}{%
+		\ifthenelse{ \equal{\thecurrOutstandingBonus}{0} }{%
+			\setcounter{currOutstandingBonus}{ \thecurrTestScore*\scorelistOutstandingPercentage/100 }
+		}{}%
+		\setcounter{currTestScoreTotal}{%
+			\thecurrTestScoreTotal + \thecurrOutstandingBonus}%
+	}{}%
+	% data recording bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\ifthenelse{\equal{\scorelistDataRecording}{true}}{%
+		\ifthenelse{ \equal{\thecurrDataRecordingBonus}{0} }{%
+			\setcounter{currDataRecordingBonus}{ \thecurrTestScore*\scorelistDataRecordingPercentage/100 }%
+		}{}%
+		\setcounter{currTestScoreTotal}{%
+			\thecurrTestScoreTotal + \thecurrOutstandingBonus}%
+	}{}%
+	\setcounter{currTestScoreTotalWithoutBonus}{ \thecurrTestScore }
 
-      % add to max. total score if points > 0
-      \ifthenelse{ #2 > 0 }{
-        \addtocounter{currTestScore}{ #2 * #1 }
-      }{}%
-      %
-      \begin{minipage}[t]{\linewidth} {#3} \vspace{0.1 em} \end{minipage} & %
-      \scoring{ \ifthenelse{ \equal{#1}{1} }{}{ #1 $\times$} \ifthenelse{ \equal{#2}{0} }{}{ #2}}%
-      % insert check marks:
-      %	\ifShortScoresheet{}{ & \forloop{ct}{0}{\value{ct} < #1}{ \Square}} \\[3pt]
-      % insert line
-      \ifShortScoresheet{ %
-        \\
-      }{ % else
-        \ifEvaluationSheet{}{& \attemptScoreLines} \\[0pt]
-      }
-    }
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Special penalties & bonuses %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\scoreheading{Special penalties \& standard bonuses}
 
+	% not showing up penalty %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\penaltyitem{\notattendingpenalty}{Not attending \ifShortScoresheet{(see sec.~\ref{rule:not_attending})}{}}
+
+	% require signal for door opening %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\ifthenelse{ \equal{\scorelistStartButton}{true} }{
+	  \penaltyitem{\scorelistStartButtonPenalty}{Using start button \ifShortScoresheet{(see sec.~\ref{rule:start_button})}{}}
+	}{}
+
+	% data recording bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\ifthenelse{%
+		\thecurrDataRecordingBonus>0 \AND %
+		\equal{\scorelistDataRecording}{true}%
+	}{%
+		\bonusitem{\thecurrDataRecordingBonus}{Contributing with recorded data ($\frac{\sum gathered~points}{max~points} \times$) \ifShortScoresheet{(see sec.~\ref{rule:datarecording})}{}}%
+	}{}%
+
+	% outstanding performance bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\ifthenelse{%
+		\value{currOutstandingBonus}>0 \AND %
+		\equal{\scorelistOutstanding}{true}%
+	}{%
+		\bonusitem{\thecurrOutstandingBonus}{Outstanding performance~\ifShortScoresheet{(see sec.~\ref{rule:outstanding_performance})}{}}%
+	}{}%
+	%
+	% Total score %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\\[-1em]\hline
+	\scorePerTry
+	\scoreTotal
+
+	\end{tabularx}
+}
+\makeatother%
 
 % Local Variables:
 % TeX-master: "../Rulebook"
 % End:
+%

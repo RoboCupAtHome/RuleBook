@@ -1,0 +1,67 @@
+\section{Clean Up [Housekeeper]}
+The robot has to clean the room from the house it has been told to clean up.
+
+% \subsection{Focus}
+% This test focuses on object perception, manipulation, and planning.
+
+\subsection{Main Goal}
+Upon entrance, the robot requests the operator which room shall be cleaned.
+All misplaced known objects found in this room must be taken to their predefined locations and unknown objects thrown to the trash bin.
+
+\noindent\textbf{Reward:} 500pts (100pts per object).
+
+\subsection{Bonus rewards}
+\begin{enumerate}[nosep]
+	\item Opening the entrance door (200pts)
+	\item Moving a \emph{tiny} object (100pts)
+	\item Moving a \emph{heavy} object (100pts)
+	\item Leaving the arena (100pts)
+\end{enumerate}
+
+
+\subsection{Setup}
+\begin{itemize}[nosep]
+	\item \textbf{Location:} A random room in the arena.
+
+	\item \textbf{Objects:} There are 5 objects placed at random locations in the room.
+	Objects can be anywhere, including the floor, seats, and on furniture.
+	All objects are visible from at least 1.0m distance (i.e. no occlusions) and have the following distribution:
+	\begin{itemize}[nosep]
+		\item\textit{Known objects}: Any two regular and two alike objects.
+		\item\textit{Unknown objects}: One unknown object at grasping distance (i.e. no decorations).
+	\end{itemize}
+\end{itemize}
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per object as follows:
+	\begin{itemize}[nosep]
+		\item \textbf{Verbal object location disclosure:} Telling the robot where an object can be found causes a reduction of 30\% in scoring for that particular object.
+
+		\item \textbf{Pointing at an object location:} Pointing at an object to be picked up causes a reduction of 40\% in scoring for that particular object.
+		
+		\item \textbf{Guiding to an object location:} Guiding the robot nearby the location where an object can be found causes a reduction of 20\% in scoring for that particular object.
+
+		\item \textbf{Revealing placement location:} Telling the robot where the object should be placed or the object's category causes a reduction of 30\% in scoring for that particular object.
+
+		\item \textbf{Object transport and handover:} Having a human physically interacting with an object causes a reduction of 60\% in scoring for that particular object.
+	\end{itemize}
+	
+	\item \textbf{Heavy and tiny objects:} Objects used in this test are lightweight and average-sized.
+	The team leader can, however, request a tiny and a heavy object to be used and score additional points for picking them.
+	
+	\item \textbf{Bin:} Objects must be placed inside the bin, not thrown or dropped.	
+\end{enumerate}
+
+\subsection{Referee instructions}
+The referee needs to
+\begin{itemize}
+	\item Place the objects in the room.
+	\item Recover disposed objects from the bin.
+\end{itemize}
+
+\subsection{OC instructions}
+2 hours before the test:
+\begin{itemize}
+	\item Announce the location where the robot will be instructed.
+\end{itemize}

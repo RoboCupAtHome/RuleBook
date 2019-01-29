@@ -1,0 +1,61 @@
+\section{Find My Mates [Party Host]}
+
+The robot fetches the information of the party guests for the operator who knows only the names of the guests.
+
+
+\subsection{Main Goal}
+
+The robot reports to the operator the description and location of at least two party guests.
+
+\noindent\textbf{Reward:} 500 points (150 pts for description and 100 pts for location per guest).
+
+\subsection{Bonus rewards}
+\begin{enumerate}[nosep]
+	\item For reporting the third guest, 300 pts for description and 200 pts for location.
+\end{enumerate}
+
+
+\subsection{Setup}
+\begin{itemize}
+	\item \textbf{Location}: This test takes place inside the arena in a predefined room (e.g. living room).
+
+	\item \textbf{People}: 4 people distributed in the room.
+\end{itemize}
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per guest.
+	\begin{itemize}
+		\item -75 pts if a person has to wave the robot in order to be found
+		\item -75 pts if a person has to tell the robot where is she sitting/standing
+		\item -150 pts if a person has to approach to the robot (e.g. walk and stand in front of it).
+	\end{itemize}
+
+	\item \textbf{Reporting:} Points are scored only when the robot goes back to the operator and delivers the report in time.
+	
+	\item \textbf{Description of a Person:} The description of a person may include information about gender, clothing, skin, face, hair, pose, etc. It should be a unique description i.e. not shared with any other guest.
+	
+	\item \textbf{Description of Location:} The robot provides relative location of a person in the room i.e. with respect to the objects in the room (like, PersonX is sitting on the coach, PersonY is standing beside the lamp, etc.). 
+\end{enumerate}
+
+
+\subsection{Referee instructions}
+
+The referees need to
+\begin{itemize}
+	\item Make sure every person has a name.
+	\item Make sure people stay at the designated place.
+\end{itemize}
+
+\subsection{OC instructions}
+
+2h before test:
+\begin{itemize}
+	\item Announce the location where the robot will be instructed.
+	\item Assign names to the guests.
+	\item Announce the room in which the test takes place.
+\end{itemize}
+
+% \newpage
+% \subsection{Score sheet}
+% \input{scoresheets/Receptionist.tex}
