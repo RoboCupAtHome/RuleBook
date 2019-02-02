@@ -1,30 +1,19 @@
 
 The maximum time for this test is 5 minutes.
-The robot must place the first object within the first 2 minutes (+1 minute if the robot opens the door).
 
 \begin{scorelist}
-	\scoreheading{Opening the door}
-	\scoreitem{35}{Autonomously opening the door}
-	% Total: 20
+	\scoreheading{Main Goal}
+	\scoreitem{500}{Move 5 objects next to their peers in the shelf}
+	\penaltyitem[5]{-30}{Receiving human help (point at target location)}
+	\penaltyitem[5]{-100}{Receiving human help (move object)}
 
-	\scoreheading{Arranging objects}
-	\scoreitem{20}{Successfully placing the \textbf{1st} object next to another of its same class}
-	\scoreitem{30}{Successfully placing a \textbf{2nd} object next to another of its same class}
-	\scoreitem{40}{Successfully placing a \textbf{3rd} object next to another of its same class}
-	\scoreitem{50}{Successfully placing a \textbf{4th} object next to another of its same class}
-	\scoreitem{60}{Successfully placing a \textbf{5th} object next to another of its same class}
-	% Total 150
+	\scoreheading{Bonus rewards}
+	\scoreitem{300}{Opening the shelf door without human help}
+	\scoreitem{100}{Moving a \emph{tiny} object}
+	\scoreitem{100}{Moving a \emph{heavy} object}
 
-	\scoreheading{Wrong placements}
-	\scoreitem[5]{10}{Successfully placing an object on the cupboard}
-	% Total 0
-
-	% \scoreheading{Other placements}
-	% \scoreitem[5]{50}{Each correctly arranged object after the 5th one}
-	% Total 250
-
-
-	\setTotalScore{235}
+	% No longer necessary, computes automatically
+	% \setTotalScore{1000}
 \end{scorelist}
 
 

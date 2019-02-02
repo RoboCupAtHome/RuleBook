@@ -12,10 +12,12 @@
 \subsection{Maximum number of team members}
 \label{rule:number_of_people}
 \begin{enumerate}
-	\item \textbf{Regular Tests:} During a regular test, the maximum number of team members allowed inside the arena is \emph{one} (1). The only exceptions are tests that require for more team members in the arena.
+	\item \textbf{Regular Tests:} During a regular test, the maximum number of team members allowed inside the arena is \emph{one} (1).
+	Exceptions are tests that explicitly require volunteer assistance.
 	\item \textbf{Setup:} During the setup of a test, the number of team members inside the arena is not limited.
 	% \item \textbf{Open Demonstrations:} During the \iterm{Open Challenge} \iterm{Demo Challenge}, and the \iaterm{final demonstration}{Finals}, the number of team members inside the arena is not limited.
-	\item \textbf{Open Demonstrations:} During the \iterm{Open Challenge}, and the \iaterm{final demonstration}{Finals}, the number of team members inside the arena is not limited.
+	%\item \textbf{Open Demonstrations:} During the \iterm{Open Challenge}, and the \iaterm{final demonstration}{Finals}, the number of team members inside the arena is not limited.
+	\item \textbf{Open Demonstrations:} During the \iaterm{final demonstration}{Finals}, the number of team members inside the arena is not limited.
 	\item \textbf{Moderation:} During a regular test, one team member \emph{must} be available to host and comment the test (see~\refsec{rule:moderator}).
 \end{enumerate}
 
@@ -34,36 +36,50 @@ This also includes:
 	\item not trying to make other robots fail on purpose.
 	\item not modifying robots in standard platforms.
 \end{itemize}
-Disregard of this rule can lead to penalties in the form of negative scores, and disqualification for a test or even for the entire competition.
+Disregard of this rule can lead to penalties in the form of negative scores, disqualification for a test, or even for the entire competition.
 
 \subsection{Expected Robot's Behavior}
-Unless stated otherwise, it is expected that the robot always behave and react in the same way a polite and friendly human being would do. This applies also to how robots should address the problems in order to solve the assigned task, including addressing people, serving meals, storing the groceries, cleaning, arranging stuff, etc. As rule of thumb, ask your closest non-scientist neighbor to solve the task and take notes.
+Unless stated otherwise, it is expected that the robot always behave and react in the same way a polite and friendly human being would do.
+This applies also to how robots try solve the assigned task
+As rule of thumb, one may ask any non-scientist how she would solve the task.
 
-Keep in mind that one of the goals in RoboCup @Home is to have robots interacting with real people in domestic environments. This means that the average user will not know any specific procedure on how to operate the robot, but they will interact with it as with any other human being.
+Please consider that average users will not know the specific procedure to operate a robot.
+Hence, interaction should be as with any other human being.
 
 
 \subsection{Robot Autonomy and Remote Control}
 \begin{enumerate}
-	\item \textbf{No touching:} During a test, the participants are not allowed to make contact with the robot(s), unless it is in a \enquote{natural} way and/or required by the test specification.
+	\item \textbf{No touching:} During a test, the participants are not allowed to make contact with the robot(s), unless it is in a \enquote{natural} way and required by the task.
+
 	\item \textbf{Natural interaction:} The only allowed means to interact with the robot(s) are gestures and speech.
-	\item \textbf{Natural commands:} Only general instructions are allowed.
-	Anything that resembles direct control is prohibited.
-	\item \textbf{Remote Control:} Remotely controlling the robot(s) is strictly prohibited. This also includes pressing buttons, or influencing sensors on purpose.
-	\item \textbf{Penalties:} Disregard of these rules can lead to penalties in the form of negative scores, and disqualification for a test or even for the entire competition.
+
+	\item \textbf{Natural commands:} Anything that resembles direct control is forbidden.
+
+	\item \textbf{Remote Control:} Remotely controlling the robot(s) is strictly prohibited.
+	This also includes pressing buttons, or influencing sensors on purpose.
+
+	\item \textbf{Penalties:} Disregard of these rules will lead to disqualification for a test or for the entire competition.
 \end{enumerate}
+
+
 
 \subsection{Collisions}
 \begin{enumerate}
-	\item \textbf{\iterm{Touching}:} Robots are allowed to gently \emph{touch} objects, items and humans. 	They are not allowed to crash into something. The \enquote{safety first} rule (\refsec{rule:safetyfirst}) supercedes all other rules.
-	\begin{itemize}
-		\item It \emph{is} allowed however to \emph{functionally} touch an item with e.g.~the base.
-	\end{itemize}
-	The OC/TC/EC and the RoboCup Trustees all have the right to immediately stop a robot, and to disqualify a team for the duration of the competition, or longer, in case of \emph{dangerous} behavior. Furthermore, referees can recommend to disqualify a team in which case EC/TC decides.
+	\item \textbf{\iterm{Touching}:} Gently \emph{touching} objects is tolerated but unadvised.
+	However, robots are not allowed to crash with something.
+	The \enquote{safety first} rule (\refsec{rule:safetyfirst}) overrides any other rule.
+
 	\item \textbf{\iterm{Major collisions}:} If a robot crushes into something during a test, the robot is immediately stopped.	Additional penalties may apply.
+
+	\item \textbf{\iterm{Functional touching}:} Robots are allowed to apply pressure on objects, push away furniture and, in general, interact with the environment using structural parts other than their manipulators.
+	This is known as \iaterm{functional touching}.
+	However, the robot must clearly announce the collision-like interaction and kindly request not being stopped.\\
+	\textbf{Remark: } Referees can (and will) immediately stop a robot in case or suspicion of \emph{dangerous} behavior.
+	
 	\item \textbf{Robot-Robot avoidance:} If two robots encounter each other, they both have to actively try to avoid the other robot.
 	\begin{enumerate}
 		\item A robot which is not going for a different route within a reasonable amount of time (e.g., \SI{30}{\second}) is removed.
-		\item A non-moving robot blocking the path of another robot for longer than a reasonable amount of time (e.g., \SI{30}{\second}) is removed. In this context, \enquote{moving} refers to any kind of motion or action required in the test. For example, a robot standing still but manipulating an object does not need to stop manipulating and move away, even when blocking the way of another robot for the duration of the manipulation.
+		\item A non-moving robot blocking the path of another robot for longer than a reasonable amount of time (e.g., \SI{30}{\second}) is removed.
 	\end{enumerate}
 \end{enumerate}
 
@@ -80,21 +96,25 @@ Robots not obeying the rules are stopped and removed from the arena.
 
 \subsection{Start signal}
 \label{rule:start_signal}
+The default \iterm{start signal} (unless stated otherwise) is \iterm{door opening}.
+Other start signals are allowed but must be authorized by the \iaterm{Technical Committee}{TC} during the Robot Inspection (see~\refsec{sec:robot_inspection}).
 
-Different tests are started in different ways, according to what would make the most sense in the application setting.
-Before a test starts, robots are waiting in a queue, sometimes accompanied by a team member.
-
-The various start methods are described below:
 \begin{enumerate}
-	\item \textbf{Door opening:} The robot is waiting behind the door, outside the arena (accompanied by a team member). The test attempt starts when a referee (not a team member) opens the door.
-	\item \textbf{Start button:} If the robot is not able to automatically start after opening the door, the team may start the robot using a start button.
+	\item \textbf{Door opening:} The robot is waiting behind the door, outside the arena and accompanied by a team member.
+	The test starts when a referee (not a team member) opens the door.
+
+	\item \textbf{Start button:} If the robot is not able to automatically start after the door is open, the team may start the robot using a start button.
 	\begin{enumerate}
 		\item Using a start button needs to be announced to the referees. It is the responsibility of the team to do so before the test starts.
+		\item Any single-key-press procedure is allowed. Typing commands is strictly forbidden.
 		\item There may be penalties for using a start button in some tests
 	\end{enumerate}
-    \item \textbf{Called by name:} A number of robots is waiting inside the arena, unaccompanied by team members.
-				      The referee approaches the robot, calls it by its name and gives the robot a command. e.g.~\enquote{R2D2, start} or \enquote{C3PO, continue}.
-				      Other waiting robots must not respond.
+
+	\item \textbf{QR Codes:} If the robot is not able to automatically start after the door is open, the team may start the robot by showing it a QR code.
+
+	\item \textbf{Verbal instructions:} If the robot is not able to automatically start after the door is open, the team may start the robot using a verbal command.
+
+	\item \textbf{Ad-hoc start signal:} Other means of triggering robot to action must be approved by the \iaterm{Technical Committee}{TC} during the Robot Inspection (see~\refsec{sec:robot_inspection}).
 \end{enumerate}
 
 
@@ -113,7 +133,9 @@ The various start methods are described below:
 Hand gestures may be used to control the robot in the following way:
 \begin{enumerate}
 	\item \textbf{Definition:} The teams define the hand gestures by themselves.
+
 	\item \textbf{Approval:} Gestures need to be approved by the referees and TC member monitoring the test. Gestures should not involve more than the movement of both arms. This includes e.g.~expressions of sign language or pointing gestures.
+
 	\item \textbf{Instructing operators:} It is the responsibility of the team to instruct operators.
 	\begin{enumerate}
 		\item The team may only instruct the operator when told to so by a referee.
@@ -122,6 +144,7 @@ Hand gestures may be used to control the robot in the following way:
 		\item When the robot has to instruct the operator, it is the robot that instructs the operator and \emph{not} the team. The team is not allowed to additionally guide the operator, e.g., tell the operator to come closer, speak louder, or to repeat a command.
 		\item The robot is allows to instruct the operator at any time.
 	\end{enumerate}
+
 	\item \textbf{Receiving gestures:} Unless stated otherwise, it is not allowed to use a speech command to set the robot into a special mode for receiving gestures.
 \end{enumerate}
 
@@ -129,87 +152,100 @@ Hand gestures may be used to control the robot in the following way:
 
 \subsection{Referees}
 \label{rule:referees}
-%~\refmark{}
+All tests are monitored by a referee and one member of the \iaterm{Technical Committee}{TC}.
+The following rules apply:
+
 \begin{enumerate}
-	\item \textbf{Setup:} Unless stated otherwise, each test is monitored by two referees and one member of the \iaterm{Technical Committee}{TC}.
-	\item \textbf{Selection:} The two referees
+	\item \textbf{Selection:}
 	\begin{itemize}
-		\item are chosen by EC/TC/OC,
-		\item are announced together with the schedule for the test slot,
-		\item and have to referee all teams in that slot.
-		\item Referees may not be from one of the teams in the slot.
+		\item Referees are chosen by EC/TC/OC.
+		\item Referees are announced together with the schedule for the test slot.
 	\end{itemize}
+
 	\item \textbf{Not showing up:} Not showing up for refereeing (on time) will result in a penalty (see~\refsec{rule:extraordinary_penalties}).
-	\item \textbf{TC monitoring:} The referee from the TC acts as a main referee.
-	\item \textbf{Referee instructions:} Right before each test, referee instructions are conducted by the TC. The referees for all slots need to be present at the arena where the referee instructions are taking place.When and where referee instructions are taking place is announced together with the schedule for the slots.
+
+	\item \textbf{TC monitoring:} A TC member acts as main referee.
+
+	\item \textbf{Referee instructions:} Right before each test, referee instructions are conducted by the TC.
+	The referees for all slots need to be present at the arena where the referee instructions are taking place.
+	When and where referee instructions are taking place is announced together with the schedule for the slots.
 \end{enumerate}
 
 
-\subsection{Operator}
+\subsection{Operators}
 \label{rule:operator}
-\begin{enumerate}
-	\item \textbf{Default operator:} Unless stated otherwise, robots are operated by the monitoring TC member, a referee, or by a person selected by the TC.
-	\item \textbf{Fallback/custom operator:} If the robot fails to understand the command given by the default operator, the team may continue with a custom operator.
-	\begin{compactitem}
-		\item The custom operator may be any person chosen by the team (and willing to do so); including the referees or the monitoring TC member.
-		\item A penalty may be involved when using a custom operator.
-	\end{compactitem}
-\end{enumerate}
-
+Unless stated otherwise, robots are operated by the referee or by a person selected by the referee.
+If the robot fails to understand the default operator, the team may request the use of a custom operator.
+Penalty may apply when using a custom operator.
 
 
 \subsection{Moderator}
 \label{rule:moderator}
 The LOC is responsible of organizing test moderation in the local language.
-\begin{enumerate}
-	\item \textbf{Providing a moderator:}
-	Upon OC request, a participating team may have to provide a team member as moderator for a regular test (i.e., not for the open demonstrations).
-	Candidates have to be fluent in English and, preferably, at least one of the main languages spoken by the audience.
-	\item \textbf{Responsibilities:} The moderators have to:
-	\begin{compactitem}
-		\item explain the rules of the test,
-		\item comment on the performance of their team,
-		\item not interfere with the performance,
-		\item speak in English and, preferably, the local language,
-		\item and obey the instructions by the monitoring TC member.
-	\end{compactitem}
-	\item \textbf{Competitive tests:} In competitive tests (tests in which two teams directly compete against each other), the moderation has to be done or assessed by the two teams together.
-	\item \textbf{Not showing up:} Not showing up for moderation (on time) will result in a penalty (see~\refsec{rule:extraordinary_penalties}).
-\end{enumerate}
+The OC may request the participating teams to provide a team member for moderation.
+Candidates have to be fluent in the moderation language (default is English).
+
+\noindent\textbf{Responsibilities:} The moderators have to:
+\begin{compactitem}
+	\item Do \textbf{NOT interfere} with the performance
+	\item Explain the tasks being performed
+	\item Comment on the performance of the competitor
+	\item Follow the instructions of the referee.
+\end{compactitem}
+
+\noindent \textbf{Not showing up:} Not showing up for moderation (on time) will result in a penalty (see~\refsec{rule:extraordinary_penalties}).
 
 
 \subsection{Time limits}
 \label{rule:time_limits}
 \begin{enumerate}
 	\item \textbf{Stage~I:} Unless stated otherwise, the time limit for each test in \iterm{Stage~I} is \timing{5 minutes}.
+
 	\item \textbf{Stage~II:} Unless stated otherwise, the time limit for each test in \iterm{Stage~II} is \timing{10 minutes}.
-	\item \textbf{Setup time:} Unless stated otherwise, all time specifications, e.g., setup time and time for instructing operators, are within the total test time.
-	\item \textbf{Scores:} When the time is up, the team has to immediately remove their robot(s) from the arena; no more points can be scored. In special cases, the monitoring TC member may ask the team to continue the test for demonstration purposes (after time is up, points cannot be scored).
+
+	\item \textbf{Inactivity:} Robots are not allowed to stand still or get stuck into endless loops.
+	A robot not progressing in the task execution (and obviously not trying to), is consider as inactive.
+	Robots must be removed after 30 seconds of inactivity.
+
+	\item \textbf{Requesting time:} A robot (not the team) can request referees to make exception from the 30-seconds inactivity time limit.
+	In its request, the robot has to clearly state for how long it will be performing a time-consuming process (e.g. 60~seconds).
+	This time cannot exceed 3 minutes and cannot be used more than once per test.
+
+	\item \textbf{Setup time:} Unless stated otherwise, there is no setup time.
+	Robots need to be ready to enter the arena no later than one minute after the door has been closed to the former team.
+
+	\item \textbf{Time-up:} When the time is up, the team has to immediately remove their robot(s) from the arena.
+	No more additional score will be giving.
+
+	\item \textbf{Show must go on:} On special cases, the referee may let the robot continue the test for demonstration purposes, but no additional points will be scored.
 \end{enumerate}
 
 
 
 \subsection{Restart}
 \label{rule:restart}
-\begin{enumerate}
-	\item \textbf{Stage 1} has no restarts but features multiple attempts at a test.
-	If a robot fails during an attempt, the attempt ends.
-	A robot has several (ideally 3, depending on available time in the schedule) attempts for each test. An attempt cannot be restarted.
-	E.g.~if a robot fails halfway through an attempt at the Help-me-Carry test, the attempt is over, the robot is moved out of the test area and may prepare for the remaining attempts at the test.
+Some tasks allow a single restart, a procedure in which the team is allowed to quickly fix any issue with the robot.
+Restarts can be requested only when the test slot permits it, and when the amount of remaining time is greater than 50\% of the total.
+The procedure is as follows:
 
-	\item \textbf{Stage 2} does have restarts for all tests but the Open Challenge:
-	\begin{enumerate}
-		\item \textbf{Number of restarts:} A team may request one (1) restart during a test, unless stated in otherwise. There are tests in which a restart is not allowed.
-		\item \textbf{Procedure:} In case a restart is allowed, the team may request the restart only before 50\% of the time alloted to the test. The complete test is then restarted from the beginning (e.g., with entering the arena). The referees may rearrange the locations of objects/persons if necessary.
-		\item \textbf{Time:} The time is neither restarted nor stopped. The team has 1 minute to restart the test (the same time to start the test); if the team is not able to do so in the allotted time, the test is called as finished by the TC.
-		\item \textbf{Score:} The score of the second run (after the restart) counts. If it is lower than the score of the first run (before the restart), the average score of first and second run is taken.
-		\item \textbf{Forced restart:} The referees and the monitoring TC member may force the team to do a restart:
-		\begin{compactitem}
-			\item if the robot is doing nothing or nothing reasonable for \timing{one minute}, or
-			\item when the robot fails to understand a command for \timing{five times}, or
-			\item after a minor collision
-		\end{compactitem}
-	\end{enumerate}
+\begin{enumerate}
+	\item The team request a restart.
+	\item The robot is taken to the initial position (e.g. outside the arena) and gets fixed.
+	\item When the robot is ready, the team informs the referee.
+\end{enumerate}
+
+The following rules apply:
+\begin{enumerate}
+	\item \textbf{Number of restarts:} When allowed, the maximum number of restarts is one (1).
+
+	\item \textbf{Early request:} Restart is \textbf{NOT} allowed after the first 50\% of the alloted time has elapsed.
+
+	\item \textbf{Time:} The timer is neither restarted nor stopped. 
+
+	\item \textbf{One-minute Setup} The team has 1 minute to fix the robot counting when the referee announces th restart.
+	If the robot is not ready, the test is considered finished.
+
+	\item \textbf{Scoring:} If the score of the second attempt is lower than the score of the first one, the average score of first and second run is taken.
 \end{enumerate}
 
 % Local Variables:

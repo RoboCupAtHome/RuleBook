@@ -5,51 +5,63 @@
 %%  description: List of packages for the RoboCupAtHome rulebook
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{soul}
+% \usepackage{soul}
 
+\usepackage[utf8x]{inputenc}
 \usepackage[english]{babel}
 \usepackage{amsmath,amssymb,amsfonts}
-\usepackage[nice]{nicefrac}
+% \usepackage[nice]{nicefrac}
 \usepackage{siunitx}
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{verbatim}
 \usepackage{fancyhdr}
-% \usepackage{svn-multi}
-\usepackage{color}
-\usepackage{xcolor,colortbl}
-\usepackage{epsfig}
-\usepackage{makeidx}
-\usepackage{lscape}
-\usepackage{picinpar}
-% \usepackage{./styles/bar}
+
+% \usepackage{color}
+\usepackage{xcolor}
+\usepackage{colortbl}
+% \usepackage{epsfig}
+\usepackage{makeidx} % This one causes scoresheets not to setle
+% \usepackage{lscape}
+% \usepackage{picinpar}
+
 \usepackage{./styles/tweaklist}
-%\usepackage{subfigure}
-\usepackage{enumerate,paralist}
+
+\usepackage{enumerate}
+\usepackage{paralist}
 \usepackage{multirow}
 \usepackage{pgffor}
-\usepackage{array}
-\usepackage{etoolbox}
+% \usepackage{array}
+
 \usepackage{hyperref}
 \usepackage{tabularx}
 \usepackage{xspace}
 \usepackage{csquotes}
 \usepackage[inline]{enumitem}
 
-%\usepackage[utf8x]{inputenc}
 %\usepackage{times}
 %\usepackage{helvet}
 %\usepackage{courier}
 
-\usepackage{url}
+% \usepackage{url}
 \usepackage{caption}
-%\usepackage{subcaption}
-\usepackage{epstopdf}
+% \usepackage{epstopdf}
 \usepackage{subfig}
 \usepackage{float}
 \usepackage{wrapfig}
-%\usepackage{titlesec}
-\usepackage{xfrac}
+% \usepackage{xfrac}
+
+% \usepackage[titletoc]{appendix}
+% \usepackage{enumitem}
+% \usepackage{mathtools}
+% \usepackage{gensymb}
+
+% Required by scoresheets
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{environ}
+\usepackage{wasysym}
+\usepackage{chngpage}
 
 % Local Variables:
 % TeX-master: "../Rulebook"

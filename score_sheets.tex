@@ -10,7 +10,7 @@
 
 \usepackage{soul}
 
-\input{./setup/packages.tex}
+\input{./setup/packages_scoresheets.tex}
 
 \usepackage{fullpage}
 \parindent 0cm
@@ -102,14 +102,12 @@
 
 
 %%% STAGE I %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\retryAvailable}{false}
-\renewcommand{\threeAttempts}{true}
+\renewcommand{\attempts}{3}
 
 %%% STAGE 1 TESTS GO HERE %%%
 
 % Cocktail Party
 \ifSSPL{
-  \renewcommand{\continueAvailable}{true}
   \renewcommand{\currentTest}{Cocktail Party}
   \begin{scoresheet}
   \input{scoresheets/CocktailParty.tex}
@@ -117,21 +115,18 @@
 }
 
 % GPSR
-\renewcommand{\continueAvailable}{true}
 \renewcommand{\currentTest}{General Purpose Robot}
 \begin{scoresheet}
 \input{scoresheets/GPSR.tex}
 \end{scoresheet}
 
 % Help me carry
-\renewcommand{\continueAvailable}{true}
 \renewcommand{\currentTest}{Help-me-carry}
 \begin{scoresheet}
 \input{scoresheets/HelpMeCarry.tex}
 \end{scoresheet}
 
 % Speech and Person Recognition
-\renewcommand{\continueAvailable}{false}
 \renewcommand{\currentTest}{Speech and Person Recognition}
 \begin{scoresheet}
 \input{scoresheets/SPR.tex}
@@ -139,7 +134,6 @@
 
 % Storing Groceries
 \ifNotSSPL{
-  \renewcommand{\continueAvailable}{false}
   \renewcommand{\currentTest}{Storing Groceries}
   \begin{scoresheet}
   \input{scoresheets/StoringGroceries.tex}
@@ -148,9 +142,7 @@
 
 
 % %%% STAGE II %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\threeAttempts}{false}
-\renewcommand{\retryAvailable}{true}
-\renewcommand{\continueAvailable}{true}
+\renewcommand{\attempts}{2}
 
 %%% STAGE 2 TESTS GO HERE %%%
 
@@ -161,11 +153,12 @@
 \input{scoresheets/EEGPSR.tex}
 \end{scoresheet}
 
+% THIS IS REMOVED FROM 2019 RULE BOOK
 % Open Challenge
-\renewcommand{\currentTest}{Open Challenge}
-\begin{scoresheet}
-\input{scoresheets/OpenChallenge.tex}
-\end{scoresheet}
+%\renewcommand{\currentTest}{Open Challenge}
+%\begin{scoresheet}
+%\input{scoresheets/OpenChallenge.tex}
+%\end{scoresheet}
 
 % Set a table and clean it up
 \ifNotSSPL{
