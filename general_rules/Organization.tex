@@ -59,10 +59,13 @@ In case of having no considerable score deviation between a team advancing to th
 	\newcommand{\teams}[3]{%
 		\tiny
 		\begin{tabular}{c}%
-			\textit{Test slot 1, team $#1$}\\
-			\textit{Test slot 2, team $#2$}\\
+			\textit{Slot 1, team $#1$}\\
+			\textit{Slot 2, team $#2$}\\
 			$\vdots$\\
-			\textit{Test slot $n$, team $#3$}\\
+			\textit{Slot $n/2$, team $#3$}\\
+			\textit{Slot $n/2 + 1$, team $#1$}\\
+			$\vdots$\\
+			\textit{Slot $n$, team $#3$}\\
 		\end{tabular}
 	}
 	\newcommand{\wcell}[2]{%
@@ -90,29 +93,28 @@ In case of having no considerable score deviation between a team advancing to th
 		& \multicolumn{1}{ c }{\cellcolor{white} Day 4 }
 		\\\cline{2-5}
 	\cell{Block 1\\\footnotesize(9:00 - 12:00)}
-		& \cell{Housekeeper\\\teams{i}{j}{i}}
-		& \cell{Party Host\\\teams{k}{i}{k}}
-		& \cell{Housekeeper\\\teams{i}{j}{i}}
-		& \cell{Party Host\\\teams{j}{k}{j}}\\\cline{2-5}
+		& \cell{Housekeeper\\\teams{i}{j}{k}}
+		& \cell{Party Host\\\teams{k}{i}{j}}
+		& \cell{Housekeeper\\\teams{j}{i}{k}}
+		& \cell{Party Host\\\teams{i}{k}{j}}\\\cline{2-5}
 
 	\multicolumn{1}{ c }{}
 		& \multicolumn{4}{ c }{\wcell{0.5\baselineskip}{\color{gray}Lunch}}\\\cline{2-5}
 
 	\cell{Block 2\\\footnotesize(14:00 - 17:00)}
-		& \cell{Housekeeper\\\teams{i}{k}{i}}
-		& \cell{Party Host\\\teams{k}{j}{k}}
-		& \cell{Party Host\\\teams{i}{i}{k}}
-		& \cell{Housekeeper\\\teams{k}{j}{j}}\\\cline{2-5}
+		& \cell{Housekeeper\\\teams{k}{j}{i}}
+		& \cell{Party Host\\\teams{j}{k}{i}}
+		& \cell{Party Host\\\teams{i}{j}{k}}
+		& \cell{Housekeeper\\\teams{k}{i}{j}}\\\cline{2-5}
 
 	\multicolumn{1}{ c }{}
 		& \multicolumn{2}{ c }{\wcell{0.5\baselineskip}{\color[HTML]{029734}Stage 1}}
 		& \multicolumn{2}{ c }{\wcell{0.5\baselineskip}{\color[HTML]{6668e5}Stage 2}}\\
 	\end{tabular}
 
-	\caption{Example schedule.
-		Each team has two test slots in every block.
-		Two blocks are scheduled per day with an assigned theme.
-		A team can choose a different task in each test, meaning at most 4 different tests per stage.
+	\caption{Exemplary schedule:
+		In this example there are two blocks for each theme in both stages.
+		Each team has two test slots in every block meaning a team can choose to perform the same task four times, perform four different ones or anything in between for one theme in a stage.
 	}
 	\label{tbl:schedule}
 \end{table}
