@@ -1,0 +1,60 @@
+\section{Onlooker [Housekeeper]}
+Robot observes activities performed by an individual and reports them. 
+
+%\subsection{Focus}
+%It includes person detect, person tracking, and human activity recognition, and group activity recognition.
+
+\subsection{Main Goal}
+Robot reports the sequence of activities performed by a person.
+
+\noindent\textbf{Reward:} 500pts (100 pts per activity).
+
+\subsection{Bonus rewards}
+\begin{enumerate}[nosep]
+	\item 500 pts for reporting the sequence of activities for the second person (100 pts per activity)
+\end{enumerate}
+
+
+\subsection{Setup}
+\begin{itemize}
+	\item \textbf{Location}: The test takes place in the living room.
+
+	\item \textbf{Start Location}: The robot starts at a predefined location.
+
+	\item \textbf{Persons}: There are two people. At the start, the main person to look for is standing, and the second person is sitting.
+\end{itemize}
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Partial scoring:} The task allow partial scoring for each reported activity.
+	
+	\item \textbf{Activity List:} talk to someone, talk on a phone call, reading, writing, relaxing, walking, drinking, and using laptop.
+	
+	\item \textbf{Activities:}  In the first three minutes, both persons will perform five activities in a sequence (i.e., no overlap of activities) chosen from the above list.
+	
+	\item \textbf{Observation:} The robot can move around for the better observation but without interfering anyone in the house.
+	
+	\item \textbf{Reporting:} In the last two minutes, the robot should return to the start location and read the report loudly to the operator. An exmaple of report's format is \textit{`The main/second person talked on phone call, then walked, then drank, then talked to a person ...'}.
+	
+\end{enumerate}
+
+
+\subsection{Referee instructions}
+
+The referees need to
+\begin{itemize}
+	\item Select 2 volunteers.
+	\item Assign one activity at the start to each person.
+	\item Assign one activity every 30 seconds to both persons, till the fifth activity is assigned.
+\end{itemize}
+
+\subsection{OC instructions}
+
+2h before test:
+\begin{itemize}
+	\item Select and announce the robot's starting point
+\end{itemize}
+
+% \newpage
+% \subsection{Score sheet}
+% \input{scoresheets/Receptionist.tex}
