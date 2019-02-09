@@ -1,0 +1,44 @@
+\section{Laundry Sort [Housekeeper]}
+The robot is helping to do laundry by sorting it.
+
+% \subsection{Focus}
+% This test focuses on object perception, manipulation, and planning.
+
+\subsection{Main Goal}
+The robot is given a bin of laundry and must sort it by color and size. There are both children's and adult's clothing in the bin, and the robot must make piles by color and size. There are existing piles of laundry on the floor into which the laundry in the bin must be sorted.
+
+\noindent\textbf{Reward:} 2500pts (400pts per object).
+
+\subsection{Bonus rewards}
+\begin{enumerate}[nosep]
+	\item Identifying that the bin is empty (250pts)
+	\item Moving the empty bin to the bedroom (250pts)
+\end{enumerate}
+
+
+\subsection{Setup}
+\begin{itemize}[nosep]
+	\item \textbf{Laundry bin:} Place clothes in bin and bin in living room.
+
+	\item \textbf{Laundry piles:} Place piles of clothing onto the floor near the bin sorted by color and size.
+\end{itemize}
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per object as follows:
+	\begin{itemize}[nosep]
+		\item \textbf{Pointing at objects for manipulation help:} Pointing at an object to be picked up causes a reduction of 80\% in scoring for that particular object.
+\end{enumerate}
+
+\subsection{Referee instructions}
+The referee needs to
+\begin{itemize}
+	\item Set up the bin.
+	\item Set up the piles.
+\end{itemize}
+
+\subsection{OC instructions}
+During setup days:
+\begin{itemize}
+	\item Request dirty laundry from the contestants.
+\end{itemize}
