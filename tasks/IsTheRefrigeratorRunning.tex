@@ -1,0 +1,37 @@
+\section{Is the Refrigerator Running [Housekeeper]}
+The people who live in the arena are so sloppy! The robot finds minor faults in the state of the arena and rectifies them. This is an advanced version of Clean Up for Stage II.
+
+% \subsection{Focus}
+% This test focuses on object perception, manipulation, and planning.
+
+\subsection{Main Goal}
+The robot wanders around the apartment looking for things that are wrong (we will provide a list of potentially-wrong things), and then fixes them. Examples: The refrigerator door is open, the pillows from the bed are on the floor, the television is on with nobody watching.
+
+\noindent\textbf{Reward:} 2500pts (100pts per \textit{wrong thing} identified, 300pts per \textit{wrong thing} fixed).
+
+\subsection{Bonus rewards}
+\begin{enumerate}[nosep]
+	\item Fix everything. Announce satisfaction at a job well done. (250pts)
+	\item Tell the operator. Find the operator and tell them how it was fixed. (50 per item)
+\end{enumerate}
+
+
+\subsection{Setup}
+\begin{itemize}[nosep]
+	\item \textbf{Trash my home!:} Make all of the things wrong.
+\end{itemize}
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per object as follows:
+	\begin{itemize}[nosep]
+		\item \textbf{Verbal request for the fix:} Asking an operator to fix the thing that is wrong is severely penalized, and causes a 90\% point reduction for the fix.	
+	\end{itemize}
+\end{enumerate}
+
+\subsection{Referee instructions}
+The referee needs to
+\begin{itemize}
+	\item Place the objects in the room.
+	\item Mess up the room.
+\end{itemize}
