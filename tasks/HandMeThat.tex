@@ -5,7 +5,7 @@ A guest at the party speaks English, but with only a limited vocabulary. The rob
 %Joint attention is a well-studied and important task in Human-Robot Interaction. The goal of this task is to really challenge the teams to perform a hard HRI task.
 
 \subsection{Main Goal}
-Five collections of items are set out. The referee will choose a random item from each collection to gesture to or describe to the robot. The robot must tell the referee its name, point to, or touch it. The robot can prompt the user with requests like \textit{point to it} or \textit{describe it to me}.
+The robot identifies (touching or naming) the object at which the operator is pointing at.
 
 \noindent\textbf{Reward:} 2500pts\\
 
@@ -17,21 +17,25 @@ Five collections of items are set out. The referee will choose a random item fro
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Setup}
 \begin{enumerate}
-	\item \textbf{Object Collections:} The test area should collections of objects on various surfaces (2-5). Difficulty of understanding the point gesture will be regulated by how far apart the objects in each collection are ($100cm - 1m$). Difficulty of describing the object is difficult to quantify, and should be considered random.
-
-	\item \textbf{Random Object Cards:} The referee will carry a set of cards with random objects, arranged by difficulty. The job of the referee is to get the robot to say the name of, or touch, the object that they gesture to or describe, at the robot's discretion.
+\item \textbf{Location:} This takes place in a room in the arena.
+\item \textbf{Starting position:} The robot and the operator stand in a predefined location announced beforehand % (OC instructions: announce this 2 hours before the test).
+\item \textbf{Objects:} Groups of 2--5 objects are placed at random locations on the room (avg distance $50cm -- 150cm$ from starting position).
+\item \textbf{Deck:} The referee has a deck of objects to request, one per group, sorted by distance.
 
 \end{enumerate}
 
 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Setup
+% Procedure
 %
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Procedure}
 \begin{enumerate}
-	\item \textbf{Pick an object} The robot will ask the referee what they want. The referee will walk near to the object that they want, and gesture to it. The robot can ask clarifying questions to help identify the object. The referee will not say the name of the object, or its color, but anything else is fair game.
+	\item \textbf{Pick an object} The robot will ask the operator: \emph{what do you need?}. % We rule out natural language interaction
+Then the operator walks near to the object and points at it.
+The robot can ask as many questions as necessary.
+The operator does not know the name of the object.
   \item \textbf{Repeat} Repeat up to 5 times for the maximum score.
 
 
@@ -47,7 +51,6 @@ Five collections of items are set out. The referee will choose a random item fro
 \begin{enumerate}
 	\item \textbf{Keep going:} The robot should keep trying to determine the referred to object until they score or run out of time.
 	\item \textbf{Pass:} The robot may say pass to try the next object.
-	\item \textbf{Touch:} The robot may ask the referee may pick up or touch the object by saying \textit{pick up} or \textit{touch}. If the robot does this, identifying the object is worth only 100 points.
 	\item \textbf{Oops:} Incorrect guesses reduce the value of the correct guess by 200 points, each, but cannot make the value of the correct guess go below 100 points.
 \item\textbf{Colors and categories:} Asking for the color or category of a pointed object applies a penalty of 400 points for that particular object.
 \item\textbf{Uneducated operator:} The referee may instruct the operator to answer \emph{I don't understand} or \emph{I don't know} if the robot asks complex questions or is attempting blind guessing.
