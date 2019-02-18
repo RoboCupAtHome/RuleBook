@@ -1,18 +1,19 @@
-\section{Help Me Carry [Party Host]}
-The robot helps a guest to carry some luggage to his/her car.
+\section{CarryMyLuggage [Party Host]}
+The robot helps the operator to carry some luggage to the car.
 
 \subsection{Main Goal}
-Robot helps a guest to carry a bag to the car which is parked outside and comes back home.
+Robot helps the operator to carry a bag to the car which is parked outside.
+% and comes back home.
 
 \subsection{Focus}
-It includes understanding pointing gesture, object identification and manipulation, navigation in known and unknown environments, person-following while carrying a luggage, and social navigation.
+Object identification and manipulation, person-following, and social navigation.
 
-\noindent\textbf{Reward:} 500 pts for carrying the bag to the car's location and coming back home.
+\noindent\textbf{Reward:} 500 pts for carrying the bag to the car's location.
 
 \subsection{Bonus rewards}
 \begin{enumerate}[nosep]
-	\item Find the bag by understanding the pointing behaviour (100 pts).
-	\item Avoid all the obstacles outdoor (400 pts).
+	\item Coming back home (100 pts).
+	\item Avoid the obstacles outdoor (100 pts per obstacle, max 400 pts).
 \end{enumerate}
 
 
@@ -20,34 +21,32 @@ It includes understanding pointing gesture, object identification and manipulati
 \begin{itemize}
 	\item \textbf{Location}: The test takes place inside and outside the arena.
 
-	\item \textbf{Start Location}: The robot starts at a predefined location in the living room.
+	\item \textbf{Start Location}: The robot starts at a predefined location in the living house.
 
-	\item \textbf{Guest}: There is only one guest in the house, standing in front of the robot at the start.
+	\item \textbf{Operator}: At the start, the operator is standing in front of the robot.
 	
-	\item \textbf{Bags' Location:} There are at least two bags placed between one to two meters  away from the guest's start position and both should be visible to the robot.
+	\item \textbf{Bags' Location:} There are at least two bags placed between one to two meters away from the operator's start position and both should be visible to the robot.
 	
-	\item \textbf{Pointing to the Bag:} When the test starts, the guest points to his/her bag and requests the robot to carry it to the car.
+	\item \textbf{Pointing to the Bag:} When the test starts, the operator points to a bag and requests the robot to carry it to the car.
 	
-	\item \textbf{Outdoor Obstacles:} The robot will face multiple obstacles outside. The obstacles may include a person, a group of people, a stationary object or a moving object.
+	\item \textbf{Operator's Bag:} The bag which is pointed is placed such that the robot's hand can reach it.
+	
+	\item \textbf{Outdoor Obstacles:} The robot will face four obstacles outside. The obstacles will include a crowd obstructing path, a small 3D object placed on ground, a small moving toy-car, and a small area blocked using retractable barriers.
 \end{itemize}
 
 \subsection{Additional rules and remarks}
 \begin{enumerate}[nosep]
 	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied as follows.
 	\begin{itemize}
-		\item help in finding the bag (-100 pts).
-		\item help in carrying the bag (-100 pts).
-		\item help in tracking the guest (-200pts).
-		\item help in going back home (-100pts).
+		\item Handing-over the bag (-100 pts).
+		\item Any help in following the operator by requesting 1$)$ natural gestures (like, wave and calling) costs -100pts 2$)$ non-natural gestures (like, raising both hands and jumping) costs -200pts, and 3$)$ touching (like, pulling the robot's hand) costs -400pts.
 	\end{itemize}
-
-	\item \textbf{Pointing to the Bag:} The guest keeps pointing to the bag and does not move. 
 
 	\item \textbf{Car Location:} There is no car outside. Instead, a fixed location is supposed as a car location outside the arena.
 
-	\item \textbf{Reaching the Car:} The robot can reach the car's location only by following the guest. After the robot reaches the car's location, the guest says "Stop following me".
+	\item \textbf{Reaching the Car:} The robot can reach the car's location only by following the operator.
 	
-	%\item \textbf{Coming Back Home:} The robot should come back home by itself.
+	\item \textbf{Following the Operator:} The robot should indicate the operator when it is ready to follow. The operator walks naturally towards the car. After reaching the car, the operator takes the bag back from the robot and thanks the robot.
 	
 \end{enumerate}
 
@@ -56,9 +55,10 @@ It includes understanding pointing gesture, object identification and manipulati
 
 The referees need to
 \begin{itemize}
-	\item Select one volunteer as a guest and three to four people to obstruct robot's path outside.
-	\item Choose bags' positions and assign a bag to the guest.
-	\item Choose which obstacles the robot will face outside and when.
+	\item Select one volunteer as the operator.
+	\item Select three to four people to obstruct robot's path outside.
+	\item Choose bags' positions and assign a bag to the operator.
+	\item Choose which obstacles the robot will face outside while following the operator.
 	\item Choose the car's location.
 	\item Mind the robot when it goes outside the arena.
 \end{itemize}
@@ -67,7 +67,7 @@ The referees need to
 
 2h before test:
 \begin{itemize}
-	\item Select and announce the robot starting point.
+	\item Select and announce the robot's starting point.
 	\item Select which bags will be used.
 \end{itemize}
 
