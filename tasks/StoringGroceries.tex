@@ -1,15 +1,15 @@
 \section{Storing Groceries [Housekeeper]}
-The robot stores groceries into the shelf next to the objects of the same kind that are already there (e.g. for instance by placing apples near pears and bananas).
+The robot stores groceries into a pantry shelf while paying attention to sorting objects in their appropriate place, i.e. storing an apple next to other fruits.
 
 % \subsection{Focus}
 % This test focuses on the detection and recognition of objects and their features, as well as object manipulation.
 
 \subsection{Main Goal}
-The robot has to move 5 out of 10 objects from a nearby table into the shelf. Objects must be placed next to objects of the same Category or grouped by similarity.
+The robot has to move objects from a table into a shelf. Objects must be placed next to objects of the same category or grouped by similarity.
 
-\noindent\textbf{Reward:} 500pts\\
+\noindent\textbf{Reward:} 500pts (100pts per object).\\
 
-\noindent\textbf{HINT:} The robot can ask the referee where to place the carried object (relative positions or pointing are both allowed).
+%\noindent\textbf{HINT:} The robot can ask the referee where to place the carried object (relative positions or pointing are both allowed).
 
 \subsection{Bonus rewards}
 \begin{enumerate}[nosep]
@@ -25,19 +25,16 @@ The robot has to move 5 out of 10 objects from a nearby table into the shelf. Ob
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Setup}
 \begin{enumerate}
-	\item \textbf{Location:} The testing area has a shelf and a table.
-	The distance between the Table and the Shelf cannot exceed 2 meters.
+	\item \textbf{Location:} The testing area has a shelf and a table nearby.
 
-	\item \textbf{Shelf:} The shelf contains at least 10 objects arranged in groups of 2 or more, either by category or likeliness.
-	The shelf has at least one free space for starting a new set.
+	\item \textbf{Shelf:} The shelf contains objects arranged in groups either by category or likeliness.
 
 	\item \textbf{Shelf door:} The shelf door is open by default.
-	The team leader can, request the door to be closed and score additional points for opening it. If the robot fails to open the door, it must clearly state it and request the referee to open it.
+	The team leader can request the door to be closed and score additional points for opening it. If the robot fails to open the door, it must clearly state it and request the referee to open it.
 
 	\item \textbf{Objects:} Some of the objects are placed behind the door and cannot be accessed unless the door is open.
 
-	\item \textbf{Table:} The table can have up to 10 objects, but never less than 5.
-	In small tables, objects will be added as the robot frees up space.
+	\item \textbf{Table:} The table has 5-10 objects placed on it and the robot can choose which ones to grasp and in what order. On small tables, objects will be added as the robot frees up space.
 \end{enumerate}
 
 
@@ -48,16 +45,10 @@ The robot has to move 5 out of 10 objects from a nearby table into the shelf. Ob
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Additional rules and remarks}
 \begin{enumerate}
-	\item \textbf{Clear area:} The robot may assume that the working area is clear, (i.e. can move slightly backwards for its task).
-
-	\item \textbf{Object distribution:} The 10 objects to be moved are evenly distributed in random fashion including
-	4 known objects,
-	4 alike objects, and
-	2 unknown objects.
-	Among these, the robot will always find
-	a heavy object,
-	a tiny object, and 
-	an amorphous object.
+		\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per object as follows:
+	\begin{itemize}[nosep]
+		\item Telling or pointing out to the robot where to place an object results in a 30\% point reduction for that object.
+	\end{itemize}
 
 	\item \textbf{Table} The table's rough location will be announced beforehand, having its position either left, right, or behind the robot.
 \end{enumerate}
@@ -67,16 +58,16 @@ The robot has to move 5 out of 10 objects from a nearby table into the shelf. Ob
 
 \textbf{2 hours before the test}
 \begin{itemize}
-	\item Announce which table will be used in the test.
+	\item Announce which table and shelf will be used in the test.
 	\item Announce a rough location for the table.
 \end{itemize}
 
 \subsection{Referee instructions}
 The referee needs to
 \begin{itemize}
-	\item Place the objects in the shelf, grouping them by likeliness.
+	\item Place objects in the shelf, grouping them by likeliness.
 	\item Open the door of the shelf.
-	\item Place objects on the table.
+	\item Place 5-10 objects on the table.
 \end{itemize}
 
 
