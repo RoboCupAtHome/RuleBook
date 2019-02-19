@@ -1,0 +1,33 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%          $Id: styling.tex 2019-01-08 09:00:00 kyordhel $
+%%    author(s): RoboCupAtHome Technical Committee(s)
+%%  description: Styling for the RoboCupAtHome rulebook
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% HEADINGS & PAGE STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\footline}{RoboCup@Home Rulebook / \rulebookVersion}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter. \ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection \ #1}{}\renewcommand{\currentTest}{#1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\sffamily\rightmark}
+\fancyhead[LO]{\sffamily\leftmark}
+\fancyfoot[C]{\scriptsize \sffamily \footline{}}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[LE,RO]{\thepage}
+  \fancyhead[RE]{\sffamily\rightmark}
+  \fancyhead[LO]{\sffamily\leftmark}
+  \fancyfoot[C]{\scriptsize \sffamily \footline{}}
+  \renewcommand{\headrulewidth}{0.5 pt}
+}
+\fancypagestyle{empty}{
+  \fancyhf{}
+  \fancyhead{}
+  \fancyfoot[C]{\scriptsize \sffamily \footline{}}
+  \renewcommand{\headrulewidth}{0 pt}
+}

@@ -1,0 +1,83 @@
+\section{Carry My Luggage [Party Host]}
+The robot helps the operator to carry some luggage to the car which is parked outside.
+
+% \subsection{Focus}
+% Object identification and manipulation, person-following, and social navigation.
+
+\subsection{Main Goal}
+The robot helps the operator to carry a bag to the car parked outside.
+
+\noindent\textbf{Reward:} 500pts.
+
+\subsection{Bonus rewards}
+\begin{enumerate}[nosep]
+	\item Reentering the arena (100 pts).
+	\item Avoid all obstacles (400 pts, 100pts per obstacle).
+\end{enumerate}
+
+
+\subsection{Setup}
+\begin{itemize}[nosep]
+	\item \textbf{Location}: The test takes place inside and outside the arena.
+
+	\item \textbf{Start Location}: The robot starts at a predefined location in the living room.
+
+	\item \textbf{Bags:} At least two bags are placed between nearby the operator (within 2m distance and visible to the robot).
+
+	\item \textbf{Operator}: The operator is standing in front of the robot pointing at the bag to be carried out.
+
+\end{itemize}
+
+\subsection{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied as follows.
+	\begin{itemize}[nosep]
+		\item Handing-over the bag (-100 pts).
+		\item Finding the operator while following her
+		\begin{itemize}[nosep]
+		\item Natural interaction (e.g.~wave and calling) 100pts score redutction.
+		\item Non-natural interaction (e.g.~raising both hands and jumping) 200pts score redutction.
+		\item Touching the robot (e.g.~pulling the robot's hand) 400pts score redutction.
+		\end{itemize}
+	\end{itemize}
+
+	\item \textbf{Obstacles:} The robot will face 4 obstacles along its way in any order:
+	\begin{enumerate*}[label=(\alph*)]
+		\item a crowd obstructing path,
+		\item a small object on the ground,
+		\item a hard-to-see 3D object,
+		and
+		\item a small area blocked using retractable barriers.
+	\end{enumerate*}
+
+	\item \textbf{Car Location:} There is no car outside. Instead, a fixed location is supposed as a car location outside the arena.
+
+	\item \textbf{Reaching the Car:} The robot can reach the car's location only by following the operator.
+
+	\item \textbf{Following the Operator:} The robot should indicate the operator when it is ready to follow. The operator walks naturally towards the car. After reaching the car, the operator takes the bag back from the robot and thanks the robot.
+
+\end{enumerate}
+
+
+\subsection{Referee instructions}
+
+The referees need to
+\begin{itemize}[nosep]
+	\item Select one volunteer as the operator.
+	\item Select three to four people to obstruct robot's path outside.
+	\item Choose bags' positions and assign a bag to the operator.
+	\item Choose which obstacles the robot will face outside while following the operator.
+	\item Choose the car's location.
+	\item Mind the robot when it goes outside the arena.
+\end{itemize}
+
+\subsection{OC instructions}
+
+2h before test:
+\begin{itemize}[nosep]
+	\item Select and announce the robot's starting point.
+	\item Select which bags will be used.
+\end{itemize}
+
+\subsection{Score sheet}
+\input{scoresheets/CarryMyLuggage.tex}

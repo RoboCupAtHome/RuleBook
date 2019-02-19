@@ -10,7 +10,7 @@
 
 \usepackage{soul}
 
-\input{./setup/packages.tex}
+\input{./setup/packages_scoresheets.tex}
 
 \usepackage{fullpage}
 \parindent 0cm
@@ -102,55 +102,51 @@
 
 
 %%% STAGE I %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\retryAvailable}{false}
-\renewcommand{\threeAttempts}{true}
-
 %%% STAGE 1 TESTS GO HERE %%%
 
-% Cocktail Party
-\ifSSPL{
-  \renewcommand{\continueAvailable}{true}
-  \renewcommand{\currentTest}{Cocktail Party}
-  \begin{scoresheet}
-  \input{scoresheets/CocktailParty.tex}
-  \end{scoresheet}
-}
-
-% GPSR
-\renewcommand{\continueAvailable}{true}
-\renewcommand{\currentTest}{General Purpose Robot}
+\renewcommand{\currentTest}{Carry my Luggage}
 \begin{scoresheet}
-\input{scoresheets/GPSR.tex}
+\input{scoresheets/CarryMyLuggage}
 \end{scoresheet}
 
-% Help me carry
-\renewcommand{\continueAvailable}{true}
-\renewcommand{\currentTest}{Help-me-carry}
+\renewcommand{\currentTest}{Clean Up}
 \begin{scoresheet}
-\input{scoresheets/HelpMeCarry.tex}
+\input{scoresheets/CleanUp}
 \end{scoresheet}
 
-% Speech and Person Recognition
-\renewcommand{\continueAvailable}{false}
-\renewcommand{\currentTest}{Speech and Person Recognition}
+\renewcommand{\currentTest}{Farewell}
 \begin{scoresheet}
-\input{scoresheets/SPR.tex}
+\input{scoresheets/Farewell}
 \end{scoresheet}
 
-% Storing Groceries
-\ifNotSSPL{
-  \renewcommand{\continueAvailable}{false}
-  \renewcommand{\currentTest}{Storing Groceries}
-  \begin{scoresheet}
-  \input{scoresheets/StoringGroceries.tex}
-  \end{scoresheet}
-}
+\renewcommand{\currentTest}{Find my Mates}
+\begin{scoresheet}
+\input{scoresheets/FindMyMates}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Recepcionist}
+\begin{scoresheet}
+\input{scoresheets/Receptionist}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Serving Drinks}
+\begin{scoresheet}
+\input{scoresheets/ServingDrinks}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Storing Groceries}
+\begin{scoresheet}
+\input{scoresheets/StoringGroceries}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Take out Garbage}
+\begin{scoresheet}
+\input{scoresheets/TakeOutGarbage}
+\end{scoresheet}
 
 
 % %%% STAGE II %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\threeAttempts}{false}
-\renewcommand{\retryAvailable}{true}
-\renewcommand{\continueAvailable}{true}
+\renewcommand{\attempts}{2}
 
 %%% STAGE 2 TESTS GO HERE %%%
 
@@ -161,11 +157,12 @@
 \input{scoresheets/EEGPSR.tex}
 \end{scoresheet}
 
+% THIS IS REMOVED FROM 2019 RULE BOOK
 % Open Challenge
-\renewcommand{\currentTest}{Open Challenge}
-\begin{scoresheet}
-\input{scoresheets/OpenChallenge.tex}
-\end{scoresheet}
+%\renewcommand{\currentTest}{Open Challenge}
+%\begin{scoresheet}
+%\input{scoresheets/OpenChallenge.tex}
+%\end{scoresheet}
 
 % Set a table and clean it up
 \ifNotSSPL{

@@ -69,7 +69,8 @@ PDF2PSFLAGS = #-paper "A4"
 SPELL       = aspell
 # use tex-mode, use custom wordlist, set personal word-list to extra word-list file
 SPELL_OPT   = --lang=en --mode=tex --extra-dicts=./extra_dict.pws -p ./extra_dict.pws
-SPELL_ADDITIONAL_OPT = --add-tex-command="nolinkurl p" --add-tex-command="refsec p"
+SPELL_ADDITIONAL_OPT = --add-tex-command="nolinkurl p" --add-tex-command="refsec p" \
+                       --add-tex-command="cellcolor p" --add-tex-command="xdef p"
 ## either check file, prompting for action
 SPELL_CMD   = -c
 ## or just list mispelled words
@@ -99,6 +100,7 @@ RMF      = rm -f
 RMRF     = rm -rf
 DBG      = echo
 MSG      = echo
+HASRUBBER=$(shell which rubber)
 
 ## COLORS #################
 
@@ -141,7 +143,14 @@ ERROR = $(RED)
 ##  R U L E S                           ##
 ## #################################### ##
 
-all: dofullpdf wall mauClean
+all:
+ifndef HASRUBBER
+	$(SILENT) $(MAKE) dofullpdf
+else
+	$(SILENT) $(MAKE) mauBuild
+endif
+	$(SILENT) $(MAKE) wall
+	$(SILENT) $(MAKE) mauClean
 # all: mauCleanAll mauBuild mauClean
 
 ## ##################### ##
@@ -243,6 +252,20 @@ warn2do:
 warnspell:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
 	$(SILENT) for texfile in *.tex ; \
+	do  \
+		if [ $$texfile != "$(TEXFILE)" ] && [ $$texfile != "macros.tex" ] && [ $$texfile != "abbrevix.tex" ] && [ $$texfile != "dummybox.tex" ]; then  \
+			$(ITEM); $(MSG) "  -- spell check result on '$$texfile'"; $(RESET) ; \
+			$(SPELL) $(SPELL_OPT) $(SPELL_ADDITIONAL_OPT) $(SPELL_WARN) $$texfile ; \
+		fi ; \
+	done
+	$(SILENT) for texfile in scoresheets/*.tex ; \
+	do  \
+		if [ $$texfile != "$(TEXFILE)" ] && [ $$texfile != "macros.tex" ] && [ $$texfile != "abbrevix.tex" ] && [ $$texfile != "dummybox.tex" ]; then  \
+			$(ITEM); $(MSG) "  -- spell check result on '$$texfile'"; $(RESET) ; \
+			$(SPELL) $(SPELL_OPT) $(SPELL_ADDITIONAL_OPT) $(SPELL_WARN) $$texfile ; \
+		fi ; \
+	done
+	$(SILENT) for texfile in tasks/*.tex ; \
 	do  \
 		if [ $$texfile != "$(TEXFILE)" ] && [ $$texfile != "macros.tex" ] && [ $$texfile != "abbrevix.tex" ] && [ $$texfile != "dummybox.tex" ]; then  \
 			$(ITEM); $(MSG) "  -- spell check result on '$$texfile'"; $(RESET) ; \

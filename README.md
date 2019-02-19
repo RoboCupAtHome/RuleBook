@@ -1,8 +1,8 @@
-RuleBook for RoboCup @Home 2018
+RuleBook for RoboCup @Home 2019
 ===============================
 
-This is the **FINAL VERSION**.
-All work for the Rulebook of 2019 shall be pushed into to 2019/Rulebook (to be merged after Montreal).
+This is a **DRAFT**.
+All work for the Rulebook of 2020 will be pushed into to 2020/Rulebook.
 
 [On-the-fly compiled LaTeX version](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=Rulebook.tex)
 

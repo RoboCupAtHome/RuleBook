@@ -10,41 +10,9 @@
 
 %%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{./setup/packages.tex}
-\usepackage[titletoc]{appendix}
-\usepackage{enumitem}
-\usepackage{mathtools}
-\usepackage{gensymb}
-\setlist{noitemsep}
+\input{./setup/config.tex}
+\input{./setup/styling.tex}
 
-%%% SubfigureSetup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\renewcommand{\subfigtopskip}{5pt}        % default is 10pt
-%\renewcommand{\subfigbottomskip}{5pt}     % default is 10pt
-%\renewcommand{\subfigcapskip}{3pt}        % default is 10pt
-%\renewcommand{\subfigcapmargin}{7pt}      % default is 10pt
-
-%%% TweakList-Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\itemhook}{%                 % modify itemize-spacing
-  \setlength{\topsep}{2pt}%
-  \setlength{\partopsep}{1pt}%
-  \setlength{\itemsep}{-1pt}%
-}
-\renewcommand{\enumhook}{%                 % modify enumerate-spacing
-  \setlength{\topsep}{2pt}%
-  \setlength{\partopsep}{1pt}%
-  \setlength{\itemsep}{-1pt}%
-}
-\renewcommand{\descripthook}{%             % modify description-spacing
-  \setlength{\topsep}{2pt}%
-  \setlength{\partopsep}{1pt}%
-  \setlength{\itemsep}{-1pt}%
-}
-
-\setkomafont{title}{\normalfont}
-\setkomafont{sectioning}{\normalfont\bfseries}
-\addtokomafont{caption}{\small}
-\setkomafont{captionlabel}{\small\bfseries}
-\setkomafont{descriptionlabel}{\normalfont\bfseries}
-\renewcommand*{\chapterformat}{\LARGE{Chapter \thechapter}}
 
 %%% MACROS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{./setup/active_version.tex}
@@ -57,50 +25,13 @@
 \makeindex                                % generate index
 \makeabbex                                % generate abbreviations
 
-%%% DOCUMENTINFO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\hypersetup{
-  pdftitle     = {RoboCup@Home Rules and Regulations},
-  pdfsubject   = {RoboCup@Home Rulebook},
-  pdfauthor    = {RoboCup@Home Technical Committee},
-  pdfkeywords  = {RoboCup, @Home, Rules, Competition},
-  colorlinks   = true,
-  anchorcolor  = blue,
-  linkcolor    = blue,
-  urlcolor     = blue,
-}
 
-%%% HEADINGS & PAGE STYLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\footline}{RoboCup@Home Rulebook / \rulebookVersion}
-\pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter. \ #1}{}}
-\renewcommand{\sectionmark}[1]{\markright{\thesection \ #1}{}\renewcommand{\currentTest}{#1}}
-\fancyhf{}
-\fancyhead[LE,RO]{\thepage}
-\fancyhead[RE]{\sffamily\rightmark}
-\fancyhead[LO]{\sffamily\leftmark}
-\fancyfoot[C]{\scriptsize \sffamily \footline{}}
-\fancypagestyle{plain}{
-        \fancyhf{}
-        \fancyhead[LE,RO]{\thepage}
-        \fancyhead[RE]{\sffamily\rightmark}
-        \fancyhead[LO]{\sffamily\leftmark}
-        \fancyfoot[C]{\scriptsize \sffamily \footline{}}
-		\renewcommand{\headrulewidth}{0.5 pt}
-}
-\fancypagestyle{empty}{
-        \fancyhf{}
-        \fancyhead{}
-        \fancyfoot[C]{\scriptsize \sffamily \footline{}}
-		\renewcommand{\headrulewidth}{0 pt}
-}
+
+
 
 %\newcommand{\sectionbreak}{\clearpage}
 %\newcommand{\subsectionbreak}{\clearpage}
 
-
-%%%%%%%%%%%%%%%%%%%\renewcommand{%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -108,9 +39,6 @@
 
 \pagestyle{empty}
 \input{./pages/acknowledgments}
-\clearpage
-
-\input{./pages/changelog}
 \clearpage
 
 \pagestyle{empty}
@@ -127,84 +55,48 @@
 
 \input{Setup}
 
+
+
+
 \chapter{Tests in Stage I}
 \label{chap:stage_I}
 
-\begin{itshape}
-\iterm{Stage~I} comprehends three \textbf{ability tests} and an \textbf{integration test}.
-Each ability test is designed to evaluate the average performance of the robot in one particular skill
-% , providing data for benchmarking.
-Meanwhile, the integration test has been designed to evaluate how this abilities work together while solving a common task.
-
-The total score for ability and integration tests is the average of the best two performances out of preferably three performances (given the time constraints of a competition).
-The point of this is to both eliminate good and bad luck for the robots/teams and to get a more objective view of the performance,
-  not to give teams time to tweak the robot between test performances.
-
-\iterm{Help-me-carry} (demonstration for the audience) goes out of the arena and into the venue between the audience.
-
-\end{itshape}
-
-\subsection*{Scheduling}
-For maximal efficiency, teams will be scheduled interleaved:
-  Team A does an attempt while team B sets up their robot. When A is done, it moves out the way for team B, then B attempts while A sets up the robot again etc.
-
-The preparing team should prepare their robot close to the place of the test, but not interfere with the performing robot.
-Prepared robots must wait at this preparation location until commanded to start the test.
-When commanded to start, the robot must move automatically beyond this point.
-
-Robot should be ready to start the next attempt to the same test as fast as possible:
-  when the performing robot is done with a attempt, the next robot must be ready to go with the start of a button or a voice command.
-
 \newpage
-\input{tests/CocktailParty}
-
+\input{tasks/CarryMyLuggage}
 \newpage
-\input{tests/GPSR}
-
+\input{tasks/CleanUp}
 \newpage
-\input{tests/HelpMeCarry}
-
+\input{tasks/Farewell}
 \newpage
-\input{tests/SPR}
-
+\input{tasks/FindMyMates}
 \newpage
-\input{tests/StoringGroceries}
+\input{tasks/Receptionist}
+\newpage
+\input{tasks/ServingDrinks}
+\newpage
+\input{tasks/StoringGroceries}
+\newpage
+\input{tasks/TakeOutGarbage}
+
+
+
 
 \chapter{Tests in Stage II}
 \label{chap:stage_II}
 
-\begin{itshape}
-All ability and integration tests in \iterm{Stage~II}  are performed only once. Some tests have optional tasks that grant additional points when performed correctly, clean and fast. The \iaterm{Technical Committee}{TC} must be informed if a team is planning to perform any of the optional tasks. Unless explicitly stated otherwise, no additional time is given while performing optional tasks.
-
-In the \iterm{Open Challenge} the robot must be able to show to the \iaterm{Technical Committee}{TC} the achievements on the main research line of its own team. This test may grant up to 250 points, never exceeding the maximum scoring achieved in Stage II.
-
-\section*{Robot \& team cooperation}
-We encourage robots and teams to work together when performing tests.
-For scoring, points are awarded per subtask. The robot (and thus team) performing the subtask gets the points.
-For example, in the Restaurant test, if one robot of team A can take the order and another robot of team B delivers the order, then the points for taking the order go to team A, while the points for delivering go to team B.
-Of course, team A \& B can both perform the test in their own turn.
-
-\end{itshape}
-
 \newpage
-\input{tests/EEGPSR}
-
+\input{tasks/CleanTable}
 \newpage
-\input{tests/OpenChallenge}
-
+\input{tasks/GPSR}
 \newpage
-\input{tests/PnG}
-
+\input{tasks/SetTable}
 \newpage
-\input{tests/Restaurant}
+\input{tasks/SticklerForRules}
 
-\newpage
-\input{tests/TourGuide.tex}
 
-\newpage
+
 \input{tests/Finals}
 
-\input{Appendices}
 
 \printabx
 \printidx
