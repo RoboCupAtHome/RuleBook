@@ -4,14 +4,13 @@ The robot fetches the information of the party guests for the operator who knows
 
 
 \subsection{Main Goal}
+Report to the operator the description and location of at least two party guests.
 
-The robot reports to the operator the description and location of at least two party guests.
-
-\noindent\textbf{Reward:} 500 points (150 pts for description and 100 pts for location per guest).
+\noindent\textbf{Reward:} 500 points (250pts per guest).
 
 \subsection{Bonus rewards}
 \begin{enumerate}[nosep]
-	\item For reporting the third guest, 300 pts for description and 200 pts for location.
+	\item Reporting the location and description of a third guest (500pts).
 \end{enumerate}
 
 
@@ -19,7 +18,7 @@ The robot reports to the operator the description and location of at least two p
 \begin{itemize}
 	\item \textbf{Location}: This test takes place inside the arena in a predefined room (e.g.~living room).
 
-	\item \textbf{People}: 4 people distributed in the room.
+	\item \textbf{People}: There are 4 people distributed along the room.
 \end{itemize}
 
 \subsection{Additional rules and remarks}
@@ -33,9 +32,9 @@ The robot reports to the operator the description and location of at least two p
 
 	\item \textbf{Reporting:} Points are scored only when the robot goes back to the operator and delivers the report in time.
 
-	\item \textbf{Description of a Person:} The description of a person may include information about gender, clothing, skin, face, hair, pose, etc. It should be a unique description i.e.~not shared with any other guest.
+	\item \textbf{Description of a Person:} The description of each guest should be unique; i.e.~not shared with any other guest. This may include clothing, age, height, complexion, skin-color, hair-color, gender, etc.
 
-	\item \textbf{Description of Location:} The robot provides relative location of a person in the room i.e.~with respect to the objects in the room (like, \textit{Person X} is sitting on the coach, \textit{Person Y} is standing beside the lamp, etc.).
+	\item \textbf{Location of a Person:} A relative location based of the surroundings (e.g.~\textit{The kid is sitting on the coach}, \textit{The tall man is standing beside the lamp}, etc.).
 \end{enumerate}
 
 
@@ -43,6 +42,7 @@ The robot reports to the operator the description and location of at least two p
 
 The referees need to
 \begin{itemize}
+	\item Assign names to the guests.
 	\item Make sure every person has a name.
 	\item Make sure people stay at the designated place.
 \end{itemize}
@@ -52,10 +52,9 @@ The referees need to
 2h before test:
 \begin{itemize}
 	\item Announce the location where the robot will be instructed.
-	\item Assign names to the guests.
 	\item Announce the room in which the test takes place.
 \end{itemize}
 
 % \newpage
-% \subsection{Score sheet}
-% \input{scoresheets/Receptionist.tex}
+\subsection{Score sheet}
+\input{scoresheets/FindMyMates.tex}
