@@ -6,8 +6,7 @@ The robot has to take orders and deliver drinks.
 % This test focuses on human detection and recognition, safe navigation and human-robot interaction with unknown people.
 
 \subsection{Main Goal}
-All people in the party must have a drink of their choice.
-The robot must find all 3 people who has no drink and bring them the one of their choice.
+Deliver a drink to all people without one.
 
 \noindent\textbf{Reward:} 750pts (250pts per delivered drink).
 
@@ -30,7 +29,7 @@ The robot must find all 3 people who has no drink and bring them the one of thei
 	\item \textbf{Bar:} The bar can be any flat surface where objects can be placed, in any other room but the living room.
 	All available beverages are on top of the bar.
 	One of the drink requests is not available.
-	
+
 	\item \textbf{Bartender:} The Bartender may be standing either behind the bar or next to it, depending on the arena setup.
 \end{itemize}
 
@@ -43,11 +42,11 @@ The robot must find all 3 people who has no drink and bring them the one of thei
 
 	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per guest as follows.
 	\begin{itemize}[nosep]
-		\item \textbf{Actively placing order:} Approaching to the robot to place an order causes a reduction of 40\% in scoring for that particular guest.
+		\item \textbf{Actively placing order:} Approaching to the robot to place an order causes a score reduction of 100pts.
 
-		\item \textbf{Calling to place order:} Calling (either by shouting or waving) to the robot to place an order causes a reduction of 20\% in scoring for that particular guest.
+		\item \textbf{Calling to place order:} Calling the robot (either by shouting or waving) to place an order causes a scoring reduction of 50pts.
 
-		\item \textbf{Revealing unavailable drink:} Telling the robot which drink is unavailable causes a reduction of 40\% in scoring for that particular guest.
+		\item \textbf{Revealing unavailable drink:} Telling the robot which drink is unavailable causes a score reduction of 100pts.
 	\end{itemize}
 
 	\item \textbf{Delivering drinks:} When delivering a drink, the robot must greet the guest by stating her name and remembering the chosen drink.
@@ -65,7 +64,7 @@ The robot must find all 3 people who has no drink and bring them the one of thei
 
 The referees need to
 \begin{itemize}
-	\item Select at least 5 volunteers and assign predefined names. 
+	\item Select at least 5 volunteers and assign predefined names.
 	\item Assign a preferred drink and an alternative to three guests
 	\item Give drinks to the other guests
 	\item Select the person (bartender) who will serve the drinks
@@ -81,5 +80,5 @@ The referees need to
 \end{itemize}
 
 % \newpage
-% \subsection{Score sheet}
-% \input{scoresheets/ServingDrinks.tex}
+\subsection{Score sheet}
+\input{scoresheets/ServingDrinks.tex}
