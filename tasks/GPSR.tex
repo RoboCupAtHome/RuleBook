@@ -5,14 +5,13 @@ Similar to a modern smart-speaker, the robot can be asked to do anything, in pla
 % This test focuses on the detection and recognition of objects and their features, as well as object manipulation.
 
 \subsection{Main Goal}
-Understand and act on verbal instructions from home occupants and perform those tasks.
+Understand and act on verbal instructions from home occupants and perform those commands.
 
-\noindent\textbf{Reward:} 2500pts (325 points per task)\\
+\noindent\textbf{Reward:} 750pts (250 points per command)\\
 
 \subsection{Bonus rewards}
 \begin{enumerate}[nosep]
 	\item Free-form English commands. The team may ask the commands to be re-worded from the generated command, in order to test more advanced natural language processing. (150 pts, each)
-	\item Coming when called. Robot should come to the same room as the operator when requested with, \textit {<Robot Name>, I need help!}. (125pts)
 \end{enumerate}
 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,11 +21,8 @@ Understand and act on verbal instructions from home occupants and perform those 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Setup}
 \begin{enumerate}
-	\item \textbf{Home:} An area in the arena is marked as the \textit{home} for the robot, which it goes to when it is not in use.
-
-	\item \textbf{Operators:} Three people in the arena will give tasks to the robot.
-
-	\item \textbf{Object and Operator Placements:} Operators will instruct the robot to perform tasks in the various rooms of the home. Tasks should be pre-generated and the operators and items should be in the correct places before the round starts.
+	\item \textbf{Home:} The robot has an assigned starting location where it will receive the commands.
+	\item \textbf{Operator:} The robot will receive 3 commands from an operator
 \end{enumerate}
 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -36,27 +32,20 @@ Understand and act on verbal instructions from home occupants and perform those 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Additional rules and remarks}
 \begin{enumerate}
-	\item \textbf{Task Generation:}  Tasks will be generated using a generator which will be released no fewer than 3 months prior to the competition.
+	\item \textbf{Task Generation:}  Tasks will be generated using a generator which will be available in the robocup@home github organization.
 \end{enumerate}
-
-\newpage
-\subsection{OC instructions}
-
-\textbf{5 hours+ before the test}
-\begin{itemize}
-	\item Choose a home location for the robot and inform teams of this location,
-\end{itemize}
-
-\textbf{2 hours before the test}
-\begin{itemize}
-	\item Generate notecards with tasks on them. Hide from the teams.
-	\item Recruit home occupants to provide instructions to the robots.
-\end{itemize}
 
 \subsection{Referee instructions}
 \begin{itemize}
-	\item Place people and items in correct starting locations before activating the robot.
-	\item Speak clearly. Follow all appropriate rules for alternative methods of activating the robot as necessary.
+	\item Generate 3 commands.
+	\item Have volunteers and objects in the appropriate places for all 3 commands.
+\end{itemize}
+
+\subsection{OC instructions}
+
+2h before test:
+\begin{itemize}
+	\item Announce the robot's starting location.
 \end{itemize}
 
 
