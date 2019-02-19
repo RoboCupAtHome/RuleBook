@@ -1,15 +1,13 @@
 \section{Storing Groceries [Housekeeper]}
-The robot stores groceries into a pantry shelf while paying attention to sorting objects in their appropriate place, i.e. storing an apple next to other fruits.
+The robot stores groceries into a pantry shelf while paying attention to sorting objects in their appropriate place, i.e.~storing an apple next to other fruits.
 
 % \subsection{Focus}
 % This test focuses on the detection and recognition of objects and their features, as well as object manipulation.
 
 \subsection{Main Goal}
-The robot has to move objects from a table into a shelf. Objects must be placed next to objects of the same category or grouped by similarity.
+Move objects 5 from a table into a shelf, grouping them by category or similarity.
 
 \noindent\textbf{Reward:} 500pts (100pts per object).\\
-
-%\noindent\textbf{HINT:} The robot can ask the referee where to place the carried object (relative positions or pointing are both allowed).
 
 \subsection{Bonus rewards}
 \begin{enumerate}[nosep]
@@ -34,7 +32,7 @@ The robot has to move objects from a table into a shelf. Objects must be placed 
 
 	\item \textbf{Objects:} Some of the objects are placed behind the door and cannot be accessed unless the door is open.
 
-	\item \textbf{Table:} The table has 5-10 objects placed on it and the robot can choose which ones to grasp and in what order. On small tables, objects will be added as the robot frees up space.
+	\item \textbf{Table:} The table has 5--10 objects placed on it and the robot can choose which ones to grasp and in what order. On small tables, objects will be added as the robot frees up space.
 \end{enumerate}
 
 
@@ -47,7 +45,7 @@ The robot has to move objects from a table into a shelf. Objects must be placed 
 \begin{enumerate}
 		\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per object as follows:
 	\begin{itemize}[nosep]
-		\item Telling or pointing out to the robot where to place an object results in a 30\% point reduction for that object.
+		\item Telling or pointing out to the robot where to place an object results in a score reduction of 30pts.
 	\end{itemize}
 
 	\item \textbf{Table} The table's rough location will be announced beforehand, having its position either left, right, or behind the robot.
@@ -67,7 +65,7 @@ The referee needs to
 \begin{itemize}
 	\item Place objects in the shelf, grouping them by likeliness.
 	\item Open the door of the shelf.
-	\item Place 5-10 objects on the table.
+	\item Place 5--10 objects on the table.
 \end{itemize}
 
 
