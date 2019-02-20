@@ -151,57 +151,45 @@
 
 
 % %%% STAGE II %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\attempts}{2}
 
 %%% STAGE 2 TESTS GO HERE %%%
 
+% EGPSR
+% \renewcommand{\currentTest}{Enhanced General Purpose Service Robot}
+% \begin{scoresheet}
+% \input{scoresheets/EGPSR.tex}
+% \end{scoresheet}
 
-% EEGPSR
-\renewcommand{\currentTest}{EEGPSR}
+\renewcommand{\currentTest}{Clean the Table}
 \begin{scoresheet}
-\input{scoresheets/EEGPSR.tex}
+\input{scoresheets/CleanTable.tex}
 \end{scoresheet}
 
-% THIS IS REMOVED FROM 2019 RULE BOOK
-% Open Challenge
-%\renewcommand{\currentTest}{Open Challenge}
-%\begin{scoresheet}
-%\input{scoresheets/OpenChallenge.tex}
-%\end{scoresheet}
+% \renewcommand{\currentTest}{Restaurant}
+% \begin{scoresheet}
+% \input{scoresheets/Restaurant.tex}
+% \end{scoresheet}
 
-% Set a table and clean it up
-\ifNotSSPL{
-  \renewcommand{\currentTest}{Procter \& Gamble Dishwasher Challenge}
-  \begin{scoresheet}
-  \input{scoresheets/PnG.tex}
-  \end{scoresheet}
-}
+% \renewcommand{\currentTest}{Set the Table}
+% \begin{scoresheet}
+% \input{scoresheets/SetTable.tex}
+% \end{scoresheet}
 
-% Restaurant
-\renewcommand{\currentTest}{Restaurant}
-\begin{scoresheet}
-\input{scoresheets/Restaurant.tex}
-\end{scoresheet}
-
-% Tour Guide
-\ifSSPL{
-  \renewcommand{\currentTest}{Tour Guide}
-  \begin{scoresheet}
-  \input{scoresheets/TourGuide.tex}
-  \end{scoresheet}
-}
-
+% \renewcommand{\currentTest}{Stickler for Rules}
+% \begin{scoresheet}
+% \input{scoresheets/SticklerForRules}
+% \end{scoresheet}
 
 % %%% FINALS   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Final (Jury)
-\renewcommand{\currentTest}{Final Demonstration -- Jury Evaluation}
+\renewcommand{\currentTest}{Final Demonstration --- Jury Evaluation}
 \begin{scoresheet}
 \input{scoresheets/FinalsJury.tex}
 \end{scoresheet}
 
 % Final (EC)
-\renewcommand{\currentTest}{Final Demonstration -- Executive Committee}
+\renewcommand{\currentTest}{Final Demonstration --- Executive Committee}
 \begin{scoresheet}
 \input{scoresheets/FinalsExec.tex}
 \end{scoresheet}
