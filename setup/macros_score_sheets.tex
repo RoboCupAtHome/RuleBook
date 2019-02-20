@@ -404,6 +404,12 @@
 		\@scoreitem[##1]{##2}{##3}%
 	}
 
+	% Alias of \bonusitem
+	\newcommand{\scorebonus}[3][1]{\bonusitem[##1][##2][##3]}
+
+	% Alias of \penaltyitem
+	\newcommand{\scorepenalty}[3][1]{\penaltyitem[##1][##2][##3]}
+
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% Commands for overriding internal calculations %%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
