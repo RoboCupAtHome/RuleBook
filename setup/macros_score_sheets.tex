@@ -6,6 +6,11 @@
 % Modif : Mauricio Matamoros                                       %
 % $Id: macros_score_sheets.tex 429 2013-04-30 10:09:55Z holz $     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% chktex-file 1
+% chktex-file 15
+% chktex-file 21
+% chktex-file 35
+% chktex-file 44
 
 % %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                  %
@@ -388,7 +393,11 @@
 	}
 
 	\newcommand{\penaltyitem}[3][1]{%
-		\@scoreitem[##1]{-\absval{##2}}{##3}%
+		\ifthenelse{##2 < 0}{%
+			\@scoreitem[##1]{\absval{##2}}{##3}%
+		}{%
+			\@scoreitem[##1]{\absval{-##2}}{##3}%
+		}%
 	}
 
 	\newcommand{\bonusitem}[3][1]{%
@@ -484,7 +493,7 @@
 				\textbf{\small$3^{rd}$~try}}%
 		}{}%
 		\ifthenelse{##1 > 3}{
-			\foreach \i in {4,...,##1}{%
+			\foreach \i in {4,...,##1}{% chktex11
 				\protected@xdef\@attemptheadings{%
 					\@attemptheadings &%
 					\textbf{\small$\i^{th}$~try}%
