@@ -100,7 +100,7 @@ RMF      = rm -f
 RMRF     = rm -rf
 DBG      = echo
 MSG      = echo
-HASRUBBER=$(shell which rubber)
+HASRUBBER:=$(shell which rubber)
 
 ## COLORS #################
 
