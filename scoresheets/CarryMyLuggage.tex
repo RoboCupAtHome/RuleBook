@@ -1,20 +1,26 @@
+
 The maximum time for this test is 5 minutes.
 
 \begin{scorelist}
 	\scoreheading{Main Goal}
-	\scoreitem{500}{Carry the bag to the car's location}
-	\penaltyitem{-100}{handing-over the bag}
-	\penaltyitem{-100}{help in tracking the operator using natural gestures}
-	\penaltyitem{-200}{help in tracking the operator using non-natural gestures}\\
-	\penaltyitem{-400}{help in tracking the operator by touching the robot}
-	
+	\scoreitem{500}{Take the bag to the car}
+	\penaltyitem{200}{Hand-over the bag}
+	\penaltyitem[5]{100}{Regain operator's track by natural interaction}
+	\penaltyitem[5]{200}{Regain operator's track by non-natural interaction}
+	\penaltyitem[5]{400}{Regain operator's track by direct contact}
+
+
 	\scoreheading{Bonus rewards}
-	\scoreitem{100}{Coming back home}
-	\scoreitem[4]{100}{Avoid all the obstacles outdoor}
-	
+	\scoreitem{100}{Reentering the arena}
+	\scoreitem{100}{Avoid the crowd obstructing path}
+	\scoreitem{100}{Avoid the small object on the ground}
+	\scoreitem{100}{Avoid the hard-to-see 3D object}
+	\scoreitem{100}{Avoid the area blocked with retractable barriers}
+
 	% No longer necessary, computes automatically
 	% \setTotalScore{1000}
 \end{scorelist}
+
 
 % Local Variables:
 % TeX-master: "Rulebook"
