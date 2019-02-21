@@ -102,96 +102,94 @@
 
 
 %%% STAGE I %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\attempts}{3}
-
 %%% STAGE 1 TESTS GO HERE %%%
 
-% Cocktail Party
-\ifSSPL{
-  \renewcommand{\currentTest}{Cocktail Party}
-  \begin{scoresheet}
-  \input{scoresheets/CocktailParty.tex}
-  \end{scoresheet}
-}
-
-% GPSR
-\renewcommand{\currentTest}{General Purpose Robot}
+\renewcommand{\currentTest}{Carry my Luggage}
 \begin{scoresheet}
-\input{scoresheets/GPSR.tex}
+\input{scoresheets/CarryMyLuggage}
 \end{scoresheet}
 
-% Help me carry
-\renewcommand{\currentTest}{Help-me-carry}
+\renewcommand{\currentTest}{Clean Up}
 \begin{scoresheet}
-\input{scoresheets/HelpMeCarry.tex}
+\input{scoresheets/CleanUp}
 \end{scoresheet}
 
-% Speech and Person Recognition
-\renewcommand{\currentTest}{Speech and Person Recognition}
+\renewcommand{\currentTest}{Farewell}
 \begin{scoresheet}
-\input{scoresheets/SPR.tex}
+\input{scoresheets/Farewell}
 \end{scoresheet}
 
-% Storing Groceries
-\ifNotSSPL{
-  \renewcommand{\currentTest}{Storing Groceries}
-  \begin{scoresheet}
-  \input{scoresheets/StoringGroceries.tex}
-  \end{scoresheet}
-}
+\renewcommand{\currentTest}{Find my Mates}
+\begin{scoresheet}
+\input{scoresheets/FindMyMates}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{General Purpose Service Robot}
+\begin{scoresheet}
+\input{scoresheets/GPSR}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Receptionist}
+\begin{scoresheet}
+\input{scoresheets/Receptionist}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Serving Drinks}
+\begin{scoresheet}
+\input{scoresheets/ServingDrinks}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Storing Groceries}
+\begin{scoresheet}
+\input{scoresheets/StoringGroceries}
+\end{scoresheet}
+
+\renewcommand{\currentTest}{Take out Garbage}
+\begin{scoresheet}
+\input{scoresheets/TakeOutGarbage}
+\end{scoresheet}
 
 
 % %%% STAGE II %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\attempts}{2}
 
 %%% STAGE 2 TESTS GO HERE %%%
 
-
-% EEGPSR
-\renewcommand{\currentTest}{EEGPSR}
+\renewcommand{\currentTest}{Clean the Table}
 \begin{scoresheet}
-\input{scoresheets/EEGPSR.tex}
+\input{scoresheets/CleanTable.tex}
 \end{scoresheet}
 
-% Open Challenge
-\renewcommand{\currentTest}{Open Challenge}
+% EGPSR
+\renewcommand{\currentTest}{Enhanced General Purpose Service Robot}
 \begin{scoresheet}
-\input{scoresheets/OpenChallenge.tex}
+\input{scoresheets/EGPSR.tex}
 \end{scoresheet}
 
-% Set a table and clean it up
-\ifNotSSPL{
-  \renewcommand{\currentTest}{Procter \& Gamble Dishwasher Challenge}
-  \begin{scoresheet}
-  \input{scoresheets/PnG.tex}
-  \end{scoresheet}
-}
+% \renewcommand{\currentTest}{Restaurant}
+% \begin{scoresheet}
+% \input{scoresheets/Restaurant.tex}
+% \end{scoresheet}
 
-% Restaurant
-\renewcommand{\currentTest}{Restaurant}
+\renewcommand{\currentTest}{Set the Table}
 \begin{scoresheet}
-\input{scoresheets/Restaurant.tex}
+\input{scoresheets/SetTable.tex}
 \end{scoresheet}
 
-% Tour Guide
-\ifSSPL{
-  \renewcommand{\currentTest}{Tour Guide}
-  \begin{scoresheet}
-  \input{scoresheets/TourGuide.tex}
-  \end{scoresheet}
-}
-
+\renewcommand{\currentTest}{Stickler for Rules}
+\begin{scoresheet}
+\input{scoresheets/SticklerForRules}
+\end{scoresheet}
 
 % %%% FINALS   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Final (Jury)
-\renewcommand{\currentTest}{Final Demonstration -- Jury Evaluation}
+\renewcommand{\currentTest}{Final Demonstration --- Jury Evaluation}
 \begin{scoresheet}
 \input{scoresheets/FinalsJury.tex}
 \end{scoresheet}
 
 % Final (EC)
-\renewcommand{\currentTest}{Final Demonstration -- Executive Committee}
+\renewcommand{\currentTest}{Final Demonstration --- Executive Committee}
 \begin{scoresheet}
 \input{scoresheets/FinalsExec.tex}
 \end{scoresheet}
