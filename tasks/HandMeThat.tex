@@ -51,7 +51,7 @@ The operator does not know the name of the object.
 \begin{enumerate}
 	\item \textbf{Keep going:} The robot should keep trying to determine the referred to object until they score or run out of time.
 	\item \textbf{Pass:} The robot may say pass to try the next object.
-	\item \textbf{Oops:} Incorrect guesses reduce the value of the correct guess by 200 points, each, but cannot make the value of the correct guess go below 100 points.
+	\item \textbf{Oops:} Incorrect guesses reduce the value of the correct guess by 200 points, each, the first two times. Guessing correctly on the third or fourth attempt is worth 100 points. After the fourth guess is worth no points.
 \item\textbf{Colors and categories:} Asking for the color or category of a pointed object applies a penalty of 400 points for that particular object.
 \item\textbf{Uneducated operator:} The referee may instruct the operator to answer \emph{I don't understand} or \emph{I don't know} if the robot asks complex questions or is attempting blind guessing.
 
