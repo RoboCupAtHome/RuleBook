@@ -1,43 +1,42 @@
 \section{Receptionist [Party Host]}
+The robot has to take two arriving guests to the living room, introducing them to each other, and offering the just-arrived guest an unoccupied place to sit.
 
-The robot has to allocate and introduce guests in a party.
 
-% \subsection{Focus}
+% \subsection*{Focus}
 % This test focuses on human detection and recognition, safe navigation and human-robot interaction with unknown people.
 
-\subsection{Main Goal}
-The robot has to take two arriving guests to the living room, introducing them to each other, and offering the just-arrived guest an unoccupied place to sit.
+\subsection*{Main Goal}
+Introduce and allocate two newcomers in a party.
 
 \noindent\textbf{Reward:} 500pts (250pts per guest).
 
-\subsection{Bonus rewards}
+\subsection*{Bonus rewards}
 \begin{enumerate}[nosep]
-	\item Opening the entrance door to a guest (200pts each, max 400pts)
-	\item Sitting the female guest next to a male guest (100pts)
+	\item Opening the entrance door to a guest (200pts each)
+	\item Sit the oldest person on a sofa (100pts)
 \end{enumerate}
 
 
-\subsection{Setup}
+\subsection*{Setup}
 \begin{itemize}
 	\item \textbf{Location}: The test takes place in the living room.
-	Initially there is one person sitting here whom the robot already knows.
-	This person is referred as \emph{default guest}.
+
+	\item \textbf{John:} John is already known to the robot and is sitting in the living room.
 
 	\item \textbf{Start Location}: The robot starts inside the arena at a predefined location near the entrance door.
 
-	\item \textbf{Guests:} Each guest has assigned a predefined name and a favorite drink.
-	At least one guest is female.
 \end{itemize}
 
-\subsection{Additional rules and remarks}
+\subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
 	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per guest.
 
+	\item \textbf{Guests:} Each guest has assigned a predefined name and a favorite drink. At least one guest is female.
+
 	\item \textbf{Repeating names:} The robot may ask to repeat the name if it has not understood it.
-	
-	\item \textbf{Misunderstood names:} If the robot misunderstands the name, the understood (wrong) name is used in the remainder of this test.
-	A score reduction of 20\%  for that particular guest applies.
-	
+
+	\item \textbf{Misunderstood names:} If the robot misunderstands the name, the understood (wrong) name is used in the remainder of this test; applying a score reduction of 50pts.
+
 	\item \textbf{Knowing guests:} When a guest arrives, the robot must ask that person her name and favorite drink.
 
 	\item \textbf{Introducing guests:} When introducing guests, the robot must point at the person who is being introduced, stating her name and favorite drink.
@@ -48,22 +47,23 @@ The robot has to take two arriving guests to the living room, introducing them t
 \end{enumerate}
 
 
-\subsection{Referee instructions}
+\subsection*{Referee instructions}
 
 The referees need to
 \begin{itemize}
-	\item Select at least 3 volunteers and assign them name and a favorite drink.
+	\item Assign name and drink to 3 volunteers.
 	\item Arrange (and re-arrange) people in the living room.
 	\item Open the door when requested by the robot
 \end{itemize}
 
-\subsection{OC instructions}
+\subsection*{OC instructions}
 
 2h before test:
 \begin{itemize}
-	\item Select and announce a volunteer as \emph{default guest}
+	\item Announce the location where the robot starts.
+	\item Select and announce a volunteer as \emph{John}
 \end{itemize}
 
 % \newpage
-% \subsection{Score sheet}
-% \input{scoresheets/Receptionist.tex}
+\subsection*{Score sheet}
+\input{scoresheets/Receptionist.tex}
