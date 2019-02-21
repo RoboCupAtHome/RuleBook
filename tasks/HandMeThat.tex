@@ -1,0 +1,65 @@
+\section{Hand Me That [Party Host]}
+A guest at the party speaks English, but with only a limited vocabulary. The robot will assist them in obtaining things that they gesture for.
+
+%\subsection{Focus}
+%Joint attention is a well-studied and important task in Human-Robot Interaction. The goal of this task is to really challenge the teams to perform a hard HRI task.
+
+\subsection{Main Goal}
+The robot identifies (touching or naming) the object at which the operator is pointing at.
+
+\noindent\textbf{Reward:} 2500pts\\
+
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Setup
+%
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Setup}
+\begin{enumerate}
+\item \textbf{Location:} This takes place in a room in the arena.
+\item \textbf{Starting position:} The robot and the operator stand in a predefined location announced beforehand % (OC instructions: announce this 2 hours before the test).
+\item \textbf{Objects:} Groups of 2--5 objects are placed at random locations on the room (avg distance $50cm -- 150cm$ from starting position).
+\item \textbf{Deck:} The referee has a deck of objects to request, one per group, sorted by distance.
+
+\end{enumerate}
+
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Procedure
+%
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Procedure}
+\begin{enumerate}
+	\item \textbf{Pick an object} The robot will ask the operator: \emph{what do you need?}. % We rule out natural language interaction
+Then the operator walks near to the object and points at it.
+The robot can ask as many questions as necessary.
+The operator does not know the name of the object.
+  \item \textbf{Repeat} Repeat up to 5 times for the maximum score.
+
+
+\end{enumerate}
+
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Additional Rules
+%
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Additional rules and remarks}
+\begin{enumerate}
+	\item \textbf{Keep going:} The robot should keep trying to determine the referred to object until they score or run out of time.
+	\item \textbf{Pass:} The robot may say pass to try the next object.
+	\item \textbf{Oops:} Incorrect guesses reduce the value of the correct guess by 200 points, each, the first two times. Guessing correctly on the third or fourth attempt is worth 100 points. After the fourth guess is worth no points.
+\item\textbf{Colors and categories:} Asking for the color or category of a pointed object applies a penalty of 400 points for that particular object.
+\item\textbf{Uneducated operator:} The referee may instruct the operator to answer \emph{I don't understand} or \emph{I don't know} if the robot asks complex questions or is attempting blind guessing.
+
+\end{enumerate}
+\newpage
+\subsection{Score sheet}
+\input{scoresheets/HandMeThat.tex}
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:
