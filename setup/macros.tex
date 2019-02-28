@@ -29,6 +29,9 @@
 \renewcommand{\labelenumii}{\labelenumi\arabic{enumii}.}
 \renewcommand{\labelenumiii}{\labelenumii.\arabic{enumiii}.}
 
+\newcommand{\testtocentry}[1]{%
+	\nameref{#1}\dotfill\pageref{#1}\\[0.2\baselineskip]%
+}
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
 %%                    Developement-Tools                     %%

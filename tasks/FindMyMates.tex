@@ -1,0 +1,60 @@
+\section{Find My Mates [Party Host]}
+\label{test:find-my-mates}
+The robot fetches the information of the party guests for the operator who knows only the names of the guests.
+
+
+\subsection*{Main Goal}
+Report to the operator the description and location of at least two party guests.
+
+\noindent\textbf{Reward:} 500 points (250pts per guest).
+
+\subsection*{Bonus rewards}
+\begin{enumerate}[nosep]
+	\item Reporting the location and description of a third guest (500pts).
+\end{enumerate}
+
+
+\subsection*{Setup}
+\begin{itemize}
+	\item \textbf{Location}: This test takes place inside the arena in a predefined room (e.g.~living room).
+
+	\item \textbf{People}: There are 4 people distributed along the room.
+\end{itemize}
+
+\subsection*{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per guest.
+	\begin{itemize}
+		\item -75 pts if a person has to wave the robot in order to be found
+		\item -75 pts if a person has to tell the robot where is she sitting/standing
+		\item -150 pts if a person has to approach to the robot (e.g.~walk and stand in front of it).
+	\end{itemize}
+
+	\item \textbf{Reporting:} Points are scored only when the robot goes back to the operator and delivers the report in time.
+
+	\item \textbf{Description of a Person:} The description of each guest should be unique; i.e.~not shared with any other guest. This may include clothing, age, height, complexion, skin-color, hair-color, gender, etc.
+
+	\item \textbf{Location of a Person:} A relative location based of the surroundings (e.g.~\textit{The kid is sitting on the coach}, \textit{The tall man is standing beside the lamp}, etc.).
+\end{enumerate}
+
+
+\subsection*{Referee instructions}
+
+The referees need to
+\begin{itemize}
+	\item Assign names to the guests.
+	\item Make sure every person has a name.
+	\item Make sure people stay at the designated place.
+\end{itemize}
+
+\subsection*{OC instructions}
+
+2h before test:
+\begin{itemize}
+	\item Announce the location where the robot will be instructed.
+	\item Announce the room in which the test takes place.
+\end{itemize}
+
+% \newpage
+\subsection*{Score sheet}
+\input{scoresheets/FindMyMates.tex}
