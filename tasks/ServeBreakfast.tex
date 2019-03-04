@@ -1,0 +1,72 @@
+\section{Serve the Breakfast [Housekeeper]}
+\label{test:serve-the-breakfast}
+The robot has to set the table (presumably for dinner) for one person.
+
+% \subsection*{Focus}
+% This test focuses on object perception, manipulation, and planning.
+
+\subsection*{Main Goal}
+Prepare some cereal for breakfast.
+
+\noindent\textbf{Reward:} 400pts
+
+\subsection*{Bonus rewards}
+\begin{enumerate}[nosep]
+	\item Pouring milk without spilling (350pts)
+	\item Placing a spoon next to the bowl (150pts)
+\end{enumerate}
+
+\subsection*{Setup}
+\begin{itemize}[nosep]
+	\item \textbf{Location:} This test takes place in the kitchen.
+	\item \textbf{Start Location:} The robot waits outside the arena. When the door is open it navigates to the kitchen.
+	\item \textbf{Table:} The robot serves the breakfast on any table or flat surface in the kitchen (teams choice). Chairs may be placed around the kitchen table and won't be removed.
+	\item \textbf{Objects:} The objects used in this test are in their predefined locations.
+\end{itemize}
+
+
+\subsection*{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Deus ex Machina:} The following reductions apply:
+	\begin{itemize}[nosep]
+		\item \textbf{Handover:} Handing over an object causes a score reduction of 100pts.
+		\item \textbf{Showing objects:} Pointing, or telling to the robot where an object is or where to place it causes a score reduction of 50pts.
+		\item \textbf{Placing tableware:} Having a human assistant placing tableware on the table causes a score reduction of 200pts.
+		\item \textbf{Pouring Cereals:} Having a human assistant pouring the cereals causes a score reduction of 350pts.
+	\end{itemize}
+
+	\item \textbf{Serving breakfast:} To serve breakfast the robot has to pour some cereals in a bowl.
+	Optionally, the robot can place a spoon next to the bowl, and pour some milk to score bonus points.
+	All objects are stored in their predefined locations.
+
+	\item \textbf{Safe placing:} Objects must be placed with care. It must be clear that the robot is trying to place the object, not throwing or dropping it.
+
+\end{enumerate}
+
+\subsection*{Referee instructions}
+
+The referee needs to
+\begin{itemize}
+	\item Remove all objects from the table
+	\item Place objects in their default locations
+\end{itemize}
+
+\subsection*{OC instructions}
+During Setup days:
+\begin{itemize}
+	\item Provide official cutlery and tableware for training.
+\end{itemize}
+
+% 2 hours before the test:
+% \begin{itemize}
+% 	\item Announce the predefined location to take the command.
+% \end{itemize}
+
+% \newpage
+\subsection*{Score sheet}
+\input{scoresheets/ServeBreakfast.tex}
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:
+
