@@ -75,7 +75,7 @@ Hence, interaction should be as with any other human being.
 	This is known as \iaterm{functional touching}.
 	However, the robot must clearly announce the collision-like interaction and kindly request not being stopped.\\
 	\textbf{Remark: } Referees can (and will) immediately stop a robot in case or suspicion of \emph{dangerous} behavior.
-	
+
 	\item \textbf{Robot-Robot avoidance:} If two robots encounter each other, they both have to actively try to avoid the other robot.
 	\begin{enumerate}
 		\item A robot which is not going for a different route within a reasonable amount of time (e.g., \SI{30}{\second}) is removed.
@@ -104,17 +104,22 @@ Other start signals are allowed but must be authorized by the \iaterm{Technical 
 	The test starts when a referee (not a team member) opens the door.
 
 	\item \textbf{Start button:} If the robot is not able to automatically start after the door is open, the team may start the robot using a start button.
-	\begin{enumerate}
-		\item Using a start button needs to be announced to the referees. It is the responsibility of the team to do so before the test starts.
-		\item Any single-key-press procedure is allowed. Typing commands is strictly forbidden.
+	\begin{enumerate}[nosep]
+		\item It must be a physical button on the robot (e.g.~a dedicated one or releasing the eStop).
+		\item It is allowed to use the robot's contact/pressure sensors (e.g.~pushing the head or an arm joint).
+		\item Using a start button needs to be announced to the referees before the test starts.
 		\item There may be penalties for using a start button in some tests
 	\end{enumerate}
 
-	\item \textbf{QR Codes:} If the robot is not able to automatically start after the door is open, the team may start the robot by showing it a QR code.
+	\item \textbf{Ad-hoc start signal:} Other means of triggering robot to action are allowed but must be approved by the \iaterm{Technical Committee}{TC} during the Robot Inspection (see~\refsec{sec:robot_inspection}).
+	These include:
+	\begin{itemize}[nosep]
+		\item QR Codes
+		\item Verbal instructions
+		\item Custom HRI interfaces (apps, software, etc.)
+	\end{itemize}
+	\textbf{Remark:} There may be penalties for using Ad-hoc start signals in some tests. The use of mouses, keyboards, and devices attached to ECRA computers is strictly forbidden.
 
-	\item \textbf{Verbal instructions:} If the robot is not able to automatically start after the door is open, the team may start the robot using a verbal command.
-
-	\item \textbf{Ad-hoc start signal:} Other means of triggering robot to action must be approved by the \iaterm{Technical Committee}{TC} during the Robot Inspection (see~\refsec{sec:robot_inspection}).
 \end{enumerate}
 
 
@@ -240,7 +245,7 @@ The following rules apply:
 
 	\item \textbf{Early request:} Restart is \textbf{NOT} allowed after the first 50\% of the alloted time has elapsed.
 
-	\item \textbf{Time:} The timer is neither restarted nor stopped. 
+	\item \textbf{Time:} The timer is neither restarted nor stopped.
 
 	\item \textbf{One-minute Setup} The team has 1 minute to fix the robot counting when the referee announces th restart.
 	If the robot is not ready, the test is considered finished.
