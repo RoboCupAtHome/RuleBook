@@ -4,7 +4,7 @@ RuleBook for RoboCup @Home 2019
 This is a **DRAFT**.
 All work for the Rulebook of 2020 will be pushed into to 2020/Rulebook.
 
-[On-the-fly compiled LaTeX version](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=Rulebook.tex)
+[On-the-fly compiled LaTeX version](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=Rulebook.tex) **German Open 2019 will be based on this version, no major changes are expected, any changes will be left as Pull Requests**
 
 [Released PDF version](http://www.robocupathome.org/rules)
 
