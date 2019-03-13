@@ -153,6 +153,14 @@ endif
 	$(SILENT) $(MAKE) mauClean
 # all: mauCleanAll mauBuild mauClean
 
+rulebookonly: rulebook
+rulebook:
+ifndef HASRUBBER
+	$(SILENT) $(MAKE) dorulebookonly
+else
+	$(SILENT) $(MAKE) rubrulebookonly
+endif
+
 ## ##################### ##
 ##  PDFLATEX (PDF)       ##
 ## ##################### ##
@@ -164,6 +172,16 @@ dofullpdf:
 	$(SILENT) # $(MAKE) dobibtex
 	$(SILENT) $(MAKE) dopdflatex
 	$(SILENT) $(MAKE) dopdflatex
+
+dorulebookonly:
+	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
+	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(PDFFILE)' via $(PDFLATEX)"; $(RESET)
+	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(TEXFILE)
+	$(SILENT) $(MAKE) domakeidx
+	$(SILENT) $(MAKE) domakeidx
+	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(TEXFILE)
+	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(TEXFILE)
+	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 
 dopdflatex:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
@@ -314,6 +332,8 @@ mauBuild:
 		rm -f  "score_sheets_$$league.tex" "score_sheets_$$league.out" "score_sheets_$$league.log" "score_sheets_$$league.aux"; \
 	done
 
+rubrulebookonly:
+	$(SILENT) rubber --pdf --force Rulebook.tex
 
 mauClean:
 	$(SILENT) rm -f *.aux *.bbl *.blg *.log *.lof *.log *.lot *.out *.synctex.gz *.toc *~
