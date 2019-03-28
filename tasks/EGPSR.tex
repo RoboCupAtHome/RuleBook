@@ -6,9 +6,9 @@ Similar to a modern smart-speaker, the robot can be asked to do anything, in pla
 % This test focuses on the detection and recognition of objects and their features, as well as object manipulation.
 
 \subsection*{Main Goal}
-Execute each of the 3 commands requested by the operator.
+Execute at least one of the 3 commands requested by the operator.
 
-\noindent\textbf{Reward:} 1200pts (500 points per task)\\
+\noindent\textbf{Reward:} 1500pts (500 points per task)\\
 
 \subsection*{Bonus rewards}
 \begin{enumerate}[nosep]
@@ -39,6 +39,7 @@ Execute each of the 3 commands requested by the operator.
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
+	\item \textbf{Partial scoring:} The main task allows partial (per \emph{completed} command) scoring.
 	\item \textbf{Command Generator:} Tasks will be generated using the official \emph{GPSR Command Generator} available 2 months prior to the competition in the official repository. Commands for EGPSR are either Stage~II tasks, complex commands requiring to perform chains of subtasks in sequence, or \emph{incomplete} commands lacking relevant information to succeed.
 
 	\item \textbf{Naive Operators:} Commands can be issued by a \emph{Naive Operator} who receives a note-card with the summarized command from the referee and rephrases it.\\[0pt]
