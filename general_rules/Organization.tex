@@ -6,13 +6,10 @@
 
 The competition features a \iterm{stage system}. It is organized in two stages each consisting of a number of specific tasks. It ends with the \iterm{Finals}.
 
-Each \iaterm{stage} comprehends a set of tasks grouped in two thematic scenarios.
-% \iaterm{House Cleaner} and \iaterm{Party Host}.
-The \iaterm{Housekeeper} scenario features tasks related to cleaning, organizing, and giving maintenance; while the \iaterm{Party Host} scenario focuses in attending guests needs and providing general assistance during a party.
 
 \begin{enumerate}
 	\item \textbf{Robot Inspection:} For security, robots are inspected during setup days.
-  A robot must pass \iterm{Robot Inspection} test (see~\refsec{sec:robot_inspection}) in order to compete.
+	A robot must pass \iterm{Robot Inspection} test (see~\refsec{sec:robot_inspection}) in order to compete.
 
 	\item \textbf{Stage~I:} The first days of the competition called \iterm{Stage~I}.
 	All qualified teams can participate in \iterm{Stage~I}.
@@ -29,26 +26,26 @@ The \iaterm{Housekeeper} scenario features tasks related to cleaning, organizing
 
 In case of having no considerable score deviation between a team advancing to the next stage and a team dropping out, the TC may announce additional teams advancing to the next stage.
 
+Each \iterm{stage} comprehends a set of tasks grouped in two thematic scenarios.
+The \iterm{Housekeeper} scenario features tasks related to cleaning, organizing, and maintenance.
+The \iterm{Party Host} scenario focuses on providing general assistance during a party by attending the needs of the guests.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Schedule}
 \label{rule:schedule}
 
 \begin{enumerate}
-	\item \textbf{Thematic scenario blocks:} Each \iterm{thematic scenario} or \iterm{theme} is split in two \iterm{blocks}.
-	At least two blocks are scheduled per day, having each block an assigned theme and lasting no less than two hours.
-	The \iaterm{Organizing Committee}{OC} announces the schedule during the setup days (see Table \ref{tbl:schedule}).
+	\item \textbf{Thematic scenario blocks:} Two blocks are scheduled per day, lasting between two and three hours.
+	All teams have assigned at least 2 \iterm{testing slots} per block in which they can test any \iterm{task} of their choice from the block's assigned scenario.
 
-	\item \textbf{Slots:} The \iaterm{Organizing Committee}{OC} assigns at least two \iterm{test slots} of 5 minutes to each team in each block.
-   The maximum number of \iterm{tests slots} will be announced during setup days by the \iaterm{Technical Committee}{TC} based on the available time and the number of participating teams.
-	A team can solve any task during its test slot.
-	Remaining block time can be used to assign additional testing slots to interested teams.
-	Testing slots are randomly assigned to teams in each block.
+	\item \textbf{Slots:} In principle, all teams get the same amount of \iterm{testing slots} with a minimum of 2 per block.
+	If there is sufficient unoccupied remaining time for all the teams in a league, a referee can open an extra testing slot, allowing an extra run for all.
 
-	\item \textbf{Tests:} Teams must inform the OC in advance which task(s) will try to solve.
+	\item \textbf{Tests:} Teams must inform the OC in advance which tasks will be tested in each block.
 	Only one task can be attempted per test slot.
 
-	\item \textbf{Participation is default:} Teams have to indicate to the \iaterm{Organizing Committee}{OC} when they are \emph{skipping} a test slot. Without such indication, they may receive a penalty when not attending (see~\refsec{rule:not_attending}).
+	\item \textbf{Participation is default:} Teams have to indicate to the \iaterm{Organizing Committee}{OC} when they are \emph{skipping} a testing slot. Without such indication, they may receive a penalty when not attending (see~\refsec{rule:not_attending}).
 \end{enumerate}
 
 % Please add the following required packages to your document preamble:
@@ -74,6 +71,7 @@ In case of having no considerable score deviation between a team advancing to th
 		}%
 	}
 	\newcommand{\cell}[1]{\wcell{0.2\baselineskip}{#1}}
+	% \newcommand{\mr}[1]{\multirow{2}{*}{#1}}
 
 
 	\begin{tabular}{
@@ -81,32 +79,40 @@ In case of having no considerable score deviation between a team advancing to th
 		>{\columncolor[HTML]{9AFF99}}c |%
 		>{\columncolor[HTML]{9AFF99}}c |%
 		>{\columncolor[HTML]{CBCEFB}}c |%
-		>{\columncolor[HTML]{CBCEFB}}c |%
+		>{\columncolor[HTML]{FF8D27}}c  %
 	}
 	\multicolumn{1}{ c }{}
 		& \multicolumn{1}{ c }{\cellcolor{white} Day 1 }
 		& \multicolumn{1}{ c }{\cellcolor{white} Day 2 }
 		& \multicolumn{1}{ c }{\cellcolor{white} Day 3 }
 		& \multicolumn{1}{ c }{\cellcolor{white} Day 4 }
-		\\\cline{2-5}
-	\cell{Block 1\\\footnotesize(9:00 - 12:00)}
+		\\\hhline{~---~}
+
+	\cell{Block 1\\\footnotesize(9:00--12:00)}
 		& \cell{Housekeeper\\\teams{i}{j}{i}}
-		& \cell{Party Host\\\teams{k}{i}{k}}
-		& \cell{Housekeeper\\\teams{i}{j}{i}}
-		& \cell{Party Host\\\teams{j}{k}{j}}\\\cline{2-5}
+		& \cell{Housekeeper\\~\\Party Host}
+		& \cell{Restaurant}
+		& \cellcolor{white}
+		\\\hhline{~----}
+
+
 
 	\multicolumn{1}{ c }{}
-		& \multicolumn{4}{ c }{\wcell{0.5\baselineskip}{\color{gray}Lunch}}\\\cline{2-5}
+		& \multicolumn{3}{ c }{\wcell{0.5\baselineskip}{\color{gray}Lunch}}
+		& \multicolumn{1}{|c|}{\cellcolor[HTML]{FF8D27}\cell{\textbf{Finals}}}
+		\\\hhline{~----}
 
-	\cell{Block 2\\\footnotesize(14:00 - 17:00)}
-		& \cell{Housekeeper\\\teams{i}{k}{i}}
-		& \cell{Party Host\\\teams{k}{j}{k}}
-		& \cell{Party Host\\\teams{i}{i}{k}}
-		& \cell{Housekeeper\\\teams{k}{j}{j}}\\\cline{2-5}
+	\cell{Block 2\\\footnotesize(14:00--17:00)}
+		& \cell{Party Host\\\teams{i}{k}{i}}
+		& \cellcolor[HTML]{CBCEFB}\cell{Party Host}
+		& \cell{Housekeeper}
+		& \cellcolor{white}
+		\\\hhline{~---~}
 
 	\multicolumn{1}{ c }{}
-		& \multicolumn{2}{ c }{\wcell{0.5\baselineskip}{\color[HTML]{029734}Stage 1}}
-		& \multicolumn{2}{ c }{\wcell{0.5\baselineskip}{\color[HTML]{6668e5}Stage 2}}\\
+		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{\color[HTML]{029734}Stage 1}}
+		& \multicolumn{1}{ c }{\cellcolor{white}}
+		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{\color[HTML]{6668e5}Stage 2}}\\
 	\end{tabular}
 
 	\caption{Example schedule.
@@ -117,6 +123,7 @@ In case of having no considerable score deviation between a team advancing to th
 	\label{tbl:schedule}
 \end{table}
 
+\noindent \textbf{Remark:} The \iaterm{Organizing Committee}{OC} announces the schedule during the setup days (see Table \ref{tbl:schedule}).
 
 \subsection{Score system}
 \label{rule:score_system}
@@ -128,7 +135,7 @@ The \iaterm{score system} has the following constrains
 \begin{enumerate}
 
 	\item \textbf{Stage~I:} The maximum total score per task in \iterm{Stage~I} is \scoring{1000 points}.
-	
+
 	\item \textbf{Stage~II:} The maximum total score per task in \iterm{Stage~I} is \scoring{2000 points}.
 
 	\item \textbf{\iterm{Finals}:} Final score is normalized and a special evaluation is used.

@@ -1,0 +1,92 @@
+\section{Smoothie Chef [Party Host]}
+\label{test:smoothie-chef}
+The home owner teaches the robot the procedure to make a smoothie.
+The robot repeats the task on its own.
+
+% We will have the robot place the (fake) fruit corresponding to the desired smoothie into a bowl, which avoids needing blenders and needing to manipulate liquids. However, one of the fruits will be something small, like blueberries, which will need to be measured using an appropriate measuring cup.
+
+% \subsection*{Focus}
+% The idea behind the test is that a robot understand which
+% ingredients are necessary to craft a smoothie, i.e. put a
+% strawberry, a mango, and guava inside the blender, but not
+% paprika and onion.
+% For now, the order matters.
+% Object manipulation based on demonstration learning.
+
+\subsection*{Main Goal}
+The robot crafts a smoothie as taught, placing the correct 3 fruits in the right order.
+
+\noindent\textbf{Reward:} 750pts.
+
+
+\subsection*{Bonus rewards}
+\begin{enumerate}[nosep]
+	% Not intended to be addressed in 2019
+	\item Pouring \emph{milk} without spilling (500pts).
+	% Not intended to be addressed in 2019
+	\item Pouring \emph{sugar} without spilling (750pts).
+	\item Activate the blender/stir with the mixer (250pts).
+\end{enumerate}
+
+\subsection*{Setup}
+\begin{itemize}[nosep]
+	\item \textbf{Location:} The test takes place in the kitchen.
+
+	\item \textbf{Start Location:} The robot starts outside the arena.
+	When the door is open, it navigates to the kitchen counter.
+
+	\item \textbf{Operator location:} The operator is standing in front of the robot on the opposite side of the counter.
+
+	\item \textbf{Kitchen Counter:} Either the kitchen table or counter can be used in this test.
+	All ingredients are placed in the kitchen counter near to the \emph{Official Blender}.
+	A spoon is available to add \emph{sugar} from a bowl.
+
+\end{itemize}
+
+\subsection*{Additional rules and remarks}
+\begin{enumerate}
+	\item \textbf{Deus ex Machina:} Score reduction is applied as follows:
+	\begin{itemize}[nosep]
+		\item \textbf{Start in place:} Starting the test in front of the kitchen counter causes a score reduction of 150pts.
+		\item \textbf{Reminding recipe:} Telling the robot which ingredient comes next (e.g.~pointing, naming, etc.) causes a score reduction of 250pts.
+		\item \textbf{Hand-over:} Handing over an object causes a score reduction of 200pts.
+	\end{itemize}
+
+	\item \textbf{Custom operator:} The training is normally conducted by a \emph{Professional Operator}. Teams can opt for a \emph{Custom Operator}, which causes a score reduction of 250pts.
+
+	\item \textbf{Partial bonus scoring:} Spilling \emph{milk} or \emph{sugar} causes 75\% score reduction on the associated bonuses (i.e.~400pts and 600pts respectively).
+
+	\item \textbf{Smoothie Ingredients:} There are 6 \emph{fruits}, one bottle of \emph{milk}, and a bowl with \emph{sugar} in the counter.
+	All of them are standard objects (see~\refsec{rule:scenario_objects}).
+	The \emph{milk} can be any liquid (e.g.~milk, water, \emph{drinks} category).
+	The \emph{sugar} can be any pourable solid (e.g.~muesli or cereal), is contained in a bowl and must be served with a spoon.
+
+	\item \textbf{Smoothie Recipe:} Three out of six random fruits to be blended with one teaspoon of \emph{sugar} and a glass of \emph{milk}, incorporated on team's request.
+
+	\item \textbf{Official Blender \& Mixer:} Unless a real blender is available (unlikely) teams can expect a glass or bowl to be used in this test. Any large object (e.g.~plastic bottle) from the list of standard objects (see~\refsec{rule:scenario_objects}) can be used as mixer.
+\end{enumerate}
+
+\subsection*{OC Instructions}
+During Setup days
+\begin{itemize}[nosep]
+	\item Announce the blender/mixer to be used.
+\end{itemize}
+
+2 hours before the test
+\begin{itemize}[nosep]
+	\item Announce the location of the kitchen counter.
+	\item Announce the location where the operator and the robot will perform the task.
+\end{itemize}
+
+\subsection*{Referee instructions}
+The referee needs to
+\begin{itemize}[nosep]
+	\item Perform the demonstration for the robot.
+	\item Shuffle the fruits and put all utensils within the robot's grasp-distance.
+	\item Clean spills as necessary.
+\end{itemize}
+
+
+% \newpage
+\subsection*{Score sheet}
+\input{scoresheets/SmoothieChef.tex}

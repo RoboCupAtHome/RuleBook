@@ -55,38 +55,95 @@
 
 \input{Setup}
 
+
+
+%%% STAGE I
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Tests in Stage I}
 \label{chap:stage_I}
 
+\section*{Housekeeper tasks}
+\testtocentry{test:clean-up}
+\testtocentry{test:gpsr}
+\testtocentry{test:storing-groceries}
+\testtocentry{test:serve-the-breakfast}
+\testtocentry{test:take-out-the-garbage}
+
+\section*{Party Host tasks}
+\testtocentry{test:carry-my-luggage}
+\testtocentry{test:farewell}
+\testtocentry{test:find-my-mates}
+\testtocentry{test:receptionist}
+\testtocentry{test:serving-drinks}
+
+% Uncomment to get aesthetic improvement
+\cleardoublepage
+\input{tasks/CarryMyLuggage}
 \newpage
 \input{tasks/CleanUp}
 \newpage
-\input{tasks/TakeOutGarbage}
+\input{tasks/Farewell}
+\newpage
+\input{tasks/FindMyMates}
+\newpage
+\input{tasks/GPSR}
 \newpage
 \input{tasks/Receptionist}
 \newpage
-\input{tasks/Farewell}
-\newpage
 \input{tasks/ServingDrinks}
 \newpage
-\input{tasks/FindMyMates}
-% \newpage
-% \input{tasks/ServingBeverages}
-
+\input{tasks/ServeBreakfast}
 \newpage
 \input{tasks/StoringGroceries}
+\newpage
+\input{tasks/TakeOutGarbage}
 
+
+
+%%% STAGE II
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Tests in Stage II}
 \label{chap:stage_II}
 
-\newpage
-\input{tasks/CleanTable}
+\section*{Housekeeper tasks}
+\testtocentry{test:clean-the-table}
+\testtocentry{test:egpsr}
+\testtocentry{test:find-my-disk}
+\testtocentry{test:set-the-table}
 
+\section*{Party Host tasks}
+\testtocentry{test:hand-me-that}
+\testtocentry{test:stickler-for-the-rules}
+\testtocentry{test:restaurant}
+\testtocentry{test:smoothie-chef}
+\testtocentry{test:where-is-this}
+
+% Uncomment to get aesthetic improvement
+\cleardoublepage
+\input{tasks/CleanTable}
+\newpage
+\input{tasks/EGPSR}
+\newpage
+\input{tasks/FindMyDisk}
+\newpage
+\input{tasks/HandMeThat}
 \newpage
 \input{tasks/SetTable}
-
 \newpage
+\input{tasks/Restaurant}
+\newpage
+\input{tasks/SmoothieChef}
+\newpage
+\input{tasks/SticklerForRules}
+\newpage
+\input{tasks/WhereIsThis}
+
+
+
+%%% FINALS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{tests/Finals}
+
 
 \printabx
 \printidx
