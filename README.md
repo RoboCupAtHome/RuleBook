@@ -20,8 +20,8 @@ See the Frequently Asked Questions [here](https://github.com/RoboCupAtHome/RuleB
 Or ask us via Telegram: [https://t.me/RoboCupAtHome](https://t.me/RoboCupAtHome)
 
 ### Change log
-The Rulebook is being completely restructured. 
-Changes are being pushed to the [2019/restructure](https://github.com/RoboCupAtHome/RuleBook/tree/2019/restructure) branch until the rulebook reaches a Draft state.
+The Rulebook has being completely restructured for 2019 and later competitions. 
+The new format was first tested at German Open 2019.
 
 #### Highlights
 - **Less stressful competition:** Each competition day will have 2 *testing blocks* (e.g.from 9:00 to 12:00 and from 15:00 to 18:00), giving time to teams to eat, rest, and prepare.
