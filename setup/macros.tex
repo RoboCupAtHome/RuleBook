@@ -5,6 +5,7 @@
 %%  description: Macros for the RoboCupAtHome rulebook
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% rubber: setlist arguments --shell-escape
 
 \input{./setup/macros_score_sheets.tex}
 \input{./setup/macros_open_demonstrations.tex}
@@ -76,8 +77,8 @@
 
 \def\svnRevision{Unknown} %
 \def\svnChangeData{Unknown} %
-\def\revnumtmpfile{.temp_ruleook_version}
-\def\revdattmpfile{.temp_ruleook_date}
+\def\revnumtmpfile{.temp_rulebook_version}
+\def\revdattmpfile{.temp_rulebook_date}
 \immediate\write18{git rev-list HEAD | wc -l > \revnumtmpfile}
 %\immediate\write18{svnversion . > \revnumtmpfile}
 \IfFileExists{\revnumtmpfile}{\def\svnRevision{\input{\revnumtmpfile}\unskip}}{}
