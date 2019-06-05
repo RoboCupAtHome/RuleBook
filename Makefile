@@ -65,6 +65,8 @@ PDFLATEX    = pdflatex
 PDFLATEXFLAGS = --shell-escape
 PDF2PS      = pdf2ps
 PDF2PSFLAGS = #-paper "A4"
+RUBBER      = rubber
+RUBBERFLAGS = --unsafe --pdf --force
 #
 SPELL       = aspell
 # use tex-mode, use custom wordlist, set personal word-list to extra word-list file
@@ -325,15 +327,15 @@ clean:
 
 dirk:	mauBuild
 mauBuild:
-	$(SILENT) rubber --pdf --force Rulebook.tex
+	$(SILENT) $(RUBBER) $(RUBBERFLAGS) $ Rulebook.tex
 	$(SILENT) for league in OPL DSPL SSPL ; do \
 	    (echo "\def\league{$$league}" ; cat score_sheets.tex ) > "score_sheets_$$league.tex" ; \
-		rubber --pdf --force "score_sheets_$$league.tex" ; \
+		 $(RUBBER) $(RUBBERFLAGS) $ "score_sheets_$$league.tex" ; \
 		rm -f  "score_sheets_$$league.tex" "score_sheets_$$league.out" "score_sheets_$$league.log" "score_sheets_$$league.aux"; \
 	done
 
 rubrulebookonly:
-	$(SILENT) rubber --pdf --force Rulebook.tex
+	$(SILENT)  $(RUBBER) $(RUBBERFLAGS) Rulebook.tex
 
 mauClean:
 	$(SILENT) rm -f *.aux *.bbl *.blg *.log *.lof *.log *.lot *.out *.synctex.gz *.toc *~
