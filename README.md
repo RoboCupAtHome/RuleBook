@@ -58,6 +58,12 @@ The RoboCup @Home Organizing Committee is always looking for volunteers to assis
 
 Contributions and improvements to the rulebook are always welcome in the form of pull requests.
 
+### License
+
+The content of this project itself is licensed under the Creative Commons Attribution Share Alike 4.0 International license, and the underlying source code used to format and display that content is licensed under the GPL v2 license.
+
+Note that neither of these licenses grant rights to the RoboCup trademark. If you would like to host a sanctioned event, please contact the league organizers.
+
 ### Recorded data
 Data is recorded from the robots during the competition. It is available through the following links:
 
