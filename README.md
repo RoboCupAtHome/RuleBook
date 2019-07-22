@@ -62,7 +62,7 @@ Contributions and improvements to the rulebook are always welcome in the form of
 
 The content of this project itself is licensed under the Creative Commons Attribution Share Alike 4.0 International license, and the underlying source code used to format and display that content is licensed under the GPL v2 license.
 
-Note that neither of these licenses grant rights to the RoboCup trademark. If you would like to host a sanctioned event, please contact the league organizers.
+Note that neither of these licenses grant rights to the RoboCup name and logo. If you would like to host a sanctioned event (e.g. competition, workshop, conference, education project), please [enter a proposal](https://www.robocup.org/site_proposals). 
 
 ### Recorded data
 Data is recorded from the robots during the competition. It is available through the following links:
