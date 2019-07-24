@@ -23,3 +23,31 @@ Great! The league has benefited from contributions like the [command generator](
 
 The RoboCup @Home Organizing Committee is always looking for volunteers to help run the event. Please contact the committee.
 
+
+## Contribution Naming Conventions
+
+### Files
+TeX files describing test files are named using a *Letter-case separated words* convention in which the first letter of each word is capital. When using acronyms, the next word can be separated with an underscore. All other file names are specified in lowercase (with the exception of acronyms), and separating words with underscores.
+
+The following practices must also be followed:
+- Spaces in filenames must be avoided.
+- The format for date designations is YYYYMMDD (to ensure chronological order over years).
+- File names should be as short as possible (max 25 characters + extension).
+- Special characters such as  ~ ! @ # $ % ^ & * ( ) ` ; < > ? , [ ] { } ' " and | should be avoided.
+- When using a sequential numbering system, three leading zeros are added for clarity.
+
+### Branches
+Branch names use always small caps (except by acronyms) with words separated with the underscore character.
+
+The name of a branch strongly depends on the introduced change type and the function of the change. Branch names must always be short and descriptive, avoiding sequences and special characters. The following branch types are set:
+- **```year/```** Used for tests mainly, and other changes targeting an specific year.
+  - ```2020/taking_the_bus```
+  - ```2025/IKEA_assembly```
+- **```feature/```** Used to introduce new features and general rules in the rulebook, as well as changes that affect many tests, or modify the scoring.
+  - ```feature/description_of_new_stuff```
+  - ```feature/eegpsr_example_scoresheet```
+- **```fix/```** Used to address or solve an specific issue
+  - ```fix/#185_remove_exact_numbers```
+  - ```fix/#500```
+
+**Important Remark:** Branches shall never be merged into ```master```, nor ```master``` shall merge into any branches. Pull Requests are mandatory for merging, and rebase for updating. Also, squash commits are not permitted.
