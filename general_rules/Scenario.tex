@@ -56,6 +56,7 @@ The minimal configuration consists of:
 	\item a couch,
 	\item a small table,
 	\item a small dinner table with two chairs,
+	\item a coat rack or pole,
 	\item two trash bins,
 	\item an open cupboard or small table with a television and remote control,
 	\item a cupboard with drawers, and
@@ -126,8 +127,6 @@ Since the robots should be able to function in the real world the scenario is no
 %
 % Objects section.
 %
-% Revisited by Mauricio Matamoros for 2015
-%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\NumObjects{30\ }
 \def\NumLocations{20\ }
@@ -135,37 +134,41 @@ Since the robots should be able to function in the real world the scenario is no
 
 \subsection{Objects}
 \label{rule:scenario_objects}
-Some tests in the RoboCup@Home league involve recognizing and manipulating \iterm{objects}(See~\reffig{fig:scenario_objects}).
-The TC will compile a list of at least \NumObjects objects for this purpose, assigning them official names.
+Some tests in the RoboCup@Home league involve recognizing and manipulating \iterm{objects} (See~\reffig{fig:scenario_objects}).
 Most objects are likely to be lightweight and easy to grasp with one hand.
-Each object has assigned a category (e.g. an \textit{apple} and a \textit{banana} belong to the \textit{fruits} category).
-Each \iterm{object category} has assigned a \iterm{predefined location} (e.g. an \textit{fruits} can be found in the \textit{kitchen table}).
-Assignments are announced during setup days (See~\refsec{chap:setup_and_preparation}).
-An exemplar of each object is provided before the competition for training.
 
-There are two types of objects:
+There are three types of objects:
 
 \begin{enumerate}
-	\item \textbf{\iterm{Known objects}:} Objects previously known by the robot and that it can identify and manipulate.
+	\item \textbf{\iterm{Standard objects}:} Objects announced prior to the competition.
+	These are \textit{YCB Object and Model Set} IDs 1-10, 19, 21 and 22, representing a selection of food items and household cleaners.
+
+	\item \textbf{\iterm{Known objects}:} Objects announced during the setup days (See~\refsec{chap:setup_and_preparation}).
 	There are two kinds of known objects:
 	\begin{enumerate}
 		\item \textbf{\iterm{Regular objects}:} Objects with no noticeable difference among peers (e.g.~soda can, cereal box, cutlery, etc).
-		\item \textbf{\iterm{Alike objects}:} Objects which are different one from another, but still considered by people to be the same (e.g.~apple, sandwich, cloth, etc.).
+		\item \textbf{\iterm{Alike objects}:} Objects which differ from instance to instance, but are still considered the same by people (e.g.~apple, sandwich, cloth, etc.).
 	\end{enumerate}
 
-	\item \textbf{\iterm{Unknown objects}:} Any other object that is not known beforehand but can be grasped or handled.
+	\item \textbf{\iterm{Unknown objects}:} Any object that is not standard or known.
+
+During setup days, the TC will provide exemplars of standard and known objects as well as an ontology
+describing their official names and designated categories (e.g. an \textit{apple} and a \textit{banana} belong to the \textit{fruits} category).
+Each \iterm{object category} has a \iterm{predefined location} (e.g. an \textit{fruits} can be found in the \textit{kitchen table}).
+
+\paragraph*{Important note:} It is not allowed to modify any of the objects provided for training.
+Teams are not allowed to keep more than 5 of the objects provided for training at a time and must return them after 1 hour.
+
 \end{enumerate}
 
-\subsection{List of Predefined Objects}
+\subsection{Minimal Set of Known Objects}
 \label{rule:scenario_objects_list}
-The minimal configuration consists of:
+
 \begin{itemize}
 	\item \textbf{\iterm{Tableware}:} Dish, bowl, cup (or mug), and napkin.
 	\item \textbf{\iterm{Cutlery}:} Fork, knife, and spoon.
-	\item \textbf{\iterm{Trash Bags}:} Big plastic trashbags, preferrably with handle.
 	\item \textbf{\iterm{Bags}:} Lightweight. With stiff, vertical handles.
 	\item \textbf{\iterm{Disks or books}:} A set of 10 discs (LP, CD, DVD, or BluRay) or books, all of the same kind.
-	\item \textbf{\iterm{Coat rack}:} A rack or pole to hang coats and other clothes.
 	\item \textbf{\iterm{Trays}:} A transport object like a tray or basket. Intended for two-handed manipulation.
 	\item \textbf{\iterm{Pourable}:} An object whose content can be poured (e.g.~muesli, cereal, etc.).
 	\item \textbf{\iterm{Heavy object}:} Weight between 1.0kg and 1.5kg.
@@ -175,8 +178,6 @@ The minimal configuration consists of:
 	\item \textbf{\iterm{Garbage bag}:} A tie-able garbage bag.
 \end{itemize}
 
-\paragraph*{Important note:} It is not allowed to modify any of the objects provided for training.
-Teams are not allowed to keep more than 5 the objects provided for training at a time nor retaining it for more than one hour.
 
 \begin{figure}[H]
 	\centering
@@ -186,23 +187,25 @@ Teams are not allowed to keep more than 5 the objects provided for training at a
 		\label{fig:scenario_container_bowl}\includegraphics[width=0.33\textwidth]{images/container_bowl.png}}~
 	\subfloat[Serving tray]{
 		\label{fig:scenario_container_tray}\includegraphics[width=0.33\textwidth]{images/container_tray.png}}
-	\caption{Example of object containers}
+	\caption{Examples of possible known objects}
 	\label{fig:scenario_containers}
 \end{figure}
 
-\subsection{Attributes of Predefined Objects}
+\subsection{Attributes of Objects}
 \label{rule:scenario_objects_attributes}
-During the competition, objects can be requested based on their category \iterm{object category}, its physical attributes, or a combination of both.
-Relevant attributes to be used are:
+During the competition, objects can be referenced based on their category \iterm{object category}, physical attributes, or a combination of both.
+Attributes that may be used are:
 \begin{itemize}
-	\item Color (e.g. red, blue, black with white dots, etc.).
-	\item Relative estimated size (smallest, largest, big one, etc.).
-	\item Relative estimated weight (lightest, heaviest).
-	\item Relative position (left of, right most, etc.).
-	\item Object description (is fragile, is container, can be poured, requires two hands, etc.).
+	\item Color (e.g. red, blue).
+	\item Pattern (e.g. black with white dots)
+	\item Relative estimated size (e.g. smallest, largest, big one).
+	\item Relative estimated weight (e.g. lightest, heaviest).
+	\item Relative position (e.g. left of, right most).
+	\item Object description (e.g. is fragile, is container, can be poured, requires two hands).
 \end{itemize}
 
-\noindent\textbf{Remark:} Measurements are estimations and based on common sense. It is OK for robots to consider similar objects to be about the same size or weight.
+\noindent\textbf{Remark:} Measurements are common sense estimates.
+It is OK for robots to consider similar objects to be about the same size or weight.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
