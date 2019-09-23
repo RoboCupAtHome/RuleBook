@@ -1,18 +1,18 @@
 \section{Storing Groceries [Housekeeper]}
 \label{test:storing-groceries}
-The robot stores groceries into a pantry shelf while paying attention to sorting objects in their appropriate place, i.e.~storing an apple next to other fruits.
+The robot stores groceries into a pantry shelf while adhering to how objects are arranged in it, i.e. storing an apple next to other fruits.
 
 % \subsection*{Focus}
 % This test focuses on the detection and recognition of objects and their features, as well as object manipulation.
 
 \subsection*{Main Goal}
-Move objects 5 from a table into a shelf, grouping them by category or similarity.
+Move 5 objects from a table into a shelf, grouping them by category or similarity.
 
 \noindent\textbf{Reward:} 500pts (100pts per object).\\
 
 \subsection*{Bonus rewards}
 \begin{enumerate}[nosep]
-	\item Opening the shelf door (300pts)
+	\item Opening the shelf door (100pts)
 	\item Moving a \emph{tiny} object (100pts)
 	\item Moving a \emph{heavy} object (100pts)
 \end{enumerate}
@@ -49,7 +49,7 @@ Move objects 5 from a table into a shelf, grouping them by category or similarit
 		\item Telling or pointing out to the robot where to place an object results in a score reduction of 30pts.
 	\end{itemize}
 
-	\item \textbf{Table} The table's rough location will be announced beforehand, having its position either left, right, or behind the robot.
+	\item \textbf{Table} The table's rough location will be announced beforehand and will be close to the robot's starting position.
 \end{enumerate}
 
 \newpage
