@@ -1,12 +1,12 @@
 \section{Carry My Luggage [Party Host]}
 \label{test:carry-my-luggage}
-The robot helps the operator to carry some luggage to the car which is parked outside.
+The robot helps the operator to carry their luggage to a car which is parked outside.
 
 % \subsection*{Focus}
 % Object identification and manipulation, person-following, and social navigation.
 
 \subsection*{Main Goal}
-The robot helps the operator to carry a bag to the car parked outside.
+The robot helps the operator to carry a bag to a location outside the arena.
 
 \noindent\textbf{Reward:} 500pts.
 
@@ -21,9 +21,9 @@ The robot helps the operator to carry a bag to the car parked outside.
 \begin{itemize}[nosep]
 	\item \textbf{Location}: The test takes place inside and outside the arena.
 
-	\item \textbf{Start Location}: The robot starts at a predefined location in the living room.
+	\item \textbf{Start Location}: The robot starts at a predefined location.
 
-	\item \textbf{Bags:} At least two bags are placed between nearby the operator (within 2m distance and visible to the robot).
+	\item \textbf{Bags:} At least two bags (see \ref{rule:scenario_objects_list}) are placed near the operator, visible to the robot.
 
 	\item \textbf{Operator}: The operator is standing in front of the robot pointing at the bag to be carried out.
 
@@ -33,11 +33,12 @@ The robot helps the operator to carry a bag to the car parked outside.
 \begin{enumerate}[nosep]
 	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied as follows.
 	\begin{itemize}[nosep]
-		\item Handing-over the bag (-100 pts).
-		\item Finding the operator while following her
+		\item Handing the bag over (-100 pts).
+		\item Finding the operator while following them:
 		\begin{itemize}[nosep]
 		\item Natural interaction (e.g.~wave and calling) 100pts score reduction.
 		\item Non-natural interaction (e.g.~raising both hands and jumping) 200pts score reduction.
+		\item Moving back (e.g.~ask the operator to step back in front of the robot) 300pts score reduction.
 		\item Touching the robot (e.g.~pulling the robot's hand) 400pts score reduction.
 		\end{itemize}
 	\end{itemize}
@@ -48,10 +49,10 @@ The robot helps the operator to carry a bag to the car parked outside.
 		\item a small object on the ground,
 		\item a hard-to-see 3D object,
 		and
-		\item a small area blocked using retractable barriers.
+		\item a small area blocked using retractable barriers. Teams can choose to have no obstacles placed if they do not want to go for bonus points. Teams can not pick and choose which obstacles are placed. Either none or all of them.
 	\end{enumerate*}
 
-	\item \textbf{Car Location:} There is no car outside. Instead, a fixed location is supposed as a car location outside the arena.
+	\item \textbf{Car Location:} A location outside the arena. Not announced before the test.
 
 	\item \textbf{Reaching the Car:} The robot can reach the car's location only by following the operator.
 
@@ -76,7 +77,7 @@ The referees need to
 
 2h before test:
 \begin{itemize}[nosep]
-	\item Select and announce the robot's starting point.
+	\item Select and announce the robot's starting position.
 	\item Select which bags will be used.
 \end{itemize}
 
