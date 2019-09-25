@@ -1,20 +1,19 @@
 \section{General Purpose Service Robot [Housekeeper]}
 \label{test:gpsr}
-Similar to a modern smart-speaker, the robot can be asked to do anything from the Stage~I of this rulebook or any previous rulebook.
+The robot can be asked to do anything involving abilities required in Stage~I of this rulebook.
 
 % \subsection*{Focus}
 % This test focuses on the detection and recognition of objects and their features, as well as object manipulation.
 
 \subsection*{Main Goal}
-Execute each of the 3 commands requested by the operator.
+Execute 3 commands requested by the operator.
 
 \noindent\textbf{Reward:} 750pts (250 points per command)\\
 
 \subsection*{Bonus rewards}
 \begin{enumerate}[nosep]
 	\item Understand a command given by naive operator (50pts, each).
-	\item Provide audio recording and transcript (100pts each).
-	\item Autonomously leaving the arena (150pts).
+	\item Autonomously leaving the arena (100pts).
 \end{enumerate}
 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -24,9 +23,7 @@ Execute each of the 3 commands requested by the operator.
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Setup}
 \begin{enumerate}[nosep]
-	\item \textbf{Location:} The task takes place inside the arena (some commands might require the robot to go out). The arena is in its normal state.
-
-	\item \textbf{Start location:} The robot starts outside the arena. When the door opens, the robot moves towards the \textit{Instruction Point}.
+	\item \textbf{Location:} The task mostly takes place inside the arena (some commands might require the robot to go outside).
 
 	\item \textbf{Operators:} A \emph{professional operator} (i.e.~the referee) commands the robot to execute a task.
 \end{enumerate}
@@ -41,38 +38,32 @@ Execute each of the 3 commands requested by the operator.
 \begin{enumerate}[nosep]
 	\item \textbf{Command Generator:} Tasks will be generated using the official \emph{GPSR Command Generator} available 2 months prior to the competition in the official repository.
 
-	\item \textbf{Naive Operators:} Optionally, commands can be issued by a \emph{Naive Operator}, i.e.~a person from the audience with no background on robotics. The referee gives the command to the \emph{Naive Operator}, who will then issue it to the robot (rephrasing is allowed). If the robot consistently fails to understand the naive operator (e.g.~3 times or more), teams can default to a custom operator.
-	\\[2mm]\textbf{Remark:} Referees are not allowed to instruct naive operators on how to operate the robot. \textbf{Teams attempting to instruct or bias the operator will be disqualified}.\\[2mm]
-
-	\item \textbf{Data Recording:} Only when using Naive Operators, a team can get an additional scoring bonus by providing the recording and transcript of the issued commands.
+	\item \textbf{Naive Operators:} Optionally, commands can be issued by a \emph{Naive Operator}, i.e.~a person from the audience with no background in robotics. The referee gives the command to the \emph{Naive Operator}, who will then issue it to the robot (rephrasing is allowed). If the robot consistently fails to understand the naive operator (e.g.~3 times or more), teams can default to a custom operator.
 
 	\item \textbf{Deus ex Machina:} Score reduction applies per given command as follows:
 	\begin{itemize}[nosep]
 	\item \textbf{Custom operator:} Providing a custom operator causes 50pts score reduction.
-	\item \textbf{Further assistance:} Helping a robot to accomplish a task causes 50--200pts score reduction, based on referee criterion.
+	\item \textbf{Further assistance:} Helping a robot to accomplish a task causes a score reduction in line with \ref{rule:continue_scoring}.
 	\item \textbf{Bypassing commands:} A robot instructing a human assistant on how to accomplish the whole task receives no points for the command.
 	\end{itemize}
 
-	\item \textbf{Instruction Point:} At the beginning of the test, and after finishing the first and second command, the robot moves to the \textit{Instruction Point}.
+	\item \textbf{Instruction Point:} At the beginning of the test, and after finishing the first and second command, the robot moves back to the \textit{Instruction Point}.
 
-	\item \textbf{Leaving the arena:} A bonus scoring of 150pts can be earned if the robot autonomously leaves the arena after successfully executing all three given commands.
+	\item \textbf{Leaving the arena:} A bonus scoring of 100pts can be earned if the robot autonomously leaves the arena after successfully  executing (achieve a non-zero score) all three given commands.
 \end{enumerate}
 
 \subsection*{OC instructions}
 \textbf{2 hours before the test}
 \begin{itemize}[nosep]
-	\item Pre-generate and conceal commands for the robots.
+	\item Generate commands for the robots.
 	\item Announce the location of the instruction point.
 	\item Recruit volunteers to assist during the test.
-\end{itemize}
-\textbf{During the test}
-\begin{itemize}[nosep]
-	\item Rearrange the arena to its normal condition.
 \end{itemize}
 
 \subsection*{Referee instructions}
 \begin{itemize}[nosep]
 	\item Provide the commands to the operators.
+	\item Make sure arena is in normal condition.
 \end{itemize}
 
 
