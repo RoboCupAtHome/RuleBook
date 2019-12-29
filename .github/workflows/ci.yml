@@ -1,0 +1,97 @@
+name: CI
+
+on: [push]
+
+jobs:
+  lint:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: LaTeX linter (chktex)
+        uses: j2kun/chktex-action@v1.0.0
+        # Provide this output for context, but don't fail builds
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-rulebook:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: LaTeX compilation
+      uses: dante-ev/latex-action@v0.2.0
+      with:
+        root_file: Rulebook.tex
+    - name: Upload build result
+      uses: actions/upload-artifact@v1
+      with:
+        name: rulebook
+        path: Rulebook.pdf
+    - name: Commit output to GitHub Pages
+      if: github.ref == 'refs/heads/master'
+      run: |
+        # configure git
+        cd "$GITHUB_WORKSPACE"
+        git config --global user.name "Continuous Deployment"
+        git config --global user.email "git@robocupathome.org"
+        git checkout origin/gh-pages
+        mkdir -p rulebook
+        FILENAME=${GITHUB_REF/refs\/heads\//}
+        # Strip out any extra slashes in the rest
+        FILENAME=${FILENAME//\//\_}.pdf
+        cp -f Rulebook.pdf rulebook/$FILENAME
+        git add rulebook/$FILENAME
+        # Remove untracked files
+        git clean -f
+        # If the built PDF is actually different, commit it
+        git diff-index --quiet HEAD || git commit -m "[github actions] deploy"
+    - name: Push to GitHub Pages
+      if: github.ref == 'refs/heads/master'
+      uses: ad-m/github-push-action@v0.5.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
+
+  build-scoresheets:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: LaTeX compilation
+      uses: dante-ev/latex-action@v0.2.0
+      with:
+        root_file: score_sheets.tex
+    - name: Upload build result
+      uses: actions/upload-artifact@v1
+      with:
+        name: score_sheets
+        path: score_sheets.pdf
+    - name: Commit output to GitHub Pages
+      if: github.ref == 'refs/heads/master'
+      run: |
+        # configure git
+        cd "$GITHUB_WORKSPACE"
+        git config --global user.name "Continuous Deployment"
+        git config --global user.email "git@robocupathome.org"
+        git checkout origin/gh-pages
+        mkdir -p score_sheets
+        FILENAME=${GITHUB_REF/refs\/heads\//}
+        # Strip out any extra slashes in the rest
+        FILENAME=${FILENAME//\//\_}.pdf
+        cp -f score_sheets.pdf score_sheets/$FILENAME
+        git add score_sheets/$FILENAME
+        # Remove untracked files
+        git clean -f
+        # If the built PDF is actually different, commit it
+        git diff-index --quiet HEAD || git commit -m "[github actions] deploy"
+    - name: Push to GitHub Pages
+      if: github.ref == 'refs/heads/master'
+      uses: ad-m/github-push-action@v0.5.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages

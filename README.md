@@ -1,12 +1,14 @@
 RuleBook for RoboCup @Home 2019
 ===============================
 
+![](https://github.com/RoboCupAtHome/RuleBook/workflows/CI/badge.svg?branch=master)
+
 The 2019 rulebook state is **FINAL**.
 
 Only spelling corrections and minor clarificatios may be merged from now on, as well as buffs to the scoresheets to enhance scoring.
 All work for the Rulebook of 2020 shall be pushed into to 2020/Rulebook.
 
-[On-the-fly compiled LaTeX version](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=Rulebook.tex)
+[On-the-fly compiled LaTeX version](https://robocupathome.github.io/RuleBook/rulebook/master.pdf)
 
 [Released PDF version](https://athome.robocup.org/wp-content/uploads/2019_rulebook.pdf)
 
