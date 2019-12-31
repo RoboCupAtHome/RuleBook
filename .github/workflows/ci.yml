@@ -89,5 +89,5 @@ jobs:
       if: github.ref == 'refs/heads/master'
       uses: ad-m/github-push-action@v0.5.0
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.DEPLOY_PAT }}
         branch: gh-pages
