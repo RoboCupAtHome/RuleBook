@@ -17,12 +17,11 @@
 %%% MACROS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{./setup/active_version.tex}
 \graphicspath{{\YEAR/}{./images/}}
-\input{./setup/macros.tex}
 \input{./setup/abbrevix.tex}
+\input{./setup/macros.tex}
 
 
-
-\makeindex                                % generate index
+\makeindex                               % generate index
 \makeabbex                                % generate abbreviations
 
 
@@ -62,27 +61,29 @@
 \chapter{Tests in Stage I}
 \label{chap:stage_I}
 
-\section*{Housekeeper tasks}
-\testtocentry{test:clean-up}
-\testtocentry{test:gpsr}
+\section*{Housekeeper}
+\testtocentry{test:tidy-up}
 \testtocentry{test:storing-groceries}
+\testtocentry{test:gpsr}
 
 
-\section*{Party Host tasks}
+\section*{Party Host}
 \testtocentry{test:carry-my-luggage}
 \testtocentry{test:receptionist}
 
 % Uncomment to get aesthetic improvement
-\cleardoublepage
-\input{tasks/CarryMyLuggage}
 \newpage
-\input{tasks/CleanUp}
-\newpage
-\input{tasks/GPSR}
-\newpage
-\input{tasks/Receptionist}
+\input{tasks/TidyUp}
 \newpage
 \input{tasks/StoringGroceries}
+\newpage
+\input{tasks/GPSR}
+\clearpage
+\input{tasks/CarryMyLuggage}
+\newpage
+\input{tasks/Receptionist}
+
+
 
 
 
@@ -92,16 +93,16 @@
 \chapter{Tests in Stage II}
 \label{chap:stage_II}
 
-\section*{Housekeeper tasks}
+\section*{Housekeeper}
 \testtocentry{test:clean-the-table}
 \testtocentry{test:egpsr}
 
-\section*{Party Host tasks}
+\section*{Party Host}
 \testtocentry{test:hand-me-that}
 \testtocentry{test:restaurant}
 
 % Uncomment to get aesthetic improvement
-\cleardoublepage
+\newpage
 \input{tasks/CleanTable}
 \newpage
 \input{tasks/EGPSR}

@@ -1,20 +1,22 @@
-\section{Storing Groceries [Housekeeper]}
+\section{Storing Groceries}
 \label{test:storing-groceries}
-The robot stores groceries into a pantry shelf while paying attention to sorting objects in their appropriate place, i.e.~storing an apple next to other fruits.
+The robot stores groceries into a pantry shelf while adhering to how objects are arranged in it, i.e., storing an apple next to other fruits.
+
+\noindent \textbf{Focus:} \SysI, \MAN, \CV, \OR.
 
 % \subsection*{Focus}
 % This test focuses on the detection and recognition of objects and their features, as well as object manipulation.
 
 \subsection*{Main Goal}
-Move objects 5 from a table into a shelf, grouping them by category or similarity.
+Move 5 objects from a table into a shelf, grouping them by category or similarity.
 
-\noindent\textbf{Reward:} 500pts (100pts per object).\\
+\noindent\textbf{Reward:} 500pts (100pts per object).
 
-\subsection*{Bonus rewards}
+\subsection*{Bonus Rewards}
 \begin{enumerate}[nosep]
-	\item Opening the shelf door (300pts)
-	\item Moving a \emph{tiny} object (100pts)
-	\item Moving a \emph{heavy} object (100pts)
+	\item Opening the shelf door (100pts).
+	\item Moving a \emph{tiny} object (200pts).
+	\item Moving a \emph{heavy} object (200pts).
 \end{enumerate}
 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,18 +24,21 @@ Move objects 5 from a table into a shelf, grouping them by category or similarit
 % Setup
 %
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Setup}
+\subsection*{Setup and Procedure}
 \begin{enumerate}
 	\item \textbf{Location:} The testing area has a shelf and a table nearby.
 
 	\item \textbf{Shelf:} The shelf contains objects arranged in groups either by category or likeliness.
 
-	\item \textbf{Shelf door:} The shelf door is open by default.
+	\item \textbf{Shelf Door:} The shelf door is open by default.
 	The team leader can request the door to be closed and score additional points for opening it. If the robot fails to open the door, it must clearly state it and request the referee to open it.
 
 	\item \textbf{Objects:} Some of the objects are placed behind the door and cannot be accessed unless the door is open.
+	
+	\item \textbf{Heavy and Tiny Objects:} Objects used in this test are lightweight and average-sized.
+	The team leader can, however, request a tiny and a heavy object to be used and score additional points for picking them.
 
-	\item \textbf{Table:} The table has 5--10 objects placed on it and the robot can choose which ones to grasp and in what order. On small tables, objects will be added as the robot frees up space.
+	\item \textbf{Table} The table's rough location will be announced beforehand, having its position either left, right, or behind the robot.
 \end{enumerate}
 
 
@@ -42,18 +47,26 @@ Move objects 5 from a table into a shelf, grouping them by category or similarit
 % Additional Rules
 %
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Additional rules and remarks}
+\subsection*{Additional Rules and Remarks}
 \begin{enumerate}
-		\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per object as follows:
+	\item \textbf{Partial scoring:} The main task allows partial (per object) scoring.
+	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per object as follows:
 	\begin{itemize}[nosep]
 		\item Telling or pointing out to the robot where to place an object results in a score reduction of 30pts.
+		\item Since the test focuses on manipulation, asking a human to handle an object results in full score reduction.
 	\end{itemize}
-
-	\item \textbf{Table} The table's rough location will be announced beforehand, having its position either left, right, or behind the robot.
 \end{enumerate}
 
-\newpage
-\subsection*{OC instructions}
+\subsection*{Referee Instructions}
+The referee needs to
+\begin{itemize}
+	\item Place objects in the shelf, grouping them by likeliness.
+	\item Place 5--10 objects on the table.
+	\item Ask teams whether they want the shelf door opened.
+	\item Ask teams whether they want a heavy or tiny object.
+\end{itemize}
+
+\subsection*{OC Instructions}
 
 \textbf{2 hours before the test}
 \begin{itemize}
@@ -61,17 +74,11 @@ Move objects 5 from a table into a shelf, grouping them by category or similarit
 	\item Announce a rough location for the table.
 \end{itemize}
 
-\subsection*{Referee instructions}
-The referee needs to
-\begin{itemize}
-	\item Place objects in the shelf, grouping them by likeliness.
-	\item Open the door of the shelf.
-	\item Place 5--10 objects on the table.
-\end{itemize}
+
 
 
 % \newpage
-\subsection*{Score sheet}
+\subsection*{Score Sheet}
 \input{scoresheets/StoringGroceries.tex}
 
 % Local Variables:

@@ -1,21 +1,19 @@
-\section{Enhanced General Purpose Service Robot [Housekeeper]}
+\section{Enhanced General Purpose Service Robot}
 \label{test:egpsr}
-Similar to a modern smart-speaker, the robot can be asked to do anything, in plain English, from either Stage of this and former rulebooks.
+The robot can be asked to do anything involving abilities required in \SONE{} and \STWO{} of this rulebook.
 
-% \subsection*{Focus}
-% This test focuses on the detection and recognition of objects and their features, as well as object manipulation.
+\noindent \textbf{Focus:} \SysI{}.
 
 \subsection*{Main Goal}
-Execute at least one of the 3 commands requested by the operator.
+Execute 3 commands requested by the operator.
 
-\noindent\textbf{Reward:} 1500pts (500 points per task)\\
+\noindent\textbf{Reward:} 1500pts (500 points per command).
 
-\subsection*{Bonus rewards}
+\subsection*{Bonus Rewards}
 \begin{enumerate}[nosep]
-	\item Attend when called (125pts).
 	\item Understand a command given by naive operator (150pts, each).
-	\item Provide audio recording and transcript (100pts each).
-	\item Autonomously leaving the arena (150pts).
+	\item Autonomously leaving the arena (100pts).
+	\item Complete all 3 commands in time with minimal help (200pts).
 \end{enumerate}
 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -23,13 +21,17 @@ Execute at least one of the 3 commands requested by the operator.
 % Setup
 %
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Setup}
+\subsection*{Setup and Procedure}
 \begin{enumerate}
-	\item \textbf{Location:} The task takes place inside the arena (some commands might require the robot to go out). The arena is in its normal state.
+	\item \textbf{Location:} The test mostly takes place inside the arena (some commands might require the robot to go outside).
+	
+	\item \textbf{Instruction Point:} An instruction point is assigned inside the arena where the robot has to go to receive a command.
 
-	\item \textbf{Start location:} The robot starts outside the arena. When the door opens, the robot moves towards the \textit{Standby Point}.
+	\item \textbf{Operators:} A \emph{professional} operator (i.e.~the referee) gives the commands. Optionally, teams can choose to receive commands by a \emph{naive} operator who has no background in robotics, i.e., an audience member. If the robot consistently fails to understand a command, the team can use a \CustomOperator{}
 
-	\item \textbf{Operators:} A \emph{professional operator} (i.e.~the referee) commands the robot by default.
+	\item \textbf{Command Generator:} Commands will be generated using the official \CommandGen{} available 2 months prior to the competition in the official repository\footnotemark \footnotetext{\url{https://github.com/kyordhel/GPSRCmdGen}}.
+	
+	\item \textbf{Minimal Help:} To score this bonus, the robot needs to complete the commands while requesting relatively few \abb{DEMs} compared to other teams. This is up to the consideration of the \abb{TC}.
 \end{enumerate}
 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,53 +39,34 @@ Execute at least one of the 3 commands requested by the operator.
 % Additional Rules
 %
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Additional rules and remarks}
+\subsection*{Additional Rules and Remarks}
 \begin{enumerate}[nosep]
-	\item \textbf{Partial scoring:} The main task allows partial (per \emph{completed} command) scoring.
-	\item \textbf{Command Generator:} Tasks will be generated using the official \emph{GPSR Command Generator} available 2 months prior to the competition in the official repository. Commands for EGPSR are either Stage~II tasks, complex commands requiring to perform chains of subtasks in sequence, or \emph{incomplete} commands lacking relevant information to succeed.
-
-	\item \textbf{Naive Operators:} Commands can be issued by a \emph{Naive Operator} who receives a note-card with the summarized command from the referee and rephrases it.\\[0pt]
-	\textbf{Remark:} Teams attempting to instruct or bias the operator will be disqualified.
-
-	\item \textbf{Custom Operator fallback:} If the robot consistently fails to understand the naive or professional operator (i.e.~3 times), the referee will request a custom operator.
-
-	\item \textbf{Data Recording:} Only when using Naive Operators, a team can get an additional scoring bonus by providing the recording and transcript of the issued commands.
-
+	\item \textbf{Partial Scoring:} The main task allows partial (per command) scoring.
+	
 	\item \textbf{Deus ex Machina:} Score reduction applies per given command as follows:
 	\begin{itemize}[nosep]
-	\item \textbf{Custom operator:} Providing a custom operator causes 150pts score reduction.
-	\item \textbf{Further assistance:} Helping a robot to accomplish a task causes 50--400pts score reduction, based on referee criterion and number of bypassed subtasks.
-	\item \textbf{Bypassing commands:} A robot instructing a human assistant on how to accomplish the whole task receives no points for the command.
+		\item \textbf{Custom Operator:} Choosing a custom operator causes a score reduction of 100pts.
+		\item \textbf{Further Assistance:} Helping a robot accomplish a task causes a score reduction in line with \ref{sec:rules:demscoring} and other \STWO{} tests.
 	\end{itemize}
-
-	\item \textbf{Attending when called:} The robot should approach to the operator when called (e.g.~by saying\textit {Robot, I need help!}). The operator may call the robot from a different room.
-
-	\item \textbf{Robot Standby Point:} At the beginning of the test, and after finishing the first and second command, the robot moves to the \textit{Robot Standby Point}.
-
-	\item \textbf{Leaving the arena:} A bonus scoring of 100pts can be earned if the robot autonomously leaves the arena after successfully executing all three given commands.
 \end{enumerate}
 
-\subsection*{OC instructions}
 
+\subsection*{Referee Instructions}
+\begin{itemize}[nosep]
+	\item Provide the commands to the operators.
+	\item Make sure the \Arena{} is in normal condition.
+\end{itemize}
+
+
+\subsection*{OC Instructions}
 \textbf{2 hours before the test}
-\begin{itemize}
-	\item Generate the commands and prepare the note-cards, hiding them from teams.
-	\item Announce the location of the \emph{Standby Point}.
+\begin{itemize}[nosep]
+	\item Generate commands.
+	\item Announce the location of the instruction point.
 	\item Recruit volunteers to assist during the test.
 \end{itemize}
 
-\textbf{During the test}
-\begin{itemize}[nosep]
-	\item Rearrange the arena to its normal condition.
-\end{itemize}
-
-\subsection*{Referee instructions}
-\begin{itemize}
-	\item Provide the note-cards to the operators.
-	\item Tell the operator from where to call the robot.
-\end{itemize}
-
-\subsection*{Score sheet}
+\subsection*{Score Sheet}
 \input{scoresheets/EGPSR.tex}
 
 % Local Variables:

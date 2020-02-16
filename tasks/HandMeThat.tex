@@ -1,91 +1,61 @@
-\section{Hand Me That [Party Host]}
+\section{Hand Me That}
 \label{test:hand-me-that}
-A guest at the party speaks English, but with only a limited vocabulary. The robot will assist them in obtaining things that they gesture for.
+A guest asks the robot to identify objects in the household.
 
-%\subsection{Focus}
-%Joint attention is a well-studied and important task in Human-Robot Interaction. The goal of this task is to really challenge the teams to perform a hard HRI task.
+\noindent \textbf{Focus:} \SysI{}, \HRI{}, \GestRec{}, \CV{}, \OR{}.
+
 
 \subsection*{Main Goal}
-The robot identifies (touching or naming) each object at which the operator is pointing at.
+The robot names 5 objects, the operator is pointing at.
 
-\noindent\textbf{Reward:} 2500pts (500pts per object)
+\noindent\textbf{Reward:} 1000pts (200pts per object).
 
 
-% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Setup
-%
-% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Setup}
+\subsection*{Bonus Rewards}
 \begin{enumerate}[nosep]
-	\item \textbf{Location:} This takes place in a room in the arena.
-
-	\item \textbf{Starting position:} The robot and the operator stand in a predefined location announced beforehand % (OC instructions: announce this 2 hours before the test).
-
-	\item \textbf{Groups of Objects:} There are five groups of 2--5 objects randomly placed along the room
-
-	\item \textbf{Deck:} The referee has a deck of objects to request, one per group, sorted by distance.
-
+	\item The robot understands two different non-verbal commands, e.g., nodding, gesturing for the robot to follow (250pts).
+	\item The robot names one feature that is unique to the object in its group (100pts, each).
 \end{enumerate}
 
 
-% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Procedure
-%
-% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Procedure}
+\subsection*{Setup and Procedure}
 \begin{enumerate}[nosep]
-	\item \textbf{Pick an object} The robot asks the operator: \emph{what do you need?}. % We rule out natural language interaction
-	Then
-	\begin{enumerate}[nosep]
-		\item The operator walks near to the object and points at it.
-		\item The asks as many questions as necessary.
-		\item The operator replies to each question (most likely with \emph{yes}, \emph{no}, \emph{I don't know}, etc).
-		\\\textbf{Remark:} The operator does not know the name of the object.
-	\end{enumerate}
-  \item \textbf{Repeat} Repeat up to 5 times for the maximum score.
+	\item \textbf{Location:} This test takes place inside the \Arena{}.
+
+	\item \textbf{Groups of Objects:} There are five groups of 2--5 \KnownObjects{} randomly placed on the floor.
+	
+	\item \textbf{Guest:} The guest is one of the referees. They will step in front of the robot after it enters the \Arena{} and guide them to a group of objects where they point at one.
+
+	\item \textbf{Naming:} The robot needs to tell the guest the official name of the object.
+
+	\item \textbf{Skipping Groups:} The robot can decide to pass on an object. The guest will move on to the next group. They robot cannot request to go back at a later time.
+	
+	\item \textbf{Non-Verbal Commands:} The team leader can tell the referee that the robot can recognize non-verbal commands. The team is not allowed to instruct the guest. Interaction must be guided by the robot.
 \end{enumerate}
 
 
-% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Additional Rules
-%
-% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Additional rules and remarks}
+\subsection*{Additional Rules and Remarks}
 \begin{enumerate}[nosep]
-	\item \textbf{Keep going:} The robot should keep trying to determine the referred to object until they score or run out of time.
-
-	\item \textbf{Skipping groups:} The robot may say \emph{Pass} or \emph{I give up} to try with the next object.
-
-	\item \textbf{Incorrect guesses:} Incorrect guesses reduce the value of the correct guess by 200 points, each, the first two times. Guessing correctly on the third or fourth attempt is worth 100 points. After the fourth guess is worth no points.
-
-	\item\textbf{Colors and categories:} Asking for the color or category of a pointed object applies a penalty of 400 points for that particular object.
-
-	\item\textbf{Uneducated operator:} The referee may instruct the operator to answer \emph{I don't understand} or \emph{I don't know} if the robot asks complex questions or is attempting blind guessing.
-
-	\item \textbf{Groups of Objects:} A group consists of 2--5 random standard objects (see~\refsec{rule:scenario_objects}), separated one from another for about 2.5--10cm.
-	The average distance between the starting position and each group ranges between 50cm and 150cm.
-
+	\item \textbf{Partial Scoring:} The main task allows partial (per object) scoring.
+	
+	\item \textbf{Deus ex Machina:} Score reduction applies per object as follows:
+	\begin{itemize}[nosep]
+		\item \textbf{Asking Yes or No Questions:} Asking yes or no questions about the object (e.g. Is the object yellow?), reduce the score by 50pts.
+		\item \textbf{Asking Attribute Questions:} Asking questions about attributes of the object (e.g. What color is the object?), reduce the score by 100pts.
+		\item \textbf{Interacting with Objects:} Asking the operator to pick up the object or move it closer reduce the score by 150pts.
+	\end{itemize}
 \end{enumerate}
 
-\subsection*{Referee instructions}
+
+\subsection*{Referee Instructions}
 
 The referee needs to
 \begin{itemize}[nosep]
-	\item Rearrange and mix groups between runs
-	\item Verify that the operator is pointing at the right item
+	\item Place the groups of objects.
+	\item Chose which objects to point at.
 \end{itemize}
 
-\subsection*{OC instructions}
-During Setup days:
-\begin{itemize}[nosep]
-	\item Announce the starting position of the robot.
-\end{itemize}
-
-
-\subsection*{Score sheet}
+\subsection*{Score Sheet}
 \input{scoresheets/HandMeThat.tex}
 
 % Local Variables:
