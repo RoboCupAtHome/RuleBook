@@ -26,7 +26,7 @@ Execute 3 commands requested by the operator.
 	
 	\item \textbf{Instruction Point:} An instruction point is assigned inside the arena where the robot has to go to receive a command.
 	
-	\item \textbf{Operators:} A \emph{professional} operator (i.e.~the referee) gives the commands. Optionally, teams can choose to receive commands by a \emph{naive} operator who has no background in robotics, i.e., an audience member. The team can decide to use a \CustomOperator{} outright or after the robot fails to understand the professional operator.
+	\item \textbf{Operators:} A \emph{professional} operator (i.e.~the referee) gives the commands. Optionally, teams can choose to receive commands by a \emph{naive} operator who has no background in robotics, i.e., an audience member. The team can decide to use a \CustomOperator{} outright or after the robot fails to understand the professional or naive operator.
 	
 	\item \textbf{Command Generator:} Commands will be generated using the official \CommandGen{} available 2 months prior to the competition in the official repository\footnotemark \footnotetext{\url{https://github.com/kyordhel/GPSRCmdGen}}.
 \end{enumerate}
@@ -45,9 +45,9 @@ Execute 3 commands requested by the operator.
 		
 	\item \textbf{Deus ex Machina:} Score reduction applies per given command as follows:
 	\begin{itemize}[nosep]
-	\item \textbf{Custom Operator:} Choosing a custom operator to understand a command causes a score reduction of 50pts.
-	\item \textbf{Alternative HRI:} Using an alternative HRI to understand a command causes a score reduction of 75pts.
-	\item \textbf{Further Assistance:} Helping a robot accomplish a task causes a score reduction in line with \ref{sec:rules:demscoring} and other \SONE{} tests.
+		\item \textbf{Custom Operator:} Choosing a custom operator to understand a command causes a score reduction of 50pts.
+		\item \textbf{Alternative HRI:} Using an alternative HRI to understand a command causes a score reduction of 75pts.
+		\item \textbf{Further Assistance:} Helping a robot accomplish a task causes a score reduction in line with \ref{sec:rules:demscoring} and other \SONE{} tests.
 	\end{itemize}
 \end{enumerate}
 
