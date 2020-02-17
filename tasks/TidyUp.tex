@@ -5,13 +5,13 @@
 \noindent \textbf{Focus:} \SysI, \NAV, \CV, \OR, \MAN.
 
 \subsection*{Main Goal}
-Find all misplaced objects in a room and bring them to their predefined locations.
+Find 5 misplaced objects in a room and bring them to their predefined locations.
 
 \noindent\textbf{Reward:} 500pts (100pts per object).
 
 \subsection*{Bonus Rewards}
 \begin{enumerate}[nosep]
-	\item Taking out the garbage first (100pts).
+	\item Taking out the garbage (100pts).
 	\item Moving a \emph{tiny} object (200pts).
 	\item Moving a \emph{heavy} object (200pts).
 \end{enumerate}
@@ -21,15 +21,15 @@ Find all misplaced objects in a room and bring them to their predefined location
 \begin{itemize}[nosep]
 	\item \textbf{Location:} A random room in the arena.
 	\item \textbf{Instruction:} Nearby the entrance, an operator tells the robot which room to clean.
-	\item \textbf{Objects:} There are 5--10 misplaced objects at random locations in the room. Objects can be anywhere, including the floor, seats, and on furniture.
+	\item \textbf{Objects:} There are 5 misplaced objects at random locations in the room. Objects can be anywhere, including the floor, seats, and on furniture.
 	All objects are clearly visible (i.e.~no occlusions) and can be:
 	\begin{itemize}[nosep]
 		\item\KnownObjects{}: Regular, alike, and standard objects.
-		\item\UnknownObjects{}: Garbage lying around at grasping distance (2--3 objects).
+		\item\UnknownObjects{}: Garbage lying around (2--3 objects).
 	\end{itemize}
 	\item \textbf{Heavy and Tiny Objects:} Objects used in this test are lightweight and average-sized.
-	However, The team leader can request a tiny and a heavy object to be used and score additional points for picking them.
-	\item \textbf{Bin:} There is an already tied trash bag inside the bin which the robot can bring to a predefined collection zone to score additional points. The unknown objects must be placed inside the, either emptied or still full, bin, not thrown or dropped.
+	However, the team leader can request a tiny and a heavy object to be used and score additional points for moving them.
+	\item \textbf{Bin:} There is an already tied trash bag inside the bin which the robot can bring to a predefined collection zone to score additional points. The unknown objects must be placed or dropped inside the, either emptied or still full, bin.
 \end{itemize}
 
 \subsection*{Additional Rules and Remarks}
@@ -38,15 +38,13 @@ Find all misplaced objects in a room and bring them to their predefined location
 	
 	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per object as follows:
 	\begin{itemize}[nosep]
-		\item Telling the robot where an object can be found causes a reduction of 30\% in scoring for that particular object.
+		\item \textbf{Request Object Locations by Speech:} Telling the robot where an object can be found or should be placed causes a reduction of 30\% in scoring for that particular object.
 		
-		\item Pointing at an object to be picked up causes a reduction of 40\% in scoring for that particular object.
+		\item \textbf{Request Object Locations by Gesture:} Pointing at an object to be picked up or where to place an object causes a reduction of 40\% in scoring for that particular object.
 		
-		\item Guiding the robot nearby the location where an object can be found causes a reduction of 20\% in scoring for that particular object.
+		\item \textbf{Request Object Locations by Guiding:} Guiding the robot nearby the location where an object can be found or should be placed causes a reduction of 20\% in scoring for that particular object.
 		
-		\item Telling the robot where the object should be placed or the object's category causes a reduction of 30\% in scoring for that particular object.
-		
-		\item Having a human interact physically with an object causes a reduction of 60\% in scoring for that particular object.
+		\item \textbf{Request Object Interaction:} Having a human pick up or place an object causes a reduction of 60\% in scoring for that particular object.
 	\end{itemize}
 \end{enumerate}
 
