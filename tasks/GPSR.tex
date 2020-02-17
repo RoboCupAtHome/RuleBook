@@ -12,7 +12,7 @@ Execute 3 commands requested by the operator.
 \subsection*{Bonus Rewards}
 \begin{enumerate}[nosep]
 	\item Understand a command given by naive operator (50pts, each).
-	\item Autonomously leaving the arena through the exit (100pts).
+	\item Autonomously leaving the arena after completing all 3 commands (100pts).
 \end{enumerate}
 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -26,7 +26,7 @@ Execute 3 commands requested by the operator.
 	
 	\item \textbf{Instruction Point:} An instruction point is assigned inside the arena where the robot has to go to receive a command.
 	
-	\item \textbf{Operators:} A \emph{professional} operator (i.e.~the referee) gives the commands. Optionally, teams can choose to receive commands by a \emph{naive} operator who has no background in robotics, i.e., an audience member. If the robot consistently fails to understand a command, the team can use a \CustomOperator{}.
+	\item \textbf{Operators:} A \emph{professional} operator (i.e.~the referee) gives the commands. Optionally, teams can choose to receive commands by a \emph{naive} operator who has no background in robotics, i.e., an audience member. The team can decide to use a \CustomOperator{} outright or after the robot fails to understand the professional operator.
 	
 	\item \textbf{Command Generator:} Commands will be generated using the official \CommandGen{} available 2 months prior to the competition in the official repository\footnotemark \footnotetext{\url{https://github.com/kyordhel/GPSRCmdGen}}.
 \end{enumerate}
@@ -39,15 +39,19 @@ Execute 3 commands requested by the operator.
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Additional Rules and Remarks}
 \begin{enumerate}[nosep]
+	\item \textbf{Not Going to Instruction Point:} If the robot requests commands from somewhere else than the instruction point, a score reduction of 50 pts is applied.
+	
 	\item \textbf{Partial scoring:} The main task allows partial (per command) scoring.
 		
 	\item \textbf{Deus ex Machina:} Score reduction applies per given command as follows:
 	\begin{itemize}[nosep]
-	\item \textbf{Custom Operator:} Choosing a custom operator causes a score reduction of 50pts.
+	\item \textbf{Custom Operator:} Choosing a custom operator to understand a command causes a score reduction of 50pts.
+	\item \textbf{Alternative HRI:} Using an alternative HRI to understand a command causes a score reduction of 75pts.
 	\item \textbf{Further Assistance:} Helping a robot accomplish a task causes a score reduction in line with \ref{sec:rules:demscoring} and other \SONE{} tests.
 	\end{itemize}
 \end{enumerate}
 
+\newpage
 
 \subsection*{Referee Instructions}
 \begin{itemize}[nosep]
