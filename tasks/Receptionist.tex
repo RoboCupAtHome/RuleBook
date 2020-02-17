@@ -4,11 +4,13 @@ The robot has to take two new guests to the living room to introduce them and of
 
 \noindent \textbf{Focus:} \SysI{}, \HRI{}, \PerDet{}, \PerRec.
 
+\vspace{-5pt}
 \subsection*{Main Goal}
 Introduce and usher two newcomers to a party.
 
 \noindent\textbf{Reward:} 500pts (250pts per guest).
 
+\vspace{-5pt}
 \subsection*{Bonus Rewards}
 \begin{enumerate}[nosep]
 	\item Opening the entrance door to a guest (200pts each).
@@ -24,9 +26,9 @@ Introduce and usher two newcomers to a party.
 	
 	\item \textbf{Entrance:} The entrance door is open by default. The team leader can request to close the door to score additional points by opening it for the guests.
 
-	\item \textbf{Host:} The host will be announced one day before the test, as well as, his name and favorite drink. The host is already sitting in the living room.
+	\item \textbf{Host:} The host's name and favorite drink will be announced before the test. The host is already sitting in the living room.
 
-	\item \textbf{Guests:} Both guests have a name and favorite drink. An arriving guest will either step in front of the robot or knock on the closed door. Guests have to be escorted to the living room to be introduced.
+	\item \textbf{Guests:} Both guests have a name and favorite drink. An arriving guest will either step in front of the robot or knock on the closed door. Guests have to be guided to the living room to be introduced.
 
 	\item \textbf{Introductions:} When introducing guests, the robot must clearly identify the person being introduced and state their name and favorite drink. Introducing two people means to introduce them to each other.
 	
@@ -34,28 +36,31 @@ Introduce and usher two newcomers to a party.
 	
 	\item \textbf{Switching Places:} Guests may switch places after they were seated.
 	
-	\item \textbf{Misunderstood:} The robot may ask repeatedly for the name and favorite drink of guests if it has not understood them. But, continuing with a wrong name or drink results in a penalty of 50pts.
-	
-	\item \textbf{Describing the First Guest:} The robot can earn earn bonus points by describing the first guest to the second one. At least 4 characteristics have to be named, i.e., color of clothes, color of hair, gender, and age.
+	\item \textbf{Describing the First Guest:} Naming at least 4 characteristics of the first guest, i.e., color of clothes, color of hair, gender, and age, earns bonus points.
 \end{itemize}
+%\baselineskip
 
 \subsection*{Additional Rules and Remarks}
 \begin{enumerate}[nosep]
+	\item \textbf{Misunderstanding:} Not understanding the guests and asking them again is fine. Continuing with a wrong name or drink causes a score reduction of 50pts.
+		
 	\item \textbf{Partial Scoring:} The main task allows partial (per guest) scoring.
 	
 	\item \textbf{Deus ex Machina:} Score reduction applies per guest as follows:
 	\begin{itemize}[nosep]
-		\item \textbf{Alternative HRI:} If the guest has to use alternative means to tell the robot their name and favorite drink, score is reduced by 50pts.
+		\item \textbf{Custom Operator:} Since the main focus of the test is HRI, no custom operator can be chosen.
+		\item \textbf{Alternative HRI:} Using an alternative HRI to understand a guest causes a score reduction of 75pts.
 		\item \textbf{Recognizing People:} If the robot has to ask for help to identify people, score is reduced by 200pts. 
 	\end{itemize}
 \end{enumerate}
 
+\newpage
 
 \subsection*{Referee Instructions}
 
 The referees need to
 \begin{itemize}
-	\item Assign name and drink to 4 volunteers.
+	\item Assign name and drink to volunteers.
 	\item Arrange (and re-arrange) people in the living room.
 	\item Ask team leader whether to close the door.
 \end{itemize}
@@ -65,6 +70,7 @@ The referees need to
 2h before test:
 \begin{itemize}
 	\item Announce starting position.
+	\item Announce host's name and favorite drink.
 	\item Recruit volunteers as host and guests.
 \end{itemize}
 
