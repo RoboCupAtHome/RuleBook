@@ -1,22 +1,20 @@
-RuleBook for RoboCup @Home 2019
+RuleBook for RoboCup @Home 2019 [![](https://github.com/RoboCupAtHome/RuleBook/workflows/CI/badge.svg?branch=master)](https://github.com/RoboCupAtHome/RuleBook/actions?query=workflow%3ACI)
 ===============================
-
-![](https://github.com/RoboCupAtHome/RuleBook/workflows/CI/badge.svg?branch=master)
 
 The 2019 rulebook state is **FINAL**.
 
 Only spelling corrections and minor clarificatios may be merged from now on, as well as buffs to the scoresheets to enhance scoring.
 All work for the Rulebook of 2020 shall be pushed into to 2020/Rulebook.
 
-[On-the-fly compiled LaTeX version](https://robocupathome.github.io/RuleBook/rulebook/master.pdf)
+[Current PDF (master)](https://robocupathome.github.io/RuleBook/rulebook/master.pdf)
 
-[Released PDF version](https://athome.robocup.org/wp-content/uploads/2019_rulebook.pdf)
+[Released PDF version (2019)](https://athome.robocup.org/wp-content/uploads/2019_rulebook.pdf)
 
 RoboCup@Home teams and team members are welcome to post GitHub issues for clarifications, questions etc.
 
 Improvements are also welcome in the form of pull requests (see [guidelines](https://github.com/RoboCupAtHome/RuleBook/wiki/Guidelines)).
 
-[Score sheets](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=score_sheets.tex)
+[Score sheets (master)](https://robocupathome.github.io/RuleBook/score_sheets/master.pdf)
 
 ### FAQ
 See the Frequently Asked Questions [here](https://github.com/RoboCupAtHome/RuleBook/wiki/FAQ:-Frequently-Asked-Questions).
