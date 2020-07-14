@@ -444,7 +444,7 @@
 	% [INTERNAL] writes down the line for the final total score %%%
 	\newcommand{\scoreTotal}{%
 		\\%
-		\textbf{Total score~}%
+		\textbf{Total Score~}%
 		\ifShortScoresheet{%
 			(excluding penalties and standard bonuses) &%
 			\textit{\thecurrTestScoreTotalWithoutBonus}%
@@ -553,14 +553,14 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% Special penalties & bonuses %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\scoreheading{Special penalties \& standard bonuses}
+	\scoreheading{Special Penalties \& Bonuses}
 
 	% not showing up penalty %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\penaltyitem{\notattendingpenalty}{Not attending \ifShortScoresheet{(see sec.~\ref{rule:not_attending})}{}}
+	\penaltyitem{\notattendingpenalty}{Not attending \ifShortScoresheet{(see sec.~\ref{sec:rules:missingslot})}{}}
 
 	% require signal for door opening %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\ifthenelse{ \equal{\scorelistStartButton}{true} }{
-	  \penaltyitem{\scorelistStartButtonPenalty}{Using start button \ifShortScoresheet{(see sec.~\ref{rule:start_button})}{}}
+	  \penaltyitem{\scorelistStartButtonPenalty}{Using alternative start signal \ifShortScoresheet{(see sec.~\ref{sec:rules:startsignal})}{}}
 	}{}
 
 	% data recording bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -572,12 +572,12 @@
 	}{}%
 
 	% outstanding performance bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\ifthenelse{%
-		\value{currOutstandingBonus}>0 \AND %
-		\equal{\scorelistOutstanding}{true}%
-	}{%
-		\bonusitem{\thecurrOutstandingBonus}{Outstanding performance~\ifShortScoresheet{(see sec.~\ref{rule:outstanding_performance})}{}}%
-	}{}%
+%	\ifthenelse{%
+%		\value{currOutstandingBonus}>0 \AND %
+%		\equal{\scorelistOutstanding}{true}%
+%	}{%
+%		\bonusitem{\thecurrOutstandingBonus}{Outstanding performance~\ifShortScoresheet{(see sec.~\ref{rule:outstanding_performance})}{}}%
+%	}{}%
 	%
 	% Total score %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\\[-1em]\hline

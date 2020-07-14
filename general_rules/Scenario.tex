@@ -1,202 +1,128 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Scenario}
-\label{sec:scenario}
+\label{sec:rules:scenario}
+Most tests take place in the \RoboCup\AtHome{} \Arena{}. Some tests can take place outside, in a previously unknown public place (see~\ref{sec:concepts:nonstandardscenario}). This section describes the \Arena{} and how it is furnished,  as well as, known information that is shared in all tests. 
 
-The tests take place in the \iterm{RoboCup@Home arena}. Nonetheless, some tests can take place outside the arena, in a previously unknown public place. Rules in this section are related to the \iterm{RoboCup@Home arena} and its contents.
-
-\subsection{RoboCup@Home arena}
-The \iterm{RoboCup@Home arena} is a realistic home setting (apartment) consisting of inter-connected rooms.
-The minimal configuration consists of
+\subsection{RoboCup@Home Arena}
+\label{sec:rules:scenario:arena}
+The \RoboCup\AtHome{} \Arena{} is a realistic home setting consisting of inter-connected rooms.
+The minimal configuration consists of:
 \begin{itemize}
-	\item bedroom,
-	\item dining room,
-	\item living room, and
-	\item kitchen.
+	\item Bedroom
+	\item Dining Room
+	\item Living Room
+	\item Kitchen
 \end{itemize}
-Depending on the Local Organization, there may be multiple apartments which may be different to each other.
-Robot must be prepared to perform any task in any arena, not the same arena every time.
+There is one \Arena{} for each league and an additional one for setup and training shared by all leagues.
 
-The arena is decorated and dressed to resemble a typical apartment in the hosting country, including all necessities and decorations one can find in a normal house.
-Please do note that what is considered as \enquote{normal} may greatly vary by culture and on the location where the RoboCup event is hosted.
-Decorations include, but are not limited to: plants, mirrors, paintings, posters, plates, picture frames, wall clocks, candles with holders, and books.
-For a description of objects, please refer to \refsec{rule:scenario_objects}
+An \Arena{} is decorated and dressed to resemble a typical apartment in the hosting country, including all necessities and decorations one can find in a normal house.
 
-\subsection{Walls, doors and floor}
-\label{rule:scenario_walls}
+\subsection{Walls, Doors and Floor}
+\label{sec:rules:scenario:walls}
+The indoor home setting will be surrounded by high and low walls built up using standard fair construction material.
 
-The indoor home setting will be surrounded by high and low \Term{walls}{Arena walls}.
-These walls will be built up using standard fair construction material.
+\begin{itemize}
+	\item \textbf{Walls:} Walls have a minimum height of \SI{60}{\centi\meter}. A maximum height is not specified, but the audience must be able to watch the competition.
 
-\begin{enumerate}
-	\item \textbf{Walls:} Walls have a minimum height of \SI{60}{\centi\meter}. A maximum height is not specified, but must allow the audience to watch the competition.\\
-	Walls are fixed and not to be modified during the competition (see~\refsec{rule:scenario_changes}).
-
-	\item \textbf{Doors:} There will be at least two \Term{doors}{Arena doors}, an entrance and an exit, to be used as starting points for the robots (see~\refsec{rule:start_position}).
-	% At least one of the entrances will be a door with a handle (not a knob).\
-	Inside the arena rooms are connected by doors (at least one).
+	\item \textbf{Doors:} There will be at least two doors, leading in and out of the arena.
+	Inside the arena, rooms are connected by doors (at least one).
 	All doors have handles, not knobs.
-	Doors can be closed at any time, and it is expected that robots be able to open them.
+	Doors can be closed during tests, robots are expected to open them or plan around.
 
-	\item \textbf{Floor:} The floor of the arena as well as the doorways of the arena are even.
-	That is, there will be no significant steps or even stairways.
-	However, minor unevenness such as carpets, transitions in floor covering between different areas, and minor gaps (especially at doorways) can be expected.
+	\item \textbf{Floor:} The floor and doorways of the arena are even.
+	There will be no significant steps or even stairways.
+	Minor unevenness such as carpets, transitions in floor covering between different areas, and minor gaps (especially at doorways) can be expected.
 
-	\item \textbf{Appearance:} Floor and walls are mainly uni-colored but can contain texture, e.g., a carpet on the floor, or a poster or picture on the wall.\\
-	Although being unlikely at the moment, transparent elements are also possible.
-\end{enumerate}
+	\item \textbf{Appearance:} Floor and walls are mainly uni-colored but can contain texture, e.g., a carpet on the floor, a poster or picture on the wall.\\
+\end{itemize}
 
 
 \subsection{Furniture}
-\label{rule:scenario_furniture}
-The arena will be equipped with typical objects (furniture) that are not specified in quantity and kind.
+\label{sec:rules:scenario:furniture}
+The arena will be furnished with items common in the host country.
 
 The minimal configuration consists of:
 \begin{itemize}
-	\item a bed,
-	\item a couch,
-	\item a small table,
-	\item a small dinner table with two chairs,
-	\item two trash bins,
-	\item an open cupboard or small table with a television and remote control,
-	\item a cupboard with drawers, and
-	\item a bookcase or shelf with doors and some books inside
+	\item Bed,
+	\item Couch
+	\item Small Table
+	\item Small Dinner Table with Two Chairs
+	\item Two Trash Bins
+	\item Television with Remote Control
+	\item Cupboard with Drawers
+	\item Bookcase
+	\item Coat Rack
 \end{itemize}
 
-Likewise the arena's kitchen must have:
+The \Arena\textit{'s} kitchen must have:
 \begin{itemize}
-	\item a dishwasher,
-	\item a microwave,
-	\item a sink, and
-	\item a refrigerator in the kitchen (with some cans and plastic bottles inside).
+	\item Dishwasher
+	\item Sink
+	\item Powered Refrigerator (with some cans and plastic bottles inside).
 \end{itemize}
 
 A typical arena setup is shown in~\reffig{fig:scenario_arena}.
 
-\begin{figure}[tbp]
+\begin{figure}[H]
 	\centering
 	\subfloat[Typical arena]{\label{fig:scenario_arena}\includegraphics[height=46mm]{images/typical_arena.jpg}} ~
 	\subfloat[Typical objects]{\label{fig:scenario_objects}\includegraphics[height=46mm]{images/typical_objects.jpg}}
-	\caption{Scenario examples: (a) a typical arena, and (b) typical objects.}
+	\caption{Example \RoboCup\AtHome{} scenario.}
 	\label{fig:arena}
 \end{figure}
 
-
 \subsubsection{Cupboard}
-The cupboard can be any shelf-like furniture in which objects can be placed.
-\begin{itemize}
-	\item[\textbf{Doors:}] The cupboard may have doors.
-	\item[\textbf{Drawers:}] The cupboard must have at least two drawers betweem 90cm and 120cm from floor level.
-	\item[\textbf{Shelves:}] The minimum distance between shelf or layers is 30cm.
-\end{itemize}
-
-\subsubsection{Shelf}
-A shelf, rack, or bookcase is required in RoboCup@Home.
-The shelf can be any shelf-like furniture in which objects can be placed.
-\begin{itemize}
-	\item[\textbf{Doors:}] The shelf must have at least one door (preferrably a vertical one) covering up to one half of it.
-	\item[\textbf{Drawers:}] The shelf must have no drawers.
-	\item[\textbf{Shelves:}] The shelf must have 5 shelves or layers between 0.0m and 1.80m from the ground, with a minimum distance of 30cm between shelves or layers.
-\end{itemize}
+The cupboard can be any shelf-like furniture in which objects can be placed. At least one shelf must be lower than \SI{90}{\cm}.
 
 \subsubsection{Fridge}
-Fridges must not be smaller than 120m. At least one powered and functioning fridge is required.
-
-
-\subsection{Changes to the arena}
-\label{rule:scenario_changes}
-
-Since the robots should be able to function in the real world the scenario is not fixed and might change without further notice.
-\begin{enumerate}
-	\item \textbf{Major changes:}
-	The arena is meant to be a simulated apartment.
-	The furniture might be moved around between tests.
-	This includes furniture that is a named location (see~\refsec{rule:scenario_names}).
-	As in a normal home, furniture is not very likely to move from one room to another and is unlikely to be moved to the other side of a room.
-	However, a couch or table may be rotated, moved to its side etc.
-	Walls will stay in place and rooms will not change function.
-	Passages might be blocked and cleared.
-	One hour before a test slot begins no \iterm{major changes} will be made.
-	This time will be shortened in the future.
-
-	\item \textbf{Minor changes:} In contrast to major changes, \iterm{minor changes} like, for instance, slightly moved chairs cannot be avoided and may happen at any time (even during a test).
-\end{enumerate}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Objects section.
-%
-% Revisited by Mauricio Matamoros for 2015
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\NumObjects{30\ }
-\def\NumLocations{20\ }
-\def\NumNames{20\ }
+Fridge must not be smaller than \SI{120}{\cm}. At least one powered and functioning fridge is required.
 
 \subsection{Objects}
-\label{rule:scenario_objects}
-Some tests in the RoboCup@Home league involve recognizing and manipulating \iterm{objects}(See~\reffig{fig:scenario_objects}).
-The TC will compile a list of at least \NumObjects objects for this purpose, assigning them official names.
-Most objects are likely to be lightweight and easy to grasp with one hand.
-Each object has assigned a category (e.g. an \textit{apple} and a \textit{banana} belong to the \textit{fruits} category).
-Each \iterm{object category} has assigned a \iterm{predefined location} (e.g. an \textit{fruits} can be found in the \textit{kitchen table}).
-Assignments are announced during setup days (See~\refsec{chap:setup_and_preparation}).
-An exemplar of each object is provided before the competition for training.
+\label{sec:rules:scenario:objects}
+Some tests involve recognizing and manipulating objects (See~\reffig{fig:scenario_objects}).
+The \TC{} will compile a list of at least \NumObjects{} objects at the competition. This list contains a picture of the object, as well as, its official name and \ObjectCategory{}. Every \ObjectCategory{} has an assigned \PredefinedLocation{} (see \ref{sec:rules:scenario:locations}) where objects of that category can usually be found during tests.
+Each object is provided at the competition for training.
 
 There are two types of objects:
 
 \begin{enumerate}
-	\item \textbf{\iterm{Known objects}:} Objects previously known by the robot and that it can identify and manipulate.
-	There are two kinds of known objects:
+	\item \textbf{\KnownObjects{}:} Objects previously known by the robot, split into:
 	\begin{enumerate}
-		\item \textbf{\iterm{Regular objects}:} Objects with no noticeable difference among peers (e.g.~soda can, cereal box, cutlery, etc).
-		\item \textbf{\iterm{Alike objects}:} Objects which are different one from another, but still considered by people to be the same (e.g.~apple, sandwich, cloth, etc.).
+		\item \textbf{\ConsistentObjects{}:} Objects that always look the same.
+		\item \textbf{\SimilarObjects{}:} Objects that look different to the provided image but are still considered the same by people (e.g. differently colored apple, cloth with different pattern).
+		\item \textbf{\StandardObjects{}:} Objects chosen from the \YCBData{}\footnote{\url{http://www.ycbbenchmarks.com/object-set/}}. They are published 6 months in advance on the \RoboCup\AtHome{} website\footnote{\url{https://athome.robocup.org/standard-objects}} so that they can be aquired and trained beforehand.
 	\end{enumerate}
 
-	\item \textbf{\iterm{Unknown objects}:} Any other object that is not known beforehand but can be grasped or handled.
+	\item \textbf{\UnknownObjects{}:} Any other object that is not in the object list but can be grasped or handled (e.g. arena decorations).
 \end{enumerate}
 
-\paragraph*{Remark:} Most (known) objects used in the competition are chosen from the YCB dataset (see {\small\url{http://www.ycbbenchmarks.com/object-set/}}).
-These objects are considered standard, and can be acquired and trained in advance.
-Additional information about which \iterm{standard objects} were chosen, their official names, categories, and how to acquire them, can be found in the RoboCup@Home Official Website {\small\url{https://athome.robocup.org/standard-objects}} no later than 6 months prior to the \YEAR{} competition.
-
-\subsection{List of Predefined Objects}
-\label{rule:scenario_objects_list}
-The minimal configuration consists of:
+Known objects include at least:
 \begin{itemize}
-	\item \textbf{\iterm{Tableware}:} Dish, bowl, cup (or mug), and napkin.
+	\item \textbf{\iterm{Tableware}:} Dish, bowl, cup, and napkin (See~\reffig{fig:scenario_container_bowl}).
 	\item \textbf{\iterm{Cutlery}:} Fork, knife, and spoon.
 	\item \textbf{\iterm{Trash Bags}:} Big plastic trashbags, preferrably with handle.
-	\item \textbf{\iterm{Bags}:} Lightweight. With stiff, vertical handles.
-	\item \textbf{\iterm{Disks or books}:} A set of 10 discs (LP, CD, DVD, or BluRay) or books, all of the same kind.
-	\item \textbf{\iterm{Coat rack}:} A rack or pole to hang coats and other clothes.
-	\item \textbf{\iterm{Trays}:} A transport object like a tray or basket. Intended for two-handed manipulation.
-	\item \textbf{\iterm{Pourable}:} An object whose content can be poured (e.g.~muesli, cereal, etc.).
-	\item \textbf{\iterm{Heavy object}:} Weight between 1.0kg and 1.5kg.
-	\item \textbf{\iterm{Tiny object}:} A lightweight object with no bigger than 5cm (e.g.~paper, teabag, pen).
-	\item \textbf{\iterm{Fragile object}:} An easy-to-break object, (e.g.~chocolate egg).
-	\item \textbf{\iterm{Amorphous object}:} An flexible object that may take an infinite number of shapes (e.g.~cloth, magnetic puzzle, etc.).
-	\item \textbf{\iterm{Garbage bag}:} A tie-able garbage bag.
+	\item \textbf{\iterm{Bags}:} Lightweight. With stiff, vertical handles (See~\reffig{fig:scenario_container_bag}).
+	\item \textbf{\iterm{Trays}:} Tray or basket, intended for two-handed manipulation (See~\reffig{fig:scenario_container_tray}).
+	\item \textbf{\iterm{Pourable}:} An object whose content can be poured (e.g.~jug).
+	\item \textbf{\iterm{Heavy Object}:} Weight between 1.0kg and 1.5kg (e.g.~water bottle).
+	\item \textbf{\iterm{Tiny Object}:} A lightweight object, no bigger than 5cm (e.g.~teabag).
+	\item \textbf{\iterm{Fragile Object}:} An easy-to-break object (e.g.~egg).
+	\item \textbf{\iterm{Deformable Object}:} A flexible object that may appear in different shapes (e.g.~cloth).
 \end{itemize}
-
-\paragraph*{Important note:} It is not allowed to modify any of the objects provided for training.
-Teams are not allowed to keep more than 5 the objects provided for training at a time nor retaining it for more than one hour.
 
 \begin{figure}[H]
 	\centering
-	\subfloat[Bright-colored paper bags]{
+	\subfloat[Brightly colored paper bags]{
 		\label{fig:scenario_container_bag}\includegraphics[width=0.33\textwidth]{images/container_paper_bag.png}}~
 	\subfloat[Cereal bowls]{
 		\label{fig:scenario_container_bowl}\includegraphics[width=0.33\textwidth]{images/container_bowl.png}}~
 	\subfloat[Serving tray]{
 		\label{fig:scenario_container_tray}\includegraphics[width=0.33\textwidth]{images/container_tray.png}}
-	\caption{Example of object containers}
+	\caption{Example of objects}
 	\label{fig:scenario_containers}
 \end{figure}
 
-\subsection{Attributes of Predefined Objects}
-\label{rule:scenario_objects_attributes}
-During the competition, objects can be requested based on their category \iterm{object category}, its physical attributes, or a combination of both.
+\noindent During the competition, objects can be requested based on their \ObjectCategory{}, physical attributes, or a combination of both.
 Relevant attributes to be used are:
 \begin{itemize}
 	\item Color (e.g. red, blue, black with white dots, etc.).
@@ -206,53 +132,60 @@ Relevant attributes to be used are:
 	\item Object description (is fragile, is container, can be poured, requires two hands, etc.).
 \end{itemize}
 
-\noindent\textbf{Remark:} Measurements are estimations and based on common sense. It is OK for robots to consider similar objects to be about the same size or weight.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Predefined locations section.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Predefined rooms and locations}
-\label{rule:scenario_locations}
-Some tests in the RoboCup@Home league involve \iterm{predefined locations} where people or objects can be found.
-The TC will compile a list of predefined locations that may include furniture (e.g. bookshelf), decorations (e.g. plant, mirror), and doors.
-Each \iterm{predefined location} has assigned a \iterm{location class} (e.g. an \textit{coach} and a \textit{arm chair} belong to the \textit{seat} class).
-Room names, predefined locations, and location classes are announced during setup days (See~\refsec{chap:setup_and_preparation}).
+\noindent\textbf{Remark:} Measurements are estimations and based on common sense. It is OK for robots to consider similar objects to be about the same size or weight. Don't bring a scale.
 
 
+\subsection{Changes to the Arena}
+\label{sec:rules:scenario:changes}
+Since the robots should be able to function in the real world, the \Arena{} is not fixed and might change without further notice.
+\begin{enumerate}
+	\item \textbf{Major Changes:}
+	Any furniture (\PredefinedLocation{} or not) might be moved slightly between tests. It will not change rooms or move drastically inside a room. However, a couch or table may be rotated, moved to its side etc. Walls will stay in place and rooms will not change function. Passages might be blocked.
+	
+	\item \textbf{Minor Changes:} Slightly moved chairs, slightly closed doors, or anything similar cannot be avoided and might happen at any time, even during a test.
+\end{enumerate}
 
-\subsection{Predefined (person) names}\label{rule:scenario_names}
-Some tests in the RoboCup@Home league involve memorizing a person name.
-All people in the arena has an assigned \iterm{predefined name}.
-The TC will compile a list of \NumNames \iterm{predefined names}.
-The names are \SI{25}{\percent} male, \SI{25}{\percent} female, and \SI{50}{\percent} gender-neutral, taken from the list of most common used names in the United States.
-Predefined names are announced during setup days (See~\refsec{chap:setup_and_preparation}).
+\noindent Only during \SetupDays{} (see~\ref{chap:setupdays}), teams can make changes to the arena if something severely hinders the robots (e.g. high door steps). These changes must be agreed upon by all team leaders and in accordance with the \TC{} on location.
+
+During \SetupDays{} and in between tests, teams can take objects from the \Arena{} for training. A team may not take more than five objects at once and for longer than an hour. Teams may not modify any of the objects. At least half an hour before a test slot, all items must be returned to the \Arena{}.
 
 
-\subsection{Wireless network}
-\label{rule:scenario_wifi}
+\subsection{Predefined Rooms and Locations}
+\textit{\label{sec:rules:scenario:locations}}
+Some tests involve a \PredefinedLocation{}.
+\begin{itemize}
+	\item \textbf{Rooms:} Each room has a function (e.g. kitchen, bed room).
+	
+	\item \textbf{Furniture:} Some furniture will be named and sorted into a location class (e.g. couch and arm chair are both in the seating class). 
+	
+	\item \textbf{Doors:} Two doors leading in and out of the \Arena{} will be named entrance and exit respectively.
+\end{itemize}
 
-For wireless communication, an \iterm{arena network} is provided. The actual infrastructure depends on the local organization.
-The organizers do NOT guarantee reliability and performance of wireless communication.
-Teams required to start must do so regardless the availability of the network infrastructure.
+
+\subsection{Predefined Names}
+\label{sec:rules:scenario:names}
+Some tests involve memorizing a person's name. All people in the arena have an assigned \PredefinedName{} chosen from a list compiled by the \TC{}. This list has \NumNames{} names of which \SI{25}{\percent} are male, \SI{25}{\percent} female, and \SI{50}{\percent} gender-neutral, taken from the list of most common used names in the United States.
+
+
+\subsection{Wireless Network}
+\label{sec:rules:scenario:wifi}
+
+For wireless communication, an \ArenaNetwork{} is provided. The actual infrastructure depends on the \LOC{}. Reliability and stability is not guaranteed. Robots are expected to run regardless.
 
 The following rules apply:
 
 \begin{itemize}
-	\item Only the \iterm{arena network} can be used during tests.
-	\item During the competitions, only the active team is allowed to use the \iterm{arena network}.
-	\item The \iterm{arena network} provides one Virtual Local Area Networks (VLANs) per team.
+	\item Only the \ArenaNetwork{} can be used by robots during tests.
+	\item Only the active team in a test is allowed to use the \ArenaNetwork{}.
+	\item One Virtual Local Area Networks (VLANs) is provided per team.
 	\item Each VLAN is most likely to have its own SSID/password.
-	\item VLAN traffic is separated from any other team, routed to the team's network cable (team area).
+	\item VLAN traffic is separated from any other team, routed to the team's network cable in the team area.
 	\item Each VLAN is also connected to the Internet.
 \end{itemize}
 
-\indent\textbf{Remark:} Teams broadcasting unauthorized (aka rogue) wireless networks will be disqualified from the competition, and have their devices confiscated by the OC.
-This includes smartphones and concealed SSIDs.
-It is advised to verify your devices.
-
+\noindent Teams broadcasting unauthorized (aka rogue) wireless networks will be disqualified from the competition, and have their devices confiscated by the OC. This includes smartphones and concealed SSIDs. It is advised to verify your devices.
+\\ \\
+\textbf{Note:} All information about the scenario will be announced during \SetupDays{} (see~\ref{chap:setupdays}).
 
 % Local Variables:
 % TeX-master: "../Rulebook"
