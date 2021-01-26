@@ -58,7 +58,7 @@ The \Arena\textit{'s} kitchen must have:
 \begin{itemize}
 	\item Dishwasher
 	\item Sink
-	\item Powered Refrigerator (with some cans and plastic bottles inside).
+	\item Refrigerator (with some cans and plastic bottles inside).
 \end{itemize}
 
 A typical arena setup is shown in~\reffig{fig:scenario_arena}.
@@ -75,7 +75,7 @@ A typical arena setup is shown in~\reffig{fig:scenario_arena}.
 The cupboard can be any shelf-like furniture in which objects can be placed. At least one shelf must be lower than \SI{90}{\cm}.
 
 \subsubsection{Fridge}
-Fridge must not be smaller than \SI{120}{\cm}. At least one powered and functioning fridge is required.
+Fridge must not be smaller than \SI{120}{\cm}.
 
 \subsection{Objects}
 \label{sec:rules:scenario:objects}
@@ -167,24 +167,6 @@ Some tests involve a \PredefinedLocation{}.
 Some tests involve memorizing a person's name. All people in the arena have an assigned \PredefinedName{} chosen from a list compiled by the \TC{}. This list has \NumNames{} names of which \SI{25}{\percent} are male, \SI{25}{\percent} female, and \SI{50}{\percent} gender-neutral, taken from the list of most common used names in the United States.
 
 
-\subsection{Wireless Network}
-\label{sec:rules:scenario:wifi}
-
-For wireless communication, an \ArenaNetwork{} is provided. The actual infrastructure depends on the \LOC{}. Reliability and stability is not guaranteed. Robots are expected to run regardless.
-
-The following rules apply:
-
-\begin{itemize}
-	\item Only the \ArenaNetwork{} can be used by robots during tests.
-	\item Only the active team in a test is allowed to use the \ArenaNetwork{}.
-	\item One Virtual Local Area Networks (VLANs) is provided per team.
-	\item Each VLAN is most likely to have its own SSID/password.
-	\item VLAN traffic is separated from any other team, routed to the team's network cable in the team area.
-	\item Each VLAN is also connected to the Internet.
-\end{itemize}
-
-\noindent Teams broadcasting unauthorized (aka rogue) wireless networks will be disqualified from the competition, and have their devices confiscated by the OC. This includes smartphones and concealed SSIDs. It is advised to verify your devices.
-\\ \\
 \textbf{Note:} All information about the scenario will be announced during \SetupDays{} (see~\ref{chap:setupdays}).
 
 % Local Variables:
