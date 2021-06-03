@@ -1,6 +1,0 @@
-#*         text=auto
-*.tex     diff=tex
-*.jpg     binary
-*.png     binary
-*.pdf     binary
-*.svg     binary

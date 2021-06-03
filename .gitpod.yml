@@ -1,0 +1,7 @@
+image:
+  file: .gitpod.dockerfile
+tasks:
+  - init: export PATH=$PATH:/usr/local/texlive/2019/bin/x86_64-linux
+vscode:
+  extensions:
+    - James-Yu.latex-workshop@8.8.0:h+NZsv7iyBU5iCp1Tc9S0A==
