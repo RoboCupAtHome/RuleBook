@@ -1,10 +1,7 @@
-RuleBook for RoboCup @Home 2019
+RuleBook for RoboCup @Home 2022
 ===============================
 
-The 2019 rulebook state is **FINAL**.
-
-Only spelling corrections and minor clarificatios may be merged from now on, as well as buffs to the scoresheets to enhance scoring.
-All work for the Rulebook of 2020 shall be pushed into to 2020/Rulebook.
+The 2022 rulebook is based on the 2019 notebook and is still in a **draft** stage.
 
 [On-the-fly compiled LaTeX version](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=Rulebook.tex)
 
@@ -22,7 +19,7 @@ See the Frequently Asked Questions [here](https://github.com/RoboCupAtHome/RuleB
 Or ask us via Telegram: [https://t.me/RoboCupAtHome](https://t.me/RoboCupAtHome)
 
 ### Change log
-The Rulebook has being completely restructured for 2019 and later competitions. 
+The Rulebook has being completely restructured for 2019 and later competitions.
 The new format was first tested at German Open 2019.
 
 #### Highlights
@@ -32,7 +29,7 @@ The new format was first tested at German Open 2019.
 - **Goal-driven scoring:** A robot can only score by accomplishing the *main goal* of a *task*. In addition to the *main goal*, several bonus objectives are available with juicy rewards, but will be only considered if the *main goal* is completed.
 - **Unlimited *Continues*:** The continue rule is no more. Instead, robots may call for a *Deus Ex Machina* and have human assistant helping it to solve the task. There is no limit on the number of times a robot can ask for help, and the nature of the help is unconstrained. Nonetheless, a proportional score reduction applies.
 
-These changes obey to one objective: **robots must succeed**. 
+These changes obey to one objective: **robots must succeed**.
 
 
 ### Question, issues, and contribution Guidelines
