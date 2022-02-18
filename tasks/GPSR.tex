@@ -1,20 +1,20 @@
 \section{General Purpose Service Robot [Housekeeper]}
 \label{test:gpsr}
-Similar to a modern smart-speaker, the robot can be asked to do anything from the Stage~I of this rulebook or any previous rulebook.
+Similar to a modern smart speaker, the robot can be asked to do anything involving functionalities from \SONE{} of this rulebook or any previous rulebook.
 
-% \subsection*{Focus}
-% This test focuses on the detection and recognition of objects and their features, as well as object manipulation.
+\subsection*{Focus}
+This test focuses on task planning, detection and recognition of objects and people as well as their features, and object manipulation.
 
 \subsection*{Main Goal}
-Execute each of the 3 commands requested by the operator.
+Execute 3 commands requested by the operator.
 
 \noindent\textbf{Reward:} 750pts (250 points per command)\\
 
-\subsection*{Bonus rewards}
+\subsection*{Bonus Rewards}
 \begin{enumerate}[nosep]
-	\item Understand a command given by naive operator (50pts, each).
-	\item Provide audio recording and transcript (100pts each).
-	\item Autonomously leaving the arena (150pts).
+	\item Understand a command given by a naive operator (50pts per command).
+	\item Provide an audio recording and transcript (100pts per command).
+	\item Autonomously leave the arena (150pts).
 \end{enumerate}
 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -24,11 +24,9 @@ Execute each of the 3 commands requested by the operator.
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Setup}
 \begin{enumerate}[nosep]
-	\item \textbf{Location:} The task takes place inside the arena (some commands might require the robot to go out). The arena is in its normal state.
-
+	\item \textbf{Location:} The task takes place inside the arena, but some commands may require the robot to go out. The arena is in its nominal state for this task.
 	\item \textbf{Start location:} The robot starts outside the arena. When the door opens, the robot moves towards the \textit{Instruction Point}.
-
-	\item \textbf{Operators:} A \emph{professional operator} (i.e.~the referee) commands the robot to execute a task.
+	\item \textbf{Operators:} A \emph{professional operator} (the referee) commands the robot to execute a task.
 \end{enumerate}
 
 
@@ -37,46 +35,55 @@ Execute each of the 3 commands requested by the operator.
 % Additional Rules
 %
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Additional rules and remarks}
+\subsection*{Additional Rules and Remarks}
 \begin{enumerate}[nosep]
-	\item \textbf{Command Generator:} Tasks will be generated using the official \emph{GPSR Command Generator} available 2 months prior to the competition in the official repository.
+	\item \textbf{Command generator:} Tasks will be generated using the official \emph{GPSR Command Generator}\footnote{\url{https://github.com/kyordhel/GPSRCmdGen}}, which will be available two months prior to the competition.
 
-	\item \textbf{Naive Operators:} Optionally, commands can be issued by a \emph{Naive Operator}, i.e.~a person from the audience with no background on robotics. The referee gives the command to the \emph{Naive Operator}, who will then issue it to the robot (rephrasing is allowed). If the robot consistently fails to understand the naive operator (e.g.~3 times or more), teams can default to a custom operator.
-	\\[2mm]\textbf{Remark:} Referees are not allowed to instruct naive operators on how to operate the robot. \textbf{Teams attempting to instruct or bias the operator will be disqualified}.\\[2mm]
+	\item \textbf{Naive Operators:} Optionally, commands can be issued by a \emph{naive operator}, i.e. a person from the audience with no robotics background.
+	In this case, the referee gives the command to the naive operator, who will then issue it to the robot (rephrasing is allowed).
+	If the robot consistently fails to understand the naive operator (e.g. after two retries), teams can default to a custom operator.
+	\textbf{Remark:} Referees are not allowed to instruct naive operators on how to operate the robot.
+	Teams attempting to instruct or bias the operator will be disqualified from the task.
 
-	\item \textbf{Data Recording:} Only when using Naive Operators, a team can get an additional scoring bonus by providing the recording and transcript of the issued commands.
+	\item \textbf{Data recording:} Only when using naive operators, a team can get an additional bonus by providing the recording and transcript of the issued commands.
+
+	\item \textbf{Instruction point:} At the beginning of the test, as well as after finishing the first and second command, the robot moves to the \textit{Instruction Point}.
+
+	\item \textbf{Leaving the arena:} A bonus score can be earned if the robot autonomously leaves the arena after successfully executing all three given commands.
 
 	\item \textbf{Deus ex Machina:} Score reduction applies per given command as follows:
-	\begin{itemize}[nosep]
-	\item \textbf{Custom operator:} Providing a custom operator causes 50pts score reduction.
-	\item \textbf{Further assistance:} Helping a robot to accomplish a task causes 50--200pts score reduction, based on referee criterion.
-	\item \textbf{Bypassing commands:} A robot instructing a human assistant on how to accomplish the whole task receives no points for the command.
-	\end{itemize}
-
-	\item \textbf{Instruction Point:} At the beginning of the test, and after finishing the first and second command, the robot moves to the \textit{Instruction Point}.
-
-	\item \textbf{Leaving the arena:} A bonus scoring of 150pts can be earned if the robot autonomously leaves the arena after successfully executing all three given commands.
+	\begin{table}[h]
+		\begin{tabular}{m{0.65\linewidth} c}
+			\textbf{Action} & \textbf{Reduction} \\\hline
+			Choosing a custom operator & 50pts \\
+			Bypassing speech recognition by using an alternative HRI & 50pts \\
+			Instructing a human assistant to perform the whole task & 250pts \\
+			Helping the robot to accomplish a task & As in other \SONE{} tests \\\hline
+		\end{tabular}
+	\end{table}
 \end{enumerate}
 
-\subsection*{OC instructions}
-\textbf{2 hours before the test}
-\begin{itemize}[nosep]
-	\item Pre-generate and conceal commands for the robots.
-	\item Announce the location of the instruction point.
-	\item Recruit volunteers to assist during the test.
-\end{itemize}
-\textbf{During the test}
-\begin{itemize}[nosep]
-	\item Rearrange the arena to its normal condition.
-\end{itemize}
-
-\subsection*{Referee instructions}
+\subsection*{Referee Instructions}
 \begin{itemize}[nosep]
 	\item Provide the commands to the operators.
 \end{itemize}
 
+\subsection*{OC Instructions}
 
-\subsection*{Score sheet}
+2h before the test:
+\begin{itemize}[nosep]
+	\item Generate the robot commands (don't reveal them to the teams!).
+	\item Announce the location of the instruction point.
+	\item Recruit volunteers to assist during the test.
+	\newline
+\end{itemize}
+
+\noindent During the test:
+\begin{itemize}[nosep]
+	\item Rearrange the arena so that it is in its nominal condition.
+\end{itemize}
+
+\subsection*{Score Sheet}
 \input{scoresheets/GPSR.tex}
 
 % Local Variables:
