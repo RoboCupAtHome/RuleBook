@@ -1,28 +1,28 @@
 \section{Clean Up [Housekeeper]}
 \label{test:clean-up}
-Inside one room in the arena are some misplaced objects. The robot has to tidy up that room, throwing to the garbage the unrecognized ones.
+Inside one room in the arena are some misplaced objects. The robot has to clean up that room, throwing to the garbage the unrecognized ones.
 
 % \subsection*{Focus}
 % This test focuses on object perception, manipulation, and planning.
 
 \subsection*{Main Goal}
-Find all misplaced objects in a room and bring them to their predefined locations.
+Find six misplaced objects in a room and bring them to their predefined locations.
 
-\noindent\textbf{Reward:} 500pts (100pts per object).
+\noindent\textbf{Reward:} 600pts (100pts per object).
 
 \subsection*{Bonus Rewards}
 \begin{enumerate}[nosep]
-	\item Opening the entrance door autonomously (200pts)
-	\item Moving a \emph{tiny} object (150pts)
-	\item Moving a \emph{heavy} object (150pts)
+	\item Moving a \emph{tiny} object (200pts)
+	\item Moving a \emph{heavy} object (200pts)
 \end{enumerate}
 
 
 \subsection*{Setup}
 \begin{itemize}[nosep]
 	\item \textbf{Location:} A random room in the arena.
+	\item \textbf{Start Location}: The robot starts inside the arena at a predefined location near the entrance door.
 	\item \textbf{Instruction:} Nearby the entrance, an operator tells the robot which room to clean.
-	\item \textbf{Objects:} There are 5--10 misplaced objects at random locations in the room.
+	\item \textbf{Objects:} There are 6--10 misplaced objects at random locations in the room.
 \end{itemize}
 
 \subsection*{Additional Rules and Remarks}
@@ -37,15 +37,15 @@ Find all misplaced objects in a room and bring them to their predefined location
 
 	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per object as follows:
 	\begin{itemize}[nosep]
-		\item Telling the robot where an object can be found causes a reduction of 30\% in scoring for that particular object.
+		\item Telling the robot where an object can be found causes a reduction of 30pts in scoring for that particular object.
 
-		\item Pointing at an object to be picked up causes a reduction of 40\% in scoring for that particular object.
+		\item Pointing at an object to be picked up causes a reduction of 40pts in scoring for that particular object.
 
-		\item Guiding the robot nearby the location where an object can be found causes a reduction of 20\% in scoring for that particular object.
+		\item Guiding the robot nearby the location where an object can be found causes a reduction of 20pts in scoring for that particular object.
 
-		\item Telling the robot where the object should be placed or the object's category causes a reduction of 30\% in scoring for that particular object.
+		\item Telling the robot where the object should be placed or the object's category causes a reduction of 30pts in scoring for that particular object.
 
-		\item Having a human physically interacting with an object causes a reduction of 60\% in scoring for that particular object.
+		\item Having a human physically interacting with an object causes a reduction of 60pts in scoring for that particular object.
 	\end{itemize}
 
 	\item \textbf{Heavy and tiny objects:} Objects used in this test are lightweight and average-sized.
