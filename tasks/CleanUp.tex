@@ -1,9 +1,10 @@
 \section{Clean Up [Housekeeper]}
 \label{test:clean-up}
-Inside one room in the \Arena{} are some misplaced objects. The robot has to clean up that room, throwing to the garbage the unrecognized ones.
 
-% \subsection*{Focus}
-% This test focuses on object perception, manipulation, and planning.
+The robot has to clean up an \Arena{} room with some misplaced objects, placing unknown objects in a garbage bin.
+
+\subsection*{Focus}
+This test focuses on task planning, object perception, and manipulation.
 
 \subsection*{Main Goal}
 Find six misplaced objects in a room and bring them to their predefined locations.
@@ -21,52 +22,48 @@ Find six misplaced objects in a room and bring them to their predefined location
 \begin{itemize}[nosep]
 	\item \textbf{Location:} A random room in the \Arena{}.
 	\item \textbf{Start Location}: The robot starts inside the \Arena{} at a predefined location near the entrance door.
-	\item \textbf{Instruction:} Nearby the entrance, an operator tells the robot which room to clean.
+	\item \textbf{Instruction:} Near the entrance, an operator tells the robot which room to clean.
 	\item \textbf{Objects:} There are 6--10 misplaced objects at random locations in the room.
 \end{itemize}
 
 \subsection*{Additional Rules and Remarks}
 \begin{enumerate}[nosep]
 	\item \textbf{Objects:}
-	Objects can be anywhere, including the floor, seats, and on furniture.
-	All objects are clearly visible (i.e.~no occlusions) and can be:
+	Objects can be anywhere in the room, including the floor, seats, and on top of furniture.
+	All objects are clearly visible (i.e. no occlusions) and can be:
 	\begin{itemize}[nosep]
-		\item\textit{Known objects}: Regular and alike objects.
-		\item\textit{Unknown objects}: Garbage lying around at grasping distance (2--3 objects).
+		\item\textit{Known objects}: Regular and alike objects.    
+    \item\textit{Unknown objects}: Garbage lying around at grasping distance (2--3 objects).
 	\end{itemize}
 
-	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per object as follows:
-	\begin{itemize}[nosep]
-		\item Telling the robot where an object can be found causes a reduction of 30pts in scoring for that particular object.
-
-		\item Pointing at an object to be picked up causes a reduction of 40pts in scoring for that particular object.
-
-		\item Guiding the robot nearby the location where an object can be found causes a reduction of 20pts in scoring for that particular object.
-
-		\item Telling the robot where the object should be placed or the object's category causes a reduction of 30pts in scoring for that particular object.
-
-		\item Having a human physically interacting with an object causes a reduction of 60pts in scoring for that particular object.
-	\end{itemize}
-
-	\item \textbf{Heavy and tiny objects:} Objects used in this test are lightweight and average-sized (see~\refsec{rule:scenario_objects}).
-	The team leader can, however, request a tiny and a heavy object to be used and score additional points for picking them.
+	\item \textbf{Heavy and tiny objects:} Objects used in this test are lightweight and average-sized (see~\refsec{rule:scenario_objects}.
+	The team leader can, however, request a tiny and a heavy object to be used in order to score additional points for picking them.
 
 	\item \textbf{Bin:} Objects must be placed inside the bin, not thrown or dropped.
+
+	\item \textbf{Deus ex Machina:} Score reductions for requesting human assistance are applied \emph{per each object} as follows:
+	\begin{table}[h]
+		\begin{tabular}{m{0.8\linewidth} c}
+			\textbf{Action} & \textbf{Reduction} \\\hline
+			Guiding the robot to a location where an object can be found & 20pts \\
+			Telling the robot where an object can be found & 30pts \\
+			Telling the robot the object's category or where the object should be placed & 30pts \\
+			Pointing at an object to be picked up & 40pts \\
+			Having a human physically interact with an object & 60pts \\\hline
+		\end{tabular}
+	\end{table}
 \end{enumerate}
 
-\subsection*{Referee instructions}
-The referee needs to
+\subsection*{Referee Instructions}
+The referee needs to:
 \begin{itemize}
-	\item Place the objects in the room.
+	\item Place objects in the room.
 	\item Recover disposed objects from the bin.
-	\item Ask teams whether they want a heavy or tiny object.
+	\item Ask teams whether they want a heavy or a tiny object to be used.
 \end{itemize}
 
-\subsection*{OC instructions}
-2 hours before the test:
-\begin{itemize}
-	\item Announce the starting location of the robot.
-\end{itemize}
+\subsection*{OC Instructions}
+Announce the starting location of the robot 2 hours before the test.
 
-\subsection*{Score sheet}
+\subsection*{Score Sheet}
 \input{scoresheets/CleanUp.tex}

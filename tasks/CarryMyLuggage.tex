@@ -1,84 +1,79 @@
 \section{Carry My Luggage [Party Host]}
 \label{test:carry-my-luggage}
-The robot helps the operator to carry some luggage to the car which is parked outside.
+The robot helps the operator to carry some luggage to a car which is parked outside.
 
-% \subsection*{Focus}
-% Object identification and manipulation, person-following, and social navigation.
+\subsection*{Focus}
+Object identification and manipulation, person following, and social navigation.
 
 \subsection*{Main Goal}
-The robot helps the operator to carry a bag to the car parked outside.
+The robot helps the operator to carry a bag to a car parked outside.
 
 \noindent\textbf{Reward:} 500pts.
 
-\subsection*{Bonus rewards}
+\subsection*{Bonus Rewards}
 \begin{enumerate}[nosep]
-	\item Reentering the \Arena{} (100 pts).
-	\item Avoid all obstacles (400 pts, 100pts per obstacle).
+	\item Reentering the \Arena{} (100pts)
+	\item Avoiding all obstacles (400pts, 100pts per obstacle)
 \end{enumerate}
 
 
 \subsection*{Setup}
 \begin{itemize}[nosep]
-	\item \textbf{Location}: The test takes place inside and outside the \Arena{}.
-
-	\item \textbf{Start Location}: The robot starts at a predefined location in the living room.
-
-	\item \textbf{Bags:} At least two bags are placed between nearby the operator (within 2m distance and visible to the robot).
-
-	\item \textbf{Operator}: The operator is standing in front of the robot pointing at the bag to be carried out.
-
+	\item \textbf{Location}: The test takes place both inside and outside the \Arena{}.
+	\item \textbf{Start location}: The robot starts at a predefined location in the living room.
+	\item \textbf{Bags:} At least two bags are placed near the operator (within a 2m distance and visible to the robot).
+	\item \textbf{Operator}: The operator is standing in front of the robot and is pointing at the bag to be carried out.
 \end{itemize}
 
-\subsection*{Additional rules and remarks}
+\subsection*{Additional Rules and Remarks}
 \begin{enumerate}[nosep]
-	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied as follows.
-	\begin{itemize}[nosep]
-		\item Handing-over the bag (-100 pts).
-		\item Finding the operator while following her
-		\begin{itemize}[nosep]
-		\item Natural interaction (e.g.~wave and calling) 100pts score reduction.
-		\item Non-natural interaction (e.g.~raising both hands and jumping) 200pts score reduction.
-		\item Touching the robot (e.g.~pulling the robot's hand) 400pts score reduction.
-		\end{itemize}
-	\end{itemize}
-
-	\item \textbf{Obstacles:} The robot will face 4 obstacles along its way in any order:
+	\item \textbf{Obstacles:} The robot will face 4 obstacles along its way (in any arbitrary order):
 	\begin{enumerate*}[label=(\alph*)]
-		\item a crowd obstructing path,
 		\item a small object on the ground,
-		\item a hard-to-see 3D object,
-		and
+		\item a hard-to-see object,
+		\item a crowd of people obstructing the path outside, and
 		\item a small area blocked using retractable barriers.
 	\end{enumerate*}
 
-	\item \textbf{Car Location:} There is no car outside. Instead, a fixed location is supposed as a car location outside the \Arena{}.
+	\item \textbf{Car location:} There is no real car outside; instead, a fixed location outside the \Arena{} is designated as a car location.
 
-	\item \textbf{Reaching the Car:} The robot can reach the car's location only by following the operator.
+	\item \textbf{Reaching the car:} The robot can reach the car location only by following the operator (the location is unknown before the test).
 
-	\item \textbf{Following the Operator:} The robot should indicate the operator when it is ready to follow. The operator walks naturally towards the car. After reaching the car, the operator takes the bag back from the robot and thanks the robot.
+	\item \textbf{Following the operator:} The robot should inform the operator when it is ready to follow them. The operator walks naturally towards the car; after reaching the car, the operator takes the bag back and thanks the robot.
 
+	\item \textbf{Deus ex Machina:} Score reductions for human assistance are applied as follows:
+	\begin{table}[h]
+		\begin{tabular}{m{0.8\linewidth} c}
+			\textbf{Action} & \textbf{Reduction} \\\hline
+			Handing over the bag to the robot & 100pts \\
+			Finding the operator while following them: & \\
+			\hspace{0.5cm}- Natural interaction (e.g. waving and calling) & 100pts \\
+			\hspace{0.5cm}- Non-natural interaction (e.g. raising both hands and jumping) & 200pts \\
+			\hspace{0.5cm}- Touching the robot (e.g. pulling the robot's hand) & 400pts \\\hline
+		\end{tabular}
+	\end{table}
 \end{enumerate}
 
 
-\subsection*{Referee instructions}
+\subsection*{Referee Instructions}
 
-The referees need to
+The referees need to:
 \begin{itemize}[nosep]
-	\item Select one volunteer as the operator.
-	\item Select three to four people to obstruct robot's path outside.
-	\item Choose bags' positions and assign a bag to the operator.
+	\item Select one volunteer to act as the operator.
+	\item Select three to four people to obstruct the robot's path outside.
+	\item Choose positions for the bags and assign a bag to the operator.
 	\item Choose which obstacles the robot will face outside while following the operator.
-	\item Choose the car's location.
+	\item Designate a location outside as a car location.
 	\item Mind the robot when it goes outside the \Arena{}.
 \end{itemize}
 
-\subsection*{OC instructions}
+\subsection*{OC Instructions}
 
 2h before test:
 \begin{itemize}[nosep]
 	\item Select and announce the robot's starting point.
-	\item Select which bags will be used.
+	\item Select which bags will be used in the test.
 \end{itemize}
 
-\subsection*{Score sheet}
+\subsection*{Score Sheet}
 \input{scoresheets/CarryMyLuggage.tex}

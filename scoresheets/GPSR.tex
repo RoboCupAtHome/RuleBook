@@ -2,13 +2,15 @@ The maximum time for this test is 5 minutes.
 
 \begin{scorelist}
 	\scoreheading{Main Goal}
-	\scoreitem[3]{250}{Perform each task}
-	\penaltyitem[3]{50}{Using custom operator or bypassing ASR}
+	\scoreitem[3]{250}{Execute the task associated with each command}
+	\penaltyitem[3]{50}{Use a custom operator}
+	\penaltyitem[3]{50}{Bypass speech recognition}
+	\penaltyitem[3]{250}{Instructing a human to perform the task}
 
 	\scoreheading{Bonus rewards}
-	\scoreitem[3]{100}{Understand command given by naive operator}
-	\scoreitem[3]{100}{Provide audio recording and transcript}
-	\scoreitem{150}{Autonomously leaving the \Arena{}}
+	\scoreitem[3]{100}{Understand a command given by a naive operator}
+	\scoreitem[3]{100}{Provide an audio recording and a transcript of a command issued by a naive operator}
+	\scoreitem{150}{Autonomously leave the \Arena{}}
 
 	%\setTotalScore{1000}
 \end{scorelist}
