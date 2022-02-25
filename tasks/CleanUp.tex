@@ -1,29 +1,29 @@
 \section{Clean Up [Housekeeper]}
 \label{test:clean-up}
 
-The robot has to tidy up an arena room with some misplaced objects, placing unknown objects in a garbage bin.
+The robot has to clean up an \Arena{} room with some misplaced objects, placing unknown objects in a garbage bin.
 
 \subsection*{Focus}
 This test focuses on task planning, object perception, and manipulation.
 
 \subsection*{Main Goal}
-Find all misplaced objects in a room and bring them to their predefined locations.
+Find six misplaced objects in a room and bring them to their predefined locations.
 
-\noindent\textbf{Reward:} 500pts (100pts per object).
+\noindent\textbf{Reward:} 600pts (100pts per object).
 
 \subsection*{Bonus Rewards}
 \begin{enumerate}[nosep]
-	\item Opening the entrance door autonomously (200pts)
-	\item Moving a \emph{tiny} object (150pts)
-	\item Moving a \emph{heavy} object (150pts)
+	\item Moving a \emph{tiny} object (200pts)
+	\item Moving a \emph{heavy} object (200pts)
 \end{enumerate}
 
 
 \subsection*{Setup}
 \begin{itemize}[nosep]
-	\item \textbf{Location:} A random room in the arena.
+	\item \textbf{Location:} A random room in the \Arena{}.
+	\item \textbf{Start Location}: The robot starts inside the \Arena{} at a predefined location near the entrance door.
 	\item \textbf{Instruction:} Near the entrance, an operator tells the robot which room to clean.
-	\item \textbf{Objects:} There are 5--10 misplaced objects at random locations in the room.
+	\item \textbf{Objects:} There are 6--10 misplaced objects at random locations in the room.
 \end{itemize}
 
 \subsection*{Additional Rules and Remarks}
@@ -32,10 +32,11 @@ Find all misplaced objects in a room and bring them to their predefined location
 	Objects can be anywhere in the room, including the floor, seats, and on top of furniture.
 	All objects are clearly visible (i.e. no occlusions) and can be:
 	\begin{itemize}[nosep]
-		\item\textit{Known objects}: Regular and alike objects.
-		\item\textit{Unknown objects}: Garbage lying around (2--3 objects).
+		\item\textit{Known objects}: Regular and alike objects.    
+    \item\textit{Unknown objects}: Garbage lying around at grasping distance (2--3 objects).
 	\end{itemize}
-	\item \textbf{Heavy and tiny objects:} Objects used in this test are lightweight and average-sized.
+
+	\item \textbf{Heavy and tiny objects:} Objects used in this test are lightweight and average-sized (see~\refsec{rule:scenario_objects}.
 	The team leader can, however, request a tiny and a heavy object to be used in order to score additional points for picking them.
 
 	\item \textbf{Bin:} Objects must be placed inside the bin, not thrown or dropped.
@@ -44,11 +45,11 @@ Find all misplaced objects in a room and bring them to their predefined location
 	\begin{table}[h]
 		\begin{tabular}{m{0.8\linewidth} c}
 			\textbf{Action} & \textbf{Reduction} \\\hline
-			Guiding the robot to a location where an object can be found & 20\% \\
-			Telling the robot where an object can be found & 30\% \\
-			Telling the robot the object's category or where the object should be placed & 30\% \\
-			Pointing at an object to be picked up & 40\% \\
-			Having a human physically interact with an object & 60\% \\\hline
+			Guiding the robot to a location where an object can be found & 20pts \\
+			Telling the robot where an object can be found & 30pts \\
+			Telling the robot the object's category or where the object should be placed & 30pts \\
+			Pointing at an object to be picked up & 40pts \\
+			Having a human physically interact with an object & 60pts \\\hline
 		\end{tabular}
 	\end{table}
 \end{enumerate}
