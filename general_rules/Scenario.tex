@@ -16,7 +16,7 @@ The minimal configuration consists of:
 	\item a kitchen
 \end{itemize}
 There is usually one \Arena{} per league.
-Depending on the local organization, there may also be multiple apartments that may be different from each other, and a robot must be prepared to perform any task in any arena.
+Depending on the local organization, there may also be multiple \Arena{}s that may be different from each other, and a robot must be prepared to perform any task in any \Arena{}.
 
 The arena is arranged and decorated to resemble a typical apartment in the hosting country, including all necessities and decorations that can be found in a normal house.
 Note that what is considered \emph{normal} may vary greatly based on the culture and location where \RoboCup{} is hosted.
@@ -29,8 +29,8 @@ The indoor home setting will be surrounded by high and low \Term{walls}{Arena wa
 
 \begin{enumerate}
 	\item \textbf{Walls:} Walls are fixed and cannot be modified during the competition. The minimum wall height is \SI{60}{\centi\meter}; a maximum height is not specified, but must allow the audience to watch the competition.
-	\item \textbf{Doors:} Inside the arena, rooms are connected by doors (at least one). All doors have handles, not knobs, and can be closed at any time; it is thus expected that robots are either able to open them or find a plan around them.
-	\item \textbf{Floor:} The floor and doorways of the arena are even, so there are no significant steps or stairways; however, minor unevenness, such as carpets, transitions in floor covering between different areas, and minor gaps (especially at doorways) can be expected.
+	\item \textbf{Doors:} Inside the \Arena{}, rooms are connected by doors (at least one). All doors have handles, not knobs, and can be closed at any time; it is thus expected that robots are either able to open them or find a plan around them.
+	\item \textbf{Floor:} The floor and doorways of the \Arena{} are even, so there are no significant steps or stairways; however, minor unevenness, such as carpets, transitions in floor covering between different areas, and minor gaps (especially at doorways) can be expected.
 	\item \textbf{Appearance:} The floor and walls are mostly monochromatic, but may contain textures, such as a carpet on the floor, or a poster or picture on the wall.
 \end{enumerate}
 
@@ -38,7 +38,7 @@ The indoor home setting will be surrounded by high and low \Term{walls}{Arena wa
 \subsection{Furniture}
 \label{rule:scenario_furniture}
 
-The arena is furnished with typical objects common for the host country.
+The \Arena{} is furnished with typical objects common for the host country.
 The minimal configuration consists of:
 \begin{itemize}
 	\item a bed,
@@ -51,17 +51,17 @@ The minimal configuration consists of:
 	\item a bookcase, and
 	\item a coat rack
 \end{itemize}
-The arena's kitchen has:
+The \Arena{}'s kitchen has:
 \begin{itemize}
 	\item a dishwasher,
 	\item a microwave,
 	\item a sink, and
 	\item a refrigerator (with some cans and plastic bottles inside)
 \end{itemize}
-A typical arena setup is shown in~\reffig{fig:scenario_arena}.
+A typical \Arena{} setup is shown in~\reffig{fig:scenario_arena}.
 \begin{figure}[tbp]
 	\centering
-	\subfloat[Typical arena]{\label{fig:scenario_arena}\includegraphics[height=46mm]{images/typical_arena.jpg}} ~
+	\subfloat[Typical Arena]{\label{fig:scenario_arena}\includegraphics[height=46mm]{images/typical_arena.jpg}} ~
 	\subfloat[Typical objects]{\label{fig:scenario_objects}\includegraphics[height=46mm]{images/typical_objects.jpg}}
 	\caption{An example of a \RoboCup\AtHome scenario}
 	\label{fig:arena}
@@ -77,7 +77,7 @@ The cupboard may have doors.
 At least one powered and functioning fridge is required in the \Arena.
 The fridge must not be smaller than \SI{120}{\centi\meter}.
 
-\subsection{Changes to the Arena}
+\subsection{Changes to the \Arena}
 \label{rule:scenario_changes}
 
 Since robots should be able to function in the real world, the \Arena{} is not fixed and might change without further notice.
@@ -122,7 +122,7 @@ Two types of objects are used in the tasks:
 		\item \textbf{\SimilarObjects{}:} Objects whose image is not present in the list of objects, but look similar enough to one of them that a person would consider them the same kind of object. For example, an apple whose color is different from the apple in the list of objects, or a piece of cloth with a different pattern.
 		\item \textbf{\StandardObjects{}:} Objects chosen from the \YCBData{}.\footnote{\url{http://www.ycbbenchmarks.com/object-set/}} They are published 6 months in advance on the \RoboCup\AtHome{} website\footnote{\url{https://athome.robocup.org/standard-objects}}, so that they can be aquired and trained beforehand.
 	\end{enumerate}
-	\item \textbf{\UnknownObjects{}:} Any other object that is not in the object list but can be grasped or handled (e.g., arena decorations).
+	\item \textbf{\UnknownObjects{}:} Any other object that is not in the object list but can be grasped or handled (e.g., \Arena{} decorations).
 \end{enumerate}
 
 The minimal configuration of \KnownObjects{} consists of:
@@ -177,14 +177,14 @@ Relevant attributes to be used are:
 
 Some tests in the RoboCup@Home league involve a \PredefinedLocation{} where people or objects can be found.
 Each \PredefinedLocation{} has an assigned \LocationClass{} (for instance, a \textit{Couch} and an \textit{Arm Chair} belong to the \textit{Seating} class).
-There will also be at least two \Term{doors}{Arena doors}, named an \Entrance{} and an \Exit, which lead in and out of the arena, respectively.
+There will also be at least two \Term{doors}{Arena doors}, named an \Entrance{} and an \Exit, which lead in and out of the \Arena{}, respectively.
 Room names, predefined locations, and location classes are announced during the \SetupDays{} (see~\ref{chap:setup_and_preparation}).
 
 \subsection{Predefined Person Names}
 \label{rule:scenario_names}
 
 Some tests in the RoboCup@Home league involve memorizing a person's name.
-All people in the arena have an assigned \PredefinedName{} chosen by the TC.
+All people in the \Arena{} have an assigned \PredefinedName{} chosen by the TC.
 The list of names contains \SI{25}{\percent} male, \SI{25}{\percent} female, and \SI{50}{\percent} gender-neutral names taken from the list of most commonly used names in the United States.
 Predefined names are announced during the \SetupDays{} (see~\ref{chap:setup_and_preparation}).
 
