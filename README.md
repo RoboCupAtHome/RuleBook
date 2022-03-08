@@ -1,7 +1,7 @@
 RuleBook for RoboCup @Home 2022
 ===============================
 
-![](https://github.com/RoboCupAtHome/RuleBook/workflows/CI/badge.svg?branch=master)
+[![CI](https://github.com/RoboCupAtHome/RuleBook/actions/workflows/ci.yml/badge.svg)](https://github.com/RoboCupAtHome/RuleBook/actions/workflows/ci.yml)
 
 The 2022 rulebook is based on the 2019 notebook and is still in a **draft** stage.
 
