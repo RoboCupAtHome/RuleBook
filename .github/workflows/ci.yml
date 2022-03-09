@@ -19,12 +19,13 @@ jobs:
   build-rulebook:
 
     runs-on: ubuntu-latest
+    container: blang/latex:ubuntu
 
     steps:
     - uses: actions/checkout@v1
     - name: LaTeX compilation
       run:
-       sudo ./latexdockercmd.sh /bin/sh -c "TERM=xterm make dorulebookonly"
+        TERM=xterm make dorulebookonly
     - name: Upload build result
       uses: actions/upload-artifact@v1
       with:
