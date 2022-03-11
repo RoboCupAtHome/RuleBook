@@ -2,20 +2,10 @@
 \label{test:carry-my-luggage}
 The robot helps the operator to carry some luggage to a car which is parked outside.
 
+\noindent \textbf{Main Goal:} The robot helps the operator to carry a bag to a car parked outside.\\
+
 \subsection*{Focus}
-Person following, navigation in unmapped environments, social navigation.
-
-\subsection*{Main Goal}
-The robot helps the operator to carry a bag to a car parked outside.
-
-\noindent\textbf{Reward:} 500pts.
-
-\subsection*{Bonus Rewards}
-\begin{enumerate}[nosep]
-	\item Reentering the \Arena{} (100pts)
-	\item Avoiding all obstacles (400pts, 100pts per obstacle)
-\end{enumerate}
-
+\emph{Person following}, \emph{navigation in unmapped environments}, \emph{social navigation}.
 
 \subsection*{Setup}
 \begin{itemize}[nosep]
@@ -25,33 +15,52 @@ The robot helps the operator to carry a bag to a car parked outside.
 	\item \textbf{Operator}: The operator is standing in front of the robot and is pointing at the bag to be carried outside.
 \end{itemize}
 
-\subsection*{Additional Rules and Remarks}
+\subsection*{Procedure}
 \begin{enumerate}[nosep]
-	\item \textbf{Obstacles:} The robot will face 4 obstacles along its way (in any arbitrary order):
+	\item \textbf{Picking up the bag:} The rebot picks up the bag pointed at by the operator.
+	\item \textbf{Following the operator:} The robot should inform the operator when it is ready to follow them. The operator walks naturally towards the car; after reaching the car, the operator takes the bag back and thanks the robot.
+	\item \textbf{Obstacles:} The robot will face 4 obstacles along its way (in arbitrary order):
 	\begin{enumerate*}[label=(\alph*)]
 		\item a small object on the ground,
 		\item a hard-to-see object,
 		\item a crowd of people obstructing the path outside, and
 		\item a small area blocked using retractable barriers.
 	\end{enumerate*}
+	
+\end{enumerate}
+
+\subsection*{Optional Goals}
+\begin{enumerate}[nosep]
+
+	\item \textbf{Re-entering the arena}: The robot returns to the arena, going back in through the entrance.
+
+	\item \textbf{Following the queue:} After the robot has reached the car, a few of the people that formed the crowd obstructing the robot return to the arena in a queue. The robot can decide to join the queue on its way back to the arena, in a manner that appears natural to the people in the queue.
+\end{enumerate}
+
+
+\subsection*{Additional Rules and Remarks}
+\begin{enumerate}[nosep]
 
 	\item \textbf{Car location:} There is no real car outside; instead, a fixed location outside the \Arena{} is designated as a car location.
 
 	\item \textbf{Reaching the car:} The robot can reach the car location only by following the operator (the location is unknown before the test).
-
-	\item \textbf{Following the operator:} The robot should inform the operator when it is ready to follow them. The operator walks naturally towards the car; after reaching the car, the operator takes the bag back and thanks the robot.
-
-	\item \textbf{Deus ex Machina:} Score reductions for human assistance are applied as follows:
-	\begin{table}[h]
-		\begin{tabular}{m{0.8\linewidth} c}
-			\textbf{Action} & \textbf{Reduction} \\\hline
-			Handing over the bag to the robot & 100pts \\
-			Finding the operator while following them: & \\
-			\hspace{0.5cm}- Natural interaction (e.g. waving and calling) & 100pts \\
-			\hspace{0.5cm}- Non-natural interaction (e.g. raising both hands and jumping) & 200pts \\
-			\hspace{0.5cm}- Touching the robot (e.g. pulling the robot's hand) & 400pts \\\hline
-		\end{tabular}
-	\end{table}
+	
+	\item \textbf{Deus ex Machina:} Score reductions for human assistance are applied in case the robot loses the operator, and needs to find them again through:
+    \begin{enumerate}
+     \item Natural interaction (e.g., waving and calling)
+     \item Unnatural interaction (e.g., raising both hands and jumping)
+     \item Touching the robot (e.g., pulling the robot's hand)
+    \end{enumerate}
+	%\begin{table}[h]
+    %    \begin{tabular}{m{0.8\linewidth} c}
+	%		\textbf{Action} & \textbf{Reduction} \\\hline
+	%		Handing over the bag to the robot & 100pts \\
+	%		Finding the operator while following them: & \\
+	%		\hspace{0.5cm}- Natural interaction (e.g. waving and calling) & 100pts \\
+	%		\hspace{0.5cm}- Non-natural interaction (e.g. raising both hands and jumping) & 200pts \\
+	%		\hspace{0.5cm}- Touching the robot (e.g. pulling the robot's hand) & 400pts \\\hline
+	%	\end{tabular}
+	%\end{table}
 \end{enumerate}
 
 
@@ -60,10 +69,11 @@ The robot helps the operator to carry a bag to a car parked outside.
 The referees need to:
 \begin{itemize}[nosep]
 	\item Select one volunteer to act as the operator.
-	\item Select three to four people to obstruct the robot's path outside.
+	\item Select three to four people to obstruct the robot's path outside and form the queue on the way back to the arena.
 	\item Choose positions for the bags and assign a bag to the operator.
-	\item Choose which obstacles the robot will face outside while following the operator.
+	\item Choose the order of the obstacles that the robot will face outside while following the operator.
 	\item Designate a location outside as a car location.
+	\item Designate a location for the queue to form returning into the arena. The queue is composed of the same people that form the crowd.
 	\item Mind the robot when it goes outside the \Arena{}.
 \end{itemize}
 
