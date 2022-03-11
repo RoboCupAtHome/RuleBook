@@ -1,24 +1,27 @@
-The maximum time for this test is 15 minutes.
+\begin{table}[h]
+	\begin{tabular}{m{0.85\linewidth} c}
+		\textbf{Maximum time}: & 15 minutes \\
+	\end{tabular}
+\end{table}
 
 \small\begin{scorelist}
-	\scoreheading{Main Goal}
-	\scoreitem{500}{Take and serve an order}
-	\penaltyitem[2]{200}{Being guided to the \emph{Kitchen-bar} or to a customer's table}
-	\penaltyitem{100}{Not making eye-contact when taking an order}
-	\penaltyitem[4]{50}{Bypassing object manipulation (handover)}
-	\penaltyitem[5]{100}{Bypassing object manipulation}
+	\scoreheading{Regular Rewards}	
+	\scoreitem[2]{500}{Take and serve an order.}
 
-	\scoreheading{Second order (bonus reward)}
-	\scoreitem{500}{Take and serve an additional order}
-	\penaltyitem[2]{200}{Being guided to the \emph{Kitchen-bar} or to a customer's table}
-	\penaltyitem{100}{Not making eye-contact when taking an order}
-	\penaltyitem[4]{50}{Bypassing object manipulation (handover)}
-	\penaltyitem[5]{100}{Bypassing object manipulation}
+	\scoreheading{Bonus Rewards}
+	\scoreitem[2]{100}{Detect calling or waving customer (per order).}
+	\scoreitem[2]{100}{Reach a customer's table without prior guidance/training (per order).}
+	\scoreitem[2]{300}{Use an unattached tray to transport (per order).}
+	
+	\scoreheading{Regular Penalties}
+	\penaltyitem[2]{100}{Not making eye-contact when taking an order (per order).}
 
-	\scoreheading{Additional bonus rewards}
-	\scoreitem[2]{100}{Detect calling or waving customer}
-	\scoreitem[2]{100}{Reach a customer's table without prior guidance/training}
-	\scoreitem[2]{300}{Use an unattached tray to transport an order}
+	\scoreheading{Deus ex Machina Penalties}
+	\penaltyitem[2]{200}{Being guided to a table (per order).}
+	\penaltyitem[2]{25}{Being told/pointed where is a table/\textit{Kitchen-bar} (per order).}
+	\penaltyitem[6]{50}{Each object handover (per object).}
+	\penaltyitem[6]{100}{Bypassing manipulation (per object).}
+
 \end{scorelist}
 
 % Local Variables:
