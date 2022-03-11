@@ -1,83 +1,72 @@
 \section{Clean the Table [Housekeeper]}
 \label{test:clean-the-table}
-The robot has to remove all dishes from a table (presumably after dinner) and place them into the dishwasher.
+The robot has to remove all dishes from a table and place them into the dishwasher.\\
 
-% \subsection*{Focus}
-% This test focuses on object perception, manipulation, and planning.
+\noindent \textbf{Main goals:} All tableware and cutlery on the table is placed inside the dishwasher (six objects in total).\\
 
-\subsection*{Main Goal}
-All the tableware and cutlery on the table is placed inside the dishwasher.
-
-\noindent\textbf{Reward:} 1000pts
-
-\subsection*{Bonus rewards}
+\noindent \textbf{Optional goals:}
 \begin{enumerate}[nosep]
-	\item Opening the dishwasher door (300pts)
-	\item Pulling out the dishwasher racks (300pts)
-	\item Placing the Dishwasher Tab inside the dishwasher (300pts)
-	\item Leaving the \Arena{} (100pts)
+	\item Opening the dishwasher door
+	\item Pulling out the dishwasher racks
+	\item Placing a dishwasher tab inside the dishwasher
+	\item Leaving the \Arena{}
 \end{enumerate}
+
+\subsection*{Focus}
+\emph{Object perception}, \emph{manipulation in narrow spaces}, and \emph{task planning}.
 
 \subsection*{Setup}
 \begin{itemize}[nosep]
-	\item \textbf{Location:} This test takes place in the \Arena{}. A dining table is located close to the dishwasher.
-	\item \textbf{Tray:} A plastic tray is located either on top of the dishwasher, or onto one of its racks. The tray may have tableware and cutlery placed inside already.
-	\item \textbf{Table setting:} The table has a total of 6 objects disposed in a typical setting for a meal for one person
-	Distribution is as follows:
+	\item \textbf{Location:} This test takes place in the \Arena{}.
+	\item \textbf{Dining table:} A dining table is located close to the dishwasher.
+	\item \textbf{Tray:} A plastic tray is located either on top of the dishwasher or on one of the racks. The tray may have other tableware and cutlery placed inside.
+	\item \textbf{Table setting:} The table has a total of six objects disposed in a typical setting for a meal for one person.
+	The object distribution is as follows:
 	\begin{itemize}[nosep]
-		\item\textit{Silverware}: Any two objects (fork, knife, spoon).
-		\item\textit{Tableware}: Any three objects, excluding silverware. At least one must be a dish.
-		\item\textit{Dishwasher Tab}: One Dishwasher Tab.
+		\item\textit{Silverware}: Any two objects (fork, knife, or spoon).
+		\item\textit{Tableware}: Any three objects (excluding silverware), at least one of which one must be a dish.
+		\item\textit{Dishwasher tab}: One dishwasher tab.
 	\end{itemize}
 \end{itemize}
 
 
-\subsection*{Additional rules and remarks}
+\subsection*{Additional Rules and Remarks}
 \begin{enumerate}[nosep]
-	\item \textbf{Deus ex Machina:} The following reductions apply:
-	\begin{itemize}[nosep]
-		\item \textbf{Handover:} Handing over an object causes a score reduction of 100pts.
-		\item \textbf{Showing objects:} Pointing, or telling to the robot where an object is causes a score reduction of 50pts.
-		\item \textbf{Placing tableware:} Having a human assistant placing tableware inside the dishwasher causes a score reduction of 200pts.
-		\item \textbf{Placing cutlery:} Having a human assistant placing cutlery inside the dishwasher causes a score reduction of 250pts.
-	\end{itemize}
-
-	\item \textbf{Safe placing:} Objects must be placed with care. It must be clear that the robot is trying to place the object, not throwing or dropping it.
-
-	\item \textbf{Dishwasher:} The team decides whether the robot will place the objects in the dishwasher's rack or in the official tray.
-
+	\item \textbf{Safe placing:} Objects must be placed with care, namely the robot should place rather than throw or drop objects.
+	\item \textbf{Dishwasher:} The team decides whether the robot will place the objects in the dishwasher's rack or in the plastic tray.
 	\item \textbf{Dishwasher door:} The dishwasher door is open and with the racks pulled out by default.
-	The team leader can, however, request the dishwasher to be closed and score additional points for opening it. If the robot fails to open the door, it must clearly state it and request the referee to open it.
-
-	% \item \textbf{Award:} Teams that carry out this task are eligible to win the \textit{Procter \& Gamble Dishwasher Challenge Award}, described in \refsec{award:pandg}.
-
+	The team leader can, however, request the dishwasher to be closed for bonus points. If the robot fails to open the door, it must clearly state this and request the referee to open the door.
+	\item \textbf{Deus ex Machina:} The scores are reduced if human assistance is received, in particular:
+	\begin{itemize}[nosep]
+		\item pointing to an object or telling to the robot where an object is
+		\item handing an object over to the robot
+		\item having a human place tableware or cutlery inside the dishwasher
+	\end{itemize}
 \end{enumerate}
 
-\subsection*{Referee instructions}
+\subsection*{OC Instructions}
 
-The referee needs to
-\begin{itemize}
-	\item Place the table setting.
-	\item Place the tray on the dishwasher or onto the rack, as requested by the team.
-\end{itemize}
-
-\subsection*{OC instructions}
-During Setup days:
+During the \SetupDays:
 \begin{itemize}
 	\item Provide official cutlery and tableware for training.
 \end{itemize}
-
 2 hours before the test:
 \begin{itemize}
-	\item Announce the predefined location to take the command.
-	\item Announce the predefined location of the Dishwasher Tab.
+	\item Announce the predefined location of the dishwasher tab.
 \end{itemize}
 
-% \newpage
+
+\subsection*{Referee Instructions}
+
+The referee needs to:
+\begin{itemize}
+	\item Place objects on the table.
+	\item Place the plastic tray on the dishwasher or on a rack, as requested by the team.
+\end{itemize}
+
 \subsection*{Score sheet}
 \input{scoresheets/CleanTable.tex}
 
 % Local Variables:
 % TeX-master: "Rulebook"
 % End:
-
