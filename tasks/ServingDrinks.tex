@@ -1,31 +1,39 @@
 \section{Serving Drinks [Party Host]}
 \label{test:serving-drinks}
-The robot has to take orders and deliver drinks.
+The robot takes orders of drinks from party guests and delivers them.
 
 % \subsection*{Focus}
 
 % This test focuses on human detection and recognition, safe navigation and human-robot interaction with unknown people.
 
-\subsection*{Main Goal}
-Deliver a drink to all people without one.
+\noindent \textbf{Main Goal:} Take the order of a drink from all people without one, and deliver the correct drink to the person who ordered it.\\
 
-\noindent\textbf{Reward:} 750pts (250pts per delivered drink).
-
-\subsection*{Bonus rewards}
+\noindent \textbf{Optional Goals:}
 \begin{enumerate}[nosep]
-	\item Preemptively informing a guest that the ordered drink is not available (250pts)
+	\item Inform a guest of drink unavailability upon request.
+	\item Correct the bartender.
 \end{enumerate}
+
+\subsection*{Focus}
+\emph{Human-Robot interaction}, \emph{person recognition}, \emph{object recognition}.
+
+%\noindent\textbf{Reward:} 750pts (250pts per delivered drink).
+
+%\subsection*{Bonus rewards}
+%\begin{enumerate}[nosep]
+%	\item Preemptively informing a guest that the ordered drink is not available (250pts)
+%\end{enumerate}
 
 \subsection*{Setup}
 \begin{itemize}
 	\item \textbf{Location}: The test takes place in the living room.
-	Initially there is one person sitting here whom the robot already knows.
-	This person is referred as \emph{default guest}.
+	Initially there is one person sitting here, whom the robot already knows.
+	This person is referred as the \emph{default guest}.
 
 	\item \textbf{Start Location}: The robot starts inside the \Arena{} at a predefined location near the entrance door.
 
-	\item \textbf{Guests:} There are at least 5 guests in the living room, two standing and three sitting.
-	Each guest has assigned a predefined name and has either a drink or a drink request (choice and alternative).
+	\item \textbf{Guests:} There are at least five guests in the living room, two standing and three sitting.
+	Each guest has assigned a predefined name and has either a drink or a drink request (choice and alternative). At least three guests do not have a drink. At least two guests have a drink.
 
 	\item \textbf{Bar:} The bar can be any flat surface where objects can be placed, in any other room but the living room.
 	All available beverages are on top of the bar.
@@ -34,29 +42,38 @@ Deliver a drink to all people without one.
 	\item \textbf{Bartender:} The Bartender may be standing either behind the bar or next to it, depending on the \Arena{} setup.
 \end{itemize}
 
+\subsection*{Procedure}
+\begin{enumerate}[nosep]
+	\item \textbf{Approaching guests:} The robot approaches any of the guests without drinks, except the default guest,  and asks them their name, what their favourite drink is, and their second choice in case their favourite drink was not available. The robot does not need to approach the default guest because it already knowns them, including their choice of drink.
+	
+	\item \textbf{Drink preparation:} The robot goes to the bar, and asks the bartender for one or more drinks. The bartender puts the available requested drinks on the bar in front of the robot, and tells the robot if any requested drink is not available. The bartender can make mistakes.
+	
+	\item \textbf{Changing places:} After giving the order (when the robot is not in the living room), the referees may re-arrange the guests.
+
+	
+	\item \textbf{Drink delivery:} When delivering the drinks to the guests who ordered them, the robot first greets the guest saying their name. The robot delivers their first choice of drink to a guest, if available. If not available, the robot delivers their second choice of drink. 
+
+	\item \textbf{Optional Goals:}
+	\begin{enumerate}
+	 \item \textbf{Correct the bartender:} If the bartender provided the wrong drink, or told the robot that a drink was not available when, in fact, it was, the robot corrects the bartender, and asks for the right drink.
+	\end{enumerate}
+
+	
+\end{enumerate}
 
 
 \subsection*{Additional rules and remarks}
 \begin{enumerate}
-	\item \textbf{Partial scoring:} The main task allows partial scoring.
-	Robot score per correct delivered drink.
 
-	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per guest as follows.
+	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per guest as follows:.
 	\begin{itemize}[nosep]
-		\item \textbf{Actively placing order:} Approaching to the robot to place an order causes a score reduction of 100pts.
+		\item \textbf{Actively placing order:} Approaching the robot to place an order.
 
-		\item \textbf{Calling to place order:} Calling the robot (either by shouting or waving) to place an order causes a scoring reduction of 50pts.
+		\item \textbf{Calling to place order:} Calling the robot (either by shouting or waving).
 
-		\item \textbf{Revealing unavailable drink:} Telling the robot which drink is unavailable causes a score reduction of 100pts.
+		\item \textbf{Avoid manipulation:} Asking the bartender to place a drink on the robot.
+		
 	\end{itemize}
-
-	\item \textbf{Delivering drinks:} When delivering a drink, the robot must greet the guest by stating her name and remembering the chosen drink.
-	The robot may either hand-over drinks or have attached a tray.
-	When a tray is used, the robot must be sure that the guest is taking the correct drink (guests may try to take the wrong one).
-
-	\item \textbf{Misunderstood names:} If the robot misunderstands the name, the understood (wrong) name is used in the remainder of this test.
-
-	\item \textbf{Changing places:} After giving the order (when the robot is not in the living room), the referees may re-arrange the people.
 
 	\item \textbf{Empty \Arena{}:} For this task only the robot, the guests, and the Bartender are allowed to be in the \Arena{}.
 \end{enumerate}
@@ -66,7 +83,7 @@ Deliver a drink to all people without one.
 The referees need to
 \begin{itemize}
 	\item Select at least 5 volunteers and assign predefined names.
-	\item Assign a preferred drink and an alternative to three guests
+	\item Assign a preferred drink and an alternative to at least three guests
 	\item Give drinks to the other guests
 	\item Select the person (bartender) who will serve the drinks
 	\item Tell guests when to switch places
