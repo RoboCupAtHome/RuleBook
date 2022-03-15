@@ -1,7 +1,10 @@
-\section{Receptionist}
+\section{Receptionist [Party Host]}
 \label{test:receptionist}
 The robot has to take two new guests to the living room to introduce them and offer a free place to sit.
 
+
+% \subsection*{Focus}
+% This test focuses on human detection and recognition, safe navigation and human-robot interaction with unknown people.
 \noindent \textbf{Focus:} \SysI{}, \HRI{}, \PerDet{}, \PerRec.
 
 \vspace{-5pt} % Hack to fit page. Remove if task description is shortened in the future
@@ -17,12 +20,11 @@ Introduce and usher two newcomers to a party and maintain appropriate gaze direc
 	\item Describe the first guest for the second guest (150pts)
 \end{enumerate}
 
-
 \subsection*{Setup and Procedure}
 \begin{itemize}
 	\item \textbf{Location}: The test takes place in the living room.
 	
-	\item \textbf{Start Location}: The robot starts inside the arena at a predefined location near the entrance door.
+	\item \textbf{Start Location}: The robot starts inside the \Arena{} at a predefined location near the entrance door.
 	
 	\item \textbf{Entrance:} The entrance door is open by default. The team leader can request to close the door to score additional points by opening it for the guests.
 
@@ -41,9 +43,8 @@ Introduce and usher two newcomers to a party and maintain appropriate gaze direc
 	looks at the correct person. During navigation robot looks in the direction where it is going. Gazing in a unrelated 
 	person or direction at any stage of the task cancels bonus points. 
 \end{itemize}
-%\baselineskip
 
-\subsection*{Additional Rules and Remarks}
+\subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
 	\item \textbf{Misunderstanding:} Not understanding the guests and asking them again is fine. Continuing with a wrong name or drink causes a score reduction of 50pts.
 		
@@ -57,18 +58,17 @@ Introduce and usher two newcomers to a party and maintain appropriate gaze direc
 	\end{itemize}
 \end{enumerate}
 
-\newpage
 
-\subsection*{Referee Instructions}
+\subsection*{Referee instructions}
 
 The referees need to
 \begin{itemize}
-	\item Assign name and drink to volunteers.
+	\item Assign name and drink to 3 volunteers.
 	\item Arrange (and re-arrange) people in the living room.
-	\item Ask team leader whether to close the door.
+	\item Open the door when requested by the robot
 \end{itemize}
 
-\subsection*{OC Instructions}
+\subsection*{OC instructions}
 
 2h before test:
 \begin{itemize}
@@ -78,6 +78,6 @@ The referees need to
 \end{itemize}
 
 % \newpage
-\subsection*{Score Sheet}
+\subsection*{Score sheet}
 \input{scoresheets/Receptionist.tex}
 
