@@ -1,21 +1,18 @@
 \section{General Purpose Service Robot [Housekeeper]}
 \label{test:gpsr}
-Similar to a modern smart speaker, the robot can be asked to do anything involving functionalities from \SONE{} of this rulebook or any previous rulebook.
+Similar to a modern smart speaker, the robot can be asked to do anything involving functionalities from \SONE{} of this rulebook or any previous rulebook.\\
+
+\noindent \textbf{Main Goal:} Execute 3 commands requested by the operator.\\
+
+\noindent \textbf{Optional Goals:}
+\begin{enumerate}[nosep]
+	\item Understand a command given by a naive operator
+	\item Provide an audio recording and transcript
+	\item Autonomously leave the \Arena{}
+\end{enumerate}
 
 \subsection*{Focus}
-This test focuses on task planning, detection and recognition of objects and people as well as their features, and object manipulation.
-
-\subsection*{Main Goal}
-Execute 3 commands requested by the operator.
-
-\noindent\textbf{Reward:} 750pts (250 points per command)\\
-
-\subsection*{Bonus Rewards}
-\begin{enumerate}[nosep]
-	\item Understand a command given by a naive operator (50pts per command).
-	\item Provide an audio recording and transcript (100pts per command).
-	\item Autonomously leave the \Arena{} (150pts).
-\end{enumerate}
+\emph{Task planning}, \emph{object/people detection and recognition}, \emph{object feature recognition}, \emph{object manipulation}
 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -51,16 +48,13 @@ Execute 3 commands requested by the operator.
 
 	\item \textbf{Leaving the \Arena{}:} A bonus score can be earned if the robot autonomously leaves the \Arena{} after successfully executing all three given commands.
 
-	\item \textbf{Deus ex Machina:} Score reduction applies per given command as follows:
-	\begin{table}[h]
-		\begin{tabular}{m{0.65\linewidth} c}
-			\textbf{Action} & \textbf{Reduction} \\\hline
-			Choosing a custom operator & 50pts \\
-			Bypassing speech recognition by using an alternative HRI & 50pts \\
-			Instructing a human assistant to perform the whole task & 250pts \\
-			Helping the robot to accomplish a task & As in other \SONE{} tests \\\hline
-		\end{tabular}
-	\end{table}
+	\item \textbf{Deus ex Machina:} The scores are reduced if human assistance is received, in particular:
+	\begin{itemize}
+		\item using a custom operator
+		\item bypassing speech recognition by using an alternative HRI
+		\item receiving human assistance to accomplish a task
+		\item instructing a human assistant to perform the whole task
+	\end{itemize}
 \end{enumerate}
 
 \subsection*{Referee Instructions}
@@ -80,7 +74,7 @@ Execute 3 commands requested by the operator.
 
 \noindent During the test:
 \begin{itemize}[nosep]
-	\item Rearrange the arena so that it is in its nominal condition.
+	\item Rearrange the arena so that it is in its nominal condition before each command.
 \end{itemize}
 
 \subsection*{Score Sheet}
