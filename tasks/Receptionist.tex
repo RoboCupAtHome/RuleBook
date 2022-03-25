@@ -1,26 +1,29 @@
 \section{Receptionist [Party Host]}
 \label{test:receptionist}
-The robot has to take two new guests to the living room to introduce them and offer a free place to sit.
+\subsection*{Description}
 
+    The robot has to take two new guests to the living room to introduce them and offer a free place to sit.\\
 
-% \subsection*{Focus}
-% This test focuses on human detection and recognition, safe navigation and human-robot interaction with unknown people.
-\noindent \textbf{Focus:} \SysI{}, \HRI{}, \PerDet{}, \PerRec.
+% \noindent \textbf{Focus:} \SysI{}, \HRI{}, \PerDet{}, \PerRec.
 
-\vspace{-5pt} % Hack to fit page. Remove if task description is shortened in the future
-\subsection*{Main Goal}
-Introduce and usher two newcomers to a party and maintain appropriate gaze direction (at person, direction of navigation).
+%\vspace{-5pt} % Hack to fit page. Remove if task description is shortened in the future
+\textbf{Main goal:}
+    Introduce and usher two newcomers to a party and maintain appropriate gaze direction (at person, direction of navigation).
 
-\noindent\textbf{Reward:} 650pts
+% \noindent\textbf{Reward:} 650pts
 
-\vspace{-5pt}
-\subsection*{Bonus Rewards}
+% \vspace{-5pt}
+\textbf{Optional goal:}
 \begin{enumerate}[nosep]
-	\item Open the entrance door to a guest (100pts each)
-	\item Describe the first guest for the second guest (150pts)
+	\item Open the entrance door for each arriving guest.
+	\item Describe the first guest for the second guest.
 \end{enumerate}
 
-\subsection*{Setup and Procedure}
+\subsection*{Focus}
+This test focuses on \SysI{}, \HRI{}, \PerDet{}, \PerRec. 
+% human detection and recognition, safe navigation and human-robot interaction with unknown people.
+
+\subsection*{Setup}
 \begin{itemize}
 	\item \textbf{Location}: The test takes place in the living room.
 	
@@ -30,9 +33,14 @@ Introduce and usher two newcomers to a party and maintain appropriate gaze direc
 
 	\item \textbf{Host:} The host's name and favorite drink will be announced before the test. The host is already sitting in the living room.
 
-	\item \textbf{Guests:} Both guests have a name and favorite drink. An arriving guest will either step in front of the robot or knock on the closed door. Guests have to be guided to the living room to be introduced. Each of the guest will arrive separately.
+	\item \textbf{Guests:} Both guests have a name and favorite drink. An arriving guest will either step in front of the robot or ring the bell if the door is closed. Guests have to be guided to the living room to be introduced. Each of the guest will arrive separately. The sound of the bell will be provided to teams
+	during setup period before competition.
 
-	\item \textbf{Introductions:} When introducing guests, the robot must clearly identify the person being introduced and state their name and favorite drink. Introducing two people means to introduce them to each other.
+\end{itemize}
+
+\subsection*{Procedure}
+\begin{itemize}
+    \item \textbf{Introductions:} When introducing guests, the robot must clearly identify the person being introduced and state their name and favorite drink. Introducing two people means to introduce them to each other.
 	
 	\item \textbf{Seating People:} The robot must point at a place or location where the guest can sit.
 	
@@ -40,8 +48,8 @@ Introduce and usher two newcomers to a party and maintain appropriate gaze direc
 	
 	\item \textbf{Describing the First Guest:} Naming at least 4 characteristics of the first guest, i.e., color of clothes, color of hair, gender, and age, earns bonus points.
 	\item \textbf{Looking at person/direction of navigation:} During verbal interactions and descriptions of people, robot 
-	looks at the correct person. During navigation robot looks in the direction where it is going. Gazing in a unrelated 
-	person or direction at any stage of the task cancels bonus points. 
+	looks at the correct person. During navigation robot looks in the direction where it is going. Persistently gazing towards unrelated 
+	person or incorrect direction while moving during the task cancels bonus points. 
 \end{itemize}
 
 \subsection*{Additional rules and remarks}
@@ -59,7 +67,9 @@ Introduce and usher two newcomers to a party and maintain appropriate gaze direc
 \end{enumerate}
 
 
-\subsection*{Referee instructions}
+\subsection*{Instructions:}
+
+\subsubsection*{To Referee}
 
 The referees need to
 \begin{itemize}
@@ -68,7 +78,7 @@ The referees need to
 	\item Open the door when requested by the robot
 \end{itemize}
 
-\subsection*{OC instructions}
+\subsubsection*{To OC}
 
 2h before test:
 \begin{itemize}
