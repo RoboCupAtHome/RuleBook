@@ -1,21 +1,22 @@
 \section{Farewell [Party Host]}
 \label{test:farewell}
-Some guests are tired, and call the robot to retrieve their coat. One guest is a medical doctor and needs to leave urgently. It's raining outside and there is only one umbrella, so the robot takes the guests one by one to their cab and returns with the (optional for SSPL) umbrella.
 
-\subsection*{Focus}
-This test focuses on human detection, safe navigation, and human-robot interaction.
+\subsection*{Description}
+    Some guests are tired, and they call the robot to retrieve their coat. One guest is a medical doctor and needs to leave urgently. It's raining outside and there is only one umbrella, so the robot takes the guests one by one to their cab and returns with the (optional for SSPL) umbrella.
 
-\subsection*{Main Goal}
+
+\textbf{Main goal:}
 The robot escorts two guests to their cab (where the cab driver is standing), with the medical doctor guest first.
 
-\noindent\textbf{Reward:} 600pts (200pts per guest, 200pts medical doctor first).
 
-\subsection*{Bonus rewards}
+\textbf{Optional goal:}
 \begin{enumerate}[nosep]
-	\item Delivering guest's right coat (100pts each, max 200pts)
-	\item Entertaining guest with conversation while ushering person to the cab (200pts)	
+	\item Delivering guest's right coat.
+	\item Entertaining guest with conversation while ushering person to the cab.
 \end{enumerate}
 
+\subsection*{Focus}
+This test focuses on \PerDet{}, \NAV{}, and \HRI{}.
 
 \subsection*{Setup}
 \begin{itemize}
@@ -23,6 +24,11 @@ The robot escorts two guests to their cab (where the cab driver is standing), wi
 	\item \textbf{Start location}: The robot starts inside the \Arena{}.
 	\item \textbf{Guests}: There are five people in the living room---three sitting and two standing. At least two of them are doctors.
 \end{itemize}
+
+\subsection*{Procedures}
+\begin{enumerate}
+    \item 
+\end{enumerate}
 
 \subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
@@ -40,21 +46,19 @@ The robot escorts two guests to their cab (where the cab driver is standing), wi
 	\item \textbf{Delivering coats:} Coats are hanging on a coat rack near the exit door.
 	The robot should hook off the coats autonomously and bring them back to the right people.
 
-	\item \textbf{Deus ex Machina:} Score reductions for human assistance are applied per guest as follows:
-	\begin{table}[h]
-		\begin{tabular}{m{0.8\linewidth} c}
-			\textbf{Action} & \textbf{Reduction} \\\hline
-			Telling the robot which guest is leaving (e.g. by pointing) & 30pts \\
-			Guiding the robot to the cab & 40pts \\
-			Guiding the robot back to the arena & 40pts \\
-			Handing over a coat to the robot & 50pts \\\hline
-		\end{tabular}
-	\end{table}
+	\item \textbf{Deus ex Machina:} The scores are reduced if human assistance is received, in particular:
+	\begin{itemize}
+		\item Telling the robot which guest is leaving (e.g. by pointing)
+		\item Guiding the robot to the cab
+		\item Guiding the robot back to the arena
+		\item Handing over a coat to the robot
+	\end{itemize}
 \end{enumerate}
 
 
-\subsection*{Referee instructions}
+\subsection*{Instructions}
 
+\textbf{To referee}
 The referees need to:
 \begin{itemize}
 	\item Select at least 5 volunteers, and assign them names and coat colors.
@@ -63,7 +67,7 @@ The referees need to:
 	\item Mind the robot when it goes outside the \Arena{}.
 \end{itemize}
 
-\subsection*{OC instructions}
+\textbf{To OC}
 
 During the \SetupDays:
 \begin{itemize}
