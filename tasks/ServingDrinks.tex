@@ -26,29 +26,28 @@ The robot takes orders of drinks from party guests and delivers them.
 
 \subsection*{Setup}
 \begin{itemize}
-	\item \textbf{Location}: The test takes place in the living room.
-	Initially there is one person sitting here, whom the robot already knows.
-	This person is referred as the \emph{default guest}.
-
-	\item \textbf{Start Location}: The robot starts inside the \Arena{} at a predefined location near the entrance door.
-
-	\item \textbf{Guests:} There are at least five guests in the living room, two standing and three sitting.
-	Each guest has assigned a predefined name and has either a drink or a drink request (choice and alternative). At least three guests do not have a drink. At least two guests have a drink.
-
-	\item \textbf{Bar:} The bar can be any flat surface where objects can be placed, in any other room but the living room.
-	All available beverages are on top of the bar.
-	One of the drink requests is not available.
-
-	\item \textbf{Bartender:} The Bartender may be standing either behind the bar or next to it, depending on the \Arena{} setup.
+	\item \textbf{Locations}: 
+		\begin{itemize} 
+			\item The test takes place in the living room.
+			\item The robot starts inside the \Arena{} at a predefined location near the entrance door.
+		\end{itemize}
+	\item \textbf{People}:
+		\begin{itemize} 			
+			\item There are at least five guests in the living room, two standing and three sitting. Each guest has a predefined name assigned, and may or may not already have a drink. Each guest has a predefined favourite drink, and a choice of alternative drink. The robot does not initially know either the name or the favourite drinks of the guests. At least three guests start without a drink. At least two guests start with a drink.
+			\item The party host is also in the living room, and is known to the robot (including name and favourite drinks).
+			\item The bartender may be standing either behind the bar or next to it, depending on the \Arena{} setup.
+		\end{itemize}
+	\item \textbf{Furniture}: The bar can be any flat surface where objects can be placed, in any room but the living room.
+	\item \textbf{Objects}: All available beverages are on top of the bar. One of the drink requests is not available.
 \end{itemize}
 
 \subsection*{Procedure}
 \begin{enumerate}[nosep]
-	\item \textbf{Approaching guests:} The robot approaches any of the guests without drinks, except the default guest,  and asks them their name, what their favourite drink is, and their second choice in case their favourite drink was not available. The robot does not need to approach the default guest because it already knowns them, including their choice of drink.
+	\item \textbf{Approaching guests:} The robot approaches any of the guests without drinks, except the host,  and asks them their name, what their favourite drink is, and their second choice in case their favourite drink was not available. The robot does not need to approach the host because it already knowns them, including their choice of drink.
 	
 	\item \textbf{Drink preparation:} The robot goes to the bar, and asks the bartender for one or more drinks. The bartender puts the available requested drinks on the bar in front of the robot, and tells the robot if any requested drink is not available. The bartender can make mistakes.
 	
-	\item \textbf{Changing places:} After giving the order (when the robot is not in the living room), the referees may re-arrange the guests.
+	\item \textbf{Changing places:} when the robot is not in the living room, the referee may re-arrange the guests.
 
 	
 	\item \textbf{Drink delivery:} When delivering the drinks to the guests who ordered them, the robot first greets the guest saying their name. The robot delivers their first choice of drink to a guest, if available. If not available, the robot delivers their second choice of drink. 
@@ -65,17 +64,17 @@ The robot takes orders of drinks from party guests and delivers them.
 \subsection*{Additional rules and remarks}
 \begin{enumerate}
 
-	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per guest as follows:.
+	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per guest as follows:
 	\begin{itemize}[nosep]
 		\item \textbf{Actively placing order:} Approaching the robot to place an order.
 
 		\item \textbf{Calling to place order:} Calling the robot (either by shouting or waving).
 
-		\item \textbf{Avoid manipulation:} Asking the bartender to place a drink on the robot.
+		\item \textbf{Avoiding manipulation:} Asking the bartender to place a drink on the robot.
 		
 	\end{itemize}
 
-	\item \textbf{Empty \Arena{}:} For this task only the robot, the guests, and the Bartender are allowed to be in the \Arena{}.
+	\item \textbf{Empty \Arena{}:} For this task only the robot, the guests, the host, and the Bartender are allowed to be in the \Arena{}.
 \end{enumerate}
 
 \subsection*{Referee instructions}
@@ -92,9 +91,14 @@ The referees need to
 
 \subsection*{OC instructions}
 
+During the \SetupDays{}:
+\begin{itemize}
+	\item Choose the volunteers (at least two, in case one is not available for a particular test) to be the host.
+\end{itemize}
+
 2h before test:
 \begin{itemize}
-	\item Specify and announce the bar location
+	\item Specify and announce the bar location.
 \end{itemize}
 
 % \newpage
