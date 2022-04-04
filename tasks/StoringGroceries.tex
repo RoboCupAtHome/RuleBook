@@ -15,31 +15,57 @@ The robot stores groceries into a cabinet with shelves. Objects are sorted on th
 \emph{Object detection and recognition}, \emph{object feature recognition}, \emph{object manipulation}.
 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
 % Setup
-%
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Setup}
-\begin{enumerate}
-	\item \textbf{Location:} The testing area has a cabinet and a table nearby.
-	\item \textbf{Table:} The table has 5--10 objects placed on it and the robot can choose which ones to grasp and in what order. On small tables, objects will be added as the robot frees up space.
-	\item \textbf{Cabinet:} The cabinet contains objects arranged in groups --- either by category or likeliness --- on different shelves.
-	\item \textbf{Cabinet door:} The cabinet door is open by default, but the team leader can request the door to be closed and score additional points for opening it. If the robot fails to open the door, it must clea, it should be placed on a new shelf, rly state it and request the referee to open it.
-	\item \textbf{Objects:} Some of the objects are placed behind the door and cannot be accessed unless the door is open.
+\begin{itemize}
+	\item \textbf{Locations:}
+		\begin{itemize}
+			\item \textbf{Start location:} Before the test, the robot waits outside the \Arena{} and navigates to the testing area when the door is open.
+			\item \textbf{Test location:} The testing area has a cabinet and a table nearby.
+		\end{itemize}
+	\item \textbf{People:}
+		\begin{itemize}
+			\item No people are involved in the test, unless the robot requires human assistance.
+		\end{itemize}
+	\item \textbf{Furniture:}
+		\begin{itemize}
+			\item \textbf{Table:} The table has 5--10 objects placed on it and the robot can choose which ones to grasp and in what order. On small tables, objects will be added as the robot frees up space.
+			\item \textbf{Cabinet:} The cabinet contains objects arranged in groups --- either by category or likeliness --- on different shelves.
+			\item \textbf{Cabinet door:} The cabinet door is open by default, but the team leader can request the door to be closed and score additional points for opening it. If the robot fails to open the door, it must clearly state this and request the referee to open it.
+		\end{itemize}
+	\item \textbf{Objects}:
+		\begin{itemize}
+			\item \textbf{Objects:} Some of the objects are placed behind the cabinet door and cannot be accessed unless the door is open.
+		\end{itemize}
+\end{itemize}
+
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Procedure
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Procedure}
+\begin{enumerate}[nosep]
+	\item \textbf{Table location:} Two hours before the test, the referees announce the table and cabinet that will be used in the test, as well as a rough location of the table.
+	\item \textbf{Cabinet door; heavy and/or tiny object}: Half an hour before the test, the team informs the referees:
+		\begin{itemize}
+			\item whether the cabinet door should be closed
+			\item whether a heavy and/or a tiny object should be used in the test
+		\end{itemize}
+	\item \textbf{Test start:} The robot moves to the testing area when the arena door is open.
+	\item \textbf{Storing groceries:} After identifying the table (and optionally opening the cabinet door), the robot moves the objects from the table to the cabinet.
 \end{enumerate}
 
 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
 % Additional Rules
-%
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Additional rules and remarks}
 \begin{enumerate}
 	\item \textbf{Table:} The table's rough location will be announced beforehand, having its position to the left, right, or behind the robot.
 	\item \textbf{Incorrect categorization:} The score is reduced if an object is stored on the cabinet, but not on a shelf with similar objects; this reduction is applied per incorrectly stored object.
 	\item \textbf{New category:} Objects that do not semantically belong to any of the categories represented on the shelves should be grouped together on a new shelf.
-	\item \textbf{Deus Ex Machina:} The scores are reduced if human assistance is received, in particular:
+	\item \textbf{Deus Ex Machina:} The scores are reduced if human assistance is received, in particular for:
 	\begin{itemize}
 		\item telling or pointing out to the robot where to place an object
 		\item moving an object instead of the robot
@@ -50,7 +76,7 @@ The robot stores groceries into a cabinet with shelves. Objects are sorted on th
 
 \textbf{2 hours before the test}
 \begin{itemize}
-	\item Announce which table and shelf will be used in the test.
+	\item Announce which table and cabinet will be used in the test.
 	\item Announce a rough location for the table.
 \end{itemize}
 
@@ -58,9 +84,9 @@ The robot stores groceries into a cabinet with shelves. Objects are sorted on th
 
 The referee needs to:
 \begin{itemize}
-	\item Place objects in the cabinet, grouping them by category or likeliness.
-	\item Open the door of the cabinet.
 	\item Place 5--10 objects on the table.
+	\item Place objects in the cabinet, grouping them by category or likeliness.
+	\item Open the door of the cabinet (unless the team wants it closed).
 \end{itemize}
 
 
