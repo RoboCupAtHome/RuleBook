@@ -1,58 +1,68 @@
 \section{Where is This? [Party Host]}
 \label{test:where-is-this}
-The robot has to explain and show people where they can find places in the \Arena{} (e.g.~\emph{Where is the TV?}). The robot has to tell the operator how to get there (in a summarized fashion) and then physically take the operator there in a type of tour guide.
+The robot has to explain and show people where they can find places in the \Arena{} (for example, \emph{Where is the TV?}). The robot has to tell the operator how to get to the desired location and then monitor that the operator reaches the intended location.
 
+\noindent \textbf{Main Goal:} Give accurate directions and guide at least 3 people.
 
-\subsection*{Main Goal}
-Give accurate directions and guide at least 3 people.
-
-\noindent\textbf{Reward:} 300pts (100pts per direction/guidance).
-
-\subsection*{Bonus rewards}
+\noindent \textbf{Optional goals:}
 \begin{enumerate}[nosep]
-	\item Give accurate directions and guide 3 more people 600pts (200pts each).
-	\item Provide new instructions based on the previous ones 300pts (100pts each).
-	\item Provide directions to a naive operator 300pts (50pts each).
-	\item Provide audio recording and transcript of each interaction 600pts (100pts each).
+	\item Lead a non-expert operator to the destination correctly
+	\item Provide new instructions based on the previous ones.
+	\item Guide the operator in a \emph{natural} way (for instance, pointing at the described objects and looking at the operator when speaking with them).
+	\item Provide audio recording and transcript of each interaction.
 \end{enumerate}
+
+\subsection*{Focus}
+\emph{Person Leading}, \emph{Social Navigation}, \emph{Human-Robot Interaction}.
+
 
 \subsection*{Setup}
 \begin{itemize}[nosep]
-	\item \textbf{Locations:} All predefined locations inside the \Arena{}.
-
-	\item \textbf{Start Location}: The robot starts outside the \Arena{}. When the door opens, the robot navigates to the \emph{Information Point}.
+	\item \textbf{Locations:} 
+	\begin{itemize}
+	 \item All predefined locations inside the \Arena{} are valid destinations.
+	 \item \textbf{Start Location}:  The robot starts outside the \Arena{}. 
+	 \item \textbf{Information Point}: The robot waits for the operator at the \emph{Information Point}, which can be anywhere in the \Arena{}, and is known to the robot. 
+	\end{itemize}
+		\item \textbf{People:} three people will act as operators. Upon request from the team, non-expert people may be recruited.
 \end{itemize}
+
+
+\subsection*{Procedure}
+\begin{enumerate}[nosep]
+
+	\item \textbf{Robot enters:} When the door opens, the robot navigates to the \emph{Information Point}.
+	\item \textbf{Operators:} When the robot is waiting for a person, the next operator goes to the \emph{Information Point}, and asks the robot to be led to a particular location.
+	\item \textbf{Give instructions:} The robot gives instructions to the operator and then starts to follow them.
+	\item \textbf{Tour guide:} As robot and operator navigate to the target location, the robot explains what parts of the arena they are going through.
+	\item \textbf{Execution Monitoring:} The robot monitors the operator to provide additional instructions or corrections as needed.
+	\item \textbf{Return to \emph{Information Point}:} After guiding each operator, the robot must return to the \emph{Information Point}.
+
+\end{enumerate}
 
 \subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
-	\item \textbf{Deus ex Machina:}
+	\item \textbf{Deus ex Machina:} scores are reduced if the robot requires assistance as follows:
 	\begin{itemize}[nosep]
-		\item \textbf{Bypassing speech recognition:} Bypassing ASR causes a score reduction of 50pts per guest.
-
-		\item \textbf{Follower's assistance:} Helping the robot while guiding a guest (e.g.~waving, shouting) causes a score reduction of 50pts.
+		\item \textbf{Bypassing speech recognition:} communicating with the robot through a graphical interface, or any other way.
+		
+		\item \textbf{Operator's assistance:} Helping the robot find the operator (for instance, through waving or shouting).
 	\end{itemize}
 
-	\item \textbf{Information Point:} The robot meets guests and gives directions at the \emph{Information Point} and then guides them to the location. The information point is not known beforehand. Right before a run at the entrance door, the team is told a position where they should start the robot.
-	After guiding a person, it must return to the information point.
+	\item \textbf{Non-expert Operators:} Optionally, questions can be asked by a \emph{Non-expert Operator}, that is, a person from the audience with no background in robotics. \emph{Non-expert Operators} are allowed to rephrase commands given by the referees.
+	\\\textbf{Remark:} Referees are not allowed to instruct non-expert operators on how to operate the robot. \textbf{Teams attempting to instruct or bias the operator will be disqualified}.
 
-	\item \textbf{Naive Operators:} Optionally, questions can be asked by a \emph{Naive Operator}, i.e.~a person from the audience with no background on robotics. \emph{Naive Operators} are allowed to rephrase commands given by the referees.
-	\\\textbf{Remark:} Referees are not allowed to instruct naive operators on how to operate the robot. \textbf{Teams attempting to instruct or bias the operator will be disqualified}.
-
-	\item \textbf{Custom operator fallback:} If the robot consistently fails to understand the naive/professional operator (e.g.~3 times or more), teams can default to a custom operator.
+	\item \textbf{Operator fallback:} If the robot consistently fails to understand the non-expert operator (3 times or more), teams can default to a regular operator.
 	
-	\item \textbf{Data Recording:} Only when using Naive Operators, a team can get an additional scoring bonus by providing the recording and transcript of the issued commands.
+	\item \textbf{Data Recording:} Only when using non-expert operators, a team can get an additional scoring bonus by providing the recording and transcript of the issued commands.
 
-	\item \textbf{Guiding people:} The guiding phase of the test requires the robot to provide a type of tour guide of its explanation (pointing out reference locations at each step e.g.~\emph{The couch is at your right.}). This information can later be used as reference for later explanations. Blocked pathways may be encountered and should be used to make subsequent guides faster.
-
-	\item \textbf{Returning guests:} All guests will come back later to ask for other locations.
-	If the robot is able to guide an operator using information based on previous tours (i.e.~it remembers where the person was sent to or avoids blocked paths), bonus points are awarded.
 \end{enumerate}
 
 \subsection*{OC instructions}
 2 hours before the test:
 \begin{itemize}
 	\item Generate pairs of linked destinations
-	\item Recruit at least 5 volunteers for the test
+	\item Recruit at least 3 volunteers for the test
 	\item Instruct volunteers where things are on the house
 	\item Announce the location of the \emph{Information Point}.
 \end{itemize}
