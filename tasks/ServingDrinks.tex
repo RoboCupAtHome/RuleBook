@@ -2,10 +2,6 @@
 \label{test:serving-drinks}
 The robot takes orders of drinks from party guests and delivers them.
 
-% \subsection*{Focus}
-
-% This test focuses on human detection and recognition, safe navigation and human-robot interaction with unknown people.
-
 \noindent \textbf{Main Goal:} Take the order of a drink from all people without one, and deliver the correct drink to the person who ordered it.\\
 
 \noindent \textbf{Optional Goals:}
@@ -17,13 +13,6 @@ The robot takes orders of drinks from party guests and delivers them.
 \subsection*{Focus}
 \emph{Human-Robot interaction}, \emph{person recognition}, \emph{object recognition}.
 
-%\noindent\textbf{Reward:} 750pts (250pts per delivered drink).
-
-%\subsection*{Bonus rewards}
-%\begin{enumerate}[nosep]
-%	\item Preemptively informing a guest that the ordered drink is not available (250pts)
-%\end{enumerate}
-
 \subsection*{Setup}
 \begin{itemize}
 	\item \textbf{Locations}: 
@@ -33,7 +22,7 @@ The robot takes orders of drinks from party guests and delivers them.
 		\end{itemize}
 	\item \textbf{People}:
 		\begin{itemize} 			
-			\item There are at least five guests in the living room, two standing and three sitting. Each guest has a predefined name assigned, and may or may not already have a drink. Each guest has a predefined favourite drink, and a choice of alternative drink. The robot does not initially know either the name or the favourite drinks of the guests. At least three guests start without a drink. At least two guests start with a drink.
+			\item There are at least five guests in the living room, two standing and three sitting. Each guest has an assigned predefined name, and may or may not already have a drink. Each guest has a predefined favourite drink, and a choice of alternative drink. The robot does not initially know either the name or the favourite drinks of the guests. At least three guests start without a drink. At least two guests start with a drink.
 			\item The party host is also in the living room, and is known to the robot (including name and favourite drinks).
 			\item The bartender may be standing either behind the bar or next to it, depending on the \Arena{} setup.
 		\end{itemize}
