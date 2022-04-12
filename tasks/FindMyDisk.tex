@@ -2,25 +2,23 @@
 \label{test:find-my-disk}
 
 \subsection*{Description}
-   The robot helps a blind person to locate a LP, compact disk, or audio-cassette (hereinafter a \textit{disk}) in a shelf. The operator will ask the robot to \emph{describe} what it sees in either the shelf or the media cover, but won't allow the robot to touch her treasures.
+   The robot helps a blind person to locate an LP, compact disk, or audio-cassette (hereinafter a \textit{disk}) in a shelf. The operator will ask the robot to \emph{describe} what it sees in either the shelf or the media cover, but won't allow the robot to touch her treasures.\\
 
 \textbf{Main goal:}
    The robot provides a description of an object that matches the operator's requirements.
 
-\textbf{Optional goals:}
-\begin{enumerate}[nosep]
-	\item Help the blind operator to find a second disk (1000pts)
-\end{enumerate}
+\textbf{Optional goals:} Help the blind operator to find a second disk.
 
 \subsection*{Focus}
-\HRI{}, \textit{NLU}, \textit{Object Recognition}.
+\HRI{}, \textit{NLU}, \textit{Object Recognition}
 
 
 \subsection*{Setup}
 \begin{itemize}[nosep]
 	\item \textbf{Locations:}
 		\begin{itemize}
-			\item \textbf{Test location:} The test takes place near a bookcase in the living room.
+			\item \textbf{Test location:} The test takes place near a bookcase in the living room in the \Arena{}.
+			\item \textbf{Starting location:} The robot starts near the bookcase where task takes place.
 		\end{itemize}
 	\item \textbf{People:}
 		\begin{itemize}
@@ -42,12 +40,8 @@
 \subsection*{Procedure}
 
 \begin{enumerate}
-	\item The referee requests the team to move the robot to the start location.
-	\item The referee gives the start signal and starts the timer.
-	\item The team leaves the area after the start signal.
-	\item A TC member follows the robot ready to press the emergency stop button. 
-	\item The robot finds a disk matching operator reqirements and provides a description of the item.
-	\item \textbf{Optionally}, robot finds second disk matching operator reqirements and provides a description of the item.
+	\item The robot finds a disk matching operator requirements and provides a description of the item.
+	\item \textbf{Optionally}, robot finds second disk matching operator requirements and provides a description of the item.
 \end{enumerate}
 
 \subsection*{Additional rules and remarks}
@@ -61,9 +55,7 @@
 	
 	\item \textbf{Disks:} A \textit{disk} can be the encasing of any CD, DVD, BluRays, audio cassettes, LP, etc. These objects will not be available for training during setup days, although samples can be provided.
 	\item \textbf{Test start:} The robot moves to the area near the bookcase where the items are.
-\end{enumerate}
-
-\begin{enumerate}
+	
 	\item \textbf{Object manipulation:} All manipulation will be performed by the human operator under the supervision of the robot.
 
 	\item \textbf{Object description and dialogs:} The robot shall provide accurate visual descriptions of the discs in the shelf, and those that are presented to it until the desired object is found. The robot can also lead the interaction by asking relevant questions (e.g.~\textit{what's the cover color?} or \textit{what's the title/author?}), so it can look in the spines and covers as necessary.\\
@@ -86,6 +78,7 @@ The referee needs to:
 \begin{itemize}
 	\item Rearrange the disks on the bookcase.
 	\item Provide instruction to the operator.
+	\item Determine names of two different desired disks for each team with the operator. 
 	\item Blindfold the operator.
 \end{itemize}
 
