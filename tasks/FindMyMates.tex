@@ -4,14 +4,14 @@
 \subsection*{Description}
     The robot collects some information about various party guests for the operator, who only knows the names of the guests.
 
-\textbf{Main goal:}
+\noindent \textbf{Main goal:}
     Report to the operator the description and location of at least two party guests.
 
-\textbf{Optional goal:}
-    Reporting the location and description of a third guest.
+\noindent \textbf{Optional goal:}
+    Report the location and description of a third guest.
 
 \subsection*{Focus}
-\SysI{}, \HRI{}, \PerDet{}, \PerRec
+\SysI{}, \HRI{}, \PerDet{}, \PerRec{}, \iterm{Visual Feature Detection}
 
 \subsection*{Setup}
 \begin{itemize}
@@ -21,17 +21,20 @@
 
 \subsection*{Procedures}
 \begin{enumerate}
-	\item Robot finds and reports description and location of two guests.
-	\item \textbf{Optionally,} robot reports description and location of the third guest.
+	\item The robot finds and reports the description and location of two guests.
+	\item \textbf{Optionally,} the robot reports the description and location of the third guest.
 \end{enumerate}
 
 \subsection*{Additional Rules and Remarks}
 \begin{enumerate}[nosep]
 	\item \textbf{Reporting:} Points are scored only when the robot goes back to the operator and delivers the report on time.
 
-	\item \textbf{Description of a person:} The description of each guest should be unique, i.e. not shared with any other guest. This may include clothing, age, height, complexion, skin or hair color, gender, etc.
+    \item \textbf{Description of a person:} The description of each guest should be unique, i.e. not shared with any other guest. This may include clothing, age, height, complexion, skin or hair color, gender, etc.
 
 	\item \textbf{Description of a location of a person:} A relative location based on the surroundings (e.g. sitting on the couch, standing beside the lamp, etc.).
+
+    \item \textbf{Description format:} The description of a person and their location should be provided in a natural language form (ideally, spoken out by the robot, or alternatively displayed on the robot's screen).
+    The robot may use an image for supporting the description, but the natural language description cannot be completely replaced by an image.
 
 	\item \textbf{Deus ex Machina:} Score reduction for human assistance is applied per guest as follows:
 
@@ -53,7 +56,7 @@ The referees need to:
 	\item Make sure that the guests stay at their designated locations during the test.
 \end{itemize}
 
-\textbf{To OC}
+\noindent \textbf{To OC}
 
 2h before test:
 \begin{itemize}
@@ -64,4 +67,3 @@ The referees need to:
 % \newpage
 \subsection*{Score sheet}
 \input{scoresheets/FindMyMates.tex}
-
