@@ -1,61 +1,72 @@
 \section{Take Out the Garbage [Housekeeper]}
 \label{test:take-out-the-garbage}
-All garbage bins in the apartment are emptied and the garbage has been moved to a specified collection zone.
 
-% \subsection*{Focus}
-% This test focuses on object perception, manipulation, and planning.
+\subsection*{Description}
+	All garbage bins in the \Arena{} are emptied and the garbage has been moved to a specified collection zone.
 
-\subsection*{Main Goal}
-The robot takes out the trash bags from the two bins in the apartment.
+\textbf{Main goal:}
+	The robot takes out the trash bags from the two bins in the \Arena{}.
 
-\noindent\textbf{Reward:} 500pts (250pts per bag)
+\textbf{Optional goal:}
+	Removing the lid of the trash bin and handling the garbage with two arms.
 
-\subsection*{Bonus rewards}
-\begin{enumerate}[nosep]
-	\item Removing the lid of a bin. (100pts per bin)
-	\item Transporting both bags at once. (300pts)
-\end{enumerate}
+\subsection*{Focus}
+	This task focuses on 
+	\textit{Object Perception},
+	\textit{Object Manipulation} and
+	\textit{Task Planning}
 
 \subsection*{Setup}
-\begin{itemize}[nosep]
-	\item \textbf{Location:} This test takes place inside the arena.
-	\item \textbf{Bins:} There are two small trash bins in different rooms of the apartment. They are roughly cylindrical and open at the top. The space above the bin will be free of obstructions. The bin may be placed against a wall. Bin locations are part of the communicated arena setup.
-	\item \textbf{Bags:} Each bin contains a tied garbage bag with some light contents. The color of the bag is different from the color of the bin.
-	\item \textbf{Collection Zones:} The collection zone is a designated area near the entrance.
+\begin{itemize}[nosep]	
+	\item \textbf{Locations:}
+		\begin{itemize}
+			\item This test takes place inside the \Arena{}.
+			\item The robot starts inside the \Arena{} at a predefined location near the entrance door.
+			\item The collection zone is a designated area near the entrance.
+		\end{itemize}
+	\item \textbf{People:} Only the referee is allowed in the \Arena{}.
+	\item \textbf{Furniture:} 
+		\begin{itemize}
+			\item There are two small trash bins in different rooms of the \Arena{}. They are roughly cylindrical and open at the top. The space above the bin will be free of obstructions. The bin may be placed against a wall. Bin locations are part of the communicated \Arena{} setup.
+			\item Each bin contains a tied garbage bag with some light contents. The color of the bag is different from the color of the bin.
+			\item The team leader may request to place a lid on one or both of the bins to score the bonus points.
+		\end{itemize}
+	\item \textbf{Objects:} All objects are in their predefined locations.
 \end{itemize}
 
+\subsection*{Procedure}
 
-\subsection*{Additional rules and remarks}
-\begin{enumerate}[nosep]
-	\item \textbf{Deus ex Machina:} Score reduction for requesting human assistance is applied per bag as follows:
-	\begin{itemize}[nosep]
-		\item Handing a bag over to the robot results in a score reduction of 200pts per bag.
-	\end{itemize}
-
-	\item \textbf{Bag placement:} Placing a bag outside the collection zone results in a score reduction of 100pts per bag.
-	\item \textbf{Manipulation:}  Tipping over a bin or tearing the bag results in a score reduction of 50pts per bag.
-	\item \textbf{Closed bins:} The team leader may request to place a lid on one or both of the bins to score the bonus points.
+\begin{enumerate}
+	\item The referee requests the team to move the robot to the start location.
+	\item The referee gives the start signal and starts the timer.
+	\item The team leaves the area after the start signal.
+	\item A TC member follows the robot ready to press the emergency stop button.
+	\item The robot navigates to the bins.
+	\item \textbf{Optionally}, the robot can remove the lid of the trash bins.
+	\item The robot takes out the trash bags from the two bins in the \Arena{}.
+	\item \textbf{Optionally}, the robot can handle the garbage with two arms.
 
 \end{enumerate}
 
-\subsection*{Referee instructions}
+\subsection*{Additional rules and remarks}
+	No additional rules and remarks.
 
-The referee needs to
+\subsection*{Instructions:}
+
+\subsubsection*{To Referee}
+
+The referee needs to:
 \begin{itemize}
 	\item Place sealed bags with some light contents in the bins
 	\item Ask team leader whether bins should be closed.
 	\item Make sure collection zone is clear.
 \end{itemize}
 
-\subsection*{OC instructions}
-During Setup days:
-\begin{itemize}
-	\item Provide official bins and bags for training.
-\end{itemize}
-
-2 hours before the test:
-\begin{itemize}
-	\item Announce the collection zones.
+\subsubsection*{To OC}
+The OC needs to:
+\begin{itemize}[nosep]
+	\item \textbf{During Setup days:} Provide official bins and bags for training.
+	\item \textbf{2 hours before the test:} Announce the collection zones.
 \end{itemize}
 
 \subsection*{Score sheet}

@@ -1,69 +1,93 @@
 \section{Stickler for the Rules [Party Host]}
 \label{test:stickler-for-the-rules}
-The robot has to enforce house rules set by the homeowner.
+
+\subsection*{Description}
+The robot needs to make sure the house rules are followed.
+
+\textbf{Main goal:}
+Identify party guests breaking the house rules, politely clarify to the guest what to do and confirm that the guest is following the rule.
+
+\textbf{Optional goal:}
+Politely clarify to the guest what rule is being broken.
 
 
-\subsection*{Main Goal}
-Identify all party guests breaking the house rules and politely ask them to stop.
-
-\noindent\textbf{Reward:} 750pts (250pts per offender).
-
-\subsection*{Bonus rewards}
-\begin{enumerate}[nosep]
-	\item Remind offenders the house rules and confirm obedience (750pts, 250pts each).
-\end{enumerate}
+\subsection*{Focus}
+This task focuses on
+\textit{Object perception},
+\textit{Human perception},
+\textit{Action recognition} and
+\textit{Verbal interaction}.
 
 \subsection*{Setup}
-\begin{itemize}[nosep]
-	\item \textbf{Location:} This test takes place in the arena.
-	\item \textbf{Guests:} There are at least 5 party guests inside the arena.
+\begin{itemize}[nosep]	
+	\item \textbf{Locations:} 
+	\begin{itemize}
+		\item This task takes place inside the \Arena{}.
+		\item The robot starts at a predefined location in the living room.
+		\item There are a forbidden room in the house.
+	\end{itemize}	 
+	\item \textbf{People:} 
+	\begin{itemize}
+		\item There are at least five party guests inside the \Arena{}.
+		\item Four of the guests are breaking rules.
+		\item Guests may not follow the robot's instructions.
+	\end{itemize}
+	\item \textbf{Furniture:} All furniture are in their predefined locations.
+	\item \textbf{Objects:} All objects are in their predefined locations.
 \end{itemize}
 
+\subsection*{Procedure}
+	\begin{enumerate}[nosep]
+		\item The referee requests the team to move the robot to the start location.
+		\item The referee gives the start signal and starts the timer.
+		\item The team leaves the area after the start signal.		
+		\item A TC member follows the robot ready to press the emergency stop button.
+		\item The robot Identify party guests breaking the house rules.
+		\item The robot politely clarify to the guest what to do. 
+		\item The robot confirm that the guest is following the rule.	
+		\item \textbf{Optionally} and Politely, the robot clarify to the guest what rule is being broken.
+	\end{enumerate}
 
-\subsection*{House Rules:}
-\begin{enumerate}[nosep]
-% \begin{enumerate}[nosep,label=\Roman.~]
-	\item \textit{No shoes inside the house.}\\
-	\textbf{Policy:} All guests have to take off their shoes at the entrance.\\
-	\textbf{Action:} Take the guest to the entrance and verify she takes off her shoes.
-
-	\item \textit{Black Room entrance forbidden}\\
-	\textbf{Policy:} No guests are allowed in the \emph{Black Room}.
-	\textbf{Action:} Take the offender with other party guests and verify she doesn't enter back.
-
-	\item \textit{No littering}\\
-	\textbf{Policy:} Guests are not allowed to leave garbage on the floor.
-	\textbf{Action:} Make the (closest) offender to pick up the garbage and throw it into the bin.
-
-	\item \textit{Compulsory hydration}\\
-	\textbf{Policy:} All guests must have a drink in hand at all times.\\
-	\textbf{Action:} Take the guest to the kitchen/bar and make sure she grabs a drink.
-\end{enumerate}
 
 \subsection*{Additional rules and remarks}
-\begin{enumerate}[nosep]
-	\item \textbf{Offenders:} Three of the guests are breaking rules.
-	Offenders may not follow the robot's instructions.
+\begin{itemize}[nosep]
+	\item \textbf{House Rules:}
+	\begin{enumerate}[nosep]
+		\item \textit{No shoes inside the house.}\\
+		\textbf{Policy:} All guests have to take off their shoes at the entrance.\\
+		\textbf{Action:} Take the guests to the entrance and verify they takes off the shoes.
+	
+		\item \textit{Forbidden room}\\
+		\textbf{Policy:} No guests are allowed in the \emph{Forbidden Room}. \\
+		\textbf{Action:} Take the offenders with other party guests and verify they doesn't enter back.
+	
+		\item \textit{No littering}\\
+		\textbf{Policy:} Guests are not allowed to leave garbage on the floor.
+		\textbf{Action:} Make the (closest) offender to pick up the garbage and throw it into the bin.
+	
+		\item \textit{Compulsory hydration}\\
+		\textbf{Policy:} All guests must have a drink in hand at all times.\\
+		\textbf{Action:} Take the guests to the kitchen/bar and make sure they grabs a drink.
+	\end{enumerate}
+\end{itemize}
 
-	\item \textbf{Confirm law enforcement:} To get the bonus rewards the robot has to state when a guest did or did not follow the given instructions.
+\subsection*{Instructions:}
+\subsubsection*{To Referee}
 
-\end{enumerate}
-
-
-\subsection*{Referee instructions}
-
-The referee needs to
+The referee needs to:
 \begin{itemize}
 	\item Instruct party guests on which rules to break.
-	\item Assign each party guest a drink
+	\item Assign each party guest a drink.
 \end{itemize}
 
-\subsection*{OC instructions}
-During Setup days:
+\subsubsection*{To OC}
+The OC needs to:
 \begin{itemize}
-	\item Announce which room is the \textit{Black Room}.
+	\item \textbf{2 hours before the test:} Select and announce the robot start location.
+	\item \textbf{2 hours before the test:} Select and announce which room is forbidden.
 \end{itemize}
 
+% \newpage
 \subsection*{Score sheet}
 \input{scoresheets/SticklerForRules.tex}
 

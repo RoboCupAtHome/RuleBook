@@ -1,24 +1,25 @@
 
-The maximum time for this test is 5 minutes.
+\begin{table}[h]
+	\begin{tabular}{m{0.85\linewidth} c}
+		\textbf{Maximum time}: & 5 minutes \\
+	\end{tabular}
+\end{table}
 
-\begin{scorelist}
-	\scoreheading{Main Goal}
-	\scoreitem[5]{100}{Place an object at the appropriate location}
-	\penaltyitem[5]{-30}{Receiving human help (telling where an object can be found)}
-	\penaltyitem[5]{-40}{Receiving human help (pointing out object to be moved)}
-	\penaltyitem[5]{-20}{Receiving human help (Guiding the robot near an object to be moved)}
-	\penaltyitem[5]{-30}{Receiving human help (telling robot which category an object is or where to place it)}
-	\penaltyitem[5]{-60}{Receiving human help (physically interacting with object)}
-
-	\scoreheading{Bonus rewards}
-	\scoreitem{200}{Opening entrance door without human help}
-	\scoreitem{150}{Moving a \emph{tiny} object}
-	\scoreitem{150}{Moving a \emph{heavy} object}
-
-	% No longer necessary, computes automatically
-	% \setTotalScore{1000}
+\small\begin{scorelist}
+	\scoreheading{Regular Rewards}	
+	\scoreitem[6]{100}{Place an object at the appropriate location}
+	\scoreheading{Bonus Rewards}
+	\scoreitem{200}{Moving a \emph{tiny} object}
+	\scoreitem{200}{Moving a \emph{heavy} object}	
+	\scoreheading{Regular Penalties}
+	\penaltyitem[6]{50}{Place an object at the wrong location}	
+	\scoreheading{Deus ex Machina Penalties}
+	\penaltyitem[6]{60}{Physically interacting with object}	
+	\penaltyitem[6]{40}{Guiding the robot near an object to be moved}
+	\penaltyitem[6]{30}{Telling where an object can be found}
+	\penaltyitem[6]{30}{Telling robot which category an object is or where to place it}
+	\penaltyitem[6]{20}{Pointing out object to be moved}
 \end{scorelist}
-
 
 % Local Variables:
 % TeX-master: "Rulebook"

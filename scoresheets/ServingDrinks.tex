@@ -2,15 +2,24 @@ The maximum time for this test is \textbf{5 minutes}.
 
 \begin{scorelist}
 	\scoreheading{Main Goal}
-	\scoreitem[3]{250}{Deliver a drink to a guest}
-	\penaltyitem[3]{75}{Each drink handed-over to the robot (bypass picking)}
-	\penaltyitem[3]{75}{Each drink taken by a guest (bypass drink handover)}
-	\penaltyitem[3]{100}{Each guest approaching to the robot to place order}
-	\penaltyitem[3]{50}{Each guest waving or calling the robot to place order}
-	\penaltyitem[2]{100}{Telling the robot which drink is unavailable}
-
+	\scoreitem[3]{50}{Approaching guest without a drink and take order}
+	\scoreitem[3]{80}{Picking up correct drink from the bar}
+	\scoreitem[3]{70}{Delivering a drink to the right person}
+	
 	\scoreheading{Bonus rewards}
-	\scoreitem{250}{Inform a guest of drink unavailability upon request}
+	\scoreitem{200}{Informing a guest of drink unavailability upon request}
+	\scoreitem[2]{100}{Correcting the bartender}
+
+	\scoreheading{Regular Penalties}
+	\penaltyitem{50}{Approaching guest with a drink and take order (per wrong guest)}
+	\penaltyitem{50}{Approaching the host to take an order}
+	
+	\scoreheading{Deus Ex Machina Penalties}
+	\penaltyitem[3]{30}{Guest waves to the robot to place order}
+	\penaltyitem[3]{50}{Guest approaches the robot to place order}
+	\penaltyitem[3]{30}{Drink handed over to the robot (bypass picking)}
+	\penaltyitem[3]{30}{Drink taken by a guest (bypass drink handover)}
+
 
 \end{scorelist}
 

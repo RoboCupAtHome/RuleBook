@@ -37,15 +37,18 @@
 
 \input{./pages/titlepage}
 
+\setcounter{page}{0}
+\pagenumbering{roman}
 \pagestyle{empty}
 \input{./pages/acknowledgments}
 \clearpage
 
-\pagestyle{empty}
+\pagestyle{plain}
 \tableofcontents
 \clearpage
 
-\pagestyle{plain}
+\setcounter{page}{1}
+\pagenumbering{arabic}
 
 \input{Introduction}
 
@@ -66,7 +69,7 @@
 \testtocentry{test:clean-up}
 \testtocentry{test:gpsr}
 \testtocentry{test:storing-groceries}
-\testtocentry{test:serve-the-breakfast}
+\testtocentry{test:serve-breakfast}
 \testtocentry{test:take-out-the-garbage}
 
 \section*{Party Host tasks}

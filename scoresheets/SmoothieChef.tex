@@ -2,15 +2,22 @@ The maximum time for this test is 10 minutes.
 
 \begin{scorelist}
 	\scoreheading{Main Goal}
-	\scoreitem{750}{Place all 3 fruits in the right order}
-	\penaltyitem{250}{Using a custom operator}
+	\scoreitem[3]{200}{Placing all three fruits in the blender}
+	\scoreitem{300}{Pouring a teaspoon of sugar in the blender}
+	\scoreitem{300}{Pouring milk in the blender}
 
-	\scoreheading{Bonus rewards}
-	\scoreitem{750}{Pouring \emph{sugar} into the \emph{blender}}
-	\penaltyitem{600}{Spilling \emph{sugar}}
-	\scoreitem{500}{Pouring \emph{milk} into the \emph{blender}}
-	\penaltyitem{400}{Spilling \emph{milk}}
-	\scoreitem{250}{Activate the blender/stir with the mixer}
+	\scoreheading{Bonus Rewards}
+	\scoreitem{400}{Pouring sugar in the blender without spilling}
+	\scoreitem{400}{Pouring milk in the blender without spilling}
+
+	\scoreheading{Regular Penalties}
+	\penaltyitem[3]{200}{Placing an incorrect fruit into the blender}
+
+	\scoreheading{Deus Ex Machina Penalties}
+	\penaltyitem{150}{Starting the test in front of the kitchen counter}
+	\penaltyitem{200}{Handing an object over to the robot}
+	\penaltyitem{250}{Telling the robot which ingredient comes next}
+	\penaltyitem{250}{Using a custom operator}
 	% No longer necessary, computes automatically
 	% \setTotalScore{1000}
 \end{scorelist}

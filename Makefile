@@ -14,7 +14,8 @@
 
 ## MAIN ###################
 
-PREFIX = Rulebook
+RPREFIX = Rulebook
+SSREFIX = score_sheets
 
 ## #################################### ##
 ##  VARIABLES                           ##
@@ -22,27 +23,45 @@ PREFIX = Rulebook
 
 ## FILES ##################
 
-TEXFILE = $(PREFIX).tex
+RTEXFILE = $(RPREFIX).tex
 #
-DVIFILE = $(PREFIX).dvi
-PSFILE  = $(PREFIX).ps
-PDFFILE = $(PREFIX).pdf
+RDVIFILE = $(RPREFIX).dvi
+RPSFILE  = $(RPREFIX).ps
+RPDFFILE = $(RPREFIX).pdf
 #
-AUXFILE = $(PREFIX).aux
-IDXFILE = $(PREFIX).idx
-ADXFILE = $(PREFIX).adx
-ANDFILE = $(PREFIX).and
-LOGFILE = $(PREFIX).log
-BBLFILE = $(PREFIX).bbl
-BLGFILE = $(PREFIX).blg
+RAUXFILE = $(RPREFIX).aux
+RIDXFILE = $(RPREFIX).idx
+RADXFILE = $(RPREFIX).adx
+RANDFILE = $(RPREFIX).and
+RLOGFILE = $(RPREFIX).log
+RBBLFILE = $(RPREFIX).bbl
+RBLGFILE = $(RPREFIX).blg
 #
-TARFILE = $(PREFIX).tar
-TGZFILE = $(PREFIX).tgz
-TBZFILE = $(PREFIX).tbz
+RTARFILE = $(RPREFIX).tar
+RTGZFILE = $(RPREFIX).tgz
+RTBZFILE = $(RPREFIX).tbz
+
+SSTEXFILE = $(SSREFIX).tex
+#
+SSDVIFILE = $(SSREFIX).dvi
+SSPSFILE  = $(SSREFIX).ps
+SSPDFFILE = $(SSREFIX).pdf
+#
+SSAUXFILE = $(SSREFIX).aux
+SSIDXFILE = $(SSREFIX).idx
+SSADXFILE = $(SSREFIX).adx
+SSANDFILE = $(SSREFIX).and
+SSLOGFILE = $(SSREFIX).log
+SSBBLFILE = $(SSREFIX).bbl
+SSBLGFILE = $(SSREFIX).blg
+#
+SSTARFILE = $(SSPREFIX).tar
+SSTGZFILE = $(SSPREFIX).tgz
+SCTBZFILE = $(SSPREFIX).tbz
 
 RMSOME  = *~
 RMFILES = *~ *.toc *.idx *.ilg *.ind *.bbl *.blg *.out *.aux *.synctex.gz \
-	  *.tmp *.log *.lot *.lof *.adx *.and *.abb *.ldx $(PREFIX).pdf score_sheets*.pdf .temp* $(TARFILE)
+	  *.tmp *.log *.lot *.lof *.adx *.and *.abb *.ldx $(RPREFIX).pdf $(SSPREFIX)*.pdf .temp* $(RTARFILE) $(SSTARFILE)
 
 ## OPTIONS ################
 
@@ -163,6 +182,14 @@ else
 	$(SILENT) $(MAKE) rubrulebookonly
 endif
 
+scoresheetsonly: scoresheets
+scoresheets:
+ifndef HASRUBBER
+	$(SILENT) $(MAKE) doscoresheetsonly
+else
+	$(SILENT) $(MAKE) rubscoresheetsonly
+endif
+
 ## ##################### ##
 ##  PDFLATEX (PDF)       ##
 ## ##################### ##
@@ -177,29 +204,35 @@ dofullpdf:
 
 dorulebookonly:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(PDFFILE)' via $(PDFLATEX)"; $(RESET)
-	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(TEXFILE)
+	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(RPDFFILE)' via $(PDFLATEX)"; $(RESET)
+	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(RTEXFILE)
 	$(SILENT) $(MAKE) domakeidx
 	$(SILENT) $(MAKE) domakeidx
-	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(TEXFILE)
-	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(TEXFILE)
+	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(RTEXFILE)
+	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(RTEXFILE)
+	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
+
+doscoresheetsonly:
+	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
+	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(SSPDFFILE)' via $(PDFLATEX)"; $(RESET)
+	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(SSTEXFILE)
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 
 dopdflatex:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- Creating Score Sheets"; $(RESET)
-	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_OPL' '\def\league{OPL}\input' score_sheets
-	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_DSPL' '\def\league{DSPL}\input' score_sheets
-	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='score_sheets_SSPL' '\def\league{SSPL}\input' score_sheets
+	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='$(SSPREFIX)_OPL' '\def\league{OPL}\input' $(SSPREFIX)
+	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='$(SSPREFIX)_DSPL' '\def\league{DSPL}\input' $(SSPREFIX)
+	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='$(SSPREFIX)_SSPL' '\def\league{SSPL}\input' $(SSPREFIX)
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(PDFFILE)' via $(PDFLATEX)"; $(RESET)
-	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(TEXFILE)
+	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(RPDFFILE)' via $(PDFLATEX)"; $(RESET)
+	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(RTEXFILE)
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 
 dopdf2ps:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Running '$(PDF2PS)' on '$(PDFFILE)'"; $(RESET)
-	$(SILENT) $(PDF2PS) $(PDF2PSFLAGS) $(PDFFILE)
+	$(SILENT) $(ITEM); $(MSG) "  -- Running '$(PDF2PS)' on '$(RPDFFILE)'"; $(RESET)
+	$(SILENT) $(PDF2PS) $(PDF2PSFLAGS) $(RPDFFILE)
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 
 ## ##################### ##
@@ -208,14 +241,14 @@ dopdf2ps:
 
 dobibtex:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Running bibtex on '$(PREFIX)'"; $(RESET)
-	$(SILENT) $(BIBTEX) $(PREFIX)
+	$(SILENT) $(ITEM); $(MSG) "  -- Running bibtex on '$(RPREFIX)'"; $(RESET)
+	$(SILENT) $(BIBTEX) $(RPREFIX)
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 
 domakeidx:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Running makeindex on '$(IDXFILE)'"; $(RESET)
-	$(SILENT) $(MAKEIDX) $(IDXFILE)
+	$(SILENT) $(ITEM); $(MSG) "  -- Running makeindex on '$(RIDXFILE)'"; $(RESET)
+	$(SILENT) $(MAKEIDX) $(RIDXFILE)
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 
 domakeadx:
@@ -233,8 +266,8 @@ wall: warn2do warnspell summary
 
 warntex:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- grep LaTeX/pdfTeX Warnings in '$(TEXFILE)' ..."; $(RESET)
-	$(SILENT) $(LATEX) $(TEXFILE) | grep -i -A 1 "tex warning" \
+	$(SILENT) $(ITEM); $(MSG) "  -- grep LaTeX/pdfTeX Warnings in '$(RTEXFILE)' ..."; $(RESET)
+	$(SILENT) $(LATEX) $(RTEXFILE) | grep -i -A 1 "tex warning" \
 			&& ($(ERROR); $(MSG) "  -> please take care of the above TeX-warnings\n"; $(RESET)) \
 			|| ($(CHECK); $(MSG) "  =) TeX generated NO warnings"; $(RESET))
 	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
@@ -271,38 +304,38 @@ warn2do:
 
 warnspell:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) for texfile in *.tex ; \
+	$(SILENT) for TEXFILE in *.tex ; \
 	do  \
-		if [ $$texfile != "$(TEXFILE)" ] && [ $$texfile != "macros.tex" ] && [ $$texfile != "abbrevix.tex" ] && [ $$texfile != "dummybox.tex" ]; then  \
-			$(ITEM); $(MSG) "  -- spell check result on '$$texfile'"; $(RESET) ; \
-			$(SPELL) $(SPELL_OPT) $(SPELL_ADDITIONAL_OPT) $(SPELL_WARN) $$texfile ; \
+		if [ $$TEXFILE != "$(RTEXFILE)" ] && [ $$TEXFILE != "macros.tex" ] && [ $$TEXFILE != "abbrevix.tex" ] && [ $$TEXFILE != "dummybox.tex" ]; then  \
+			$(ITEM); $(MSG) "  -- spell check result on '$$TEXFILE'"; $(RESET) ; \
+			$(SPELL) $(SPELL_OPT) $(SPELL_ADDITIONAL_OPT) $(SPELL_WARN) $$TEXFILE ; \
 		fi ; \
 	done
-	$(SILENT) for texfile in scoresheets/*.tex ; \
+	$(SILENT) for TEXFILE in scoresheets/*.tex ; \
 	do  \
-		if [ $$texfile != "$(TEXFILE)" ] && [ $$texfile != "macros.tex" ] && [ $$texfile != "abbrevix.tex" ] && [ $$texfile != "dummybox.tex" ]; then  \
-			$(ITEM); $(MSG) "  -- spell check result on '$$texfile'"; $(RESET) ; \
-			$(SPELL) $(SPELL_OPT) $(SPELL_ADDITIONAL_OPT) $(SPELL_WARN) $$texfile ; \
+		if [ $$TEXFILE != "$(RTEXFILE)" ] && [ $$TEXFILE != "macros.tex" ] && [ $$TEXFILE != "abbrevix.tex" ] && [ $$TEXFILE != "dummybox.tex" ]; then  \
+			$(ITEM); $(MSG) "  -- spell check result on '$$TEXFILE'"; $(RESET) ; \
+			$(SPELL) $(SPELL_OPT) $(SPELL_ADDITIONAL_OPT) $(SPELL_WARN) $$TEXFILE ; \
 		fi ; \
 	done
-	$(SILENT) for texfile in tasks/*.tex ; \
+	$(SILENT) for TEXFILE in tasks/*.tex ; \
 	do  \
-		if [ $$texfile != "$(TEXFILE)" ] && [ $$texfile != "macros.tex" ] && [ $$texfile != "abbrevix.tex" ] && [ $$texfile != "dummybox.tex" ]; then  \
-			$(ITEM); $(MSG) "  -- spell check result on '$$texfile'"; $(RESET) ; \
-			$(SPELL) $(SPELL_OPT) $(SPELL_ADDITIONAL_OPT) $(SPELL_WARN) $$texfile ; \
+		if [ $$TEXFILE != "$(RTEXFILE)" ] && [ $$TEXFILE != "macros.tex" ] && [ $$TEXFILE != "abbrevix.tex" ] && [ $$TEXFILE != "dummybox.tex" ]; then  \
+			$(ITEM); $(MSG) "  -- spell check result on '$$TEXFILE'"; $(RESET) ; \
+			$(SPELL) $(SPELL_OPT) $(SPELL_ADDITIONAL_OPT) $(SPELL_WARN) $$TEXFILE ; \
 		fi ; \
 	done
-	#$(SILENT) for texfile in tests/*.tex ; \
+	#$(SILENT) for TEXFILE in tests/*.tex ; \
 	#do  \
-	#	$(ITEM); $(MSG) "  -- spell check result on '$$texfile'"; $(RESET) ; \
-	#	$(SPELL) $(SPELL_OPT) $(SPELL_ADDITIONAL_OPT) $(SPELL_WARN) $$texfile ; \
+	#	$(ITEM); $(MSG) "  -- spell check result on '$$TEXFILE'"; $(RESET) ; \
+	#	$(SPELL) $(SPELL_OPT) $(SPELL_ADDITIONAL_OPT) $(SPELL_WARN) $$TEXFILE ; \
 	#done
 	#$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
 
 summary:
 	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
 	$(SILENT) $(ITEM); $(MSG) "  -- SUMMARY"; $(RESET)
-	$(SILENT) tail -n1 $(PREFIX).log
+	$(SILENT) tail -n1 $(RPREFIX).log
 	$(SILENT) $(DONE); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
 
 
@@ -329,13 +362,16 @@ dirk:	mauBuild
 mauBuild:
 	$(SILENT) $(RUBBER) $(RUBBERFLAGS) $ Rulebook.tex
 	$(SILENT) for league in OPL DSPL SSPL ; do \
-	    (echo "\def\league{$$league}" ; cat score_sheets.tex ) > "score_sheets_$$league.tex" ; \
-		 $(RUBBER) $(RUBBERFLAGS) $ "score_sheets_$$league.tex" ; \
-		rm -f  "score_sheets_$$league.tex" "score_sheets_$$league.out" "score_sheets_$$league.log" "score_sheets_$$league.aux"; \
+	    (echo "\def\league{$$league}" ; cat $(SSTEXFILE) ) > "$(SSPREFIX)_$$league.tex" ; \
+		 $(RUBBER) $(RUBBERFLAGS) $ "$(SSPREFIX)_$$league.tex" ; \
+		rm -f  "$(SSPREFIX)_$$league.tex" "$(SSPREFIX)_$$league.out" "$(SSPREFIX)_$$league.log" "$(SSPREFIX)_$$league.aux"; \
 	done
 
 rubrulebookonly:
-	$(SILENT)  $(RUBBER) $(RUBBERFLAGS) Rulebook.tex
+	$(SILENT)  $(RUBBER) $(RUBBERFLAGS) $(RTEXFILE)
+
+rubscoresheetonly:
+	$(SILENT)  $(RUBBER) $(RUBBERFLAGS) $(SSTEXFILE)
 
 mauClean:
 	$(SILENT) rm -f *.aux *.bbl *.blg *.log *.lof *.log *.lot *.out *.synctex.gz *.toc *~

@@ -1,4 +1,4 @@
-\section[Deus ex Machina]{Deus ex Machina: Bypassing features with human help \\ \small Because the show must go on}
+\section[Deus Ex Machina]{Deus Ex Machina: Bypassing Features With Human Help \\ \small Because the Show Must Go On}
 \label{rule:continue}
 Robots can't score unless they accomplish the main goal of a task.
 However, in many real-life situations, a minor malfunction may prevent the robot from accomplishing a task.
@@ -24,10 +24,10 @@ The procedure to request human assistance while solving a task is as follows:
 
 \subsection*{Example}
 \label{rule:continue_example}
-In this example the robot has to clean the table but is unable to grasp the spoon. 
+In the following example, a robot has to clean the table, but is unable to grasp the spoon.
 \begin{itemize}[noitemsep]
 	\small
-	\item[\textcolor{gray}{R:}] \texttt{I am sorry but the spoon is too small for me to take.\\
+	\item[\textcolor{gray}{R:}] \texttt{I am sorry, but the spoon is too small for me to take.\\
 	Could you please help me with it?\\
 	Please say "robot yes" or "robot no" to confirm.}
 	\item[\textcolor{gray}{H:}] \textit{Robot, yes!}
@@ -38,12 +38,12 @@ In this example the robot has to clean the table but is unable to grasp the spoo
 	Please take the purple spoon from the table. It is on my left.}
 	\item[\textcolor{gray}{H:}] (Referee takes purple spoon)
 	\item[\textcolor{gray}{R:}] \texttt{I saw you took the spoon.\\
-	Would you be so kind of following me to the kitchen?\\
+	Would you be so kind to follow me to the kitchen?\\
 	Please keep the spoon visible in front of you so I can track you. Thank you!}
 	\item[\textcolor{gray}{R:}] \texttt{You can stop following me now.\\
 	As you can see, the dishwasher is already open.\\
 	Please place the spoon in the gray basket on the lower tray.}
-	\item[\textcolor{gray}{R:}] \texttt{Lovely! Thanks for your help human.\\
+	\item[\textcolor{gray}{R:}] \texttt{Lovely! Thanks for your help.\\
 	I'll let you know if I need further assistance.}
 \end{itemize}
 
@@ -66,6 +66,10 @@ There is no limit in the amount of times a robot can request human assistance, b
 	\item \textbf{Score reduction overlap:} The score reduction for multiple requests of the same kind do not stack, but overlap.
 	The total reduction applied correspond to the worse execution (higher reduction of all akin help requests).
 	This means, a robot won't be reduced again for requesting help to transport a second object, but a second reduction will apply when the robot asks for a door to be opened.
+
+	\item \textbf{Allowed types of assistance:} The types of assistance allowed in a given task are specified in the respective task description.
+	It should be noted that only the assistance types explicitly mentioned in a task description are actually allowed in a task; other types of assistance are not allowed and will nullify the obtained points for the part of the task in which they are applied.
+	For instance, if a task focused on manipulation does not explicitly mention a Deus Ex Machina penalty for instructing a person to perform a manipulation activity, it should not be assumed that this is a loophole that can be exploited.
 \end{enumerate}
 
 \subsection{Bypassing Automatic Speech Recognition}
