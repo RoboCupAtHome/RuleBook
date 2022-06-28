@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - name: LaTeX linter (chktex)
         uses: j2kun/chktex-action@v1.0.0
         # Provide this output for context, but don't fail builds
@@ -22,7 +22,7 @@ jobs:
     container: blang/latex:ubuntu
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
     - name: LaTeX compilation
       run:
         TERM=xterm make dorulebookonly
@@ -39,7 +39,7 @@ jobs:
     container: blang/latex:ubuntu
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
     - name: LaTeX compilation
       run:
         TERM=xterm make doscoresheetsonly
@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build-rulebook, build-scoresheets]
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
     - name: Download rulebook
       uses: actions/download-artifact@v1
       with:
