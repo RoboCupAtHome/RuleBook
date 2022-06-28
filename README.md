@@ -1,20 +1,19 @@
-RuleBook for RoboCup @Home 2019 [![](https://github.com/RoboCupAtHome/RuleBook/workflows/CI/badge.svg?branch=master)](https://github.com/RoboCupAtHome/RuleBook/actions?query=workflow%3ACI)
+RuleBook for RoboCup @Home 2022
 ===============================
 
-The 2019 rulebook state is **FINAL**.
+[![CI](https://github.com/RoboCupAtHome/RuleBook/actions/workflows/ci.yml/badge.svg)](https://github.com/RoboCupAtHome/RuleBook/actions/workflows/ci.yml)
 
-Only spelling corrections and minor clarificatios may be merged from now on, as well as buffs to the scoresheets to enhance scoring.
-All work for the Rulebook of 2020 shall be pushed into to 2020/Rulebook.
+The 2022 rulebook is based on the 2019 notebook and is still in a **draft** stage.
 
-[Current PDF (master)](https://robocupathome.github.io/RuleBook/rulebook/master.pdf)
+[On-the-fly compiled LaTeX version](https://robocupathome.github.io/RuleBook/rulebook/master.pdf)
 
-[Released PDF version (2019)](https://athome.robocup.org/wp-content/uploads/2019_rulebook.pdf)
+[Released PDF version](https://athome.robocup.org/wp-content/uploads/2019_rulebook.pdf)
 
 RoboCup@Home teams and team members are welcome to post GitHub issues for clarifications, questions etc.
 
 Improvements are also welcome in the form of pull requests (see [guidelines](https://github.com/RoboCupAtHome/RuleBook/wiki/Guidelines)).
 
-[Score sheets (master)](https://robocupathome.github.io/RuleBook/score_sheets/master.pdf)
+[Score sheets](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=score_sheets.tex)
 
 ### FAQ
 See the Frequently Asked Questions [here](https://github.com/RoboCupAtHome/RuleBook/wiki/FAQ:-Frequently-Asked-Questions).
@@ -22,7 +21,7 @@ See the Frequently Asked Questions [here](https://github.com/RoboCupAtHome/RuleB
 Or ask us via Telegram: [https://t.me/RoboCupAtHome](https://t.me/RoboCupAtHome)
 
 ### Change log
-The Rulebook has being completely restructured for 2019 and later competitions. 
+The Rulebook has being completely restructured for 2019 and later competitions.
 The new format was first tested at German Open 2019.
 
 #### Highlights
@@ -32,7 +31,7 @@ The new format was first tested at German Open 2019.
 - **Goal-driven scoring:** A robot can only score by accomplishing the *main goal* of a *task*. In addition to the *main goal*, several bonus objectives are available with juicy rewards, but will be only considered if the *main goal* is completed.
 - **Unlimited *Continues*:** The continue rule is no more. Instead, robots may call for a *Deus Ex Machina* and have human assistant helping it to solve the task. There is no limit on the number of times a robot can ask for help, and the nature of the help is unconstrained. Nonetheless, a proportional score reduction applies.
 
-These changes obey to one objective: **robots must succeed**. 
+These changes obey to one objective: **robots must succeed**.
 
 
 ### Question, issues, and contribution Guidelines
@@ -57,12 +56,6 @@ The RoboCup@Home league aims to develop service and assistive robot technology w
 The RoboCup @Home Organizing Committee is always looking for volunteers to assist in the events and willing to help to maintain the sites. Volunteers can help in tasks such as organizing and categorizing publications, team videos, memories, scores, press, and writing examples and extended rule explanations. Other projects such as developing utilities for the competition and tools for referees are also welcome. If you would like to collaborate, write to any of the members of the Organizing Committee.
 
 Contributions and improvements to the rulebook are always welcome in the form of pull requests.
-
-### License
-
-The content of this project itself is licensed under the Creative Commons Attribution Share Alike 4.0 International license, and the underlying source code used to format and display that content is licensed under the GPL v2 license.
-
-Note that neither of these licenses grant rights to the RoboCup name and logo. If you would like to host a sanctioned event (e.g. competition, workshop, conference, education project), please [enter a proposal](https://www.robocup.org/site_proposals). 
 
 ### Recorded data
 Data is recorded from the robots during the competition. It is available through the following links:

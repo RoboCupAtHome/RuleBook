@@ -1,0 +1,67 @@
+\section{Find My Mates [Party Host]}
+\label{test:find-my-mates}
+
+\subsection*{Description}
+    The robot collects some information about various party guests for the operator, who only knows the names of the guests.
+
+\noindent \textbf{Main goal:}
+    Report to the operator the description and location of at least two party guests.
+
+\noindent \textbf{Optional goal:}
+    Report the location and description of a third guest.
+
+\subsection*{Focus}
+\SysI{}, \HRI{}, \PerDet{}, \PerRec{}, \iterm{Visual Feature Detection}
+
+\subsection*{Setup}
+\begin{itemize}
+	\item \textbf{Location}: This test takes place inside the \Arena{} in a predefined room (e.g. living room).
+	\item \textbf{People}: There are 4 people distributed along the room.
+\end{itemize}
+
+\subsection*{Procedures}
+\begin{enumerate}
+	\item The robot finds and reports the description and location of two guests.
+	\item \textbf{Optionally,} the robot reports the description and location of the third guest.
+\end{enumerate}
+
+\subsection*{Additional Rules and Remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Reporting:} Points are scored only when the robot goes back to the operator and delivers the report on time.
+
+    \item \textbf{Description of a person:} The description of each guest should be unique, i.e. not shared with any other guest. This may include clothing, age, height, complexion, skin or hair color, gender, etc.
+
+	\item \textbf{Description of a location of a person:} A relative location based on the surroundings (e.g. sitting on the couch, standing beside the lamp, etc.).
+	
+
+	\item \textbf{Deus ex Machina:} Score reduction for human assistance is applied per guest as follows:
+
+		\begin{itemize}
+		    \item Waving to the robot in order to be found
+			\item Telling the robot where a person is located
+			\item Approaching the robot (e.g. walking and standing in front of it)
+		\end{itemize}
+
+\end{enumerate}
+
+\subsection*{Instructions}
+
+\textbf{To Referees}
+
+The referees need to:
+\begin{itemize}
+	\item Assign names and locations for all guests.
+	\item Make sure that the guests stay at their designated locations during the test.
+\end{itemize}
+
+\noindent \textbf{To OC}
+
+2h before test:
+\begin{itemize}
+	\item Announce the location where the robot will be instructed.
+	\item Announce the room in which the test will take place.
+\end{itemize}
+
+% \newpage
+\subsection*{Score sheet}
+\input{scoresheets/FindMyMates.tex}

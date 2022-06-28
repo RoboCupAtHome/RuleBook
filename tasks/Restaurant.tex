@@ -1,81 +1,109 @@
 \section{Restaurant}
 \label{test:restaurant}
-The robot takes and serves orders to several customers in a real restaurant.
 
-\noindent \textbf{Focus:} \SysI{}, \NAV{}, \MAP{}, \HRI{}, \MAN{}, \PerDet{}, \OR{}.
+\subsection*{Description}
 
-\subsection*{Main Goal}
-Take and serve orders from 2 customer.
+The robot retrieves and serves orders to several customers in a real restaurant previously unknown to the robot.
 
-\noindent\textbf{Reward:} 1000pts (500pts per order)
-
-\subsection*{Bonus Rewards}
-\begin{enumerate}[nosep]
-	\item Use an unattached tray to transport an order (250pts each)
-	\item Transport two orders at once (250pts)
-\end{enumerate}
-
-\subsection*{Setup and Procedure}
-\begin{itemize}[nosep]
-	\item \textbf{Location:} A real restaurant fully equipped and in business. There may be real customers and waiters around. The location is not announced beforehand.
-
-	\item \textbf{Start Location:} The robot starts next to the bar.
-
-	\item \textbf{Customers:} There are multiple tables with people. At least two people at different tables have orders. People who want to order wave or call the robot.
+\textbf{Main goal:}
+	Detect calling or waving customer, reach a customer's table without prior guidance/training. Take and serve all orders.
 	
-	\item \textbf{Orders:} People can order one or two objects. Orders must be placed on the customer's table.
+\textbf{Optional goal:}
+	Use an unattached tray to transport the order.
 
-    \item \textbf{Bar:} A table located near the restaurant's kitchen on which objects that can be ordered are placed. All edible/drinkable \KnownObjects{} can be ordered.
 
-	\item \textbf{Barman:} A member of the \abb{TC} is standing by the bar to assist the robot on request. The barman will handover orders or place them in a basket or tray.
-\end{itemize}
+\subsection*{Focus}
+This task focuses on
+\textit{Task planning},
+\textit{Online mapping},
+\textit{Navigation in unknown environments},
+\textit{Gesture detection},
+\textit{Verbal interaction} and
+\textit{Object manipulation}.	
 
-\subsection*{Additional Rules and Remarks}
-\begin{enumerate}[nosep]
-	\item \textbf{Safety First:} This test takes place in a public area. Therefore, referees will be more careful and will not tolerate even slight collisions.
-	
-	\item \textbf{Fair Play:} Upon arrival to the restaurant, only two team members are allowed next to the robot. Tweaking, coding, debugging, or mapping the area will lead to immediate disqualification.
-	
-	\item \textbf{Power outlets, WiFi and ECRA:} The availability of wireless, external computing devices, or electrical outlets can't be guaranteed. Assume unavailability.
-	
-	\item \textbf{Disturbances from Outside:} If a person from the audience (severely) interferes with the robot in a way that makes it impossible to solve the task, the teams may repeat the test immediately.
-	
-	\item \textbf{Restart:} This test allows a restart (see \ref{rule:restart}).
-	
-	\item \textbf{Partial Scoring:} The main task allows partial (per order) scoring.
-	
-	\item \textbf{Deus ex Machina:} Score reduction applies per order as follows.
-	\begin{itemize}[nosep]
-		\item\textbf{Asking for Directions:} Receiving directions, verbally or by pointing, reduces the score by 25pts.
-		\item\textbf{Being Guided:} Being guided to a table causes a score reduction of 200pts.
-		\item\textbf{Wrong Orders:} Delivering a wrong object reduces score by 350pts if at least part of the order is correct. Reduction of 500pts otherwise.
-		\item\textbf{Handing Orders:} Handing objects to the customer instead of placing them causes a score reduction of 100pts.
+\subsection*{Setup}
+\begin{itemize}[nosep]	
+	\item \textbf{Locations:} 
+	\begin{itemize}
+		\item This task takes place in a real restaurant fully equipped and in business. When this is not possible, the test can be conducted in any place with the appropriate locations other than the \Arena{}.
+		\item The \emph{Restaurant} location will remain secret until the start of the test.
+		\item The robot starts next to the \emph{Kitchen-bar}. It is a table located near the restaurant's kitchen.
+	\end{itemize}	 
+	\item \textbf{People:} 
+	\begin{itemize}
+		\item  A \emph{Professional Barman} (member of the TC) awaits at the other side of the \emph{Kitchen-bar} for orders to be placed. The \emph{Professional Barman} assists the robot on request.
+		\item There may be real customers and waiters around.
+		\item There are at least three tables occupied with professional customers (member of the OC/TC). 
+		\item There are at least two tables occupied with regular customers.
+		\item Customers may call the robot any time, even simultaneously.
 	\end{itemize}
+	\item \textbf{Furniture:} The furniture is not standardized and will be kept the same as the restaurant or place selected for the task.
+	\item \textbf{Objects:} 
+	\begin{itemize}
+	\item Objects to fulfill orders are located on the Kitchen-bar.
+	\item Orders have between one and three objects randomly chosen.
+	\item All edible/drinkable objects from the list of standard objects (see~\refsec{rule:scenario_objects}) are eligible to be part of the orders.
+	\end{itemize}
+\end{itemize}
 
+\subsection*{Procedure}
 
+\begin{enumerate}
+	\item The referee requests the team to move the robot to the start location.
+	\item The referee gives the start signal and starts the timer.
+	\item The team leaves the area after the start signal.
+	\item A TC member follows the robot ready to press the emergency stop button. 
+	\item The robot detect calling or waving customer and reach a customer's table.
+	\item The robot take the customer's order, place the order, and deliver it.
+	\item \textbf{Optionally}, the robot can use an unattached tray to transport the order.
 \end{enumerate}
 
 
-\subsection*{Referee Instructions}
-The referee needs to
+\subsection*{Additional rules and remarks}
 \begin{itemize}
-	\item Prepare orders for each customer.
+	\item \textbf{Remarks:}
+	\begin{itemize}
+		\item This test takes place in a public area. The robot is expected to not even slightly touch anyone or anything and is immediately stopped in case of danger.
+		\item Since this task is performed outside the arena, the time limit may be longer than the others tasks.
+		\item The availability of wireless, external computing devices, or electrical outlets can't be guaranteed. Assume unavailability.
+		\item The robot interacts with the operators, not the team. The team is not allowed to instruct anyone. All instructions should be provided by the robot itself.
+		\item The robot may use up to one minute to instruct the \textit{Professional Barman}.
+		\item The robot can request to be guided to a customer's table.
+		\item The robot can choose to take several orders and place them later on, place an order and pick the next one while the former is being served, or dispatch one order at a time.
+		\item The robot can either transport each object individually, or using a tray. All delivered objects must be placed on the customer's table.
+		\item By default, the barman will place the order in a basket or tray for the robot to deliver it.
+		\item Upon arrival to the restaurant, only the team leader is allowed next to the robot for watching and charging.
+		\item If a person from the audience (severely) interferes with the robot in a way that makes it impossible to solve the task, the teams may repeat the test immediately.
+	\end{itemize}
+	\item \textbf{Disqualification:}
+	\begin{itemize}
+		\item Touching the robot after the start signal.
+		\item Tweaking, coding, debugging, or mapping the area in place.
+	\end{itemize}
 \end{itemize}
 
+\subsection*{Instructions:}
 
-\subsection*{OC Instructions}
-During Setup days:
+\subsubsection*{To Referee}
+
+The referee needs to:
+\begin{itemize}
+	\item Prepare orders for each client.
+\end{itemize}
+
+\subsubsection*{To OC}
+The OC needs to:
 \begin{itemize}[nosep]
-	\item Check with local (security) management if the possible location, including a sufficient queuing area, can be used for the restaurant test.
-\end{itemize}
-1 hour before the test:
-\begin{itemize}[nosep]
-	\item Gather all teams and robots to move to some nearby queuing area and instruct the teams how/when to move to the actual test location.
+	\item \textbf{During Setup days:} Check with local (security) management if the possible location, including a sufficient queuing area, can be used for the restaurant test.
+	\item \textbf{1 hour before the test:} Gather all teams and robots to move to some nearby queuing area and instruct the teams how/when to move to the actual test location.
 \end{itemize}
 
-
-\subsection*{Score Sheet}
+\newpage
+\subsection*{Score sheet}
 \input{scoresheets/Restaurant.tex}
+
+\cleardoublepage
+
 
 % Local Variables:
 % TeX-master: "Rulebook"

@@ -1,26 +1,55 @@
-\subsection{Open Platform League}
-\label{sec:rules:robotappearance_opl}
-Robots competing in the \OPL{} must comply with security specifications in order to avoid causing any harm while operating.
+\subsection{Robot Specifications for the Open Platform League }
+Robots competing in the RoboCup@Home Open Platform League must comply with security specifications in order to avoid causing any harm while operating.
 
 \subsubsection{Size and Weight}
-\label{sec:rules:robotappearance_opl:size}
+\label{rule:robots_size}
 
-\begin{itemize}
-	\item \textbf{Dimensions:} The dimensions of a robot should not exceed the limits of an average door (\SI{200}{\centi\meter} by \SI{70}{\centi\meter}). The \TC{} may allow the qualification and registration of larger robots, but it cannot be guaranteed that the robots can actually enter the arena. In doubt, contact the \LOC{}.
-	\item \textbf{Weight:} There is no specific weight restriction. However, the weight of the robot and the pressure it exerts on the floor should not exceed local regulations for the construction of buildings which are used for living and/or offices in the country where the competition is being held.
-	\item \textbf{Transportation:} Team members are responsible for quickly moving the robot out of the \Arena{}.	If the robot cannot move by itself (for any reason), the team members must be able to transport the robot away in an easy and fast manner.
-\end{itemize}
+\begin{enumerate}
+	\item \textbf{Dimensions:} The dimensions of a robot should not exceed the limits of an average door (\SI{200}{\centi\meter} by \SI{70}{\centi\meter} in most countries).
+	The TC may allow the qualification and registration of larger robots, but, due to local restrictions, it cannot be guaranteed that the robots can actually enter the \Arena{}.
+	In doubt, please contact the \LOC.
+	\item \textbf{Weight:} There are no specific weight restrictions; however, the weight of the robot and the pressure it exerts on the floor should not exceed local regulations for the construction of offices and/or buildings which are used for living in the country where the competitions is being held.
+	\item \textbf{Transportation:} Team members are responsible for quickly moving the robot out of the \Arena.
+	If the robot cannot move by itself (for any reason), the team members must be able to transport the robot away quickly and easily.
+\end{enumerate}
 
+\subsubsection{Appearance}
+\label{rule:robots_appearance}
+
+OPL robots should have an appearance that resembles a safe and finished product rather than an early stage prototype.
+This, in particular, means that the robot's internal hardware (electronics and cables) should be completely covered so that safety is ensured.
+Please note that covering the robot's internal hardware with a t-shirt is not forbidden, but is not advised.
 
 \subsubsection{Emergency Stop Button}
-\label{sec:rules:robotappearance_opl:esb}
+\label{rule:robots_emergency_button}
 
-\begin{itemize}
-	\item \textbf{Accessibility and Visibility:} Every robot has to provide an easily accessible and visible \EmergencyStop{} button.
-	\item \textbf{Color:} It must be coloured red and be the only red button on the robot.
-	The TC may ask the team to tape over or remove any other red button present on the robot.
+\begin{enumerate}
+	\item \textbf{Accessibility and visibility:} Every robot has to provide an easily accessible and visible \EmergencyStop{} button.
+	\item \textbf{Color:} The \EmergencyStop{} must be coloured red and be the only red button on the robot.
+	The TC may ask the team to tape over or remove any other red buttons present on the robot.
 	\item \textbf{Robot behavior:} When the \EmergencyStop{} button is pressed, the robot and all its parts must stop moving immediately.
-\end{itemize}
+\end{enumerate}
 
+\subsubsection{Start Button}
+\label{rule:start_button}
 
-\noindent\textbf{Note:} All robot requirements will be tested during \RobotInspection{} (see~\ref{sec:setupdays:inspection}).
+\begin{enumerate}
+	\item \textbf{Requirements:} As explained in~\refsec{rule:start_signal}, teams that aren't able to carry out the default start signal (opening the door) have to provide a \StartButton{} that can be used to start tests.
+	Teams need to announce this to the TC before every test that involves a start signal, including the \RobotInspection{}.
+	\item \textbf{Definition:} The \StartButton{} can be any \enquote{one-button procedure} that can be easily executed by a referee (such as releasing the \EmergencyStop{}, a green button, or a software button in a graphical user interface).
+\end{enumerate}
+
+\noindent\textbf{Note:} All robot requirements will be tested during the \RobotInspection{} (see~\ref{sec:robot_inspection}).
+
+% \subsubsection{Audio output plug}
+% \label{rule:roobt_audio_out}
+
+% \begin{enumerate}
+% 	\item \textbf{Mandatory plug:} Either the robot or some external device connected to it \emph{must} have a \iterm{speaker output plug}. It is used to connect the robot to the sound system so that the audience and the referees can hear and follow the robot's speech output.
+% 	\item \textbf{Inspection:} The output plug needs to be presented to the TC during the \iterm{Robot Inspection} test (see~\refsec{sec:robot_inspection}).
+% 	\item \textbf{Audio during tests:} Audio (and speech) output of the robot during a test have to be understood at least by the referees and the operators.
+% 	\begin{compactitem}
+% 		\item It is the responsibility of the teams to plug in the transmitter before a test, to check the sound system, and to hand over the transmitter to next team.
+% 		\item Do not rely on the sound system! For fail-safe operation and interacting with operators make sure that the sound system is not needed, e.g., by having additional speakers directly on the robot.
+% \end{compactitem}
+% \end{enumerate}

@@ -17,11 +17,12 @@
 %%% MACROS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{./setup/active_version.tex}
 \graphicspath{{\YEAR/}{./images/}}
-\input{./setup/abbrevix.tex}
 \input{./setup/macros.tex}
+\input{./setup/abbrevix.tex}
 
 
-\makeindex                               % generate index
+
+\makeindex                                % generate index
 \makeabbex                                % generate abbreviations
 
 
@@ -36,16 +37,18 @@
 
 \input{./pages/titlepage}
 
+\setcounter{page}{0}
+\pagenumbering{roman}
 \pagestyle{empty}
 \input{./pages/acknowledgments}
 \clearpage
 
-\pagestyle{empty}
-\setcounter{tocdepth}{1}
+\pagestyle{plain}
 \tableofcontents
 \clearpage
 
-\pagestyle{plain}
+\setcounter{page}{1}
+\pagenumbering{arabic}
 
 \input{Introduction}
 
@@ -62,30 +65,41 @@
 \chapter{Tests in Stage I}
 \label{chap:stage_I}
 
-\section*{Housekeeper}
+\section*{Housekeeper tasks}
+\testtocentry{test:clean-up}
 \testtocentry{test:gpsr}
 \testtocentry{test:storing-groceries}
-\testtocentry{test:tidy-up}
+\testtocentry{test:serve-breakfast}
+\testtocentry{test:take-out-the-garbage}
 
-
-\section*{Party Host}
+\section*{Party Host tasks}
 \testtocentry{test:carry-my-luggage}
+\testtocentry{test:farewell}
+\testtocentry{test:find-my-mates}
 \testtocentry{test:receptionist}
+\testtocentry{test:serving-drinks}
 
 % Uncomment to get aesthetic improvement
+\cleardoublepage
+\input{tasks/CarryMyLuggage}
+\newpage
+\input{tasks/CleanUp}
+\newpage
+\input{tasks/Farewell}
+\newpage
+\input{tasks/FindMyMates}
 \newpage
 \input{tasks/GPSR}
 \newpage
+\input{tasks/Receptionist}
+\newpage
+\input{tasks/ServingDrinks}
+\newpage
+\input{tasks/ServeBreakfast}
+\newpage
 \input{tasks/StoringGroceries}
 \newpage
-\input{tasks/TidyUp}
-\clearpage
-\input{tasks/CarryMyLuggage}
-\newpage
-\input{tasks/Receptionist}
-
-
-
+\input{tasks/TakeOutGarbage}
 
 
 
@@ -94,25 +108,39 @@
 \chapter{Tests in Stage II}
 \label{chap:stage_II}
 
-\section*{Housekeeper}
-\testtocentry{test:egpsr}
+\section*{Housekeeper tasks}
 \testtocentry{test:clean-the-table}
+\testtocentry{test:egpsr}
+\testtocentry{test:find-my-disk}
+\testtocentry{test:set-the-table}
 
-\section*{Party Host}
+\section*{Party Host tasks}
+\testtocentry{test:hand-me-that}
+\testtocentry{test:stickler-for-the-rules}
 \testtocentry{test:restaurant}
-\testtocentry{test:what-is-that}
-
+\testtocentry{test:smoothie-chef}
+\testtocentry{test:where-is-this}
 
 % Uncomment to get aesthetic improvement
+\cleardoublepage
+\input{tasks/CleanTable}
 \newpage
 \input{tasks/EGPSR}
 \newpage
-\input{tasks/CleanTable}
+\input{tasks/FindMyDisk}
+\newpage
+\input{tasks/HandMeThat}
+\newpage
+\input{tasks/SetTable}
 \newpage
 \input{tasks/Restaurant}
 \newpage
-\input{tasks/WhatisThat}
+\input{tasks/SmoothieChef}
 \newpage
+\input{tasks/SticklerForRules}
+\newpage
+\input{tasks/WhereIsThis}
+
 
 
 %%% FINALS

@@ -1,65 +1,121 @@
-\section{Deus ex Machina}
-\label{sec:rules:deusexmachina}
-To allow teams to participate in tests, where the robot is only missing one ability to complete the main goal, and to allow robots to continue in case of minor malfunctions, a robot can request human assistance during a test, called \DEM{}. Help can not be requested to complete bonus goals.
+\section[Deus Ex Machina]{Deus Ex Machina: Bypassing Features With Human Help \\ \small Because the Show Must Go On}
+\label{rule:continue}
+Robots can't score unless they accomplish the main goal of a task.
+However, in many real-life situations, a minor malfunction may prevent the robot from accomplishing a task.
+To prevent this situation, while fostering awareness and human-robot interaction, robots are allowed to request human assistance during a test.
 
 \subsection{Procedure}
-\label{sec:rules:demprocedure}
-To request human assistance while solving a task:
+\label{rule:continue_procedure}
+The procedure to request human assistance while solving a task is as follows:
 
 \begin{enumerate}
-	\item \textbf{Request Help:} The robot has to indicate loud and clear that it requires human assistance. It must clearly state:
-	\begin{enumerate}
+	\item \textbf{Request help:} The robot must indicate loud and clear that it requires human assistance. It must be clearly stated:
+	\begin{compactitem}
 		\item The nature of the assistance
 		\item The particular goal or desired result
 		\item How the action must be carried out (when necessary)
 		\item Details about how to interact with the robot (when necessary)
-	\end{enumerate}
+	\end{compactitem}
 
 	\item \textbf{Supervise:} The robot must be aware of the human's actions, being able to tell when the requested action has been completed, as well as guiding the human assistant (if necessary) during the process.
 
 	\item \textbf{Acknowledge:} The robot must politely thank the human for the assistance provided.
 \end{enumerate}
 
+\subsection*{Example}
+\label{rule:continue_example}
+In the following example, a robot has to clean the table, but is unable to grasp the spoon.
+\begin{itemize}[noitemsep]
+	\small
+	\item[\textcolor{gray}{R:}] \texttt{I am sorry, but the spoon is too small for me to take.\\
+	Could you please help me with it?\\
+	Please say "robot yes" or "robot no" to confirm.}
+	\item[\textcolor{gray}{H:}] \textit{Robot, yes!}
+	\item[\textcolor{gray}{R:}] \texttt{Thank you! Please follow my instructions.\\
+	Please take the purple spoon from the table. It is on my left.}
+	\item[\textcolor{gray}{H:}] (Referee takes green fork)
+	\item[\textcolor{gray}{R:}] \texttt{You took the wrong object.\\
+	Please take the purple spoon from the table. It is on my left.}
+	\item[\textcolor{gray}{H:}] (Referee takes purple spoon)
+	\item[\textcolor{gray}{R:}] \texttt{I saw you took the spoon.\\
+	Would you be so kind to follow me to the kitchen?\\
+	Please keep the spoon visible in front of you so I can track you. Thank you!}
+	\item[\textcolor{gray}{R:}] \texttt{You can stop following me now.\\
+	As you can see, the dishwasher is already open.\\
+	Please place the spoon in the gray basket on the lower tray.}
+	\item[\textcolor{gray}{R:}] \texttt{Lovely! Thanks for your help.\\
+	I'll let you know if I need further assistance.}
+\end{itemize}
+
+
 
 \subsection{Scoring}
-\label{sec:rules:demscoring}
-The amount of times a robot can request human assistance is not limited, but score reduction applies each time. The score for a goal or partial goal cannot be negative due to \abb{DEM} reductions. Possible \abb{DEM} requests are stated for each test with the corresponding score reductions. Other requests must be announced one day before the test in the \TLM{} where the \abb{TC} will decide on the scoring. In general, points will be deducted increasingly for:
+\label{rule:continue_scoring}
+There is no limit in the amount of times a robot can request human assistance, but score reduction applies every time it is requested.
+
 \begin{enumerate}
- 	\item \textbf{Partial Solutions:} The robot requests a partial solution (e.g. pointing to the person the robot is looking for or placing an object within grasping distance).
- 	
- 	\item \textbf{Full Awareness:} The robot requests a whole step of the test to be completed but is able to track and supervise activity. This means detecting when something goes wrong and when the request is done.
- 	
- 	\item \textbf{No Awareness:} The robot requests a whole step of the test to be completed and has to be told when the request is done.
+	\item \textbf{Partial execution:} A reduction of 10\% of the maximum attainable score is applied when the robot request a partial solution (e.g. pointing to the person the robot is looking for or placing an object within grasping distance).
+	The referee decides whether the requested action is simple enough to corresponds to a partial execution or not.
+
+	\item \textbf{Full awareness:} A reduction of 20\% of the maximum attainable score is applied when the robot is able to track and supervise activity, detecting possible, and when the requested action has been completed.
+
+	\item \textbf{No awareness:} A reduction of 30\% of the maximum attainable score is applied when the robot has to be told when the requested action has been completed.
+
+	\item \textbf{Bonuses:} No bonus points can be scored when the robot requests help to solve part of a task that normally would grant a bonus.
+
+	\item \textbf{Score reduction overlap:} The score reduction for multiple requests of the same kind do not stack, but overlap.
+	The total reduction applied correspond to the worse execution (higher reduction of all akin help requests).
+	This means, a robot won't be reduced again for requesting help to transport a second object, but a second reduction will apply when the robot asks for a door to be opened.
+
+	\item \textbf{Allowed types of assistance:} The types of assistance allowed in a given task are specified in the respective task description.
+	It should be noted that only the assistance types explicitly mentioned in a task description are actually allowed in a task; other types of assistance are not allowed and will nullify the obtained points for the part of the task in which they are applied.
+	For instance, if a task focused on manipulation does not explicitly mention a Deus Ex Machina penalty for instructing a person to perform a manipulation activity, it should not be assumed that this is a loophole that can be exploited.
 \end{enumerate}
 
-\subsection{Bypassing Speech Recognition}
-\label{sec:rules:asrcontinue}
-When the robot is not able to receive spoken commands, teams are allowed to provide alternatives.
+\subsection{Bypassing Automatic Speech Recognition}
+\label{rule:asrcontinue}
+Giving commands to the robot is essential in many tests.
+When the robot is not able to receive spoken commands, teams are allowed to provide means to bypass ASR via an Alternative method for HRI (see~\refsec{rule:asralternative}).
+Nonetheless, Automatic Speech Recognition is preferred.
 
+The following rules apply in addition to the ones specified in section \refsec{rule:continue_scoring}
 \begin{enumerate}
-	\item \textbf{Custom Operator:} A reduction of 20\% of the maximum attainable score is applied when a \CustomOperator{} is requested. The person choosen by the team gives the command \emph{exactly} as instructed by the referee.
+	\item \textbf{ASR with Default Operator:} No score reduction.
+	The command is given by the human operator who must speak (not shout) loud and clear.
+	The \iterm{default operator} may repeat the command up to three times.
+
+	\item \textbf{ASR with Custom Operator:} A reduction of 10\% of the maximum attainable score is applied when a \iterm{custom operator} is requested.
+	The Team Leader chooses a person who gives the command \emph{exactly as instructed by the referee}.
 
 	\item \textbf{Gestures:} A reduction of 20\% of the maximum attainable score is applied when a gesture (or set of gestures) is used to instruct the robot.
 
 	\item \textbf{QR Codes:} A reduction of 30\% of the maximum attainable score is applied when a QR code is used to instruct the robot.
 
-	\item \textbf{Alternative Input Method:} A reduction of up to 30\% of the maximum attainable score is applied when an alternative \abb{HRI} interface is used to instruct the robot.
+	\item \textbf{Alternative Input Method:} A reduction of up to 30\% of the maximum attainable score is applied when a \iterm{alternative HRI interface}, is used to instruct the robot.
+	Alternative HRI interfaces (see~\refsec{rule:asralternative}) must be previously approved by the TC during the Robot Inspection (see~\refsec{sec:robot_inspection}).
 \end{enumerate}
 
 
-\subsubsection{Alternative HRI Interfaces}
-\label{sec:rules:asrcontinue:hriinterface}
+\subsubsection{Alternative interfaces for HRI}
+\label{rule:asralternative}
 Alternative methods and interfaces for HRI offer a way for a robot to start or complete a task.
 Any reasonable method may be used, with the following criteria:
 \begin{itemize}
-	\item \textbf{Intuitive:} A manual should not be needed. Teams are not allowed to explain how to interact with the robot.
+	\item \textbf{Intuitive to use and self-explanatory:} a manual should not be needed. Teams are not allowed to explain how to interface with the robot. %you immediately know how to use it after a quick glance
 
-	\item \textbf{Effortless:} Must be as easy to use as uttering a command.
+	\item \textbf{Effortless use:} Must be as easy to use as uttering a command. %is as easy to use as it is uttering a command
 
-	\item \textbf{Smart:} The interface adapts to the user input, displaying only the options that make sense or that the robot can actually perform.
+	\item \textbf{Is smart and preemptive:} The interface adapts to the user input, displaying only the options that make sense or that the robot can actually perform.
+
+	\item Exploits the best of the device being used (eg. touch screen, display area, speakers, etc.)
 \end{itemize}
-\noindent\textbf{\textsc{Award:}} The best interface is awarded the Best Human-Robot Interface award (see~\ref{sec:introduction:hriaward}).
-\noindent\textbf{Note:} All methods to bypass ASR need to be announced during \RobotInspection{} (see~\ref{sec:setupdays:inspection}).
+
+Preferably, the alternative HRI must be also adapted to the user.
+Consider localization (with English as the default), but also potential users of service robots at their home.
+For example: elderly people and people with physical disabilities.
+
+\textbf{\textsc{Award:}} The best alternative is awarded the Best Human-Robot Interface award (\refsec{award:hri}).
+
 
 % Local Variables:
 % TeX-master: "../Rulebook"

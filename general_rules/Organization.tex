@@ -1,76 +1,68 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Competition Procedure}
-\label{sec:rules:competitionprocedure}
+\section{Organization of the Competition}
+\label{sec:procedure_during_competition}
 
-A \RoboCup\AtHome{} competition consists of the following stages:
+\subsection{Stage System}\label{rule:stages}
 
+The competition features a \iterm{stage system}, namely it is organized in two stages, each consisting of a number of specific tasks, and ends with a \FINAL.
 \begin{enumerate}
-	\item \textbf{\RobotInspection{}:} For security, robots are inspected during \SetupDays{}.
-	All registered teams can participate.
+	\item \textbf{Robot Inspection:} For security, robots are inspected during the \SetupDays.
+	A robot must pass the \RobotInspection{} test (see~\refsec{sec:robot_inspection}) so that it is allowed to compete.
 
-	\item \textbf{\SONE{}:} First set of tests, assessing the robot's basic abilities.
-	Only teams that passed the \RobotInspection{} can participate.
+	\item \textbf{\SONE:} The first days of the competition are called \SONE.
+	All qualified teams that have passed the \RobotInspection{} can participate in \SONE.
 
-	\item \textbf{\STWO{}:} Second set of tests, assessing more complex abilities and behaviors.
-	The best \SI{50}{\percent} of teams\footnotemark{} (after \SONE{}) can participate.
-	\footnotetext{If the total number of teams is less than 12, up to 6 teams may advance to \STWO{}}
 
-	\item \textbf{\FINAL{}:} An open demonstration, asking teams to showcase complex behaviors and novel approaches. The two best scoring teams (\SONE{} and \STWO{} combined) can participate.
+	\item \textbf{\STWO:} The best \emph{50\% of teams} after \SONE{} advance to \STWO. If the total number of teams is less than 12, up to 6 teams may advance to \STWO.
+	In this stage, tasks require more complex abilities or combinations of abilities.
+
+	\item \textbf{\FINAL:} The best \emph{two teams} of each league, namely the ones with the highest score after \STWO, advance to the \FINAL.
+	The final round features only a single task integrating all tested abilities.
+	In order to participate in the \FINAL, a team must have solved at least one of the \STWO{} tasks.
+\end{enumerate}
+Note that the same task can be performed multiple times during \SONE{} and \STWO{} (see~\refsec{rule:score_system}).
+In case of having no considerable score deviation between a team advancing to the next stage and a team dropping out, the TC may announce additional teams advancing to the next stage.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Thematic Scenarios}
+\label{rule:themes}
+
+Each stage includes a set of tasks that are grouped in two thematic scenarios:
+\begin{enumerate}
+	\item The \iterm{Housekeeper} scenario features tasks related to cleaning, organization, and maintenance of a household.
+	\item The \iterm{Party Host} scenario focuses on providing general assistance during a party by attending to the needs of the guests.
 \end{enumerate}
 
-\begin{table}[h]
-	\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-	\newcolumntype{S}{C{1.6cm}}
-	\newcolumntype{M}{C{3.2cm}}
-	\begin{center}
-		\begin{tabularx}{14.56cm}{S|S|S|S|S|S|S|S}
-			\hline
-			\multicolumn{2}{|M|}{ \cellcolor[HTML]{FFFFC7}Setup Days} &
-			\multicolumn{2}{M|}{ \cellcolor[HTML]{67FD9A}\iterm{Stage~I}} &
-			\multicolumn{2}{M|}{ \cellcolor[HTML]{9698ED}\iterm{Stage~II}} &
-			\multicolumn{2}{M|}{ \cellcolor[HTML]{FFCCC9}\iterm{Finals}}\\
-			\hline
-			%Second row
-			\multicolumn{1}{S|}{} &
-			\multicolumn{2}{M|}{$\xrightarrow{advance}$\newline All teams that \newline passed Inspection} &
-			\multicolumn{2}{M|}{$\xrightarrow{advance}$\newline Best 6 ($<12$) \newline or best 50\% ($\geq 12$)} &
-			\multicolumn{2}{M|}{$\xrightarrow{advance}$\newline Best 2 \newline teams} &
-			\multicolumn{1}{C{1.2cm}}{~}
-			\\ \cline{2-7}
-		\end{tabularx}
-	\end{center}
-\end{table}
-
-\noindent In case of having no considerable score deviation between a team advancing to the next stage and a team dropping out, the \TC{} may announce additional teams advancing to the next stage.
-
-\subsection{Scenarios}
-\label{sec:rules:scenarios}
-The tests in \SONE{} and \STWO{} are divided in two thematic scenarios:
-\begin{itemize}
-	\item \textbf{\Housekeeper{}:} Features tests related to cleaning, organizing, and maintenance.
-	
-	\item \textbf{\Partyhost{}:} Focuses on providing general assistance during a party by attending the needs of the guests.
-\end{itemize}
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Schedule}
-\label{sec:rules:schedule}
-There are two \Testblocks{} in a competition day. Each block has a stage and one or two thematic scenarios assigned. An exception is the \emph{Restaurant} test (see~\ref{test:restaurant}) which has its own block. During a block, each team has at least two \Testslots{} available, where they can choose which test, fitting the stage and scenario, they want to perform. The teams must inform the \OC{} which tests they will perform a day prior, usually in the \TLM{} (see~\ref{sec:rules:teamleadermeeting}). Teams have to indicate to the \abb{OC} when they are skipping a \Testslot{}. Without such indication, they may receive a penalty (see~\ref{sec:rules:missingslot}).
+\label{rule:schedule}
+
+\begin{enumerate}
+	\item \textbf{Thematic scenario blocks:} Two \Testblocks{} are scheduled per day, lasting between two and three hours.
+	All teams have at least 2 \Testslots{} assigned per \Testblock{}, during which they can perform any task of their choice from the block's assigned scenario.
+
+	\item \textbf{Test slots:} In principle, all teams get the same amount of \Testslots{} with a minimum of 2 per block.
+	In case there is sufficient unoccupied time, a referee may open an extra testing slot, thereby allowing an extra run for all teams.
+
+	\item \textbf{Tests:} Teams must inform the OC in advance about the tasks that they want to perform in each block.
+	Note that only one task can be attempted per \Testslot, but different tasks may be attempted in different \Testslots{} within a \Testblock{} (i.e. one task can be attempted in the first slot, while another one in the following slot, if desired).
+
+	\item \textbf{Participation is default:} Teams have to inform the OC in advance if they are skipping a \Testslot. Without such indication, they may receive a penalty when not attending (see~\refsec{rule:not_attending}).
+\end{enumerate}
 
 % Please add the following required packages to your document preamble:
 % \usepackage[table,xcdraw]{xcolor}
 % If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-\begin{table}[H]
+\begin{table}[h]
 	\centering\small
 	\newcommand{\teams}[2]{%
 		\tiny
 		\begin{tabular}{c}%
-			\textit{Slot $1$, Team $#1$}\\
+			\textit{Test slot 1, team $#1$}\\
+			\textit{Test slot 1, team $#2$}\\
 			$\vdots$\\
-			\textit{Slot $N$, Team $#2$}\\
-			\textit{Slot $N+1$, Team $#1$}\\
-			$\vdots$\\
-			\textit{Slot $2N$, Team $#2$}\\
+			\textit{Test slot $n$, team $#1$}\\
+			\textit{Test slot $n$, team $#2$}\\
 		\end{tabular}
 	}
 	\newcommand{\wcell}[2]{%
@@ -114,7 +106,7 @@ There are two \Testblocks{} in a competition day. Each block has a stage and one
 		\\\hhline{~----}
 
 	\cell{Block 2\\\footnotesize(14:00--17:00)}
-		& \cell{Party Host\\\teams{k}{l}}
+		& \cell{Party Host\\\teams{i}{k}}
 		& \cellcolor[HTML]{CBCEFB}\cell{Party Host}
 		& \cell{Housekeeper}
 		& \cellcolor{white}
@@ -127,25 +119,30 @@ There are two \Testblocks{} in a competition day. Each block has a stage and one
 	\end{tabular}
 
 	\caption{Example schedule.
-		Each of the $N$ teams has two slots assigned per block.
-		At least two blocks are scheduled per day with assigned themes.
+		Each team has at least two \Testslots{} assigned in every \Testblock.
+		At least two \Testblocks{} are scheduled per day with an assigned theme.
+		A team can choose a different task in each \Testslot, which means at least four different tests per stage.
 	}
 	\label{tbl:schedule}
 \end{table}
 
-\noindent\textbf{Note:} The schedule will be announced during \SetupDays{} (see~\ref{chap:setupdays}) by the \abb{OC}.
-
-
-\subsection{Team Leader Meeting}
-\label{sec:rules:teamleadermeeting}
-In the evening before each competition day, a \TLM{} is held. Attendance from all teams participating in the next day's tests is mandatory. During the meeting, teams can ask questions and discuss the upcoming tests with the \abb{TC} and \abb{OC}. The starting time will be announced by the \abb{OC}. Decisions made in the \abb{TLM} are binding. The \abb{TC} and referees on site will decide on anything coming up during or after a test.
+\noindent Note that the actual allocation of blocks will be announced by the OC during the \SetupDays{} (see Table \ref{tbl:schedule}).
 
 \subsection{Scoring System}
-\label{sec:rules:scoringsystem}
-Each test has a main objective and a set of bonuses.
-To score in a test, a team must accomplish the main goal (in parts if allowed). Bonuses are only given if at least \SI{50}{\percent} of the points for the main goal are achieved. Overall scoring in a stage is calculated as the sum of the maximum score obtained in each test. The final score is calculated differently and is normalized (see~\ref{sec:finals:scoring}). A team cannot get a negative score for a test unless a penalty was received.
+\label{rule:score_system}
 
-\paragraph*{Note: } Once a scoresheet has been signed by the team leader or the scores have been published, the \abb{TC} decision is irrevocable.
+Each task has a main objective and a set of bonus scores.
+To score in a test, a team must successfully accomplish the main objective of the task; bonuses are not awarded otherwise.
+
+The scoring system has the following constrains:
+\begin{enumerate}
+	\item \textbf{\SONE:} The maximum total score per task in \SONE{} is \scoring{1000 points}.
+	\item \textbf{\STWO:} The maximum total score per task in \STWO{} is \scoring{2000 points}.
+	\item \textbf{\FINAL:} The final score is normalized.
+	\item \textbf{Minimum score:} The minimum total score per test in \SONE{} and \STWO{} is \scoring{0 points}.
+	In principle, teams cannot receive negative points, except if they receive penalties.
+	In particular, both penalties for not attending (see~\refsec{rule:not_attending}) and extraordinary penalties (see~\refsec{rule:extraordinary_penalties}) can result in a total negative score.
+\end{enumerate}
 
 % Local Variables:
 % TeX-master: "../Rulebook"

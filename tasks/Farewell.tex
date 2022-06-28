@@ -1,0 +1,99 @@
+\section{Farewell [Party Host]}
+\label{test:farewell}
+
+\subsection*{Description}
+    Some guests are tired, and they call the robot to retrieve their coat. One guest is a medical doctor and needs to leave urgently. 
+    It's raining outside and there is only one umbrella, so the robot takes the guests one by one to their cab and returns 
+    with the (optional for SSPL) umbrella.\\
+
+
+\textbf{Main goal:}
+The robot escorts two guests to their cab (where the cab driver is standing), with the medical doctor guest first.
+
+
+\textbf{Optional goal:}
+\begin{enumerate}[nosep]
+	\item Delivering guest's right coat.
+	\item Entertaining guest with conversation while ushering person to the cab.
+\end{enumerate}
+
+\subsection*{Focus}
+\PerDet{}, \NAV{}, and \HRI{}
+
+\subsection*{Setup}
+\begin{itemize}
+	\item \textbf{Locations}: 
+		\begin{itemize}
+		 \item The test takes place both inside and outside the \Arena{}.
+		 \item The robot starts inside the \Arena{} at predefined location.
+		\end{itemize}
+	\item \textbf{People}: Guests -- there are five  in the living room -- three sitting and two standing. At least two of them are doctors.
+\end{itemize}
+
+\subsection*{Procedures}
+\begin{enumerate}
+	\item The guests willing to leave signal their intention.
+	\item Robot recognizes the guests willing to leave and escorts them to the cab, one at the time.
+	\item \textbf{Optionally}, the robot brings the right coat to the person leaving the \Arena{}.
+\end{enumerate}
+
+\subsection*{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Partial scoring:} The main task allows partial (per guest) scoring.
+
+	\item \textbf{Guests}: All guests have a name and a coat color assigned.
+
+	\item \textbf{Calling the robot}: Guests willing to leave call the robot (e.g. by waving or shouting) simultaneously.
+
+	\item \textbf{Kicking out guests:} Non-calling guests will refuse to leave the house; the robot must thus confirm that a guest was calling and is willing to leave.
+
+
+	\item \textbf{Cab/Taxi:} The cab location is identifiable by a \emph{Cab Driver}, who is wearing high-visibility clothing (e.g. a fluorescent vest) and is standing under an open umbrella.
+
+	\item \textbf{Delivering coats:} Coats are hanging on a coat rack near the exit door.
+	The robot should hook off the coats autonomously and bring them back to the right people.
+	
+	\item \textbf{Entertaining conversation:} Robot can ask person being ushered about party they are leaving, tell them jokes or use other topics
+	for social interaction that would engage the guest. The guest migh refuse to chitchat or indicate tiredness which should cue the robot
+	to cease the interaction. Failing to do so will result in loosing points for the item.
+
+	\item \textbf{Deus ex Machina:} The scores are reduced if human assistance is received, in particular:
+	\begin{itemize}
+		\item Telling the robot which guest is leaving (e.g. by pointing)
+		\item Guiding the robot to the cab
+		\item Guiding the robot back to the arena
+		\item Handing over a coat to the robot
+	\end{itemize}
+\end{enumerate}
+
+
+\subsection*{Instructions}
+
+\textbf{To referee}
+
+The referees need to:
+\begin{itemize}
+	\item Select at least 5 volunteers, and assign them names and coat colors.
+	\item Choose the people that will call the robot.
+	\item Assign a location for the the cab driver.
+	\item Mind the robot when it goes outside the \Arena{}.
+\end{itemize}
+
+\textbf{To OC}
+
+During the \SetupDays:
+\begin{itemize}
+	\item Provide coats for training.
+	\item Provide an umbrella for training.
+	\item Provide the cab driver's high-visibility clothing for training.
+\end{itemize}
+
+2h before the test:
+\begin{itemize}
+	\item Select and announce the robot's starting point.
+	\item Help with the assignment of a location for the cab driver.
+\end{itemize}
+
+\subsection*{Score sheet}
+\input{scoresheets/Farewell.tex}
+

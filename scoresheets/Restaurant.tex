@@ -1,17 +1,27 @@
-The maximum time for this test is 10 minutes.
+\begin{table}[h]
+	\begin{tabular}{m{0.85\linewidth} c}
+		\textbf{Maximum time}: & 15 minutes \\
+	\end{tabular}
+\end{table}
 
-\small\begin{scorelist}[startbutton=false]
-	\scoreheading{Main Goal}
-	\scoreitem[2]{500}{Take and serve an order}
-	\penaltyitem{25}{Request help by receiving directions}
-	\penaltyitem{200}{Request guidance to a table}
-	\penaltyitem[2]{350}{Deliver a partly wrong order}
-	\penaltyitem[2]{500}{Deliver a fully wrong order}
-	\penaltyitem[2]{100}{Handing over an order instead of placing}
+\small\begin{scorelist}
+	\scoreheading{Regular Rewards}	
+	\scoreitem[2]{100}{Detect calling or waving customer (per order).}
+	\scoreitem[2]{100}{Reach a customer's table without prior guidance/training (per order).}
+	\scoreitem[2]{600}{Take and serve an order.}
 
 	\scoreheading{Bonus Rewards}
-	\scoreitem[2]{250}{Use an unattached tray to transport an order}
-	\scoreitem{250}{Transport two orders at once}
+	\scoreitem[2]{200}{Use an unattached tray to transport (per order).}
+	
+	\scoreheading{Regular Penalties}
+	\penaltyitem[2]{100}{Not making eye-contact when taking an order (per order).}
+
+	\scoreheading{Deus ex Machina Penalties}
+	\penaltyitem[2]{200}{Being guided to a table (per order).}
+	\penaltyitem[6]{100}{Bypassing manipulation (per object).}
+	\penaltyitem[6]{50}{Each object handover (per object).}
+	\penaltyitem[2]{25}{Being told/pointed where is a table/\textit{Kitchen-bar} (per order).}
+
 \end{scorelist}
 
 % Local Variables:

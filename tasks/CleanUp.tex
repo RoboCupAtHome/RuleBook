@@ -1,0 +1,71 @@
+\section{Clean Up [Housekeeper]}
+\label{test:clean-up}
+
+\subsection*{Description}
+	The robot has to clean up an \Arena{} room with some misplaced objects, placing unknown objects in a garbage bin.
+
+\textbf{Main goal:}
+	Find six misplaced objects in a room and bring them to their predefined locations.
+
+\textbf{Optional goal:}
+	Manipulate heavy and tiny objects.
+
+\subsection*{Focus}
+	This task focuses on 
+	\textit{Task Planning},
+	\textit{Object Perception} and
+	\textit{Object Manipulation}.
+
+\subsection*{Setup}
+\begin{itemize}[nosep]	
+	\item \textbf{Locations:} 
+		\begin{itemize}
+			\item This task takes place in a random room in the \Arena{}.
+			\item The robot starts inside the \Arena{} at a predefined location near the entrance door.
+		\end{itemize}
+	\item \textbf{People:} Near the entrance, an operator tells the robot which room to clean.
+	\item \textbf{Furniture:} All furniture are in their predefined locations.
+	\item \textbf{Objects:} 
+		\begin{itemize}
+			\item There are 6--10 misplaced objects at random locations in the room.
+			\item Objects can be anywhere in the room, including the floor, seats, and on top of furniture.
+			\item All objects are clearly visible (i.e., no occlusions).
+			\item Objects can be regular and alike (see \refsec{rule:scenario_objects}) or garbage lying around at grasping distance.
+			\item Objects used in this test are lightweight and average-sized (see~\refsec{rule:scenario_objects}). The team leader can, however, request a tiny and a heavy object to be used in order to score additional points for picking them.
+			\item Objects must be placed inside the bin, not thrown or dropped.
+		\end{itemize}
+\end{itemize}
+
+\subsection*{Procedure}
+
+\begin{enumerate}
+	\item The referee requests the team to move the robot to the start location.
+	\item The referee gives the start signal and starts the timer.
+	\item The team leaves the area after the start signal.
+	\item A TC member follows the robot ready to press the emergency stop button.
+	\item The robot finds six misplaced objects in a room and brings them to their predefined locations.
+	\item \textbf{Optionally}, the robot can manipulate heavy and tiny objects.
+\end{enumerate}
+
+\subsection*{Additional rules and remarks}
+	No additional rules and remarks.
+
+\subsection*{Instructions:}
+
+\subsubsection*{To Referee}
+
+The referee needs to:
+\begin{itemize}
+	\item Place objects in the room.
+	\item Recover disposed objects from the bin.
+	\item Ask teams whether they want a heavy or a tiny object to be 
+\end{itemize}
+
+\subsubsection*{To OC}
+The OC needs to:
+\begin{itemize}[nosep]
+	\item \textbf{2 hours before the test}: Announce the starting location of the robot.
+\end{itemize}
+
+\subsection*{Score Sheet}
+\input{scoresheets/CleanUp.tex}

@@ -3,18 +3,21 @@ The maximum time for this test is 5 minutes.
 
 \begin{scorelist}
 	\scoreheading{Main Goal}
-	\scoreitem[5]{100}{Move an object next to objects of the same category in the shelf}
-	\penaltyitem[5]{-40}{Misplace an Object}
-	\penaltyitem[5]{-20}{Request object locations by gesture}
-	\penaltyitem[5]{-60}{Request object interaction by a human}
+	\scoreitem[5]{30}{Picking up an object for transportation to the cabinet}
+	\scoreitem[5]{90}{Moving an object next to similar objects on the cabinet}
 
 	\scoreheading{Bonus Rewards}
-	\scoreitem{100}{Opening the shelf door}
-	\scoreitem{200}{Moving a \emph{tiny} object}
-	\scoreitem{200}{Moving a \emph{heavy} object}
+	\scoreitem{200}{Opening the cabinet door without human help}
+	\scoreitem{100}{Moving a tiny object}
+	\scoreitem{100}{Moving a heavy object}
 
-	% No longer necessary, computes automatically
-	% \setTotalScore{1000}
+	\scoreheading{Regular Penalties}
+	\penaltyitem[5]{-60}{Storing an object without categorizing it correctly}
+
+	\scoreheading{Deus Ex Machina Penalties}
+	\penaltyitem[5]{-30}{A human pointing at a target location}
+	\penaltyitem[5]{-30}{A human handing an object over to the robot}
+	\penaltyitem[5]{-100}{A human moving an object}
 \end{scorelist}
 
 

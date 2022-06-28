@@ -1,57 +1,137 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Team Registration and Qualification}
-\label{sec:rules:particpation}
-
-In order to participate, a team must answer the \CFP{} announced on the \AtHome{} mailing list by sending in their \Application{}. Then, they need to be selected in the \Qualification{} phase and finally, complete their \Registration{}.
-
-\subsection{Application}
-\label{sec:rules:application}
-
-An application consists of a \TeamVideo{}, \TeamWebsite{}, and \TDP{}.
-
-\paragraph{Team Video}
-\label{sec:rules:application:video}
-The \TeamVideo{} should show that the team has a running robot platform that is able to, at least partly, solve the tests in the last rulebook. Therefore, the video should focus on abilities required in \SONE{} and also include some skills required in \STWO{}. The video should be self-explanatory and designed for a general audience. Any editing, e.g. speed up, needs to be indicated. The video should not exceed \SI{10}{\minute} and needs to be publicly uploaded.
 
 
-\paragraph{Team Website}
-\label{sec:rules:application:website}
-The \TeamWebsite{} should be designed for a broad audience. Therefore, it should include scientific material, but also interesting media. The default language of the website needs to be English.
+\subsection{Registration and Qualification Process}
+\label{rule:participation}
 
+Each year, there are three phases in the process towards participation in \AtHome:
+\begin{enumerate}
+	\item \iterm{Preregistration}
+	\item \iterm{Qualification} announcement
+	\item Final \iterm{Registration} for qualified teams
+\end{enumerate}
+The preregistration will be announced by a call for participation sent to the \iterm{RoboCup@Home mailing list}.
+Preregistration requires a \iterm{team description paper}, a \Term{video}{qualification video} and a \Term{website}{Team Website}.
+The expected contents of these are described below.
 
-\paragraph{Team Description Paper}
-\label{sec:rules:application:tdp}
-The \TDP{} is describing the team's main research, including the scientific contributions, goals, scope, and results, as well as, describing the used hardware. It needs to be in English, up to eight pages long, and formatted according to the guidelines of the \RoboCup{} Symposium. 
-An addendum as the 9th page (after references) needs to include:
+\subsection{Team Description Paper}
+\label{rule:website_tdp}
+
+The \TDP{} is an 8-pages long scientific paper, which must include a description of your main research, including the scientific contribution, goals, scope, and results.
+The TDP has to be written in English and formatted using the template of the RoboCup International Symposium without any alterations.
+The paper should contain the following items:
 \begin{itemize}
-	\item Team Name
-	\item Contact Information
-	\item Website Url
-	\item Team Member Names
-	\item Photo(s) of the Robot(s) (unless included previously) 
-	\item List of External Devices (see~\ref{sec:rules:externaldevices})
-	\item List of 3rd Party Software
+	\item The focus of research and the contributions in the respective fields
+	\item Innovative technology (if any)
+	\item Re-usability of the system for other research groups
+	\item Applicability of the robot in real-world scenarios
+	\item Photo(s) of the robot(s) used
+\end{itemize}
+As an appendix on the 9th page (after the references), please include:
+\begin{itemize}
+	\item Team name
+	\item Contact information
+	\item Website URL
+	\item Names of the team members
+	\item Photo(s) of the robot(s), unless included before
+	\item Description of the hardware used
+	\item A brief, compact list of \iterm{external devices} (see~\refsec{rule:robot_external_devices}), if any
+	\item A brief, compact list of any used 3rd party software packages (e.g.~ROS' \texttt{object\_recognition} should be listed, but \texttt{OpenCV} doesn't have to be because it is a rather standard library)
+	\item \textbf{[Open Platform League only]} A brief description of the hardware used by the robot(s)
 \end{itemize}
 
+During the qualification process, the TDP will be scored according to its scientific value, novelty, and contributions.
 
+\subsection{Qualification Video}
+
+As a proof of running hardware, each team has to provide a \iterm{qualification video} that shows at least two of the following abilities (as a minimum requirement):
+\begin{itemize}
+	\item Human-robot interaction
+	\item Safe navigation (indoors, with obstacle avoidance)
+	\item Object detection and manipulation
+	\item People detection
+	\item Speech recognition
+	\item Speech synthesis (clear and loud)
+\end{itemize}
+Showing some of the following abilities is also recommended:
+\begin{itemize}
+	\item Activity recognition
+	\item Complex speech recognition
+	\item Complex action planning
+	\item Gesture recognition
+	\item Failure recovery
+\end{itemize}
+The video should not exceed the average time for a test (max.~\SI{10}{\minute}), should be self-explanatory and designed for a general audience, and should show the robot solving complex tasks relevant for \AtHome.
+In particular, to qualify for the competition, the video should show that the robot is able to successfully solve at least one test from the current or previous year's rule book.
+For robots moving slowly, we suggest to speed-up videos, but please indicate the speed factor being used when doing so (e.g. 2x); the same rule applies for slow motion scenes.
+
+\subsection{Team Website}
+
+The \iterm{team website} should be designed for a broader audience and include scientific material (scientific papers, datasets, and documented open source code).
+The requirements for the website are as follows:
+
+\begin{enumerate}
+	\item \textbf{Language}: The team website has to be in English. Other languages may be also available, but English must be default language.
+	\item \textbf{Team}: A comprehensive list of all team members, including brief profiles.
+	\item \textbf{RoboCup}: Link to the league website and previous participations of the team at \RoboCup{} (not necessarily only \AtHome).
+	\item \textbf{Scientific approach}: Include a research statement, a description of the used approach, and information on scientific achievements.
+	\item \textbf{Publications}: Relevant \iterm{publications} from at least the last five years should be included. Downloadable publications are scored higher during the qualification process.
+	\item \textbf{Open source material}: Blueprints, datasets, repositories, or any other kinds of contributions to the league are scored highly during the qualification process.
+	\item \textbf{Multimedia}: Photos and videos of the robot(s) used should be included and easy to find.
+\end{enumerate}
+
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Qualification}
-\label{sec:rules:qualification}
-The \OC{} will select teams for \Qualification{}. The selections will mainly be based on:
+\label{rule:qualification}
+
+During the \iterm{qualification process}, a selection will be made by the OC.
+The following points are taken into account and evaluated in the decision process:
 \begin{itemize}
-	\item The content on the \TeamWebsite{}, focusing on publications and open source resources
-	\item Number and complexity of abilities shown in the \TeamVideo{}
-	\item Scientific value, novelty and contributions in the \TDP{}
-
+	\item The scientific value, novelty, and contributions of the TDP
+	\item The number of abilities and the complexity of the tasks shown in the qualification video
+	\item The contents of the team website, where relevant publications and open source resources are valued highly
 \end{itemize}
-Secondary evaluation criteria are:
+In addition, the following evaluation criteria are considered:
 \begin{itemize}
-	\item Performance in previous competitions
-	\item Previous contributions to the \AtHome{} community
+	\item The performance in previous competitions
+	\item Relevant scientific contributions and publications
+	\item Any additional contributions to the \AtHome{} league
 \end{itemize}
 
+\paragraph{Important note for the Standard Platform Leagues:} Only unmodified robots may compete in Standard Platform Leagues. Any \textit{unathorized} modification made to the robot that are found in the qualification material will automatically disqualify the team in the qualification process. % (see~\refsec{rule:spl-mods}).
 
-\subsection{Registration}
-\label{sec:rules:registration}
-Qualified teams can register at the \RoboCup\AtHome{} competition. In order to max out the number of participants, qualified teams \emph{must} contact the \OC{} to confirm (or cancel) participation.
+\subsection{Participation Confirmation}
+\label{rule:participation-confirmation}
 
-Confirming implies that the team has sufficient resources to complete \Registration{} and attend the competition. Teams that fail to confirm their participation will be disqualified.
+In order to have as many participating teams as possible, qualified teams \emph{must} contact the OC to confirm (or cancel) the participation several months in advance.
+Confirming attendance implies that the team has sufficient resources to register for the competition and commits to attend the event.
+Qualified teams that do not confirm their participation may be disqualified.
+
+\subsection{Task Selection Announcement}
+\label{rule:task-selection-announcement}
+
+To facilitate the scheduling of test slots during the competition, each team is required to send a list of tasks that they intend to participate in.
+The list should be sent to the OC two weeks before the competition and should include all tests that the team intends to attempt.
+The selected tasks should be according to the number and type of test slots of the competition (see~\Cref{rule:schedule,tbl:max-elegible-tests}).
+Teams are not obliged to perform all tasks on the list and are free to opt-out of any of them during the competition; however, a team cannot participate in a task if it was not included in the notification, i.e. opting-in for a task during the competition is not possible.
+Please note that this rule is only there so that the organization is easier, as there are more tasks than testing slots available.
+
+\begin{table}[H]
+\centering
+\caption{Maximum number of elegible tests in Bangkok 2022}
+\label{tbl:max-elegible-tests}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\begin{tabularx}{0.6\linewidth}{X C{0.2\linewidth} C{0.2\linewidth}}
+	\toprule
+	                  & Housekeeper & Party Host\\
+	\midrule
+	\textsc{Stage I}  &      3      &      3    \\
+	\textsc{Stage II} &      2      &      2    \\
+	\bottomrule
+\end{tabularx}
+\end{table}
+
+% Local Variables:
+% TeX-master: "../Rulebook"
+% End:
