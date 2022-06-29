@@ -3,11 +3,11 @@ RuleBook for RoboCup @Home 2022
 
 [![CI](https://github.com/RoboCupAtHome/RuleBook/actions/workflows/ci.yml/badge.svg)](https://github.com/RoboCupAtHome/RuleBook/actions/workflows/ci.yml)
 
-The 2022 rulebook is based on the 2019 notebook and is still in a **draft** stage.
+The 2022 rulebook is based on the 2019 rulebook. The current version is **final**; only minor (language) updates and clarifications may be made from now on.
 
 [On-the-fly compiled LaTeX version](https://robocupathome.github.io/RuleBook/rulebook/master.pdf)
 
-[Released PDF version](https://athome.robocup.org/wp-content/uploads/2019_rulebook.pdf)
+[Released PDF version](https://athome.robocup.org/wp-content/uploads/2022_rulebook.pdf)
 
 RoboCup@Home teams and team members are welcome to post GitHub issues for clarifications, questions etc.
 
