@@ -55,6 +55,8 @@ jobs:
     needs: [build-rulebook, build-scoresheets]
     steps:
     - uses: actions/checkout@v3
+      with:
+        ref: gh-pages
     - name: Download rulebook
       uses: actions/download-artifact@v1
       with:
@@ -74,7 +76,6 @@ jobs:
         cd "$GITHUB_WORKSPACE"
         git config --global user.name "Continuous Deployment"
         git config --global user.email "git@robocupathome.org"
-        git checkout origin/gh-pages
         mkdir -p rulebook
         mkdir -p score_sheets
         FILENAME=${GITHUB_REF/refs\/heads\//}
@@ -87,7 +88,8 @@ jobs:
         git diff-index --quiet HEAD || git commit -m "[github actions] deploy"
     - name: Push to GitHub Pages
       if: github.ref == 'refs/heads/master'
-      uses: ad-m/github-push-action@v0.5.0
+      uses: ad-m/github-push-action@v0.6.0
       with:
         github_token: ${{ secrets.DEPLOY_PAT }}
         branch: gh-pages
+        directory: ${{ github.workspace }}
