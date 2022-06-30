@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: LaTeX linter (chktex)
-        uses: j2kun/chktex-action@v1.0.0
+        uses: j2kun/chktex-action@1.0.3
         # Provide this output for context, but don't fail builds
         continue-on-error: true
         env:
