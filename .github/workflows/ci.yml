@@ -58,12 +58,12 @@ jobs:
       with:
         ref: gh-pages
     - name: Download rulebook
-      uses: actions/download-artifact@v1
+      uses: actions/download-artifact@v3
       with:
         name: rulebook
         path: ${{ runner.temp }}/rulebook
     - name: Download score sheets
-      uses: actions/download-artifact@v1
+      uses: actions/download-artifact@v3
       with:
         name: score_sheets
         path: ${{ runner.temp }}/score_sheets
