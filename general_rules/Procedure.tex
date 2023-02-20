@@ -4,8 +4,8 @@
 \subsection{Safety First!}
 \label{rule:safetyfirst}
 \begin{enumerate}
-	\item \textbf{Emergency Stop:} At any time when operating the robot inside and outside the scenario the owners have to stop the robot immediately if there is a remote possibility of dangerous behavior towards people and/or objects.
-	\item \textbf{Stopping on request:} If a referee, member of the Technical or Organizational committee, an Executive or Trustee of the federation tells the team to stop the robot, there will be no discussion and the robot must be stopped \emph{immediately}.
+	\item \textbf{Emergency Stop:} At any time when operating the robot inside and outside the scenario the owners have to stop the robot immediately if there is a possibility of dangerous behavior towards people and/or objects.
+	\item \textbf{Stopping on request:} If a referee, member of the Technical or Organizational committee, an Executive or Trustee of the federation stops the robot (by pressing the emergency button) there will be no discussion. Similarly if they tell the team to stop the robot, the robot must be stopped \emph{immediately}.
 	\item \textbf{Penalties:} If the team does not comply, the team and its members will be excluded from the ongoing competition immediately by a decision of the RoboCup@Home \iaterm{Technical Committee}{TC}. 	Furthermore, the team and its members may be banned from future competitions for a period not less than a year by a decision of the RoboCup Federation Trustee Board.
 \end{enumerate}
 
@@ -72,15 +72,9 @@ Hence, interaction should be as with any other human being.
 	\item \textbf{\iterm{Major collisions}:} If a robot crushes into something during a test, the robot is immediately stopped.	Additional penalties may apply.
 
 	\item \textbf{\iterm{Functional touching}:} Robots are allowed to apply pressure on objects, push away furniture and, in general, interact with the environment using structural parts other than their manipulators.
-	This is known as \iaterm{functional touching}.
+	This is known as \iterm{functional touching}.
 	However, the robot must clearly announce the collision-like interaction and kindly request not being stopped.\\
 	\textbf{Remark: } Referees can (and will) immediately stop a robot in case or suspicion of \emph{dangerous} behavior.
-
-	\item \textbf{Robot-Robot avoidance:} If two robots encounter each other, they both have to actively try to avoid the other robot.
-	\begin{enumerate}
-		\item A robot which is not going for a different route within a reasonable amount of time (e.g., \SI{30}{\second}) is removed.
-		\item A non-moving robot blocking the path of another robot for longer than a reasonable amount of time (e.g., \SI{30}{\second}) is removed.
-	\end{enumerate}
 \end{enumerate}
 
 
@@ -92,6 +86,8 @@ Robots not obeying the rules are stopped and removed from the \Arena{}.
 	\item It is the decision of the referees and the TC member monitoring the test if and when to remove a robot.
 
 	\item When told to do so by the referees or the TC member monitoring the test, the team must immediately stop the robot, and remove it from the \Arena{} without disturbing the ongoing test.
+	
+	\item More than 1 team member is allowed to enter the \Arena{} after the robot has been stopped to quickly remove the robot from the \Arena{}
 
 \end{enumerate}
 
@@ -131,7 +127,6 @@ Other start signals are allowed but must be authorized by the \iaterm{Technical 
 
 	\item \textbf{Start position:} Unless stated otherwise, the robot starts outside of the \Arena{}.
 	\item \textbf{Entering:} The robot must autonomously enter the \Arena{}.
-	\item \textbf{Success:} The robot is said to \emph{have entered} when the door used to enter can be closed again, and the robot is not blocking the passage.
 \end{enumerate}
 
 
@@ -160,23 +155,13 @@ Hand gestures may be used to control the robot in the following way:
 
 \subsection{Referees}
 \label{rule:referees}
-All tests are monitored by a referee and one member of the \iaterm{Technical Committee}{TC}.
+All tests are monitored by a referee, who is a member of the \iaterm{Technical Committee}{TC}. The referee may appoint an assistant to aid in keeping time and filling in scoresheets. 
 The following rules apply:
 
 \begin{enumerate}
-	\item \textbf{Selection:}
-	\begin{itemize}
-		\item Referees are chosen by EC/TC/OC.
-		\item Referees are announced together with the schedule for the test slot.
-	\end{itemize}
+	\item \textbf{Selection:} Referees are chosen by EC/TC/OC.
 
-	\item \textbf{Not showing up:} Not showing up for refereeing (on time) will result in a penalty (see~\refsec{rule:extraordinary_penalties}).
-
-	\item \textbf{TC monitoring:} A TC member acts as main referee.
-
-	\item \textbf{Referee instructions:} Right before each test, referee instructions are conducted by the TC.
-	The referees for all slots need to be present at the \Arena{} where the referee instructions are taking place.
-	When and where referee instructions are taking place is announced together with the schedule for the slots.
+	\item \textbf{Referee instructions:} Right before each test, referee chooses one or more assistant to aid during the test. The assistants will be instructed by the referee.
 \end{enumerate}
 
 
@@ -185,23 +170,6 @@ The following rules apply:
 Unless stated otherwise, robots are operated by the referee or by a person selected by the referee.
 If the robot fails to understand the default operator, the team may request the use of a custom operator.
 Penalty may apply when using a custom operator.
-
-
-\subsection{Moderator}
-\label{rule:moderator}
-The LOC is responsible of organizing test moderation in the local language.
-The OC may request the participating teams to provide a team member for moderation.
-Candidates have to be fluent in the moderation language (default is English).
-
-\noindent\textbf{Responsibilities:} The moderators have to:
-\begin{compactitem}
-	\item Do \textbf{NOT interfere} with the performance
-	\item Explain the tasks being performed
-	\item Comment on the performance of the competitor
-	\item Follow the instructions of the referee.
-\end{compactitem}
-
-\noindent \textbf{Not showing up:} Not showing up for moderation (on time) will result in a penalty (see~\refsec{rule:extraordinary_penalties}).
 
 
 \subsection{Time limits}
@@ -226,34 +194,6 @@ Candidates have to be fluent in the moderation language (default is English).
 	No more additional score will be giving.
 
 	\item \textbf{Show must go on:} On special cases, the referee may let the robot continue the test for demonstration purposes, but no additional points will be scored.
-\end{enumerate}
-
-
-
-\subsection{Restart}
-\label{rule:restart}
-Some tasks allow a single restart, a procedure in which the team is allowed to quickly fix any issue with the robot.
-Restarts can be requested only when the test slot permits it, and when the amount of remaining time is greater than 50\% of the total.
-The procedure is as follows:
-
-\begin{enumerate}
-	\item The team request a restart.
-	\item The robot is taken to the initial position (e.g. outside the \Arena{}) and gets fixed.
-	\item When the robot is ready, the team informs the referee.
-\end{enumerate}
-
-The following rules apply:
-\begin{enumerate}
-	\item \textbf{Number of restarts:} When allowed, the maximum number of restarts is one (1).
-
-	\item \textbf{Early request:} Restart is \textbf{NOT} allowed after the first 50\% of the allotted time has elapsed.
-
-	\item \textbf{Time:} The timer is neither restarted nor stopped.
-
-	\item \textbf{One-minute Setup} The team has 1 minute to fix the robot, starting when the referee announces th restart.
-	If the robot is not ready, the test is considered finished.
-
-	\item \textbf{Scoring:} If the score of the second attempt is lower than the score of the first one, the average score of first and second run is taken.
 \end{enumerate}
 
 % Local Variables:
