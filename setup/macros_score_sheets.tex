@@ -556,11 +556,11 @@
 	\scoreheading{Special Penalties \& Bonuses}
 
 	% not showing up penalty %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\penaltyitem{\notattendingpenalty}{Not attending \ifShortScoresheet{(see sec.~\ref{sec:rules:missingslot})}{}}
+	\penaltyitem{\notattendingpenalty}{Not attending \ifShortScoresheet{(see sec.~\ref{rule:not_attending})}{}}
 
 	% require signal for door opening %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\ifthenelse{ \equal{\scorelistStartButton}{true} }{
-	  \penaltyitem{\scorelistStartButtonPenalty}{Using alternative start signal \ifShortScoresheet{(see sec.~\ref{sec:rules:startsignal})}{}}
+	  \penaltyitem{\scorelistStartButtonPenalty}{Using alternative start signal \ifShortScoresheet{(see sec.~\ref{rule:start_signal})}{}}
 	}{}
 
 	% data recording bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
