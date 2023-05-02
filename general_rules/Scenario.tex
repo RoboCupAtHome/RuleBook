@@ -118,10 +118,14 @@ Two types of objects are used in the tasks:
 \begin{enumerate}
 	\item \textbf{\KnownObjects{}:} Objects previously known to the robot, divided into:
 	\begin{enumerate}
-		\item \textbf{\ConsistentObjects{}:} Objects whose image appears in the list of objects.
-		\item \textbf{\SimilarObjects{}:} Objects whose image is not present in the list of objects, but look similar enough to one of them that a person would consider them the same kind of object. For example, an apple whose color is different from the apple in the list of objects, or a piece of cloth with a different pattern.
-		\item \textbf{\StandardObjects{}:} Objects chosen from the \YCBData{}.\footnote{\url{http://www.ycbbenchmarks.com/object-set/}} They are published 6 months in advance on the \RoboCup\AtHome{} website\footnote{\url{https://athome.robocup.org/standard-objects}}, so that they can be aquired and trained beforehand.
+		\item \textbf{\ListedObjects{}:} Objects in the list of objects compiled by TC:
+		\begin{enumerate}
+			\item \textbf{\StandardObjects{}:} Objects chosen from the \YCBData{}.\footnote{\url{http://www.ycbbenchmarks.com/object-set/}} Which of these objects are used depends on local availability. A list of used standard objects is announced when local organizers confirm availability.
+			\item \textbf{\AdditionalObjects{}:} Objects that are bought locally by the OC that will be made available for training during the setup days.
+		\end{enumerate}
+		\item \textbf{\SimilarObjects{}:} Objects that are similar to \ListedObjects \ a person would consider the same kind of object. For example, a differently colored apple or a cloth with a different pattern.
 	\end{enumerate}
+	
 	\item \textbf{\UnknownObjects{}:} Any other object that is not in the object list but can be grasped or handled (e.g., \Arena{} decorations).
 \end{enumerate}
 
