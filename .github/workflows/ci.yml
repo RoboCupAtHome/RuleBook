@@ -30,7 +30,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: rulebook
-        path: Rulebook.pdf
+        path: rulebook.pdf
 
 
   build-scoresheets:
@@ -81,7 +81,7 @@ jobs:
         FILENAME=${GITHUB_REF/refs\/heads\//}
         # Strip out any extra slashes in the rest
         FILENAME=${FILENAME//\//\_}.pdf
-        mv $ARTIFACTS_PATH/rulebook/Rulebook.pdf rulebook/$FILENAME
+        mv $ARTIFACTS_PATH/rulebook/rulebook.pdf rulebook/$FILENAME
         mv $ARTIFACTS_PATH/score_sheets/score_sheets.pdf score_sheets/$FILENAME
     - name: Commit and push to GitHub Pages
       if: github.ref == 'refs/heads/master'
