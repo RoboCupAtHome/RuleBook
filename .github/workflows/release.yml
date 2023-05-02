@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: LaTeX linter (chktex)
+        uses: j2kun/chktex-action@1.0.3
+        # Provide this output for context, but don't fail builds
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build:
+    needs: [lint]
+    runs-on: ubuntu-latest
+    container: blang/latex:ubuntu
+    steps:
+    - uses: actions/checkout@v3
+    - name: LaTeX compilation Rulebook
+      run:
+        TERM=xterm make dorulebookonly
+    - name: LaTeX compilation Score sheets
+      run:
+        TERM=xterm make doscoresheetsonly
+    - name: Create Release
+      id: create-release
+      uses: softprops/action-gh-release@v1
+      with:
+        draft: false
+        prerelease: false
+        generate_release_notes: false
+        token: ${{ secrets.DEPLOY_PAT }}
+        files: |
+          rulebook.pdf
+          score_sheets.pdf
