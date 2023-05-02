@@ -52,6 +52,8 @@ jobs:
   deploy-pdfs:
 
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     needs: [build-rulebook, build-scoresheets]
     steps:
     - uses: actions/checkout@v3
@@ -67,15 +69,13 @@ jobs:
       with:
         name: score_sheets
         path: ${{ runner.temp }}/score_sheets
-    - name: Commit output to GitHub Pages
+    - name: Preparations for GitHub Pages
       if: github.ref == 'refs/heads/master'
       env:
         ARTIFACTS_PATH: ${{ runner.temp }}
       run: |
-        # configure git
+        # Make sure directories exist
         cd "$GITHUB_WORKSPACE"
-        git config --global user.name "Continuous Deployment"
-        git config --global user.email "git@robocupathome.org"
         mkdir -p rulebook
         mkdir -p score_sheets
         FILENAME=${GITHUB_REF/refs\/heads\//}
@@ -83,13 +83,16 @@ jobs:
         FILENAME=${FILENAME//\//\_}.pdf
         mv $ARTIFACTS_PATH/rulebook/Rulebook.pdf rulebook/$FILENAME
         mv $ARTIFACTS_PATH/score_sheets/score_sheets.pdf score_sheets/$FILENAME
-        git add rulebook/$FILENAME score_sheets/$FILENAME
-        # If the built PDF is actually different, commit it
-        git diff-index --quiet HEAD || git commit -m "[github actions] deploy"
-    - name: Push to GitHub Pages
+    - name: Commit and push to GitHub Pages
       if: github.ref == 'refs/heads/master'
-      uses: ad-m/github-push-action@v0.6.0
+      uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        github_token: ${{ secrets.DEPLOY_PAT }}
         branch: gh-pages
-        directory: ${{ github.workspace }}
+        commit_author: "Continuous Deployment <git@robocupathome.org>"
+        commit_message: "[github actions] deploy"
+        commit_user_name: "Continuous Deployment"
+        commit_user_email: "git@robocupathome.org"
+        file_pattern: "rulebook/* score_sheets/*"
+        repository: ${{ github.workspace }}
+        skip_checkout: true
+        skip_fetch: true
