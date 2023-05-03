@@ -8,14 +8,14 @@ The competition features a \iterm{stage system}, namely it is organized in two s
 \begin{enumerate}
 	\item \textbf{Robot Inspection:} For security, robots are inspected during the \SetupDays.
 	A robot must pass the \RobotInspection{} test (see~\refsec{sec:robot_inspection}) so that it is allowed to compete.
-
+	
 	\item \textbf{\SONE:} The first days of the competition are called \SONE.
 	All qualified teams that have passed the \RobotInspection{} can participate in \SONE.
-
-
+	
+	
 	\item \textbf{\STWO:} The best \emph{50\% of teams} after \SONE{} advance to \STWO. If the total number of teams is less than 12, up to 6 teams may advance to \STWO.
 	In this stage, tasks require more complex abilities or combinations of abilities.
-
+	
 	\item \textbf{\FINAL:} The best \emph{two teams} of each league, namely the ones with the highest score after \STWO, advance to the \FINAL.
 	The final round features only a single task integrating all tested abilities.
 
@@ -28,13 +28,13 @@ In case of having no considerable score deviation between a team advancing to th
 \label{rule:schedule}
 
 \begin{enumerate}
-	\item \textbf{Test Blocks:} For each test one Test Block is scheduled during which each (qualified) team gets at least two Test Slots assigned. With the Restaurant test being the exception where only one Test Slot is assigned.
-
-	\item \textbf{Test Slots:} During a Test Slot a team has the amount of time specified for the test to attempt to solve it. 
-
+	\item \textbf{Test Blocks:} For each test one Test Block is scheduled during which each (qualified) team gets at least two, maximum five Test Slots assigned. With the Restaurant test being the exception where only one Test Slot is assigned.
+	
+	\item \textbf{Test Slots:} During a Test Slot a team has one attempt to solve the test in the test's specified amount of time 
+	
 	\item \textbf{Participation is default:} Teams have to inform the OC in advance if they are skipping a Test Block. Without such indication, they may receive a penalty when not attending (see~\refsec{rule:not_attending}).
 	
-	\item \textbf{GPSR Block: } During the GPSR slot teams are allowed to perform one Stage 1 test of their choice instead, to allow more attempts for newer or specialized teams. Note that participation in GPSR is mandatory to advance to Stage 2. 
+	\item \textbf{GPSR Block: } During the GPSR slot teams are allowed to perform one Stage 1 test of their choice instead, to allow more attempts for newer or specialized teams. Note that only GPSR attempts are scored during this block. 
 \end{enumerate}
 
 % Please add the following required packages to your document preamble:
@@ -62,59 +62,59 @@ In case of having no considerable score deviation between a team advancing to th
 	}
 	\newcommand{\cell}[1]{\wcell{0.2\baselineskip}{#1}}
 	% \newcommand{\mr}[1]{\multirow{2}{*}{#1}}
-
-
+	
+	
 	\begin{tabular}{
-		>{\centering\arraybackslash}m{2.5cm}|%
-		>{\columncolor[HTML]{9AFF99}}c |%
-		>{\columncolor[HTML]{9AFF99}}c |%
-		>{\columncolor[HTML]{CBCEFB}}c |%
-		>{\columncolor[HTML]{FF8D27}}c  %
-	}
-	\multicolumn{1}{ c }{}
+			>{\centering\arraybackslash}m{2.5cm}|%
+			>{\columncolor[HTML]{9AFF99}}c |%
+			>{\columncolor[HTML]{9AFF99}}c |%
+			>{\columncolor[HTML]{CBCEFB}}c |%
+			>{\columncolor[HTML]{FF8D27}}c  %
+		}
+		\multicolumn{1}{ c }{}
 		& \multicolumn{1}{ c }{\cellcolor{white} Day 1 }
 		& \multicolumn{1}{ c }{\cellcolor{white} Day 2 }
 		& \multicolumn{1}{ c }{\cellcolor{white} Day 3 }
 		& \multicolumn{1}{ c }{\cellcolor{white} Day 4 }
 		\\\hhline{~---~}
-
-	\cell{Block 1\\\footnotesize(9:00--11:00)}
+		
+		\cell{Block 1\\\footnotesize(9:00--11:00)}
 		& \cell{Carry my Luggage}
 		& \cell{Serve Breakfast}
 		& \cell{Restaurant}
 		& \cellcolor{white}
 		\\\hhline{~----}
-
-
-
-	\multicolumn{1}{ c }{}
+		
+		
+		
+		\multicolumn{1}{ c }{}
 		& \multicolumn{3}{ c }{\wcell{0.5\baselineskip}{\color{gray}\----Break---\-}}
 		& \multicolumn{1}{|c|}{\cellcolor[HTML]{FF8D27}\cell{\textbf{Finals}}}
 		\\\hhline{~----}
-
-	\cell{Block 2\\\footnotesize(13:00--15:00)}
+		
+		\cell{Block 2\\\footnotesize(13:00--15:00)}
 		& \cell{Receptionist}
 		& \cell{GPSR}
 		& \cell{Stickler for the Rules}
 		& \cellcolor{white}
 		\\\hhline{~---}
 		
-	
-
-	\multicolumn{1}{ c }{}
+		
+		
+		\multicolumn{1}{ c }{}
 		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{\color[HTML]{029734}}}
 		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{\color[HTML]{6668e5}Stage 2}}
 		& \multicolumn{1}{ c }{\cellcolor{white}}
 		\\\hhline{~---}
 		
-	\cell{Block 3\\\footnotesize(17:00--19:00)}
+		\cell{Block 3\\\footnotesize(17:00--19:00)}
 		& \cell{Storing Groceries}
 		& \cellcolor[HTML]{CBCEFB}\cell{Clean the Table}
 		& \cell{EGPSR}
 		& \cellcolor{white}
 		\\\hhline{~---}
 	\end{tabular}
-
+	
 	\caption{Example schedule.
 		Each team has at least two Test Slots assigned in every Test Block.
 	}
@@ -127,13 +127,10 @@ In case of having no considerable score deviation between a team advancing to th
 \label{rule:score_system}
 
 Each task has a main objective and a set of bonus scores.
-To score in a test, a team must successfully accomplish the main objective of the task; bonuses are not awarded otherwise.
+To score in a test, a team must successfully accomplish a main objective of the task; bonuses are not awarded otherwise.
 
-The scoring system has the following constrains:
 \begin{enumerate}
-	\item \textbf{\SONE:} The maximum total score per task in \SONE{} is \scoring{1000 points}.
-	\item \textbf{\STWO:} The maximum total score per task in \STWO{} is \scoring{2000 points}.
-	\item \textbf{\FINAL:} The final score is normalized.
+	\item \textbf{Scoring:} A team receives points for their best attempt in each test.
 	\item \textbf{Minimum score:} The minimum total score per test in \SONE{} and \STWO{} is \scoring{0 points}.
 	In principle, teams cannot receive negative points, except if they receive penalties.
 	In particular, both penalties for not attending (see~\refsec{rule:not_attending}) and extraordinary penalties (see~\refsec{rule:extraordinary_penalties}) can result in a total negative score.
