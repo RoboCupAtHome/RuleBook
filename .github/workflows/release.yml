@@ -36,7 +36,7 @@ jobs:
         draft: false
         prerelease: false
         generate_release_notes: false
-        token: ${{ secrets.DEPLOY_PAT }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         files: |
           rulebook.pdf
           score_sheets.pdf
