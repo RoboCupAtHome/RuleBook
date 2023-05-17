@@ -14,7 +14,7 @@
 
 ## MAIN ###################
 
-RPREFIX = Rulebook
+RPREFIX = rulebook
 SSREFIX = score_sheets
 
 ## #################################### ##
@@ -360,7 +360,7 @@ clean:
 
 dirk:	mauBuild
 mauBuild:
-	$(SILENT) $(RUBBER) $(RUBBERFLAGS) $ Rulebook.tex
+	$(SILENT) $(RUBBER) $(RUBBERFLAGS) $(RTEXFILE)
 	$(SILENT) for league in OPL DSPL SSPL ; do \
 	    (echo "\def\league{$$league}" ; cat $(SSTEXFILE) ) > "$(SSPREFIX)_$$league.tex" ; \
 		 $(RUBBER) $(RUBBERFLAGS) $ "$(SSPREFIX)_$$league.tex" ; \
