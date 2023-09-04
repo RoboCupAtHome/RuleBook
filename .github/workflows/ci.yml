@@ -19,7 +19,7 @@ jobs:
   build-rulebook:
 
     runs-on: ubuntu-latest
-    container: pandoc/latex:latest-ubuntu
+    container: pandoc/extra:latest-ubuntu
 
     steps:
     - uses: actions/checkout@v4
@@ -36,7 +36,7 @@ jobs:
   build-scoresheets:
 
     runs-on: ubuntu-latest
-    container: pandoc/latex:latest-ubuntu
+    container: pandoc/extra:latest-ubuntu
 
     steps:
     - uses: actions/checkout@v4
