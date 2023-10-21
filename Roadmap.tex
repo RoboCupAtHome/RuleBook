@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%          $Id: Rulebook.tex 2014-12-12 balkce $
+%%    author(s): RoboCupAtHome Technical Committee(s)
+%%  description: introduction to RoboCupAtHome
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt, twoside, openright, a4paper, chapterprefix]{scrbook}
+\usepackage[inner=2.5cm, outer=2.5cm, top=4cm, bottom=4cm]{geometry}
+
+%%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./setup/packages.tex}
+\input{./setup/config.tex}
+\input{./setup/styling.tex}
+
+
+%%% MACROS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{./setup/active_version.tex}
+\graphicspath{{\YEAR/}{./images/}}
+\input{./setup/macros.tex}
+\input{./setup/abbrevix.tex}
+
+
+
+\makeindex                                % generate index
+\makeabbex                                % generate abbreviations
+
+
+
+
+
+%\newcommand{\sectionbreak}{\clearpage}
+%\newcommand{\subsectionbreak}{\clearpage}
+
+
+\begin{document}
+	
+	\input{./pages/titlepage}
+	
+	\setcounter{page}{0}
+	\pagenumbering{roman}
+	\pagestyle{empty}
+	\input{./pages/acknowledgments}
+	\clearpage
+	
+	\pagestyle{plain}
+	\tableofcontents
+	\clearpage
+	
+	\setcounter{page}{1}
+	\pagenumbering{arabic}
+	
+	\input{CompetitionConcepts}
+	
+	
+	
+	\printabx
+	\printidx
+	
+\end{document}
