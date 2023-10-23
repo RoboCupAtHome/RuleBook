@@ -85,7 +85,7 @@ jobs:
         mv $ARTIFACTS_PATH/score_sheets/score_sheets.pdf score_sheets/$FILENAME
     - name: Commit and push to GitHub Pages
       if: github.ref == 'refs/heads/master'
-      uses: stefanzweifel/git-auto-commit-action@v4
+      uses: stefanzweifel/git-auto-commit-action@v5
       with:
         branch: gh-pages
         commit_author: "Continuous Deployment <git@robocupathome.org>"
