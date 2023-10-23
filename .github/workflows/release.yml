@@ -9,7 +9,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: LaTeX linter (chktex)
         uses: j2kun/chktex-action@1.0.3
         # Provide this output for context, but don't fail builds
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     container: blang/latex:ubuntu
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: LaTeX compilation Rulebook
       run:
         TERM=xterm make dorulebookonly
