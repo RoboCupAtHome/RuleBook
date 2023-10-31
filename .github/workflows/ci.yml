@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: LaTeX linter (chktex)
         uses: j2kun/chktex-action@1.0.3
         # Provide this output for context, but don't fail builds
@@ -19,10 +19,10 @@ jobs:
   build-rulebook:
 
     runs-on: ubuntu-latest
-    container: blang/latex:ubuntu
+    container: leplusorg/latex:latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: LaTeX compilation
       run:
         TERM=xterm make dorulebookonly
@@ -36,10 +36,10 @@ jobs:
   build-scoresheets:
 
     runs-on: ubuntu-latest
-    container: blang/latex:ubuntu
+    container: leplusorg/latex:latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: LaTeX compilation
       run:
         TERM=xterm make doscoresheetsonly
@@ -56,7 +56,7 @@ jobs:
       contents: write
     needs: [build-rulebook, build-scoresheets]
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         ref: gh-pages
     - name: Download rulebook
@@ -85,7 +85,7 @@ jobs:
         mv $ARTIFACTS_PATH/score_sheets/score_sheets.pdf score_sheets/$FILENAME
     - name: Commit and push to GitHub Pages
       if: github.ref == 'refs/heads/master'
-      uses: stefanzweifel/git-auto-commit-action@v4
+      uses: stefanzweifel/git-auto-commit-action@v5
       with:
         branch: gh-pages
         commit_author: "Continuous Deployment <git@robocupathome.org>"
