@@ -4,9 +4,7 @@ on: [push, pull_request]
 
 jobs:
   lint:
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
       - name: LaTeX linter (chktex)
@@ -16,75 +14,70 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  build-rulebook:
-
+  build:
+    name: build-${{ matrix.document }}
     runs-on: ubuntu-latest
     container: leplusorg/latex:latest
+    needs: [lint]
+    strategy:
+      fail-fast: false
+      matrix:
+        document: [organization, rulebook, scoresheets]
 
     steps:
     - uses: actions/checkout@v4
     - name: LaTeX compilation
       run:
-        TERM=xterm make dorulebookonly
+        TERM=xterm make do${{ matrix.document }}only
     - name: Upload build result
       uses: actions/upload-artifact@v4
       with:
-        name: rulebook
-        path: rulebook.pdf
-
-
-  build-scoresheets:
-
-    runs-on: ubuntu-latest
-    container: leplusorg/latex:latest
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: LaTeX compilation
-      run:
-        TERM=xterm make doscoresheetsonly
-    - name: Upload build result
-      uses: actions/upload-artifact@v4
-      with:
-        name: score_sheets
-        path: score_sheets.pdf
+        name: ${{ matrix.document }}
+        path: ${{ matrix.document }}.pdf
 
   deploy-pdfs:
-
+    name: deploy-pdfs
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    needs: [build-rulebook, build-scoresheets]
+    needs: [build]
     steps:
     - uses: actions/checkout@v4
       with:
         ref: gh-pages
+    - name: Download organization
+      uses: actions/download-artifact@v4
+      with:
+        name: organization
+        path: ${{ runner.temp }}/organization
     - name: Download rulebook
       uses: actions/download-artifact@v4
       with:
         name: rulebook
         path: ${{ runner.temp }}/rulebook
-    - name: Download score sheets
+    - name: Download scoresheets
       uses: actions/download-artifact@v4
       with:
-        name: score_sheets
-        path: ${{ runner.temp }}/score_sheets
+        name: scoresheets
+        path: ${{ runner.temp }}/scoresheets
     - name: Preparations for GitHub Pages
-      if: github.ref == 'refs/heads/master'
+      if: github.ref_name == github.event.repository.default_branch
       env:
         ARTIFACTS_PATH: ${{ runner.temp }}
       run: |
         # Make sure directories exist
-        cd "$GITHUB_WORKSPACE"
+        cd "${GITHUB_WORKSPACE}"
+        mkdir -p organization
         mkdir -p rulebook
-        mkdir -p score_sheets
-        FILENAME=${GITHUB_REF/refs\/heads\//}
+        mkdir -p scoresheets
+        FILENAME=${GITHUB_REF_NAME}
         # Strip out any extra slashes in the rest
         FILENAME=${FILENAME//\//\_}.pdf
-        mv $ARTIFACTS_PATH/rulebook/rulebook.pdf rulebook/$FILENAME
-        mv $ARTIFACTS_PATH/score_sheets/score_sheets.pdf score_sheets/$FILENAME
+        mv ${ARTIFACTS_PATH}/organization/organization.pdf organization/${FILENAME}
+        mv ${ARTIFACTS_PATH}/rulebook/rulebook.pdf rulebook/${FILENAME}
+        mv ${ARTIFACTS_PATH}/scoresheets/scoresheets.pdf scoresheets/${FILENAME}
     - name: Commit and push to GitHub Pages
-      if: github.ref == 'refs/heads/master'
+      if: github.ref_name == github.event.repository.default_branch
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         branch: gh-pages
@@ -92,7 +85,7 @@ jobs:
         commit_message: "[github actions] deploy"
         commit_user_name: "Continuous Deployment"
         commit_user_email: "git@robocupathome.org"
-        file_pattern: "rulebook/* score_sheets/*"
+        file_pattern: "./*.pdf"
         repository: ${{ github.workspace }}
         skip_checkout: true
         skip_fetch: true
