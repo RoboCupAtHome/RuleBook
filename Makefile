@@ -15,7 +15,7 @@
 ## MAIN ###################
 
 RPREFIX = rulebook
-SSREFIX = score_sheets
+SSREFIX = scoresheets
 
 ## #################################### ##
 ##  VARIABLES                           ##
