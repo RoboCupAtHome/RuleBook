@@ -1,0 +1,93 @@
+%\documentclass{article}
+\usepackage{etoolbox}
+\usepackage{xparse}
+
+\newcounter{skillcounter}
+\newcommand{\skills}{}
+\newcommand{\skillcategories}{}
+
+
+% Usage:
+% \DefSkill{SkillId}{Points}{Default Description}{Category}
+% Define a skill
+\newcommand{\DefSkill}[4]{%
+  \stepcounter{skillcounter}%
+  \expandafter\edef\csname skillnum#1\endcsname{\arabic{skillcounter}}
+  \csdef{skillname#1}{#1}
+  \csdef{skillpoints#1}{#2}
+  \csdef{skilldesc#1}{#3}
+  \csdef{skillcat#1}{#4}
+  \listadd{\skills}{#1}
+  \listcsadd{skillcatlist#4}{#1}
+  % Add category to the list if not already present
+  \ifinlist{#4}{\skillcategories}{}{\listgadd{\skillcategories}{#4}}
+}
+
+\newtoggle{showcategory}
+
+% \SkillTarget is similar to \Skill, but it is used during the definition and a label is added
+% This is a helper and you usually don't need to sue it
+\newcommand{\SkillTarget}[1]{%
+  \ifcsdef{skillname#1}{%
+    \renewcommand{\labelitemi}{} % Hide bullet points
+    \item \begin{tabularx}{\linewidth}{@{}lXr@{}}
+      \label{skill:#1}
+      \csuse{skillnum#1}. & \textbf{\csuse{skillname#1}} & \textbf{\csuse{skillpoints#1}} \\ % Points: \\
+      & Description: \csuse{skilldesc#1} & 
+      \iftoggle{showcategory}{\\ & Category: \csuse{skillcat#1} &}{} 
+    \end{tabularx}
+  }{%
+    \item \textbf{Skill not found: #1}
+  }
+}
+
+
+% Render the dictionary
+\newcommand{\RenderDictionary}{%
+  \toggletrue{showcategory}
+  \section*{Skill Dictionary}
+  \begin{itemize}
+    \forlistloop{\SkillTarget}{\skills}
+  \end{itemize}
+  \togglefalse{showcategory}
+}
+
+\newcommand{\RenderCategory}[1]{%
+  \subsection*{#1}
+  \begin{itemize}
+    \forlistcsloop{\SkillTarget}{skillcatlist#1}
+  \end{itemize}
+}
+
+% Render all categories
+\newcommand{\RenderCategoryDictionary}{%
+  \renewcommand*{\do}[1]{\RenderCategory{##1}}
+  \dolistloop{\skillcategories}
+}
+
+% \Skill is a reference to a defined skill. It will link to the Skill Dictionary
+
+% Example usage:
+% Pick up Dish Item (Selection Group)
+%\begin{Group}{PickupDishItem}{Pick up various dish items from the table}{30}{Selection}
+%    \Skill{PickTinyKnown}[Pick up a Spoon, Fork or a Knife]
+%\end{Group}
+
+% \Skill{SkillID}[Custom Description]
+\NewDocumentCommand{\Skill}{m o}{%
+  \ifcsdef{skillname#1}{%
+    \item \begin{tabularx}{\linewidth}{@{}p{1cm}Xr@{}}
+      \hyperref[skill:#1]{\csuse{skillnum#1}} & % ID
+      \IfNoValueTF{#2}{%
+        \csuse{skilldesc#1} % Description
+      }{%
+        #2 % Custom Description
+      } & 
+      \csuse{skillpoints#1} % Points
+    \end{tabularx}
+  }{%
+    \item \textbf{\textcolor{red}{Error: Skill with ID '#1' not found.}} \\
+    \textcolor{red}{Please define the skill using \textbackslash DefSkill\{skillId\}\{Points\}\{Default Description\}\{Category\} or check for typos.} \\
+    \textcolor{red}{You can use the defined skill with \textbackslash Skill\{SkillId\}[Sheet specific description] within a Group environment}
+  }
+}

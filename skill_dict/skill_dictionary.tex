@@ -1,0 +1,333 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Communication & Explainability %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Stream the Robot View
+\DefSkill{StreamRobotView}{25}{Stream the robot's view to the arena screen using VizBox}{Communication and Explainability}
+
+% Stream Robot Microphone
+\DefSkill{StreamRobotMic}{25}{Stream the robot microphone (transmit direct audio perception)}{Communication and Explainability}
+
+% Stream Robot Voice
+\DefSkill{StreamRobotVoice}{25}{Stream the robot's voice and filter it out in audio perception}{Communication and Explainability}
+
+% Display Recognized Objects
+\DefSkill{DisplayRecogObjects}{25}{Display ROIs for recognized objects}{Communication and Explainability}
+
+% Display Executed Subtask/Skill
+\DefSkill{DisplayExecSubtask}{20}{Display currently executed subtask/skill}{Communication and Explainability}
+
+% Display Robot Position and Path
+\DefSkill{DisplayRobotPosPath}{20}{Display robot position estimation, navigation goal, and planned path}{Communication and Explainability}
+
+% Display Speech-to-Text Results
+\DefSkill{DisplaySTTResults}{25}{Display Speech-to-Text result as subtitle file in video}{Communication and Explainability}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Safe Interactions %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Immediately Stop Action on Defined Trigger
+\DefSkill{StopOnTrigger}{50}{On defined trigger (e.g. shouting 'Stop' or touching the robot's arm): Immediately stop the current action}{Safe Interactions}
+
+% Continue Interrupted Action on Defined Trigger
+\DefSkill{ContinueOnTrigger}{50}{On defined trigger (e.g. saying 'Continue' or pressing the robot finger): Continue with the interrupted action}{Safe Interactions}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%%%% Perception %%%%
+%%%%%%%%%%%%%%%%%%%%
+
+% Recognize Known Object
+\DefSkill{RecogKnownObj}{5}{Recognize a known object or person in an image or other sensor data}{Perception}
+
+% Recognize Unknown Object Class
+%\DefSkill{RecogUnknownObjClass}{15}{Recognize the class of an unknown object in an image}{Perception}
+
+% Recognize 3D Pose of Known Object
+\DefSkill{Recog3DPoseKnownObj}{10}{Recognize 3D pose of a known static object}{Perception}
+
+% Recognize 3D Pose of Unknown Object
+\DefSkill{Recog3DPoseUnknownObj}{30}{Recognize 3D pose of an unknown static object}{Perception}
+
+% Recognize Pointing Target
+\DefSkill{RecogPointingTarget}{15}{Recognize the target object a human is pointing at}{Perception}
+
+% Detect Placement Surface
+%\DefSkill{DetectPlacementSurface}{10}{Detect a surface suitable for placing an entity}{Perception}
+
+% Find Similar Objects
+\DefSkill{FindSimilarObjects}{20}{Find the most similar objects given a reference object}{Perception}
+
+% Detect Absence of an Object Class
+\DefSkill{DetectAbsenceObjClass}{10}{Detect absence of an object class in the environment}{Perception}
+
+% Describe Person or Object
+\DefSkill{DescribePersonOrObject}{15}{Describe a person or an object based on visually perceived features (e.g., height, age-range, clothes, hair color and length)}{Perception}
+
+% Person Perception
+% Detect Human Pose or Action
+\DefSkill{DetectHumanPoseAction}{10}{Detect a human pose or an action (e.g., waving, calling)}{Perception}
+
+% Look at the Face of the Interesting Person
+\DefSkill{LookAtInterestingPerson}{10}{Look at the face of the interesting person}{Perception}
+
+% Look at the Person That is Talking to the Robot
+\DefSkill{LookAtTalkingPerson}{10}{Look at the person that is talking to the robot (sound source localization)}{Perception}
+
+% Detect Stopped Conversation
+\DefSkill{DetectStoppedConv}{5}{Detect that a conversation (between at least two humans) has stopped}{Perception}
+
+%%%%%%%%%%%%%%%%
+%%%% Dialog %%%%
+%%%%%%%%%%%%%%%%
+
+% Understand Non-Expert Commands
+\DefSkill{UnderstandNonExpertCmds}{15}{Understand commands from non-expert operators (understand synonym sentences)}{Dialog}
+
+% Generate Dialog Log
+\DefSkill{GenerateDialogLog}{15}{Generate a dialog log of a task}{Dialog}
+
+% Summarize Dialog and Events
+\DefSkill{SummarizeDialogEvents}{15}{Summarize the dialog and generally what happened in a task}{Dialog}
+
+% Behave friedly and likeable
+\DefSkill{BehaveFriendlyLikable}{5}{Always be pleasant to the person you are talking to}{Dialog}
+
+% Describe Person or Object
+\DefSkill{DescribeStoredPersonOrObject}{5}{Describe a person or an object using the stored information}{Dialog}
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%% Knowledge %%%%
+%%%%%%%%%%%%%%%%%%%
+
+% Save Location on Request
+\DefSkill{SaveLocationRequest}{10}{Save the location of an object or person upon request}{Knowledge}
+
+% Save and Re-recognize a Person's Face
+\DefSkill{SaveReRecogPersonFace}{10}{Save and re-recognize a person's face}{Knowledge}
+
+% Save and Re-recognize a Person's Voice
+\DefSkill{SaveReRecogPersonVoice}{10}{Save and re-recognize a person's voice}{Knowledge}
+
+% Save Provided Information About a Speaker
+\DefSkill{SaveSpeakerInfo}{15}{Save provided information about a speaker (e.g., name, preferences, object ownership, order)}{Knowledge}
+
+
+%%%%%%%%%%%%%%%%%%%%
+%%%% Navigation %%%%
+%%%%%%%%%%%%%%%%%%%%
+
+% Navigate to a Target Location
+\DefSkill{NavigateToTarget}{5}{Navigate to a specified target location}{Navigation}
+
+% Detect, Track and Follow a Person
+\DefSkill{TrackFollowPerson}{10}{Detect, track and follow a person}{Navigation}
+
+% Avoid an Object in the Navigation Path
+\DefSkill{AvoidNavigationObstacle}{5}{Avoid an object in the navigation path}{Navigation}
+
+% Avoid a Small Object in the Navigation Path
+\DefSkill{AvoidSmallObstacle}{10}{Avoid a small object in the navigation path}{Navigation}
+
+% Avoid a Hard-to-See Object in the Navigation Path
+\DefSkill{AvoidHardToSeeObstacle}{10}{Avoid a hard-to-see object in the navigation path}{Navigation}
+
+% Avoid Predefined Marked Areas During Navigation
+\DefSkill{AvoidMarkedAreas}{5}{Avoid predefined marked areas during navigation}{Navigation}
+
+% Avoid a Person or a Crowd of People Obscuring the Path
+\DefSkill{AvoidPersonCrowd}{10}{Avoid a person or a crowd of people obscuring the path}{Navigation}
+
+% Use an Unattached Carried Tray to Transport Items
+\DefSkill{TransportWithTray}{30}{Use an unattached carried tray to transport items}{Navigation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%% Manipulation %%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+% Pick up a tiny known object
+\DefSkill{PickTinyKnown}{60}{Pick up a tiny known object}{Manipulation}
+
+% Pick up a normal-sized (hardy) known object
+\DefSkill{PickNormalKnown}{40}{Pick up a normal-sized (hardy) known object}{Manipulation}
+
+% Pick up a large known object
+\DefSkill{PickLargeKnown}{30}{Pick up a large known object}{Manipulation}
+
+% Pick up a heavy known object
+\DefSkill{PickHeavyKnown}{45}{Pick up a heavy known object}{Manipulation}
+
+% Pick up a tiny unknown object
+\DefSkill{PickTinyUnknown}{75}{Pick up a tiny unknown object}{Manipulation}
+
+% Pick up a normal-sized (hardy) unknown object
+%\DefSkill{PickNormalUnknown}{55}{Pick up a normal-sized (hardy) unknown object}{Manipulation}
+
+% Pick up a large unknown object
+\DefSkill{PickLargeUnknown}{45}{Pick up a large unknown object}{Manipulation}
+
+% Pick up a heavy unknown object
+%\DefSkill{PickHeavyUnknown}{60}{Pick up a heavy unknown object}{Manipulation}
+
+% Pick up fabric or cloth
+%\DefSkill{PickFabric}{40}{Pick up fabric or cloth}{Manipulation}
+
+% Place a tiny known object
+\DefSkill{PlaceTinyKnown}{20}{Place a tiny known object}{Manipulation}
+
+% Place a normal-sized (hardy) known object
+\DefSkill{PlaceNormalKnown}{15}{Place a normal-sized (hardy) known object}{Manipulation}
+
+% Place a large known object
+\DefSkill{PlaceLargeKnown}{15}{Place a large known object}{Manipulation}
+
+% Place a heavy known object
+\DefSkill{PlaceHeavyKnown}{20}{Place a heavy known object}{Manipulation}
+
+% Place a tiny unknown object
+\DefSkill{PlaceTinyUnknown}{25}{Place a tiny unknown object}{Manipulation}
+
+% Place a normal-sized (hardy) unknown object
+\DefSkill{PlaceNormalUnknown}{25}{Place a normal-sized (hardy) unknown object}{Manipulation}
+
+% Place a large unknown object
+%\DefSkill{PlaceLargeUnknown}{25}{Place a large unknown object}{Manipulation}
+
+% Place a heavy unknown object
+%\DefSkill{PlaceHeavyUnknown}{30}{Place a heavy unknown object}{Manipulation}
+
+% Place fabric into a container (or into a washing machine/dryer)
+%\DefSkill{PlaceFabricContainer}{25}{Place fabric into a container (or into a washing machine/dryer)}{Manipulation}
+
+% Pour something into a container
+\DefSkill{PourIntoContainer}{40}{Pour something into a container}{Manipulation}
+
+% Place a tiny object into a container
+\DefSkill{PlaceTinyObjectInContainer}{40}{Place a tiny object into a small sized container}{Manipulation}
+
+% Receive an object by a human hand over
+\DefSkill{ReceiveObjectHandover}{5}{Receive an object by a human hand over}{Manipulation}
+
+% Pass an object to a human hand back
+\DefSkill{PassObjectHandback}{5}{Pass an object to a human hand back}{Manipulation}
+
+% Operate a simple mechanism (e.g., press a button, pull a lever)
+%\DefSkill{OperateSimpleMechanism}{20}{Operate a simple mechanism (e.g., press a button, pull a lever)}{Manipulation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Furniture Actions %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Open an entrance door
+\DefSkill{OpenEntranceDoor}{20}{Open an entrance door}{Furniture Actions}
+
+% Close an entrance door
+\DefSkill{CloseEntranceDoor}{30}{Close an entrance door}{Furniture Actions}
+
+% Open a shelf door
+\DefSkill{OpenShelfDoor}{45}{Open a shelf door}{Furniture Actions}
+
+% Close a shelf door
+\DefSkill{CloseShelfDoor}{20}{Close a shelf door}{Furniture Actions}
+
+% Pulling out a rack
+\DefSkill{PullOutRack}{45}{Pulling out a rack}{Furniture Actions}
+
+% Pushing in a rack
+\DefSkill{PushInRack}{20}{Pushing in a rack}{Furniture Actions}
+
+% Open dishwasher door
+\DefSkill{OpenDishwasherDoor}{60}{Open dishwasher door}{Furniture Actions}
+
+% Close dishwasher door
+\DefSkill{CloseDishwasherDoor}{80}{Close dishwasher door}{Furniture Actions}
+
+% Open a washing machine door
+%\DefSkill{OpenWashingMachineDoor}{50}{Open a washing machine door}{Furniture Actions}
+
+% Close a washing machine door
+%\DefSkill{CloseWashingMachineDoor}{80}{Close a washing machine door}{Furniture Actions}
+
+% Start a washing machine
+%\DefSkill{StartWashingMachine}{20}{Start a washing machine}{Furniture Actions}
+
+% Operate a vacuum cleaner
+% \DefSkill{OperateVacuumCleaner}{10}{Operate a vacuum cleaner}{Furniture Actions}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%%% Using Tools %%%%
+%%%%%%%%%%%%%%%%%%%%%
+
+% Pushing a light switch
+\DefSkill{PushLightSwitch}{10}{Pushing a light switch}{Using Tools}
+
+% Pushing a small button (e.g., on a washing machine)
+\DefSkill{PushButton}{10}{Pushing a small button (e.g., on a washing machine)}{Using Tools}
+
+% Starting an electric kettle
+%\DefSkill{StartElectricKettle}{10}{Starting an electric kettle}{Using Tools}
+
+% Dusting surfaces
+%\DefSkill{DustSurfaces}{60}{Dusting surfaces}{Using Tools}
+
+% Wiping the table surface
+\DefSkill{WipeTableSurface}{60}{Wiping the table surface}{Using Tools}
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%% Penalties %%%%
+%%%%%%%%%%%%%%%%%%%
+
+% Penalty for Calling a Human to Help with the Task
+\DefSkill{PenaltyCallHumanHelp}{-20}{Penalty for calling a human to help with the task}{Penalty}
+
+% Penalty for Bypassing Speech Recognition
+\DefSkill{PenaltyBypassSpeechRec}{-40}{Penalty for bypassing speech recognition}{Penalty}
+
+% Penalty for accidentially Dropping an Object
+\DefSkill{PenaltyDropObject}{-20}{Penalty for dropping an object}{Penalty}
+
+% Penalty for Damaging an Object
+\DefSkill{PenaltyDamageObject}{-50}{Penalty for damaging an object}{Penalty}
+
+% Penalty for Leaving an Object in a Dangerous Position
+%\DefSkill{PenaltyDangerousPosition}{-30}{Penalty for leaving an object in a dangerous position}{Penalty}
+
+% Penalty for Spilling Substance While Pouring
+\DefSkill{PenaltySpillWhilePouring}{-20}{Penalty for spilling substance while pouring}{Penalty}
+
+% Penalty for Not Detecting a Person
+\DefSkill{PenaltyNotDetectPerson}{-20}{Penalty for not detecting a person (no awareness)}{Penalty}
+
+% Penalty for Not Recognizing a Person
+\DefSkill{PenaltyNotRecognizePerson}{-10}{Penalty for not recognizing a person (unable to retrieve associated, stored information)}{Penalty}
+
+% Penalty for Bypassing Manipulation but Succeeding with Perception and Planning
+\DefSkill{PenaltyBypassManipulation}{-10}{Penalty for bypassing manipulation, but succeeding with the perception (and macro planning, so telling what should be done)}{Penalty}
+
+% Penalty for Misunderstanding the Context
+\DefSkill{PenaltyMisunderstandContext}{-10}{Penalty for misunderstanding the context}{Penalty}
+
+% Penalty for Unfriendly Behavior or Lack of Attention to Interaction Partner
+\DefSkill{PenaltyUnfriendlyBehavior}{-30}{Penalty for behaving unfriendly or not attending to interaction partner}{Penalty}
+
+% Penalty for Touching a Human
+%\DefSkill{PenaltyTouchHuman}{-25}{Penalty for touching a human}{Penalty}
+
+% Penalty for Colliding with a Static Obstacle
+%\DefSkill{PenaltyCollideStatic}{-40}{Penalty for colliding with a static obstacle}{Penalty}
+
+% Penalty for Colliding with a Dynamic Obstacle
+%\DefSkill{PenaltyCollideDynamic}{-30}{Penalty for colliding with a dynamic obstacle}{Penalty}
+
+% Penalty for Leaving the Designated Area
+%\DefSkill{PenaltyLeaveArea}{-50}{Penalty for leaving the designated area}{Penalty}
+
+% Penalty for Incorrect Task Execution
+%\DefSkill{PenaltyIncorrectTask}{-25}{Penalty for incorrect task execution}{Penalty}

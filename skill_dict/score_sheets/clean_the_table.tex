@@ -1,0 +1,79 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Clean the Table Task %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Pick up Dish Item (Selection Group)
+\begin{Group}{PickupDishItem}{Pick up various dish items from the table}{30}{Selection}
+    \Skill{PickTinyKnown}[Pick up a Spoon, Fork or a Knife]
+    \Skill{PickNormalKnown}[Pick up a Bowl or Cup]
+    \Skill{PickHeavyKnown}[Pick up a Plate]
+\end{Group}
+
+% Place Dish Item (Selection Group)
+\begin{Group}{PlaceDishItem}{Place dish items appropriately in the dishwasher}{30}{Selection}
+    \Skill{PlaceTinyKnown}[Place Spoon, Fork or Knife]
+    \Skill{PlaceNormalKnown}[Place Bowl or Cup]
+    \Skill{PlaceHeavyKnown}[Place Plate]
+\end{Group}
+
+% Handle Dishwasher Door (Sequence Group)
+\begin{Group}{HandleDishwasherDoor}{Open and close the dishwasher door}{20}{Sequential}
+    \Skill{OpenDishwasherDoor}
+    \Skill{CloseDishwasherDoor}
+\end{Group}
+
+% Handle Dishwasher Rack (Sequence Group)
+\begin{Group}{HandleDishwasherRack}{Pull out and push in the dishwasher rack}{20}{Sequential}
+    \Skill{PullOutRack}
+    \Skill{PushInRack}
+\end{Group}
+
+% Handle detergent powder
+\begin{Group}{HandleDetergentPowder}{Handle the detergent powder}{10}{Sequential}
+    \Skill{PickLargeUnknown}[Pick up detergent powder]
+    \Skill{PourIntoContainer}[Pouring powder into container]
+\end{Group}
+
+% Handle dishwasher tab
+\begin{Group}{HandleDishwasherTab}{Handle the dishwasher tab}{40}{Sequential}
+    \Skill{PickTinyUnknown}[Pick up a dishwasher tab]
+    \Skill{PlaceTinyObjectInContainer}[Place tab in small container]
+\end{Group}
+
+% Handle detergent (Exclusive Group)
+\begin{Group}{HandleDetergent}{Handle detergent selection process}{50}{Exclusive}
+    \GroupRef{HandleDetergentPowder}
+    \GroupRef{HandleDishwasherTab}
+\end{Group}
+
+% Put item into the dishwasher (Sequence Group)
+\begin{Group}{PutItemInDishwasher}{Put items into the dishwasher}{50}{Sequential}
+    \Skill{NavigateToTarget}
+    \GroupRef{PickupDishItem}
+    \Skill{NavigateToTarget}
+    \Skill{FindSimilarObjects}
+    \GroupRef{PlaceDishItem}
+\end{Group}
+
+% Main Goal
+\begin{Group}{CleanTheTable}{\textbf{\textcolor{myturquoise}{Main Task:}} Clean the Table}{100}{Sequential}
+    \GroupRef{PutItemInDishwasher}[(6 times/items. You are allowed to carry multiple items)]
+\end{Group}
+
+% Bonus Goals
+\begin{Group}{BonusGoal}{Bonus goals of cleaning the table}{30}{Sequential}
+    \GroupRef{HandleDishwasherDoor}
+    \GroupRef{HandleDishwasherRack}
+    \GroupRef{HandleDetergent}
+\end{Group}
+
+% Full Goal
+\begin{Group}{CtT-FullGoal}{The complete cleaning the table task}{200}{Sequential}
+    \GroupRef{CleanTheTable}
+    \GroupRef{BonusGoal}
+\end{Group}
+
+% Penalties
+\begin{Group}{Penalties}{Penalties for various infractions during the task}{-20}{Penalty}
+    \Skill{PenaltyDropObject}
+\end{Group}

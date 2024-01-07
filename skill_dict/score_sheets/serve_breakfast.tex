@@ -1,0 +1,52 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Serve Breakfast Task %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Pick up breakfast item (Selection Group)
+\begin{Group}{PickupBreakfastItem}{Pick up different breakfast items}{30}{Selection}
+    \Skill{PickTinyKnown}[Pick up a Spoon (tiny object)]
+    \Skill{PickNormalKnown}[Pick up a Bowl (normal-sized known)]
+    \Skill{PickLargeKnown}[Pick up a Cereals (large object)]
+    \Skill{PickHeavyKnown}[Pick up a Milk (heavy object)]
+\end{Group}
+
+% Place breakfast item (Selection Group)
+\begin{Group}{PlaceBreakfastItem}{Place breakfast items appropriately}{30}{Selection}
+    \Skill{PlaceTinyKnown}[Place Spoon next to the bowl]
+    \Skill{PlaceNormalKnown}[Place Bowl on the table]
+    \Skill{PlaceLargeKnown}[Place Cereals on the table]
+    \Skill{PlaceHeavyKnown}[Place Milk on the table]
+\end{Group}
+
+% Set up breakfast item (Sequential Group)
+\begin{Group}{SetUpBreakfastItem}{Set up each breakfast item at the target location}{40}{Sequential}
+    \Skill{NavigateToTarget}
+    \GroupRef{PickupBreakfastItem}
+    \Skill{NavigateToTarget}
+    \GroupRef{PlaceBreakfastItem}
+\end{Group}
+
+% Prepare table (Sequence Group)
+\begin{Group}{PrepareTable}{Prepare the table for breakfast, including setting up all breakfast items}{50}{Sequential}
+    \GroupRef{SetUpBreakfastItem}[(4 times)]
+\end{Group}
+
+% Main Goal
+\begin{Group}{ServeBreakfast}{\textbf{\textcolor{myturquoise}{Main Task:}} Serve breakfast}{60}{Sequential}
+    \GroupRef{PrepareTable}
+    \Skill{PourIntoContainer}[Cereal into the bowl]
+\end{Group}
+
+% Full Goal
+\begin{Group}{SB-FullGoal}{Complete the full goal of the task, including all main and additional objectives}{70}{Sequential}
+    \GroupRef{ServeBreakfast}
+    \Skill{Recog3DPoseKnownObj}[Placing the spoor next to the bowl]
+    \Skill{PourIntoContainer}[Pour milk into the bowl]
+\end{Group}
+
+% Penalties
+\begin{Group}{SB-Penalties}{Penalties for various infractions during the task}{-20}{Penalty}
+    \Skill{PenaltyCallHumanHelp}
+    \Skill{PenaltyDropObject}
+    \Skill{PenaltySpillWhilePouring}
+\end{Group}

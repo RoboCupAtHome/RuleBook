@@ -1,0 +1,35 @@
+%%%%%%%%%%%%%%%%%%%%
+%%%% Test Sheet %%%%
+%%%%%%%%%%%%%%%%%%%%
+
+Handle Obstacles (Selection Group)
+\begin{Group}{Undfined}{Undefined Skill}{40}{Selection}
+    \Skill{NotDefined}
+    \Skill{NotDefined2}[But a description is provided.]
+\end{Group}
+
+% Pick up the Bag (Sequence Group)
+\begin{Group}{PickupBag2}{Navigate to the bag, recognize its 3D pose and pick it up}{20}{Sequential}
+    \Skill{NavigateToTarget}
+    \Skill{Recog3DPoseUnknownObj}
+    \Skill{PickLargeUnknown}
+\end{Group}
+
+
+% Follow Section (Sequence Group)
+\begin{Group}{FollowSection2}{Follow a person while handling obstacles}{20}{Sequential}
+    \Skill{TrackFollowPerson}
+    \GroupRef{HandleObstacles}
+    \GroupRef{NonExistentGroup}
+\end{Group}
+
+
+% Task (Sequence Group)
+\begin{Group}{CarryLuggageTask2}{\textbf{\textcolor{myturquoise}{Main Task:}} 'Carry My Luggage'}{30}{Sequential}
+    \GroupRef{ObtainTargetBagInfo}
+    \GroupRef{PickupBag2}
+    \GroupRef{FollowSection2}
+    \Skill{NavigateToTarget}
+\end{Group}
+
+

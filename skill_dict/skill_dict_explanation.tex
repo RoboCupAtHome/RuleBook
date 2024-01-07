@@ -1,0 +1,46 @@
+\section*{Score Sheet Explanation}
+
+\subsection*{Motivation \& Structure Explanation}
+
+The rulebook is designed to ensure every team can score points, as tasks are divided into smaller subtasks, making it more accessible. Bonuses incentivize completing full tasks and a variety of tasks, ensuring the best team wins and discourages gaming the system. Consistent scoring across tasks is achieved by reusing skills, and the modular structure facilitates statistical analysis over time to balance skill difficulty and rewards.
+
+\subsection*{Reading a Task}
+
+Begin with the "\textbf{\textcolor{myturquoise}{Main Task}}" Group, then expand from there. Tasks are divided into Sequential and Selection groups. In Sequential subgroups, complete all skills in order; in Selection subgroups, choose one skill to complete. Permanent groups require maintaining all skills throughout the task.
+
+\subsection*{Unlocking Bonuses}
+
+Bonuses are awarded for completing \textbf{all} skills in a group. Sequential groups are easier to complete than Selection groups. In Selection groups embedded in Sequential ones, completing one skill from the Selection group counts as completing the whole subgroup.
+
+\subsection*{Minimal Example}
+
+\DefSkill{A}{20}{Skill A}{Examples}
+\DefSkill{B}{25}{Skill B}{Examples}
+\DefSkill{X}{15}{Skill X}{Examples}
+\DefSkill{Y}{30}{Skill Y}{Examples}
+
+% SequentialExample (Selection Group)
+\begin{Group}{SelectionExample}{Example Selection Group}{100}{Selection}
+    \Skill{X}
+    \Skill{Y}
+\end{Group}
+
+% SequentialExample (Selection Group)
+\begin{Group}{SequentialExample}{\textbf{\textcolor{myturquoise}{Main Task:}} Example Sequential Group}{50}{Sequential}
+    \Skill{A}
+    \Skill{B}
+    \GroupRef{SelectionExample}
+\end{Group}
+% Reset group numbering
+\setcounter{groupcounter}{0}
+
+This example illustrates the scoring system using a Sequential group with skills A and B, and a Selection group with skills X and Y. Successfully completing A, B, and either X or Y in one attempt awards points for each skill plus a Sequential group bonus. For instance, achieving A, B, X yields 20 + 25 + 15 points for skills and an additional 50 points as a Sequential group bonus. Completing A, B, Y in a separate attempt scores 20 + 25 + 30 points, plus a 100-point bonus for the Selection group. Note that the Sequential group bonus is awarded only once.
+
+\subsection*{Human Help}
+
+Human intervention in skill execution disqualifies the skill from being counted as completed, emphasizing the robot's autonomous capabilities. Although no points are awarded for such skills, penalties may still apply. This rule ensures the focus remains on the robot's independent performance, aligning with the competition's objective to advance autonomous robotics.
+
+\subsection*{Modularity}
+
+The structure of this competition draws parallels to modular programming in computer science. Teams should prioritize mastering common skills, starting with the Main Task Sequence, and then expand their focus to a diverse set of tasks to unlock all available bonuses, thereby maximizing their score.
+% Groups function akin to functions - with Selection groups resembling sum types and Sequential groups analogous to product types in category theory.

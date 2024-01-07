@@ -1,0 +1,98 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Restaurant Task %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Detect Customer
+\begin{Group}{DetectCustomer}{Detect and identify customers entering the restaurant}{10}{Selection}
+    \Skill{DetectHumanPoseAction}[Detecting customer entering]
+    \Skill{RecogKnownObj}[Recognizing customer's face]
+\end{Group}
+
+% Take Order
+\begin{Group}{TakeOrder}{Take the customer's order}{20}{Sequential}
+    \GroupRef{DetectCustomer}
+    \Skill{NavigateToTarget}[Approach customer]
+    \Skill{SaveLocationRequest}
+    \Skill{BehaveFriendlyLikable}[Welcome customer]
+    \Skill{UnderstandNonExpertCmds}[Understand customer's order]
+    \Skill{SaveSpeakerInfo}[Save customer's order (2x, Once per customer)]
+    \Skill{SummarizeDialogEvents}[Summarize orders taken]
+\end{Group}
+
+% Get Order
+\begin{Group}{GetOrder}{Collect the ordered items from the kitchen}{30}{Sequential}
+    \Skill{NavigateToTarget}[Navigate to kitchen]
+    \Skill{PickNormalKnown}[Pick up ordered items (2x, Once per customer)]
+\end{Group}
+
+% Bring Order
+\begin{Group}{BringOrder}{Deliver the order to the customer}{30}{Sequential}
+    \Skill{NavigateToTarget}[Navigate to customer's table]
+    \Skill{PlaceNormalKnown}[Place order on the table (2x, Once per customer)]
+\end{Group}
+
+% Handle table
+\begin{Group}{HandleTable}{Handle an order for a table}{20}{Sequential}
+    \GroupRef{TakeOrder}
+    \GroupRef{GetOrder}
+    \GroupRef{BringOrder}
+\end{Group}
+
+
+% Bonus Rewards
+\begin{Group}{R-BonusRewards}{Extra tasks for additional points}{15}{Selection}
+    \Skill{BehaveFriendlyLikable}
+    \Skill{DescribePersonOrObject}[Describe a person for entertainment]
+    \Skill{PourIntoContainer}[Prepare a drink, by pouring it from the bottle into a glass]
+\end{Group}
+
+% Special VizBox Rewards
+\begin{Group}{SpecialVizBoxRewards}{Special tasks utilizing VizBox}{15}{Selection}
+    \Skill{StreamRobotView}[Stream robot's view for customers]
+    \Skill{DisplayRecogObjects}[Display recognized objects]
+    \Skill{DisplaySTTResults}[Display speech-to-text results]
+\end{Group}
+
+
+% Main Goal
+\begin{Group}{RestaurantMainGoal}{\textbf{\textcolor{myturquoise}{Main Task:}} Restaurant Servant}{50}{Sequential}
+    \GroupRef{HandleTable}
+    \GroupRef{R-BonusRewards}
+    \GroupRef{SpecialVizBoxRewards}
+\end{Group}
+
+
+% Prepare new table
+\begin{Group}{PrepareNewTable}{Clean and set up the table}{20}{Sequential}
+    \Skill{WipeTableSurface}[Clean the table surface]
+    \Skill{PlaceNormalKnown}[Place tableware]
+\end{Group}
+
+% Handle Payment Processing (Sequence Group)
+\begin{Group}{ProcessPayment}{Process guests' payments}{20}{Sequential}
+    \Skill{RecogPointingTarget}[Recognize payment method pointed by guest]
+    \Skill{ReceiveObjectHandover}[Receive payment]
+\end{Group}
+
+% Extra Tasks
+\begin{Group}{ExtraTasks}{Additional tasks for additional points}{15}{Selection}
+    \GroupRef{ProcessPayment}
+    \GroupRef{PrepareNewTable}
+\end{Group}
+
+
+\begin{Group}{FullGoal}{Be a fully functional robot servant}{15}{Selection}
+    \GroupRef{RestaurantMainGoal}
+    \GroupRef{ExtraTasks}
+\end{Group}
+
+
+% Penalties
+\begin{Group}{RestaurantPenalties}{Penalties for various infractions during the task}{-20}{Penalty}
+    \Skill{PenaltyUnfriendlyBehavior}
+    \Skill{PenaltyCallHumanHelp}
+    \Skill{PenaltyDropObject}
+    \Skill{PenaltySpillWhilePouring}
+    \Skill{PenaltyMisunderstandContext}
+\end{Group}
+

@@ -1,0 +1,48 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Carry my luggage Task %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Handle Obstacles (Selection Group)
+\begin{Group}{HandleObstacles}{Handle obstacles such as avoiding objects, marked areas, and people during navigation}{40}{Selection}
+    \Skill{AvoidNavigationObstacle}
+    \Skill{AvoidSmallObstacle}
+    \Skill{AvoidHardToSeeObstacle}
+    \Skill{AvoidMarkedAreas}
+    \Skill{AvoidPersonCrowd}
+\end{Group}
+
+% Obtain Target Bag Information (Exclusive Selection Group)
+\begin{Group}{ObtainTargetBagInfo}{Obtain information about the target bag, either by saving provided information or recognizing the target object}{20}{Selection}
+    \Skill{SaveSpeakerInfo}
+    \Skill{RecogPointingTarget}
+\end{Group}
+
+
+% Pick up the Bag (Sequence Group)
+\begin{Group}{PickupBag}{Navigate to the bag, recognize its 3D pose and pick it up}{20}{Sequential}
+    \Skill{NavigateToTarget}
+    \Skill{Recog3DPoseUnknownObj}
+    \Skill{PickLargeUnknown}
+\end{Group}
+
+
+% Follow Section (Sequence Group)
+\begin{Group}{FollowSection}{Follow a person while handling obstacles}{20}{Sequential}
+    \Skill{TrackFollowPerson}
+    \GroupRef{HandleObstacles}
+\end{Group}
+
+% Task (Sequence Group)
+\begin{Group}{CarryLuggageTask}{\textbf{\textcolor{myturquoise}{Main Task:}} Complete the 'Carry My Luggage' task}{30}{Sequential}
+    \GroupRef{ObtainTargetBagInfo}
+    \GroupRef{PickupBag}
+    \GroupRef{FollowSection}
+    \Skill{NavigateToTarget}
+\end{Group}
+
+
+% Penalties
+\begin{Group}{CmL-Penalties}{Penalties for various infractions during the task}{-20}{Penalty}
+    \Skill{PenaltyCallHumanHelp}
+    \Skill{PenaltyDropObject}
+\end{Group}

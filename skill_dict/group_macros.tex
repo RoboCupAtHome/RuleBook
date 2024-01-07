@@ -1,0 +1,78 @@
+\usepackage{hyperref}
+\usepackage{xparse}
+\usepackage{etoolbox}
+\usepackage{tabularx}
+
+\usepackage{environ,needspace}
+\usepackage{enumitem} % To use [leftmargin=*]
+
+\usepackage{xcolor}
+\definecolor{myturquoise}{RGB}{25, 170, 160} % Define turquoise-blue color to highlight some groups
+
+\newsavebox{\groupbox} % New savebox for the Group environment to determine if new page is needed
+
+\newcounter{groupcounter}
+
+% Use the environment to define a Group - this is just a helper
+\newcommand{\DefGroup}[4]{%
+  \stepcounter{groupcounter}%
+  \edef\temp{\arabic{groupcounter}}% Capture the current value of the counter
+  \expandafter\xdef\csname groupnum#1\endcsname{\temp}%
+  \csgdef{groupid#1}{#1}
+  \csgdef{groupdesc#1}{#2}
+  \csgdef{groupbonus#1}{#3}
+  \csgdef{grouptype#1}{#4}
+}
+
+% The Group environment is used to define a group of clustered skills. The teams are supposed to be successful with every subtask, to unlock the bonus. 
+% If a subgroup is a Selection Group you only need to be successful once to be able to unlock the bonus of the super group. 
+
+% Example usage:
+% Handle Obstacles (Selection Group)
+%\begin{Group}{HandleObstacles}{Handle obstacles such as avoiding objects, marked areas, and people during navigation}{40}{Selection}
+%    \Skill{AvoidNavigationObstacle} % AvoidNavigationObstacle is the SkillId (see skill dictionary)
+%\end{Group}
+%\begin{Group}{FollowSection}{Follow a person while handling obstacles}{20}{Sequential}
+%    \Skill{TrackFollowPerson}  % Reference to a skill
+%    \GroupRef{HandleObstacles} % Reference to another group
+%\end{Group}
+
+% \begin{Group}{GroupId}{Description}{Bonus Points}{Group Type}
+\NewDocumentEnvironment{Group}{mmmm}{%
+  \DefGroup{#1}{#2}{#3}{#4}%
+   \par\noindent
+   \begin{lrbox}{\groupbox} % Start the lrbox 
+  \begin{minipage}{\linewidth}
+    %\noindent\textbf{Group} (G-\csuse{groupnum#1}) \hfill \textbf{Type:} #4 \quad \textbf{Bonus:} #3\\
+    \begin{tabularx}{\linewidth}{@{}lXl@{\hspace{7em}}l@{}} 
+      \textbf{Group} (G-\csuse{groupnum#1}) & & \makebox[5em][l]{\textbf{Type:} #4} & \makebox[3em][r]{\textbf{Bonus:} #3} \\
+    \end{tabularx}
+    \quad #2    %Description: #2
+    \label{grp:G-#1} % Create a label for the group
+    \vspace{0.31em} % Add space before the group
+    \hrule % Horizontal line before the group
+    \begin{itemize}[leftmargin=*, itemsep=-0.6pt, topsep=1.0pt]
+    \renewcommand{\labelitemi}{} % Hide bullet points
+}{
+    \end{itemize}
+  \end{minipage} 
+   \end{lrbox}% End the lrbox
+     \Needspace{\dimexpr\ht\groupbox+\dp\groupbox+.5\baselineskip}% Check space requirement
+   \usebox{\groupbox}% Output the content
+   \par\addvspace{0.4\baselineskip}% Add consistent space after the Group
+   \aftergroup\aftergroup\aftergroup\noindent 
+}
+
+% \GroupRef{GroupId}[Optional New Description]
+\NewDocumentCommand{\GroupRef}{m o}{%
+  \ifcsdef{groupid#1}{%
+      \item \begin{tabularx}{\linewidth}{@{}p{1cm}X@{}}
+        {\hyperref[grp:G-#1]{\textbf{G-\csuse{groupnum#1}}}} &
+        \textit{\csuse{groupdesc#1}}
+        \IfValueT{#2}{#2} % Remark
+      \end{tabularx}
+    }{%
+      \item \textbf{\textcolor{red}{Group with ID '#1' not found.}}
+    }
+}
+

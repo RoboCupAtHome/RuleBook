@@ -1,0 +1,42 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Storing Groceries Task %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Pick up item (Selection Group)
+\begin{Group}{PickupItem}{Pick up various grocery items}{30}{Selection}
+    \Skill{PickTinyKnown}
+    \Skill{PickNormalKnown}
+    \Skill{PickLargeKnown}
+    \Skill{PickHeavyKnown}
+\end{Group}
+
+% Place item (Selection Group)
+\begin{Group}{PlaceItem}{Place grocery items appropriately}{30}{Selection}
+    \Skill{PlaceTinyKnown}
+    \Skill{PlaceNormalKnown}
+    \Skill{PlaceLargeKnown}
+    \Skill{PlaceHeavyKnown}
+\end{Group}
+
+% Store item (Sequential Group)
+\begin{Group}{StoreItem}{Store each grocery item at the target location}{40}{Sequential}
+    \Skill{NavigateToTarget}
+    \GroupRef{PickupItem}
+    \Skill{NavigateToTarget}
+    \Skill{FindSimilarObjects}[Communicate target location]
+    \GroupRef{PlaceItem}
+\end{Group}
+
+% Main Goal
+\begin{Group}{StoreGroceries}{\textbf{\textcolor{myturquoise}{Main Task:}} Storing groceries, including opening and closing shelves}{50}{Sequential}
+    \Skill{OpenShelfDoor}
+    \GroupRef{StoreItem}
+    \Skill{CloseShelfDoor}
+\end{Group}
+
+% Penalties
+\begin{Group}{SG-Penalties}{Penalties for various infractions during the task}{-20}{Penalty}
+    \Skill{PenaltyCallHumanHelp}
+    \Skill{PenaltyDropObject}
+    \Skill{PenaltyMisunderstandContext}[Storing an object without categorizing it correctly]
+\end{Group}

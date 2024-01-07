@@ -1,0 +1,55 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Receptionist Task %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Civilized behaviour (Permanent Group)
+\begin{Group}{CivilizedBehaviour}{Exhibit civilized behaviour like looking at interacting persons and behaving friendly}{10}{Permanent}
+    \Skill{LookAtInterestingPerson}
+    \Skill{LookAtTalkingPerson}
+    \Skill{BehaveFriendlyLikable}
+\end{Group}
+
+% Welcome Guest (Sequence Group)
+\begin{Group}{WelcomeGuest}{Welcome the guest by navigating to them and handling doors}{20}{Sequential}
+    \Skill{NavigateToTarget}
+    \Skill{OpenEntranceDoor}
+    \Skill{CloseEntranceDoor}
+\end{Group}
+
+% Identify and Remember Person (Exclusive Group)
+\begin{Group}{IdentifyRememberPerson}{Identify and remember a person either by face or voice}{30}{Selection}
+    \Skill{SaveReRecogPersonFace}[Save and re-recognize a person’s face (2 times)] 
+\end{Group}
+
+% Remember Facts About Person (Sequence Group)
+\begin{Group}{RememberFactsAboutPerson}{Remember two facts about a person}{20}{Sequential}
+    \Skill{SaveSpeakerInfo}[Remember name and preferences]
+    \Skill{SaveSpeakerInfo}[Remember object ownership and order]
+\end{Group}
+
+% Introduce Person (Sequence Group)
+\begin{Group}{IntroducePerson}{Introduce a person using stored and visually perceived information}{20}{Sequential}
+    \Skill{DescribePersonOrObject}[Discribe a person according to visually perceived features (e.g. height, age-range, cloths, hair-colour and length, gender; at least three features)]
+    \Skill{DescribeStoredPersonOrObject}
+\end{Group}
+
+% Handle Guest (Sequence Group)
+\begin{Group}{HandleGuest}{Handle the guest by welcoming, remembering facts, navigating, and introducing}{40}{Sequential}
+    \GroupRef{WelcomeGuest}
+    \GroupRef{RememberFactsAboutPerson}
+    \Skill{NavigateToTarget}
+    \GroupRef{IntroducePerson}
+\end{Group}
+
+% Task (Sequence Group)
+\begin{Group}{ReceptionistTask}{\textbf{\textcolor{myturquoise}{Main Task:}} Complete the Receptionist task by handling guests and introductions}{50}{Sequential}
+    \GroupRef{HandleGuest}[2 times]
+    %\Skill{IntroduceGuest1ToGuest2}
+    \GroupRef{IntroducePerson}[Introduce 1. Guest to 2. Guest]
+\end{Group}
+
+% Penalties
+\begin{Group}{R-Penalties}{Penalties for failure to detect or recognize persons}{-20}{Penalty}
+    \Skill{PenaltyNotDetectPerson}
+    \Skill{PenaltyNotRecognizePerson}
+\end{Group}

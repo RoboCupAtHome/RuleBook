@@ -1,0 +1,47 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Stickler For The Rules Task %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Detect Shoe Wearing Guest
+\begin{Group}{DetectShoeWearingGuest}{Detect guests wearing shoes}{10}{Selection}
+    \Skill{DetectHumanPoseAction}
+    \Skill{RecogKnownObj}
+\end{Group}
+
+% Detect Drinkless Guest
+\begin{Group}{DetectDrinklessGuest}{Detect guests without a drink}{10}{Selection}
+    \Skill{NavigateToTarget}[Navigate to guest location]
+    \Skill{DetectAbsenceObjClass}[Detect absence of a drink]
+\end{Group}
+
+% Detect a Person in a Private Room
+\begin{Group}{DetectPersonInPrivateRoom}{Detect a person in a private room}{10}{Selection}
+    \Skill{NavigateToTarget}[Navigate to room location]
+    \Skill{RecogKnownObj}[Recognize person in room]
+\end{Group}
+
+% Detect Garbage on the Floor
+\begin{Group}{DetectGarbageOnFloor}{Detect garbage on the floor}{10}{Selection}
+    \Skill{NavigateToTarget}[Navigate to garbage location]
+    \Skill{RecogKnownObj}[Recognize garbage]
+\end{Group}
+
+% Check for Rule Breaks (Sequential Group)
+\begin{Group}{CheckRuleBreaks}{Check for various rule breaks}{80}{Sequential}
+    \GroupRef{DetectShoeWearingGuest}
+    \GroupRef{DetectDrinklessGuest}
+    \GroupRef{DetectPersonInPrivateRoom}
+    \GroupRef{DetectGarbageOnFloor}
+\end{Group}
+
+% Main Goal
+\begin{Group}{MainGoal}{\textbf{\textcolor{myturquoise}{Main Task:}} Checking for rule breaks}{80}{Sequential}
+    \GroupRef{CheckRuleBreaks}[Check multiple times for rule breaks (4 times)]
+\end{Group}
+
+% Penalties
+\begin{Group}{Stickler-Penalties}{Penalties for failure to detect or recognize rule breaks}{-20}{Penalty}
+    \Skill{PenaltyNotDetectPerson}
+    \Skill{PenaltyNotRecognizePerson}
+    \Skill{PenaltyMisunderstandContext}
+\end{Group}

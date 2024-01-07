@@ -1,0 +1,26 @@
+%%%%%%%%%%%%%%%%%%%%%%
+%%%% VizBox usage %%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+% Stream basic perception to the arena interface
+\begin{Group}{BasicVizBoxGroup}{Stream basic perception to the VizBox interface}{25}{Permanent}
+    \Skill{StreamRobotView}
+    \Skill{StreamRobotMic}
+    \Skill{StreamRobotVoice}
+\end{Group}
+
+
+% Stream extracted information to the arena interface
+\begin{Group}{KnowledgeVizBoxGroup}{Stream general extracted knowledge to the VizBox interface}{75}{Permanent}
+    \Skill{DisplayRecogObjects}
+    \Skill{DisplayExecSubtask}
+    \Skill{DisplayRobotPosPath}
+    \Skill{DisplaySTTResults}
+\end{Group}
+
+
+% Stream extracted information to the arena interface
+\begin{Group}{AlwaysSafe}{Always be able to interrupt the action and continue it, without any additional expert interaction}{75}{Permanent}
+    \Skill{StopOnTrigger}
+    \Skill{ContinueOnTrigger}
+\end{Group}
