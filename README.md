@@ -13,7 +13,7 @@ RoboCup@Home teams and team members are welcome to post GitHub issues for clarif
 
 Improvements are also welcome in the form of pull requests (see [guidelines](https://github.com/RoboCupAtHome/RuleBook/wiki/Guidelines)).
 
-[Score sheets](http://latex.aslushnikov.com/compile?git=git://github.com/RoboCupAtHome/RuleBook.git&target=score_sheets.tex)
+[Score sheets](https://robocupathome.github.io/RuleBook/scoresheets/master.pdf))
 
 ### FAQ
 See the Frequently Asked Questions [here](https://github.com/RoboCupAtHome/RuleBook/wiki/FAQ:-Frequently-Asked-Questions).
