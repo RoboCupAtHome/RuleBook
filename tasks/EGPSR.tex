@@ -3,12 +3,8 @@
 The robot is asked to find problems in the arena on its own and solve them.
 
 
-\noindent \textbf{Main Goal:} Solve 3(5?) problems in the arena.\\
+\noindent \textbf{Main Goal:} Solve 3 problems in the arena.\\
 
-\noindent \textbf{Optional Goals:}
-\begin{enumerate}[nosep]
-	\item Maybe move furniture?
-\end{enumerate}
 
 \subsection*{Focus}
 \emph{Task planning}, \emph{object/people detection and recognition}, \emph{object feature recognition}, \emph{object manipulation}
@@ -22,8 +18,8 @@ Generally assume that the arena is supposed to be in its default state. Therefor
 \begin{enumerate}
     \item \textbf{Problems:}
 		\begin{itemize}
-			\item \textbf{Objects:} Objects that are not in their default location should be returned there. Objects on the floor are to be thrown in the trash.
-			\item \textbf{Persons:} Any person inside the arena other than the referee and referee assistant have a command for the robot and can be approached.
+			\item \textbf{Objects:} Objects that are not in their default location should be returned there. Objects on the floor are to be thrown in the trash or returned to their default location.
+			\item \textbf{Persons:} Some persons in the arena will have requests for the robot. They will raise their hand if the robot is in the same room.
 		\end{itemize}
 \end{enumerate}
 
@@ -45,7 +41,7 @@ Generally assume that the arena is supposed to be in its default state. Therefor
 \begin{enumerate}[nosep]
 	\item \textbf{Partial scoring:} The main task allows partial scoring (per \emph{solved} problem).
 
-	\item \textbf{Command generator:} Problems and commands will be generated using TODO.
+	\item \textbf{Command generator:} Problems and commands will be generated using the official command generator\footnote{\url{https://github.com/johaq/CommandGenerator}}.
 \end{enumerate}
 
 \subsection*{Referee instructions}
