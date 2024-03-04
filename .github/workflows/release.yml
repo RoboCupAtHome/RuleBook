@@ -20,9 +20,12 @@ jobs:
   build:
     needs: [lint]
     runs-on: ubuntu-latest
-    container: blang/latex:ubuntu
+    container: leplusorg/latex:latest
     steps:
     - uses: actions/checkout@v4
+    - name: LaTeX compilation Organization
+      run:
+        TERM=xterm make doorganizationonly
     - name: LaTeX compilation Rulebook
       run:
         TERM=xterm make dorulebookonly
@@ -38,5 +41,6 @@ jobs:
         generate_release_notes: false
         token: ${{ secrets.GITHUB_TOKEN }}
         files: |
+          organization.pdf
           rulebook.pdf
-          score_sheets.pdf
+          scoresheets.pdf
