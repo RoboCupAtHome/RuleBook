@@ -15,6 +15,7 @@ The procedure to request human assistance while solving a task is as follows:
 		\item The particular goal or desired result
 		\item How the action must be carried out (when necessary)
 		\item Details about how to interact with the robot (when necessary)
+		\item Detailed information to identify objects for picking and placing (e.g. object name, color or location). The provided information needs to show that objects were perceived by the robot.
 	\end{compactitem}
 
 	\item \textbf{Supervise:} The robot must be aware of the human's actions, being able to tell when the requested action has been completed, as well as guiding the human assistant (if necessary) during the process.
@@ -24,7 +25,7 @@ The procedure to request human assistance while solving a task is as follows:
 
 \subsection*{Example}
 \label{rule:continue_example}
-In the following example, a robot has to clean the table, but is unable to grasp the spoon.
+In the following example, a robot has to clean the table but is unable to grasp the spoon.
 \begin{itemize}[noitemsep]
 	\small
 	\item[\textcolor{gray}{R:}] \texttt{I am sorry, but the spoon is too small for me to take.\\
@@ -32,13 +33,10 @@ In the following example, a robot has to clean the table, but is unable to grasp
 	Please say "robot yes" or "robot no" to confirm.}
 	\item[\textcolor{gray}{H:}] \textit{Robot, yes!}
 	\item[\textcolor{gray}{R:}] \texttt{Thank you! Please follow my instructions.\\
-	Please take the purple spoon from the table. It is on my left.}
-	\item[\textcolor{gray}{H:}] (Referee takes green fork)
-	\item[\textcolor{gray}{R:}] \texttt{You took the wrong object.\\
-	Please take the purple spoon from the table. It is on my left.}
+	Please take the purple spoon from the table. It is on my left. \\(The robot also shows the result of the perception, e.g. by pointing at the spoon or showing a picture with a bounding box on the screen)}
 	\item[\textcolor{gray}{H:}] (Referee takes purple spoon)
 	\item[\textcolor{gray}{R:}] \texttt{I saw you took the spoon.\\
-	Would you be so kind to follow me to the kitchen?\\
+	Would you be so kind as to follow me to the kitchen?\\
 	Please keep the spoon visible in front of you so I can track you. Thank you!}
 	\item[\textcolor{gray}{R:}] \texttt{You can stop following me now.\\
 	As you can see, the dishwasher is already open.\\
@@ -46,7 +44,6 @@ In the following example, a robot has to clean the table, but is unable to grasp
 	\item[\textcolor{gray}{R:}] \texttt{Lovely! Thanks for your help.\\
 	I'll let you know if I need further assistance.}
 \end{itemize}
-
 
 
 \subsection{Scoring}
@@ -92,7 +89,7 @@ The following rules apply in addition to the ones specified in section \refsec{r
 	\item \textbf{QR Codes:} A reduction of 30\% of the maximum attainable score is applied when a QR code is used to instruct the robot.
 
 	\item \textbf{Alternative Input Method:} A reduction of up to 30\% of the maximum attainable score is applied when a \iterm{alternative HRI interface}, is used to instruct the robot.
-	Alternative HRI interfaces (see~\refsec{rule:asralternative}) must be previously approved by the TC during the Robot Inspection (see~\refsec{sec:robot_inspection}).
+	Alternative HRI interfaces (see~\refsec{rule:asralternative}) must be previously approved by the TC during the Robot Inspection (see \Organisation).
 \end{enumerate}
 
 
