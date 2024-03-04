@@ -1,15 +1,10 @@
 \section{Enhanced General Purpose Service Robot}
 \label{test:egpsr}
-Similar to a smart speaker, the robot is asked to execute arbitrary commands requested by an operator.\\
-\textbf{Note 1:} Due to this task's more open-ended nature, the maximum possible score is higher than the scores of the other \STWO{} tasks.\\
-\textbf{Note 2:} The commands in this task are more complex than in the GPSR task in \SONE.\\
+The robot is asked to maintain the household by cleaning up the arena and assisting people.
 
-\noindent \textbf{Main Goal:} Execute 3 commands requested by the operator.\\
 
-\noindent \textbf{Optional Goals:}
-\begin{enumerate}[nosep]
-	\item Understand a command given by a non-expert operator.
-\end{enumerate}
+\noindent \textbf{Main Goal:} Solve 3 problems in the arena.\\
+
 
 \subsection*{Focus}
 \emph{Task planning}, \emph{object/people detection and recognition}, \emph{object feature recognition}, \emph{object manipulation}
@@ -19,19 +14,12 @@ Similar to a smart speaker, the robot is asked to execute arbitrary commands req
 % Setup
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Setup}
+The arena is in its default state apart from problems set up for the robot to solve:
 \begin{enumerate}
-    \item \textbf{Locations:}
+    \item \textbf{Problems:}
 		\begin{itemize}
-			\item \textbf{Test location:} The task takes place inside the \Arena{}, but some commands may require the robot to go out. The \Arena{} is in its nominal state for this test.
-			\item \textbf{Start location:} The robot starts outside the \Arena{}. When the door opens, the robot moves towards the \textit{Instruction Point}.
-			\item \textbf{Instruction point:} At the beginning of the test, as well as after finishing the first and second command, the robot moves to the \textit{Instruction Point}.
-		\end{itemize}
-	\item \textbf{People:}
-		\begin{itemize}
-			\item \textbf{Operators:} A \emph{Professional Operator} (the referee) commands the robot to execute a task.
-			Optionally, commands can be issued by a \emph{Non-Expert Operator}, i.e. a person from the audience with no robotics background.
-			In this case, the referee gives the goal of the command to the non-expert operator, who will then issue it to the robot in their own words. For example, the generated command might be ``Bring me a coke from the kitchen." then the non-expert operator will be told ``The robot should bring you a coke, which is found in the kitchen.", who then tells the robot ``I want a coke. Go to the kitchen and get me one."
-			If the robot consistently fails to understand the non-expert operator (e.g. after two retries), teams can default to a custom operator.
+			\item \textbf{Objects:} Objects that are not in their default location should be returned there (see \ref{rule:scenario_objects}). Objects on the floor are to be thrown in the trash or returned to their default location.
+			\item \textbf{Persons:} Some persons in the arena will have requests for the robot. They will raise their hand if the robot is in the same room.
 		\end{itemize}
 \end{enumerate}
 
@@ -41,10 +29,8 @@ Similar to a smart speaker, the robot is asked to execute arbitrary commands req
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Procedure}
 \begin{enumerate}[nosep]
-	\item \textbf{Instruction point:} At least two hours before the test, the referees announce the location of the \textit{Instruction Point}.
-	\item \textbf{Test start:} The robot moves to the \textit{Instruction Point} when the arena door is open.
-	\item \textbf{Command execution:} The operator instructs the robot to execute a command and the robot performs the task.
-	\item \textbf{Back to the instruction point:} The robot goes back to the \textit{Instruction Point} and waits for the next command.
+	\item \textbf{Test start:} The robot enters when the arena door is open.
+	\item \textbf{Finding Problems:} The robot has to find problems to solve on its own.
 \end{enumerate}
 
 
@@ -53,44 +39,25 @@ Similar to a smart speaker, the robot is asked to execute arbitrary commands req
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
-	\item \textbf{Partial scoring:} The main task allows partial scoring (per \emph{completed} command).
+	\item \textbf{Partial scoring:} The main task allows partial scoring (per \emph{solved} problem).
 
-	\item \textbf{Command generator:} Tasks will be generated using the official \emph{GPSR Command Generator}\footnote{\url{https://github.com/kyordhel/GPSRCmdGen}}.
-	Commands for EGPSR are either \STWO{} tasks, complex commands requiring to perform chains of subtasks in a sequence, or \emph{incomplete} commands lacking relevant information to succeed.
-
-	\item \textbf{Non-expert operators:} A \emph{Non-Expert Operator} receives a note-card with the summarized command from the referee and rephrases the command.
-	Referees are not allowed to instruct non-expert operators on how to operate the robot.
-	Teams attempting to instruct or bias the operator will be disqualified from the task.
-
-	\item \textbf{Custom operator fallback:} If the robot consistently fails to understand the professional or non-expert operator (three times in a row), the referee will request a custom operator to issue commands.
-
-	\item \textbf{Deus ex Machina:} The scores are reduced if human assistance is received, in particular for:
-	\begin{itemize}
-		\item using a custom operator
-		\item bypassing speech recognition by using an alternative HRI
-		\item receiving human assistance to accomplish a task (score reduction is applied consistent with the other tasks in this rulebook)
-		\item instructing a human assistant to perform the whole task
-	\end{itemize}
+	\item \textbf{Command generator:} Problems and commands will be generated using the official command generator\footnote{\url{https://github.com/johaq/CommandGenerator}}.
 \end{enumerate}
 
 \subsection*{Referee instructions}
 \begin{itemize}
-	\item Provide the note-cards to the operators.
+	\item Setup the problems in the arena.
+	\item Provide commands to volunteers.
 \end{itemize}
 
 \subsection*{OC instructions}
 
 At least two hours before the test:
 \begin{itemize}
-	\item Generate the robot commands (don't reveal them to the teams!).
-	\item Announce the location of the instruction point.
+	\item Generate the problems and commands (don't reveal them to the teams!).
 	\item Recruit volunteers to assist during the test.
 \end{itemize}
 
-\noindent During the test:
-\begin{itemize}[nosep]
-	\item Rearrange the arena so that it is in its nominal condition before each command.
-\end{itemize}
 
 \subsection*{Score sheet}
 \input{scoresheets/EGPSR.tex}
