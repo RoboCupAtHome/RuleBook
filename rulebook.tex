@@ -11,6 +11,9 @@
 %%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{./setup/packages.tex}
 \input{./setup/config.tex}
+\input{./rulebook_pages/documentinfo.tex}
+% footertext
+\newcommand{\footline}{RoboCup@Home Rulebook / \rulebookVersion}
 \input{./setup/styling.tex}
 
 
@@ -50,13 +53,13 @@
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
-\input{Introduction}
+\input{rulebook_pages/Introduction}
 
-\input{CompetitionConcepts}
+%\input{CompetitionConcepts}
 
-\input{GeneralRules}
+\input{rulebook_pages/GeneralRules}
 
-\input{Setup}
+%\input{Setup}
 
 
 
