@@ -48,20 +48,37 @@
     
     \item This bonus, ranging from 0 to 50, depends on the robot's social performance which will be assessed by Referees using a specially designed scale in a survey.
 
-    \item Every team seeking a social assessment should inform the referee before the test. that they want to be evaluated using perceived social intelligence.    
-  
-    \item After the test is completed, the evaluators will fill out the form accessible via the QR code in Figure \ref{fig:qr-survey}, or through this \href{https://forms.office.com/Pages/ResponsePage.aspx?id=6sSEXw03nkuDDHVvi_G1H7VNGCdGFtZJs0ryJVVWtCFUQVFSWDlYM0FHRVA2QllIT0tOQjI2QUcxQi4u}{link}.
+    \item This survey evaluates how the robot recognizes, adapts to, and predicts emotions, behaviors, and cognitions. Each of these components is assessed through several questions in the survey, with each question scored on a scale from 1 to 5. Being 1 strongly disagree and 5 strongly agree  The questions used to evaluate the performance are:
+    \begin{itemize}
+        \item This robot notices human presence
+        \item This robot enjoys meeting people
+        \item This robot recognizes individual people
+        \item This robot notices when people do things
+        \item This robot adapts effectively to different things people do
+        \item This robot anticipates people's behavior
+        \item This robot tries to be helpful
+        \item This robot is trustworthy
+        \item This robot cares about others
+        \item This robot tries to hurt people
+        \item This robot knows if someone is part of a social group
+        \item This robot thinks it is better than everyone else
+        \item This robot adapts its behavior based upon what people around it know
+        \item This robot is impolite
+        \item This robot is socially competent
+    \end{itemize}
+    Detailed information can be found at this \href{https://ipip.ori.org/PSIManualSeptember2018.pdf}{manual}.
     
+    \item In each evaluation, the score for every question is summed up and then normalized as follows:
+    \[ x' = N \cdot \frac{{x - x_{\text{min}}}}{{x_{\text{max}} - x_{\text{min}}}} \]
+
+    Here, \( N \) is the normalizing factor (50), \( x \) is the sum of scores for each question in the current evaluation, \( x_{\text{min}} \) is set to 15 (since there are 15 questions), and \( x_{\text{max}} \) is set to 75 (as the maximum score for each question is 5).
+    
+    \item The final score is calculated as the average of individual evaluator scores.
+      
     \item The referee has the authority to skip the social assessment test if they believe the robot's performance is not suitable for measurement.
     
-    \item The score will be automatically recorded in this \href{https://urjc-my.sharepoint.com/:x:/r/personal/juan_pena_urjc_es/Documents/ROBOCUP%20@HOME%20PSI%20SCALE%20PROPOSAL.xlsx?d=wfdc816bee34742e1a9e5bea95677985d&csf=1&web=1&e=zRwl4u}{spreadsheet}.
+    \item After the test is completed, the evaluators will fill out the form and the score will be automatically recorded in this \href{https://urjc-my.sharepoint.com/:x:/g/personal/juan_pena_urjc_es/Eb4WyP1H4-FCqeW-qVZ3mF0BRzBR1Cn-J5ltluy90fhTJQ?rtime=guRqYF483Eg}{spreadsheet}.
 \end{enumerate}
-
-\begin{figure}[H]
-    \centering    \includegraphics[width=0.3\linewidth]{images/QRCode for ROBOCUP @HOME PSI SCALE PROPOSAL(1).png}
-    \caption{QR code for accessing the survey}
-    \label{fig:qr-survey}
-\end{figure}
 
 % Local Variables:
 % TeX-master: "../Rulebook"
