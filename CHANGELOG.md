@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
-## Rulebook [2024.2] - 2024-03-05
+## Rulebook [2024.1] - 2024-03-05
 * split document into Rulebook and Organization document [(PR)](https://github.com/RoboCupAtHome/RuleBook/pull/831)
   * RoboCup@Home Rulebook: Rules and Regulations for the competition.
   * RoboCup@Home Organization document: Rules and Regulations on the organization of the competition
