@@ -20,18 +20,18 @@ jobs:
   build:
     needs: [lint]
     runs-on: ubuntu-latest
-    container: leplusorg/latex:latest
+    container: texlive/texlive:TL2022-historic
     steps:
     - uses: actions/checkout@v4
     - name: LaTeX compilation Organization
       run:
-        TERM=xterm make doorganizationonly
+        TERM=xterm make organization
     - name: LaTeX compilation Rulebook
       run:
-        TERM=xterm make dorulebookonly
+        TERM=xterm make rulebook
     - name: LaTeX compilation Score sheets
       run:
-        TERM=xterm make doscoresheetsonly
+        TERM=xterm make scoresheets
     - name: Create Release
       id: create-release
       uses: softprops/action-gh-release@v1
@@ -41,6 +41,6 @@ jobs:
         generate_release_notes: false
         token: ${{ secrets.GITHUB_TOKEN }}
         files: |
-          organization.pdf
-          rulebook.pdf
-          scoresheets.pdf
+          .build/organization.pdf
+          .build/rulebook.pdf
+          .build/scoresheets.pdf
