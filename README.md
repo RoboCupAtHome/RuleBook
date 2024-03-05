@@ -5,9 +5,9 @@ RuleBook for RoboCup @Home 2024
 
 ### PDF Downloads
 
-[Rulebook](https://robocupathome.github.io/RuleBook/rulebook/master.pdf)
-[Organization guidelines](https://robocupathome.github.io/RuleBook/organization/master.pdf)
-[Score sheets](https://robocupathome.github.io/RuleBook/scoresheets/master.pdf)
+[Rulebook](https://robocupathome.github.io/RuleBook/rulebook/master.pdf)  
+[Organization guidelines](https://robocupathome.github.io/RuleBook/organization/master.pdf)  
+[Score sheets](https://robocupathome.github.io/RuleBook/scoresheets/master.pdf)  
 
 The current version for 2024 is **final**; only minor (language) updates and clarifications may be made from now on.
 
