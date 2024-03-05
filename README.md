@@ -1,37 +1,28 @@
-RuleBook for RoboCup @Home 2022
+RuleBook for RoboCup @Home 2024
 ===============================
 
 [![CI](https://github.com/RoboCupAtHome/RuleBook/actions/workflows/ci.yml/badge.svg)](https://github.com/RoboCupAtHome/RuleBook/actions/workflows/ci.yml)
 
-The 2022 rulebook is based on the 2019 rulebook. The current version is **final**; only minor (language) updates and clarifications may be made from now on.
+### PDF Downloads
 
-[On-the-fly compiled LaTeX version](https://robocupathome.github.io/RuleBook/rulebook/master.pdf)
+[Rulebook](https://robocupathome.github.io/RuleBook/rulebook/master.pdf)
+[Organization guidelines](https://robocupathome.github.io/RuleBook/organization/master.pdf)
+[Score sheets](https://robocupathome.github.io/RuleBook/scoresheets/master.pdf)
 
-[Released PDF version](https://athome.robocup.org/wp-content/uploads/2022_rulebook.pdf)
+The current version for 2024 is **final**; only minor (language) updates and clarifications may be made from now on.
+
+[Changelog](CHANGELOG.md)
 
 RoboCup@Home teams and team members are welcome to post GitHub issues for clarifications, questions etc.
 
 Improvements are also welcome in the form of pull requests (see [guidelines](https://github.com/RoboCupAtHome/RuleBook/wiki/Guidelines)).
 
-[Score sheets](https://robocupathome.github.io/RuleBook/scoresheets/master.pdf))
+
 
 ### FAQ
 See the Frequently Asked Questions [here](https://github.com/RoboCupAtHome/RuleBook/wiki/FAQ:-Frequently-Asked-Questions).
 
 Or ask us via Telegram: [https://t.me/RoboCupAtHome](https://t.me/RoboCupAtHome)
-
-### Change log
-The Rulebook has being completely restructured for 2019 and later competitions.
-The new format was first tested at German Open 2019.
-
-#### Highlights
-- **Less stressful competition:** Each competition day will have 2 *testing blocks* (e.g.from 9:00 to 12:00 and from 15:00 to 18:00), giving time to teams to eat, rest, and prepare.
-- **Thematic *free* testing:** Each *testing block* will have assigned a *scenario*, namely cleaning the house or hosting a party. Teams will have assigned at least 2 testing slots to solve the *task* of their choise.
-- **Task-driven testing:** Tests are no more. The rulebook will have a battery of tasks featuring different abilities from which teams can choose which to solve. It won't be possible to solve all tasks.
-- **Goal-driven scoring:** A robot can only score by accomplishing the *main goal* of a *task*. In addition to the *main goal*, several bonus objectives are available with juicy rewards, but will be only considered if the *main goal* is completed.
-- **Unlimited *Continues*:** The continue rule is no more. Instead, robots may call for a *Deus Ex Machina* and have human assistant helping it to solve the task. There is no limit on the number of times a robot can ask for help, and the nature of the help is unconstrained. Nonetheless, a proportional score reduction applies.
-
-These changes obey to one objective: **robots must succeed**.
 
 
 ### Question, issues, and contribution Guidelines
