@@ -1,465 +1,61 @@
-# ############################################################################
-#     www.  //        //''                         //    '' //''//''
-#    //''' //' //'// //' '''// ////   //''' //''' //'// // //' //' //'// //''
-#   ///// //  ///// //  ///// // //  ///// //    // // // //  //  ///// //
-#  ,,,// /// //,,, //  //,// // //, ,,,// //,,, // // // //  //  //,,, // .de
-# ############################################################################
-#
-#            $Id: Makefile 269 2012-06-03 23:41:12Z holz $
-#         author: Stefan Schiffer
-#        license: this work can be redistributed under the terms of the GPLv2
-#    description: Generic Makefile for LaTeX files
-#
-# ############################################################################
+.SUFFIXES:
+ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+BUILD_DIR:=$(ROOT_DIR)/.build
 
-## MAIN ###################
-
-OPREFIX = organization
-RPREFIX = rulebook
-SSREFIX = scoresheets
-
-## #################################### ##
-##  VARIABLES                           ##
-## #################################### ##
-
-## FILES ##################
-
-# organization
-OTEXFILE = $(OPREFIX).tex
-#
-ODVIFILE = $(OPREFIX).dvi
-OPSFILE  = $(OPREFIX).ps
-OPDFFILE = $(OPREFIX).pdf
-#
-OAUXFILE = $(OPREFIX).aux
-OIDXFILE = $(OPREFIX).idx
-OADXFILE = $(OPREFIX).adx
-OANDFILE = $(OPREFIX).and
-OLOGFILE = $(OPREFIX).log
-OBBLFILE = $(OPREFIX).bbl
-OBLGFILE = $(OPREFIX).blg
-#
-OTARFILE = $(OPREFIX).tar
-OTGZFILE = $(OPREFIX).tgz
-OTBZFILE = $(OPREFIX).tbz
-
-
-# rulebook
-RTEXFILE = $(RPREFIX).tex
-#
-RDVIFILE = $(RPREFIX).dvi
-RPSFILE  = $(RPREFIX).ps
-RPDFFILE = $(RPREFIX).pdf
-#
-RAUXFILE = $(RPREFIX).aux
-RIDXFILE = $(RPREFIX).idx
-RADXFILE = $(RPREFIX).adx
-RANDFILE = $(RPREFIX).and
-RLOGFILE = $(RPREFIX).log
-RBBLFILE = $(RPREFIX).bbl
-RBLGFILE = $(RPREFIX).blg
-#
-RTARFILE = $(RPREFIX).tar
-RTGZFILE = $(RPREFIX).tgz
-RTBZFILE = $(RPREFIX).tbz
-
-# scoresheets
-SSTEXFILE = $(SSREFIX).tex
-#
-SSDVIFILE = $(SSREFIX).dvi
-SSPSFILE  = $(SSREFIX).ps
-SSPDFFILE = $(SSREFIX).pdf
-#
-SSAUXFILE = $(SSREFIX).aux
-SSIDXFILE = $(SSREFIX).idx
-SSADXFILE = $(SSREFIX).adx
-SSANDFILE = $(SSREFIX).and
-SSLOGFILE = $(SSREFIX).log
-SSBBLFILE = $(SSREFIX).bbl
-SSBLGFILE = $(SSREFIX).blg
-#
-SSTARFILE = $(SSPREFIX).tar
-SSTGZFILE = $(SSPREFIX).tgz
-SCTBZFILE = $(SSPREFIX).tbz
-
-RMSOME  = *~
-RMFILES = *~ *.toc *.idx *.ilg *.ind *.bbl *.blg *.out *.aux *.synctex.gz \
-	  *.tmp *.log *.lot *.lof *.adx *.and *.abb *.ldx $(RPREFIX).pdf $(SSPREFIX)*.pdf .temp* $(RTARFILE) $(SSTARFILE)
-
-## OPTIONS ################
-
+## TOOLS
 SILENT = @
-
-## COMMANDS ###############
-
-MAKE        = make -s
-LATEX       = latex
-BIBTEX      = bibtex
-MAKEIDX     = makeindex
-DVIPS       = dvips
-DVIPSFLAGS  = -Ppdf -G0
-DVIPDF      = dvipdf
-PS2PDF      = ps2pdf
-PS2PDFFLAGS = -sPAPERSIZE=a4 -dCompatibilityLevel=1.3 -dEmbedAllFonts=true
-PSNUP       = psnup
-PDFLATEX    = pdflatex
-#PDFLATEXFLAGS = --enable-write18
-PDFLATEXFLAGS = --shell-escape
-PDF2PS      = pdf2ps
-PDF2PSFLAGS = #-paper "A4"
-RUBBER      = rubber
-RUBBERFLAGS = --unsafe --pdf --force
-#
-SPELL       = aspell
-# use tex-mode, use custom wordlist, set personal word-list to extra word-list file
-SPELL_OPT   = --lang=en --mode=tex --extra-dicts=./extra_dict.pws -p ./extra_dict.pws
-SPELL_ADDITIONAL_OPT = --add-tex-command="nolinkurl p" --add-tex-command="refsec p" \
-                       --add-tex-command="cellcolor p" --add-tex-command="xdef p"
-## either check file, prompting for action
-SPELL_CMD   = -c
-## or just list mispelled words
-#SPELL_CMD   = list <
-SPELL_WARN  = list <
-
-
-## VIEW ###################
-
-VIEWDVI     = xdvi
-VIEWDVI_OPT = -geometry 676x920-0+0
-VIEWPS      = gv
-VIEWPS_OPT  = -geometry 676x920-0+0
-VIEWPDF     = xpdf
-VIEWPDF_OPT = -geometry 676x920-0+0
-
-## TOOLS ##################
-
-TAR      = tar -cvf
-UNTAR    = tar -xvf
-TGZ      = tar -czvf
-UNTGZ    = tar -xzvf
-TBZ2     = tar -cjvf
-UNTBZ2   = tar -xjvf
-RM       = rm
-RMF      = rm -f
-RMRF     = rm -rf
-DBG      = echo
 MSG      = echo
 HASRUBBER:=$(shell which rubber)
 
-## COLORS #################
-
+## COLORS 
 RESET       = tput sgr0
-#
-BLACK       = tput setaf 0
-BLACK_BG    = tput setab 0
-DARKGREY    = tput setaf 0; tput bold
-RED         = tput setaf 1
-RED_BG      = tput setab 1
-LIGHTRED    = tput setaf 1; tput bold
-GREEN       = tput setaf 2
-GREEN_BG    = tput setab 2
-LIME        = tput setaf 2; tput bold
-BROWN       = tput setaf 3
-BROWN_BG    = tput setab 3
 YELLOW      = tput setaf 3; tput bold
-BLUE        = tput setaf 4
-BLUE_BG     = tput setab 4
-BRIGHTBLUE  = tput setaf 4; tput bold
-PURPLE      = tput setaf 5
-PURPLE_BG   = tput setab 5
-PINK        = tput setaf 5; tput bold
-CYAN        = tput setaf 6
-CYAN_BG     = tput setab 6
-BRIGHTCYAN  = tput setaf 6; tput bold
-LIGHTGREY   = tput setaf 7
-LIGHTGREYBG = tput setab 7
-WHITE       = tput setaf 7; tput bold
 
-## NAMED-HELPER ###########
+TEXFILES=$(shell find -name "*.tex")
+# Use all documents/*.tex files
+SOURCES=$(wildcard documents/*.tex)
+_S0 := $(subst .tex,,$(SOURCES))
+TEXRULES := $(subst documents/,, $(_S0))
 
-MENU  = $(CYAN)
-ITEM  = $(BRIGHTCYAN)
-DONE  = $(CYAN)
-CHECK = $(GREEN)
-ERROR = $(RED)
-
-## #################################### ##
-##  R U L E S                           ##
-## #################################### ##
-
-all:
-ifndef HASRUBBER
-	$(SILENT) $(MAKE) dofullpdf
-else
-	$(SILENT) $(MAKE) mauBuild
-endif
-	$(SILENT) $(MAKE) wall
-	$(SILENT) $(MAKE) mauClean
-# all: mauCleanAll mauBuild mauClean
-
-organizationonly: organization
-organization:
-ifndef HASRUBBER
-	$(SILENT) $(MAKE) doorganizationonly
-else
-	$(SILENT) $(MAKE) ruborganizationonly
-endif
-
-rulebookonly: rulebook
-rulebook:
-ifndef HASRUBBER
-	$(SILENT) $(MAKE) dorulebookonly
-else
-	$(SILENT) $(MAKE) rubrulebookonly
-endif
-
-scoresheetsonly: scoresheets
-scoresheets:
-ifndef HASRUBBER
-	$(SILENT) $(MAKE) doscoresheetsonly
-else
-	$(SILENT) $(MAKE) rubscoresheetsonly
-endif
-
-## ##################### ##
-##  PDFLATEX (PDF)       ##
-## ##################### ##
-
-dofullpdf:
-	$(SILENT) $(MAKE) dopdflatex
-	$(SILENT) $(MAKE) doorganizationmakeidx
-	$(SILENT) $(MAKE) dorulebookmakeidx
-	$(SILENT) $(MAKE) domakeadx
-	$(SILENT) # $(MAKE) doorganizationbibtex
-	$(SILENT) # $(MAKE) dorulebookbibtex
-	$(SILENT) $(MAKE) dopdflatex
-	$(SILENT) $(MAKE) dopdflatex
-
-doorganizationonly:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(OPDFFILE)' via $(PDFLATEX)"; $(RESET)
-	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(OTEXFILE)
-	$(SILENT) $(MAKE) doorganizationmakeidx
-	$(SILENT) $(MAKE) doorganizationmakeidx
-	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(OTEXFILE)
-	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(OTEXFILE)
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-dorulebookonly:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(RPDFFILE)' via $(PDFLATEX)"; $(RESET)
-	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(RTEXFILE)
-	$(SILENT) $(MAKE) dorulebookmakeidx
-	$(SILENT) $(MAKE) dorulebookmakeidx
-	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(RTEXFILE)
-	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(RTEXFILE)
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-doscoresheetsonly:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(SSPDFFILE)' via $(PDFLATEX)"; $(RESET)
-	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(SSTEXFILE)
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-dopdflatex:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Creating Score Sheets"; $(RESET)
-	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='$(SSPREFIX)_OPL' '\def\league{OPL}\input' $(SSPREFIX)
-	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='$(SSPREFIX)_DSPL' '\def\league{DSPL}\input' $(SSPREFIX)
-	$(PDFLATEX) $(PDFLATEXFLAGS) -jobname='$(SSPREFIX)_SSPL' '\def\league{SSPL}\input' $(SSPREFIX)
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(OPDFFILE)' via $(PDFLATEX)"; $(RESET)
-	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(OTEXFILE)
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Creating '$(RPDFFILE)' via $(PDFLATEX)"; $(RESET)
-	$(SILENT) $(PDFLATEX) $(PDFLATEXFLAGS) $(RTEXFILE)
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-doorganizationpdf2ps:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Running '$(PDF2PS)' on '$(OPDFFILE)'"; $(RESET)
-	$(SILENT) $(PDF2PS) $(PDF2PSFLAGS) $(OPDFFILE)
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-dorulebookpdf2ps:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Running '$(PDF2PS)' on '$(RPDFFILE)'"; $(RESET)
-	$(SILENT) $(PDF2PS) $(PDF2PSFLAGS) $(RPDFFILE)
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-## ##################### ##
-##  GENERAL              ##
-## ##################### ##
-
-doorganizationbibtex:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Running bibtex on '$(OPREFIX)'"; $(RESET)
-	$(SILENT) $(BIBTEX) $(OPREFIX)
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-dorulebookbibtex:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Running bibtex on '$(RPREFIX)'"; $(RESET)
-	$(SILENT) $(BIBTEX) $(RPREFIX)
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-doorganizationmakeidx:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Running makeindex on '$(OIDXFILE)'"; $(RESET)
-	$(SILENT) $(MAKEIDX) $(OIDXFILE)
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-dorulebookmakeidx:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Running makeindex on '$(RIDXFILE)'"; $(RESET)
-	$(SILENT) $(MAKEIDX) $(RIDXFILE)
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-# Indepent of organization/rulebook
-domakeadx:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- Running makeindex on '$(ADXFILE)' (abbreviations)"; $(RESET)
-	$(SILENT) $(MAKEIDX) $(ADXFILE) -o $(ANDFILE) -s ./setup/abbrevix.ist
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-## ##################### ##
-##  WARNINGS             ##
-## ##################### ##
-
-#wall: organizationwarntex rulebookwarntex warn2do
-wall: warn2do warnspell organizationsummary rulebooksummary
-
-organizationwarntex:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- grep LaTeX/pdfTeX Warnings in '$(OTEXFILE)' ..."; $(RESET)
-	$(SILENT) $(LATEX) $(OTEXFILE) | grep -i -A 1 "tex warning" \
-			&& ($(ERROR); $(MSG) "  -> please take care of the above TeX-warnings\n"; $(RESET)) \
-			|| ($(CHECK); $(MSG) "  =) TeX generated NO warnings"; $(RESET))
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-rulebookwarntex:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- grep LaTeX/pdfTeX Warnings in '$(RTEXFILE)' ..."; $(RESET)
-	$(SILENT) $(LATEX) $(RTEXFILE) | grep -i -A 1 "tex warning" \
-			&& ($(ERROR); $(MSG) "  -> please take care of the above TeX-warnings\n"; $(RESET)) \
-			|| ($(CHECK); $(MSG) "  =) TeX generated NO warnings"; $(RESET))
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-warn2do:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(MSG) ""
-	$(SILENT) $(ITEM); $(MSG) "  -- list todo/tbc/chk/..."; $(RESET)
-	$(SILENT) grep -in '\\tbc\|\\todo\|\\chk\|\\rework' *.tex | grep -iv "newcommand\|def\|\:%" \
-			&& ($(ERROR); $(MSG) -e "  -> please correct above todos"; $(RESET)) \
-			|| ($(CHECK); $(MSG) "  =) no todo/check-thing found"; $(RESET))
-	$(SILENT) $(MSG) ""
-	$(SILENT) $(ITEM); $(MSG) "  -- ref, cite, etc.  without leading '~' ..."; $(RESET)
-	$(SILENT) grep -in '\\ref{\|\\cite{\|\\refsec\|\\reffig' *.tex | grep -v '\~\|\:%\|refmark' \
-			&& ($(ERROR); $(MSG) "  -> please insert missing '~' before each ref, cite, command listed above"; $(RESET)) \
-			|| ($(CHECK); $(MSG) "  =) no missing '~' before ref, cite, reffig, or refsec command found"; $(RESET))
-	$(SILENT) $(MSG) ""
-	$(SILENT) $(ITEM); $(MSG) "  -- 'e.g.' without following '~' ..."; $(RESET)
-	$(SILENT) grep -in 'e\.g\.' *.tex | grep -v '\~\|\:%\|e\.g\.\,' \
-			&& ($(ERROR); $(MSG) -e "  -> please insert missing '~' after all 'e.g.' listed above"; $(RESET)) \
-			|| ($(CHECK); $(MSG) "  =) no missing '~' after 'e.g.' found"; $(RESET))
-	$(SILENT) $(MSG) ""
-	$(SILENT) $(ITEM); $(MSG) "  -- 'i.e.' without following '~' ..."; $(RESET)
-	$(SILENT) grep -in 'i\.e\.' *.tex | grep -v '\~\|\:%\|i\.e\.\,' \
-			&& ($(ERROR); $(MSG) -e "  -> please insert missing '~' after all 'i.e.' listed above"; $(RESET)) \
-			|| ($(CHECK); $(MSG) "  =) no missing '~' after 'i.e.' found"; $(RESET))
-	$(SILENT) $(MSG) ""
-	$(SILENT) $(ITEM); $(MSG) "  -- 'et al.' without following '~' ..."; $(RESET)
-	$(SILENT) grep -in 'et al\.' *.tex | grep -v '\~\|\:%' \
-			&& ($(ERROR); $(MSG) -e "  -> please insert missing '~' after all 'et al.' listed above"; $(RESET)) \
-			|| ($(CHECK); $(MSG) "  =) no missing '~' after 'et al.' found"; $(RESET))
-	$(SILENT) $(MSG) ""
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-warnspell:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) for TEXFILE in *.tex ; \
-	do  \
-		#if [ $$TEXFILE != "$(RTEXFILE)" ] && [ $$TEXFILE != "macros.tex" ] && [ $$TEXFILE != "abbrevix.tex" ] && [ $$TEXFILE != "dummybox.tex" ]; then  \
-		if [ $$TEXFILE != "macros.tex" ] && [ $$TEXFILE != "abbrevix.tex" ] && [ $$TEXFILE != "dummybox.tex" ]; then  \
-			$(ITEM); $(MSG) "  -- spell check result on '$$TEXFILE'"; $(RESET) ; \
-			$(SPELL) $(SPELL_OPT) $(SPELL_ADDITIONAL_OPT) $(SPELL_WARN) $$TEXFILE ; \
-		fi ; \
-	done
-	$(SILENT) for TEXFILE in scoresheets/*.tex ; \
-	do  \
-		$(ITEM); $(MSG) "  -- spell check result on '$$TEXFILE'"; $(RESET) ; \
-		$(SPELL) $(SPELL_OPT) $(SPELL_ADDITIONAL_OPT) $(SPELL_WARN) $$TEXFILE ; \
-	done
-	$(SILENT) for TEXFILE in tasks/*.tex ; \
-	do  \
-		$(ITEM); $(MSG) "  -- spell check result on '$$TEXFILE'"; $(RESET) ; \
-		$(SPELL) $(SPELL_OPT) $(SPELL_ADDITIONAL_OPT) $(SPELL_WARN) $$TEXFILE ; \
-	done
-	# ToDo: remove this and the tests folder
-	#$(SILENT) for TEXFILE in tests/*.tex ; \
-	#do  \
-	#	$(ITEM); $(MSG) "  -- spell check result on '$$TEXFILE'"; $(RESET) ; \
-	#	$(SPELL) $(SPELL_OPT) $(SPELL_ADDITIONAL_OPT) $(SPELL_WARN) $$TEXFILE ; \
-	#done
-	#$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
-
-organizationsummary:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- ORGANIZATION SUMMARY"; $(RESET)
-	$(SILENT) tail -n1 $(OPREFIX).log
-	$(SILENT) $(DONE); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-
-rulebooksummary:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- RULEBOOK SUMMARY"; $(RESET)
-	$(SILENT) tail -n1 $(RPREFIX).log
-	$(SILENT) $(DONE); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-
-
-## ##################### ##
-##  CLEANING             ##
-## ##################### ##
-
+#################################################
+# Rules
+#################################################
+.PHONY: all clean ${TEXRULES} lint
+all: $(TEXRULES)
 clean:
-	$(SILENT) $(MENU); $(MSG) " -----------------------------------------------------------------------"; $(RESET)
-	$(SILENT) $(ITEM); $(MSG) "  -- CLEANING UP ..."; $(RESET)
-	$(SILENT) $(RMF) $(RMFILES)
-	$(SILENT) $(DONE); $(MSG) " ------------------------------------------------------------- done. ---"; $(RESET)
+	rm -rf .build
 
-# ############################################################################
-#                                                                  END OF FILE
-# ############################################################################
+.build: 
+	mkdir -p .build
+
+# Same as github lint action
+lint:
+	$(SILENT) ${YELLOW}; $(MSG)  "Running chktex"; $(RESET)
+	$(SILENT) chktex ${TEXFILES}
 
 
-# ############################################################################
-# @Kyordhel: Not really, I'm fixing this mess.
-# ############################################################################
+#################################################
+# Generate rules for sources
+#################################################
+define latex_rules
+main_file := $(1)
 
-dirk:	mauBuild
-mauBuild:
-	$(SILENT) $(RUBBER) $(RUBBERFLAGS) $(OTEXFILE)
-	$(SILENT) $(RUBBER) $(RUBBERFLAGS) $(RTEXFILE)
-	$(SILENT) for league in OPL DSPL SSPL ; do \
-	    (echo "\def\league{$$league}" ; cat $(SSTEXFILE) ) > "$(SSPREFIX)_$$league.tex" ; \
-		 $(RUBBER) $(RUBBERFLAGS) $ "$(SSPREFIX)_$$league.tex" ; \
-		rm -f  "$(SSPREFIX)_$$league.tex" "$(SSPREFIX)_$$league.out" "$(SSPREFIX)_$$league.log" "$(SSPREFIX)_$$league.aux"; \
-	done
+## documents/foo.tex -> foo
+_SCARP0 := $$(subst .tex,,$$(main_file))
+RULENAME := $$(subst documents/,, $$(_SCARP0))
 
-ruboganizationonly:
-	$(SILENT)  $(RUBBER) $(RUBBERFLAGS) $(OTEXFILE)
+## Generates rules for pdfs
+$$(RULENAME): $$(main_file) | .build 
+	$(SILENT) ${YELLOW}; $(MSG)  "Building $$<"; $(RESET)
+ifdef HASRUBBER
+	$(SILENT) rubber --unsafe --pdf --force $$<
+else
+	$(SILENT) latexmk -Werror -shell-escape -silent -pdf -interaction=nonstopmode -outdir=$${BUILD_DIR} $$<
+endif
 
-rubrulebookonly:
-	$(SILENT)  $(RUBBER) $(RUBBERFLAGS) $(RTEXFILE)
+## Generate Summary Rule
+$$(RULENAME)_summary: | $$(RULENAME)
+	$(SILENT) tail -n1 .build/$$(|).log
+endef
 
-rubscoresheetonly:
-	$(SILENT)  $(RUBBER) $(RUBBERFLAGS) $(SSTEXFILE)
-
-mauClean:
-	$(SILENT) rm -f *.aux *.bbl *.blg *.log *.lof *.log *.lot *.out *.synctex.gz *.toc *~
-
-mauCleanAll:
-	$(SILENT) rm -f *.pdf *.dvi *.aux *.bbl *.blg *.log *.lof *.log *.lot *.out *.synctex.gz *.toc *~
-
-# ############################################################################
-#                                              NOW THIS IS THE END OF THE FILE
-# ############################################################################
+$(foreach source, $(SOURCES), $(eval $(call latex_rules, $(source))))
