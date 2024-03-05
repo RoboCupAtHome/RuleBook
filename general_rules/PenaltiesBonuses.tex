@@ -42,6 +42,44 @@
 	\item It is the decision of the \iaterm{Technical Committee}{TC} if (and to which degree) the bonus score is granted.
 \end{enumerate}
 
+\subsection{Bonus for perceived social intelligence}\label{rule:perceived_intelligence}
+\begin{enumerate}	
+    \item For the test \iterm{Receptionist} in \iterm{Stage~I} and, \iterm{Restaurant} in \iterm{Stage~II} tests. Teams are evaluated on the robot's perceived social intelligence 
+     performance
+    
+    \item This bonus, ranging from 0 to 50, depends on the robot's social performance which will be assessed by Referees using a specially designed scale in a survey.
+
+    \item The survey evaluates how the robot recognizes, adapts to, and predicts emotions, behaviors, and cognitions. Each component is assessed through several questions, scored on a scale from 1 to 5, where 1 represents "strongly disagree" and 5 represents "strongly agree." The questions used for evaluation include:
+    \begin{itemize}
+        \item This robot notices human presence
+        \item This robot enjoys meeting people
+        \item This robot recognizes individual people
+        \item This robot notices when people do things
+        \item This robot adapts effectively to different things people do
+        \item This robot anticipates people's behavior
+        \item This robot tries to be helpful
+        \item This robot is trustworthy
+        \item This robot cares about others
+        \item This robot tries to hurt people
+        \item This robot knows if someone is part of a social group
+        \item This robot thinks it is better than everyone else
+        \item This robot adapts its behavior based upon what people around it know
+        \item This robot is impolite
+        \item This robot is socially competent
+    \end{itemize}
+    Detailed information can be found in this \href{https://ipip.ori.org/PSIManualSeptember2018.pdf}{manual}.
+    
+    \item In each evaluation, the score for every question is summed up and then normalized as follows:
+    \[ x' = N \cdot \frac{{x - x_{\text{min}}}}{{x_{\text{max}} - x_{\text{min}}}} \]
+
+    Here, \( N \) is the normalizing factor (50), \( x \) is the sum of scores for each question in the current evaluation, \( x_{\text{min}} \) is set to 15 (since there are 15 questions), and \( x_{\text{max}} \) is set to 75 (as the maximum score for each question is 5).
+    
+    \item The final score is calculated as the average of individual evaluator scores.
+      
+    \item The referee has the authority to skip the social assessment test if they believe the robot's performance is not suitable for measurement.
+    
+    \item After the test is completed, the evaluators will fill out the form, and the scores will be automatically recorded in this \href{https://urjc-my.sharepoint.com/:x:/g/personal/juan_pena_urjc_es/Eb4WyP1H4-FCqeW-qVZ3mF0BRzBR1Cn-J5ltluy90fhTJQ?rtime=guRqYF483Eg}{spreadsheet}.
+\end{enumerate}
 
 % Local Variables:
 % TeX-master: "../Rulebook"
