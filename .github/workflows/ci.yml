@@ -17,7 +17,7 @@ jobs:
   build:
     name: build-${{ matrix.document }}
     runs-on: ubuntu-latest
-    container: leplusorg/latex:latest
+    container: texlive/texlive:TL2022-historic
     needs: [lint]
     strategy:
       fail-fast: false
@@ -28,12 +28,12 @@ jobs:
     - uses: actions/checkout@v4
     - name: LaTeX compilation
       run:
-        TERM=xterm make do${{ matrix.document }}only
+        TERM=xterm make ${{ matrix.document }}
     - name: Upload build result
       uses: actions/upload-artifact@v4
       with:
         name: ${{ matrix.document }}
-        path: ${{ matrix.document }}.pdf
+        path: .build/${{ matrix.document }}.pdf
 
   deploy-pdfs:
     name: deploy-pdfs
