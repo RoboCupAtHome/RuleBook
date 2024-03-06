@@ -23,6 +23,13 @@ jobs:
     container: texlive/texlive:TL2022-historic
     steps:
     - uses: actions/checkout@v4
+    
+    - name: Take ownership of the checkout directory (Git CVE-2022-24765)
+      run: chown --recursive --reference=/ .
+
+    - name: Allow for file ownership conflicts with Docker and GitHub Actions
+      run: git config --global --add safe.directory '*'
+
     - name: LaTeX compilation Organization
       run:
         TERM=xterm make organization
