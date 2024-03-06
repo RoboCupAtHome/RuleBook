@@ -39,6 +39,9 @@ jobs:
     - name: LaTeX compilation Score sheets
       run:
         TERM=xterm make scoresheets
+    - name: LaTeX compilation Roadmap
+      run:
+        TERM=xterm make roadmap
     - name: Create Release
       id: create-release
       uses: softprops/action-gh-release@v2
@@ -51,3 +54,4 @@ jobs:
           .build/organization.pdf
           .build/rulebook.pdf
           .build/scoresheets.pdf
+          .build/roadmap.pdf
