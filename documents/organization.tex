@@ -11,7 +11,7 @@
 %%% PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{./setup/packages.tex}
 \input{./setup/config.tex}
-\input{./organization/documentinfo.tex}
+\input{./pages/organization/documentinfo.tex}
 % footertext
 \newcommand{\footline}{RoboCup@Home Organization document / \rulebookVersion}
 \input{./setup/styling.tex}
@@ -34,12 +34,12 @@
 
 \begin{document}
 
-	\input{organization/titlepage}
+	\input{pages/organization/titlepage}
 
 	\setcounter{page}{0}
 	\pagenumbering{roman}
 	\pagestyle{empty}
-	\input{organization/about}
+	\input{pages/organization/about}
 	\input{pages/acknowledgments}
 	\clearpage
 
@@ -50,9 +50,9 @@
 	\setcounter{page}{1}
 	\pagenumbering{arabic}
 
-	\input{organization/Introduction}
-	\input{organization/GeneralRules}
-	\input{organization/Setup}
+	\input{pages/organization/Introduction}
+	\input{pages/organization/GeneralRules}
+	\input{pages/organization/Setup}
 
 	\printabx
 	\printidx
