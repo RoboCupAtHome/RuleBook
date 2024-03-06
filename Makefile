@@ -50,7 +50,7 @@ $$(RULENAME): $$(main_file) | .build
 ifdef HASRUBBER
 	$(SILENT) rubber --unsafe --pdf --force $$<
 else
-	$(SILENT) latexmk -Werror -shell-escape -silent -pdf -interaction=nonstopmode -outdir=$${BUILD_DIR} $$<
+	$(SILENT) latexmk -shell-escape -silent -pdf -interaction=nonstopmode -outdir=$${BUILD_DIR} $$<
 endif
 
 ## Generate Summary Rule
