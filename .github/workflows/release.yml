@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: LaTeX linter (chktex)
-        uses: j2kun/chktex-action@1.0.3
+        uses: j2kun/chktex-action@v1.0.4
         # Provide this output for context, but don't fail builds
         continue-on-error: true
         env:
