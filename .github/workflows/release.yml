@@ -20,18 +20,25 @@ jobs:
   build:
     needs: [lint]
     runs-on: ubuntu-latest
-    container: leplusorg/latex:latest
+    container: texlive/texlive:TL2022-historic
     steps:
     - uses: actions/checkout@v4
+    
+    - name: Take ownership of the checkout directory (Git CVE-2022-24765)
+      run: chown --recursive --reference=/ .
+
+    - name: Allow for file ownership conflicts with Docker and GitHub Actions
+      run: git config --global --add safe.directory '*'
+
     - name: LaTeX compilation Organization
       run:
-        TERM=xterm make doorganizationonly
+        TERM=xterm make organization
     - name: LaTeX compilation Rulebook
       run:
-        TERM=xterm make dorulebookonly
+        TERM=xterm make rulebook
     - name: LaTeX compilation Score sheets
       run:
-        TERM=xterm make doscoresheetsonly
+        TERM=xterm make scoresheets
     - name: Create Release
       id: create-release
       uses: softprops/action-gh-release@v2
@@ -41,6 +48,6 @@ jobs:
         generate_release_notes: false
         token: ${{ secrets.GITHUB_TOKEN }}
         files: |
-          organization.pdf
-          rulebook.pdf
-          scoresheets.pdf
+          .build/organization.pdf
+          .build/rulebook.pdf
+          .build/scoresheets.pdf
