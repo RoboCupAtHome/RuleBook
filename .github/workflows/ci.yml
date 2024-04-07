@@ -17,7 +17,7 @@ jobs:
   build:
     name: build-${{ matrix.document }}
     runs-on: ubuntu-latest
-    container: leplusorg/latex:latest
+    container: leplusorg/latex:1.0.0
     needs: [lint]
     strategy:
       fail-fast: false
