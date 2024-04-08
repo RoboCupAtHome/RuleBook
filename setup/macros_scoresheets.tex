@@ -560,7 +560,8 @@
 
 	% require signal for door opening %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\ifthenelse{ \equal{\scorelistStartButton}{true} }{
-	  \penaltyitem{\scorelistStartButtonPenalty}{Using alternative start signal \ifShortScoresheet{(see sec.~\ref{rule:start_signal})}{}}
+	  \penaltyitem{\scorelistStartButtonPenalty}{Using alternative start signal %\ifShortScoresheet{(see sec.~\ref{rule:start_signal})}
+	  {}}
 	}{}
 
 	% data recording bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
