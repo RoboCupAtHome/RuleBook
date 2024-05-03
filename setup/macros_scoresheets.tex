@@ -573,12 +573,12 @@
 	}{}%
 
 	% outstanding performance bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	\ifthenelse{%
-%		\value{currOutstandingBonus}>0 \AND %
-%		\equal{\scorelistOutstanding}{true}%
-%	}{%
-%		\bonusitem{\thecurrOutstandingBonus}{Outstanding performance~\ifShortScoresheet{(see sec.~\ref{rule:outstanding_performance})}{}}%
-%	}{}%
+	\ifthenelse{%
+		\value{currOutstandingBonus}>0 \AND %
+		\equal{\scorelistOutstanding}{true}%
+	}{%
+		\bonusitem{\thecurrOutstandingBonus}{Outstanding performance~\ifShortScoresheet{(see sec.~\ref{rule:outstanding_performance})}{}}%
+	}{}%
 	%
 	% Total score %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\\[-1em]\hline
