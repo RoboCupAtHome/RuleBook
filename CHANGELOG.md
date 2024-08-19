@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#887](https://github.com/RoboCupAtHome/RuleBook/pull/887): Remove Social Standard Platform League. 
+  * The League does have a low number of participants. 
+  * Former SSPL Teams can participate in the OPL and thus modify the Robot.
+
 ## Rulebook [2024.1] - 2024-03-05
 * split document into Rulebook and Organization document [(PR)](https://github.com/RoboCupAtHome/RuleBook/pull/831)
   * RoboCup@Home Rulebook: Rules and Regulations for the competition.
