@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 * [#887](https://github.com/RoboCupAtHome/RuleBook/pull/887): Remove Social Standard Platform League. 
   * The League does have a low number of participants. 
   * Former SSPL Teams can participate in the OPL and thus modify the Robot.
+* [#903](https://github.com/RoboCupAtHome/RuleBook/pull/903): `Carry my luggage` to `Help Me Carry`
 
 ## Rulebook [2024.2] - 2024-05-03
 Updated release based on German Open feedback.
