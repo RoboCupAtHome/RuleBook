@@ -48,6 +48,13 @@ The RoboCup @Home Organizing Committee is always looking for volunteers to assis
 
 Contributions and improvements to the rulebook are always welcome in the form of pull requests.
 
+### Building
+
+The easiest way is to utilize the `docker.io/texlive/texlive:TL2022-historic` image to build everything.
+
+For convenience, you should execute `build.sh` to make the PDFs with a container runtime. (This requires either `docker` or `podman` to be installed)
+
+
 ### Recorded data
 Data is recorded from the robots during the competition. It is available through the following links:
 
