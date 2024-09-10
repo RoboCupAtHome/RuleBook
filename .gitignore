@@ -1,4 +1,5 @@
 .build
+.vscode
 
 *.aux
 *.glo
