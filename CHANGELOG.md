@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
   * The League does have a low number of participants. 
   * Former SSPL Teams can participate in the OPL and thus modify the Robot.
 * [#903](https://github.com/RoboCupAtHome/RuleBook/pull/903): `Carry my luggage` to `Help Me Carry`
+* [#908](https://github.com/RoboCupAtHome/RuleBook/pull/908): Remove the possibility of doing other task during gpsr slot 
 
 ## Rulebook [2024.2] - 2024-05-03
 Updated release based on German Open feedback.
