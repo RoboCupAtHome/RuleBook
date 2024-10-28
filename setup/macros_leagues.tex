@@ -25,12 +25,6 @@
     \newcommand{\leagueFullName}{Domestic Standard Platform League}
 }{}
 
-%% Import team from the Social Standard Platform League %%%%%%%%% %%
-\ifthenelse{\equal{\league}{SSPL}}{
-    \newcommand\teamsListFile{teams/SSPL.tex}
-    \newcommand{\leagueFullName}{Social Standard Platform League}
-}{}
-
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
 %%  Per league macros                                             %%
@@ -42,7 +36,7 @@
 }
 
 \newcommand{\ifNotDSPL}[1]{
-    \ifthenelse{\equal{\league}{} \OR \equal{\league}{OPL} \OR \equal{\league}{SSPL}}{#1}{}
+    \ifthenelse{\equal{\league}{} \OR \equal{\league}{OPL}}{#1}{}
 }
 
 
@@ -52,26 +46,8 @@
 }
 
 \newcommand{\ifNotOPL}[1]{
-    \ifthenelse{\equal{\league}{} \OR \equal{\league}{DSPL} \OR \equal{\league}{SSPL}}{#1}{}
+    \ifthenelse{\equal{\league}{} \OR \equal{\league}{DSPL}}{#1}{}
 }
-
-
-%% Open Standard Platform League %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
-\newcommand{\ifSSPL}[1]{
-    \ifthenelse{\equal{\league}{} \OR \equal{\league}{SSPL}}{#1}{}
-}
-
-\newcommand{\ifNotSSPL}[1]{
-    \ifthenelse{\equal{\league}{} \OR \equal{\league}{OPL} \OR \equal{\league}{DSPL}}{#1}{}
-}
-
-% \newcommand{\ifLeague}[2]{
-%     \ifNotSSPL{#1}
-%     \ifSSPL{#2}
-% }
-
-
-
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
 %%  List of teams import macro                                    %%

@@ -1,4 +1,4 @@
-RuleBook for RoboCup @Home 2024
+RuleBook for RoboCup @Home 2025
 ===============================
 
 [![CI](https://github.com/RoboCupAtHome/RuleBook/actions/workflows/ci.yml/badge.svg)](https://github.com/RoboCupAtHome/RuleBook/actions/workflows/ci.yml)
@@ -9,7 +9,7 @@ RuleBook for RoboCup @Home 2024
 [Organization guidelines](https://robocupathome.github.io/RuleBook/organization/master.pdf)  
 [Score sheets](https://robocupathome.github.io/RuleBook/scoresheets/master.pdf)  
 
-The current version for 2024 is **final**; only minor (language) updates and clarifications may be made from now on.
+The current version for 2025 is **draft**
 
 [Changelog](CHANGELOG.md)
 
@@ -47,6 +47,13 @@ The RoboCup@Home league aims to develop service and assistive robot technology w
 The RoboCup @Home Organizing Committee is always looking for volunteers to assist in the events and willing to help to maintain the sites. Volunteers can help in tasks such as organizing and categorizing publications, team videos, memories, scores, press, and writing examples and extended rule explanations. Other projects such as developing utilities for the competition and tools for referees are also welcome. If you would like to collaborate, write to any of the members of the Organizing Committee.
 
 Contributions and improvements to the rulebook are always welcome in the form of pull requests.
+
+### Building
+
+The easiest way is to utilize the `docker.io/texlive/texlive:TL2022-historic` image to build everything.
+
+For convenience, you should execute `build.sh` to make the PDFs with a container runtime. (This requires either `docker` or `podman` to be installed)
+
 
 ### Recorded data
 Data is recorded from the robots during the competition. It is available through the following links:
