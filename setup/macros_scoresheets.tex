@@ -25,6 +25,9 @@
 % The global number of attempts per test
 \newcommand{\attempts}{3}
 
+% The Default Timelimit for the Test
+\newcommand{\timelimit}{5}
+
 % Sets the total penalty for not showing up
 \newcommand{\notattendingpenalty}{500}
 
@@ -104,6 +107,7 @@
 %                        arbitrary value (disables autocalc)
 %   - attempts           Integer. Number of attempts for the
 %                        scoresheet (default is \global\attempts)
+%   - timelimit          Integer. Timelimit in minutes
 %   - continue           Not implemented
 %   - datarecording      Boolean. Toggles the "Data Recording"
 %                        item under Special penalties and standard
@@ -144,55 +148,6 @@
 %   #2 score        Scoring points. Printed at the right of the
 %                   description
 %   #3 description  A description for the score mark
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
 %
 % %%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                  %
@@ -275,6 +230,8 @@
 		\vspace{0pt}%
 		\includegraphics[width=\textwidth]{images/logo_RoboCupAtHome.jpg}%
 	\end{minipage}\\%
+
+
 }{
 % \end{scoresheet}
 	\vspace{0.5 em}%
@@ -322,6 +279,7 @@
 	/scorelist/.is family, /scorelist,
 	default/.style={
 		attempts = \attempts,
+		timelimit = \timelimit,
 		continue = true,
 		datarecording = \dataRecordingBonus,
 		datarecordingpc = \dataRecordingBonusPercentage,
@@ -338,6 +296,7 @@
 		secondtrycc = \secondTryColumnCaption,
 	},
 	attempts/.estore in = \scorelistAttempts,
+	timelimit/.estore in = \scorelistTimelimit,
 	continue/.estore in = \scorelistContinue,
 	datarecording/.estore in = \scorelistDataRecording,
 	datarecordingpc/.estore in = \scorelistDataRecordingPercentage,
@@ -361,6 +320,12 @@
 	% read options
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\pgfkeys{/scorelist, default, #1}%
+
+	\ifShortScoresheet{
+		The maximum time for this test is \textbf{\scorelistTimelimit{}:00} minutes.
+	}{%
+		
+	}
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% init variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -580,6 +545,16 @@
 		\bonusitem{\thecurrOutstandingBonus}{Outstanding performance~\ifShortScoresheet{(see sec.~\ref{rule:outstanding_performance})}{}}%
 	}{}%
 	%
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Other Items %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\ifShortScoresheet{}{%
+		\scoreheading{Recordings}
+		\scoreitem{0}{Duration (limit: \textbf{\scorelistTimelimit{}:00} minutes)}
+	}%
+	
+
 	% Total score %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\\[-1em]\hline
 	\scorePerTry
