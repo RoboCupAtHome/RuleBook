@@ -33,6 +33,9 @@ jobs:
     - name: LaTeX compilation Organization
       run:
         TERM=xterm make organization
+    - name: LaTeX compilation Roadmap
+      run:
+        TERM=xterm make roadmap
     - name: LaTeX compilation Rulebook
       run:
         TERM=xterm make rulebook
@@ -49,5 +52,6 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         files: |
           .build/organization.pdf
+          .build/roadmap.pdf
           .build/rulebook.pdf
           .build/scoresheets.pdf

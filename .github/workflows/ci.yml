@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        document: [organization, rulebook, scoresheets]
+        document: [organization, roadmap, rulebook, scoresheets]
 
     steps:
     - uses: actions/checkout@v4
@@ -58,6 +58,11 @@ jobs:
       with:
         name: organization
         path: ${{ runner.temp }}/organization
+    - name: Download roadmap
+      uses: actions/download-artifact@v4
+      with:
+        name: roadmap
+        path: ${{ runner.temp }}/roadmap
     - name: Download rulebook
       uses: actions/download-artifact@v4
       with:
@@ -78,10 +83,12 @@ jobs:
         mkdir -p organization
         mkdir -p rulebook
         mkdir -p scoresheets
+        mkdir -p roadmap
         FILENAME=${GITHUB_REF_NAME}
         # Strip out any extra slashes in the rest
         FILENAME=${FILENAME//\//\_}.pdf
         mv ${ARTIFACTS_PATH}/organization/organization.pdf organization/${FILENAME}
+        mv ${ARTIFACTS_PATH}/roadmap/roadmap.pdf roadmap/${FILENAME}
         mv ${ARTIFACTS_PATH}/rulebook/rulebook.pdf rulebook/${FILENAME}
         mv ${ARTIFACTS_PATH}/scoresheets/scoresheets.pdf scoresheets/${FILENAME}
     - name: Commit and push to GitHub Pages

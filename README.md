@@ -6,6 +6,8 @@ RuleBook for RoboCup @Home 2025
 ### PDF Downloads
 
 [Rulebook](https://robocupathome.github.io/RuleBook/rulebook/master.pdf)  
+
+[Roadmap](https://robocupathome.github.io/RuleBook/roadmap/master.pdf)  
 [Organization guidelines](https://robocupathome.github.io/RuleBook/organization/master.pdf)  
 [Score sheets](https://robocupathome.github.io/RuleBook/scoresheets/master.pdf)  
 
