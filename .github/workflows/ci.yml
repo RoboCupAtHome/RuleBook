@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        document: [organization, rulebook, scoresheets]
+        document: [rulebook, scoresheets]
 
     steps:
     - uses: actions/checkout@v4
@@ -36,6 +36,7 @@ jobs:
     - name: LaTeX compilation
       run:
         TERM=xterm make ${{ matrix.document }}
+        
     - name: Upload build result
       uses: actions/upload-artifact@v4
       with:
@@ -53,11 +54,6 @@ jobs:
       with:
         ref: gh-pages
   
-    - name: Download organization
-      uses: actions/download-artifact@v4
-      with:
-        name: organization
-        path: ${{ runner.temp }}/organization
     - name: Download rulebook
       uses: actions/download-artifact@v4
       with:
@@ -68,6 +64,7 @@ jobs:
       with:
         name: scoresheets
         path: ${{ runner.temp }}/scoresheets
+
     - name: Preparations for GitHub Pages
       if: github.ref_name == github.event.repository.default_branch
       env:
@@ -75,13 +72,11 @@ jobs:
       run: |
         # Make sure directories exist
         cd "${GITHUB_WORKSPACE}"
-        mkdir -p organization
         mkdir -p rulebook
         mkdir -p scoresheets
         FILENAME=${GITHUB_REF_NAME}
         # Strip out any extra slashes in the rest
         FILENAME=${FILENAME//\//\_}.pdf
-        mv ${ARTIFACTS_PATH}/organization/organization.pdf organization/${FILENAME}
         mv ${ARTIFACTS_PATH}/rulebook/rulebook.pdf rulebook/${FILENAME}
         mv ${ARTIFACTS_PATH}/scoresheets/scoresheets.pdf scoresheets/${FILENAME}
     - name: Commit and push to GitHub Pages
