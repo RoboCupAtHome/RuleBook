@@ -1,0 +1,89 @@
+\section{Help me Find}
+\label{test:help-me-find}
+
+\subsection*{Description}
+A visually impaired person must find an object inside the house. However, this person has never been to this house. The robot must help the person navigate through the house and find its object.
+
+\textbf{Main goal:}
+Help the person to safely navigate through the house. After reaching the place where the object is, help the person reach and pick the object.
+
+\textbf{Optional goal:}
+Describe in detail all objects on the table.
+Help the person navigate to the exit door.
+
+
+\subsection*{Focus}
+This task focuses on
+\textit{Human perception},
+\textit{Object perception},
+\textit{Action recognition} and
+\textit{Verbal interaction}.
+
+\subsection*{Setup}
+\begin{itemize}[nosep]	
+	\item \textbf{Locations:} 
+	\begin{itemize}
+		\item This task takes place inside the \Arena{}.
+		\item The robot starts near the entrance door.
+		\item The objects will be in a piece of furniture inside the house (a table, a cabinet, a desk, ...).
+	\end{itemize}	 
+	\item \textbf{People:} 
+	\begin{itemize}
+		\item There is a visually impaired person by the entrance door inside the \Arena{}.
+		\item This person should be using a blindfold.
+	\end{itemize}
+	\item \textbf{Furniture:} All furniture are in their predefined locations.
+	\item \textbf{Objects:} 
+	\begin{itemize}
+		\item A set of 10 unknown objects (not in the set of objects provided for the event) must be placed in a random piece of furniture.
+		\item Some examples of objects may be: a lighter, a scarf, glasses, a plush toy, pliers, ...
+	\end{itemize}
+\end{itemize}
+
+\subsection*{Procedure}
+	\begin{enumerate}[nosep]
+		\item The referee requests the team to move the robot to the start location.
+		\item The referee gives the start signal and starts the timer.
+		\item The team leaves the area after the start signal.
+		\item A TC member follows the robot ready to press the emergency stop button.
+		\item The robot must introduce itself to the person and ask where the object is.
+		\item The robot must meticulously instruct how the person should move. 
+		\item After arriving to the object location, the robot must ask the person to describe the object.
+		\item \textbf{Optionally} the robot can describe in detail the objects on the table, to the person.
+		\item The robot must carefully instruct the person on how to move to pick the correct object. 
+		\item \textbf{Optionally} the robot can help the person navigate to the exit door.
+	\end{enumerate}
+
+\subsection*{Additional Rules and Remarks}
+\begin{enumerate}[nosep]
+
+	\item \textbf{Help Person Navigate:} Since the person is wearing a blinfold, the robot must be capable of dynamically detect the person and thoroughly reinforce what the person should do. If the person being guided by the robot bumps into anything a penalty is applied.
+	\item \textbf{Help Person Pick Object:} Since the person is wearing a blinfold, the robot must be capable of dynamically adapt to the person and thoroughly reinforce what the person should do. If the person grabs an incorrect object, a penalty is applied.
+	\item \textbf{Thorough Object Description:} In order to successfully describe an object, the robot must say what the object is, and provide three characteristics of that object.
+
+\end{enumerate}
+
+\subsection*{Instructions:}
+\subsubsection*{Referee instructions}
+
+\begin{itemize}
+	\item Select the piece of furniture where the objects will be placed (may change between teams).
+	\item Place the objects on the furniture.
+	\item Inform the volunteer which of the 10 objects is the selected one (will change between teams).
+\end{itemize}
+
+\subsubsection*{OC Instructions}
+At least two hours before the test:
+\begin{itemize}
+	\item Have a blindfold for the volunteer.
+	\item Select the 10 items used for the task.
+\end{itemize}
+
+% \newpage
+\subsection*{Score sheet}
+\input{scoresheets/HelpMeFind.tex}
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:
+
