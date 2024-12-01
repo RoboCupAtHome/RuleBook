@@ -2,7 +2,7 @@
 \label{test:help-me-find}
 
 \subsection*{Description}
-A visually impaired person must find an object inside the house. However, this person has never been to this house. The robot must help the person navigate through the house and find its object.
+A visually impaired person must find and pick up an object inside the house. However, this person has never been to this house. The robot must help the person navigate through the house safely and find its object.
 
 \textbf{Main goal:}
 Help the person to safely navigate through the house. After reaching the place where the object is, help the person reach and pick the object.
@@ -25,17 +25,17 @@ This task focuses on
 	\begin{itemize}
 		\item This task takes place inside the \Arena{}.
 		\item The robot starts near the entrance door.
-		\item The objects will be in a piece of furniture inside the house (a table, a cabinet, a desk, ...).
+		\item The objects will be in or on a piece of furniture inside the house (a table, a cabinet, a desk, ...).
 	\end{itemize}	 
 	\item \textbf{People:} 
 	\begin{itemize}
 		\item There is a visually impaired person by the entrance door inside the \Arena{}.
 		\item This person should be using a blindfold.
 	\end{itemize}
-	\item \textbf{Furniture:} All furniture are in their predefined locations.
+	\item \textbf{Furniture:} All furniture items are in their predefined locations.
 	\item \textbf{Objects:} 
 	\begin{itemize}
-		\item A set of 10 unknown objects (not in the set of objects provided for the event) must be placed in a random piece of furniture.
+		\item A set of 10 unknown objects (not in the set of objects provided for the event) must be placed in or on a random piece of furniture.
 		\item Some examples of objects may be: a lighter, a scarf, glasses, a plush toy, pliers, ...
 	\end{itemize}
 \end{itemize}
@@ -48,17 +48,18 @@ This task focuses on
 		\item A TC member follows the robot ready to press the emergency stop button.
 		\item The robot must introduce itself to the person and ask where the object is.
 		\item The robot must meticulously instruct how the person should move. 
-		\item After arriving to the object location, the robot must ask the person to describe the object.
+		\item After arriving at the object location, the robot must describe the object which matches the request.
+		\item The person confirms/denies the robot's description of the object.
 		\item \textbf{Optionally} the robot can describe in detail the objects on the table, to the person.
-		\item The robot must carefully instruct the person on how to move to pick the correct object. 
+		\item The robot must carefully instruct the person on how to move to pick up the correct object. 
 		\item \textbf{Optionally} the robot can help the person navigate to the exit door.
 	\end{enumerate}
 
 \subsection*{Additional Rules and Remarks}
 \begin{enumerate}[nosep]
 
-	\item \textbf{Help Person Navigate:} Since the person is wearing a blinfold, the robot must be capable of dynamically detect the person and thoroughly reinforce what the person should do. If the person being guided by the robot bumps into anything a penalty is applied.
-	\item \textbf{Help Person Pick Object:} Since the person is wearing a blinfold, the robot must be capable of dynamically adapt to the person and thoroughly reinforce what the person should do. If the person grabs an incorrect object, a penalty is applied.
+	\item \textbf{Help Person Navigate:} Since the person is wearing a blindfold, the robot must be capable of dynamically detect the person and thoroughly reinforce what the person should do. If the person being guided by the robot bumps into anything a penalty is applied.
+	\item \textbf{Help Person Pick Object:} Since the person is wearing a blindfold, the robot must be capable of dynamically adapt to the person and thoroughly reinforce what the person should do. If the person grabs an incorrect object, a penalty is applied.
 	\item \textbf{Thorough Object Description:} In order to successfully describe an object, the robot must say what the object is, and provide three characteristics of that object.
 
 \end{enumerate}
