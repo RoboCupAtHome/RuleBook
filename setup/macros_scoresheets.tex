@@ -28,6 +28,9 @@
 % The Default Timelimit for the Test
 \newcommand{\timelimit}{5}
 
+% Show Special Penalties & Bonuses
+\newcommand{\specialPenBonus}{true}
+
 % Sets the total penalty for not showing up
 \newcommand{\notattendingpenalty}{500}
 
@@ -109,6 +112,7 @@
 %                        scoresheet (default is \global\attempts)
 %   - timelimit          Integer. Timelimit in minutes
 %   - continue           Not implemented
+%   - specialpenbonus	 Boolean. Toggles the "Special Penalties & Bonuses"
 %   - datarecording      Boolean. Toggles the "Data Recording"
 %                        item under Special penalties and standard
 %                        bonuses
@@ -281,6 +285,7 @@
 		attempts = \attempts,
 		timelimit = \timelimit,
 		continue = true,
+		specialpenbonus = \specialPenBonus,
 		datarecording = \dataRecordingBonus,
 		datarecordingpc = \dataRecordingBonusPercentage,
 		datarecordingbonus = 0,
@@ -298,6 +303,7 @@
 	attempts/.estore in = \scorelistAttempts,
 	timelimit/.estore in = \scorelistTimelimit,
 	continue/.estore in = \scorelistContinue,
+	specialpenbonus/.estore in = \scorelistSpecialPenBonus,
 	datarecording/.estore in = \scorelistDataRecording,
 	datarecordingpc/.estore in = \scorelistDataRecordingPercentage,
 	datarecordingbonus/.estore in = \scorelistDataRecordingBonus,
@@ -423,7 +429,7 @@
 	\newcommand{\scorePerTry}{%
 		\\%
 		\ifShortScoresheet{}{%
-			\ifthenelse{ \attempts > 1 }{%
+			\ifthenelse{ \scorelistAttempts > 1 }{%
 				\textbi{Score per try} &%
 				\textit{\thecurrTestScoreTotalWithoutBonus} &%
 				\attemptScoreLines{\scorelistAttempts}%
@@ -518,33 +524,37 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% Special penalties & bonuses %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\scoreheading{Special Penalties \& Bonuses}
+	\ifthenelse{ \equal{\scorelistSpecialPenBonus}{true} }{
 
-	% not showing up penalty %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\penaltyitem{\notattendingpenalty}{Not attending \ifShortScoresheet{(see sec.~\ref{rule:not_attending})}{}}
+	
+		\scoreheading{Special Penalties \& Bonuses}
 
-	% require signal for door opening %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\ifthenelse{ \equal{\scorelistStartButton}{true} }{
-	  \penaltyitem{\scorelistStartButtonPenalty}{Using alternative start signal %\ifShortScoresheet{(see sec.~\ref{rule:start_signal})}
-	  {}}
+		% not showing up penalty %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\penaltyitem{\notattendingpenalty}{Not attending \ifShortScoresheet{(see sec.~\ref{rule:not_attending})}{}}
+
+		% require signal for door opening %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\ifthenelse{ \equal{\scorelistStartButton}{true} }{
+			\penaltyitem{\scorelistStartButtonPenalty}{Using alternative start signal \ifShortScoresheet{(see sec.~\ref{rule:start_signal})}{}}
+		}{}
+
+		% data recording bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\ifthenelse{%
+			\thecurrDataRecordingBonus>0 \AND %
+			\equal{\scorelistDataRecording}{true}%
+		}{%
+			\bonusitem{\thecurrDataRecordingBonus}{Contributing with recorded data ($\frac{\sum gathered~points}{max~points} \times$) \ifShortScoresheet{(see sec.~\ref{rule:datarecording})}{}}%
+		}{}%
+
+		% outstanding performance bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\ifthenelse{%
+			\value{currOutstandingBonus}>0 \AND %
+			\equal{\scorelistOutstanding}{true}%
+		}{%
+			\bonusitem{\thecurrOutstandingBonus}{Outstanding performance~\ifShortScoresheet{(see sec.~\ref{rule:outstanding_performance})}{}}%
+		}{}%
+		%
+
 	}{}
-
-	% data recording bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\ifthenelse{%
-		\thecurrDataRecordingBonus>0 \AND %
-		\equal{\scorelistDataRecording}{true}%
-	}{%
-		\bonusitem{\thecurrDataRecordingBonus}{Contributing with recorded data ($\frac{\sum gathered~points}{max~points} \times$) \ifShortScoresheet{(see sec.~\ref{rule:datarecording})}{}}%
-	}{}%
-
-	% outstanding performance bonus %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\ifthenelse{%
-		\value{currOutstandingBonus}>0 \AND %
-		\equal{\scorelistOutstanding}{true}%
-	}{%
-		\bonusitem{\thecurrOutstandingBonus}{Outstanding performance~\ifShortScoresheet{(see sec.~\ref{rule:outstanding_performance})}{}}%
-	}{}%
-	%
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% Other Items %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
