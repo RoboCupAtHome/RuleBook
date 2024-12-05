@@ -30,15 +30,13 @@ jobs:
     - name: Allow for file ownership conflicts with Docker and GitHub Actions
       run: git config --global --add safe.directory '*'
 
-    - name: LaTeX compilation Organization
-      run:
-        TERM=xterm make organization
     - name: LaTeX compilation Rulebook
       run:
         TERM=xterm make rulebook
     - name: LaTeX compilation Score sheets
       run:
         TERM=xterm make scoresheets
+
     - name: Create Release
       id: create-release
       uses: softprops/action-gh-release@v2
@@ -48,6 +46,5 @@ jobs:
         generate_release_notes: false
         token: ${{ secrets.GITHUB_TOKEN }}
         files: |
-          .build/organization.pdf
           .build/rulebook.pdf
           .build/scoresheets.pdf
