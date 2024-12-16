@@ -1,22 +1,26 @@
 \begin{scorelist}[startbutton=false,timelimit=5]
 	\scoreheading{Main Goal}
-	\scoreitem[2]{15}{Guide the guest to the other guests (navigate to the guest group)}
-	\scoreitem[2]{50}{Look in the direction of navigation or at the navigation goal}
-	\scoreitem[2]{50}{Introduce a new guest to every other guest and the host}
+	\scoreitem[2]{30}{show the guest around (navigate to the beverage area and living room)}
+	\scoreitem[1]{30}{Look in the direction of navigation or at the navigation goal}
+	\scoreitem[2]{25}{identify favorite drink}
 	\scoreitem[2]{100}{Offer a free seat to the new guest}
 	\scoreitem[2]{25}{Look at the person talking}
-	\scoreitem[2]{50}{Look at the person the robot is introducing the guest to}
+	\scoreitem[1]{75}{Introduce both guests to each other}
+	\scoreitem[1]{50}{Look at the person the robot is introducing}
 	
 	\scoreheading{Bonus Rewards}
 	\scoreitem[2]{100}{Open the entrance door for a guest}
-	\scoreitem[4]{30}{Describe the first guest to the second guest (per corect attribute)}
-	\penaltyitem[4]{30}{Describe the first guest to the second guest (per incorrect attribute)}
+	\scoreitem[1]{50}{find the similarity between two guests or a guest and the host}
+	\penaltyitem[1]{30}{wrongly stating a similarity}
+	\scoreitem[2]{75}{pick up the favorite drink}
 
 
 	\scoreheading{Penalties}
-	\penaltyitem{50}{Wrong guest information was memorized (continue with wrong name or drink)}
+	\penaltyitem[2]{50}{Wrong guest information was memorized (continue with wrong name or drink)}
+	\penaltyitem[2]{50}{no additional information or wrong information was memorized}
 	\penaltyitem{50}{Persistent inappropriate gaze (away from conversational partner)}
-	\penaltyitem{10}{Persistent gaze not in the direction of the navigation while moving.}
+	\penaltyitem{25}{Persistent gaze not in the direction of the navigation while moving.}
+	\penaltyitem[2]{20}{wrongly identifying the favorite drink on the table}
 	
 	\scoreheading{Deus Ex Machina}
 	\penaltyitem[2]{75}{Alternative HRI}
