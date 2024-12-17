@@ -4,13 +4,15 @@
 The robot has to take two new guests to the living room to introduce them and offer a free place to sit.\\
     
 \textbf{Main goal:}
-    Introduce and usher two newcomers to a party and maintain appropriate gaze direction (at person, direction of navigation).
+    The robot must welcome and assist two newcomers at a party and maintain appropriate gaze direction while conversation (at person, direction of navigation).
 
 % \vspace{-5pt}
 \textbf{Optional goals:}
 \begin{enumerate}[nosep]
 	\item Open the entrance door for each arriving guest.
-	\item Describe the first guest for the second guest.
+	\item Opening the door for the arriving guests
+	\item picking up a drink for the guest
+	\item Identify similarities between the guests and the host and incorporate them into the conversation.
 \end{enumerate}
 
 \subsection*{Focus}
@@ -23,36 +25,45 @@ The robot has to take two new guests to the living room to introduce them and of
 	\begin{itemize}
 	\item The test takes place in the living room.	
 	\item The robot starts inside the \Arena{} at a predefined location.
+	\item a table with drinks is prepared near the living room
 	\item \textbf{Entrance:} The entrance door is open by default. The team leader can request to close the door to score additional points by opening it for the guests.
 	\end{itemize}
 	
 	\item \textbf{People:} 
 	\begin{itemize}
-	\item \textbf{Host:} The host's name and favorite drink will be announced before the test. The host is already sitting in the living room.
+	\item \textbf{Host:} The host's name, favorite drink, interests and profession will be announced before the test. The host is already sitting in the living room.
 
-	\item \textbf{Guests:} Both guests have a name and favorite drink. An arriving guest will either step in front of the robot or ring the bell or knock on the door if the door is closed. Guests have to be guided to the living room to be introduced. Each of the guest will arrive separately. The sound of the bell will be provided to teams
-	during setup period before competition (if not using door knocking).
+	\item \textbf{Arriving Guests:} Both guests have a name, favorite drink, hobbies and a job. An arriving guest will either step in front of the robot or wait behind the door to step in if the door is closed. Guests have to be guided to the beverage and snack area and then the living room where the robot will introduce the guests to each other. Each of the guest will arrive separately. 
+	
+	\item \textbf{Passive Guests:} Other Guests: A few individuals, including possibly spectators, are standing in small groups of two or three, all over the arena but not covering relevant places e.g. the couch, seats or the area with the drinks.
 	\end{itemize}
 
 \end{itemize}
 
 \subsection*{Procedure}
+Both guests arrive separately. The robot either opens the door for the guest or waits for them at the starting point. It greets the guest and asks for their name. The robot then guides the guest to the beverage area, where it asks for their favorite drink and checks if the drink is available on the table. Optionally, the robot can pick up the drink. Before reaching the living room, the robot gathers one additional piece of information about the guest at a freely chosen moment. After showing the guest the beverage area, the robot escorts them to the living room and offers a free seat. Once both guests are seated, the robot introduces them to each other.
 \begin{itemize}
-    \item \textbf{Introductions:} When introducing guests, the robot must clearly identify the person being introduced and state their name and favorite drink. Introducing two people means to introduce them to each other.
+	
+	\item \textbf{Looking at person/direction of navigation:} During verbal interactions and descriptions of people, robot 
+	looks at the conversational partner. During navigation robot looks in the direction where it is going. Persistently gazing towards unrelated 
+	person or incorrect direction while moving during the task deducts points.
+    
+    \item \textbf{Smalltalk} ask each guest after his job or interests during guidance or at the drinking area
+    
+    \item \textbf{Getting a drink} the robot shows both guest the drinking area where it will ask for their favorite drink and tell the guest if that drink is available on the table.
 	
 	\item \textbf{Seating People:} The robot must point at a place or location where the guest can sit.
 	
 	\item \textbf{Switching Places:} Guests may switch places after they were seated.
 	
-	\item \textbf{Describing the First Guest:} Naming 4 characteristics of the first guest, i.e., color of clothes, color of hair, gender, and age, earns bonus points.
-	\item \textbf{Looking at person/direction of navigation:} During verbal interactions and descriptions of people, robot 
-	looks at the conversational partner. Robot can point at the person being introduce/described or alternate gaze between two people. During navigation robot looks in the direction where it is going. Persistently gazing towards unrelated 
-	person or incorrect direction while moving during the task deducts points. 
+	\item \textbf{Introductions:} When introducing guests, the robot must clearly identify the person being introduced and state their name favorite drink and a hobby or their profession. Introducing two people means to introduce them to each other. 
 \end{itemize}
 
 \subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
-	\item \textbf{Misunderstanding:} Not understanding the guests and asking them again is fine. Continuing with a wrong name or drink causes a score reduction of 50pts.
+	\item \textbf{Misunderstanding:} Not understanding the guests and asking them again is fine. Continuing with a wrong name or drink causes a score reduction of 50pts. Failing to get one additional information about a guest or understanding it incorrectly also reduces the score by 50pts
+		
+	\item \textbf{not seeing the favorite drink:} misinformation about a drink beeing available reduces the score by 25pts	
 		
 	\item \textbf{Partial Scoring:} The main task allows partial (per guest) scoring.
 
@@ -73,26 +84,22 @@ The robot has to take two new guests to the living room to introduce them and of
 
 The referees need to:
 \begin{itemize}
-	\item Assign name and drink to 3 volunteers.
+	\item Assign name, drink, two interests and a profession to 3 volunteers.
 	\item Arrange (and re-arrange) people in the living room.
+	\item change the selection in the beverage area
 	\item Open the door when requested by the robot.
 \end{itemize}
 
 \subsubsection*{To OC}
 
-During setup day:
-\begin{itemize}
-	\item Provide the dorbell sound (if not using door knocking).
-\end{itemize}
 
 At least two hours before test:
 \begin{itemize}
 	\item Announce starting position.
-	\item Announce host's name and favorite drink.
-	\item Recruit volunteers as host and guests.
+	\item Announce host's name, favorite drink, interests and job.
+	\item Recruit volunteers as host and two guests and passive guests .
 \end{itemize}
 
 % \newpage
 \subsection*{Score sheet}
 \input{scoresheets/Receptionist.tex}
-
