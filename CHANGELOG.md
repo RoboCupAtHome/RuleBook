@@ -11,6 +11,11 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#935](https://github.com/RoboCupAtHome/RuleBook/pull/935): Add additional task to storing groceries
+    * Use both doors
+    * add refilling storage containers (pouring)
+    * add grasping from shopping bag
+    * increase time limit to 7 minutes
 * [#936](https://github.com/RoboCupAtHome/RuleBook/pull/936): Extend Clean The Table: Putting items into Tash, Wiping the Table, scoring changes
 * [#933](https://github.com/RoboCupAtHome/RuleBook/pull/933): Remove serve breakfast task to free up time during stage one
 * [#920](https://github.com/RoboCupAtHome/RuleBook/pull/920): DSPL: Allow a mounted microphone on hsr.
