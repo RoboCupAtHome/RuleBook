@@ -1,5 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Scenario}\label{sec:scenario}
+\section{Scenario}
+\label{sec:scenario}
 
 Most competition tests take place in the \RoboCup\AtHome\Arena, but some tests may take place outside, in a previously unknown public place.
 In this section, the \Arena{} and its contents are described, in particular the furnishing and other information that is common between tests and leagues.
@@ -21,7 +22,8 @@ The arena is arranged and decorated to resemble a typical apartment in the hosti
 Note that what is considered \emph{normal} may vary greatly based on the culture and location where \RoboCup{} is hosted.
 Decorations may include, but are not limited to, plants, mirrors, paintings, posters, plates, picture frames, wall clocks, candles with holders, and books.
 
-\subsection{Walls, Doors, and Floor}\label{rule:scenario_walls}
+\subsection{Walls, Doors, and Floor}
+\label{rule:scenario_walls}
 
 The indoor home setting will be surrounded by high and low \Term{walls}{Arena walls}, which are built up using standard fair construction material.
 
@@ -33,7 +35,8 @@ The indoor home setting will be surrounded by high and low \Term{walls}{Arena wa
 \end{enumerate}
 
 
-\subsection{Furniture}\label{rule:scenario_furniture}
+\subsection{Furniture}
+\label{rule:scenario_furniture}
 
 The \Arena{} is furnished with typical objects common for the host country.
 The minimal configuration consists of:
@@ -58,9 +61,10 @@ The \Arena{}'s kitchen has:
 A typical \Arena{} setup is shown in~\reffig{fig:scenario_arena}.
 \begin{figure}[tbp]
 	\centering
-	\subfloat[Typical Arena]{\label{fig:scenario_arena}\includegraphics[height=46mm]{images/typical_arena.jpg}}
+	\subfloat[Typical Arena]{\label{fig:scenario_arena}\includegraphics[height=46mm]{images/typical_arena.jpg}} ~
 	\subfloat[Typical objects]{\label{fig:scenario_objects}\includegraphics[height=46mm]{images/typical_objects.jpg}}
-	\caption{An example of a \RoboCup\AtHome{} scenario}\label{fig:arena}
+	\caption{An example of a \RoboCup\AtHome scenario}
+	\label{fig:arena}
 \end{figure}
 
 \subsubsection{Cupboard}
@@ -73,7 +77,8 @@ The cupboard may have doors.
 At least one powered and functioning fridge is required in the \Arena.
 The fridge must not be smaller than \SI{120}{\centi\meter}.
 
-\subsection{Changes to the \Arena}\label{rule:scenario_changes}
+\subsection{Changes to the \Arena}
+\label{rule:scenario_changes}
 
 Since robots should be able to function in the real world, the \Arena{} is not fixed and might change without further notice.
 \begin{enumerate}
@@ -97,10 +102,11 @@ Since robots should be able to function in the real world, the \Arena{} is not f
 \def\NumLocations{20\ }
 \def\NumNames{20\ }
 
-\subsection{Objects}\label{rule:scenario_objects}
+\subsection{Objects}
+\label{rule:scenario_objects}
 
 Some tests in the RoboCup@Home league involve recognizing and manipulating objects (see Figure~\reffig{fig:scenario_objects}).
-The TC will compile a list of at least \NumObjects{} objects for this purpose; the list will contain a picture of the each object, as well as its official name and \ObjectCategory{} (for instance, an \textit{Apple} belongs to the \textit{Fruits} category).
+The TC will compile a list of at least \NumObjects objects for this purpose; the list will contain a picture of the each object, as well as its official name and \ObjectCategory{} (for instance, an \textit{Apple} belongs to the \textit{Fruits} category).
 Most objects are likely to be lightweight and easy to grasp with one hand.
 Every \ObjectCategory{} has an assigned \PredefinedLocation, where objects of that category can usually be found during tests (for example, an \textit{Fruits} can be found on the \textit{Kitchen Table}); assignments are announced during the \SetupDays{} (see~\refsec{chap:setup_and_preparation}).
 
@@ -121,14 +127,13 @@ Two types of objects are used in the tasks:
 
 The minimal configuration of \KnownObjects{} consists of:
 \begin{itemize}
-	\item \textbf{\iterm{Tableware}:} Dish, bowl, cup (or mug), and napkin (see Figure~\ref{fig:scenario_container_bowl}).
+	\item \textbf{\iterm{Tableware}:} Dish, bowl, cup (or mug), and napkin (see Figure \ref{fig:scenario_container_bowl}).
 	\item \textbf{\iterm{Cutlery}:} Fork, knife, and spoon.
 	\item \textbf{\iterm{Trash Bags}:} Big plastic trash bags, preferably with a handle.
-	\item \textbf{\iterm{Bags}:} Lightweight and with stiff, vertical handles (see Figure~\ref{fig:scenario_container_bag}).
-	\item \textbf{\iterm{Dry Food Container}:} Dry food containers (see Figure~\ref{fig:scenario_container_dry}).
+	\item \textbf{\iterm{Bags}:} Lightweight and with stiff, vertical handles (see Figure \ref{fig:scenario_container_bag}).
 	\item \textbf{\iterm{Disks or books}:} A set of discs (LP, CD, DVD, or BluRay) or books.
 	\item \textbf{\iterm{Coat rack}:} A rack or pole to hang coats and other clothes.
-	\item \textbf{\iterm{Trays}:} A transport object such as a tray or basket, intended for bimanual manipulation (see Figure~\ref{fig:scenario_container_tray}).
+	\item \textbf{\iterm{Trays}:} A transport object such as a tray or basket, intended for bimanual manipulation (see Figure \ref{fig:scenario_container_tray}).
 	\item \textbf{\iterm{Pourable}:} An object whose content can be poured (such as a cereal box).
 	\item \textbf{\iterm{Heavy object}:} Weight between 1.0kg and 1.5kg.
 	\item \textbf{\iterm{Tiny object}:} A lightweight object that is not bigger than \SI{5}{\centi\meter} (such as paper, a teabag, or a pen).
@@ -140,18 +145,16 @@ The minimal configuration of \KnownObjects{} consists of:
 \begin{figure}[H]
 	\centering
 	\subfloat[Cereal bowls]{
-		\includegraphics[width=0.33\textwidth]{images/container_bowl.png}\label{fig:scenario_container_bowl}}
+		\label{fig:scenario_container_bowl}\includegraphics[width=0.33\textwidth]{images/container_bowl.png}}~
 	\subfloat[Bright-colored paper bags]{
-		\includegraphics[width=0.33\textwidth]{images/container_paper_bag.png}\label{fig:scenario_container_bag}}
+		\label{fig:scenario_container_bag}\includegraphics[width=0.33\textwidth]{images/container_paper_bag.png}}~
 	\subfloat[Serving tray]{
-		\includegraphics[width=0.33\textwidth]{images/container_tray.png}\label{fig:scenario_container_tray}}
-	\subfloat[Dry food Container]{
-		\includegraphics[width=0.33\textwidth]{images/container_dry.png}\label{fig:scenario_container_dry}}
+		\label{fig:scenario_container_tray}\includegraphics[width=0.33\textwidth]{images/container_tray.png}}
 	\caption{Example of object containers}
 	\label{fig:scenario_containers}
 \end{figure}
 
-During the competition, objects can be requested based on their \ObjectCategory{}, physical attributes, or a combination of both.
+During the competition, objects can be requested based on their \ObjectCategory, physical attributes, or a combination of both.
 Relevant attributes to be used are:
 \begin{itemize}
 	\item Color (such as red, blue, black with white dots, etc.).
@@ -169,20 +172,23 @@ Relevant attributes to be used are:
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Predefined Rooms and Locations}\label{rule:scenario_locations}
+\subsection{Predefined Rooms and Locations}
+\label{rule:scenario_locations}
 
 Some tests in the RoboCup@Home league involve a \PredefinedLocation{} where people or objects can be found.
 There will also be at least two \Term{doors}{Arena doors}, named an \Entrance{} and an \Exit, which lead in and out of the \Arena{}, respectively.
 Room names, predefined locations, and location classes are announced during the \SetupDays{} (see~\refsec{chap:setup_and_preparation}).
 
-\subsection{Predefined Person Names}\label{rule:scenario_names}
+\subsection{Predefined Person Names}
+\label{rule:scenario_names}
 
 Some tests in the RoboCup@Home league involve memorizing a person's name.
 All people in the \Arena{} have an assigned \PredefinedName{} chosen by the TC.
 The list of names contains \SI{25}{\percent} male, \SI{25}{\percent} female, and \SI{50}{\percent} gender-neutral names taken from the list of most commonly used names in the United States.
 Predefined names are announced during the \SetupDays{} (see~\refsec{chap:setup_and_preparation}).
 
-\subsection{Wireless network}\label{rule:scenario_wifi}
+\subsection{Wireless network}
+\label{rule:scenario_wifi}
 
 For wireless communication, an \ArenaNetwork{} is provided.
 The actual infrastructure depends on the local organization.
@@ -198,7 +204,7 @@ The following rules apply:
 	\item Each VLAN is also connected to the Internet.
 \end{itemize}
 
-Teams broadcasting unauthorized (aka rogue) wireless networks will be disqualified from the competition and their devices may be temporarily confiscated by the OC, this includes smartphones and concealed SSIDs.
+Teams broadcasting unauthorized (aka rogue) wireless networks will be disqualified from the competition and their devices may be temporarily confiscated by the OC; this includes smartphones and concealed SSIDs.
 It is thus advised to verify your devices for any breaches of this nature.
 
 
