@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 ## Rulebook [Current Draft]
 
 * [#936](https://github.com/RoboCupAtHome/RuleBook/pull/936): Extend Clean The Table: Putting items into Tash, Wiping the Table, scoring changes
+* [#933](https://github.com/RoboCupAtHome/RuleBook/pull/933): Remove serve breakfast task to free up time during stage one
 * [#920](https://github.com/RoboCupAtHome/RuleBook/pull/920): DSPL: Allow a mounted microphone on hsr.
 * [#922](https://github.com/RoboCupAtHome/RuleBook/pull/922): Remove Bonus for perceived social intelligence as the survey was too hard to conduct in Robocup settings.
 * [#917](https://github.com/RoboCupAtHome/RuleBook/pull/917) revert: split document into Rulebook and Organization document
