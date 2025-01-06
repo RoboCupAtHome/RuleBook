@@ -25,8 +25,8 @@
 
 
 
-\makeindex                                % generate index
-\makeabbex                                % generate abbreviations
+\makeindex{}                                % generate index
+\makeabbex{}                                % generate abbreviations
 
 
 
@@ -45,11 +45,11 @@
 \pagestyle{empty}
 \input{pages/rulebook/about}
 \input{pages/acknowledgments}
-\clearpage
+\clearpage{}
 
 \pagestyle{plain}
-\tableofcontents
-\clearpage
+\tableofcontents{}
+\clearpage{}
 
 \setcounter{page}{1}
 \pagenumbering{arabic}
@@ -71,21 +71,18 @@
 \testtocentry{test:carry-my-luggage}
 \testtocentry{test:gpsr}
 \testtocentry{test:receptionist}
-\testtocentry{test:serve-breakfast}
 \testtocentry{test:storing-groceries}
 
 
 
 % Uncomment to get aesthetic improvement
-\cleardoublepage
+\cleardoublepage{}
 \input{tasks/HelpMeCarry}
-\newpage
+\newpage{}
 \input{tasks/GPSR}
-\newpage
+\newpage{}
 \input{tasks/Receptionist}
-\newpage
-\input{tasks/ServeBreakfast}
-\newpage
+\newpage{}
 \input{tasks/StoringGroceries}
 
 
@@ -93,8 +90,7 @@
 
 %%% STAGE II
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Tests in Stage II}
-\label{chap:stage_II}
+\chapter{Tests in Stage II}\label{chap:stage_II}
 
 \testtocentry{test:clean-the-table}
 \testtocentry{test:egpsr}
@@ -103,13 +99,13 @@
 
 
 % Uncomment to get aesthetic improvement
-\cleardoublepage
+\cleardoublepage{}
 \input{tasks/CleanTable}
-\newpage
+\newpage{}
 \input{tasks/EGPSR}
-\newpage
+\newpage{}
 \input{tasks/Restaurant}
-\newpage
+\newpage{}
 \input{tasks/SticklerForRules}
 
 
@@ -119,7 +115,7 @@
 \input{tasks/Finals}
 
 
-\printabx
-\printidx
+\printabx{}
+\printidx{}
 
 \end{document}
