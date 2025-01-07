@@ -1,15 +1,15 @@
 \section{Clean the Table}
 \label{test:clean-the-table}
-The robot has to remove all dishes and cutlery from a table and place them into the dishwasher.\\
+The robot cleans up a table after a meal. All dishes and cutlery must be placed inside the dishwasher and drinks must be placed inside the trash. \\
 
-\noindent \textbf{Main goals:} All tableware and cutlery on the table is placed inside the dishwasher (five objects in total).\\
+\noindent \textbf{Main goals:}  Clean up all the objects on the table. Tableware and cutlery have to be placed correctly inside the dishwasher and drinks must be placed inside the trash bin. \\
 
 \noindent \textbf{Optional goals:}
 \begin{enumerate}[nosep]
 	\item Opening the dishwasher door
 	\item Pulling out the dishwasher rack
-	\item Placing the items in the dishwasher correctly
 	\item Placing a dishwasher tab inside the dishwasher
+	\item Wipe the table area where the drink was
 \end{enumerate}
 
 \subsection*{Focus}
@@ -22,6 +22,7 @@ The robot has to remove all dishes and cutlery from a table and place them into 
 \begin{itemize}[nosep]
 	\item \textbf{Locations:}
 		\begin{itemize}
+			\item \textbf{Start Location:} Before the test, the robot waits outside the Arena and navigates to the testing area when the door is open.
 			\item \textbf{Test location:} This test takes place in the kitchen.
 		\end{itemize}
 	\item \textbf{People:}
@@ -30,18 +31,21 @@ The robot has to remove all dishes and cutlery from a table and place them into 
 		\end{itemize}
 	\item \textbf{Furniture:}
 		\begin{itemize}
-			\item \textbf{Dining table:} A dining table is located close to the dishwasher.
+			\item \textbf{Dishwasher:} A dishwasher is located close to the dining table.
 			\item \textbf{Tray:} A plastic tray, which may have other tableware and cutlery placed inside, is located either on top of the dishwasher or on one of the racks. Objects can be placed either in the dishwasher rack or in the tray, based on the team's choice.
+			\item \textbf{Trash bin:} A trash bin is located in the kitchen.
 		\end{itemize}
 	\item \textbf{Objects:}
 		\begin{itemize}
-			\item \textbf{Table setting:} The table has a total of five objects disposed in a typical setting for a meal for one person.
+			\item \textbf{Table setting:} The table has a total of seven objects disposed in a typical setting for a meal for one person.
 			The object distribution is as follows:
 			\begin{itemize}[nosep]
-				\item\textit{Silverware}: Any two objects (fork, knife, or spoon).
-				\item\textit{Tableware}: Any three objects (except silverware), at least one of which is a dish.
+				\item\textit{Cutlery}: Any two objects (fork, knife, or spoon).
+				\item\textit{Tableware}: Any three objects (except cutlery), at least one of which is a dish.
+				\item\textit{Drinks}: Any two drinks from the object set.
 			\end{itemize}
-			\item \textbf{Dishwasher tab:} The tab can be found at a location that is announced before the test and should be autonomously placed inside the tab slot in the dishwasher.
+			\item \textbf{Dishwasher tab:} The tab can be found at a location announced before the test and should be autonomously placed inside the tab slot in the dishwasher.
+			\item \textbf{Wiping Object:} The wiping object (i.e. a sponge) can be found at a location announced before the test.
 		\end{itemize}
 \end{itemize}
 
@@ -57,7 +61,7 @@ The robot has to remove all dishes and cutlery from a table and place them into 
 			\item whether the dishwasher door should be closed and, if the door is open, whether the rack should be pushed in
 		\end{itemize}
 	\item \textbf{Test start:} The robot moves to the kitchen when the arena door is open.
-	\item \textbf{Table clean up:} The robot cleans the table by putting all items that are on it in the dishwasher.
+	\item \textbf{Table clean up:} The robot cleans the table by putting: the cutlery and tablware items inside the dishwasher and the drinks in the trash bin.
 \end{enumerate}
 
 
@@ -75,7 +79,15 @@ The robot has to remove all dishes and cutlery from a table and place them into 
 	\begin{itemize}[nosep]
 		\item pointing to an object or telling the robot where an object is
 		\item handing an object over to the robot
+		\item telling or pointing out to the robot where to place an object
+		\item moving an object instead of the robot
 	\end{itemize}
+	\item \textbf{Communicating Perception}: The robot must clearly communicate its perception to the referee.
+	Pointing at the object or attempting to pick it up is sufficent. When using visualization, make sure the robot 
+	tells the referee where to look and make the visualization easily accesible. 
+	If the team wants to utilize bounding boxes make sure \textbf{only} one object with a bounding box is shown 
+	at a time so the referee is easily able to check and verify. Also make sure the surrounding scene is visible, i.e.
+	just showing a cropped bounding box is not enough.
 \end{enumerate}
 
 \subsection*{OC Instructions}
@@ -87,6 +99,8 @@ During the \SetupDays:
 At least two hours before the test:
 \begin{itemize}
 	\item Announce the predefined location of the dishwasher tab.
+	\item Announce what is the object used for wiping.
+	\item Announce the predefined location of the object used for wiping.
 \end{itemize}
 
 
@@ -94,7 +108,7 @@ At least two hours before the test:
 
 The referee needs to:
 \begin{itemize}
-	\item Place objects on the table.
+	\item Place objects on the table (two pieces of cutlery, three pieces of tableware and two drinks)
 	\item Place the plastic tray on the dishwasher or on a rack, as requested by the team.
 \end{itemize}
 
