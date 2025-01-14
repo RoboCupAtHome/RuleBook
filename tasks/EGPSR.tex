@@ -1,9 +1,8 @@
-\section{Enhanced General Purpose Service Robot}
-\label{test:egpsr}
+\section{Enhanced General Purpose Service Robot}\label{test:egpsr}
 The robot is asked to maintain the household by cleaning up the arena and assisting people.
 
 
-\noindent \textbf{Main Goal:} Solve 3 problems in the arena.\\
+\noindent \textbf{Main Goal:} Solve different problems in the arena.\\
 
 
 \subsection*{Focus}
@@ -18,7 +17,8 @@ The arena is in its default state apart from problems set up for the robot to so
 \begin{enumerate}
     \item \textbf{Problems:}
 		\begin{itemize}
-			\item \textbf{Objects:} Objects that are not in their default location should be returned there (see \ref{rule:scenario_objects}). Objects on the floor are to be thrown in the trash or returned to their default location.
+			\item \textbf{Trash:} Objects on the floor are to be thrown in the trash.
+			\item \textbf{Objects:} Objects that are not in their default location should be returned there (see~\ref{rule:scenario_objects}). 
 			\item \textbf{Persons:} Some persons in the arena will have requests for the robot. They will raise their hand if the robot is in the same room.
 		\end{itemize}
 \end{enumerate}
@@ -39,10 +39,12 @@ The arena is in its default state apart from problems set up for the robot to so
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
+	\item \textbf{Number of Problems:} The number of problems depends on the arena size the minimum count of generated problems is 8.
+	\item \textbf{Repeating Problem Category:} Solving the same Category of Problem incurs a penalty. 
+	\item \textbf{Solving more:} You can continue solving problems to compensate for penalties.
 	\item \textbf{Partial Scoring:} The main task allows partial scoring (per \emph{solved} problem).
-
 	\item \textbf{Command Generator:} Problems and commands will be generated using the official command generator\footnote{\url{https://github.com/johaq/CommandGenerator}}.
-	\item \textbf{Finding People:} Finding a person and stating they need help is enough to get the scoring item. 
+	\item \textbf{Finding People:} Finding a person and stating they need help counts as finding the problem.
 	\item \textbf{Understanding Commands:} Understanding and correctly repeating the command given by a person can be counted towards partially solving a problem.
 \end{enumerate}
 
