@@ -13,13 +13,13 @@
 \input{./setup/packages_scoresheets.tex}
 
 \usepackage{fullpage}
-\parindent 0cm
-\parskip 0.2cm
-\topmargin -1cm
-\oddsidemargin -1cm
-\evensidemargin -1cm
-\textwidth 18cm
-\textheight 26cm
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.2cm}
+\setlength{\topmargin}{-1cm}
+\setlength{\oddsidemargin}{-1cm}
+\setlength{\evensidemargin}{-1cm}
+\setlength{\textwidth}{18cm}
+\setlength{\textheight}{26cm}
 
 \input{./setup/active_version.tex}
 \graphicspath{{\YEAR/}{./images/}}
@@ -43,7 +43,7 @@
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
 %%  L E A G U E S                       %%
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
-\loadTeamsListFile
+\loadTeamsListFile{}
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%
 %%  H E A D I N G S                     %%
@@ -75,14 +75,13 @@
     {%
       \vspace*{.27cm}
       \Huge{RoboCup@Home}\\[1.23ex]
-      \ifthenelse{\equal{\league}{}}{}{\huge{\leagueFullName}\\[1.23ex]}
       \Large Forms \& Score Sheets\\[2ex]
     }
     \hrulefill\par
     \vfill
-    ~~ Version: \YEAR \quad \svnRevision ~~ \\
-    ~~ Last Build Date: \today \quad Time: \the\time ~~ \\
-    ~~ \svnChangeData ~~ %\\
+    Version: \YEAR{} \quad \svnRevision{}\\
+    Last Build Date: \today \quad Time: \the\time{}\\
+    \svnChangeData{}%\\
     %\vfill
   \end{center}
 \end{titlepage}
@@ -117,11 +116,6 @@
 \renewcommand{\currentTest}{Receptionist}
 \begin{scoresheet}
 \input{scoresheets/Receptionist}
-\end{scoresheet}
-
-\renewcommand{\currentTest}{Serve the Breakfast}
-\begin{scoresheet}
-\input{scoresheets/ServeBreakfast}
 \end{scoresheet}
 
 \renewcommand{\currentTest}{Storing Groceries}
@@ -169,4 +163,4 @@
 
 \end{document}
 
-\grid
+\grid{}
