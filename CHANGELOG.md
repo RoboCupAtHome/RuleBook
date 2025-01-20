@@ -11,6 +11,8 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#921](https://github.com/RoboCupAtHome/RuleBook/pull/921): Restart of the robot during Challenge
+  * Introduced a rule allowing teams to request a single restart per attempt with specific conditions, including a 30-second penalty. Teams must leave the arena with the robot, requeue, and begin again within their remaining time.
 * [#935](https://github.com/RoboCupAtHome/RuleBook/pull/935): Add additional task to storing groceries
   * Use both doors
   * add refilling storage containers (pouring)
