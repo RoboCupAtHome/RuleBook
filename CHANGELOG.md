@@ -11,6 +11,9 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#928](https://github.com/RoboCupAtHome/RuleBook/pull/928): New Finals. Checkout the pullrequest for the rationale.
+  * Task-like final instead of presentation
+  * Based on EGPSR with addtion of opening and closing doors (arena, cabinet and dishwasher)
 * [#921](https://github.com/RoboCupAtHome/RuleBook/pull/921): Restart of the robot during Challenge
   * Introduced a rule allowing teams to request a single restart per attempt with specific conditions, including a 30-second penalty. Teams must leave the arena with the robot, requeue, and begin again within their remaining time.
 * [#935](https://github.com/RoboCupAtHome/RuleBook/pull/935): Add additional task to storing groceries
