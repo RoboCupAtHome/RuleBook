@@ -4,18 +4,18 @@
 The robot has to take two new guests to the living room to introduce them and offer a free place to sit.\\
     
 \textbf{Main goal:}
-    The robot welcomes and assists two newcomers at a party while maintaining appropriate gaze direction during conversation (at person speaking, direction of navigation).
+    The robot welcomes and assists two newcomers at a party, offering them a seat and maintaining appropriate gaze direction during conversation (at person speaking, direction of navigation).
 
 % \vspace{-5pt}
 \textbf{Optional goals:}
 \begin{enumerate}[nosep]
 	\item Open the entrance door for each arriving guest.
-	\item Describe the first guest for the second guest before reaching the living room
+	\item Visually describe the first guest for the second guest before reaching the living room
 	\item Identify similarities between the guests and the host and incorporate them into the conversation.
 \end{enumerate}
 
 \subsection*{Focus}
-\SysI{}, \HRI{}, \PerDet{}, \PerRec
+\SysI{}, \HRI{}, \PerDet{}, \PerRec{}
 % human detection and recognition, safe navigation and human-robot interaction with unknown people.
 
 \subsection*{Setup}
@@ -57,11 +57,13 @@ Both guests arrive separately. The robot either opens the door for the guest or 
 	
 	\item \textbf{Switching Places:} Guests may switch places after they were seated.
 	
-	\item \textbf{Introductions:} When introducing guests, the robot must clearly identify the person being introduced and state their name favorite drink and an interest. Introducing two people means to introduce them to each other. 
+	\item \textbf{Introductions:} When introducing guests, the robot must clearly identify the person being introduced and state their name favorite drink and an interest. Introducing two people mean to introduce them to each other.
 \end{itemize}
 
 \subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
+	\item \textbf{Opening Door Timing:} The Time of the test only starts after the fist person enters the arena or 2mins after start signal.
+
 	\item \textbf{Misunderstanding:} Not understanding the guests and asking them again is fine. Continuing with a wrong name, drink  or interest causes a score reduction of 50pts.
 		
 	\item \textbf{Partial Scoring:} The main task allows partial (per guest) scoring.
