@@ -1,12 +1,82 @@
-\section{New Hri Task}\label{test:newhri}
+\section{HRI Task}
+\label{test:hri-task}
 
-This is a Placeholder for a new \HRI{} task in development by the \AtHome{} EC members
+\subsection*{Description}
+The robot needs to place new items in the locations given by a human user through human-robot interaction.
 
-% \newpage
+\textbf{Main goal:}
+New items have arrived at the house. The user takes each item from the box, one by one, hands it to the robot, and instructs the robot to place it in a specified location.
+
+\textbf{Optional goal:}
+TBD
+
+
+\subsection*{Focus}
+This task focuses on
+\textit{Object perception},
+\textit{Human perception},
+\textit{Verbal interaction}, and
+\textit{Human-Robot Interaction}.
+
+\subsection*{Setup}
+\begin{itemize}[nosep]	
+	\item \textbf{Locations:} 
+	\begin{itemize}
+		\item This task takes place in a random room.
+	\end{itemize}	 
+	\item \textbf{People:} 
+	\begin{itemize}
+		\item There might be several persons inside the room (e.g. referee, assistant, and the user).
+		\item Only one of them is allowed to help the robot (the user).
+	\end{itemize}
+	\item \textbf{Objects:}
+		\begin{itemize}
+			\item There is a bag with five unknown objects.
+		\end{itemize}
+\end{itemize}
+
+\subsection*{Procedure}
+	\begin{enumerate}[nosep]
+		\item The robot starts inside the arena, in the task room indicated by the referee.
+		\item The robot approaches a calling user.
+		\item The user takes an item out of the box and hands it to the robot. 
+		\item The user instructs the robot to place the object in a specified location inside the task room.
+            \item The robot delivers the item and returns for a new one.
+	\end{enumerate}
+
+
+\subsection*{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{HRI:}
+	\begin{itemize}[nosep]
+            \item  The user instructs the robot using human-robot interaction (e.g. \textit{Place this item there (pointing), next to the flower base}).
+		\item At any moment, the robot may ask questions to confirm the information, request more details, or ask the user to repeat the instructions.
+	\end{itemize}
+	\item \textbf{Object manipulation:} 
+        \begin{itemize}[nosep]
+            \item For a full scoring, no \textit{Deus ex Machina} is allowed in while handing over the objects (e.g. \textit{Please, place the item in my gripper and wait until I close it in three, two, one}). 
+            \item The locations of objects in the environment may introduce some ambiguity. For example, there could be three bins or two plates positioned close to one another. Delivery instructions may specify actions like: \textit{"Place this apple on that plate"} or \textit{"Put this can in the trash bin."}
+            \item Full points for a correct delivery will only be awarded if the object is placed within a few centimeters of the designated target location. The robot may seek confirmation or request further clarification if needed (e.g., Robot: \textit{"Is this the correct location?"} User: \textit{"No, move the object to the plate on your left."})
+        \end{itemize}
+\end{enumerate}
+
+\subsection*{Instructions:}
+\subsubsection*{Referee instructions}
+
+The referee needs to:
+\begin{itemize}[nosep]
+	\item Select random objects and target locations.
+\end{itemize}
+
+\subsubsection*{OC Instructions}
+During the \SetupDays:
+\begin{itemize}[nosep]
+	\item Provide official objects with different shapes and sizes for training.
+\end{itemize}
+At least two hours before the test:
+\begin{itemize}[nosep]
+	\item TBD
+\end{itemize}
+
 \subsection*{Score sheet}
-\input{scoresheets/NewHri.tex}
-
-% Local Variables:
-% TeX-master: "Rulebook"
-% End:
-
+\input{scoresheets/HRITask.tex}
