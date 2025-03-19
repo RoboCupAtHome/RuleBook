@@ -13,6 +13,8 @@ jobs:
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          lint-all: true
 
   build:
     name: build-${{ matrix.document }}
