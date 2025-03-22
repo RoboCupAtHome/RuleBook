@@ -1,0 +1,74 @@
+\section{Give Me a Hand}
+\label{test:give-me-a-hand}
+
+\subsection*{Description}
+The robot places new items in the locations given by a human through natural human-robot interaction.
+
+\textbf{Main goal:}
+New items have arrived at the house. The user takes each item from the box or bag, one by one, hands it to the robot, and instructs the robot to place it in a specified location.
+
+\subsection*{Focus}
+This task focuses on
+\textit{Object perception},
+\textit{Human perception},
+\textit{Verbal interaction}, and
+\textit{Human-Robot Interaction}.
+
+\subsection*{Setup}
+\begin{itemize}[nosep]	
+	\item \textbf{Locations:} 
+	\begin{itemize}
+		\item This test takes place inside the Arena.
+	\end{itemize}	 
+	\item \textbf{People:} 
+	\begin{itemize}
+		\item There might be several people inside the room (e.g. referee, assistant, and the operator).
+	\end{itemize}
+	\item \textbf{Objects:}
+		\begin{itemize}
+			\item There is a box or bag with five random known objects (see \ref{rule:scenario_objects}).
+		\end{itemize}
+\end{itemize}
+
+\subsection*{Procedure}
+\begin{enumerate}[nosep]
+	\item The robot starts inside the arena, at a predefined location.
+	\item The robot approaches a calling operator.
+	\item The operator takes an item out of the box and hands it to the robot. 
+	\item The operator instructs the robot to place the object in a specified location in the same room.
+	\item The robot delivers the item and returns for a new one.
+\end{enumerate}
+
+
+\subsection*{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{HRI:}
+	\begin{itemize}[nosep]
+		\item The operator instructs the robot using commands and gestures (e.g. \textit{"Place this item there (pointing), next to the flower base"}).
+		\item At any moment, the robot may ask questions to confirm the information, request more details, or ask the operator to repeat the instructions.
+		\item In this task, natural human-robot interaction is the primary focus. When the robot needs to engage with the human, it must first capture the human’s attention using multimodal communication methods (e.g., visual signals, gestures, or sound cues) rather than relying solely on voice interaction. This is particularly important when the human and the robot are not in close proximity.
+	\end{itemize}
+	\item \textbf{Object manipulation:} 
+        \begin{itemize}[nosep]
+            \item For a full scoring, no \textit{Deus ex Machina} is allowed while handing over the objects (e.g. \textit{Please, place the item in my gripper and wait until I close it in three, two, one}). However, the robot may warn the user about closing their manipulator, for example, \textit{I have reached the object, I will close my gripper in three seconds -- please, be careful}.
+            \item The goal locations of objects in the environment may introduce some ambiguity. For example, there could be three bins or two plates positioned close to one another. Delivery instructions may specify actions like: \textit{"Place this apple on that plate"} or \textit{"Put this can in the trash bin."}
+            \item Full points for a correct delivery will only be awarded if the object is placed inside (bins) or within a few centimeters (on surfaces) of the designated target location. The robot may seek confirmation or request further clarification if needed (e.g., Robot: \textit{"Is this the correct location?"} User: \textit{"No, move the object to the bin on your left."}).
+        \end{itemize}
+\end{enumerate}
+
+\subsection*{Instructions:}
+\subsubsection*{Referee instructions}
+
+The referee needs to:
+\begin{itemize}[nosep]
+	\item Select random objects from the dataset and goal locations.
+\end{itemize}
+
+\subsubsection*{OC Instructions}
+At least two hours before the test:
+\begin{itemize}[nosep]
+	\item Announce starting position.
+\end{itemize}
+
+\subsection*{Score sheet}
+\input{scoresheets/GiveMeAHand.tex}
