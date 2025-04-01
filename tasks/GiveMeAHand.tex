@@ -46,11 +46,11 @@ This task focuses on
 	\begin{itemize}[nosep]
 		\item The operator instructs the robot using commands and gestures (e.g. \textit{"Place this item there (pointing), next to the flower base"}).
 		\item At any moment, the robot may ask questions to confirm the information, request more details, or ask the operator to repeat the instructions.
-		\item In this task, natural human-robot interaction is the primary focus. When the robot needs to engage with the human, it must first capture the human’s attention using multimodal communication methods (e.g., visual signals, gestures, or sound cues) rather than relying solely on voice interaction. This is particularly important when the human and the robot are not in close proximity.
+		\item In this task, natural human-robot interaction is the primary focus. Before engaging with a human, the robot must first capture their attention -- for example, through visual signals, gestures, or sound cues -- rather than relying on unattended interactions (e.g., speaking without addressing a specific person). This is especially important when the human and the robot are not in close proximity.
 	\end{itemize}
 	\item \textbf{Object manipulation:} 
         \begin{itemize}[nosep]
-            \item For a full scoring, no \textit{Deus ex Machina} is allowed while handing over the objects (e.g. \textit{Please, place the item in my gripper and wait until I close it in three, two, one}). However, the robot may warn the user about closing their manipulator, for example, \textit{I have reached the object, I will close my gripper in three seconds -- please, be careful}.
+            \item While task-action instructions during handing over objects like \textit{Please, place the item in my gripper and wait until I close it in three, two, one} will be considered \textit{Deus ex Machina}, the robot may warn the user about closing their manipulator, for example, \textit{I have reached the object, I will close my gripper in three seconds -- please, be careful}.
             \item The goal locations of objects in the environment may introduce some ambiguity. For example, there could be three bins or two plates positioned close to one another. Delivery instructions may specify actions like: \textit{"Place this apple on that plate"} or \textit{"Put this can in the trash bin."}
             \item Full points for a correct delivery will only be awarded if the object is placed inside (bins) or within a few centimeters (on surfaces) of the designated target location. The robot may seek confirmation or request further clarification if needed (e.g., Robot: \textit{"Is this the correct location?"} User: \textit{"No, move the object to the bin on your left."}).
         \end{itemize}
