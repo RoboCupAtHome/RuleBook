@@ -1,0 +1,144 @@
+\section{League Requirements}
+\label{appendix:league-requirements}
+
+\subsection{Competition Area}
+
+\subsubsection{Field Info}
+\begin{itemize}
+    \item Number of Fields: 2 (+1 DSPL)
+    \item Space per field (sqm): 90
+    \item Total gross space: 180 (+90 DSPL)
+\end{itemize}
+
+\subsubsection{Detailed Setup}
+The RoboCup@Home Arena is a realistic home setting (an apartment) consisting of interconnected rooms. The minimal configuration consists of:
+\begin{itemize}
+    \item a bedroom,
+    \item a dining room,
+    \item a living room, and
+    \item a kitchen.
+\end{itemize}
+
+There are usually two OPL arenas and one DSPL arena. Sometimes, one of the OPL arenas is shared between DSPL and OPL depending on the number of participating teams in each league.
+
+Each arena requires a dedicated WLAN access point for teams during their competition runs (more details in the next section). The indoor home setting is surrounded by high and low walls built using standard fair construction materials.
+
+\paragraph{Dimensions} Arenas are typically around 90--100 sqm, with rooms approximately 4.5m x 4.5m. However, as little as 80 sqm is acceptable, provided there is sufficient space for robot movement. (Note: The robot base diameter is about 70 cm, with possible extensions for arms.)
+
+\paragraph{Walls} Walls are fixed and cannot be modified during the competition. The minimum wall height is 60 cm; there is no maximum height, but visibility for the audience must be ensured.
+
+\paragraph{Doors} Inside the arena, rooms are connected by door openings and/or internal doors. Each arena should have:
+\begin{itemize}
+    \item At least one entrance door (opening inward).
+    \item At least one exit door (opening outward).
+    \item All doors have handles, not knobs, and can be closed.
+    \item Minimum door width: 90 cm, height: 200 cm.
+\end{itemize}
+If such doors are not feasible, alternative solutions can be discussed in advance.
+
+\paragraph{Floor} The floor is even, with minor irregularities such as carpets or transitions between different materials. It should not be excessively slippery. There should be at least one meter of free space around the arena walls for robots to line up.
+
+\paragraph{Stairs (for humanoid robots, if applicable)} If humanoid robots participate, an external set of stairs is required. The stairs should preferably have:
+\begin{itemize}
+    \item 6--7 steps going up, a landing, and 6--7 steps going down.
+    \item Minimum width: 91 cm, tread depth: at least 28 cm, riser height: 10--18 cm (typically 17.4 cm).
+    \item Close risers for robot safety.
+\end{itemize}
+Alternatively, if venue stairs meet these requirements and are near the @Home area, they may be used.
+
+\paragraph{Appearance} The floor and walls are mostly monochromatic but may include textures such as carpets or posters.
+
+\paragraph{Additional Setup} A table should be placed outside the arena for external computing devices for the active team.
+
+\paragraph{Sample Arena Setup} 
+\begin{enumerate}
+    \item 3D visualization: \url{https://drive.google.com/file/d/1Qrs9TJKWXEa8IZVQxfICN6sPeyL5zsVS/view}
+    \item 2D plan: \url{https://drive.google.com/file/d/12EKWdzoZ843L4pjzxlLyG3l1PRoCEfeh/view}
+\end{enumerate}
+
+\subsection{Environment Requirements}
+The arena is decorated to resemble a typical apartment, including:
+\begin{itemize}
+    \item Plants, mirrors, paintings, posters, plates, picture frames, clocks, candles with holders, and books.
+\end{itemize}
+
+\paragraph{Furnishings} The minimal setup includes:
+\begin{itemize}
+    \item a bed,
+    \item a couch,
+    \item a small table (coffee/side),
+    \item a small dining table with two chairs,
+    \item a trash bin,
+    \item an open cupboard or a small table with a television and remote control,
+    \item a cupboard with drawers,
+    \item a bookcase, and
+    \item a coat rack.
+\end{itemize}
+
+\paragraph{Kitchen} The kitchen contains:
+\begin{itemize}
+    \item a dishwasher,
+    \item a microwave,
+    \item a sink,
+    \item a refrigerator (with some cans and plastic bottles), and
+    \item a pantry (a tall cupboard with shelves and doors with handles).
+\end{itemize}
+
+\subsection{Wireless Communication}
+An Arena Network is provided, but reliability is not guaranteed. The following rules apply:
+\begin{itemize}
+    \item Only the Arena Network can be used during tests.
+    \item Only the active team is allowed to use the network.
+    \item Each team has a separate VLAN with its own SSID/password.
+    \item VLANs are connected to the team’s network cable and the Internet.
+    \item Unauthorized networks (including smartphone hotspots) will result in disqualification.
+\end{itemize}
+
+\subsection{Best Practices}
+\begin{itemize}
+    \item One entry door should open inward; one exit door should open outward.
+    \item Avoid loose cables and large uneven surfaces.
+    \item Arrange DSPL and OPL team tables near their respective arenas.
+\end{itemize}
+
+\subsection{Additional Equipment}
+The minimum object set required includes:
+\begin{itemize}
+    \item Tableware: dish, bowl, cup/mug, napkin.
+    \item Cutlery: fork, knife, spoon.
+    \item Trash bags: large plastic bags with handles.
+    \item Bags: lightweight with vertical handles.
+    \item Trays: for bi-manual manipulation.
+    \item Pourable objects: e.g., a cereal box.
+    \item Heavy objects: 1.0--1.5 kg.
+    \item Tiny objects: \textless{}5 cm (e.g., paper, teabag, pen).
+    \item Fragile objects: easily breakable (e.g., a chocolate egg).
+    \item Deformable objects: flexible (e.g., cloth).
+    \item Garbage bag: a tieable garbage bag.
+\end{itemize}
+
+\subsection{League Organization Area}
+\paragraph{OC Requirements} The OC requires:
+\begin{itemize}
+    \item 2--3 tables with 2 chairs each.
+    \item Power outlets and LAN connection.
+    \item Access to a printer (unless paperless setup is in place).
+    \item A poster stand or announcement board (unless a digital alternative is available).
+\end{itemize}
+
+\subsection{Teams Area}
+\paragraph{Participation Area} Each team should have:
+\begin{itemize}
+    \item One table per four members, with chairs.
+    \item At least one power outlet and one Ethernet connection.
+    \item 2 sqm for robot storage, plus 1--2 sqm for robot handling.
+    \item 4--5 sqm near the team area for handling the robot.
+    \item Adequate space between table rows for robot transport.
+\end{itemize}
+
+\subsection{Others}
+\begin{itemize}
+    \item New Changes: SSPL has been dissolved.
+    \item Additional information: TBD.
+\end{itemize}
+
