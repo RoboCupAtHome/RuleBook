@@ -11,6 +11,13 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#946](https://github.com/RoboCupAtHome/RuleBook/pull/946), [#947](https://github.com/RoboCupAtHome/RuleBook/pull/947): Various small Scoring Changes.
+  * Receptionist: The Time of the test only starts after the fist person enters the arena or 2mins after start signal which results in up to two extra minutes for opening the door for the first guest.
+* [#943](https://github.com/RoboCupAtHome/RuleBook/pull/943): New HRI Task `Give Me A Hand` replacing Stickler. Checkout the pull request for more information.
+* [#938](https://github.com/RoboCupAtHome/RuleBook/pull/938): Higher number of problems for egpsr.
+  * Increase number of generated problems to increase audience engagement.
+  * Solving the same category repeatedly now gives less points.
+  * Setup Generator is now hosted in [RoboCupAtHome/CommandGenerator](https://github.com/RoboCupAtHome/CommandGenerator)
 * [#928](https://github.com/RoboCupAtHome/RuleBook/pull/928): New Finals. Checkout the pullrequest for the rationale.
   * Task-like final instead of presentation
   * Based on EGPSR with addtion of opening and closing doors (arena, cabinet and dishwasher)
