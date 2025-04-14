@@ -42,7 +42,12 @@ The arena is in its default state apart from problems set up for the robot to so
 	\item \textbf{Number of Problems:} The number of problems depends on the arena size the minimum count of generated problems is 8.
 	\item \textbf{Repeating Problem Category:} Solving the same Category of Problem incurs a penalty. 
 	\item \textbf{Solving more:} You can continue solving problems to compensate for penalties.
-	\item \textbf{Partial Scoring:} The main task allows partial scoring (per \emph{solved} problem). Penalties for repeated actions should be applied before any partial reductions are made.
+	\item \textbf{Partial Scoring:} The main task allows partial scoring (per \emph{solved} problem).
+	\begin{enumerate}[nosep]
+		\item \textbf{Scores:} Score reduction is applied as a percentage depending on the solution.
+		\item \textbf{Penalties:} The Repetition penalty is applied before any partial penalties
+		\item \textbf{Example:} If Picking up trash off the floor is valued as 60\% of the solution. Requesting handover should be a $ 650 \times 0.6 = 390 $ points penalty for the first pick and  $ \left( 650 - 300 \right) \times 0.6 = 210 $ for the second pick.
+	\end{enumerate}
 	\item \textbf{Command Generator:} Problems and commands will be generated using the official command generator\footnote{\url{https://github.com/RoboCupAtHome/CommandGenerator}}.
 	\item \textbf{Finding People:} Finding a person and stating they need help counts as finding the problem.
 	\item \textbf{Understanding Commands:} Understanding and correctly repeating the command given by a person can be counted towards partially solving a problem.
