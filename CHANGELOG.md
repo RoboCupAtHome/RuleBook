@@ -1,6 +1,7 @@
 # Changelog
 
-[Current Draft]: https://github.com/RoboCupAtHome/RuleBook/compare/2024.2..HEAD
+[Current Draft]: https://github.com/RoboCupAtHome/RuleBook/compare/2025.1..HEAD
+[2025.1]: https://github.com/RoboCupAtHome/RuleBook/compare/2024.2..2025.1
 [2024.2]: https://github.com/RoboCupAtHome/RuleBook/compare/2024.1..2024.2
 [2024.1]: https://github.com/RoboCupAtHome/RuleBook/compare/2023.2..2024.1
 [2023.2]: https://github.com/RoboCupAtHome/RuleBook/compare/2023.1..2023.2
@@ -11,6 +12,7 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+## Rulebook [2025.1] - 2025-04-14
 * [#946](https://github.com/RoboCupAtHome/RuleBook/pull/946), [#947](https://github.com/RoboCupAtHome/RuleBook/pull/947): Various small Scoring Changes.
   * Receptionist: The Time of the test only starts after the fist person enters the arena or 2mins after start signal which results in up to two extra minutes for opening the door for the first guest.
 * [#943](https://github.com/RoboCupAtHome/RuleBook/pull/943): New HRI Task `Give Me A Hand` replacing Stickler. Checkout the pull request for more information.
