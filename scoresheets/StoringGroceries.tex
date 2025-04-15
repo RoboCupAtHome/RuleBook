@@ -12,21 +12,25 @@
 
 	\scoreheading{Bonus Rewards}
 	
-	\scoreitem{50}{Picking up an object from the shopping bag}
+	\scoreitem[5]{50}{Picking up an object from the shopping bag}
 	\scoreitem{70}{Picking up a tiny object}
 	\scoreitem{30}{Placing a tiny object}
 	\scoreitem{70}{Picking up a heavy object}
 	\scoreitem{30}{Placing a heavy object}
 
+	\scoreitem{50}{Autonomously Picking any Object}
+	\scoreitem{50}{Autonomously Placing any Object}
+
 	\scoreheading{Deus Ex Machina Penalties}
+	\penaltyitem[10]{-15}{Perceiving object and categorizing it wrongly}
 	\penaltyitem[5]{-50}{A human handing an object over to the robot}
 	\penaltyitem[5]{-15}{A human placing an object in the cabinet}
 	\penaltyitem[5]{-50}{A human placing an object in the cabinet next to similar objects}
 	\penaltyitem[5]{-25}{A human pointing at a target location}
-	\penaltyitem[2]{100}{A human opening the cabinet door}
-	\penaltyitem{100}{Spilling cereal while pouring}
-	\penaltyitem{100}{Leaving cereal in the box}
-	\penaltyitem{300}{A human pouring cereal in the bowl}
+	\penaltyitem[2]{-100}{A human opening the cabinet door}
+	\penaltyitem{-100}{Spilling cereal while pouring}
+	\penaltyitem{-100}{Leaving cereal in the box}
+	\penaltyitem{-300}{A human pouring cereal in the bowl}
 \end{scorelist}
 
 
