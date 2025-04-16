@@ -27,37 +27,43 @@ This task focuses on
 	\item \textbf{Objects:}
 		\begin{itemize}
 			\item There is a box or bag with five random known objects (see \ref{rule:scenario_objects}).
+			\item The arena must include visually similar delivery locations (e.g., identical bins or dishes) to create deliberate ambiguity requiring user clarification.
 		\end{itemize}
 \end{itemize}
 
 \subsection*{Procedure}
 \begin{enumerate}[nosep]
 	\item The robot starts inside the arena, at a predefined location.
-	\item The robot approaches a calling operator.
+	\item The robot approaches the calling operator. The operator's location remains the same for the duration of the test.
 	\item The operator takes an item out of the box and hands it to the robot. 
 	\item The operator instructs the robot to place the object in a specified location in the same room.
-	\item The robot delivers the item and returns for a new one.
+	\item The robot approaches the delivery area where there is intended location ambiguity and requests clarification.
+	\item The robot waits for user confirmation before proceeding with object placement.
+	\item The robot delivers the item and returns to the initial operator's location for a new object.
 \end{enumerate}
-
 
 \subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
-	\item \textbf{HRI:}
+	\item \textbf{Handover:}
 	\begin{itemize}[nosep]
-		\item The operator instructs the robot using commands and gestures (e.g. \textit{"Place this item there (pointing), next to the flower base"}).
-		\item At any moment, the robot may ask questions to confirm the information, request more details, or ask the operator to repeat the instructions.
-		\item In this task, natural human-robot interaction is the primary focus. Before engaging with a human, the robot must first capture their attention -- for example, through visual signals, gestures, or sound cues -- rather than relying on unattended interactions (e.g., speaking without addressing a specific person). This is especially important when the human and the robot are not in close proximity.
+		\item To ensure user safety, the robot must position its manipulator within 10-20 cm of the human's hand, without making physical contact, and must clearly indicate its readiness to receive the object using an explicit signal (e.g., holding position, activating a light, saying it, or playing a sound).
+		\item The human must complete the handover by placing the object into the robot's manipulator; the robot must remain stationary and must not initiate physical contact during this phase.
+		\item Explicit operator commands during the object handover—such as \textit{“Please, place the item in my gripper and wait until I close it in three, two, one”}—will be considered \textit{Deus ex Machina}. However, the robot may notify the user before closing its gripper after detecting that the object is within its grasping range; for example, \textit{“I have detected that the object is in my hand. I will close my gripper in three seconds—please be careful.”}
 	\end{itemize}
-	\item \textbf{Object manipulation:} 
-        \begin{itemize}[nosep]
-            \item While task-action instructions during handing over objects like \textit{Please, place the item in my gripper and wait until I close it in three, two, one} will be considered \textit{Deus ex Machina}, the robot may warn the user about closing their manipulator, for example, \textit{I have reached the object, I will close my gripper in three seconds -- please, be careful}.
-            \item The goal locations of objects in the environment may introduce some ambiguity. For example, there could be three bins or two plates positioned close to one another. Delivery instructions may specify actions like: \textit{"Place this apple on that plate"} or \textit{"Put this can in the trash bin."}
-            \item Full points for a correct delivery will only be awarded if the object is placed inside (bins) or within a few centimeters (on surfaces) of the designated target location. The robot may seek confirmation or request further clarification if needed (e.g., Robot: \textit{"Is this the correct location?"} User: \textit{"No, move the object to the bin on your left."}).
-        \end{itemize}
+	\item \textbf{Delivery:}
+	\begin{itemize}[nosep]
+		\item Delivery instructions may include phrases like: \textit{"Place this apple on that plate"} or \textit{"Put this can in the trash bin."} The operator gives instructions using both verbal commands and gestures (e.g., \textit{"Place this item there} \textit{(pointing), next to the flower vase"}).
+		\item At any moment, the robot may ask questions to confirm information, request clarification, or ask the operator to repeat the instruction.
+		\item Since the target locations are intentionally ambiguous, the robot must request clarification from the operator before proceeding. This must be done through natural interaction, such as verbal questions or multimodal cues (e.g., pointing, asking “Which one?”). The robot must not guess or place the object without confirmation.
+		\item Full points for a correct delivery will only be awarded if the object is placed inside the designated container (e.g., bins) or within a few centimeters of the intended location (e.g., plates or surfaces).
+		\item In this task, natural human-robot interaction is the primary focus. Before engaging with the operator to request clarification, the robot must first capture their attention — for example, through visual signals, gestures, or sound cues — rather than relying on unattended interactions (e.g., talking without addressing a specific person). This is particularly important when the operator and the robot are not in close proximity; for instance, the operator might be occupied retrieving the next object or speaking with the referee.
+	\end{itemize}
 \end{enumerate}
 
 \subsection*{Instructions:}
 \subsubsection*{Referee instructions}
+
+Timer starts when the operator begins calling to the robot.
 
 The referee needs to:
 \begin{itemize}[nosep]
