@@ -6,7 +6,7 @@ BUILD_DIR:=$(ROOT_DIR)/.build
 SILENT = @
 MSG      = echo
 HASRUBBER:=$(shell which rubber)
-XELATEX:=$(shell which xelatex)
+##XELATEX:=$(shell which xelatex)
 
 ## COLORS 
 RESET       = tput sgr0
