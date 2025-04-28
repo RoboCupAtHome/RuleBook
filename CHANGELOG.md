@@ -13,36 +13,37 @@ All notable changes to this project will be documented in this file.
 ## Rulebook [Current Draft]
 
 ## Rulebook [2025.1] - 2025-04-14
-* [#946](https://github.com/RoboCupAtHome/RuleBook/pull/946), [#947](https://github.com/RoboCupAtHome/RuleBook/pull/947): Various small Scoring Changes.
-  * Receptionist: The Time of the test only starts after the fist person enters the arena or 2mins after start signal which results in up to two extra minutes for opening the door for the first guest.
-* [#943](https://github.com/RoboCupAtHome/RuleBook/pull/943): New HRI Task `Give Me A Hand` replacing Stickler. Checkout the pull request for more information.
-* [#938](https://github.com/RoboCupAtHome/RuleBook/pull/938): Higher number of problems for egpsr.
-  * Increase number of generated problems to increase audience engagement.
-  * Solving the same category repeatedly now gives less points.
-  * Setup Generator is now hosted in [RoboCupAtHome/CommandGenerator](https://github.com/RoboCupAtHome/CommandGenerator)
-* [#928](https://github.com/RoboCupAtHome/RuleBook/pull/928): New Finals. Checkout the pullrequest for the rationale.
-  * Task-like final instead of presentation
-  * Based on EGPSR with addtion of opening and closing doors (arena, cabinet and dishwasher)
-* [#921](https://github.com/RoboCupAtHome/RuleBook/pull/921): Restart of the robot during Challenge
-  * Introduced a rule allowing teams to request a single restart per attempt with specific conditions, including a 30-second penalty. Teams must leave the arena with the robot, requeue, and begin again within their remaining time.
-* [#935](https://github.com/RoboCupAtHome/RuleBook/pull/935): Add additional task to storing groceries
-  * Use both doors
-  * add refilling storage containers (pouring)
-  * add grasping from shopping bag
-  * increase time limit to 7 minutes
-* [#936](https://github.com/RoboCupAtHome/RuleBook/pull/936): Extend Clean The Table
-  * Put drink items into Trash
-  * Wipe the Table under Drinks
-  * misc scoring changes
-* [#933](https://github.com/RoboCupAtHome/RuleBook/pull/933): Remove serve breakfast task to free up time during stage one
-* [#920](https://github.com/RoboCupAtHome/RuleBook/pull/920): DSPL: Allow a mounted microphone on hsr.
-* [#922](https://github.com/RoboCupAtHome/RuleBook/pull/922): Remove Bonus for perceived social intelligence as the survey was too hard to conduct in Robocup settings.
-* [#917](https://github.com/RoboCupAtHome/RuleBook/pull/917) revert: split document into Rulebook and Organization document
-* [#887](https://github.com/RoboCupAtHome/RuleBook/pull/887): Remove Social Standard Platform League. 
-  * The League does have a low number of participants. 
-  * Former SSPL Teams can participate in the OPL and thus modify the Robot.
-* [#903](https://github.com/RoboCupAtHome/RuleBook/pull/903): `Carry my luggage` to `Help Me Carry`
-* [#908](https://github.com/RoboCupAtHome/RuleBook/pull/908): Remove the possibility of doing other task during gpsr slot 
+* [#946](https://github.com/RoboCupAtHome/RuleBook/pull/946), [#947](https://github.com/RoboCupAtHome/RuleBook/pull/947): Various small scoring changes.
+  * **Receptionist**: : Test time now starts only after the first person enters the arena or two minutes after the start signal, allowing up to two extra minutes to open the door for the first guest.
+* [#943](https://github.com/RoboCupAtHome/RuleBook/pull/943): New HRI task **Give Me A Hand** replacing Stickler. See the pull request for full details.
+* [#938](https://github.com/RoboCupAtHome/RuleBook/pull/938): Expanded problem set for **EGPSR**.
+  * Increased the number of generated problems to boost audience engagement.
+  * Repeatedly solving the same category now awards fewer points.
+  * Setup generator moved to [RoboCupAtHome/CommandGenerator](https://github.com/RoboCupAtHome/CommandGenerator).
+* [#928](https://github.com/RoboCupAtHome/RuleBook/pull/928): New **Finals** format introduced. Check out the pull request for the rationale.
+  * Finals are now task-like instead of a presentation.
+  * Based on **EGPSR**, with the addition of opening and closing doors (arena, cabinet, and dishwasher).
+* [#921](https://github.com/RoboCupAtHome/RuleBook/pull/921):  New Robot restart procedure during challenges.
+  * Teams may request one restart per attempt, subject to a 30-second penalty. 
+  * Restart requires the team to leave the arena, requeue, and restart within their remaining time.
+* [#935](https://github.com/RoboCupAtHome/RuleBook/pull/935): Add additional tasks to storing groceries.
+  * Use of both cabinet doors required.
+  * Add refilling storage containers (pouring).
+  * Add grasping from the shopping bag.
+  * Increase time limit to 7 minutes.
+* [#936](https://github.com/RoboCupAtHome/RuleBook/pull/936): Extend **Clean the Table**.
+  * Put drink items into trash.
+  * Wipe the table under drinks.
+  * Miscellaneous scoring changes.
+* [#933](https://github.com/RoboCupAtHome/RuleBook/pull/933): Remove **Serve Breakfast** task to optimize Stage 1 schedule.
+* [#920](https://github.com/RoboCupAtHome/RuleBook/pull/920): DSPL: Mounted microphones now permitted on the HSR robot.
+* [#922](https://github.com/RoboCupAtHome/RuleBook/pull/922): Removed bonus for perceived social intelligence, as the evaluation was impractical at RoboCup.
+* [#917](https://github.com/RoboCupAtHome/RuleBook/pull/917): Reverted the split between Rulebook and Organization document.
+* [#887](https://github.com/RoboCupAtHome/RuleBook/pull/887): Discontinued the **Social Standard Platform League**.
+  * Low participation levels.
+  * Former SSPL teams may now join the Open Platform League (OPL) and modify their robots.
+* [#903](https://github.com/RoboCupAtHome/RuleBook/pull/903): Rename **Carry My Luggage** to **Help Me Carry**.
+* [#908](https://github.com/RoboCupAtHome/RuleBook/pull/908): Remove the possibility of doing other tasks during the **GPSR** slot.
 
 ## Rulebook [2024.2] - 2024-05-03
 Updated release based on German Open feedback.
