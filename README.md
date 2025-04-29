@@ -1,4 +1,4 @@
-RuleBook for RoboCup @Home 2025
+RuleBook for RoboCup @Home 2026
 ===============================
 
 [![CI](https://github.com/RoboCupAtHome/RuleBook/actions/workflows/ci.yml/badge.svg)](https://github.com/RoboCupAtHome/RuleBook/actions/workflows/ci.yml)
@@ -8,7 +8,7 @@ RuleBook for RoboCup @Home 2025
 [Rulebook](https://robocupathome.github.io/RuleBook/rulebook/master.pdf)  
 [Score sheets](https://robocupathome.github.io/RuleBook/scoresheets/master.pdf)  
 
-The current version for 2025 is **final**; only minor (language) updates and clarifications may be made from now on.
+The current version for 2026 is **draft**
 
 [Changelog](CHANGELOG.md)
 
