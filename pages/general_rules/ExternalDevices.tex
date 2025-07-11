@@ -1,42 +1,33 @@
-% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% External Devices
-%
-% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{External devices}
-\label{rule:robot_external_devices}
+\section{External devices}\label{rule:robot_external_devices}
 
-Everything that a team uses during a test and is not part of the robot is considered an \ExternalDevice.
+Everything that a team uses during a test and is not part of the robot is considered an \ExternalDevice{}.
 All \ExternalDevices{} must be authorized by the \TC{} during the \RobotInspection{} test (see~\refsec{sec:robot_inspection}).
 The TC specifies whether an \ExternalDevice{} can be used freely or under referee supervision, and determines its impact on scoring.
 
-Note that the use of wireless devices, such as hand microphones and headsets, is not allowed, with the exception of \ExternalComputing{} as specified below.
-Please also note that the competition organizers do not guarantee or take any responsibility regarding the availability or reliability of the network or the internet connection in the \Arena{}.
+\textbf{Note:} The use of wireless devices, such as hand microphones and headsets, is not allowed, with the exception of \ExternalComputing{} as specified below.
+The competition organizers do not guarantee or take any responsibility for the availability or reliability of the network or the internet connection in the \Arena{}.
 Teams can thus use \ExternalComputing{} resources at their own risk.
 
 \subsection{On-site External Computing}
 
 Computing resources that are not physically attached to the robot are considered \ExternalComputing{} resources.
-The use of up to five \ExternalComputing{} resources is allowed, but only in the \ArenaNetwork{} (see~\refsec{rule:scenario_wifi}) and with a prior approval of the TC.
-Teams must inform the TC about the use of any \ExternalComputing{} at least one month before the competition.
-Note, however, that robots must be able to operate safely even if \ExternalComputing{} is unavailable.
+The use of up to five \ExternalComputing{} resources is allowed, but only in the \ArenaNetwork{} (see~\refsec{rule:scenario_wifi}) and with a prior approval of the \TC{}.
 
-\ExternalComputing{} devices must be placed in the \ECRA{}, which is announced by the TC during the \SetupDays.
-A switch connected to the \Arena{} wireless network will be available to teams in the ECRA.
-During a \Testblock, at most two laptops and two people from different teams are allowed in the ECRA simultaneously, one member each of the teams up next.
+Teams must inform the \TC{} about the use of any \ExternalComputing{} at least one month before the competition.
+\textbf{Note:} Robots must be able to operate safely even if \ExternalComputing{} is unavailable.
+
+\ExternalComputing{} devices must be placed in the \ECRA{}, which is announced by the \TC{} during the \SetupDays{}.
+A switch connected to the \Arena{} wireless network will be available to teams in the \ECRA{}.
+During a \Testblock{}, at most two laptops and two people from different teams are allowed in the \ECRA{} simultaneously, one member each of the teams up next.
 No peripherals, such as screens, mice, keyboards, and so forth, are allowed to be used.
 
-During a \Testslot, everyone must stay at least \SI{1}{\meter} away from the ECRA.
-Interacting with anything in the ECRA after the referee has given the start signal for a test will result in the test being stopped with a score of zero.
+During a \Testslot{}, everyone must stay at least \SI{1}{\meter} away from the \ECRA{}.
+Interacting with anything in the \ECRA{} after the referee has given the start signal for a test will result in the test being stopped with a score of zero.
 
-If a laptop is used as \ExternalComputing, a team can only place it in the ECRA if their \Testslot{} is up next and must remove the device immediately after the test.
+If a laptop is used as \ExternalComputing{}, a team can only place it in the \ECRA{} if their \Testslot{} is up next and must remove the device immediately after the test.
 
-\subsection{On-line external computing}
-\label{rule:robot_external_computing_online}
+\subsection{On-line external computing}\label{rule:robot_external_computing_online}
 
 Teams are allowed to use \ExternalComputing{} through the internet connection of the \ArenaNetwork{}; this includes cloud services or online APIs.
-These must be announced to and approved by the TC one month prior to the competition.
-
-% Local Variables:
-% TeX-master: "../Rulebook"
-% End:
+% This can neither be enforced nor validated.
+%These must be announced to and approved by the \TC{} one month prior to the competition.
