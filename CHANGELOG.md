@@ -12,6 +12,8 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#969](https://github.com/RoboCupAtHome/RuleBook/pull/969): Remove optional Tray in **Clean the Table**
+
 ## Rulebook [2025.1] - 2025-04-14
 * [#946](https://github.com/RoboCupAtHome/RuleBook/pull/946), [#947](https://github.com/RoboCupAtHome/RuleBook/pull/947): Various small scoring changes.
   * **Receptionist**: : Test time now starts only after the first person enters the arena or two minutes after the start signal, allowing up to two extra minutes to open the door for the first guest.
