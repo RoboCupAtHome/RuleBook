@@ -1,8 +1,8 @@
-\section{General Purpose Service Robot}
-\label{test:gpsr}
+\section{General Purpose Service Robot}\label{test:gpsr}
+
 The robot is asked to understand and execute commands requiring a wide range of different abilities. \\
 
-\noindent \textbf{Main Goal:} Execute 3 commands requested by the operator.\\
+\noindent \textbf{Main Goal:} Execute three commands issued by the operator.\\
 
 \noindent \textbf{Optional Goals:}
 \begin{enumerate}[nosep]
@@ -19,15 +19,17 @@ The robot is asked to understand and execute commands requiring a wide range of 
 \begin{itemize}[nosep]
     \item \textbf{Locations:}
         \begin{itemize}
-            \item \textbf{Task location:} The task takes place inside the \Arena{}, but some commands may require the robot to go out. The \Arena{} is in its nominal state for this task.
-            \item \textbf{Start location:} The robot starts outside the \Arena{}. When the door opens, the robot moves towards the \textit{Instruction Point}.
-            \item \textbf{Instruction point:} At the beginning of the test, as well as after finishing the first and second command, the robot moves to the \textit{Instruction Point}.
+            \item \textbf{Task location:} The task takes place inside the \Arena{}. Commands may require the robot to leave the room. The \Arena{} is in its nominal configuration for this task.
+            \item \textbf{Start location:} The robot starts outside the \Arena{}. When the door opens, it must navigate towards the \textit{Instruction Point}.
+            \item \textbf{Instruction point:} The robot returns to this point after completing each command to receive the next one.
         \end{itemize}
     \item \textbf{People:}
         \begin{itemize}
-            \item \textbf{Operators:} A \emph{Professional Operator} (the referee) commands the robot to execute a task.
-            Optionally, commands can be issued by a \emph{Non-Expert Operator}, i.e. a person from the audience with no robotics background.
-            In this case, the referee gives the goal of the command to the non-expert operator, who will then issue it to the robot in their own words. For example, the generated command might be ``Bring me a coke from the kitchen." then the non-expert operator will be told ``The robot should bring you a coke, which is found in the kitchen.", who then tells the robot ``I want a coke. Go to the kitchen and get me one."
+			\item \textbf{Professional Operator:} Typically the referee, issues standard commands to the robot.
+			\item \textbf{Non-Expert Operator (optional):} A person without robotics expertise (e.g., from the audience). The referee provides the intended command goal to this operator, who then issues the instruction using their own wording.
+
+            For example, the generated command might be \textit{"Bring me a coke from the kitchen."} then the non-expert operator will be told \textit{"The robot should bring you a coke, which is found in the kitchen."}, who then tells the robot \textit{I want a coke. Go to the kitchen and get me one."}
+
             If the robot consistently fails to understand the non-expert operator (e.g. after two retries), teams can default to a custom operator.
         \end{itemize}
 \end{itemize}
@@ -42,7 +44,7 @@ The robot is asked to understand and execute commands requiring a wide range of 
 	\item \textbf{Test start:} The robot moves to the \textit{Instruction Point} when the arena door is open.
 	\item \textbf{Command execution:} The operator instructs the robot to execute a command and the robot performs the task.
 	\item \textbf{Back to the instruction point:} The robot goes back to the \textit{Instruction Point} and waits for the next command.
-	\item \textbf{Pausing the Timer:} The referee might pause the timer as soon as the robot reaches the instruction point to give time to setup the arena for the next command. The timer resumes as soon as the referee steps back in front of the robot for the next command.
+	\item \textbf{Pausing the Timer:} The referee pauses the timer as soon as the robot reaches the instruction point to reset the arena for the next command. The timer resumes once the referee signals the start of the next command.
 \end{enumerate}
 
 
@@ -55,15 +57,18 @@ The robot is asked to understand and execute commands requiring a wide range of 
 
 	\item \textbf{Command generator:} Tasks will be generated using the official command generator\footnote{\url{https://github.com/RoboCupAtHome/CommandGenerator}}.
 
-	\item \textbf{Non-expert operators:} Referees are not allowed to instruct non-expert operators on how to operate the robot.
-	Teams attempting to instruct or bias the operator will be disqualified from the task.
+	\item \textbf{Non-Expert Operators:}
+    \begin{itemize}[nosep]
+        \item Referees must not assist non-expert operators in phrasing the commands.
+        \item Teams are not allowed to coach, instruct, or bias non-expert operators. Doing so results in disqualification from the task.
+    \end{itemize}
 
-	\item \textbf{Deus ex Machina:} The scores are reduced if human assistance is received, in particular for:
+	\item \textbf{Deus ex Machina:} Score reductions apply in the following cases:
 	\begin{itemize}
-		\item using a custom operator
-		\item bypassing speech recognition by using an alternative HRI
-		\item receiving human assistance to accomplish a task (score reduction is applied consistent with the other tasks in this rulebook)
-		\item instructing a human assistant to perform the whole task
+		\item Use of a custom operator
+		\item Bypassing speech recognition with an alternative HRI.
+		\item Receiving human assistance to accomplish a command 
+		\item Instructing a human assistant to perform the whole task
 	\end{itemize}
 \end{enumerate}
 
@@ -76,7 +81,7 @@ The robot is asked to understand and execute commands requiring a wide range of 
 
 At least two hours before the test:
 \begin{itemize}[nosep]
-	\item Generate the robot commands (don't reveal them to the teams!).
+	\item Generate the robot commands (do not reveal them to the teams).
 	\item Announce the location of the instruction point.
 	\item Recruit volunteers to assist during the test.
 	\newline
@@ -84,7 +89,7 @@ At least two hours before the test:
 
 \noindent During the test:
 \begin{itemize}[nosep]
-	\item Rearrange the arena so that it is in its nominal condition before each command.
+	\item Restore the arena to its nominal state before each command execution.
 \end{itemize}
 
 \subsection*{Score Sheet}

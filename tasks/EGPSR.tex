@@ -18,7 +18,7 @@ The arena is in its default state apart from problems set up for the robot to so
     \item \textbf{Problems:}
 		\begin{itemize}
 			\item \textbf{Trash:} Objects on the floor are to be thrown in the trash.
-			\item \textbf{Objects:} Objects that are not in their default location should be returned there (see~\ref{rule:scenario_objects}). 
+			\item \textbf{Objects:} Objects that are not in their default location should be returned to their default location (see~\ref{rule:scenario_objects}). 
 			\item \textbf{Persons:} Some persons in the arena will have requests for the robot. They will raise their hand if the robot is in the same room.
 		\end{itemize}
 \end{enumerate}
@@ -46,16 +46,16 @@ The arena is in its default state apart from problems set up for the robot to so
 	\begin{enumerate}[nosep]
 		\item \textbf{Scores:} Score reduction is applied as a percentage depending on the solution.
 		\item \textbf{Penalties:} The Repetition penalty is applied before any partial penalties
-		\item \textbf{Example:} If Picking up trash off the floor is valued as 60\% of the solution. Requesting handover should be a $ 650 \times 0.6 = 390 $ points penalty for the first pick and  $ \left( 650 - 300 \right) \times 0.6 = 210 $ for the second pick.
+		\item \textbf{Example:} If picking up trash off the floor is valued as 60\% of the solution, then requesting a handover should be a $ 650 \times 0.6 = 390 $ points penalty for the first pick and  $ \left( 650 - 300 \right) \times 0.6 = 210 $ for the second pick.
 	\end{enumerate}
 	\item \textbf{Command Generator:} Problems and commands will be generated using the official command generator\footnote{\url{https://github.com/RoboCupAtHome/CommandGenerator}}.
 	\item \textbf{Finding People:} Finding a person and stating they need help counts as finding the problem.
-	\item \textbf{Understanding Commands:} Understanding and correctly repeating the command given by a person can be counted towards partially solving a problem.
+	\item \textbf{Understanding Commands:} The robot must correctly interpret and repeat commands given by people. Correctly repeating the command given by a person counts as partially solving the problem.
 \end{enumerate}
 
 \subsection*{Referee instructions}
 \begin{itemize}
-	\item Setup the problems in the arena.
+	\item Set up the problems in the arena.
 	\item Provide commands to volunteers.
 \end{itemize}
 
@@ -63,7 +63,7 @@ The arena is in its default state apart from problems set up for the robot to so
 
 At least two hours before the test:
 \begin{itemize}
-	\item Generate the problems and commands (don't reveal them to the teams!).
+	\item Generate the problems and commands (do not reveal them to the teams!).
 	\item Recruit volunteers to assist during the test.
 \end{itemize}
 
