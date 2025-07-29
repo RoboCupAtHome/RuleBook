@@ -30,16 +30,16 @@ The robot stores groceries into a cabinet with shelves. Objects are sorted on th
 		\end{itemize}
 	\item \textbf{Furniture:}
 		\begin{itemize}
-			\item \textbf{Table:} The table has 5--10 objects placed on it and the robot can choose which ones to grasp and in what order. On small tables, objects will be added as the robot frees up space.
-			\item \textbf{Shopping Bag:} There is a shopping bag with 5--10 additional normal items on the ground next to the table.
-			\item \textbf{Cabinet:} The cabinet contains objects arranged in groups --- either by category or likeliness --- on different shelves.
-			\item \textbf{Cabinet door:} The cabinet is closed. If the robot fails to open the door, it must clearly state this and request the referee to open it.
+			\item \textbf{Table:} The table has 5--10 objects placed on it and the robot can choose which ones to grasp and in what order. On smaller tables, new objects will be added as the robot frees up space.
+			\item \textbf{Shopping Bag:} A shopping bag with 5--10 additional items is placed on the ground next to the table.
+			\item \textbf{Cabinet:} The cabinet contains objects arranged in groups --- either by category or similarity --- on different shelves.
+			\item \textbf{Cabinet door:} The cabinet is initially closed. If the robot cannot open the door, it must clearly request assistance from the referee.
 		\end{itemize}
 	\item \textbf{Objects}:
 		\begin{itemize}
 			\item \textbf{Table objects:} The object on the table are arranged arbitrarily.
 			\item \textbf{Cabinet objects:} The objects are placed behind the cabinet doors and cannot be accessed unless the doors are open.
-			\item \textbf{Containers:} The container for the cornflakes are placed on the table.
+			\item \textbf{Containers:} The container for the cornflakes is placed on the table.
 		\end{itemize}
 \end{itemize}
 
@@ -49,10 +49,10 @@ The robot stores groceries into a cabinet with shelves. Objects are sorted on th
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Procedure}
 \begin{enumerate}[nosep]
-	\item \textbf{Table location:} At least two hours before the test, the referees announce the table and cabinet that will be used in the test, as well as a rough location of the table.
-	\item \textbf{Test start:} The robot moves to the testing area when the arena door is open.
+	\item \textbf{Table location:} At least two hours before the test, the referees announce which table and cabinet that will be used in the test, along with the approximate table location.
+	\item \textbf{Test start:} The robot enters the testing area once the arena door is opened.
 	\item \textbf{Storing groceries:} After identifying the table, the robot moves the objects from the table to the cabinet.
-	\item \textbf{Pouring cereal:} The robot should pour cereal into the designated open container.
+	\item \textbf{Pouring cereal:} The robot pours cereal into the designated open container.
 \end{enumerate}
 
 
@@ -61,7 +61,7 @@ The robot stores groceries into a cabinet with shelves. Objects are sorted on th
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Additional rules and remarks}
 \begin{enumerate}
-	\item \textbf{Table:} The table's rough location will be announced beforehand, having its position to the left, right, or behind the robot.
+	\item \textbf{Table:} The approximate location of the table will be announced in advance, and it will be positioned near the cabinet.
 	\item \textbf{Incorrect categorization:} The score is reduced if an object is stored on the cabinet, but not on a shelf with similar objects; this reduction is applied per incorrectly stored object.
 	\item \textbf{New category:} Objects that do not semantically belong to any of the categories represented on the shelves should be grouped together on a new shelf.
 	\item \textbf{Deus Ex Machina:} The scores are reduced if human assistance is received, in particular for:
@@ -72,19 +72,19 @@ The robot stores groceries into a cabinet with shelves. Objects are sorted on th
 	\end{itemize}
 	\item \textbf{Communicating Perception}: The robot must clearly communicate its perception to the referee.
 	Pointing at the object or attempting to pick it up is sufficient.
-	When using visualization, make sure the robot tells the referee where to look and make the visualization easily accessible. 
+	If using visualization, the robot must indicate where the referee should look and ensure the display is clearly accessible.
 	If the team wants to utilize bounding boxes make sure \textbf{only} one object with a bounding box is shown at a time, so the referee is easily able to check and verify.
-	Also make sure the surrounding scene is visible, i.e. just showing a cropped bounding box is not enough.
+	The surrounding scene must also be visible, cropped views alone are insufficient.
 \end{enumerate}
 
 \subsection*{OC Instructions}
 
 At least two hours before the test:
 \begin{itemize}
-	\item Announce which table and cabinet will be used in the test.
+	\item Announce which table and cabinet will be used.
 	\item Announce a rough location for the table.
-	\item Select which bags will be used in the test.
-	\item Select which container will be used in the test.
+	\item Select which bags will be used.
+	\item Select which container will be used.
 \end{itemize}
 
 \subsection*{Referee Instructions}

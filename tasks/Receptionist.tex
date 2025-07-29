@@ -1,7 +1,7 @@
-\section{Receptionist}
-\label{test:receptionist}
+\section{Receptionist}\label{test:receptionist}
+
 \subsection*{Description}
-The robot has to take two new guests to the living room to introduce them and offer a free place to sit.\\
+The robot has to guide two new guests to the living room, introduce them to each other, and offer them a seat.\\
     
 \textbf{Main goal:}
     The robot welcomes and assists two newcomers at a party, offering them a seat and maintaining appropriate gaze direction during conversation (at person speaking, direction of navigation).
@@ -15,7 +15,7 @@ The robot has to take two new guests to the living room to introduce them and of
 \end{enumerate}
 
 \subsection*{Focus}
-\SysI{}, \HRI{}, \PerDet{}, \PerRec{}
+\emph{\SysI{}}, \emph{\HRI{}}, \emph{\PerDet{}}, \emph{\PerRec{}}
 % human detection and recognition, safe navigation and human-robot interaction with unknown people.
 
 \subsection*{Setup}
@@ -25,56 +25,63 @@ The robot has to take two new guests to the living room to introduce them and of
 	\item The test takes place in the living room.	
 	\item The robot starts inside the \Arena{} at a predefined location.
 	\item A table with drinks is prepared near the living room
-	\item \textbf{Entrance:} The entrance door is open by default. The team leader can request to close the door to score additional points by opening it for the guests.
+	\item \textbf{Entrance:} The entrance door is open by default. The team leader can request it to be closed to allow the robot to earn additional points by opening it for the guests.
 	\end{itemize}
 	
 	\item \textbf{People:} 
 	\begin{itemize}
-	\item \textbf{Host:} The host's name, favorite drink and interest will be announced before the test. The host is the only person sitting in the living room until the robot offers a free seat to another guest.
+	\item \textbf{Host:} The host's name, favorite drink and interest will be announced before the test. The host is the only person seated in the living room until the robot offers a seat to a guest.
 
-	\item \textbf{Arriving Guests:} Both guests have a name, favorite drink, and a interest. An arriving guest will either step in front of the robot or wait behind the door to step in if the door is closed. Guests have to be guided to the beverage area and then the living room where the robot will introduce the guests to each other. Each of the guest will arrive separately. 
+	\item \textbf{Arriving Guests:} Each guest has a name, favorite drink, and one interest.
+	Guests arrive separately.
+	An arriving guest will either step in front of the robot or wait behind the door if it is closed. 
+	The robot must guide each guest to the beverage area and then to the living room, where they are introduced to each other.
 	
-	\item \textbf{Passive Guests:} Other Guests: A few individuals, including possibly spectators, are standing in small groups of two or three, all over the arena but not covering relevant places e.g. the couch, seats or the area with the drinks.
+	\item \textbf{Passive Guests:} A few other individuals (including possibly spectators) are standing in small groups of two or three throughout the arena, but do not obstruct key areas such as the couch, chairs, or beverage table.
 	\end{itemize}
 
 \end{itemize}
 
 \subsection*{Procedure}
-Both guests arrive separately. The robot either opens the door for the guest or waits for them at the starting point. It greets the guest and asks for their name. The robot then guides the guest to the beverage area, where it asks for their favorite drink and checks if the drink is available on the table and where it stands. The robot finds out the interest of the guest at a freely chosen moment. After showing the guest the beverage area, the robot escorts them to the living room and offers a free seat. Once both guests are seated, the robot introduces them to each other.
+Both guests arrive separately. The robot either opens the door for the guest or waits for them at the starting location. 
+It greets the guest and asks for their name.
+The robot then guides the guest to the beverage area, asks for their favorite drink, and indicates whether that drink is available and where it is located on the table.
+At a freely chosen moment, the robot also asks for the guest's interest.Afterward, it escorts the guest to the living room and offers a seat. Once both guests are seated, the robot introduces them to each other.
+
 \begin{itemize}
-	\item \textbf{Greeting guests:} The person paces a little to the left and right during conversation with the robot. Other people might appear in the background
+	\item \textbf{Greeting guests:} Each guest paces slightly left and right during conversation. Other people may appear in the background.
 	
-	\item \textbf{Looking at person:} During verbal interactions and descriptions of people, robot 
-	looks at the conversational partner. The conversational partner will make small movements to each side to confirm the robot is dynamically looking at the person. Points for looking at the person talking, will only be awarded if the robot proves to continuously look at the moving person. 
+	\item \textbf{Looking at person:} The robot must look at the person it is talking to. Guests will move slightly to confirm the robot dynamically follows them with its gaze. Points for gaze tracking are awarded only if the robot continuously tracks the moving person.
 	
-	\item \textbf{Looking at direction of navigation:} During navigation robot looks in the direction where it is going. Persistently gazing towards unrelated person or incorrect direction while moving during the task deducts points. 
+	\item \textbf{Looking at direction of navigation:} The robot must look in the direction it is navigating. Persistently looking in an unrelated direction or at unrelated people during navigation results in a score deduction.
     
-    \item \textbf{Smalltalk} Ask each guest for one interest.
+    \item \textbf{Smalltalk} The robot asks each guest for one interest.
     
-    \item \textbf{Finding the drink} The robot shows both guest the drinking area where it will ask for their favorite drink and tell the guest if and where (left, center right is enough) that drink is available on the table. 
+    \item \textbf{Finding the drink} The robot shows each guest the beverage table, asks for their favorite drink, and tells them if and where the drink is available (left, center, right).
 	
-	\item \textbf{Seating People:} The robot must point at a place or location where the guest can sit.
+	\item \textbf{Seating People:} The robot must clearly point to a location or seat for each guest.
+
+	\item \textbf{Switching Places:} After being seated, guests may switch seats.
 	
-	\item \textbf{Switching Places:} Guests may switch places after they were seated.
-	
-	\item \textbf{Introductions:} When introducing guests, the robot must clearly identify the person being introduced and state their name favorite drink and an interest. Introducing two people mean to introduce them to each other.
+	\item \textbf{Introductions:} When introducing two people to each other, the robot must clearly identify each guest by name, state their favorite drink, and mention one interest.
+
 \end{itemize}
 
 \subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
-	\item \textbf{Opening Door Timing:} The Time of the test only starts after the fist person enters the arena or 2mins after start signal.
+	\item \textbf{Opening Door Timing:} The test time starts either when the first guest enters the arena or 2 minutes after the start signal, whichever comes first.
 
-	\item \textbf{Misunderstanding:} Not understanding the guests and asking them again is fine. Continuing with a wrong name, drink or interest causes a score reduction of 20pts per item.
+	\item \textbf{Misunderstanding:} Asking a guest to repeat themselves is acceptable. However, using an incorrect name, drink, or interest will result in a 20 point penalty per item.
 		
-	\item \textbf{Partial Scoring:} The main task allows partial (per guest) scoring.
+	\item \textbf{Partial Scoring:} The main task allows partial scoring per guest.
 
-	\item \textbf{Additional Seating:} Referees may add chairs to the party area living room.
+	\item \textbf{Additional Seating:} Referees may add chairs to the living room area.
 	
 	\item \textbf{Deus ex Machina:} Score reduction applies per guest as follows:
 	\begin{itemize}[nosep]
-		\item \textbf{Custom Operator:} Since the main focus of the test is HRI, no custom operator can be chosen.
-		\item \textbf{Alternative HRI:} Using an alternative HRI to understand a guest causes a score reduction of 75pts.
-		\item \textbf{Recognizing People:} If the robot has to ask for help to identify people, score is reduced by 200pts. 
+		\item \textbf{Custom Operator:} Since the main focus of the test is HRI, no custom operator is allowed.
+		\item \textbf{Alternative HRI:} Using alternative HRI methods to understand a guest results in a 75 point penalty.
+		\item \textbf{Recognizing People:} If the robot requires help to identify a person, 200 points are deducted.
 	\end{itemize}
 \end{enumerate}
 
@@ -85,10 +92,10 @@ Both guests arrive separately. The robot either opens the door for the guest or 
 
 The referees need to:
 \begin{itemize}
-	\item Assign name, drink and one interest to 3 volunteers.
-	\item Arrange (and re-arrange) people in the living room.
-	\item Change the selection in the beverage area.
-	\item Open the door when requested by the robot.
+	\item Assign name, drink and one interest to three volunteers.
+	\item Arrange and rearrange people in the living room.
+	\item Change the selection of drinks in the beverage area.
+	\item Open the entrance door upon request from the robot.
 \end{itemize}
 
 \subsubsection*{To OC}
@@ -96,15 +103,15 @@ The referees need to:
 
 During setup day:
 \begin{itemize}
-	\item Announce beverage location.
+	\item Announce the location of the beverage area.
 \end{itemize}
 
 
 At least two hours before test:
 \begin{itemize}
-	\item Announce starting position.
+	\item Announce the starting position.
 	\item Announce host's name, favorite drink and interest.
-	\item Recruit five volunteers: one volunteer as host, two as arriving guests and 2 as passive guests.
+	\item Recruit five volunteers: one as the host, two as arriving guests and two as passive guests.
 
 \end{itemize}
 
