@@ -6,7 +6,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: LaTeX linter (chktex)
         uses: j2kun/chktex-action@v2.0.0
         # Provide this output for context, but don't fail builds
@@ -25,7 +25,7 @@ jobs:
         document: [rulebook, scoresheets]
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     
     - name: Take ownership of the checkout directory (Git CVE-2022-24765)
       run: chown --recursive --reference=/ .
@@ -50,7 +50,7 @@ jobs:
       contents: write
     needs: [build]
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
       with:
         ref: gh-pages
   
