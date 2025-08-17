@@ -23,7 +23,7 @@
 \newcommand{\shortScoresheet}{true}
 
 % The global number of attempts per test
-\newcommand{\attempts}{3}
+\newcommand{\attempts}{4}
 
 % The Default Timelimit for the Test
 \newcommand{\timelimit}{5}
@@ -218,12 +218,11 @@
 		{\huge \textbf{Score Sheet} }%
 		\vspace{2 em}%
 
-		\begin{tabular}{ @{} l l l}
-			\textbf{Test:} & \currentTest \\[.9 em]%
-			\textbf{Team name:} & \scoreline[0.6]\\[.9 em]%
-			\textbf{Referee name:} & \scoreline[0.6]\\[.9 em]%
-		\end{tabular}%
-		\vspace{0.5 em}%
+		\begin{tabular*}{\textwidth}{@{} l @{\extracolsep{\fill}} l l @{}}
+			\textbf{Test:} & \multicolumn{2}{l}{\currentTest} \\[.9em]
+			\textbf{Team name:} & \scoreline[0.25] & \textbf{Referee name:}~\scoreline[0.25]
+		\end{tabular*}%
+		\vspace{0.1 em}%
 
 	\end{minipage}
 	\hfill
@@ -233,13 +232,14 @@
 	\begin{minipage}[t]{0.15\textwidth}%
 		\vspace{0pt}%
 		\includegraphics[width=\textwidth]{images/logo_RoboCupAtHome.jpg}%
-	\end{minipage}\\%
+	\end{minipage}%
 
 
 }{
 % \end{scoresheet}
 	\vspace{0.5 em}%
-	\textbf{Remarks:}%
+	\textbf{Remarks: }%
+	Please write why the task was finished: (i.e. timed out, bumped into wall, stuck in loop...), and number of failed attempts of every goal (i.e. tried picking object 2 times).
 
 	%
 	% Signatures of referee / team leader %%%%%%%%%%%%
@@ -470,13 +470,11 @@
 				\textbf{\small$3^{rd}$~try}}%
 		}{}%
 		\ifthenelse{##1 > 3}{
-			\foreach \i in {4,...,##1}{% chktex11
-				\protected@xdef\@attemptheadings{%
-					\@attemptheadings &%
-					\textbf{\small$\i^{th}$~try}%
-				}%
-			}%
-			\gdef\@marklinewidth{0.06}%
+			\protected@xdef\@attemptheadings{%
+				\textbf{\small$1^{st}$~try} &%
+				\textbf{Time} &%
+				\textbf{\small$2^{nd}$~try} &%
+				\textbf{Time}}%
 		}{}%
 		\@attemptheadings%
 	}
