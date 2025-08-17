@@ -3,22 +3,24 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: LaTeX linter (chktex)
-        uses: j2kun/chktex-action@v2.0.0
-        # Provide this output for context, but don't fail builds
-        continue-on-error: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # lint:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: LaTeX linter (chktex)
+  #       uses: j2kun/chktex-action@v2.1.0
+  #       # Provide this output for context, but don't fail builds
+  #       continue-on-error: true
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       with:
+  #         lint-all: true
 
   build:
     name: build-${{ matrix.document }}
     runs-on: ubuntu-latest
     container: texlive/texlive:TL2022-historic
-    needs: [lint]
+    #needs: [lint]
     strategy:
       fail-fast: false
       matrix:
