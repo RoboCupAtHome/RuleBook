@@ -56,51 +56,47 @@ In cases where there is no significant score difference between teams, the \TC{}
 
 
 	\begin{tabular}{
-		>{\centering\arraybackslash}m{2.5cm}|%
-		>{\columncolor[HTML]{9AFF99}}c |%
-		>{\columncolor[HTML]{9AFF99}}c |%
-		>{\columncolor[HTML]{9AFF99}}c |%
-		>{\columncolor[HTML]{FF8D27}}c  %
+		>{\centering\arraybackslash}m{2.5cm}|c|c|c|c
 	}
 	\multicolumn{1}{ c }{}
-		& \multicolumn{1}{ c }{\cellcolor{white} Day 1 }
-		& \multicolumn{1}{ c }{\cellcolor{white} Day 2 }
-		& \multicolumn{1}{ c }{\cellcolor{white} Day 3 }
-		& \multicolumn{1}{ c }{\cellcolor{white} Day 4 }
+		& \multicolumn{1}{c}{Day 1}
+		& \multicolumn{1}{c}{Day 2}
+		& \multicolumn{1}{c}{Day 3}
+		& \multicolumn{1}{c}{Day 4}
 		\\\hhline{~---~}
 
 	\cell{Block 1\\\footnotesize(9:00--11:00)}
-		& \cell{\diagbox{Task 1}{Task 2}}
-		& \cell{\diagbox{Task 1}{Task 2}}
-		& \cellcolor[HTML]{CBCEFB}\cell{Restaurant}
-		& \cellcolor{white}
+		& \cellcolor{color1}\cell{\diagbox{Task 1}{Task 2}}
+		& \cellcolor{color1}\cell{\diagbox{Task 1}{Task 2}}
+		& \cellcolor{color2}\cell{Restaurant}
+		& 
 		\\\hhline{~----}
 
 
 
 	\multicolumn{1}{ c }{}
 		& \multicolumn{3}{ c }{\wcell{0.5\baselineskip}{\color{gray}\----Break---\-}}
-		& \multicolumn{1}{|c|}{\cellcolor[HTML]{FF8D27}\cell{\textbf{Finals}}}
+		& \multicolumn{1}{|c|}{\cellcolor{color3}\cell{\textbf{Finals}}}
 		\\\hhline{~----}
 
 	\cell{Block 2\\\footnotesize(13:00--15:00)}
-		& \cell{\diagbox{Task 3}{Task 4}}
-		& \cell{\diagbox{Task 3}{Task 4}}
-		& \cell{\diagbox{Task 1}{Task 2}}
-		& \cellcolor{white}
+		& \cellcolor{color1}\cell{\diagbox{Task 3}{Task 4}}
+		& \cellcolor{color1}\cell{\diagbox{Task 3}{Task 4}}
+		& \cellcolor{color1}\cell{\diagbox{Task 1}{Task 2}}
+		& 
 		\\\hhline{~---}
 
 	\multicolumn{1}{ c }{}
-		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{\color[HTML]{029734}}}
+		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{}}
 		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{\color{gray}\----Break---\-}}
-		& \multicolumn{1}{ c }{\cellcolor{white}}
+		& \multicolumn{1}{ c }{}
 		\\\hhline{~---}
 		
 	\cell{Block 3\\\footnotesize(17:00--19:00)}
-		& \cellcolor{white}
-		& \cellcolor{white}
-		& \cell{\diagbox{Task 3}{Task 4}}
-		& \cellcolor{white}
+		& 
+		& 
+		& \cellcolor{color1}\cell{\diagbox{Task 3}{Task 4}}
+		& 
 		\\\hhline{~---}
 	\end{tabular}
 
@@ -114,13 +110,13 @@ In cases where there is no significant score difference between teams, the \TC{}
 \centering
 \renewcommand{\arraystretch}{1.4}
 \setlength{\tabcolsep}{10pt}
-\begin{tabular}{c c c}
-\rowcolor{white}  & Arena 1 & Arena 2 \\
-
-12:00 & \cellcolor{red!30}Group A & \cellcolor{blue!30}Group C \\ 
-12:30 & \cellcolor{yellow!30}Group B & \cellcolor{green!30}Group D \\ 
-13:00 & \cellcolor{blue!30}Group C & \cellcolor{red!30}Group A \\ 
-13:30 & \cellcolor{green!30}Group D & \cellcolor{yellow!30}Group B \\ 
+\begin{tabular}{c|c|c|}
+\multicolumn{1}{c}{}  & \multicolumn{1}{c}{Arena 1} & \multicolumn{1}{c}{Arena 2} \\
+\hhline{~--}
+12:00 & \cellcolor{color4}Group A & \cellcolor{color2}Group C \\\hhline{~--}
+12:30 & \cellcolor{color3}Group B & \cellcolor{color1}Group D \\\hhline{~--} 
+13:00 & \cellcolor{color2}Group C & \cellcolor{color4}Group A \\\hhline{~--} 
+13:30 & \cellcolor{color1}Group D & \cellcolor{color3}Group B \\\hhline{~--} 
 \end{tabular}
 \caption{Example schedule for one block showing timeslots and group rotation between arenas.}\label{tab:schedule_example_times}
 \end{table}
