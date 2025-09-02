@@ -1,0 +1,92 @@
+\section{Doing Laundry}\label{test:doing-laundry}
+The robot assists with laundry by retrieving clothes from a washing machine and folding them neatly on a table. This test evaluates deformable object manipulation, appliance interaction, and task sequencing.\\
+
+\noindent \textbf{Main goal:} Retrieve clothes from the washing machine, transport them to a table, and fold them.\\
+
+\noindent \textbf{Optional goals:}
+\begin{enumerate}[nosep]
+    \item Opening the washing machine door
+	\item Retrieving clothes from inside the washing machine
+    \item Using a laundry basket for transportation
+    \item Folding multiple pieces of clothing and stacking them
+\end{enumerate}
+
+\subsection*{Focus}
+\emph{Deformable object manipulation}, \emph{bimanual grasping}.
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Setup
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Setup}
+\begin{itemize}
+    \item \textbf{Locations:}
+        \begin{itemize}
+            \item \textbf{Start location:} Before the test, the robot waits outside the \Arena{} and navigates to the laundry area when the door is open.
+            \item \textbf{Test locations:} The testing area contains a washing machine, a folding surface nearby, and a laundry basket.
+        \end{itemize}
+    \item \textbf{People:}
+        \begin{itemize}
+            \item No people are involved in the test, unless the robot requires human assistance.
+        \end{itemize}
+    \item \textbf{Furniture:}
+        \begin{itemize}
+			\item \textbf{Laundry basket:} A lightweight basket requiring two arms to carry, placed near the washing machine. The basket already has 6--8 pieces of clothing placed inside.
+            \item \textbf{Washing machine:} Positioned with its door closed at the start. Clothes are placed inside. There are 2--4 pieces of clothing in the washing machine.
+            \item \textbf{Table:} Positioned near the washing machine. Used as the folding surface.
+        \end{itemize}
+    \item \textbf{Objects}:
+        \begin{itemize}
+            \item \textbf{Clothes:} A set of 8--12 pieces of laundry (e.g., towels, t-shirts) made from cloth or other deformable fabric.
+        \end{itemize}
+\end{itemize}
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Procedure
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Procedure}
+\begin{enumerate}[nosep]
+    \item \textbf{Location announcement:} At least two hours before the test, referees announce which washing machine and table will be used, along with the approximate location of each.
+    \item \textbf{Test start:} The robot enters the testing area once the arena door is opened.
+    \item \textbf{Retrieving laundry:} The robot opens the washing machine (if possible), retrieves the clothes, and places them on the table.
+    \item \textbf{Folding:} The robot attempts to fold at least one piece of clothing neatly and place it on the table.
+\end{enumerate}
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Additional Rules
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Additional rules and remarks}
+\begin{enumerate}
+    \item \textbf{Cloth placement:} Clothes must be placed on the table before folding. Folding on the floor is not allowed.
+    \item \textbf{Folding quality:} Folding is evaluated by neatness and whether the cloth is flattened and stacked.
+    \item \textbf{Multiple items:} Additional points are awarded for folding multiple pieces of clothing and stacking them.
+    \item \textbf{Deus Ex Machina:} Scores are reduced if human assistance is received, in particular for:
+    \begin{itemize}
+        \item opening the washing machine door
+        \item handing clothes to the robot
+		\item \textbf{Human assistance during folding:} Penalties are proportional to the amount of help provided:
+		\begin{itemize}[nosep]
+			\item Minimal help (e.g., smoothing wrinkles): small penalty.
+			\item Partial folding (e.g., folding one half or aligning edges): moderate penalty.
+			\item Major help (e.g., completing entire fold/stack): maximum penalty.
+			\item One-armed robots may request limited assistance (e.g., stabilizing cloth); penalties are proportional.
+		\end{itemize}
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{OC Instructions}
+At least two hours before the test:
+\begin{itemize}
+    \item Announce which washing machine and table will be used.
+\end{itemize}
+
+\subsection*{Referee Instructions}
+The referee needs to:
+\begin{itemize}
+    \item Ensure the washing machine and basket contains the laundry before the test begins.
+    \item Close the washing machine door at the start.
+    \item Verify that the folding table is clear before the test.
+\end{itemize}
+
+% \newpage
+\subsection*{Score sheet}
+\input{scoresheets/DoingLaundry.tex}
