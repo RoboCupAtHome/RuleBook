@@ -1,7 +1,30 @@
 \section{Receptionist}
 \label{test:receptionist}
+
+\subsection*{\textcolor{red}{New Updates for v2026}}
+	\begin{itemize}
+	\item \textcolor{red}{Removed guest name had to be selected from a predetermined list of names -> Now is any popular english name.}
+	\item \textcolor{red}{Removed favorite drink had to be selected from a predetermined list of objects (drinks) -> Now is any english named popular drink.}
+	\item \textcolor{red}{Robots now have to check and inform the if the drink is not in the beverage area and move on with the task}
+	\item \textcolor{red}{Robots have more freedom to choose when to ask for the favorite drink and interest of the guest.}
+	\item \textcolor{red}{Guests will not meet the robot at starting point when they arrive, guests stay at the door. The robot has to meet them at the door.}
+	\item \textcolor{red}{Added doorbell sound when guest has arrived.(Generic audio classification)}
+	\item \textcolor{red}{Added small penalty for all non essential questions that robot asks to help understand or confirm information.}
+	\item \textcolor{red}{Increased penalty for introduction with a wrong name, drink or interest.}
+	\item \textcolor{red}{Decreased waiting time for door to be opened from 2mins to 1min.}
+	\item \textcolor{red}{Alternative HRI penalty to understand guest, is now per information received and not overall. (should have been changed in last years updates)}
+	\\
+	\item \textcolor{red}{MISSING: add list of possible special cases. (guest is not facing to the robot and talks OR robot asks for name and person answers with favorite drink OR multiple guests at the same time and they answer in random order, ...)}
+	\end{itemize}
+
+\subsection*{\textcolor{red}{Notes for TC}}
+	\begin{itemize}
+	\item \textcolor{red}{The host name and favorite drink is not used for anything.}
+	\item \textcolor{red}{Webservice can be used as an interrupt.}
+	\end{itemize}
+
 \subsection*{Description}
-The robot has to take two new guests to the living room to introduce them and offer a free place to sit.\\
+The robot has to take two new guests to the living room, \sout{to introduce them and offer a free place to sit.} \textcolor{red}{offer a free place to sit and introduce them to eachother.}\\
     
 \textbf{Main goal:}
     The robot welcomes and assists two newcomers at a party, offering them a seat and maintaining appropriate gaze direction during conversation (at person speaking, direction of navigation).
@@ -9,6 +32,7 @@ The robot has to take two new guests to the living room to introduce them and of
 % \vspace{-5pt}
 \textbf{Optional goals:}
 \begin{enumerate}[nosep]
+	\item \textcolor{red}{Detect doorbell sound as a signal that a guest has arrived.}
 	\item Open the entrance door for each arriving guest.
 	\item Visually describe the first guest for the second guest before reaching the living room
 	\item Identify similarities between the guests and the host and incorporate them into the conversation.
@@ -31,40 +55,51 @@ The robot has to take two new guests to the living room to introduce them and of
 	\item \textbf{People:} 
 	\begin{itemize}
 	\item \textbf{Host:} The host's name, favorite drink and interest will be announced before the test. The host is the only person sitting in the living room until the robot offers a free seat to another guest.
-
-	\item \textbf{Arriving Guests:} Both guests have a name, favorite drink, and a interest. An arriving guest will either step in front of the robot or wait behind the door to step in if the door is closed. Guests have to be guided to the beverage area and then the living room where the robot will introduce the guests to each other. Each of the guest will arrive separately. 
-	
+	\item \textbf{Arriving Guests:} Both guests have a name, favorite drink, and a interest. \sout{An arriving guest will either step in front of the robot or wait behind the door to step in if the door is closed.} \textcolor{red}{An arriving guest will wait by the door, robots have to move to meet guests by the door.} Guests have to be guided to the beverage area and then the living room where the robot will offer a free place to sit and introduce the guests to each other. Each of the guest will arrive separately. 
 	\item \textbf{Passive Guests:} Other Guests: A few individuals, including possibly spectators, are standing in small groups of two or three, all over the arena but not covering relevant places e.g. the couch, seats or the area with the drinks.
 	\end{itemize}
 
 \end{itemize}
 
 \subsection*{Procedure}
-Both guests arrive separately. The robot either opens the door for the guest or waits for them at the starting point. It greets the guest and asks for their name. The robot then guides the guest to the beverage area, where it asks for their favorite drink and checks if the drink is available on the table and where it stands. The robot finds out the interest of the guest at a freely chosen moment. After showing the guest the beverage area, the robot escorts them to the living room and offers a free seat. Once both guests are seated, the robot introduces them to each other.
+Both guests arrive separately. \textcolor{red}{As a signal that the guest has arrived, a doorbell will ring.}
+The robot either opens the door for the guest or \sout{waits for them at the starting point.} \textcolor{red}{meets them at the door.}
+It greets the guest and asks for their name.
+\textcolor{red}{The favorite drink can be asked at any time, from the moment the guest enters the arena until the robot shows the beverage area.}
+\textcolor{red}{The interest can be asked at any time, from the moment the guest enters the arena until the robot offers a seat in the living room.}
+\sout{The robot finds out the interest of the guest at a freely chosen moment.}
+The robot guides the guest to the beverage area, \sout{where it asks for their favorite drink} and checks if the guest favorite drink is available on the table. \sout{and where it stands.}
+\textcolor{red}{If the favorite drink is available the robot must clearly show the guest where it is located on the table and tell the guest it may pick up the favorite drink. If not available, the robot must inform the guest that the drink is not available and move on.}
+After showing the guest the beverage area, the robot escorts them to the living room and offers a free seat. 
+Once both guests are seated, the robot introduces them to each other.
 \begin{itemize}
-	\item \textbf{Greeting guests:} The person paces a little to the left and right during conversation with the robot. Other people might appear in the background
+
+	\item \textcolor{red}{ \textbf{Doorbell:} A doorbell sound will be played when a guest is by the door ready to be met. The doorbell sound will not be provided beforehand and can be any traditional doorbell sound. As an alternative, if no doorbell sound is available, the guest can knock on the door. Waiting for the doorbell is optional, robots can bypass it and directly meet the guest at the door. In order for the doorbell sound to be considered detected, the robot must be waiting at the starting position and react instantly to the sound.} 
+	
+	\item \textbf{Greeting guests:} \textcolor{red}{The names of the guests can be any popular english names. The favorite drinks of the guests can be any english named popular drink (it may not be in the list of objects provided). The interests of the guests can be any popular interest (e.g. sports, music, movies, hiking, gaming, cooking, traveling, ...).}
+	The guest paces a little to the left and right during conversation with the robot. Other people might appear in the background. 
 	
 	\item \textbf{Looking at person:} During verbal interactions and descriptions of people, robot 
 	looks at the conversational partner. The conversational partner will make small movements to each side to confirm the robot is dynamically looking at the person. Points for looking at the person talking, will only be awarded if the robot proves to continuously look at the moving person. 
 	
 	\item \textbf{Looking at direction of navigation:} During navigation robot looks in the direction where it is going. Persistently gazing towards unrelated person or incorrect direction while moving during the task deducts points. 
     
-    \item \textbf{Smalltalk} Ask each guest for one interest.
+    \item \textbf{Smalltalk:} Ask each guest for one interest.
     
-    \item \textbf{Finding the drink} The robot shows both guest the drinking area where it will ask for their favorite drink and tell the guest if and where (left, center right is enough) that drink is available on the table. 
+    \item \textbf{Finding the drink:} The robot shows both guest the drinking area where it will ask for their favorite drink and tell the guest if and where (left, center right is enough) that drink is available on the table. 
 	
 	\item \textbf{Seating People:} The robot must point at a place or location where the guest can sit.
 	
 	\item \textbf{Switching Places:} Guests may switch places after they were seated.
 	
-	\item \textbf{Introductions:} When introducing guests, the robot must clearly identify the person being introduced and state their name favorite drink and an interest. Introducing two people mean to introduce them to each other.
+	\item \textbf{Introductions:} When introducing guests, the robot must clearly identify the person being introduced and state their name favorite drink and an interest. Introducing two people means to introduce them to each other.
 \end{itemize}
 
 \subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
-	\item \textbf{Opening Door Timing:} The Time of the test only starts after the fist person enters the arena or 2mins after start signal.
+	\item \textbf{Opening Door Timing:} The Time of the test only starts after the fist person enters the arena or \sout{2 mins} \textcolor{red}{1 minute} after start signal.
 
-	\item \textbf{Misunderstanding:} Not understanding the guests and asking them again is fine. Continuing with a wrong name, drink or interest causes a score reduction of 20pts per item.
+	\item \textbf{Misunderstanding:} Not understanding the guests and asking them again is fine. Continuing with a wrong name, drink or interest causes a score reduction of \sout{20pts}\textcolor{red}{40pts} per item.
 		
 	\item \textbf{Partial Scoring:} The main task allows partial (per guest) scoring.
 
@@ -73,8 +108,11 @@ Both guests arrive separately. The robot either opens the door for the guest or 
 	\item \textbf{Deus ex Machina:} Score reduction applies per guest as follows:
 	\begin{itemize}[nosep]
 		\item \textbf{Custom Operator:} Since the main focus of the test is HRI, no custom operator can be chosen.
-		\item \textbf{Alternative HRI:} Using an alternative HRI to understand a guest causes a score reduction of 75pts.
+		\item \textbf{Alternative HRI:} Using an alternative HRI to understand a guest causes a score reduction of \sout{75pts} \textcolor{red}{20pts per information (name, drink or interest)}.
 		\item \textbf{Recognizing People:} If the robot has to ask for help to identify people, score is reduced by 200pts. 
+		\item \textcolor{red}{\textbf{Non Essential Questions:} If the robot asks non essential questions to help understand or confirm information, score is reduced 10pts per question. 
+		Questions such as "Did you say your name is James?", "Is your favorite drink milk?" or "Is your interest dancing?" are considered non essential questions. 
+		However, asking a guest to repeat an answer because the robot could not hear is not considered a non essential question.}
 	\end{itemize}
 \end{enumerate}
 
