@@ -1,30 +1,37 @@
 \begin{scorelist}[timelimit=10]
 	\scoreheading{Main Goal}
-	\scoreitem{15}{TidytheKitchen Navigate to the table to pick up items}
-	\scoreitem[4]{50}{Picking up the cup, bowl and drinks for transportation}
-	\scoreitem[2]{80}{Picking up cutlery (spoon, fork) for transportation}
+	\scoreitem{25}{Navigate to the table to pick up items}
+	\scoreitem[8]{50}{Picking up an object (except cutlery and plate) for transportation}
+	\scoreitem[2]{80}{Picking up cutlery for transportation}
 	\scoreitem[1]{100}{Picking up the plate for transportation}
-	\scoreitem[5]{50}{Placing the tableware and cutlery inside the dishwasher}
-	\scoreitem[5]{75}{Placing an item correctly (cleanable, convenient like a human would) in the dishwasher}
-	\scoreitem[2]{50}{Placing a drink inside the trash bin}
 
+	\scoreitem[3]{50}{Placing the tableware and cutlery inside the dishwasher}
+	\scoreitem[3]{75}{Placing an item correctly (cleanable, convenient like a human would) in the dishwasher}
+	\scoreitem[1]{50}{Placing a snack inside the trash bin}
+	\scoreitem[3]{15}{Perceiving objects in shelf and say on which layer the object should be placed}
+	\scoreitem[3]{15}{Placing an object in the cabinet}
+	\scoreitem[3]{50}{Placing an object next to similar objects on the cabinet}
+	\scoreitem[4]{50}{Placing breakfast items on the table}
+	
 	\scoreheading{Bonus Rewards}
 	\scoreitem[2]{100}{Pulling and pushing the dishwasher rack}
 	\scoreitem[2]{200}{Opening and closing the dishwasher door}
 	\scoreitem{100}{Picking up the dishwasher tab for transportation to the dishwasher}
 	\scoreitem{200}{Placing the dishwasher tab inside the dishwasher's hatch intended for the tab}
-	\scoreitem[2]{50}{Wiping the area where the drink was}
-
-	\scoreitem{50}{Autonomously Picking any Object}
-	\scoreitem{50}{Autonomously Placing any Object}
-
+	\scoreitem[3]{50}{Picking up an object from the shopping bag}
+	\scoreitem[2]{200}{Pouring cereal and milk into the bowl}
+	
+	\scoreheading{Penalties}
+	\penaltyitem[11]{50}{Throwing or dropping an object while placing it}
+	\penaltyitem[2]{100}{Spilling cereal and milk while pouring}
+	
 	\scoreheading{Deus Ex Machina Penalties}
-	\penaltyitem[3]{50}{Handing cup, bowl and drinks over to the robot}
+	\penaltyitem[8]{50}{Handing any object (except cutlery and plate) over to the robot}
 	\penaltyitem[2]{80}{Handing cutlery over to the robot}
 	\penaltyitem{100}{Handing the plate over to the robot}
-	\penaltyitem[5]{50}{Having a human place an object in the dishwasher}
-	\penaltyitem[2]{50}{Having a human place a drink inside the trash bin}
-	\penaltyitem[2]{25}{A human pointing at the trash bin}
+	\penaltyitem[11]{50}{Having a human place an object in the correct place}
+	\penaltyitem[11]{25}{A human pointing at a target location}
+	
 	%\setTotalScore{1000}
 \end{scorelist}
 
