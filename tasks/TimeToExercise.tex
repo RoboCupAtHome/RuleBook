@@ -1,11 +1,10 @@
 \section{Time To Exercise}\label{test:time-to-exercise}
 
 \subsection*{Description}
-The robot should assist some humans like a personal trainer, informing how to perform the exercises and observing whether they were performed correctly, correcting the humans whenever necessary.
+The robot should assist some humans like a personal trainer, informing how to perform the exercises and observing whether they were performed correctly, correcting the humans whenever necessary and present a report in the end of exercises.
 
 \textbf{Main goal:}
-Guide the some humans (between 2 and 5) in performing 2 fisical exercises between 4 available
-(stretching the neck, stretching the legs, stretching the arms and Squatting).
+Guide the some humans (between 2 and 5) in performing 1 stretching exercises chosem by the human (between 3 available: stretching the neck, stretching the legs and stretching the arms) and 2 fixed exercises (Squatting and jumping jacks).
 
 \subsection*{Focus}
 \emph{Human perception}, 
@@ -43,17 +42,28 @@ Guide the some humans (between 2 and 5) in performing 2 fisical exercises betwee
 	\item The robot must navigate to the people and position itself near to the people.
 	\item The robot should memorize each person asking by his names.
  	\item The robot must indicate that it is ready to receive instructions.
-	\item A person in the crowd must indicate that they want to do the “X” and the "Y" exercises. Where "X" and "Y" are the names of the exercises.
-	\item The robot must indicate that it understood the command by repeating the name of the exercese.
-	\item The robot must demonstrate the exercise to the operator (this can be done by voice and/or by showing images/videos).
-	\item There is extra points if the robot demostrate the exercise by gestures in a proper way. 
- 	\item After the demonstration, the robot must observe the people and verify that they are performing the movement as explained.
+	\item A person in the crowd must indicate that they want to do the “X” stretching exercises. Where "X" is the names of the stretching exercise.
+	\item The robot must indicate that it understood the command by repeating the name of the stretching exercese.
+	\item The robot must demonstrate the exercises to the crowd (this can be done by voice and/or by showing images/videos). The demonstration need to be done before start each exercise.
+	\item There are extra points if the robot demostrate the exercise by gestures in a proper way, like a human. 
+	\item Each exercise take 60 seconds.
+	\item The robot must count the number of repetitions of each exercise for each person.
+	\item The robot must encourage the human to keep doing the exercise.
+	\item After the demonstration, the robot must observe the people and verify that they are performing the movement as explained.
 	\item A person may make a mistake. In this case, the robot must correct this person. 
+	\item The robot must report the summary at the end of the exercises.
 \end{enumerate}
 
 \subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
-	\item The operator's correction is only valid if it is performed within 5 seconds after the error occurring and indicating who did the error and what the error was.
+	\item The operator's correction is only valid if it is performed within 5 seconds after the error occurred and indicating who did the error and what the error was.
+	\item The report is a summary of the human exercise, the robot must speak it and build a pdf file to be used as a log. The report must contain:
+	\begin{itemize}[nosep]
+		\item The names of the people who exercised.
+		\item The stretching exercise chosen by the human.
+		\item The number of repetitions of each exercise for each person.
+		\item The number of corrections made by the robot.
+	\end{itemize}
 \end{enumerate}
 
 \subsection*{Instructions:}
