@@ -1,13 +1,13 @@
-\section{Help Me Carry}
-\label{test:carry-my-luggage}
-The robot's owner needs help carrying something from the car to the starting location.
+\section{Help Me Carry}\label{test:carry-my-luggage}
 
-\noindent \textbf{Main Goal:} The robot helps the operator to carry a bag from a car parked outside.\\
+The robot's owner needs help carrying a bag from the car to the starting location.
+
+\noindent \textbf{Main Goal:} The robot assists the operator in retrieving a bag from a designated car location outside and returning to the starting point.\\
 
 \noindent \textbf{Optional Goals:}
 \begin{enumerate}[nosep]
-	\item Re-reaching the starting location
-	\item Following the queue on the way back
+	\item Return to the starting location autonomously
+	\item Follow the queue of people returning to the arena in appropriate manner.
 \end{enumerate}
 
 \subsection*{Focus}
@@ -18,36 +18,43 @@ The robot's owner needs help carrying something from the car to the starting loc
 	\item \textbf{Locations}: 
 		\begin{itemize}
 		 \item The test is performed outside the arena in a public space.
-		 \item The robot starts at a predefined location.
+		 \item The robot starts at a predefined location, announced before the test.
 		\end{itemize}
-	\item \textbf{People}: The operator is standing in front of the robot.
+
+	\item \textbf{People}:
+	\begin{itemize}[nosep]
+		\item The operator is standing in front of the robot.
+		\item Three to four additional people are used to simulate a crowd and later form a queue.
+	\end{itemize}
+	
 	\item \textbf{Objects}: 
 		\begin{itemize}[nosep]
-			\item At least two bags are placed near the car.
+			\item At least two bags are placed near the car location.
 			\item A small object on the ground.
 			\item A hard-to-see object.
 			\item Retractable barriers.
 		\end{itemize}
 	
-	\item \textbf{Uncontrolled environment:} There are no restrictions on other people walking by or standing around throughout the complete task.
+	\item \textbf{Uncontrolled environment:} There are no restrictions on other people walking by, standing near, or observing the robot throughout the test.
 \end{itemize}
 
 \subsection*{Procedure}
 \begin{enumerate}[nosep]
-	\item \textbf{Following the operator:} The robot should inform the operator when it is ready to follow them. The operator walks naturally towards the car; after reaching the car, the operator points at the bag.
-	\item \textbf{Obstacles:} The robot will face 4 obstacles along its way (in arbitrary order):
+	\item \textbf{Following the operator:} The robot should inform the operator when it is ready to follow them. The operator walks naturally towards the designated car location. Upon arrival, the operator points to one of the bags.
+
+	\item \textbf{Obstacles:} The robot encounters the following obstacles along its way (in arbitrary order):
 	\begin{enumerate*}[label=(\alph*)]
 		\item a small object on the ground,
 		\item a hard-to-see object,
-		\item a crowd of people obstructing the path outside, and
+		\item a crowd of people obstructing the path, and
 		\item a small area blocked using retractable barriers.
 	\end{enumerate*}
-	\item \textbf{Picking up the bag:} The robot picks up the bag pointed at by the operator.
+	\item \textbf{Picking up the bag:} The robot must identify and pick up the bag pointed at by the operator.
 	\item \textbf{Bag delivery:} The robot takes the bag to the starting location. It may place the bag on the floor.
 
 	\item \textbf{Optional goals:}
 	\begin{enumerate}
-			\item \textbf{Following the queue:} After the robot has reached the car, a few of the people that formed the crowd obstructing the robot return to the starting location in a queue. The robot can decide to join the queue on its way back, in a manner that appears natural to the people in the queue.
+			\item \textbf{Following the queue:} After reaching the car, a few of the people that formed the crowd obstructing the robot return to the starting location in a queue. The robot can decide to join the queue on its way back, in a manner that appears natural to the people in the queue.
 	\end{enumerate}
 
 \end{enumerate}
@@ -56,18 +63,18 @@ The robot's owner needs help carrying something from the car to the starting loc
 \subsection*{Additional Rules and Remarks}
 \begin{enumerate}[nosep]
 
-	\item \textbf{Car location:} There is no real car outside; instead, a fixed location outside the \Arena{} is designated as a car location.
+	\item \textbf{Car location:} A fixed location outside the arena is designated as the “car” area. No actual car is required.
 
 	\item \textbf{Reaching the car:} The robot can reach the car location only by following the operator (the location is unknown before the test).
 
-	\item \textbf{Deus ex Machina:} Score reductions for human assistance are applied in case the robot loses the operator, and needs to find them again through:
+	\item \textbf{Deus ex Machina:} Penalties apply if the robot loses the operator and needs help recovering. The following forms of assistance are penalized:
     \begin{enumerate}
      \item Natural interaction (e.g., waving and calling)
      \item Unnatural interaction (e.g., raising both hands and jumping)
-	 \item Coming back (e.g., asking the operator to step back in front of the robot)
-     \item Touching the robot (e.g., pulling the robot's hand)
+	 \item Returning in front of the robot to resume following.
+     \item Physical contact (e.g., pulling the robot's hand)
     \end{enumerate}
-	Note: Penalties for human assistance are only applied if the robot continues to score after the interaction. Penalties can be applied multiple times up to a total of 250 points.
+	Penalties are only applied if the robot continues to score after the interaction. Penalties can be applied multiple times up to a total of 250 points.
 \end{enumerate}
 
 
@@ -75,14 +82,14 @@ The robot's owner needs help carrying something from the car to the starting loc
 
 The referees need to:
 \begin{itemize}[nosep]
-	\item Select one volunteer to act as the operator.
-	\item Select three to four people to obstruct the robot's path outside and form the queue on the way back.
+	\item Assign one volunteer as the operator.
+	\item Assign three to four people to obstruct the robot's path and later form a queue.
 	\item Choose positions for the bags and assign a bag to the operator.
 	\item Choose the order of the obstacles that the robot will face outside while following the operator.
 	\item Designate a location outside as a car location.
 	\item Designate a location for the queue to form. The queue is composed of the same people that form the crowd.
 	\item Mind the robot when it moves around.
-	\item Instruct the Operator to follow the robots instructions, step over the small obstacle and closely around the hard to see object
+	\item Ensure the operator follows the robot's instructions, steps over small obstacles, and walks naturally around objects.
 \end{itemize}
 
 \subsection*{OC Instructions}

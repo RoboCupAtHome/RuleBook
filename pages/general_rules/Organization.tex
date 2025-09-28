@@ -1,43 +1,38 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Organization of the Competition}\label{sec:procedure_during_competition}
 
 \subsection{Stage System}\label{rule:stages}
 
-The competition features a \iterm{stage system}, namely it is organized in two stages, each consisting of a number of specific tasks, and ends with a \FINAL.
+The competition is divided into two stages, followed by a \FINAL{}. Each stage consists of a series of tasks designed to test specific robot capabilities, with the \FINAL{} being the final evaluation of the teams' overall performance.
+
 \begin{enumerate}
-	\item \textbf{Robot Inspection:} For security, robots are inspected during the \SetupDays.
-	A robot must pass the \RobotInspection{} test (see~\refsec{sec:robot_inspection}) so that it is allowed to compete.
+	\item \textbf{Robot Inspection:} 
+	All teams must pass a \RobotInspection{} during the \SetupDays{} to be eligible for competition. (see~\refsec{sec:robot_inspection})
 
-	\item \textbf{\SONE:} The first days of the competition are called \SONE.
-	All qualified teams that have passed the \RobotInspection{} can participate in \SONE.
+	\item \textbf{\SONE{}:} The first stage of the competition, \SONE{}, is open to all teams that have passed the \RobotInspection{} test. This stage includes tasks that test basic robot capabilities.
 
+	\item \textbf{\STWO:} \STWO{}, is open to the top 50\% of teams from \SONE{}. If the total number of teams is less than 12, up to 6 teams may advance to \STWO{}.
+	This stage requires more complex advanced or combinations of abilities.
 
-	\item \textbf{\STWO:} The best \emph{50\% of teams} after \SONE{} advance to \STWO. If the total number of teams is less than 12, up to 6 teams may advance to \STWO.
-	In this stage, tasks require more complex abilities or combinations of abilities.
-
-	\item \textbf{\FINAL:} The best \emph{two teams} of each league, namely the ones with the highest score after \STWO, advance to the \FINAL.
-	The final round features only a single task integrating all tested abilities.
+	\item \textbf{\FINAL:} The top \emph{two teams} of each league, namely the ones with the highest score after \STWO{}, advance to the \FINAL{}.
+	The final round features a single integrated task that tests all abilities evaluated throughout the competition.
 
 \end{enumerate}
-In case of having no considerable score deviation between a team advancing to the next stage and a team dropping out, the TC may announce additional teams advancing to the next stage.
+In cases where there is no significant score difference between teams, the \TC{} may decide to include additional teams in the next stage.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Schedule}
-\label{rule:schedule}
+\subsection{Schedule}\label{rule:schedule}
 
 \begin{enumerate}
-	\item \textbf{Test Blocks:} For each test one Test Block is scheduled during which each (qualified) team gets at least two Test Slots assigned. With the Restaurant test being the exception where only one Test Slot is assigned.
+	\item \textbf{Test Blocks:} Each test is scheduled within a Test Block. During each Test Block, each qualified team is assigned at least two Test Slots. The Restaurant test is an exception, requiring only one Test Slot.
 
-	\item \textbf{Test Slots:} During a Test Slot a team has the amount of time specified for the test to attempt to solve it. 
+	\item \textbf{Test Slots:} During a Test Slot, a team has a specified amount of time to complete the task.
 
-	\item \textbf{Participation is default:} Teams have to inform the OC in advance if they are skipping a Test Block. Without such indication, they may receive a penalty when not attending (see~\refsec{rule:not_attending}).
+	\item \textbf{Participation is default:} Teams must inform the \OC{} in advance if they are skipping a Test Block. If they do not provide such notification, they may be penalized for not attending (see~\refsec{rule:not_attending}).
 	
 \end{enumerate}
 
-% Please add the following required packages to your document preamble:
-% \usepackage[table,xcdraw]{xcolor}
-% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+
 \begin{table}[h]
 	\centering\small
 	\newcommand{\teams}[2]{%
@@ -119,21 +114,16 @@ In case of having no considerable score deviation between a team advancing to th
 	\label{tbl:schedule}
 \end{table}
 
-\noindent Note that the actual allocation of blocks will be announced by the OC during the \SetupDays{} (see Table~\ref{tbl:schedule}).
+\noindent Note that the actual allocation of blocks will be announced by the \OC{} during the \SetupDays{} (see Table~\ref{tbl:schedule}).
 
 \subsection{Scoring System}\label{rule:score_system}
 
-Each task has a main objective and a set of bonus scores.
-To score in a test, a team must successfully accomplish the main objective of the task; bonuses are not awarded otherwise.
+The scoring system for the competition is designed to evaluate robot performance based on task completion. Each task has a primary objective and a set of bonus scores. Teams must complete parts of the main objective to receive any points. Bonuses are not awarded otherwise.
 
 The scoring system has the following constrains:
 \begin{enumerate}
 	\item \textbf{\FINAL:} The final score is normalized.
 	\item \textbf{Minimum score:} The minimum total score per test in \SONE{} and \STWO{} is \scoring{0 points}.
-	In principle, teams cannot receive negative points, except if they receive penalties.
-	In particular, both penalties for not attending (see~\refsec{rule:not_attending}) and extraordinary penalties (see~\refsec{rule:extraordinary_penalties}) can result in a total negative score.
+	While teams generally cannot receive negative points, penalties can result in a total score below zero. Specifically, teams may receive penalties for not attending (see~\refsec{rule:not_attending}) and for extraordinary violations (see~\refsec{rule:extraordinary_penalties}).
 \end{enumerate}
 
-% Local Variables:
-% TeX-master: "../Rulebook"
-% End:

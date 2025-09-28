@@ -39,7 +39,7 @@ The robot has to take two new guests to the living room, \sout{to introduce them
 \end{enumerate}
 
 \subsection*{Focus}
-\SysI{}, \HRI{}, \PerDet{}, \PerRec{}
+\emph{\SysI{}}, \emph{\HRI{}}, \emph{\PerDet{}}, \emph{\PerRec{}}
 % human detection and recognition, safe navigation and human-robot interaction with unknown people.
 
 \subsection*{Setup}
@@ -49,7 +49,7 @@ The robot has to take two new guests to the living room, \sout{to introduce them
 	\item The test takes place in the living room.	
 	\item The robot starts inside the \Arena{} at a predefined location.
 	\item A table with drinks is prepared near the living room
-	\item \textbf{Entrance:} The entrance door is open by default. The team leader can request to close the door to score additional points by opening it for the guests.
+	\item \textbf{Entrance:} The entrance door is open by default. The team leader can request it to be closed to allow the robot to earn additional points by opening it for the guests.
 	\end{itemize}
 	
 	\item \textbf{People:} 
@@ -79,16 +79,17 @@ Once both guests are seated, the robot introduces them to each other.
 	\item \textbf{Greeting guests:} \textcolor{red}{The names of the guests can be any popular english names. The favorite drinks of the guests can be any english named popular drink (it may not be in the list of objects provided). The interests of the guests can be any popular interest (e.g. sports, music, movies, hiking, gaming, cooking, traveling, ...).}
 	The guest paces a little to the left and right during conversation with the robot. Other people might appear in the background. 
 	
-	\item \textbf{Looking at person:} During verbal interactions and descriptions of people, robot 
-	looks at the conversational partner. The conversational partner will make small movements to each side to confirm the robot is dynamically looking at the person. Points for looking at the person talking, will only be awarded if the robot proves to continuously look at the moving person. 
+	\item \textbf{Looking at person:} The robot must look at the person it is talking to. Guests will move slightly to confirm the robot dynamically follows them with its gaze. Points for gaze tracking are awarded only if the robot continuously tracks the moving person.
 	
-	\item \textbf{Looking at direction of navigation:} During navigation robot looks in the direction where it is going. Persistently gazing towards unrelated person or incorrect direction while moving during the task deducts points. 
+	\item \textbf{Looking at direction of navigation:} The robot must look in the direction it is navigating. Persistently looking in an unrelated direction or at unrelated people during navigation results in a score deduction.
     
     \item \textbf{Smalltalk:} Ask each guest for one interest.
     
     \item \textbf{Finding the drink:} The robot shows both guest the drinking area where it will ask for their favorite drink and tell the guest if and where (left, center right is enough) that drink is available on the table. 
 	
-	\item \textbf{Seating People:} The robot must point at a place or location where the guest can sit.
+	\item \textbf{Seating People:} The robot must clearly point to a location or seat for each guest.
+
+	\item \textbf{Switching Places:} After being seated, guests may switch seats.
 	
 	\item \textbf{Switching Places:} Guests may switch places after they were seated.
 	
@@ -101,9 +102,9 @@ Once both guests are seated, the robot introduces them to each other.
 
 	\item \textbf{Misunderstanding:} Not understanding the guests and asking them again is fine. Continuing with a wrong name, drink or interest causes a score reduction of \sout{20pts}\textcolor{red}{40pts} per item.
 		
-	\item \textbf{Partial Scoring:} The main task allows partial (per guest) scoring.
+	\item \textbf{Partial Scoring:} The main task allows partial scoring per guest.
 
-	\item \textbf{Additional Seating:} Referees may add chairs to the party area living room.
+	\item \textbf{Additional Seating:} Referees may add chairs to the living room area.
 	
 	\item \textbf{Deus ex Machina:} Score reduction applies per guest as follows:
 	\begin{itemize}[nosep]
@@ -123,10 +124,10 @@ Once both guests are seated, the robot introduces them to each other.
 
 The referees need to:
 \begin{itemize}
-	\item Assign name, drink and one interest to 3 volunteers.
-	\item Arrange (and re-arrange) people in the living room.
-	\item Change the selection in the beverage area.
-	\item Open the door when requested by the robot.
+	\item Assign name, drink and one interest to three volunteers.
+	\item Arrange and rearrange people in the living room.
+	\item Change the selection of drinks in the beverage area.
+	\item Open the entrance door upon request from the robot.
 \end{itemize}
 
 \subsubsection*{To OC}
@@ -134,15 +135,15 @@ The referees need to:
 
 During setup day:
 \begin{itemize}
-	\item Announce beverage location.
+	\item Announce the location of the beverage area.
 \end{itemize}
 
 
 At least two hours before test:
 \begin{itemize}
-	\item Announce starting position.
+	\item Announce the starting position.
 	\item Announce host's name, favorite drink and interest.
-	\item Recruit five volunteers: one volunteer as host, two as arriving guests and 2 as passive guests.
+	\item Recruit five volunteers: one as the host, two as arriving guests and two as passive guests.
 
 \end{itemize}
 

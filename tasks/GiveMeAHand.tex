@@ -1,60 +1,61 @@
-\section{Give Me a Hand}
-\label{test:give-me-a-hand}
+\section{Give Me a Hand}\label{test:give-me-a-hand}
 
 \subsection*{Description}
-The robot places new items in the locations given by a human through natural human-robot interaction.
+The robot assists a human in organizing new items by receiving them and placing them in specified locations using natural interaction.
 
 \textbf{Main goal:}
-New items have arrived at the house. The user takes each item from the box or bag, one by one, hands it to the robot, and instructs the robot to place it in a specified location.
+New items have arrived at the house. The operator takes each item from a container, hands it to the robot, and instructs the robot to place it at a designated location within the room.
 
 \subsection*{Focus}
-This task focuses on
-\textit{Object perception},
-\textit{Human perception},
-\textit{Verbal interaction}, and
-\textit{Human-Robot Interaction}.
+\emph{Object perception}, \emph{Human perception}, \emph{Verbal interaction}, and \emph{Human-Robot Interaction}.
 
 \subsection*{Setup}
 \begin{itemize}[nosep]	
 	\item \textbf{Locations:} 
 	\begin{itemize}
-		\item This test takes place inside the Arena.
+		\item This test takes place inside the Arena in a single room.
 	\end{itemize}	 
 	\item \textbf{People:} 
 	\begin{itemize}
-		\item There might be several people inside the room (e.g. referee, assistant, and the operator).
+		\item The operator remains in a fixed location during the test.
+		\item Other people (e.g., referee, assistant) may be present in the room.
 	\end{itemize}
 	\item \textbf{Objects:}
 		\begin{itemize}
-			\item There is a box or bag with five random known objects (see \ref{rule:scenario_objects}).
-			\item The arena must include visually similar delivery locations (e.g., identical bins or dishes) to create deliberate ambiguity requiring user clarification.
+			\item A container (box or bag) containing five random known objects (see \ref{rule:scenario_objects}).
+			\item Several visually similar delivery locations (e.g., identical bowls, plates, or bins) placed within the room to create ambiguity.
 		\end{itemize}
 \end{itemize}
 
 \subsection*{Procedure}
 \begin{enumerate}[nosep]
-	\item The robot starts outside the arena and navigates to the testing area when the door is open.
-	\item The robot approaches the calling operator. The operator's location remains the same for the duration of the test.
-	\item The operator takes an item out of the box and hands it to the robot. 
-	\item The operator instructs the robot to place the object in a specified location in the same room.
-	\item The robot delivers the item and returns to the initial operator's location for a new object.
+	\item The robot starts outside the arena and navigates to the designated room once the door is opened.
+	\item The robot approaches the operator, who remains stationary throughout the test.
+	\item The operator picks up an object from the container and hands it to the robot.
+	\item The operator issues a verbal instruction for where to place the item. Instructions may include gestures and references to landmarks.
+	\item The robot delivers the item to the specified location, then returns to the operator for the next object.
+	\item Steps 3--5 repeat until all five items are delivered.
 \end{enumerate}
 
 \subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
 	\item \textbf{Handover:}
 	\begin{itemize}[nosep]
-		\item To ensure user safety, the robot must position its manipulator within 10-20 cm of the human's hand, without making physical contact, and must clearly indicate its readiness to receive the object using an explicit signal (e.g., holding position, activating a light, saying it, or playing a sound).
-		\item The human must complete the handover by placing the object into the robot's manipulator; the robot must remain stationary and must not initiate physical contact during this phase.
-		\item Explicit operator commands during the object handover—such as \textit{“Please, place the item in my gripper and wait until I close it in three, two, one”}—will be considered \textit{Deus ex Machina}. However, the robot may notify the user before closing its gripper after detecting that the object is within its grasping range; for example, \textit{“I have detected that the object is in my hand. I will close my gripper in three seconds—please be careful.”}
+		\item The robot must clearly signal its readiness to receive the item (e.g., by holding its manipulator still, using lights, audio cues, or verbal prompts).
+		\item The manipulator must be positioned within 10--20 cm of the operator's hand, without initiating contact.
+		\item The operator must complete the handover; the robot must not reach, grasp, or initiate movement toward the human.
+		\item Explicit verbal guidance from the operator (e.g., \textit{"Place the item in my gripper, I'll close it in 3…2…1"}) is considered \textit{Deus ex Machina} and will result in penalties.
+		\item The robot may, however, issue natural cues such as: \textit{"I detect the object in my hand. I will close my gripper in 3 seconds, please be careful."}.
 	\end{itemize}
+
 	\item \textbf{Delivery:}
 	\begin{itemize}[nosep]
-		\item Delivery instructions may include phrases like: \textit{"Place this apple on that plate"} or \textit{"Put this can in the trash bin."} The operator gives instructions using both verbal commands and gestures (e.g., \textit{"Place this item there} \textit{(pointing), next to the flower vase"}).
-		\item At any moment, the robot may ask questions to confirm information, request clarification, or ask the operator to repeat the instruction.
-		\item Since the target locations are intentionally ambiguous, the robot can request clarification from the operator before proceeding. This should be done through natural interaction, such as verbal questions or multimodal cues (e.g., pointing, asking “Which one?”). 
-		\item Full points for a correct delivery will only be awarded if the object is placed inside the designated container (e.g., bins) or within a few centimeters of the intended location (e.g., plates or surfaces).
-		\item In this task, natural human-robot interaction is the primary focus. Before engaging with the operator to request clarification, the robot must first capture their attention — for example, through visual signals, gestures, or sound cues — rather than relying on unattended interactions (e.g., talking without addressing a specific person). This is particularly important when the operator and the robot are not in close proximity; for instance, the operator might be occupied retrieving the next object or speaking with the referee.
+		\item Delivery instructions may combine verbal commands with gestures (e.g., \textit{"Put this on that plate, next to the flower vase"} while pointing).
+		\item The robot is expected to use natural interaction to confirm ambiguous instructions.
+		\item Since the target locations are intentionally ambiguous, the robot can request clarification from the operator before proceeding. This should be done through natural interaction, such as verbal questions or multimodal cues (e.g., pointing, asking \textit{"Which one?”}).
+		\item Full points are awarded only if the object is placed in the correct container or within a few centimeters of the intended target.
+		\item Human-robot interaction must be natural: robots must first capture the operator's attention (e.g., by gesture, light, or audio) before initiating clarification — especially if the operator is distracted or not directly facing the robot.
+		\item Interactions where the robot talks without attention capture (e.g., asking questions while the operator is busy elsewhere) are discouraged and may affect scoring.
 	\end{itemize}
 \end{enumerate}
 
@@ -63,15 +64,15 @@ This task focuses on
 
 The referee needs to:
 \begin{itemize}[nosep]
-	\item Select random objects from the dataset and target locations.
-	\item Assing the operator's location in the room.
+	\item Randomly select five known scenario objects and corresponding delivery locations.
+	\item Assign the operator's location in the room.
 \end{itemize}
 
 \subsubsection*{OC Instructions}
 At least two hours before the test:
 \begin{itemize}[nosep]
 	\item Announce the room for the test.
-	\item Arrange target containers and placement items (such as similar bowls, dishes, or bins) in the delivery areas.
+	\item Arrange target containers and placement items (such as similar bowls, dishes, or bins) around the room to create ambiguity in delivery instructions.
 \end{itemize}
 
 \subsection*{Score sheet}

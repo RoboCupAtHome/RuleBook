@@ -6,7 +6,6 @@ BUILD_DIR:=$(ROOT_DIR)/.build
 SILENT = @
 MSG      = echo
 HASRUBBER:=$(shell which rubber)
-XELATEX:=$(shell which xelatex)
 
 ## COLORS 
 RESET       = tput sgr0
@@ -52,9 +51,6 @@ ifdef HASRUBBER
 	$(SILENT) rubber --unsafe --pdf --force $$<
 else
 	$(SILENT) latexmk -Werror -shell-escape -silent -pdf -interaction=nonstopmode -outdir=$${BUILD_DIR} $$<
-endif
-ifdef XELATEX
-	$(SILENT) xelatex $$<
 endif
 
 ## Generate Summary Rule
