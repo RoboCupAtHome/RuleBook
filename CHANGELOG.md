@@ -12,6 +12,8 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#987](https://github.com/RoboCupAtHome/RuleBook/pull/987): Merge both leagues - Remove DSPL. 
+  * A single, unified RoboCup@Home league takes effect immediately. 
 * [#969](https://github.com/RoboCupAtHome/RuleBook/pull/969): Remove optional Tray in **Clean the Table**
 
 ## Rulebook [2025.1] - 2025-04-14
