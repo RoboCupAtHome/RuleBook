@@ -1,155 +1,105 @@
-\section{Help-me-carry}
-The robot's owner went shopping for groceries and needs help carrying the groceries from the car into the home.
+\section{Help Me Carry}\label{test:carry-my-luggage}
 
-\subsection{Goal}
-The robot must help bringing some objects into the arena from outside.
+The robot's owner needs help carrying a bag from the car to the starting location.
 
-\subsection{Focus}
-This test focuses on safe, robust navigation, people following and navigation in unknown environments as well as in Object Detection and Manipulation.
+\noindent \textbf{Main Goal:} The robot assists the operator in retrieving a bag from a designated car location outside and returning to the starting point.\\
 
-\subsection{Setup}
-The operator (the robot's owner) has a set of bags (and possibly other objects) that need to be carried from a place outside the arena back inside.
-
-\begin{enumerate}
-  \item \textbf{Location:} One of the arenas (apartment) and its surroundings. The apartment is in its normal state. Part of the test is performed outside the arena in a public space.
-  \item \textbf{Start:} The robot starts waiting inside the arena.
-  \item \textbf{Car:} The car is any landmark chosen (but \emph{not} announced) beforehand outside the arena. Several bags (see~\refsec{rule:scenario_objects}) with groceries are located where the car is parked.
-  \item \textbf{Doors:} All doors in the apartment are initially open.
-  \item \textbf{Operator:} A \enquote{professional} operator is selected by the TC to act as the operator of the robot.
-  \item \textbf{Uncontrolled environment:} There are no restrictions on other people walking by or standing around throughout the complete task.
+\noindent \textbf{Optional Goals:}
+\begin{enumerate}[nosep]
+	\item Return to the starting location autonomously
+	\item Follow the queue of people returning to the arena in appropriate manner.
 \end{enumerate}
 
-\subsection{Task}
-\textbf{Remark:} Obstacles obstructing robot's path can be found anytime. See~\ref{sec:helpmecarry_obstacles} for details.
-\begin{enumerate}
-  \item \textbf{Start:} The robot starts at a designated starting position in the arena, and waits for the \textit{professional} operator. The operator steps in front of the robot and tells it to follow (e.g.~by saying \enquote{follow me}). The team is \emph{not} allowed to instruct the operator.
+\subsection*{Focus}
+\emph{Person following}, \emph{navigation in unmapped environments}, \emph{social navigation}.
 
-  \item \textbf{Memorizing the operator:} The robot has to memorize the operator. During this phase, the robot may instruct the operator to follow a certain setup procedure.
+\subsection*{Setup}
+\begin{itemize}[nosep]
+	\item \textbf{Locations}: 
+		\begin{itemize}
+		 \item The test is performed outside the arena in a public space.
+		 \item The robot starts at a predefined location, announced before the test.
+		\end{itemize}
 
-  \item \textbf{Following the operator:} When the robot signals that it is ready to start, the operator starts walking --in a natural way-- towards the car. Upon arrival, the operator will indicate the robot when they have reached their destination as instructed by the robot (e.g.~by saying \enquote{here is the car} or \enquote{stop following me}).
+	\item \textbf{People}:
+	\begin{itemize}[nosep]
+		\item The operator is standing in front of the robot.
+		\item Three to four additional people are used to simulate a crowd and later form a queue.
+	\end{itemize}
+	
+	\item \textbf{Objects}: 
+		\begin{itemize}[nosep]
+			\item At least two bags are placed near the car location.
+			\item A small object on the ground.
+			\item A hard-to-see object.
+			\item Retractable barriers.
+		\end{itemize}
+	
+	\item \textbf{Uncontrolled environment:} There are no restrictions on other people walking by, standing near, or observing the robot throughout the test.
+\end{itemize}
 
-  \newcounter{enumTemp}
-  \setcounter{enumTemp}{\theenumi}
-  \item {[DSPL \& OPL]} \textbf{Bringing groceries in}
-  The operator asks the robot to take a bag to a specific location (e.g.~\enquote{Take this bag to the kitchen table}).
-  \begin{enumerate}
-    \item \textbf{Bag pick-up:} The robots picks up the bag via natural handover (See remarks).
-    \item \textbf{Bag delivery:} The robot takes the bag to the instructed destination. It may place the bag on the floor or onto the placement location.
-    \item \textbf{Asking for help:} Close to the delivery location is another person. Facing that person, the robot must kindly request for help carrying groceries into the house.
-  \end{enumerate}
+\subsection*{Procedure}
+\begin{enumerate}[nosep]
+	\item \textbf{Following the operator:} The robot should inform the operator when it is ready to follow them. The operator walks naturally towards the designated car location. Upon arrival, the operator points to one of the bags.
 
-  \setcounter{enumi}{\theenumTemp}
+	\item \textbf{Obstacles:} The robot encounters the following obstacles along its way (in arbitrary order):
+	\begin{enumerate*}[label=(\alph*)]
+		\item a small object on the ground,
+		\item a hard-to-see object,
+		\item a crowd of people obstructing the path, and
+		\item a small area blocked using retractable barriers.
+	\end{enumerate*}
+	\item \textbf{Picking up the bag:} The robot must identify and pick up the bag pointed at by the operator.
+	\item \textbf{Bag delivery:} The robot takes the bag to the starting location. It may place the bag on the floor.
 
-  \item \textbf{Memorizing the \emph{new} operator:} The robot has to memorize the operator that will help. During this phase, the robot may instruct the operator to follow a certain setup procedure.
-
-  \item \textbf{Guiding the operator:} When the robot signals that it is ready to start guiding, the robot guiding the operator to the car. The robot must clearly announce when the destination (the car) is reached.
-  \begin{itemize}[leftmargin=3cm]
-    \item \textbf{Closed door:} Along it's path to the car, the robot will find a closed door (most likely the entrance to the house) that will need to be opened to reach the destination.
-    
-  \end{itemize}
+	\item \textbf{Optional goals:}
+	\begin{enumerate}
+			\item \textbf{Following the queue:} After reaching the car, a few of the people that formed the crowd obstructing the robot return to the starting location in a queue. The robot can decide to join the queue on its way back, in a manner that appears natural to the people in the queue.
+	\end{enumerate}
 
 \end{enumerate}
 
-\subsection{Obstacles}
-\label{sec:helpmecarry_obstacles}
-Several obstacles are placed obstructing the robot's path. This can happen anytime and the robot has to react accordingly.
-\begin{itemize}
-  \item \textbf{3D Object:} A hard-to-perceive object
-  % that requires more than a laser scanner to be detected
-  (e.g.~coat rack, rolling chair, lamp, etc).
 
-  \item \textbf{Small object:} Small object
-  (e.g.~apple, glass, lego brick, etc).
+\subsection*{Additional Rules and Remarks}
+\begin{enumerate}[nosep]
 
-  \item \textbf{Movable Object:} Something that can be moved or pushed away
-  (e.g.~coat rack, rolling chair, lamp, etc).
-  The robot must clearly state it is about to push the object.
-  
-\end{itemize}
-%% Possible extensions:
-%% - DONE: allow the operator to tell for each item where it should go
-%% - At the destination room, there is a person waving, waiting for the robot to bring the items so (s)he can take them
+	\item \textbf{Car location:} A fixed location outside the arena is designated as the “car” area. No actual car is required.
 
+	\item \textbf{Reaching the car:} The robot can reach the car location only by following the operator (the location is unknown before the test).
 
-\subsection{Additional rules and remarks}
-\begin{enumerate}
-  \begin{minipage}{0.65\textwidth}
-  \item \textbf{Asking for passage:} The robot is allowed to (gently) ask individual people to step aside, but it is not allowed to blindly shout at groups of people.
-
-  \item \textbf{Bag handles:} The handles of the bag are always clear and standing up. See Figure~\ref{fig:scenario_container_bag} in~\refsec{rule:scenario_objects} for bag description. \footnotemark
-
-  \item \textbf{Bag pick-up:} The robot should actively try to grasp the bag from the operator's hand.
-  If the robot can't take the bag from operator's hand (handover) it may request the operator to place or hang the bag on its manipulator, or place it on the floor for pickup.
-  The robot must clearly state whether it has detected the operator's hand, bag release, etc.
-
-  \item \textbf{Calling the operator back:} During the following phase, when the robot has lost the operator, it may call the operator back once.
-  \end{minipage}\hfill%
-  \begin{minipage}{0.65\textwidth}
-  \end{minipage}\hfill
-  \begin{minipage}{0.25\textwidth}
-    \vspace{-20pt}
-    \begin{figure}[H]
-      \centering
-      \includegraphics[width=2cm]{images/help_me_carry_bag.png}%
-      \vspace{-10pt}
-      %\caption{Example car with groceries.}
-      \caption{Paper bag}
-      \label{fig:help_me_carry_paper_bag}
-    \end{figure}
-    \vspace{-10pt}
-    \begin{figure}[H]
-      \centering
-      \includegraphics[width=\textwidth]{images/help_me_carry_car.png}%
-      \vspace{-20pt}
-      %\caption{Example car with groceries.}
-      \label{fig:help_me_carry_car}
-      \caption{Car}
-    \end{figure}
-  \end{minipage}
-  \item \textbf{Disturbances from outside:} If a person from the audience (severely) interferes with the robot in a way that makes it impossible to solve the task, the team may repeat the test immediately.
-
-  \item \textbf{Groceries:} Any kind of objects can be found lying around the location designated as the \textit{Car}, such as boxes, sacs, plastic bags, crates, and the groceries itself to give realism to the test. Regardless what objects are present, the robot shall carry an \textbf{official shopping bag} as described below and in~\refsec{rule:scenario_objects}.
-
-  \item \textbf{Instruction:} The robot interacts with the operator, not the team.
-
-  \item \textbf{Natural walking:} The operator has to walk \enquote{naturally}, i.e., move forward facing forward. If not mentioned otherwise, the operator is not allowed to walk back, stand still, signal the robot or follow some re-calibration procedure.
-
-  \item \textbf{Obstacle avoidance:} The robot is allowed to push (but not crush) the small object indefinitely without damaging it.
-  Driving over, squeezing, crushing, breaking, etc., the small object immediately finishes the test.
-
-  \item \textbf{Opening door:} If unable to open the door, the robot may ask the person being guided to open it (no points are scored).
-
+	\item \textbf{Deus ex Machina:} Penalties apply if the robot loses the operator and needs help recovering. The following forms of assistance are penalized:
+    \begin{enumerate}
+     \item Natural interaction (e.g., waving and calling)
+     \item Unnatural interaction (e.g., raising both hands and jumping)
+	 \item Returning in front of the robot to resume following.
+     \item Physical contact (e.g., pulling the robot's hand)
+    \end{enumerate}
+	Penalties are only applied if the robot continues to score after the interaction. Penalties can be applied multiple times up to a total of 250 points.
 \end{enumerate}
-\footnotetext{This may change in the future. Then, a soft handle may be used which folds down}
 
-% \subsection{Data recording}
-%   Please record the following data (See~\refsec{rule:datarecording}):
-% \begin{itemize}
-%  \item Maps
-%  \item Plans
-% \end{itemize}
 
-\subsection{Referee instructions}
+\subsection*{Referee Instructions}
 
-The referee needs to
-\begin{itemize}
-  \item Distribute some objects over the shopping bags.
-  \item Designate a few \enquote{car parking locations} from which the objects must be carried.
+The referees need to:
+\begin{itemize}[nosep]
+	\item Assign one volunteer as the operator.
+	\item Assign three to four people to obstruct the robot's path and later form a queue.
+	\item Choose positions for the bags and assign a bag to the operator.
+	\item Choose the order of the obstacles that the robot will face outside while following the operator.
+	\item Designate a location outside as a car location.
+	\item Designate a location for the queue to form. The queue is composed of the same people that form the crowd.
+	\item Mind the robot when it moves around.
+	\item Ensure the operator follows the robot's instructions, steps over small obstacles, and walks naturally around objects.
 \end{itemize}
 
-\subsection{OC instructions}
+\subsection*{OC Instructions}
 
-During setup days
-\begin{itemize}
-  \item Make bags available.
+At least two hours before test:
+\begin{itemize}[nosep]
+	\item Select and announce the robot's starting point.
+	\item Select which bags will be used in the test.
+	\item Organize retractable barriers.
 \end{itemize}
 
-2 hours before the test
-\begin{itemize}
-  \item Announce the location in which robots will start.
-  \item Get and instruct volunteers for the test.
-\end{itemize}
-
-\newpage
-\subsection{Score sheet}
+\subsection*{Score Sheet}
 \input{scoresheets/HelpMeCarry.tex}
