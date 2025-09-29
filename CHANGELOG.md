@@ -12,6 +12,12 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#990](https://github.com/RoboCupAtHome/RuleBook/pull/990): Remove Stage system
+  * The stage system was removed to simplify the competition format.  
+  * Previously, only a subset of teams advanced to later stages, which limited participation and reduced the number of runs per team. In the new format, all teams compete in the same set of tasks across multiple days, ensuring more consistent evaluation.
+  * The new structure also allows teams to demonstrate progress and improve their performance over the course of the competition.
+  * The number of tasks was reduced to four (repeated each day) plus the Restaurant test.
+  * A goal is to reduce unnecessary repetition of skills across tasks, making each task more meaningful and distinct.
 * [#987](https://github.com/RoboCupAtHome/RuleBook/pull/987): Merge both leagues - Remove DSPL. 
   * A single, unified RoboCup@Home league takes effect immediately. 
 * [#969](https://github.com/RoboCupAtHome/RuleBook/pull/969): Remove optional Tray in **Clean the Table**
