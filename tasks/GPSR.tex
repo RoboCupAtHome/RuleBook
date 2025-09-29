@@ -21,7 +21,7 @@ The robot is asked to understand and execute commands requiring a wide range of 
         \begin{itemize}
             \item \textbf{Task location:} The task takes place inside the \Arena{}. Commands may require the robot to leave the room. The \Arena{} is in its nominal configuration for this task.
             \item \textbf{Start location:} The robot starts outside the \Arena{}. When the door opens, it must navigate towards the \textit{Instruction Point}.
-            \item \textbf{Instruction point:} The robot returns to this point after completing each command to receive the next one.
+            \item \textbf{Instruction point:} The robot returns to this point after completing all of the commands.
         \end{itemize}
     \item \textbf{People:}
         \begin{itemize}
@@ -42,8 +42,8 @@ The robot is asked to understand and execute commands requiring a wide range of 
 \begin{enumerate}[nosep]
 	\item \textbf{Instruction point:} At least two hours before the test, the referees announce the location of the \textit{Instruction Point}.
 	\item \textbf{Test start:} The robot moves to the \textit{Instruction Point} when the arena door is open.
-	\item \textbf{Command execution:} The operator instructs the robot to execute a command and the robot performs the task.
-	\item \textbf{Back to the instruction point:} The robot goes back to the \textit{Instruction Point} and waits for the next command.
+	\item \textbf{Command execution:} The operator provides up to three commands issued consecutively to instruct the robot to perform the tasks. If the operator provides the commands one-by-one, the robot must return to the operator after completing each task. Once a command has been generated it will be entered into an LLM to re-generate a similar phrase. The operator will say "please start now" to initiate the task.
+	\item \textbf{Back to the instruction point:} The robot goes back to the \textit{Instruction Point} after completing all of the commands given by the operator.
 	\item \textbf{Pausing the Timer:} The referee pauses the timer as soon as the robot reaches the instruction point to reset the arena for the next command. The timer resumes once the referee signals the start of the next command.
 \end{enumerate}
 
@@ -69,6 +69,7 @@ The robot is asked to understand and execute commands requiring a wide range of 
 		\item Bypassing speech recognition with an alternative HRI.
 		\item Receiving human assistance to accomplish a command 
 		\item Instructing a human assistant to perform the whole task
+		\item QR codes will not be available 
 	\end{itemize}
 \end{enumerate}
 
