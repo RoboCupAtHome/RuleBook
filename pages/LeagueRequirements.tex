@@ -2,11 +2,11 @@
 
 \section{Competition Area}
 
-\subsection{Field Info}
+\subsection{Arena Information}
 \begin{itemize}
-    \item Number of Fields: 2 (+1 Testing)
-    \item Space per field: \qty{90}{\meter\squared}
-    \item Total gross space: \qty{180}{\meter\squared} (+\qty{90}{\meter\squared} DSPL)
+    \item Number of Arenas: 2 (plus 1 Testing Arena)
+    \item Space per Arena: \qty{90}{\meter\squared}
+    \item Total Competition Area: \qty{180}{\meter\squared} (plus \qty{90}{\meter\squared} for Testing, if applicable)
 \end{itemize}
 
 \begin{figure}[H]
@@ -20,35 +20,47 @@
 \end{figure}
 
 \subsection{Detailed Setup}
-The RoboCup@Home Arena is a realistic home setting (an apartment) consisting of interconnected rooms. A typical \Arena{} setup is shown in~\reffig{fig:sample_arena_setup}. The minimal configuration consists of:
+The RoboCup@Home Arena is a realistic home setting (apartment-like) consisting of interconnected rooms. A typical configuration is shown in~\reffig{fig:sample_arena_setup}.
+The \textbf{minimum arena configuration must include}:
 \begin{itemize}
-    \item a living room
-    \item a kitchen
-    \item two additional rooms (bedroom, office, dining, laundry room, foyer, kids room),
+    \item a living room,
+    \item a kitchen,
+    \item two additional rooms (e.g., bedroom, office, dining room, laundry room, foyer, childrens room).
 \end{itemize}
 
 There are usually two competition arenas and one additional Testing arena.
 
-Each arena requires a dedicated WLAN access point for teams during their competition runs (more details in the next section). The indoor home setting is surrounded by high and low walls built using standard fair construction materials.
+\paragraph{Dimensions}
+Each arena should be around \qtyrange{90}{120}{\meter\squared}. A minimum of \qty{80}{\meter\squared} is acceptable if robot navigation space is ensured. Typical room sizes are approximately \qtyproduct{4.5 x 4.5}{\metre}.
+Robots typically have a base diameter of \qty{70}{\centi\metre}, with extensions for manipulators. The arena must accommodate safe navigation.
 
-\paragraph{Dimensions} Arenas are typically around \qtyrange{90}{100}{\metre\squared}, with rooms approximately \qtyproduct{4.5 x 4.5}{\metre}. However, as little as \qty{80}{\metre\squared} is acceptable, provided there is sufficient space for robot movement. (Note: The robot base diameter is about \qty{70}{\centi\metre}, with possible extensions for arms.)
+\paragraph{Walls}
+Walls are fixed and \textbf{must not be altered} during the competition.
+\begin{itemize}
+    \item Minimum height: \qty{60}{\centi\metre}.
+    \item Maximum height: not specified, but audience visibility \textbf{should be ensured}.
+\end{itemize}
 
-\paragraph{Walls} Walls are fixed and cannot be modified during the competition. The minimum wall height is \qty{60}{\centi\metre}; there is no maximum height, but visibility for the audience must be ensured.
-
-\paragraph{Doors} Inside the arena, rooms are connected by door openings and/or internal doors. Each arena should have:
+\paragraph{Doors}
+Each arena \textbf{must include}:
 \begin{itemize}
     \item At least one entrance door (opening inward).
     \item At least one exit door (opening outward).
-    \item All doors have handles, not knobs, and can be closed.
-    \item Minimum door width: \qty{90}{\centi\metre}, height: \qty{200}{\centi\metre}.
+    \item All doors with handles (not knobs), which can be closed.
+    \item Minimum width: \qty{90}{\centi\metre}, minimum height: \qty{200}{\centi\metre}.
 \end{itemize}
-If such doors are not feasible, alternative solutions can be discussed in advance.
+If these requirements cannot be met, alternative solutions \textbf{must be discussed in advance} with the Technical Committee (TC).
 
-\paragraph{Floor} The floor is even, with minor irregularities such as carpets or transitions between different materials. It should not be excessively slippery. There should be at least one meter of free space around the arena walls for robots to line up.
+\paragraph{Floor}
+The floor must be even, with minor irregularities allowed (e.g., carpets, transitions). It should not be excessively slippery.
+At least \qty{1}{\metre} of free space is required around the arena for robot staging.
 
-\paragraph{Appearance} The floor and walls are mostly monochromatic but may include textures such as carpets or posters.
+\paragraph{Appearance}
+Walls and floors should be neutral (monochromatic or lightly textured). Decorative elements such as posters or carpets are allowed.
 
-\paragraph{Additional Setup} A table should be placed outside the arena for external computing devices for the active team.
+\paragraph{Additional Setup}
+A table must be provided outside each arena for external computing devices of the active team.
+
 
 % \subsection{Sponsor Requirements}
 
@@ -63,110 +75,114 @@ If such doors are not feasible, alternative solutions can be discussed in advanc
 % Alternatively, if venue stairs meet these requirements and are near the @Home area, they may be used.
 
 \section{Environment Requirements}
-The arena is decorated to resemble a typical apartment, including:
+
+The arena must be decorated to resemble a typical apartment.
+\paragraph{Mandatory Items}
 \begin{itemize}
-    \item Plants, mirrors, paintings, posters, plates, picture frames, clocks, candles with holders, and books.
+    \item Plants, mirrors, paintings, posters, picture frames, clocks, candles with holders, books.
 \end{itemize}
 
-\paragraph{Furnishings} The minimal setup includes:
+\paragraph{Furnishings (minimum)}
 \begin{itemize}
     \item a couch,
-    \item a small table (coffee/side),
+    \item a coffee or side table,
     \item a small dining table with two chairs,
     \item a trash bin,
-    \item a bookcase (or other shelf-like furniture) in which objects can be placed, such that the minimum distance between shelves is \qty{30}{\centi\meter}. Two side by side doors blocking the access to at least the lower three of the shelves. The doors require U-shaped handles.
-    \item a front loader washing machine
-    \item The kitchen contains:
+    \item a bookcase (or similar shelving) with a minimum shelf spacing of \qty{30}{\centi\metre}; access to at least the lower three shelves must be blocked by two side-by-side doors with U-shaped handles,
+    \item a front-loading washing machine,
+    \item kitchen equipment including:
     \begin{itemize}
         \item a dishwasher,
         \item a sink,
-        \item a pantry (a tall cupboard with shelves and doors with U-shaped handles).
+        \item a pantry (tall cupboard with shelves and U-shaped handles).
     \end{itemize}
 \end{itemize}
 
-\paragraph{Optional} Optional furnishings:
-Although not strictly required, the following additional furnishings are recommended to meet expected standards and improve the overall functionality of the space:
+\paragraph{Optional Furnishings (recommended)}
+These are not required but improve realism and expand task possibilities:
 \begin{itemize}
     \item a bed,
-    \item a bigger dining table with 4 chairs instead of a small one
-    \item additional (side/coffee/couch) tables,
-    \item a refrigerator
-    \item a kitchen countertop,
-    \item a microwave,
-    \item a portable stove with one heating plate and a pan,
-    \item a coat rack.
-    \item a open cupboard or a small table with a television and remote control,
-    \item a cupboard,
-    \item a chest of drawers with at least two drawers that are between \qty{90}{\centi\meter} and \qty{120}{\centi\meter} from floor level. The drawers require U-shaped handles.
+    \item a larger dining table with 4 chairs,
+    \item additional side/coffee tables,
+    \item refrigerator,
+    \item kitchen countertop,
+    \item microwave,
+    \item portable stove with heating plate and pan,
+    \item coat rack,
+    \item open cupboard or TV stand with television and remote,
+    \item cupboard,
+    \item chest of drawers with at least two drawers positioned \qtyrange{90}{120}{\centi\metre} from floor, with U-shaped handles.
 \end{itemize}
 
-\section{Network}
+\section{Network Requirements}
 
 \subsection{Wireless Communication}
-A wireless network is provided for each arena; however, reliability is not guaranteed. The following rules apply:
+Each arena must have a dedicated WLAN access point.
 \begin{itemize}
-    \item Only the official arena network may be used during testing.
-    \item Only the team currently active in the arena is permitted to use the network.
-    \item Each team has a separate VLAN with its own SSID/password.
-    \item The networks are connected to both the Internet and a wired connection available near each arena.
-    \item The use of unauthorized networks (including smartphone hotspots) is strictly prohibited and may result in disqualification.
+    \item Only the official arena WLAN may be used during testing and competition.
+    \item Only the currently active team may access the arena network.
+    \item Each team has its own VLAN with separate SSID and password.
+    \item Networks must be connected to both the Internet and a wired connection near the arena.
+    \item Unauthorized networks (e.g., hotspots) are strictly prohibited and may result in disqualification.
 \end{itemize}
+Note: Wireless reliability may fluctuate due to the fair environment.
 
 \section{Best Practices}
 \begin{itemize}
-    \item One entry door should open inward; one exit door should open outward.
-    \item Avoid loose cables and large uneven surfaces.
-    \item Arrange team tables near their respective arenas.
+    \item Ensure one entry door opens inward and one exit door outward.
+    \item Avoid loose cables or uneven surfaces.
+    \item Locate team tables near the arenas.
 \end{itemize}
 
 \section{Additional Equipment}
 
-The minimum object set required includes:
-
+The following household objects must be available:
 \begin{itemize}
-    \item Local light (\qty{0.5}{\kilogram}) household objects of different categories such as, but not limited to: Drinks, Snacks, Food, Fruits, Toys, Cleaning Supplies
-    \item Tableware: dish, bowl, cup/mug.
-    \item Cutlery: fork, knife, spoon.
-    \item Bags: lightweight with vertical handles.
-    \item Trays: for bi-manual manipulation.
-    \item Laundry Basket (two handed carry basket e.g. long and wide)
-    \item Pourable objects: e.g., a cereal box.
-    \item Heavy objects: \qtyrange{1}{1.5}{\kilogram}.
-    \item Tiny objects: \qty{5}{\centi\meter} (e.g., paper, teabag, pen).
-    \item Fragile objects: easily breakable (e.g., a chocolate egg).
-    \item Deformable objects: flexible (e.g., cloth).
-    \item Garbage bag: a tieable garbage bag.
+    \item Lightweight (\qty{0.5}{\kilogram}) household objects of various categories (drinks, snacks, food, fruits, toys, cleaning supplies),
+    \item Tableware: dish, bowl, cup/mug,
+    \item Cutlery: fork, knife, spoon,
+    \item Bags: lightweight with vertical handles,
+    \item Trays: for bimanual manipulation,
+    \item Laundry basket (wide, two-handed carry),
+    \item Pourable objects (e.g., cereal box),
+    \item Heavy objects: \qtyrange{1}{1.5}{\kilogram},
+    \item Tiny objects: \qty{5}{\centi\metre} (e.g., paper, teabag, pen),
+    \item Fragile objects: breakable (e.g., chocolate egg),q
+    \item Deformable objects: flexible (e.g., cloth),
+    \item Garbage bag: tieable household garbage bag.
 \end{itemize}
 
 \section{League Organization Area}
 
-\paragraph{OC Requirements} The \OC{} area must include the following:
+\paragraph{Organizing Committee (OC) Requirements}
+The OC area must include:  
 \begin{itemize}
-    \item \numrange{2}{3} tables, each accompanied by two chairs
-    \item Access to power outlets and a LAN connection
-    \item Access to a printer (unless paperless setup is in place).
-    \item A mobile display connected to the table; if unavailable, a poster stand or announcement board may be used as an alternative
+    \item \numrange{2}{3} tables with two chairs each,
+    \item Access to power outlets and LAN,
+    \item Access to a printer (or paperless setup if agreed),
+    \item A mobile display for announcements (poster stand or board as fallback).
 \end{itemize}
 
 \section{Teams Area}
 
-\paragraph{Participation Area} Each team should have:
+\paragraph{Participation Area}
+Each team must be provided with:
 \begin{itemize}
-    \item One table per four members, with chairs.
-    \item At least one power outlet and one Ethernet connection.
-    \item \qty{2}{\metre\squared} for robot storage, \qtyrange{1}{2}{\metre\squared} for robot handling.
-    \item \qtyrange{4}{5}{\metre\squared}  near the team area for handling the robot.
-    \item Adequate space between table rows for robot transport.
+    \item One table per four members, with chairs,
+    \item At least one power outlet and one Ethernet connection,
+    \item \qty{2}{\metre\squared} for robot storage,
+    \item \qtyrange{1}{2}{\metre\squared} for robot handling,
+    \item \qtyrange{4}{5}{\metre\squared} near team area for robot maneuvering,
+    \item Adequate aisle space between tables for robot transport.
 \end{itemize}
 
-\section{Others}
+\section{Other Notes}
 \begin{itemize}
-    \item New Changes: 
+    \item Changes compared to previous years:
     \begin{itemize}
-        \item Different Sub-Leagues have been dissolved.
-        \item A Washing Machine is now required.
-        \item Bed is now optional
+        \item Sub-Leagues have been dissolved.
+        \item A washing machine is now mandatory.
+        \item A bed is now optional.
     \end{itemize}
     \item Additional information: TBD.
 \end{itemize}
-
