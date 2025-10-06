@@ -4,7 +4,7 @@
 
 \subsection{Field Info}
 \begin{itemize}
-    \item Number of Fields: 2 (+1 DSPL)
+    \item Number of Fields: 2 (+1 Testing)
     \item Space per field: \qty{90}{\meter\squared}
     \item Total gross space: \qty{180}{\meter\squared} (+\qty{90}{\meter\squared} DSPL)
 \end{itemize}
@@ -22,13 +22,12 @@
 \subsection{Detailed Setup}
 The RoboCup@Home Arena is a realistic home setting (an apartment) consisting of interconnected rooms. A typical \Arena{} setup is shown in~\reffig{fig:sample_arena_setup}. The minimal configuration consists of:
 \begin{itemize}
-    \item a bedroom,
-    \item a dining room,
-    \item a living room, and
-    \item a kitchen.
+    \item a living room
+    \item a kitchen
+    \item two additional rooms (bedroom, office, dining, laundry room, foyer, kids room),
 \end{itemize}
 
-There are usually two OPL arenas and one DSPL arena. Sometimes, one of the OPL arenas is shared between DSPL and OPL depending on the number of participating teams in each league.
+There are usually two competition arenas and one additional Testing arena.
 
 Each arena requires a dedicated WLAN access point for teams during their competition runs (more details in the next section). The indoor home setting is surrounded by high and low walls built using standard fair construction materials.
 
@@ -51,17 +50,17 @@ If such doors are not feasible, alternative solutions can be discussed in advanc
 
 \paragraph{Additional Setup} A table should be placed outside the arena for external computing devices for the active team.
 
-\subsection{Sponsor Requirements}
+% \subsection{Sponsor Requirements}
 
-These additional requirements are not mandated by the rules but based on request of sponsors.
+% These additional requirements are not mandated by the rules but based on request of sponsors.
 
-\paragraph{Stairs (for humanoid robots, if applicable)} If humanoid robots participate, an external set of stairs is required. The stairs should preferably have:
-\begin{itemize}
-    \item 6--7 steps going up, a landing, and 6--7 steps going down.
-    \item Minimum width: \qty{91}{\centi\metre}, tread depth: at least \qty{28}{\centi\metre}, riser height: \qtyrange{10}{18}{\centi\metre}(typically \qty{17.4}{\centi\metre}).
-    \item Close risers for robot safety.
-\end{itemize}
-Alternatively, if venue stairs meet these requirements and are near the @Home area, they may be used.
+% \paragraph{Stairs (for humanoid robots, if applicable)} If humanoid robots participate, an external set of stairs is required. The stairs should preferably have:
+% \begin{itemize}
+%     \item 6--7 steps going up, a landing, and 6--7 steps going down.
+%     \item Minimum width: \qty{91}{\centi\metre}, tread depth: at least \qty{28}{\centi\metre}, riser height: \qtyrange{10}{18}{\centi\metre}(typically \qty{17.4}{\centi\metre}).
+%     \item Close risers for robot safety.
+% \end{itemize}
+% Alternatively, if venue stairs meet these requirements and are near the @Home area, they may be used.
 
 \section{Environment Requirements}
 The arena is decorated to resemble a typical apartment, including:
@@ -71,27 +70,27 @@ The arena is decorated to resemble a typical apartment, including:
 
 \paragraph{Furnishings} The minimal setup includes:
 \begin{itemize}
-    \item a bed,
     \item a couch,
     \item a small table (coffee/side),
     \item a small dining table with two chairs,
     \item a trash bin,
     \item a bookcase (or other shelf-like furniture) in which objects can be placed, such that the minimum distance between shelves is \qty{30}{\centi\meter}. Two side by side doors blocking the access to at least the lower three of the shelves. The doors require U-shaped handles.
-\end{itemize}
-
-\paragraph{Kitchen} The kitchen contains:
-\begin{itemize}
-    \item a dishwasher,
-    \item a sink,
-    \item a pantry (a tall cupboard with shelves and doors with U-shaped handles).
+    \item a front loader washing machine
+    \item The kitchen contains:
+    \begin{itemize}
+        \item a dishwasher,
+        \item a sink,
+        \item a pantry (a tall cupboard with shelves and doors with U-shaped handles).
+    \end{itemize}
 \end{itemize}
 
 \paragraph{Optional} Optional furnishings:
 Although not strictly required, the following additional furnishings are recommended to meet expected standards and improve the overall functionality of the space:
 \begin{itemize}
+    \item a bed,
     \item a bigger dining table with 4 chairs instead of a small one
     \item additional (side/coffee/couch) tables,
-    \item a refrigerator (with some cans and plastic bottles), 
+    \item a refrigerator
     \item a kitchen countertop,
     \item a microwave,
     \item a portable stove with one heating plate and a pan,
@@ -117,18 +116,20 @@ A wireless network is provided for each arena; however, reliability is not guara
 \begin{itemize}
     \item One entry door should open inward; one exit door should open outward.
     \item Avoid loose cables and large uneven surfaces.
-    \item Arrange DSPL and OPL team tables near their respective arenas.
+    \item Arrange team tables near their respective arenas.
 \end{itemize}
 
 \section{Additional Equipment}
+
 The minimum object set required includes:
+
 \begin{itemize}
     \item Local light (\qty{0.5}{\kilogram}) household objects of different categories such as, but not limited to: Drinks, Snacks, Food, Fruits, Toys, Cleaning Supplies
-    \item Tableware: dish, bowl, cup/mug, napkin.
+    \item Tableware: dish, bowl, cup/mug.
     \item Cutlery: fork, knife, spoon.
-    \item Trash bags: large plastic bags with handles.
     \item Bags: lightweight with vertical handles.
     \item Trays: for bi-manual manipulation.
+    \item Laundry Basket (two handed carry basket e.g. long and wide)
     \item Pourable objects: e.g., a cereal box.
     \item Heavy objects: \qtyrange{1}{1.5}{\kilogram}.
     \item Tiny objects: \qty{5}{\centi\meter} (e.g., paper, teabag, pen).
@@ -138,7 +139,8 @@ The minimum object set required includes:
 \end{itemize}
 
 \section{League Organization Area}
-\paragraph{OC Requirements} The \OC{} area must include the following::
+
+\paragraph{OC Requirements} The \OC{} area must include the following:
 \begin{itemize}
     \item \numrange{2}{3} tables, each accompanied by two chairs
     \item Access to power outlets and a LAN connection
@@ -147,6 +149,7 @@ The minimum object set required includes:
 \end{itemize}
 
 \section{Teams Area}
+
 \paragraph{Participation Area} Each team should have:
 \begin{itemize}
     \item One table per four members, with chairs.
@@ -158,7 +161,12 @@ The minimum object set required includes:
 
 \section{Others}
 \begin{itemize}
-    \item New Changes: SSPL has been dissolved.
+    \item New Changes: 
+    \begin{itemize}
+        \item Different Sub-Leagues have been dissolved.
+        \item A Washing Machine is now required.
+        \item Bed is now optional
+    \end{itemize}
     \item Additional information: TBD.
 \end{itemize}
 
