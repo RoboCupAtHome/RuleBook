@@ -1,0 +1,128 @@
+\section{Human Robot Interaction Challenge}
+\label{test:human-robot-interaction-challenge}
+
+\subsection*{Description}
+The robot is working as a receptionist at a party. The robot has to take two new guests to the living room, offer a drink and a free place to sit and introduce them to eachother.\\
+    
+\textbf{Main goal:}
+    The robot welcomes and assists two newcomers at a party, suggest a drink and offering them a seat and maintaining appropriate gaze direction during conversation (at person speaking, direction of navigation).
+
+% \vspace{-5pt}
+\textbf{Optional goals:}
+\begin{enumerate}[nosep]
+	\item Detect doorbell sound as a signal that a guest has arrived.
+	\item Open the entrance door for each arriving guest.
+	\item Visually describe the first guest for the second guest before reaching the living room
+	\item Understand name and favorite drink without asking any confirmation or correction questions (non-essential questions).
+\end{enumerate}
+
+\subsection*{Focus}
+\emph{\SysI{}}, \emph{\HRI{}}, \emph{\PerDet{}}, \emph{\PerRec{}}
+% human detection and recognition, safe navigation and human-robot interaction with unknown people.
+
+\subsection*{Setup}
+\begin{itemize}
+	\item \textbf{Location}: 
+	\begin{itemize}
+	\item The test takes place in the living room.	
+	\item The robot starts inside the \Arena{} at a predefined location near where guests are sitting.
+	\item A table with drinks is prepared near the living room
+	\item \textbf{Entrance:} The entrance door is open by default. The team leader can request it to be closed to allow the robot to earn additional points by opening it for the guests.
+	\end{itemize}
+	
+	\item \textbf{People:} 
+	\begin{itemize}
+	\item \textbf{Arriving Guests:} Both guests have a name and a favorite drink. An arriving guest will wait by the door, robots have to move to meet guests by the door. A guest will not move inside the house until the robot has initiated conversation. It is not allowed to tell the guests to move in front of the robot to recognize the guest and start the conversation. The robot is the one that must approach the guest. Guests have to be guided to the beverage area and then the living room where the robot will offer a free place to sit and introduce the guests to each other. Each of the guest will arrive separately. 
+	\item \textbf{Passive Guests:} Other Guests: A few individuals, including possibly spectators, can be anywhere in the arena, including sitting or standing in relevant places e.g. the couch, seats or the area with the drinks.
+	\end{itemize}
+
+\end{itemize}
+
+\subsection*{Procedure}
+Both guests arrive separately. As a signal that the guest has arrived, a doorbell will ring. 
+The doorbell will only ring if the robot is waiting for a new guest at the starting position.
+The robot either opens the door for the guest or meets them at the door.
+It greets the guest and asks for their name.
+The favorite drink can be asked at any time, from the moment the guest enters the arena until the robot shows the beverage area.
+The robot guides the guest to the beverage area, and checks if the guest favorite drink is available on the table.
+If the favorite drink is available the robot must tell the guest the favorite drink is available on the beverage area and where is is. If not available, the robot must inform the guest the favorite drink is not available and list all the available drinks in the beverage area.
+After showing the guest the beverage area, the robot escorts them to the living room and offers a free seat. 
+Once both guests are seated, the robot introduces them to each other. To introduce the two guests, the robot must (for both guests) look at a guest and state the other arriving guest name and favorite drink.
+\begin{itemize}
+
+	\item \textbf{Doorbell:} A doorbell sound will be played when a guest is by the door ready to be met. The doorbell sound will not be provided beforehand and can be any traditional doorbell sound. As an alternative, if no doorbell sound is available, the guest can knock on the door. Waiting for the doorbell is optional, robots can bypass it and directly meet the guest at the door. In order for the doorbell sound to be considered detected, the robot must be waiting at the starting position and react instantly to the sound.
+	
+	\item \textbf{Greeting guests:} The names of the guests can be any popular english names. The favorite drinks of the guests can be any english named popular drink (it may not be in the list of objects provided).
+	The guest paces a little to the left and right during conversation with the robot. Other people might appear in the background. 
+	
+	\item \textbf{Looking at person:} The robot must look at the person it is talking to. Guests will move slightly to confirm the robot dynamically follows them with its gaze. Points for gaze tracking are awarded only if the robot continuously tracks the moving person.
+	
+	\item \textbf{Looking at direction of navigation:} The robot must look in the direction it is navigating. Persistently looking in an unrelated direction or at unrelated people during navigation results in a score deduction.
+    
+    \item \textbf{Finding the drink:} The robot shows both guest the beverage area where it will ask for their favorite drink and tell the guest if and where (left, center right is enough or show in display with bounding box) that drink is available on the table. 
+	
+	\item \textbf{Seating People:} The robot must clearly point to a location or seat for each guest.
+
+	\item \textbf{Switching Places:} After being seated, guests may switch seats.
+	
+	\item \textbf{Switching Places:} Guests may switch places after they were seated.
+	
+	\item \textbf{Introductions:} When introducing guests, the robot must clearly identify the person being introduced and state their name and favorite drink. The robot must be looking at a guest and state the other arriving guest name and favorite drink. The robot must do this for both guests.
+	Introducing two people means to introduce them to each other.
+	
+	\item \textbf{Non Essential Questions:} If the robot does not ask any non essential questions to help understand, confirm or correction information, bonus points are awarded. 
+		Questions such as "Did you say your name is James?" or "Is your favorite drink milk?" are considered non essential questions. 
+		However, asking a guest to repeat an answer because the robot could not hear is not considered a non essential question.
+
+\end{itemize}
+
+\subsection*{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Opening Door Timing:} The Time of the test only starts after the fist person enters the arena or 1 minute after start signal.
+
+	\item \textbf{Misunderstanding:} Not understanding the guests and asking them again is fine. Continuing with a wrong name or favorite drink causes a score reduction.
+		
+	\item \textbf{Partial Scoring:} The main task allows partial scoring per guest.
+
+	\item \textbf{Additional Seating:} Referees may add chairs to the living room area.
+	
+	\item \textbf{Deus ex Machina:} Score reduction applies per guest as follows:
+	\begin{itemize}[nosep]
+		\item \textbf{Custom Operator:} Since the main focus of the test is HRI, no custom operator can be chosen.
+		\item \textbf{Alternative HRI:} Using an alternative HRI to understand a guest causes a score reduction per information (name or favorite drink).
+		\item \textbf{Recognizing People:} If the robot has to ask for help to identify people, score is reduced. 
+	\end{itemize}
+\end{enumerate}
+
+
+\subsection*{Instructions}
+
+\subsubsection*{To Referee}
+
+The referees need to:
+\begin{itemize}
+	\item Assign name and favorite drink to two volunteers.
+	\item Arrange and rearrange people in the living room.
+	\item Change the selection of drinks in the beverage area.
+	\item Open the entrance door upon request from the robot.
+\end{itemize}
+
+\subsubsection*{To OC}
+
+
+During setup day:
+\begin{itemize}
+	\item Announce the location of the beverage area.
+\end{itemize}
+
+
+At least two hours before test:
+\begin{itemize}
+	\item Announce the starting position.
+	\item Recruit four volunteers: two as arriving guests and two as passive guests.
+
+\end{itemize}
+
+% \newpage
+\subsection*{Score sheet}
+\input{scoresheets/HumanRobotInteractionChallenge.tex}
