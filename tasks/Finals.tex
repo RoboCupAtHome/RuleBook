@@ -1,29 +1,38 @@
 \chapter{Finals}\label{test:final}
 
-The competition ends with the Finals on the last day, where the two teams with the highest total score compete.
-
-Even though each league has its own first, second and third place, the \iterm{Finals} are meant to show the best of all leagues to the jury members as well as the audience and, thus, warrants a single schedule slot.
+The competition ends with the Finals on the last day, where the three teams with the highest total score compete.
 
 \section{Scoring}
-The final score and ranking are determined by the jury evaluations and by the previous performance of the team, in the following manner:
+The final score and ranking are determined by the final scoring and the previous performance of the team, in the following manner:
 
 \begin{enumerate}
-  \item The influence of the final ranking is \SI{50}{\percent}.
+  \item The influence of this tests ranking is \SI{50}{\percent}.
   \item The influence of the total sum of points scored by the team is \SI{50}{\percent}.
 \end{enumerate}
 
 There is no maximum score during the Final.
 
-These demonstrations are carried out in a serialized fashion, one League performing after another in one \Arena{}.
+These demonstrations are carried out in a serialized fashion in one \Arena{}.
 
-\subsection{Task}
-The procedure for the demonstration is the same as for Enhanced General Purpose Service Robot (see~Task~\ref{test:egpsr}) with the added tasks of:
+\section{Task}
+The robot is asked to maintain the household by cleaning up the arena and assisting people.
 
-\begin{enumerate}[nosep]
+\noindent \textbf{Main Goal:} Solve different problems in the arena.\\
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Setup
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Setup}
+The arena is in its default state apart from problems set up for the robot to solve:
+\begin{itemize}
+  \item \textbf{Trash:} Objects on the floor are to be thrown in the trash.
+  \item \textbf{Objects:} Objects that are not in their default location should be returned to their default location (see~\ref{rule:scenario_objects}). 
+  \item \textbf{Persons:} Some persons in the arena will have requests for the robot. They will raise their hand if the robot is in the same room.
   \item \textbf{Closing Furniture:} Doors of the Cabinet as well as the Dishwasher need to be closed.
   \item \textbf{Welcome Guest:} There is an additional person waiting behind the exit door. The person will state their request after being welcomed by the robot. The door must be opened without human assistance. As the position is known, there will be no points awarded for finding this person.
   \item \textbf{Custom Tasks:} Additional reasonable household task.
-\end{enumerate}
+\end{itemize}
+
 
 \subsubsection{Custom Tasks}
 \begin{enumerate}[nosep]
@@ -36,7 +45,33 @@ The procedure for the demonstration is the same as for Enhanced General Purpose 
   \end{enumerate}
 \end{enumerate}
 
-\subsection{The Show Must Go On}
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Procedure
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Procedure}
+\begin{enumerate}[nosep]
+	\item \textbf{Test start:} The robot enters when the arena door is open.
+	\item \textbf{Finding Problems:} The robot has to find problems to solve on its own.
+\end{enumerate}
+
+\subsection*{Additional rules and remarks}
+\begin{enumerate}[nosep]
+	\item \textbf{Number of Problems:} The number of problems depends on the arena size the minimum count of generated problems is 8.
+	\item \textbf{Repeating Problem Category:} Solving the same Category of Problem incurs a penalty. 
+	\item \textbf{Solving more:} You can continue solving problems to compensate for penalties.
+	\item \textbf{Partial Scoring:} The main task allows partial scoring (per \emph{solved} problem).
+	\begin{enumerate}[nosep]
+		\item \textbf{Scores:} Score reduction is applied as a percentage depending on the solution.
+		\item \textbf{Penalties:} The Repetition penalty is applied before any partial penalties
+		\item \textbf{Example:} If picking up trash off the floor is valued as 60\% of the solution, then requesting a handover should be a $ 650 \times 0.6 = 390 $ points penalty for the first pick and  $ \left( 650 - 300 \right) \times 0.6 = 210 $ for the second pick.
+	\end{enumerate}
+	\item \textbf{Command Generator:} Problems and commands will be generated using the official command generator\footnote{\url{https://github.com/RoboCupAtHome/CommandGenerator}}. Commands are generated as described in~\ref{test:gpsr}.
+	\item \textbf{Finding People:} Finding a person and stating they need help counts as finding the problem.
+	\item \textbf{Understanding Commands:} The robot must correctly interpret and repeat commands given by people. Correctly repeating the command given by a person counts as partially solving the problem. Commands are issued as described in~\ref{test:gpsr}.
+\end{enumerate}
+
+
+\subsubsection{The Show Must Go On}
 To ensure a good experience for the audience the teams are allowed to restart the robot inside the arena.
 \begin{enumerate}[nosep]
   \item All previously collected points will be kept.
