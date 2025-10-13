@@ -12,6 +12,9 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#997](https://github.com/RoboCupAtHome/RuleBook/pull/997): Removed QR codes from Rulebook.
+  * Showing QR code is too unnatural.
+  * added clarifications to natural alternative HRI (i.e. touchscreens)
 * [#990](https://github.com/RoboCupAtHome/RuleBook/pull/990): Remove Stage system
   * The stage system was removed to simplify the competition format.  
   * Previously, only a subset of teams advanced to later stages, which limited participation and reduced the number of runs per team. In the new format, all teams compete in the same set of tasks across multiple days, ensuring more consistent evaluation.
