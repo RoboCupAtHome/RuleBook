@@ -124,12 +124,12 @@ Other start signals are allowed but must be authorized by the \TC{} during the R
 
 During any test, teams are allowed to perform a single restart per attempt under the following conditions:
 \begin{itemize}
-    \item A restart may only be requested until the robot completes a major scoring action.
-    \item The test time continues running until the team exits the \Arena{} with the robot.
-    \item A restart incurs a penalty of \SI{30}{\second}, subtracted from the total time.
-    \item After exiting, the team may requeue at the back of the line and begin their attempt again within their remaining time.
+    \item A restart may only be requested until the robot scores 40 points.
+    \item The test time continues to run during the restart.
+    \item The team moves the robot back to the starting location.
+    \item The team has a maximum of \SI{60}{\second} to restart the robot.
     \item Only one restart is permitted per test attempt.
-    \item Only points scored after a restart are counted; points scored before the restart are not considered if a restart was requested.
+    \item Only points scored after a restart are counted; points scored before the restart are not considered.
 \end{itemize}
 
 
@@ -182,9 +182,7 @@ A penalty may apply when using a custom operator.
 
 \subsection{Time limits}\label{rule:time_limits}
 \begin{enumerate}
-	\item \textbf{Stage~I:} Unless stated otherwise, the time limit for each test in \iterm{Stage~I} is \timing{5 minutes}.
-
-	\item \textbf{Stage~II:} Unless stated otherwise, the time limit for each test in \iterm{Stage~II} is \timing{10 minutes}.
+	\item Unless stated otherwise, the time limit for each test is \timing{5 minutes}.
 
 	\item \textbf{Inactivity:} Robots must not stand still or get stuck in endless loops.
 	If a robot is not progressing in the task (and is clearly not attempting to do so), it is considered inactive.
