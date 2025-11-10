@@ -1,50 +1,48 @@
 \section{Organization of the Competition}\label{sec:procedure_during_competition}
 
-\subsection{Stage System}\label{rule:stages}
+\subsection{Competition Structure}\label{rule:structure}
 
-The competition is divided into two stages, followed by a \FINAL{}. Each stage consists of a series of tasks designed to test specific robot capabilities, with the \FINAL{} being the final evaluation of the teams' overall performance.
+The competition consists of a series of tasks, repeated on each competition day, designed to test specific robot capabilities, followed by a \FINAL{} as the final evaluation of the teams' overall performance.
+
 
 \begin{enumerate}
 	\item \textbf{Robot Inspection:} 
-	All teams must pass a \RobotInspection{} during the \SetupDays{} to be eligible for competition. (see~\refsec{sec:robot_inspection})
+	All teams must pass a \RobotInspection{} during the \SetupDays{} to be eligible for competition (see~\refsec{sec:robot_inspection}).
 
-	\item \textbf{\SONE{}:} The first stage of the competition, \SONE{}, is open to all teams that have passed the \RobotInspection{} test. This stage includes tasks that test basic robot capabilities.
+	\item \textbf{Tasks:}
+	Teams compete in a set of tasks that evaluate different robot abilities.
+	Each task is repeated on multiple competition days, giving teams more than one opportunity to attempt it.
+	For ranking purposes, the \emph{best score} obtained in each task is considered.
 
-	\item \textbf{\STWO:} \STWO{}, is open to the top 50\% of teams from \SONE{}. If the total number of teams is less than 12, up to 6 teams may advance to \STWO{}.
-	This stage requires more complex advanced or combinations of abilities.
-
-	\item \textbf{\FINAL:} The top \emph{three teams}, namely the ones with the highest score after \STWO{}, advance to the \FINAL{}.
+	\item \textbf{\FINAL:} The top \emph{three teams}, namely the ones with the highest overall score, advance to the \FINAL{}.
 	The final round features a single integrated task that tests all abilities evaluated throughout the competition.
-
 \end{enumerate}
-In cases where there is no significant score difference between teams, the \TC{} may decide to include additional teams in the next stage.
 
+In cases where there is no significant score difference between teams, the \TC{} may decide to include additional teams in the \FINAL{}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Schedule}\label{rule:schedule}
 
 \begin{enumerate}
-	\item \textbf{Test Blocks:} Each test is scheduled within a Test Block. During each Test Block, each qualified team is assigned at least two Test Slots. The Restaurant test is an exception, requiring only one Test Slot.
+	 \item \textbf{Daily Task Runs:} 
+	Each competition day features the same set of four tasks.
+	Two tasks are executed in parallel in different arenas.
+	Once a team completes its run in one arena, it proceeds to the other arena according to the schedule.
 
-	\item \textbf{Test Slots:} During a Test Slot, a team has a specified amount of time to complete the task.
+	\item \textbf{Team Groups:}
+	Teams are assigned to fixed groups (e.g.\ A, B, C, D).
+	Each block has predetermined start times for the arenas and tasks.
+	This ensures an even distribution of teams across arenas and reduced waiting time.
+
+	\item \textbf{Test Slots:} Within each arena, teams are allocated a specific Test Slot that defines the maximum time available to complete the task. 
+    Teams must be ready at their assigned block start time.
 
 	\item \textbf{Participation is default:} Teams must inform the \OC{} in advance if they are skipping a Test Block. If they do not provide such notification, they may be penalized for not attending (see~\refsec{rule:not_attending}).
 	
 \end{enumerate}
 
-
 \begin{table}[h]
 	\centering\small
-	\newcommand{\teams}[2]{%
-		\tiny
-		\begin{tabular}{c}%
-			\textit{Test slot 1, team $#1$}\\
-			\textit{Test slot 1, team $#2$}\\
-			$\vdots$\\
-			\textit{Test slot $n$, team $#1$}\\
-			\textit{Test slot $n$, team $#2$}\\
-		\end{tabular}
-	}
 	\newcommand{\wcell}[2]{%
 		\parbox[c]{2.5cm}{%
 			\vspace{#1}%
@@ -58,61 +56,72 @@ In cases where there is no significant score difference between teams, the \TC{}
 
 
 	\begin{tabular}{
-		>{\centering\arraybackslash}m{2.5cm}|%
-		>{\columncolor[HTML]{9AFF99}}c |%
-		>{\columncolor[HTML]{9AFF99}}c |%
-		>{\columncolor[HTML]{CBCEFB}}c |%
-		>{\columncolor[HTML]{FF8D27}}c  %
+		>{\centering\arraybackslash}m{2.5cm}|c|c|c|c
 	}
 	\multicolumn{1}{ c }{}
-		& \multicolumn{1}{ c }{\cellcolor{white} Day 1 }
-		& \multicolumn{1}{ c }{\cellcolor{white} Day 2 }
-		& \multicolumn{1}{ c }{\cellcolor{white} Day 3 }
-		& \multicolumn{1}{ c }{\cellcolor{white} Day 4 }
+		& \multicolumn{1}{c}{Day 1}
+		& \multicolumn{1}{c}{Day 2}
+		& \multicolumn{1}{c}{Day 3}
+		& \multicolumn{1}{c}{Day 4}
 		\\\hhline{~---~}
 
 	\cell{Block 1\\\footnotesize(9:00--11:00)}
-		& \cell{Storing Groceries}
-		& \cell{Help Me Carry}
-		& \cell{Restaurant}
-		& \cellcolor{white}
+		& \cellcolor{color1}\cell{\diagbox{Task 1}{Task 2}}
+		& \cellcolor{color1}\cell{\diagbox{Task 1}{Task 2}}
+		& \cellcolor{color2}\cell{Restaurant}
+		& 
 		\\\hhline{~----}
 
 
 
 	\multicolumn{1}{ c }{}
 		& \multicolumn{3}{ c }{\wcell{0.5\baselineskip}{\color{gray}\----Break---\-}}
-		& \multicolumn{1}{|c|}{\cellcolor[HTML]{FF8D27}\cell{\textbf{Finals}}}
+		& \multicolumn{1}{|c|}{\cellcolor{color3}\cell{\textbf{Finals}}}
 		\\\hhline{~----}
 
 	\cell{Block 2\\\footnotesize(13:00--15:00)}
-		& \cell{Receptionist}
-		& \cell{GPSR}
-		& \cell{HRI}
-		& \cellcolor{white}
+		& \cellcolor{color1}\cell{\diagbox{Task 3}{Task 4}}
+		& \cellcolor{color1}\cell{\diagbox{Task 3}{Task 4}}
+		& \cellcolor{color1}\cell{\diagbox{Task 1}{Task 2}}
+		& 
 		\\\hhline{~---}
-		
-	
 
 	\multicolumn{1}{ c }{}
-		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{\color[HTML]{029734}}}
-		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{\color[HTML]{6668e5}Stage 2}}
-		& \multicolumn{1}{ c }{\cellcolor{white}}
+		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{}}
+		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{\color{gray}\----Break---\-}}
+		& \multicolumn{1}{ c }{}
 		\\\hhline{~---}
 		
 	\cell{Block 3\\\footnotesize(17:00--19:00)}
-		& \cell{Open Challenge}
-		& \cellcolor[HTML]{CBCEFB}\cell{Clean the Table}
-		& \cell{EGPSR}
-		& \cellcolor{white}
+		& 
+		& 
+		& \cellcolor{color1}\cell{\diagbox{Task 3}{Task 4}}
+		& 
 		\\\hhline{~---}
 	\end{tabular}
 
 	\caption{Example schedule.
-		Each team has at least two Test Slots assigned in every Test Block.
+		Each team has two Test Slots assigned in every Test Block.
 	}
 	\label{tbl:schedule}
 \end{table}
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\setlength{\tabcolsep}{10pt}
+\begin{tabular}{c|c|c|}
+\multicolumn{1}{c}{}  & \multicolumn{1}{c}{Arena 1} & \multicolumn{1}{c}{Arena 2} \\
+\hhline{~--}
+12:00 & \cellcolor{color4}Group A & \cellcolor{color2}Group C \\\hhline{~--}
+12:30 & \cellcolor{color3}Group B & \cellcolor{color1}Group D \\\hhline{~--} 
+13:00 & \cellcolor{color2}Group C & \cellcolor{color4}Group A \\\hhline{~--} 
+13:30 & \cellcolor{color1}Group D & \cellcolor{color3}Group B \\\hhline{~--} 
+\end{tabular}
+\caption{Example schedule for one block showing timeslots and group rotation between arenas.}\label{tab:schedule_example_times}
+\end{table}
+
+
 
 \noindent Note that the actual allocation of blocks will be announced by the \OC{} during the \SetupDays{} (see Table~\ref{tbl:schedule}).
 
@@ -123,7 +132,7 @@ The scoring system for the competition is designed to evaluate robot performance
 The scoring system has the following constrains:
 \begin{enumerate}
 	\item \textbf{\FINAL:} The final score is normalized.
-	\item \textbf{Minimum score:} The minimum total score per test in \SONE{} and \STWO{} is \scoring{0 points}.
+	\item \textbf{Minimum score:} The minimum total score per test is \scoring{0 points}.
 	While teams generally cannot receive negative points, penalties can result in a total score below zero. Specifically, teams may receive penalties for not attending (see~\refsec{rule:not_attending}) and for extraordinary violations (see~\refsec{rule:extraordinary_penalties}).
 \end{enumerate}
 
