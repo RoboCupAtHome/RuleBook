@@ -1,6 +1,7 @@
 # Changelog
 
 [Current Draft]: https://github.com/RoboCupAtHome/RuleBook/compare/2025.1..HEAD
+[2026.1]: https://github.com/RoboCupAtHome/RuleBook/compare/2025.1..2026.1
 [2025.1]: https://github.com/RoboCupAtHome/RuleBook/compare/2024.2..2025.1
 [2024.2]: https://github.com/RoboCupAtHome/RuleBook/compare/2024.1..2024.2
 [2024.1]: https://github.com/RoboCupAtHome/RuleBook/compare/2023.2..2024.1
@@ -12,6 +13,16 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+## Rulebook [2026.1] - 2025-12-01
+
+* [#994](https://github.com/RoboCupAtHome/RuleBook/pull/994): New Task **Pick and Place Challenge**
+  * Combines aspekts of **Storing Groceries** and **Clean the Table**
+  * Robot is free to choose what parts to solve.
+* [#995](https://github.com/RoboCupAtHome/RuleBook/pull/995): Rename **Receptionist** -> **Human Robot Interaction Challenge**
+  * Removed predetermined list of names and drinks; now any English name can be chosen.
+  * Removed drink location requirement, as object recognition is not the task focus.
+  * Added a short following (“help me carry”) procedure at the end.
+  * Added doorbell/knock recognition.
 * [#997](https://github.com/RoboCupAtHome/RuleBook/pull/997): Removed QR codes from Rulebook.
   * Showing QR code is too unnatural.
   * added clarifications to natural alternative HRI (i.e. touchscreens)

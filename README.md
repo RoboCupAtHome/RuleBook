@@ -1,14 +1,13 @@
-RuleBook for RoboCup @Home 2026
-===============================
+RuleBook for RoboCup @Home German Open 2026
+===========================================
 
 [![CI](https://github.com/RoboCupAtHome/RuleBook/actions/workflows/ci.yml/badge.svg)](https://github.com/RoboCupAtHome/RuleBook/actions/workflows/ci.yml)
 
 ### PDF Downloads
 
-[Rulebook](https://robocupathome.github.io/RuleBook/rulebook/master.pdf)  
-[Score sheets](https://robocupathome.github.io/RuleBook/scoresheets/master.pdf)  
+[Nightly Build](https://nightly.link/RoboCupAtHome/RuleBook/workflows/ci/competition%2F2026%2Fgermanopen?preview)
 
-The current version for 2026 is **draft**
+The current version for 2026 is **final**; only minor (language) updates and clarifications may be made from now on.
 
 [Changelog](CHANGELOG.md)
 

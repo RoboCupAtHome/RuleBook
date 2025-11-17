@@ -31,3 +31,6 @@
 .temp_*
 *.backup
 *.rubbercache
+
+qa/
+documents/faq.tex
