@@ -8,7 +8,7 @@ RuleBook for RoboCup @Home 2026
 [Rulebook](https://robocupathome.github.io/RuleBook/rulebook/master.pdf)  
 [Score sheets](https://robocupathome.github.io/RuleBook/scoresheets/master.pdf)  
 
-The current version for 2026 is **draft**
+The current version for 2026 is **final**; only minor (language) updates and clarifications may be made from now on.
 
 [Changelog](CHANGELOG.md)
 
