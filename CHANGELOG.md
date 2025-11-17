@@ -12,6 +12,11 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#995](https://github.com/RoboCupAtHome/RuleBook/pull/995): Rename **Receptionist** -> **Human Robot Interaction Challenge**
+  * Removed predetermined list of names and drinks; now any English name can be chosen.
+  * Removed drink location requirement, as object recognition is not the task focus.
+  * Added a short following (“help me carry”) procedure at the end.
+  * Added doorbell/knock recognition.
 * [#997](https://github.com/RoboCupAtHome/RuleBook/pull/997): Removed QR codes from Rulebook.
   * Showing QR code is too unnatural.
   * added clarifications to natural alternative HRI (i.e. touchscreens)
