@@ -93,10 +93,12 @@ Place the breakfast items on a table (bowl, spoon, cereal box, and milk). \\
 	\item \textbf{Pouring:} A significant amount of the milk and cereal must be poured, Pouring a couple of drops of milk or bits of cereal is not enough.
 	\item \textbf{Deus ex Machina:} The scores are reduced if human assistance is received, in particular:
 	\begin{itemize}[nosep]
-		\item pointing to an object or telling the robot where an object is
-		\item telling or pointing out to the robot where to place an object
-		\item handing an object over to the robot
-		\item moving an object instead of the robot
+		\item Pointing to an object or telling the robot where an object is
+		\item Telling or pointing out to the robot where to place an object
+		\item Handing an object over to the robot
+		\item Moving an object instead of the robot
+		\item Changes to the environment that aid the robot in completing the task (e.g remove chairs or decorations from dinner table). 
+		This penalty is applied per group of changes. Chairs are one group, decorations are a different group. (e.g One penalty is applied to remove all chairs. The penalty is not applied per chair removed)
 	\end{itemize}
 	\item \textbf{Communicating Perception}: The robot must clearly communicate its perception to the referee.
 	Pointing at the object or attempting to pick it up is sufficient. When using visualization, make sure the robot 
