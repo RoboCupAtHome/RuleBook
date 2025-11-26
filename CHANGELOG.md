@@ -12,6 +12,8 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#999](https://github.com/RoboCupAtHome/RuleBook/pull/999) Update **Final**
+  * Just add rulings - **Final** still uses EGPSR Task Rulings
 * [#997](https://github.com/RoboCupAtHome/RuleBook/pull/997): Removed QR codes from Rulebook.
   * Showing QR code is too unnatural.
   * added clarifications to natural alternative HRI (i.e. touchscreens)
@@ -20,10 +22,12 @@ All notable changes to this project will be documented in this file.
   * Test time continues running, and the team must resume the test within 1 minute.
   * All points scored before the restart are voided.
 * [#990](https://github.com/RoboCupAtHome/RuleBook/pull/990): Remove Stage system
-  * The stage system was removed to simplify the competition format.  
+  * The stage system was removed to simplify the competition format.
   * Previously, only a subset of teams advanced to later stages, which limited participation and reduced the number of runs per team. In the new format, all teams compete in the same set of tasks across multiple days, ensuring more consistent evaluation.
   * The new structure also allows teams to demonstrate progress and improve their performance over the course of the competition.
   * The number of tasks was reduced to four (repeated each day) plus the Restaurant test.
+    * Removed **EGPSR**
+    * Removed **Help me Carry**
   * A goal is to reduce unnecessary repetition of skills across tasks, making each task more meaningful and distinct.
 * [#987](https://github.com/RoboCupAtHome/RuleBook/pull/987): Merge both leagues - Remove DSPL. 
   * A single, unified RoboCup@Home league takes effect immediately. 
