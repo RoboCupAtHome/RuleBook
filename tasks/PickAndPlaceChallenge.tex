@@ -1,22 +1,25 @@
 \section{Pick and Place Challenge}
 \label{test:pick-and-place-challenge}
-The robot tidies up the kitchen table after a dinner. 
-The tableware and cutlery must be placed inside the dishwasher. 
-The snacks must be placed inside the trash bin.
-All other objects must be stored in a cabinet with shelves. Objects are sorted on the shelves based on similarity, for instance, an apple is stored next to other fruits. 
-The robot has to set the table for breakfast for one person.\\
+This challenge evaluates manipulation capabilities through cleaning and organizing the kitchen and preparing a simple breakfast.\\
 
-\noindent \textbf{Main goals:}  
-Tidy up all the objects on the dinner table. Tableware and cutlery have to be placed correctly inside the dishwasher, snacks have to be placed inside the trash bin and all other objects have to be placed in the cabinet, grouping them by category or similarity.
-Place the breakfast items on a table (bowl, spoon, cereal box, and milk). \\
-
+\noindent \textbf{Main goals:}
+\begin{enumerate}[nosep]
+	\item Tidy up all objects on the dining table:
+	\begin{enumerate}[nosep]
+		\item Place dirty tableware and cutlery inside the dishwasher.
+		\item Place designated trash items in the trash bin.
+		\item Store other objects in the cabinet, grouping them with similar items.
+	\end{enumerate}
+	\item Set up breakfast on a clean area of the table, including a bowl, spoon, cereal, and milk.
+\end{enumerate}
+\smallskip
 \noindent \textbf{Optional goals:}
 \begin{enumerate}[nosep]
-	\item Opening and closing the dishwasher door
-	\item Pulling and pushing the dishwasher rack
-	\item Placing a dishwasher tab inside the dishwasher
-	\item Picking objects from a shopping bag
-	\item Pour milk and cereal into the breakfast bowl
+	\item Pick up trash from the floor.
+	\item Open and close the dishwasher door.
+	\item Pull and push the dishwasher rack.
+	\item Place a dishwasher tablet inside the dishwasher.
+	\item Pour milk and cereal into the breakfast bowl.
 \end{enumerate}
 
 \subsection*{Focus}
@@ -29,39 +32,37 @@ Place the breakfast items on a table (bowl, spoon, cereal box, and milk). \\
 \begin{itemize}[nosep]
 	\item \textbf{Locations:}
 		\begin{itemize}
-			\item \textbf{Start Location:} Before the test, the robot waits outside the Arena and navigates to the testing area when the door is open.
-			\item \textbf{Test location:} This test takes place in the kitchen.
+			\item \textbf{Start Location:} The robot waits outside the arena and enters when the door is opened.
+			\item \textbf{Test location:} The test takes place in the kitchen.
 		\end{itemize}
 	\item \textbf{People:}
 		\begin{itemize}
-			\item No people are involved in the test, unless the robot requires human assistance.
+			\item No people are involved unless the robot explicitly requests assistance.
 		\end{itemize}
 	\item \textbf{Furniture:}
 		\begin{itemize}
-			\item \textbf{Dishwasher:} A dishwasher is located close to the dining table. The dishwasher is closed by default, any help the robot may need to open or close the doors or racks must be requested by the robot during the task.
+			\item \textbf{Dishwasher:} Located near the dining table. Closed by default; the robot may request help to open or close doors or racks.
 			\item \textbf{Trash bin:} A trash bin is located in the kitchen.
-			\item \textbf{Shopping Bag:} There is a shopping bag on the ground next to the table.
-			\item \textbf{Cabinet:} The cabinet contains objects arranged in groups, either by category or likeness, on different shelves.
+			\item \textbf{Cabinet:} The cabinet contains objects arranged by category or similarity on different shelves.
 		\end{itemize}
 	\item \textbf{Objects:}
 		\begin{itemize}
-			\item \textbf{Table setting:} The table has a total of seven objects arranged arbitrarily or in a typical setting after a meal. The cutlery and tableware objects may be randomly stacked as is common after a meal. 
-			The object distribution is as follows:
+			\item \textbf{Table setting:} Seven objects arranged on the table in a typical post-meal setting, possibly stacked:
 			\begin{itemize}[nosep]
-				\item\textit{Cutlery}: One piece of cutlery (fork, knife, or spoon).
-				\item\textit{Tableware}: Any two objects (except cutlery), at least one of which is a plate (cup, plate).
-				\item\textit{Snacks}: One snack from the object set.
-				\item\textit{Other objects}: Any three additional objects from the object set, excluding cutlery, tableware, and snacks.
+				\item \textit{Cutlery}: One piece (fork, knife, or spoon).
+				\item \textit{Tableware}: One mug or cup and one plate.
+				\item \textit{Trash}: One trash item. One object category will be treated as trash for this task.
+				\item \textit{Other objects}: Two items not belonging to the above categories.
 			\end{itemize}
-			\item \textbf{Shopping Bag:} Any three additional objects from the object set, excluding cutlery, tableware, and snacks.
 			\item \textbf{Breakfast items:} The breakfast items are a bowl, a spoon, milk and cereal. 
 			The object distribution is as follows:
 			\begin{itemize}[nosep]
-				\item\textit{Bowl and Spoon}: On top of the dishwasher.
-				\item\textit{Milk and Cereal}: Inside the cabinet, next to their respective category.
+				\item\textit{Bowl and Spoon}: On top a designated surface in the kitchen.
+				\item\textit{Milk and Cereal}: Inside the cabinet, next to their respective categories.
 			\end{itemize}
-			\item \textbf{Cabinet objects:} The objects are placed in a doorless cabinet. Each side of a shelf contains objects arranged in groups, either by category or likeliness.
-			\item \textbf{Dishwasher tab:} The tab can be found on top of the dishwasher and should be placed inside the tab slot in the dishwasher.
+			\item \textbf{Cabinet objects:} A doorless cabinet. Each side of the shelves contains objects arranged in groups, either by category or likeliness.
+			\item \textbf{Dishwasher tab:} The tab can be found on top of a designated surface and should be placed inside the dishwasher slot.
+			\item \textbf{Floor Object:} One trash item will be placed near the trash bin.
 		\end{itemize}
 \end{itemize}
 
@@ -72,8 +73,8 @@ Place the breakfast items on a table (bowl, spoon, cereal box, and milk). \\
 \subsection*{Procedure}
 \begin{enumerate}[nosep]
 	\item \textbf{Test start:} The robot moves to the kitchen when the arena door is open.
-	\item \textbf{Table clean up:} The robot tidies up the table by putting: the cutlery and tableware items inside the dishwasher, the snack in the trash bin and the other objects in the cabinet, grouping them by category or similarity.
-	\item \textbf{Serve breakfast:} The robot sets the table for breakfast by placing the bowl, spoon, cereal and milk on the table in a typical setting for a meal.
+	\item \textbf{Table clean up:} The robot tidies up the table by putting: the cutlery and tableware items inside the dishwasher, the trash in the trash bin and the other objects in the cabinet, grouping them by category or similarity.
+	\item \textbf{Serve breakfast:} The robot sets the table for breakfast by placing the bowl, spoon, cereal and milk on the table in a typical setting for a meal. There needs to be a comfortable amount of free space around the breakfast.
 	\item \textbf{Sequence:} The robot is free to determine the order and method for performing the pick-and-place tasks. There is no predefined sequence, the robot may execute them in any way it finds optimal.
 \end{enumerate}
 
@@ -83,42 +84,30 @@ Place the breakfast items on a table (bowl, spoon, cereal box, and milk). \\
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Additional Rules and Remarks}
 \begin{enumerate}[nosep]
+	\item \textbf{First Pick Bonus:} To encourage manipulation, the robot receives an additional bonus for successfully picking the first object during the test. This bonus is awarded only once.
+	\item \textbf{Designated Location:} All objects designated location correspond to the appropriate furniture, either on top of or inside.
 	\item \textbf{Safe placing:} Objects must be placed with care, namely the robot should place rather than throw or drop objects.
 	\item \textbf{Dishwasher door:} The dishwasher door is closed by default.
 	The robot may ask for help to open or close the door or racks at any time during the task. If the robot fails to open/close the door/rack, it must clearly state this and request the referee to open/close the door/rack.
-	\item \textbf{Correct dishwasher item placement:} The items should be placed in the rack correctly, namely in the location and in a manner as a person would put them.
-	\item \textbf{Incorrect cabinet category categorization:} The score is reduced if an object is stored in the cabinet, but not next to similar objects; this reduction is applied per incorrectly stored object.
-	\item \textbf{New category:} Objects that do not semantically belong to any of the categories represented on the shelves should be grouped together in an empty part of the shelf.
-	\item \textbf{Correct serve breakfast item placement:} The table must be set in a typical setting for a meal. The spoon must be placed next to the bowl, and the cereal and milk must be placed next to each other.
+	\item \textbf{Correct dishwasher item placement:} Items must be correctly positioned in the rack, as a human would place them.
+	\item \textbf{Incorrect cabinet category categorization:} Objects must be grouped with similar items. Misplaced items incur score reductions. Objects that do not semantically belong to any of the categories represented on the shelves should put in an empty part of the shelf.
+	\item \textbf{Breakfast placement:} The table must be set in a typical setting for a meal. The spoon must be placed next to the bowl, and the cereal and milk must be placed next to each other. 
+	\item \textbf{Breakfast area cleanliness:} The area immediately surrounding the breakfast items on the table must be kept clear of any other objects. Items too close at (5cm) or cluttering the space, will result in a score penalty for the breakfast placement.
 	\item \textbf{Pouring:} A significant amount of the milk and cereal must be poured, Pouring a couple of drops of milk or bits of cereal is not enough.
-	\item \textbf{Deus ex Machina:} The scores are reduced if human assistance is received, in particular:
-	\begin{itemize}[nosep]
-		\item Pointing to an object or telling the robot where an object is
-		\item Telling or pointing out to the robot where to place an object
-		\item Handing an object over to the robot
-		\item Moving an object instead of the robot
-		\item Changes to the environment that aid the robot in completing the task (e.g remove chairs or decorations from dinner table). 
-		This penalty is applied per group of changes. Chairs are one group, decorations are a different group. (e.g One penalty is applied to remove all chairs. The penalty is not applied per chair removed)
-	\end{itemize}
-	\item \textbf{Communicating Perception}: The robot must clearly communicate its perception to the referee.
-	Pointing at the object or attempting to pick it up is sufficient. When using visualization, make sure the robot 
-	tells the referee where to look and makes the visualization easily accessible. 
-	If the team wants to utilize bounding boxes make sure \textbf{only} one object with a bounding box is shown 
-	at a time so the referee is easily able to check and verify. Also make sure the surrounding scene is visible, i.e.
-	just showing a cropped bounding box is not enough.
+	\item \textbf{Human Assistance:} Scores are reduced if the robot receives help, such as pointing to objects, handing objects to the robot, or repositioning items. Assistance with opening the milk container or moving parts of the dishwasher does not incur a penalty.
+	\item \textbf{Communicating Perception}: The robot must clearly indicate its perception to the referee. Pointing, attempting to pick objects, or visualizing one object at a time is sufficient. If visualization is utilized, the surrounding scene must remain visible and the robot needs to announce and confirm the referee perceived the visualization.
+	\item \textbf{Trash:} One object category will be treated as trash for this task. Announced during \SetupDays{}.
 \end{enumerate}
 
 \subsection*{OC Instructions}
 
 During the \SetupDays:
 \begin{itemize}
-	\item Provide official cutlery and tableware for training.
-	\item Provide official objects for training.
-\end{itemize}
-At least two hours before the test:
-\begin{itemize}
-	\item Announce which table and cabinet will be used in the test.
-	\item Select which bags will be used in the test.
+	\item Provide official cutlery and tableware.
+	\item Provide official objects.
+	\item Designate a trash category.
+	\item Announce the table and cabinet used for the test.
+	\item Announce locations of dishwasher tablet, bowl, and spoon. (in the kitchen)
 \end{itemize}
 
 
@@ -126,14 +115,14 @@ At least two hours before the test:
 
 The referee needs to:
 \begin{itemize}
-	\item Place objects on the table (one piece of cutlery, two pieces of tableware, one snack, and three other objects).
-	\item Place objects in the shopping bag (three objects).
-	\item Place objects in the cabinet, grouping them by category or likeliness.
-	\item Place the bowl and spoon on top of the dishwasher.
+	\item Place table objects (1 cutlery, 1 plate, 1 mug or bowl, 1 trash, 2 other objects).
+	\item Place one trash on the floor (near trash bin).
+	\item Arrange cabinet objects by category or similarity.
+	\item Place the bowl and spoon and dishwasher tab.
 	\item Place the milk and cereal inside the cabinet next to their respective category.
 \end{itemize}
 
-\subsection*{Score sheet}
+\subsection*{Scoresheet}
 \input{scoresheets/PickAndPlaceChallenge.tex}
 
 % Local Variables:
