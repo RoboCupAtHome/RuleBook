@@ -43,6 +43,8 @@ The robot is asked to understand and execute commands requiring a wide range of 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Additional Rules and Remarks}
 \begin{enumerate}[nosep]
+	\item \textbf{Interleaved Task Bonus:} The robot receives an additional bonus if it successfully completes commands in an interleaved order rather than strictly consecutively. This bonus is awarded only when all three commands are received at once. The interleaved execution must be meaningful, for example by saving time or reducing unnecessary movements.
+	\textit{Example:} The robot first picks up an object, then performs another task along the way, and only afterward delivers the object to its original destination. 
 	\item \textbf{Partial Scoring:} The main task allows partial scoring (per \emph{solved} problem).
 	\begin{enumerate}[nosep]
 		\item \textbf{Scores:} Score reduction is applied as a percentage depending on the solution.
