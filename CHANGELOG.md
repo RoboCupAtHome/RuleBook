@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file.
 ## Rulebook [Current Draft]
 
 * [#994](https://github.com/RoboCupAtHome/RuleBook/pull/994): New Task **Pick and Place Challenge**
-  * Combines aspects of **Storing Groceries** and **Clean the Table**
+  * Combines aspects of **Storing Groceries**, **Serve Breakfast** and **Clean the Table**
   * Robot is free to choose what parts to solve.
 * [#997](https://github.com/RoboCupAtHome/RuleBook/pull/997): Removed QR codes from Rulebook.
   * Showing QR code is too unnatural.
