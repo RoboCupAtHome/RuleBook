@@ -15,9 +15,18 @@ All notable changes to this project will be documented in this file.
 * [#994](https://github.com/RoboCupAtHome/RuleBook/pull/994): New Task **Pick and Place Challenge**
   * Combines aspects of **Storing Groceries**, **Serve Breakfast** and **Clean the Table**
   * Robot is free to choose what parts to solve.
+* [#995](https://github.com/RoboCupAtHome/RuleBook/pull/995): Rename **Receptionist** -> **Human Robot Interaction Challenge**
+  * Removed predetermined list of names and drinks; now any English name can be chosen.
+  * Removed drink location requirement, as object recognition is not the task focus.
+  * Added a short following (“help me carry”) procedure at the end.
+  * Added doorbell/knock recognition.
 * [#997](https://github.com/RoboCupAtHome/RuleBook/pull/997): Removed QR codes from Rulebook.
   * Showing QR code is too unnatural.
   * added clarifications to natural alternative HRI (i.e. touchscreens)
+* [#990](https://github.com/RoboCupAtHome/RuleBook/pull/990): New Restart Rule
+  * A restart no longer requires requeuing. Instead the team immediately continues with the second attempt.
+  * Test time continues running, and the team must resume the test within 1 minute.
+  * All points scored before the restart are voided.
 * [#990](https://github.com/RoboCupAtHome/RuleBook/pull/990): Remove Stage system
   * The stage system was removed to simplify the competition format.  
   * Previously, only a subset of teams advanced to later stages, which limited participation and reduced the number of runs per team. In the new format, all teams compete in the same set of tasks across multiple days, ensuring more consistent evaluation.
