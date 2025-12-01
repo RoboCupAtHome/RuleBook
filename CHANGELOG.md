@@ -12,6 +12,9 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#998](https://github.com/RoboCupAtHome/RuleBook/pull/998) Update **GPSR**
+  * Add rephrasing by llm and corresponding rulings.
+  * Removed non-expert operator as rephrasing is now included.
 * [#999](https://github.com/RoboCupAtHome/RuleBook/pull/999) Update **Final**
   * Just add rulings - **Final** still uses EGPSR Task Rulings
 * [#994](https://github.com/RoboCupAtHome/RuleBook/pull/994): New Task **Pick and Place Challenge**
