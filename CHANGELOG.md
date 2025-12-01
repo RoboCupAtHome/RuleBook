@@ -12,6 +12,9 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#994](https://github.com/RoboCupAtHome/RuleBook/pull/994): New Task **Pick and Place Challenge**
+  * Combines aspects of **Storing Groceries**, **Serve Breakfast** and **Clean the Table**
+  * Robot is free to choose what parts to solve.
 * [#995](https://github.com/RoboCupAtHome/RuleBook/pull/995): Rename **Receptionist** -> **Human Robot Interaction Challenge**
   * Removed predetermined list of names and drinks; now any English name can be chosen.
   * Removed drink location requirement, as object recognition is not the task focus.
