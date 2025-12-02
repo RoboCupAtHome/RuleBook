@@ -13,6 +13,10 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+inconsistencies between scenario description and league requirements
+
+* [1008](https://github.com/RoboCupAtHome/RuleBook/pull/1008) fix inconsistencies in scenario description and league requirements
+
 ## Rulebook [2026.1] - 2025-12-01
 
 * [#998](https://github.com/RoboCupAtHome/RuleBook/pull/998) Update **GPSR**
