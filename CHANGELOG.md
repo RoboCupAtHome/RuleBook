@@ -13,7 +13,8 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
-* [1007](https://github.com/RoboCupAtHome/RuleBook/pull/1007) fix using wrong 'not attending penalty' in penalty section
+* [#1007](https://github.com/RoboCupAtHome/RuleBook/pull/1007) fix using wrong 'not attending penalty' in penalty section
+* [#1009](https://github.com/RoboCupAtHome/RuleBook/pull/1009) Removed some SPL mentions
 
 ## Rulebook [2026.1] - 2025-12-01
 
