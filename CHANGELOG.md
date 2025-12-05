@@ -13,7 +13,11 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
-* [1010](https://github.com/RoboCupAtHome/RuleBook/pull/1010) Add handover rulings to **Human Robot Interaction Challenge**
+* [#1010](https://github.com/RoboCupAtHome/RuleBook/pull/1010) Add handover rulings to **Human Robot Interaction Challenge**
+* [#1008](https://github.com/RoboCupAtHome/RuleBook/pull/1008) Fix inconsistencies in scenario description and league requirements
+* [#1012](https://github.com/RoboCupAtHome/RuleBook/pull/1012) Improve *following the host* description
+* [#1007](https://github.com/RoboCupAtHome/RuleBook/pull/1007) Fix wrong 'not attending penalty' in penalty section
+* [#1009](https://github.com/RoboCupAtHome/RuleBook/pull/1009) Removed some SPL mentions
 
 ## Rulebook [2026.1] - 2025-12-01
 
