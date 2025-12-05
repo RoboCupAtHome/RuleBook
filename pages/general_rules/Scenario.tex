@@ -9,11 +9,11 @@ The \RoboCup\AtHome\Arena{} is a realistic home setting (an apartment) composed 
 The minimal configuration consists of:
 \begin{itemize}
 	\item a bedroom,
-	\item a dining room,
-	\item a living room, and
 	\item a kitchen
+	\item two additional rooms (e.g., bedroom, office, dining room, laundry room, foyer, childrens room).
 \end{itemize}
-There is typically one \Arena{} per league. 
+There are usually two competition arenas.
+
 Depending on the local organization, there may be multiple \Arena{}s that differ, and a robot must be prepared to perform any task in any \Arena{}.
 
 The arena is designed to resemble a typical apartment in the hosting country, including all necessities and decorations found in a \emph{normal} home.
@@ -39,24 +39,18 @@ The indoor home setting will be surrounded by high and low \Term{walls}{Arena wa
 The \Arena{} is furnished with typical objects common to the host country.
 The minimal configuration consists of:
 \begin{itemize}
-	\item a bed,
 	\item a couch,
-	\item a small table,
-	\item a small dinner table with two chairs,
-	\item two trash bins,
-	\item an open cupboard or a small table with a television and remote control,
-	\item a chest of drawers,
-	\item a high cabinet with doors
-	\item a bookcase, and
-	\item a coat rack
-\end{itemize}
-
-The kitchen in the \Arena{} includes:
-\begin{itemize}
-	\item a dishwasher,
-	\item a microwave,
-	\item a sink, and
-	\item a refrigerator (with some cans and plastic bottles inside)
+    \item a coffee or side table,
+    \item a small dining table with two chairs,
+    \item a trash bin,
+    \item a bookcase (or similar shelving) with a minimum shelf spacing of \qty{30}{\centi\metre}
+    \item a front-loading washing machine,
+    \item kitchen equipment including:
+    \begin{itemize}
+        \item a dishwasher,
+        \item a sink,
+        \item a pantry (tall cupboard with shelves).
+    \end{itemize}
 \end{itemize}
 
 A typical \Arena{} setup is shown in~\reffig{fig:scenario_arena}.
@@ -67,19 +61,10 @@ A typical \Arena{} setup is shown in~\reffig{fig:scenario_arena}.
 	\caption{An example of a \RoboCup\AtHome{} scenario}\label{fig:arena}
 \end{figure}
 
-\subsubsection{Chest of drawers}
 
-The chest of drawers has at least two drawers located between \SI{90}{\centi\meter} and \SI{120}{\centi\meter} from the floor. These drawers require U-shaped handles for easy access.
+\subsubsection{Bookcase and Pantry} 
 
-\subsubsection{High Cabinet}
-
-A high cabinet is any shelf-like furniture where objects can be placed. The minimum distance between shelves is \SI{30}{\centi\meter}.
-The Cabinet must have two side-by-side doors blocking the access to at least the lower three shelves.
-These doors require U-shaped handles for easy access.
-
-\subsubsection{Fridge}
-
-At least one functional fridge is required in the \Arena{} and must be at least \SI{120}{\centi\meter} in size.
+Any shelf-like furniture where objects can be placed. The minimum distance between shelves is \SI{30}{\centi\meter}.
 
 \subsection{Changes to the \Arena}\label{rule:scenario_changes}
 
@@ -125,18 +110,16 @@ The minimal configuration of \KnownObjects{} consists of:
 \begin{itemize}
 	\item \textbf{\iterm{Tableware}:} Dish, bowl, cup (or mug), and napkin (see Figure~\ref{fig:scenario_container_bowl}).
 	\item \textbf{\iterm{Cutlery}:} Fork, knife, and spoon.
-	\item \textbf{\iterm{Trash Bags}:} Large plastic trash bags, preferably with a handle.
 	\item \textbf{\iterm{Bags}:} Lightweight and with stiff, vertical handles (see Figure~\ref{fig:scenario_container_bag}).
 	\item \textbf{\iterm{Dry Food Container}:} Dry food containers (see Figure~\ref{fig:scenario_container_dry}).
-	\item \textbf{\iterm{Disks or books}:} A set of discs (LP, CD, DVD, or BluRay) or books.
-	\item \textbf{\iterm{Coat rack}:} A rack or pole to hang coats and other clothes.
 	\item \textbf{\iterm{Trays}:} A transport objects like trays or baskets, intended for bimanual manipulation (see Figure~\ref{fig:scenario_container_tray}).
 	\item \textbf{\iterm{Pourable}:} An object whose content can be poured (such as a cereal box).
 	\item \textbf{\iterm{Heavy object}:} Weighing between \SI{1.0}{\kg} and \SI{1.5}{\kg}.
 	\item \textbf{\iterm{Tiny object}:} A lightweight object not larger than \SI{5}{\centi\meter} (such as paper, a teabag, or a pen).
 	\item \textbf{\iterm{Fragile object}:} An object that is easy to break (such as a chocolate egg).
 	\item \textbf{\iterm{Deformable object}:} A flexible object that may change shapes (such as cloth).
-	\item \textbf{\iterm{Garbage bag}:} A garbage bag that can be tied.
+	\item \textbf{\iterm{Laundry}:} T-shirt to be used for folding.
+	\item \textbf{\iterm{Laundry basket}:} A laundry basket, intended for bimanual manipulation
 \end{itemize}
 
 \begin{figure}[H]
