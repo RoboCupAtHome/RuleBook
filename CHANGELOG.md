@@ -13,11 +13,9 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
-inconsistencies between scenario description and league requirements
-
-* [#1008](https://github.com/RoboCupAtHome/RuleBook/pull/1008) fix inconsistencies in scenario description and league requirements
-* [#1012](https://github.com/RoboCupAtHome/RuleBook/pull/1012) improve following the host description
-* [#1007](https://github.com/RoboCupAtHome/RuleBook/pull/1007) fix using wrong 'not attending penalty' in penalty section
+* [#1008](https://github.com/RoboCupAtHome/RuleBook/pull/1008) Fix inconsistencies in scenario description and league requirements
+* [#1012](https://github.com/RoboCupAtHome/RuleBook/pull/1012) Improve *following the host* description
+* [#1007](https://github.com/RoboCupAtHome/RuleBook/pull/1007) Fix wrong 'not attending penalty' in penalty section
 * [#1009](https://github.com/RoboCupAtHome/RuleBook/pull/1009) Removed some SPL mentions
 
 ## Rulebook [2026.1] - 2025-12-01
