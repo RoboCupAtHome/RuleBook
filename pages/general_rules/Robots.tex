@@ -9,10 +9,10 @@
 
 \subsection{Appearance and Safety}\label{rule:robot_appearance}
 
-Robots must have a product-like appearance and be safe to operate.
-The following rules apply to all robots:
+Robots competing in the RoboCup@Home League must comply with security specifications to ensure they do not pose any risk to people or property while operating.
 \begin{enumerate}
-	\item \textbf{Cover:} Internal hardware (electronics and cables) must be fully covered to ensure safety. The use of visible duct tape is strictly prohibited.
+	\item \textbf{Cover:} All internal hardware (electronics and cables) must be fully enclosed to ensure safety.
+	\item \textbf{Appearance:} Robots should present a product-like, finished appearance rather than an early-stage prototype. While improvised coverings (e.g. a t-shirt) are not explicitly prohibited, they are strongly discouraged. %Visible duct tape is strictly prohibited.
 	\item \textbf{Loose cables:} No loose cables should hang out of the robot.
 	\item \textbf{Safety:} The robot must not have sharp edges or protruding parts that could harm people.
 	\item \textbf{Annoyance:} The robot must not emit continuous loud noises or use blinding lights.
@@ -21,9 +21,35 @@ The following rules apply to all robots:
 \end{enumerate}
 The compliance with these rules will be verified during \RobotInspection{} (see \ref{sec:robot_inspection}).
 
-%\input{pages/general_rules/Robots-SPL}
+\subsubsection{Size and Weight}\label{rule:robots_size}
 
-\input{pages/general_rules/Robots-OPL}
+\begin{enumerate}
+	\item \textbf{Dimensions:} The robot must fit within the dimensions of an average door, which are typically \SI{200}{\centi\meter} by \SI{70}{\centi\meter} in most countries.
+	The \TC{} allows the qualification and registration of larger robots, but they cannot guarantee that these robots can actually enter the \Arena{} due to local restrictions.
+	If in doubt, please contact the \LOC{}.
+	\item \textbf{Weight:} While there are no specific weight restrictions, the robot's total weight and the pressure it exerts on the floor must not exceed local regulations for the construction of offices and/or buildings in the country where the competition is held.
+	\item \textbf{Transportation:} Team members are responsible for quickly removing the robot from the \Arena{}.
+	The robot must be transportable by the team members in a way that is both quick and easy.
+\end{enumerate}
+
+\subsubsection{Emergency Stop Button}\label{rule:robots_emergency_button}
+
+\begin{enumerate}
+	\item \textbf{Accessibility and visibility:} Each robot must have an easily accessible and visible \EmergencyStop{} button.
+	\item \textbf{Color:} The \EmergencyStop{} button must be colored red and must be the only red button on the robot.
+	The \TC{} may ask the team to tape over or remove any other red buttons present on the robot.
+	\item \textbf{Robot behavior:} When the \EmergencyStop{} button is pressed, the robot and all its parts must stop moving immediately.
+\end{enumerate}
+
+\subsubsection{Start Button}\label{rule:start_button}
+
+\begin{enumerate}
+	\item \textbf{Requirements:} As explained in~\refsec{rule:start_signal}, teams that cannot perform the default start signal (opening the door) must provide a \StartButton{} that can be used to start tests.
+	Teams must inform the TC in advance of any test that involves a start signal, including the \RobotInspection{}.
+	\item \textbf{Definition:} The \StartButton{} can be any \enquote{one-button procedure} that is easy for a referee to execute, such as releasing the \EmergencyStop{}, pressing a green button, or using a software button in a graphical user interface.
+\end{enumerate}
+
+\noindent\textbf{Note:} All robot requirements will be tested during the \RobotInspection{} (see~\ref{sec:robot_inspection}).
 
 
 
