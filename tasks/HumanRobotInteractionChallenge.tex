@@ -86,14 +86,11 @@ The second guest will bring a bag for the host. The robot should ask for the bag
 
 	\item \textbf{Additional Seating:} Referees may add chairs to the living room area.
 	
-	\item \textbf{Deus ex Machina:} Score reduction applies per guest as follows:
+	\item \textbf{Human Assistance:} Score reduction applies per guest as follows:
 	\begin{itemize}[nosep]
 		\item \textbf{Custom Operator:} Since the main focus of the test is HRI, no custom operator can be chosen.
 		\item \textbf{Alternative HRI:} Using an alternative HRI to understand a guest causes a score reduction per information (name or favorite drink).
 		\item \textbf{Recognizing People:} If the robot has to ask for help to identify people, the score is reduced. 
-		\item \textbf{Bag handover:} If the robot has to ask the guest for help during handover, the score is reduced. 
-		If the robot tells the guest to place the bag somewhere on its structure, no points are awarded for the handover.  
-
 		\item \textbf{Follow the host:} Penalties apply if the robot loses the operator and needs help recovering. The following forms of assistance are penalized:
 		\begin{enumerate}
 		\item Natural interaction (e.g., waving and calling)
@@ -101,10 +98,17 @@ The second guest will bring a bag for the host. The robot should ask for the bag
 		\item Returning in front of the robot to resume following.
 		\item Physical contact (e.g., pulling the robot's hand)
 		\end{enumerate}
+	\end{itemize}
 
+	\item \textbf{Bag handover:} If the robot has to ask the guest for help during handover, the score is reduced. If the robot tells the guest to place the bag somewhere on its structure, an additional penalty is applied. To score the maximum amout of points:
+	\begin{itemize}[nosep]
+		\item The robot must clearly signal its readiness to receive the item (e.g., by holding its manipulator still, using lights, audio cues, or verbal prompts).
+		\item The manipulator must be positioned atleast within 10 cm of the operator's hand.
+		\item The operator can complete the handover; the robot should not reach, grasp, or initiate dangerous movement toward the human.
+		\item Explicit verbal guidance from the operator (e.g., \textit{"Place the item in my gripper, I'll close it in 3…2…1"}) will result in penalties.
+		\item The robot may, however, issue saefty cues such as: \textit{"I detect the object in my hand. I will close my gripper in 3 seconds, please be careful."}.
 	\end{itemize}
 \end{enumerate}
-
 
 \subsection*{Instructions}
 
