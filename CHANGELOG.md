@@ -13,6 +13,8 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#1018](https://github.com/RoboCupAtHome/RuleBook/pull/1018) Updated start signal rulings.
+  * The manual start signal is now explicitly used during inspection 
 * [#1010](https://github.com/RoboCupAtHome/RuleBook/pull/1010) Add handover rulings to **Human Robot Interaction Challenge**
 * [#1008](https://github.com/RoboCupAtHome/RuleBook/pull/1008) Fix inconsistencies in scenario description and league requirements
 * [#1012](https://github.com/RoboCupAtHome/RuleBook/pull/1012) Improve *following the host* description
