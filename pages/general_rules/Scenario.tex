@@ -99,9 +99,13 @@ Two types of objects are used in the tasks:
 \begin{enumerate}
 	\item \textbf{\KnownObjects{}:} Objects previously known to the robot, divided into:
 	\begin{enumerate}
-		\item \textbf{\StandardObjects{}:} Objects whose image appears in the list of objects. Chosen either from the \YCBData{}.\footnote{\url{http://www.ycbbenchmarks.com/object-set/}} if available for all houses or bought local items. These are published and available for testing and training on the first setup day.
+		\item \textbf{\ConsistentObjects{}:} Objects whose image appears in the list of objects. These are published and available for testing and training on the first setup day.
+		\begin{enumerate}
+			\item \textbf{\CommonObjects{}:} All the Common objects, for teams to acquire and train on beforehand.
+			\item \textbf{\iterm{YCB Objects}:} Objects chosen from the \YCBData{}\footnote{\url{http://www.ycbbenchmarks.com/object-set/}}.
+			\item \textbf{\LocalObjects{}:} Local household items bought during the competition.
+		\end{enumerate}
 		\item \textbf{\SimilarObjects{}:} Objects not in the list but similar enough to one of the listed objects that a person would consider them the same kind (e.g., an apple with a different color or a cloth with a different pattern).
-		\item \textbf{\CommonObjects{}:} Worlwide available objects, for teams to acquire and train on beforehand.
 	\end{enumerate}
 	\item \textbf{\UnknownObjects{}:} Any other object not in the object list but can be grasped or handled (e.g., \Arena{} decorations).
 \end{enumerate}
@@ -120,7 +124,7 @@ The minimal configuration of \KnownObjects{} consists of:
 	\item \textbf{\iterm{Deformable object}:} A flexible object that may change shapes (such as cloth).
 	\item \textbf{\iterm{Laundry}:} T-shirt to be used for folding.
 	\item \textbf{\iterm{Laundry basket}:} A laundry basket, intended for bimanual manipulation
-	\item \textbf{\iterm{Worlwide available}:} A can of coke, a red pringles can, a plastic water bottle, and a solved rubik's cube. (see Figure~\ref{fig:scenario_containers}).
+	\item \textbf{\iterm{Common Objects}:} A soda can, a cylindrical snack container, a plastic water bottle, and a solved Rubik’s Cube. These objects must be commonly available worldwide. (see Figure~\ref{fig:scenario_common_objects}).
 \end{itemize}
 
 \begin{figure}[H]
@@ -134,7 +138,7 @@ The minimal configuration of \KnownObjects{} consists of:
 	\subfloat[Solved rubik's cube]{
 		\includegraphics[width=0.24\textwidth]{images/rubiks_cube.jpg}\label{fig:scenario_rubiks_cube}}
 	\caption{Worldwide available objects}
-	\label{fig:scenario_containers}
+	\label{fig:scenario_common_objects}
 \end{figure}
 
 During the competition, objects can be requested based on their \ObjectCategory{}, physical attributes, or a combination of both.
