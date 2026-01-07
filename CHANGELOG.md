@@ -13,6 +13,8 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#1017](https://github.com/RoboCupAtHome/RuleBook/pull/1017) Added common objects always used during competition
+  * e.g. coke and pringles can are always used. Explicit mention allows teams to acquire and prepare for these objects without buying the full ycb dataset
 * [#1010](https://github.com/RoboCupAtHome/RuleBook/pull/1010) Add handover rulings to **Human Robot Interaction Challenge**
 * [#1008](https://github.com/RoboCupAtHome/RuleBook/pull/1008) Fix inconsistencies in scenario description and league requirements
 * [#1012](https://github.com/RoboCupAtHome/RuleBook/pull/1012) Improve *following the host* description
