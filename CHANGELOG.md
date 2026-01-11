@@ -13,6 +13,10 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#1019](https://github.com/RoboCupAtHome/RuleBook/pull/1019) Updated number of teams qualified for Finals
+  * With the removal of the sub-leagues more teams fit in the schedule of the finals
+  * Added clarification that **Restaurant** is only run once
+  * Added **Restaurant** may require registration/qualification
 * [#1010](https://github.com/RoboCupAtHome/RuleBook/pull/1010) Add handover rulings to **Human Robot Interaction Challenge**
 * [#1008](https://github.com/RoboCupAtHome/RuleBook/pull/1008) Fix inconsistencies in scenario description and league requirements
 * [#1012](https://github.com/RoboCupAtHome/RuleBook/pull/1012) Improve *following the host* description
