@@ -1,6 +1,6 @@
 \section{Scenario}\label{sec:scenario}
 
-Most competition tests take place in the \RoboCup\AtHome\Arena, but some tests may take place outside, in a previously unknown public place.
+Most competition tests take place in the \RoboCup\AtHome{} \Arena, but some tests may take place outside, in a previously unknown public place.
 In this section, the \Arena{} and its contents are described, including the furnishing and other information common to all tests and leagues.
 
 \subsection{RoboCup@Home Arena}
@@ -8,7 +8,7 @@ In this section, the \Arena{} and its contents are described, including the furn
 The \RoboCup\AtHome\Arena{} is a realistic home setting (an apartment) composed of interconnected rooms.
 The minimal configuration consists of:
 \begin{itemize}
-	\item a bedroom,
+	\item a living room,
 	\item a kitchen
 	\item two additional rooms (e.g., bedroom, office, dining room, laundry room, foyer, childrens room).
 \end{itemize}
@@ -43,13 +43,12 @@ The minimal configuration consists of:
     \item a coffee or side table,
     \item a small dining table with two chairs,
     \item a trash bin,
-    \item a bookcase (or similar shelving) with a minimum shelf spacing of \qty{30}{\centi\metre}
+    \item a bookcase (or similar shelving) with a minimum shelf spacing of \qty{30}{\centi\metre},
     \item a front-loading washing machine,
     \item kitchen equipment including:
     \begin{itemize}
         \item a dishwasher,
-        \item a sink,
-        \item a pantry (tall cupboard with shelves).
+        \item a pantry (tall cupboard with shelves) with a minimum shelf spacing of \qty{30}{\centi\metre},
     \end{itemize}
 \end{itemize}
 
@@ -60,11 +59,6 @@ A typical \Arena{} setup is shown in~\reffig{fig:scenario_arena}.
 	\subfloat[Typical objects]{\label{fig:scenario_objects}\includegraphics[height=46mm]{images/typical_objects.jpg}}
 	\caption{An example of a \RoboCup\AtHome{} scenario}\label{fig:arena}
 \end{figure}
-
-
-\subsubsection{Bookcase and Pantry} 
-
-Any shelf-like furniture where objects can be placed. The minimum distance between shelves is \SI{30}{\centi\meter}.
 
 \subsection{Changes to the \Arena}\label{rule:scenario_changes}
 
@@ -102,6 +96,7 @@ Two types of objects are used in the tasks:
 		\item \textbf{\ConsistentObjects{}:} Objects whose image appears in the list of objects.
 		\item \textbf{\SimilarObjects{}:} Objects not in the list but similar enough to one of the listed objects that a person would consider them the same kind (e.g., an apple with a different color or a cloth with a different pattern).
 		\item \textbf{\StandardObjects{}:} Objects chosen from the \YCBData{}.\footnote{\url{http://www.ycbbenchmarks.com/object-set/}} These are published six months in advance on the \RoboCup\AtHome{} website\footnote{\url{https://athome.robocup.org/standard-objects}}, for teams to acquire and train on beforehand.
+		
 	\end{enumerate}
 	\item \textbf{\UnknownObjects{}:} Any other object not in the object list but can be grasped or handled (e.g., \Arena{} decorations).
 \end{enumerate}
@@ -111,7 +106,6 @@ The minimal configuration of \KnownObjects{} consists of:
 	\item \textbf{\iterm{Tableware}:} Dish, bowl, cup (or mug), and napkin (see Figure~\ref{fig:scenario_container_bowl}).
 	\item \textbf{\iterm{Cutlery}:} Fork, knife, and spoon.
 	\item \textbf{\iterm{Bags}:} Lightweight and with stiff, vertical handles (see Figure~\ref{fig:scenario_container_bag}).
-	\item \textbf{\iterm{Dry Food Container}:} Dry food containers (see Figure~\ref{fig:scenario_container_dry}).
 	\item \textbf{\iterm{Trays}:} A transport objects like trays or baskets, intended for bimanual manipulation (see Figure~\ref{fig:scenario_container_tray}).
 	\item \textbf{\iterm{Pourable}:} An object whose content can be poured (such as a cereal box).
 	\item \textbf{\iterm{Heavy object}:} Weighing between \SI{1.0}{\kg} and \SI{1.5}{\kg}.
@@ -130,8 +124,6 @@ The minimal configuration of \KnownObjects{} consists of:
 		\includegraphics[width=0.24\textwidth]{images/container_paper_bag.png}\label{fig:scenario_container_bag}}
 	\subfloat[Serving tray]{
 		\includegraphics[width=0.24\textwidth]{images/container_tray.png}\label{fig:scenario_container_tray}}
-	\subfloat[Dry food Container]{
-		\includegraphics[width=0.24\textwidth]{images/container_dry.png}\label{fig:scenario_container_dry}}
 	\caption{Example of object containers}
 	\label{fig:scenario_containers}
 \end{figure}
