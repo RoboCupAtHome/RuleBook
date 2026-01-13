@@ -13,6 +13,8 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#1018](https://github.com/RoboCupAtHome/RuleBook/pull/1018) Updated start signal rulings.
+  * The manual start signal is now explicitly used during inspection 
 * [#1019](https://github.com/RoboCupAtHome/RuleBook/pull/1019) Updated number of teams qualified for Finals
   * With the removal of the sub-leagues more teams fit in the schedule of the finals
   * Added clarification that **Restaurant** is only run once
