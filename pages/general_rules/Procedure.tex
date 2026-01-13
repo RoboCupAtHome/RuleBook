@@ -86,28 +86,26 @@ Robots that do not comply with the rules are stopped and removed from the \Arena
 
 
 \subsection{Start Signal}\label{rule:start_signal}
-The default \iterm{start signal} (unless stated otherwise) is \iterm{door opening}.
-Other start signals are allowed but must be authorized by the \TC{} during the Robot Inspection (see~\refsec{sec:robot_inspection}).
+Right before starting a task, a start signal is given to the robot to indicate the robot must start performing the task.
+For tasks where the robot starts outside the arena and must enter the arena, the start signal is the door opening. 
+For tasks where the robot starts inside the arena or the task does not involve entering the arena, the start signal must be manual and performed by the referee. 
 
 \begin{enumerate}
     \item \textbf{Door opening:} The robot starts outside the \Arena{} and is accompanied by a team member. The test begins when a referee (not a team member) opens the door.
 
-    \item \textbf{Start button:} If the robot cannot start automatically after the door is open, the team may use a start button to initiate the test.
-    \begin{enumerate}[nosep]
-        \item It must be a physical button on the robot (e.g., a dedicated one or releasing the eStop).
-        \item It is allowed to use the robot's contact/pressure sensors (e.g., pushing the head or an arm joint).
-        \item The use of the start button must be announced to the referees before the test starts.
-        \item There may be penalties for using a start button in some tests.
-    \end{enumerate}
-
-    \item \textbf{Ad-hoc start signal:} Other start signals are allowed but must be approved by the \TC{} during the Robot Inspection (see~\refsec{sec:robot_inspection}).
-
-    These include:
-    \begin{itemize}[nosep]
-        \item Verbal instructions
+    \item \textbf{Manual start signal:} After a team member positioning the robot in the correct location and starting the robot, the referee must perform a manual start signal previoulsy approved on Robot Inspection (see~\refsec{sec:robot_inspection}).
+	When the robot is ready to start a task, it must clearly inform the referee it is ready to start, and what it needs to do to activate the start signal.
+	Some examples of possible manual start signals are:
+	\begin{itemize}[nosep]
+		\item Pressing a physical button on the robot (must be easily accessible and clearly marked as the start button)
+		\item Releasing the emergenecy stop button
+        \item Applying pressure to the robot's contact/pressure sensors (e.g., pushing the head, gripper or an arm joint).
+		\item Verbal instructions
+		\item Hand gesture
         \item Custom HRI interfaces (touchscreen, apps, software, etc.)
-    \end{itemize}
-    \textbf{Remark:} There may be penalties for using Ad-hoc start signals in some tests. The use of mouses, keyboards, and devices connected to \ECRA{} computers is strictly forbidden.
+	\end{itemize}
+	Start signals that involve the referee usage of mouses or writting on keyboards are forbidden. 
+	Other start signals may be allowed, but must be authorized by the \TC{} during the Robot Inspection (see~\refsec{sec:robot_inspection}).
 
 \end{enumerate}
 
