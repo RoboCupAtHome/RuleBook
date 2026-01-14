@@ -28,14 +28,13 @@
 This includes the following:
 \begin{itemize}
 	\item not attempting to cheat (e.g., pretending autonomous behavior where there is none),
-	\item not exploiting the rules (e.g., not attempting to solve the task but trying to score), and
+	\item not exploiting the rules (e.g., not attempting to solve the task but trying to score),
 	\item not intentionally causing other robots to fail.
-	\item not modifying robots in standard platforms.
 \end{itemize}
 Violating this rule may result in penalties such as negative scores, disqualification for a test, or even the entire competition.
 
 \subsection{Expected Robot's Behavior}
-Unless stated otherwise, it is expected that the robot behaves and react s as a polite and friendly human would.
+Unless stated otherwise, it is expected that the robot behaves and reacts as a polite and friendly human would.
 This applies to both how the robot performs tasks and how it interacts with humans.
 As rule of thumb, one may ask any non-scientist how they would solve the task.
 
@@ -87,28 +86,26 @@ Robots that do not comply with the rules are stopped and removed from the \Arena
 
 
 \subsection{Start Signal}\label{rule:start_signal}
-The default \iterm{start signal} (unless stated otherwise) is \iterm{door opening}.
-Other start signals are allowed but must be authorized by the \TC{} during the Robot Inspection (see~\refsec{sec:robot_inspection}).
+Right before starting a task, a start signal is given to the robot to indicate the robot must start performing the task.
+For tasks where the robot starts outside the arena and must enter the arena, the start signal is the door opening. 
+For tasks where the robot starts inside the arena or the task does not involve entering the arena, the start signal must be manual and performed by the referee. 
 
 \begin{enumerate}
     \item \textbf{Door opening:} The robot starts outside the \Arena{} and is accompanied by a team member. The test begins when a referee (not a team member) opens the door.
 
-    \item \textbf{Start button:} If the robot cannot start automatically after the door is open, the team may use a start button to initiate the test.
-    \begin{enumerate}[nosep]
-        \item It must be a physical button on the robot (e.g., a dedicated one or releasing the eStop).
-        \item It is allowed to use the robot's contact/pressure sensors (e.g., pushing the head or an arm joint).
-        \item The use of the start button must be announced to the referees before the test starts.
-        \item There may be penalties for using a start button in some tests.
-    \end{enumerate}
-
-    \item \textbf{Ad-hoc start signal:} Other start signals are allowed but must be approved by the \TC{} during the Robot Inspection (see~\refsec{sec:robot_inspection}).
-
-    These include:
-    \begin{itemize}[nosep]
-        \item Verbal instructions
+    \item \textbf{Manual start signal:} After a team member positioning the robot in the correct location and starting the robot, the referee must perform a manual start signal previoulsy approved on Robot Inspection (see~\refsec{sec:robot_inspection}).
+	When the robot is ready to start a task, it must clearly inform the referee it is ready to start, and what it needs to do to activate the start signal.
+	Some examples of possible manual start signals are:
+	\begin{itemize}[nosep]
+		\item Pressing a physical button on the robot (must be easily accessible and clearly marked as the start button)
+		\item Releasing the emergenecy stop button
+        \item Applying pressure to the robot's contact/pressure sensors (e.g., pushing the head, gripper or an arm joint).
+		\item Verbal instructions
+		\item Hand gesture
         \item Custom HRI interfaces (touchscreen, apps, software, etc.)
-    \end{itemize}
-    \textbf{Remark:} There may be penalties for using Ad-hoc start signals in some tests. The use of mouses, keyboards, and devices connected to \ECRA{} computers is strictly forbidden.
+	\end{itemize}
+	Start signals that involve the referee usage of mouses or writting on keyboards are forbidden. 
+	Other start signals may be allowed, but must be authorized by the \TC{} during the Robot Inspection (see~\refsec{sec:robot_inspection}).
 
 \end{enumerate}
 
@@ -147,7 +144,7 @@ Hand gestures may be used to control the robot in the following way:
 		\item The team may only instruct the operator in the presence of a referee.
 		\item The team may only instruct the robot for as long as allowed by the referee.
 		\item When the robot has to instruct the operator, it is the robot that instructs the operator and \emph{not} the team. The team is not allowed to guide the operator further, such as telling them to come closer or repeat a command.
-		\item The robot is allows to instruct the operator at any time.
+		\item The robot is allowed to instruct the operator at any time.
 	\end{enumerate}
 
 	\item \textbf{Receiving gestures:} Unless stated otherwise, it is not allowed to use a speech command to set the robot into a special mode for receiving gestures.
@@ -174,8 +171,6 @@ A penalty may apply when using a custom operator.
 
 \subsection{Time limits}\label{rule:time_limits}
 \begin{enumerate}
-	\item Unless stated otherwise, the time limit for each test is \timing{5 minutes}.
-
 	\item \textbf{Inactivity:} Robots must not stand still or get stuck in endless loops.
 	If a robot is not progressing in the task (and is clearly not attempting to do so), it is considered inactive.
 	The robot must be removed from the \Arena{} after 30 seconds of inactivity.
