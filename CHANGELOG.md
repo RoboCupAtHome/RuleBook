@@ -13,6 +13,9 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#1025](https://github.com/RoboCupAtHome/RuleBook/pull/1025) Updates to **Pick and Place Challenge**
+  * Added auxiliary table with two common items (worldwide available set). Robots may choose to pick these (simpler) instead of the objects in the dining table and store them in the cabinet with a small penalty.
+  * Added human assistance penalty for requesting environment changes (move chairs or decorations). Penalty is per item moved (per chair or per set of decorations)
 * [#1017](https://github.com/RoboCupAtHome/RuleBook/pull/1017) Added common objects always used during competition
   * e.g. red bull can, pringles can, rubiks cube and colgate toothpaste box were selected due to their availability worldwide.
   * Explicit mention allows teams to acquire and prepare for these objects without buying the full ycb dataset
