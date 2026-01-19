@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 ## Rulebook [Current Draft]
 
 * [#1021](https://github.com/RoboCupAtHome/RuleBook/pull/1021) Improve scoresheets
+  * remove bonus goal rulings, most objectives can be obtained at any time, unless task specific remarks.
   * changes in **Doing Laundry** procedure and scoring
 * [#1017](https://github.com/RoboCupAtHome/RuleBook/pull/1017) Added common objects always used during competition
   * e.g. red bull can, pringles can, rubiks cube and colgate toothpaste box were selected due to their availability worldwide.
