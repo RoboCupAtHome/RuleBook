@@ -13,9 +13,14 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#1021](https://github.com/RoboCupAtHome/RuleBook/pull/1021) **Doing Laundry** improvements
+  * changes in **Doing Laundry** procedure and scoring
+  * No points for simple pick and place: now onetime score for picking a single clothing piece from basket
+  * Penalties for dropping clothing
+  * Higher score for first folded item
+  * Specific HumanAssistance penalty for arranging or flattening the clothing before folding.
 * [#1021](https://github.com/RoboCupAtHome/RuleBook/pull/1021) Improve scoresheets
   * remove bonus goal rulings, most objectives can be obtained at any time, unless task specific remarks.
-  * changes in **Doing Laundry** procedure and scoring
 * [#1017](https://github.com/RoboCupAtHome/RuleBook/pull/1017) Added common objects always used during competition
   * e.g. red bull can, pringles can, rubiks cube and colgate toothpaste box were selected due to their availability worldwide.
   * Explicit mention allows teams to acquire and prepare for these objects without buying the full ycb dataset
