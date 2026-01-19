@@ -13,6 +13,8 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#1021](https://github.com/RoboCupAtHome/RuleBook/pull/1021) Improve scoresheets
+  * changes in **Doing Laundry** procedure and scoring
 * [#1017](https://github.com/RoboCupAtHome/RuleBook/pull/1017) Added common objects always used during competition
   * e.g. red bull can, pringles can, rubiks cube and colgate toothpaste box were selected due to their availability worldwide.
   * Explicit mention allows teams to acquire and prepare for these objects without buying the full ycb dataset

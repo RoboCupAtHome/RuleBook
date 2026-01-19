@@ -1,23 +1,34 @@
 \begin{scorelist}[timelimit=7]
     \scoreheading{Main Goal}
     \scoreitem{15}{Navigating to the laundry area}
-    \scoreitem{50}{Picking up a clothing item}
-    \scoreitem{50}{Placing a clothing item on the table}
-    \scoreitem{500}{Folding a piece of clothing}
-      \scorepen{500}{%
+    \scoreitem{100}{Picking up a piece of clothing from the basket}
+      \scorepen{-100}{Picking up multiple at once}
+    \scoreitem{800}{Folding a piece of clothing}
+      \scorepen{200}{%
+        Human assistance: Flattening/Arrange clothing before folding
+      }
+      \scorepen{800}{%
         Human assistance during folding will apply a \\
-        \hspace{2em}percentage penalty according to the amount of help
+        \hspace{3em}percentage penalty according to the amount of help
       }
 
     \scoreheading{Extra Rewards}
     \scoreitem{300}{Opening the washing machine door}
-    \scoreitem[5]{100}{Removing a piece of cloth from the washing machine}
+    \scoreitem{300}{Removing one or more piece of clothing from the washing machine}
+      \scorepen{200}{%
+        The clothing touches the floor
+      }
     \scoreitem{300}{Using the basket for transportation}
-    \scoreitem[5]{20}{Placing an additional clothing item on the table}
-    \scoreitem[5]{300}{Folding additional clothes (per item)}
-      \scorepen[5]{300}{%
+      \scorepen{200}{%
+        Laundry is dropped or otherwise lost during transportation.
+      }
+    \scoreitem[5]{400}{Folding additional clothes (per item)}
+      \scorepen{200}{%
+        Human assistance: Flattening/Arrange clothing before folding
+      }
+      \scorepen[5]{400}{%
           Human assistance during folding will apply a \\
-          \hspace{2em}percentage penalty according to the amount of help
+          \hspace{3em}percentage penalty according to the amount of help
         }
     \scoreitem[6]{100}{Stacking folded clothes neatly (per item)}
 
