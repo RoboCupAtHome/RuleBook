@@ -13,6 +13,11 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#1017](https://github.com/RoboCupAtHome/RuleBook/pull/1017) Added common objects always used during competition
+  * e.g. red bull can, pringles can, rubiks cube and colgate toothpaste box were selected due to their availability worldwide.
+  * Explicit mention allows teams to acquire and prepare for these objects without buying the full ycb dataset
+* [#1018](https://github.com/RoboCupAtHome/RuleBook/pull/1018) Updated start signal rulings.
+  * The manual start signal is now explicitly used during inspection 
 * [#1019](https://github.com/RoboCupAtHome/RuleBook/pull/1019) Updated number of teams qualified for Finals
   * With the removal of the sub-leagues more teams fit in the schedule of the finals
   * Added clarification that **Restaurant** is only run once
