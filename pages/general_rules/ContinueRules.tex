@@ -1,70 +1,82 @@
-\section[Deus Ex Machina]{Deus Ex Machina: Bypassing Features With Human Help \\ \small Because the Show Must Go On}\label{rule:continue}
+\section[Human Assistance]{Bypassing Features With Human Help \\ \small Because the Show Must Go On}\label{rule:continue}
 
-Robots can't score unless they accomplish the main goal of a task.
-However, in many real-life situations, a minor malfunction may prevent the robot from accomplishing a task.
-To prevent this situation, while fostering awareness and human-robot interaction, robots are allowed to request human assistance during a test.
+Robots are expected to autonomously complete all task objectives.
+However, when progress is prevented by a malfunction or limitation, robots may request human assistance to allow the test to continue.
+
+Human assistance is intended as a last resort. Robots should first attempt to skip or defer subtasks they cannot complete and continue with other achievable parts of the task. Assistance should only be requested when the robot cannot make further meaningful progress otherwise.
 
 \subsection{Procedure}\label{rule:continue_procedure}
-The procedure to request human assistance while solving a task is as follows:
+
+The robot must \textbf{clearly and explicitly indicate} that it is requesting human assistance.
+
+If a task explicitly defines allowed forms of human assistance, the robot may request such assistance using simplified or task-specific instructions. However, vague or ambiguous requests may be interpreted incorrectly by the human assistant and are not guaranteed to be executed as intended.
+
+Regardless of how the request is phrased, the robot is expected to confirm that the requested action has been carried out as intended (e.g.\ through dialogue, perception, or other appropriate feedback).
+
+In the lead-up to RoboCup, assistance types not explicitly listed in the task description may be proposed for inclusion in the Rulebook via pull request or issue.
+
+During RoboCup, any assistance not explicitly listed in the task description must be approved during the Team Leader Meeting prior to the test.
+Such assistance must follow the procedure below:
 
 \begin{enumerate}
-	\item \textbf{Request help:} The robot must indicate loud and clear that it requires human assistance. It must be clearly stated:
+	\item \textbf{Request help:} The request must specify:
 	\begin{compactitem}
-		\item The nature of the assistance
-		\item The particular goal or desired result
-		\item How the action must be carried out (when necessary)
-		\item Details about how to interact with the robot (when necessary)
-		\item Detailed information to identify objects for picking and placing (e.g. object name, color or location). The provided information needs to show that objects were perceived by the robot.
+		\item the type of assistance required, and
+		\item the intended outcome of the action.
 	\end{compactitem}
 
-	\item \textbf{Supervise:} The robot must be aware of the human's actions, being able to tell when the requested action has been completed, as well as guiding the human assistant (if necessary) during the process.
+	\item \textbf{Supervise:} The robot should actively supervise the assistance and be able to:
+	\begin{compactitem}
+		\item recognize whether the requested action has been performed, and
+		\item determine whether the outcome matches the intended request.
+	\end{compactitem}
 
-	\item \textbf{Acknowledge:} The robot must politely thank the human for the assistance provided.
+	\item \textbf{Verify:} The robot must not assume success without confirmation through perception or explicit interaction.
 \end{enumerate}
 
-\subsection*{Example}\label{rule:continue_example}
-In the following example, a robot has to clean the table but is unable to grasp the spoon.
-\begin{itemize}[noitemsep]
-	\small
-	\item[\textcolor{gray}{R:}] \texttt{I am sorry, but the spoon is too small for me to take.\\
-	Could you please help me with it?\\
-	Please say "robot yes" or "robot no" to confirm.}
-	\item[\textcolor{gray}{H:}] \textit{Robot, yes!}
-	\item[\textcolor{gray}{R:}] \texttt{Thank you! Please follow my instructions.\\
-	Please take the purple spoon from the table. It is on my left. \\(The robot also shows the result of the perception, e.g. by pointing at the spoon or showing a picture with a bounding box on the screen)}
-	\item[\textcolor{gray}{H:}] (Referee takes purple spoon)
-	\item[\textcolor{gray}{R:}] \texttt{I saw you took the spoon.\\
-	Would you be so kind as to follow me to the kitchen?\\
-	Please keep the spoon visible in front of you so I can track you. Thank you!}
-	\item[\textcolor{gray}{R:}] \texttt{You can stop following me now.\\
-	As you can see, the dishwasher is already open.\\
-	Please place the spoon in the gray basket on the lower tray.}
-	\item[\textcolor{gray}{R:}] \texttt{Lovely! Thanks for your help.\\
-	I'll let you know if I need further assistance.}
-\end{itemize}
+Requests that do not comply with these requirements may be rejected or terminated by the referee without further notice.
+
+% \subsection*{Example}\label{rule:continue_example}
+% In the following example, a robot has to clean the table but is unable to grasp the spoon.
+% \begin{itemize}[noitemsep]
+% 	\small
+% 	\item[\textcolor{gray}{R:}] \texttt{I am sorry, but the spoon is too small for me to take.\\
+% 	Could you please help me with it?\\
+% 	Please say "robot yes" or "robot no" to confirm.}
+% 	\item[\textcolor{gray}{H:}] \textit{Robot, yes!}
+% 	\item[\textcolor{gray}{R:}] \texttt{Thank you! Please follow my instructions.\\
+% 	Please take the purple spoon from the table. It is on my left. \\(The robot also shows the result of the perception, e.g. by pointing at the spoon or showing a picture with a bounding box on the screen)}
+% 	\item[\textcolor{gray}{H:}] (Referee takes purple spoon)
+% 	\item[\textcolor{gray}{R:}] \texttt{I saw you took the spoon.\\
+% 	Would you be so kind as to follow me to the kitchen?\\
+% 	Please keep the spoon visible in front of you so I can track you. Thank you!}
+% 	\item[\textcolor{gray}{R:}] \texttt{You can stop following me now.\\
+% 	As you can see, the dishwasher is already open.\\
+% 	Please place the spoon in the gray basket on the lower tray.}
+% 	\item[\textcolor{gray}{R:}] \texttt{Lovely! Thanks for your help.\\
+% 	I'll let you know if I need further assistance.}
+% \end{itemize}
 
 
 \subsection{Scoring}\label{rule:continue_scoring}
-There is no limit in the amount of times a robot can request human assistance, but score reduction applies every time it is requested.
+Any task element completed through human assistance is scored as zero points, unless explicitly stated otherwise in the task description.
 
-\begin{enumerate}
-	\item \textbf{Partial execution:} A reduction of 10\% of the maximum attainable score is applied when the robot request a partial solution (e.g. pointing to the person the robot is looking for or placing an object within grasping distance).
-	The referee decides whether the requested action is simple enough to corresponds to a partial execution or not.
+\subsection{Referee Intervention}
 
-	\item \textbf{Full awareness:} A reduction of 20\% of the maximum attainable score is applied when the robot is able to track and supervise activity, detecting possible, and when the requested action has been completed.
+The referee may stop the task at any time if:
 
-	\item \textbf{No awareness:} A reduction of 30\% of the maximum attainable score is applied when the robot has to be told when the requested action has been completed.
+\begin{itemize}
+    \item Assistance is requested that was not explicitly allowed in the description for the task.
+    \item Assistance is requested that was not announced during the Team Leader Meeting.
+    \item The robot is not making reasonable progress on the task despite being assisted.
+    \item From the second human assistance request onwards, repeated or excessive requests without demonstrating autonomous action may lead the referee to immediately stop the task.
+\end{itemize}
 
-	\item \textbf{Bonuses:} No bonus points can be scored when the robot requests help to solve part of a task that normally would grant a bonus.
-
-	\item \textbf{Score reduction overlap:} The score reduction for multiple requests of the same kind do not stack, but overlap.
-	The total reduction applied corresponds to the worst execution (highest reduction of all similar help requests).
-	This means, a robot won't be reduced again for requesting help to transport a second object, but a second reduction will apply when the robot asks for a door to be opened.
-
-	\item \textbf{Allowed types of assistance:} The types of assistance allowed in a given task are specified in the respective task description.
-	It should be noted that only the assistance types explicitly mentioned in a task description are actually allowed in a task; other types of assistance are not allowed and will nullify the obtained points for the part of the task in which they are applied.
-	For instance, if a task focused on manipulation does not explicitly mention a Deus Ex Machina penalty for instructing a person to perform a manipulation activity, it should not be assumed that this is a loophole that can be exploited.
-\end{enumerate}
+\subsection*{Example}\label{rule:continue_example}
+Example (non-exhaustive):
+\begin{itemize}[noitemsep]
+	\item Requesting a human to hand over an object instead of picking it up, and later requesting the human to place the same object instead of placing it autonomously may result in immediate termination of the task.
+\end{itemize}
 
 \subsection{Bypassing Automatic Speech Recognition}\label{rule:asrcontinue}
 Giving commands to the robot is essential in many tests.
