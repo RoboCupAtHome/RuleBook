@@ -14,7 +14,7 @@ All notable changes to this project will be documented in this file.
 ## Rulebook [Current Draft]
 
 * [#1025](https://github.com/RoboCupAtHome/RuleBook/pull/1025) Updates to **Pick and Place Challenge**
-  * Added auxiliary table with two common items (worldwide available set). Robots may choose to pick these (simpler) instead of the objects in the dining table and store them in the cabinet with a small penalty.
+  * Added side table with two common items (worldwide available set). Robots may choose to pick these instead of the objects on the dining table and store them in the cabinet with a small penalty (simpler and known in advance).
   * Added human assistance penalty for requesting environment changes (move chairs or decorations). Penalty is per item moved (per chair or per set of decorations)
 * [#1022](https://github.com/RoboCupAtHome/RuleBook/pull/1022) Add missing **Restaurant** restart rulings.
 * [#1024](https://github.com/RoboCupAtHome/RuleBook/pull/1024) Remove cabinet door closing from finals
