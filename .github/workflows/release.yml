@@ -9,7 +9,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: LaTeX linter (chktex)
         uses: j2kun/chktex-action@v2.0.0
         # Provide this output for context, but don't fail builds
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     container: texlive/texlive:TL2022-historic
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     
     - name: Take ownership of the checkout directory (Git CVE-2022-24765)
       run: chown --recursive --reference=/ .
