@@ -3,31 +3,31 @@
 	\scoreitem[2]{100}{Offer a free seat to the new guest}
 	\scoreitem[2]{15}{Look in the direction of navigation or at the navigation goal}
 	\scoreitem[2]{50}{Look at the person talking, when receiving a guest}
-	\scoreitem[4]{30}{Introduce both guests to each other: correctly say name and favorite drink of each guest}
+	\scoreitem[4]{30}{Say name and favorite drink of each guest (during introduction)}
 	\scoreitem[2]{50}{While introducing guests, look to the correct guest while talking about the other guest}
-	\scoreitem{50}{Grab the bag via handover from the guest}
-	\scoreitem{200}{Following the host to the bag drop area}
-	\scoreitem{50}{Drop the bag on the correct area}
 	
-	\scoreheading{Bonus Rewards}
+	\scoreheading{Extra Rewards}
 	\scoreitem[2]{30}{Detect the doorbell sound as a signal that a guest has arrived}
 	\scoreitem[2]{200}{Open the entrance door for a guest}
-	\scoreitem[4]{20}{Describe the first guest to the second guest (per correct visual attribute)}
+	\scoreitem[4]{0}{Tell a visual attribute of the first guest to the second guest}
+		\scoremod[4]{20}{Correct attribute}
+		\scorepen[4]{20}{Incorrect attribute}
 	\scoreitem[4]{15}{Not asking non essential questions to confirm or correct information}
 
+	\scoreheading{Guiding}
+	\scoreitem{50}{Grab the bag via natural handover from the guest}
+	\scoreitem{200}{Following the host to the bag drop area}
+		\scorepen[1]{50}{Drop the bag while following the host}
+		\scorepen{50}{Rediscovering the operator by natural interaction}
+		\scorepen{50}{Asking the operator to wait}
+		\scorepen{150}{Guiding the robot with physical contact (take by the hand)}
+	\scoreitem{50}{Drop the bag in the correct area}
+
 	\scoreheading{Penalties}
-	\penaltyitem[4]{40}{Wrong guest information was memorized (continue with wrong name, drink or interest)}
-	\penaltyitem[4]{20}{Describe the first guest to the second guest (per incorrect visual attribute)}
+	\penaltyitem[4]{40}{Wrong guest information was memorized}
 	\penaltyitem[6]{20}{Alternative HRI}
 	\penaltyitem[2]{200}{Not recognizing people}
-	
-	\scoreheading{Penalties - Guiding}
 	\penaltyitem[1]{25}{Ask the guest to place the bag somewhere on the robot}
-	\penaltyitem[1]{50}{Drop the bag while following the host}
-	\penaltyitem[1]{50}{Ask the host to place the bag on the bag drop location}
-	\penaltyitem{50}{Rediscovering the operator by natural interaction}
-	\penaltyitem{50}{Asking operator to wait}
-	\penaltyitem{150}{Guiding the robot with physical contact (take by the hand)}
 	
 \end{scorelist}
 
