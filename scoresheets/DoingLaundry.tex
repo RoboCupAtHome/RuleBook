@@ -1,24 +1,37 @@
 \begin{scorelist}[timelimit=7]
     \scoreheading{Main Goal}
     \scoreitem{15}{Navigating to the laundry area}
-    \scoreitem{100}{Picking up a clothing item}
-    \scoreitem{100}{Placing clothing on the table}
-    \scoreitem{400}{Folding a piece of clothing}
+    \scoreitem{100}{Picking up a piece of clothing from the basket}
+      \scorepen{-100}{Picking up multiple at once}
+    \scoreitem{800}{Folding a piece of clothing}
+      \scorepen{200}{%
+        Human assistance: Flattening/Arranging clothing before folding
+      }
+      \scorepen{800}{%
+        Human assistance during folding will apply a \\
+        \hspace{3em}percentage penalty according to the amount of help
+      }
 
-    \scoreheading{Bonus Rewards}
+    \scoreheading{Extra Rewards}
     \scoreitem{300}{Opening the washing machine door}
-    \scoreitem[4]{100}{Retrieving clothes from inside the washing machine (per item)}
+    \scoreitem{300}{Removing one or more pieces of clothing from the washing machine}
+      \scorepen{200}{%
+        The clothing touches the floor
+      }
     \scoreitem{300}{Using the basket for transportation}
-    \scoreitem[6]{300}{Folding additional clothes (per item)}
-    \scoreitem[6]{200}{Stacking folded clothes neatly (per item)}
+      \scorepen{200}{%
+        Laundry is dropped or otherwise lost during transportation.
+      }
+    \scoreitem[5]{400}{Folding additional clothes (per item)}
+      \scorepen[5]{200}{%
+        Human assistance: Flattening/Arranging clothing before folding
+      }
+      \scorepen[5]{400}{%
+        Human assistance during folding will apply a \\
+        \hspace{3em}percentage penalty according to the amount of help
+      }
+    \scoreitem[6]{100}{Stacking folded clothes neatly (per item)}
 
-    \scoreheading{Penalties}
-    \penaltyitem{-300}{Human Assistance: opening the washing machine door}
-    \penaltyitem{-100}{Human Assistance: handing clothes to the robot}
-    \penaltyitem{-400}{
-		Human assistance during folding will apply a \\
-		\hspace{1em}percentage penalty according to the amount of help 
-		}
 \end{scorelist}
 
 % Local Variables:

@@ -1,7 +1,21 @@
 \begin{scorelist}[timelimit=10,attempts=1,outstanding=False,continue=False, specialpenbonus=False]
 	\scoreheading{Main Goal (can be repeated unlimited times)}
 	\scoreitem[3]{150}{Find and clearly state an encountered problem}
-	\scoreitem[3]{650}{Solve a problem}
+		\scorepen{100}{Find repeated problem category}
+		\scorepen{150}{Human Assistance: Asking for location of a problem}
+	\scoreitem[10]{650}{Solve a problem}
+		\scorepen{300}{Solving repeated problem category for the 2nd time}
+		\scorepen{500}{Solving repeated problem category for the 3rd (or more) time}
+		\scorepen{650}{%
+			Instructing a human to perform parts  \\
+			\hspace{3em}of the task will apply a percentage penalty according to \\
+			\hspace{3em}similar scores in other tests.
+		}
+	\scoreitem{0}{%
+		\hspace{1em}Solving only parts of a GPSR command will apply \\
+		\hspace{1em}a percentage penalty according to similar \\
+		\hspace{1em}scores in other tests.
+	}
 	\scoreitem[1]{600}{Opening the Door of the Apartment}
 	\scoreitem[1]{600}{Closing the Dishwasher}
 	\scoreitem[1]{0}{Custom Task}
@@ -9,18 +23,7 @@
 	\scoreitem[1]{0}{Custom Task}
 
 	\scoreheading{Penalties}
-	\penaltyitem[1]{100}{Find repeated problem category}
-	\penaltyitem[1]{300}{Solving repeated problem category for the 2nd time}
-	\penaltyitem[1]{500}{Solving repeated problem category for the 3rd (or more) time}
-
-	\scoreheading{Human Assistance Penalties}
-	\penaltyitem[3]{150}{Asking for location of a problem}
 	\penaltyitem[1]{50}{Restart (only applies if the robot continues scoring afterwards)}
-	\penaltyitem[3]{650}{
-		Instructing a human to perform parts of the task will apply a \\
-		percentage penalty according to similar penalties in other \\
-		tests.
-		}
 
 \end{scorelist}
 
