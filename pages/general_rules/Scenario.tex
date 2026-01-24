@@ -104,22 +104,6 @@ Two types of objects are used in the tasks:
 	\item \textbf{\UnknownObjects{}:} Any other object not in the object list but can be grasped or handled (e.g., \Arena{} decorations).
 \end{enumerate}
 
-The minimal configuration of \KnownObjects{} consists of:
-\begin{itemize}
-	\item \textbf{\iterm{Tableware}:} Dish, bowl, cup (or mug), and napkin.
-	\item \textbf{\iterm{Cutlery}:} Fork, knife, and spoon.
-	\item \textbf{\iterm{Bags}:} Lightweight and with stiff, vertical handles.
-	\item \textbf{\iterm{Trays}:} A transport objects like trays or baskets, intended for bimanual manipulation.
-	\item \textbf{\iterm{Pourable}:} An object whose content can be poured (such as a cereal box).
-	\item \textbf{\iterm{Heavy object}:} Weighing between \SI{1.0}{\kg} and \SI{1.5}{\kg}.
-	\item \textbf{\iterm{Tiny object}:} A lightweight object not larger than \SI{5}{\centi\meter} (such as a strawberry or a dice).
-	\item \textbf{\iterm{Fragile object}:} An object that is easy to break (such as a chocolate egg).
-	\item \textbf{\iterm{Deformable object}:} A flexible object that may change shapes (such as cloth).
-	\item \textbf{\iterm{Laundry}:} T-shirt to be used for folding.
-	\item \textbf{\iterm{Laundry basket}:} A laundry basket, intended for bimanual manipulation
-	\item \textbf{\iterm{Common Objects}:} A Red Bull can, a red Pringles container, a solved Rubik’s cube and a Colgate toothpaste box. These objects must be commonly available worldwide. (see Figure~\ref{fig:scenario_common_objects}).
-\end{itemize}
-
 \begin{figure}[H]
 	\centering
 	\subfloat[Red Bull can]{
@@ -132,6 +116,32 @@ The minimal configuration of \KnownObjects{} consists of:
 		\includegraphics[width=0.24\textwidth]{images/colgate.jpeg}\label{fig:scenario_colgate}}
 	\caption{Worldwide available objects}
 	\label{fig:scenario_common_objects}
+\end{figure}
+
+The minimal configuration of \KnownObjects{} consists of:
+\begin{itemize}
+	\item \textbf{\iterm{Tableware}:} Dish, bowl, cup (or mug), and napkin.
+	\item \textbf{\iterm{Cutlery}:} Fork, knife, and spoon.
+	\item \textbf{\iterm{Bags}:} Lightweight and with stiff, vertical handles.
+	\item \textbf{\iterm{Trays}:} A transport objects like trays or baskets, intended for bimanual manipulation.
+	\item \textbf{\iterm{Pourable}:} An object whose content can be poured (such as a cereal box).
+	\item \textbf{\iterm{Heavy object}:} Weighing between \SI{1.0}{\kg} and \SI{1.5}{\kg}.
+	\item \textbf{\iterm{Tiny object}:} A lightweight object not larger than \SI{5}{\centi\meter} (such as a strawberry or a dice).
+	\item \textbf{\iterm{Fragile object}:} An object that is easy to break (such as a chocolate egg).
+	\item \textbf{\iterm{Deformable object}:} A flexible object that may change shapes (such as cloth).
+	\item \textbf{\iterm{Laundry}:} T-shirt to be used for folding.
+	\item \textbf{\iterm{Laundry basket}:} A wide, lightweight laundry basket, intended for bimanual manipulation. (see Figure~\ref{fig:scenario_basket} for an example).
+	\item \textbf{\iterm{Common Objects}:} A Red Bull can, a red Pringles container, a solved Rubik’s cube and a Colgate toothpaste box. These objects must be commonly available worldwide. (see Figure~\ref{fig:scenario_common_objects}).
+\end{itemize}
+
+
+
+\begin{figure}[H]
+	\centering
+	\subfloat[Example Laundry Basket]{
+		\includegraphics[width=0.32\textwidth]{images/basket.jpg}\label{fig:scenario_basket}}
+	\caption{Additional scenario objects}
+	\label{fig:additional_items}
 \end{figure}
 
 During the competition, objects can be requested based on their \ObjectCategory{}, physical attributes, or a combination of both.

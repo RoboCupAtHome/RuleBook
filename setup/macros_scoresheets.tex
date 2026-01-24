@@ -363,11 +363,27 @@
 		\@scoreitem[##1]{##2}{##3}%
 	}
 
+	\newcommand{\scoremod}[3][1]{%
+		\ifthenelse{ ##2 > 0 }{%
+			\addtocounter{currTestScore}{ ##2 * ##1 }%
+		}{}%
+		%
+		\@scoremod[##1]{+##2}{##3}%
+	}
+
 	\newcommand{\penaltyitem}[3][1]{%
 		\ifthenelse{##2 < 0}{%
 			\@scoreitem[##1]{\absval{##2}}{##3}%
 		}{%
 			\@scoreitem[##1]{\absval{-##2}}{##3}%
+		}%
+	}
+
+	\newcommand{\scorepen}[3][1]{%
+		\ifthenelse{##2 < 0}{%
+			\@scoremod[##1]{\absval{##2}}{##3}%
+		}{%
+			\@scoremod[##1]{\absval{-##2}}{##3}%
 		}%
 	}
 
@@ -404,6 +420,16 @@
 	% table entry %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	\newcommand{\@scoreitem}[3][1]{%
 		##3\vspace{0.1em} &%
+		\textit{%
+			\ifthenelse{ \equal{##2}{0} }{~}{% else
+				\ifthenelse{ \equal{##1}{1} }{}{##1$\times$}%
+			##2}%
+		}%
+		\ifShortScoresheet{}{&\attemptScoreLines{\scorelistAttempts}}\\[0pt]%
+	}
+
+	\newcommand{\@scoremod}[3][1]{%
+		\hspace{2em}##3\vspace{0.1em} &%
 		\textit{%
 			\ifthenelse{ \equal{##2}{0} }{~}{% else
 				\ifthenelse{ \equal{##1}{1} }{}{##1$\times$}%

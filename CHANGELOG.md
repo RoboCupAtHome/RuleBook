@@ -16,6 +16,15 @@ All notable changes to this project will be documented in this file.
 * [#1025](https://github.com/RoboCupAtHome/RuleBook/pull/1025) Updates to **Pick and Place Challenge**
   * Added side table with two common items (worldwide available set). Robots may choose to pick these instead of the objects on the dining table and store them in the cabinet with a small penalty (simpler and known in advance).
   * Added human assistance penalty for requesting environment changes (move chairs or decorations). Penalty is per item moved (per chair or per set of decorations)
+* [#1023](https://github.com/RoboCupAtHome/RuleBook/pull/1023) **Restaurant** order is now capped at 2 items. Decreased penalties where robot asked for customer location info (not guided).
+* [#1021](https://github.com/RoboCupAtHome/RuleBook/pull/1021) **Doing Laundry** improvements
+  * changes in **Doing Laundry** procedure and scoring
+  * No points for simple pick and place: now onetime score for picking a single clothing piece from basket
+  * Penalties for dropping clothing
+  * Higher score for first folded item
+  * Specific HumanAssistance penalty for arranging or flattening the clothing before folding.
+* [#1021](https://github.com/RoboCupAtHome/RuleBook/pull/1021) Improve scoresheets
+  * remove bonus goal rulings, most objectives can be obtained at any time, unless task specific remarks.
 * [#1022](https://github.com/RoboCupAtHome/RuleBook/pull/1022) Add missing **Restaurant** restart rulings.
 * [#1024](https://github.com/RoboCupAtHome/RuleBook/pull/1024) Remove cabinet door closing from finals
   * Doors no longer requirement for LOC. Will be added as additional goal if available.
