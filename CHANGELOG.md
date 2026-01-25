@@ -13,6 +13,9 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#1025](https://github.com/RoboCupAtHome/RuleBook/pull/1025) Updates to **Pick and Place Challenge**
+  * Added side table with two common items (worldwide available set). Robots may choose to pick these instead of the objects on the dining table and store them in the cabinet with a small penalty (simpler and known in advance).
+  * Added human assistance penalty for requesting environment changes (move chairs or decorations). Penalty is per item moved (per chair or per set of decorations)
 * [#1023](https://github.com/RoboCupAtHome/RuleBook/pull/1023) **Restaurant** order is now capped at 2 items. Decreased penalties where robot asked for customer location info (not guided).
 * [#1021](https://github.com/RoboCupAtHome/RuleBook/pull/1021) **Doing Laundry** improvements
   * changes in **Doing Laundry** procedure and scoring
