@@ -1,18 +1,18 @@
-\begin{scorelist}[startbutton=false,timelimit=7]
-	\scoreheading{Main Goal}
-	\scoreitem[2]{100}{Offer a free seat to the new guest}
-	\scoreitem[2]{15}{Look in the direction of navigation or at the navigation goal}
-	\scoreitem[2]{50}{Look at the person talking, when receiving a guest}
-	\scoreitem[4]{30}{Say name and favorite drink of each guest (during introduction)}
-	\scoreitem[2]{50}{While introducing guests, look to the correct guest while talking about the other guest}
-	
-	\scoreheading{Extra Rewards}
+\begin{scorelist}[startbutton=false,timelimit=6]
+	\scoreheading{Greeting}
 	\scoreitem[2]{30}{Detect the doorbell sound as a signal that a guest has arrived}
 	\scoreitem[2]{200}{Open the entrance door for a guest}
+	\scoreitem[2]{50}{Look at the person talking, when receiving a guest}
+	\scoreitem[2]{100}{Offer a free seat to the new guest}
+	\scoreitem[2]{15}{Look in the direction of navigation or at the navigation goal}
 	\scoreitem[4]{0}{Tell a visual attribute of the first guest to the second guest}
 		\scoremod[4]{20}{Correct attribute}
 		\scorepen[4]{20}{Incorrect attribute}
-	\scoreitem[4]{15}{Not asking non essential questions to confirm or correct information}
+	\scoreitem[4]{15}{Not asking non-essential questions to confirm or correct information}
+	
+	\scoreheading{Introduction}
+	\scoreitem[4]{30}{Say name and favorite drink of each guest (during introduction)}
+	\scoreitem[2]{50}{While introducing guests, look to the correct guest while talking about the other guest}
 
 	\scoreheading{Guiding}
 	\scoreitem{50}{Grab the bag via natural handover from the guest}
@@ -26,7 +26,7 @@
 	\scoreheading{Penalties}
 	\penaltyitem[4]{40}{Wrong guest information was memorized}
 	\penaltyitem[6]{20}{Alternative HRI}
-	\penaltyitem[2]{200}{Not recognizing people}
+	\penaltyitem[2]{200}{Not acknowledging people}
 	\penaltyitem[1]{25}{Ask the guest to place the bag somewhere on the robot}
 	
 \end{scorelist}
