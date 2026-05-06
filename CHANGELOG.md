@@ -1,6 +1,7 @@
 # Changelog
 
-[Current Draft]: https://github.com/RoboCupAtHome/RuleBook/compare/2025.1..HEAD
+[Current Draft]: https://github.com/RoboCupAtHome/RuleBook/compare/2025.2..HEAD
+[2026.2]: https://github.com/RoboCupAtHome/RuleBook/compare/2026.1..2026.2
 [2026.1]: https://github.com/RoboCupAtHome/RuleBook/compare/2025.1..2026.1
 [2025.1]: https://github.com/RoboCupAtHome/RuleBook/compare/2024.2..2025.1
 [2024.2]: https://github.com/RoboCupAtHome/RuleBook/compare/2024.1..2024.2
@@ -13,6 +14,9 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+## Rulebook [2026.2] - 2026-05-??
+
+* []() **Doing Laundry** Add appendix for scoring folding
 * [#1046](https://github.com/RoboCupAtHome/RuleBook/pull/1046) Reduce overall scores in **Restaurant**
   * Add first pick/place bonus to encourage manipulation
 * [#1038](https://github.com/RoboCupAtHome/RuleBook/pull/1038) Adjustments for **Finals**
