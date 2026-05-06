@@ -49,8 +49,11 @@ The robot is asked to understand and execute commands requiring a wide range of 
 	\item \textbf{Command generator:} Tasks will be generated using the official command generator\footnote{\url{https://github.com/RoboCupAtHome/CommandGenerator}}. Once a command has been generated it will be entered into an LLM to re-generate a similar phrase, e.g. the generated command is "get me a coke from the kitchen" re-phrased command is "Go to the kitchen, find a coke, and bring it to me". Each command may be re-phrased up to 3 times getting simpler with each rephrasing.   
 	\item \textbf{Test start:} The robot moves to the \textit{Instruction Point} when the arena door is open.
 	\item \textbf{Team Coaching:} Teams are not allowed to coach, or instruct the operators. Doing so results in disqualification from the task.
-	\item \textbf{Custom Operators:} If a custom operator is used they can only choose between the three re-phrased commands to give.
-
+	\item \textbf{Custom Operators:} A custom operator may be requested by the team or robot to say the commands to the robot. 
+									After the referee attempts the three re-phrased commands, the custom operator can be requested. 
+									The custom operator can only choose between the three re-phrased commands to give.
+									The custom operator only has three attempts at commands to the robot.
+									It is the team/robot responsability to request a custom operator.
 	\item \textbf{Autonomy Skip:} Score reductions apply in the following cases:
 	\begin{itemize}
 		\item Use of a custom operator.

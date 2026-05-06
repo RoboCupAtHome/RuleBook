@@ -13,6 +13,16 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#1046](https://github.com/RoboCupAtHome/RuleBook/pull/1046) Reduce overall scores in **Restaurant**
+  * Add first pick/place bonus to encourage manipulation
+* [#1038](https://github.com/RoboCupAtHome/RuleBook/pull/1038) Adjustments for **Finals**
+  * additional task: move laundry basket near the washing machine
+  * reduce points for closing
+* [#1037](https://github.com/RoboCupAtHome/RuleBook/pull/1037) Add environment change penalty to **Doing Laundry**
+* [#1035](https://github.com/RoboCupAtHome/RuleBook/pull/1035)[#1036](https://github.com/RoboCupAtHome/RuleBook/pull/1036)[#1042](https://github.com/RoboCupAtHome/RuleBook/pull/1042)[#1043](https://github.com/RoboCupAtHome/RuleBook/pull/1043)[#1044](https://github.com/RoboCupAtHome/RuleBook/pull/1044)[#1045](https://github.com/RoboCupAtHome/RuleBook/pull/1045) Various rule improvements and clarifications
+* [#1034](https://github.com/RoboCupAtHome/RuleBook/pull/1034) Robot interactions are now always scored by the person interacting with the robot.
+  * e.g. it is often hard for the referees to understand if the robot says the correct information or held eye contact
+* [#1033](https://github.com/RoboCupAtHome/RuleBook/pull/1033) Time limit for **Human Robot Interaction Challenge** is now always 7 minutes regardless of door opening.
 * [#1025](https://github.com/RoboCupAtHome/RuleBook/pull/1025) Updates to **Pick and Place Challenge**
   * Added side table with two common items (worldwide available set). Robots may choose to pick these instead of the objects on the dining table and store them in the cabinet with a small penalty (simpler and known in advance).
   * Added human assistance penalty for requesting environment changes (move chairs or decorations). Penalty is per item moved (per chair or per set of decorations)
