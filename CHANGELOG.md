@@ -16,7 +16,7 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [2026.2] - 2026-05-??
 
-* []() **Doing Laundry** Add appendix for scoring folding
+* [#1047](https://github.com/RoboCupAtHome/RuleBook/pull/1047) **Doing Laundry** Add appendix for scoring folding
 * [#1046](https://github.com/RoboCupAtHome/RuleBook/pull/1046) Reduce overall scores in **Restaurant**
   * Add first pick/place bonus to encourage manipulation
 * [#1038](https://github.com/RoboCupAtHome/RuleBook/pull/1038) Adjustments for **Finals**
