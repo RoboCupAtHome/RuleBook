@@ -1,46 +1,63 @@
 \chapter{Doing Laundry: Folding Score Examples}\label{app:score-folding}
 
 \section*{Definition}
-Folding a t-shirt means taking a flat, spread-out shirt and moving one part of it on top of another along a straight line, making the shirt smaller in at least one direction.
-A fold counts as successful if the folded part lies flat on top (not bunched or raised), its edges line up reasonably well with the edges underneath, and no accidental creases appear outside the intended fold line.
-A full folding task is a series of these folds done in order, with the end goal of ending up with a neat, roughly rectangular flat shape.
+
+Folding a t-shirt means taking a flat, spread-out shirt and folding one part over another along an intended fold line, reducing the shirt size in at least one dimension.
+
+A fold is considered successful if:
+\begin{itemize}[nosep]
+    \item the folded section lies flat without significant bunching,
+    \item edges are reasonably aligned, and
+    \item no major unintended creases or folds appear outside the intended fold line.
+\end{itemize}
+
+A folding task consists of a sequence of folds resulting in a neat, approximately rectangular shape.
+
 
 \section*{Folding Quality Evaluation}
-\textbf{Folding quality is evaluated by neatness and whether the cloth is flattened and stacked.}
+\textbf{Folding quality is evaluated based on neatness, flatness, and alignment}
 
 Penalties for human assistance during folding are proportional to the amount of help provided:
 \begin{itemize}
-    \item \textbf{Minimal help} (e.g., smoothing wrinkles, stabilizing cloth): small penalty ($\sim$100 points).
-    \item \textbf{Partial folding} (e.g., folding one half or aligning edges): moderate penalty ($\sim$200 points).
+    \item \textbf{Minimal help} (e.g., smoothing wrinkles, stabilizing cloth): small penalty ($\sim$0.125pts).
+    \item \textbf{Partial folding} (e.g., folding one half or aligning edges): moderate penalty ($\sim$0.25pts).
     \item \textbf{Major help} (e.g., completing entire fold/stack): maximum penalty.
 \end{itemize}
+
+The penalties are indicative examples and referees may adjust penalties proportionally to the level of assistance provided.
 
 \section*{Examples}
 
 \begin{figure}[H]
     \centering
-    \subfloat{
-        \includegraphics[height=4.5cm]{images/score-folding/image1.jpeg}}
+    \subfloat[(failure \textbf{.0pts}): The shirt is completely unfolded; no fold was attempted.]{\makebox[0.33\textwidth][c]{
+        \includegraphics[height=4.5cm]{images/score-folding/image1.jpeg}
+        }}
     \hfill
-    \subfloat{
-        \includegraphics[height=4.5cm]{images/score-folding/image2.jpeg}}
+    \subfloat[(laying flat \textbf{.25pts}): A human spread the clothing flat ($-.25$ pts penalty).]{\label{fig:folding-flat}\makebox[0.33\textwidth][c]{
+        \includegraphics[height=4.5cm]{images/score-folding/image2.jpeg}
+        }}
     \hfill
-    \subfloat{
-        \includegraphics[height=4.5cm]{images/score-folding/image3.jpeg}}
-    \caption{Left --- Example (failure): \textbf{0 pts} --- The shirt is completely unfolded; no fold was attempted. Center --- Example (laying flat): \textbf{200 pts} --- A human spread the clothing flat ($-200$ pts penalty); the robot did not prepare the garment independently. Right --- Example (initial folding): \textbf{250 pts} --- A human folded one half of the shirt ($-200$ pts penalty); the robot only grasped one side.}
+    \subfloat[(initial folding \textbf{.3125pts}): The robot only grasped one side, a human assisted, folded one half of the shirt ($-.25$pts penalty).]{\makebox[0.33\textwidth][c]{
+        \includegraphics[height=4.5cm]{images/score-folding/image3.jpeg}
+    }}
+    \caption{Example of different foldings and corresponding rulings}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \subfloat{
-        \includegraphics[height=4.5cm]{images/score-folding/image4.jpeg}}
+    \subfloat[(partial success \textbf{.375pts}) The shirt is folded but shows noticeable misalignment or slight bunching; neater than \reffig{fig:folding-flat}.]{\makebox[0.33\textwidth][c]{
+        \includegraphics[height=4.5cm]{images/score-folding/image4.jpeg}
+    }}
     \hfill
-    \subfloat{
-        \includegraphics[height=4.5cm]{images/score-folding/image5.jpeg}}
+    \subfloat[(moderate success \textbf{.5pts}) The shirt is folded using a basic technique; the result is acceptable but not neat.]{\makebox[0.33\textwidth][c]{
+        \includegraphics[height=4.5cm]{images/score-folding/image5.jpeg}
+    }}
     \hfill
-    \subfloat{
-        \includegraphics[height=4.5cm]{images/score-folding/image6.jpeg}}
-    \caption{Left --- Example (partial success): \textbf{300 pts} --- The shirt is folded but shows misalignment or slight bunching; neater than the 250 pt example. Center --- Example (moderate success): \textbf{400 pts} --- The shirt is folded using a basic technique; the result is acceptable but less precise than higher-scoring examples. Right --- Example (good): \textbf{600 pts} --- The shirt is well folded with only minor neatness issues; edges are mostly aligned.}
+    \subfloat[(good \textbf{.75pts}): The shirt is well folded with only minor neatness issues; edges are mostly aligned.]{\makebox[0.33\textwidth][c]{
+        \includegraphics[height=4.5cm]{images/score-folding/image6.jpeg}
+        }}
+    \caption{Example of different foldings and corresponding rulings}
 \end{figure}
 
 \begin{figure}[H]
@@ -50,13 +67,13 @@ Penalties for human assistance during folding are proportional to the amount of 
     \hfill
     \subfloat{
         \includegraphics[height=4.5cm]{images/score-folding/image8.jpeg}}
-    \caption{Example (partial success): \textbf{700 pts} --- The shirt appears folded from the front, but the back shows unintended folds where fabric is bending on top of itself outside the intended fold lines}
+    \caption{(partial success \textbf{.875pts}): The shirt appears properly folded from the front, but the back shows unintended folds where fabric bends over itself outside the intended fold lines.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[height=4.5cm]{images/score-folding/image10.jpeg}
-    \caption{Example (success): \textbf{800 pts} --- Neatly folded}
+    \caption{(success \textbf{Full points}): The shirt is neatly folded, flat, and well aligned.}
 \end{figure}
 
 %\begin{figure}[H]
