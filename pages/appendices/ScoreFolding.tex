@@ -19,28 +19,28 @@ Penalties for human assistance during folding are proportional to the amount of 
 
 \begin{figure}[H]
     \centering
-    \subfloat[Example 1: \textbf{0 pts}\newline Not fully folded]{
+    \subfloat{
         \includegraphics[height=4.5cm]{images/score-folding/image1.jpeg}}
     \hfill
-    \subfloat[Example 2: \textbf{200 pts}\newline Spreading out clothes ($-200$ pts human assistance)]{
+    \subfloat{
         \includegraphics[height=4.5cm]{images/score-folding/image2.jpeg}}
     \hfill
-    \subfloat[Example 3: \textbf{250 pts}\newline Partial folding penalty ($-200$ pts); folding by grasping one side]{
+    \subfloat{
         \includegraphics[height=4.5cm]{images/score-folding/image3.jpeg}}
-    \caption{Folding examples: 0--250 points}
+    \caption{Left --- Example (failure): \textbf{0 pts} --- The shirt is completely unfolded; no fold was attempted. Center --- Example (human assistance): \textbf{200 pts} --- A human spread the clothing flat ($-200$ pts penalty); the robot did not prepare the garment independently. Right --- Example (human assistance): \textbf{250 pts} --- A human folded one half of the shirt ($-200$ pts penalty); the robot only grasped one side.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \subfloat[Example 4: \textbf{300 pts}\newline Neater than Example~3]{
+    \subfloat{
         \includegraphics[height=4.5cm]{images/score-folding/image4.jpeg}}
     \hfill
-    \subfloat[Example 5: \textbf{400 pts}\newline Folded, but simpler method than Example~8]{
+    \subfloat{
         \includegraphics[height=4.5cm]{images/score-folding/image5.jpeg}}
     \hfill
-    \subfloat[Example 6: \textbf{600 pts}\newline Slight lack of neatness]{
+    \subfloat{
         \includegraphics[height=4.5cm]{images/score-folding/image6.jpeg}}
-    \caption{Folding examples: 300--600 points}
+    \caption{Left --- Example (partial success): \textbf{300 pts} --- The shirt is folded but shows misalignment or slight bunching; neater than the 250 pt example. Center --- Example (moderate success): \textbf{400 pts} --- The shirt is folded using a basic technique; the result is acceptable but less precise than higher-scoring examples. Right --- Example (good): \textbf{600 pts} --- The shirt is well folded with only minor neatness issues; edges are mostly aligned.}
 \end{figure}
 
 \begin{figure}[H]
