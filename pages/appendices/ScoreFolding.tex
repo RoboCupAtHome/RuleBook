@@ -19,10 +19,12 @@ A folding task consists of a sequence of folds resulting in a neat, approximatel
 \section*{Folding Quality Evaluation}
 \textbf{Folding quality is evaluated based on neatness, flatness, and alignment}
 
+All percentages in this appendix refer to the maximum available folding score. Assistance penalties are applied as deductions from the maximum folding score, independent of the achieved folding quality score.
+
 Penalties for human assistance during folding are proportional to the amount of help provided:
 \begin{itemize}
-    \item \textbf{Minimal help} (e.g., smoothing wrinkles, stabilizing cloth): small penalty ($\sim$0.125pts).
-    \item \textbf{Partial folding} (e.g., folding one half or aligning edges): moderate penalty ($\sim$0.25pts).
+    \item \textbf{Minimal help} (e.g., smoothing wrinkles, stabilizing cloth): small penalty ($\sim$12.5 percentage points).
+    \item \textbf{Partial folding} (e.g., folding one half or aligning edges): moderate penalty ($\sim$25 percentage points).
     \item \textbf{Major help} (e.g., completing entire fold/stack): maximum penalty.
 \end{itemize}
 
@@ -40,7 +42,7 @@ The penalties are indicative examples and referees may adjust penalties proporti
         \includegraphics[height=4.5cm]{images/score-folding/image2.jpeg}
         }}
     \hfill
-    \subfloat[(initial folding \textbf{.3125pts}): The robot only grasped one side, a human assisted, folded one half of the shirt ($-.25$pts penalty).]{\makebox[0.33\textwidth][c]{
+    \subfloat[(initial folding \textbf{31.25\%}): The robot only grasped one side, a human assisted, folded one half of the shirt ($-25$ percentage point penalty).]{\makebox[0.33\textwidth][c]{
         \includegraphics[height=4.5cm]{images/score-folding/image3.jpeg}
     }}
     \caption{Example of different foldings and corresponding rulings}
@@ -48,15 +50,15 @@ The penalties are indicative examples and referees may adjust penalties proporti
 
 \begin{figure}[H]
     \centering
-    \subfloat[(partial success \textbf{.375pts}) The shirt is folded but shows noticeable misalignment or slight bunching; neater than \reffig{fig:folding-flat}.]{\makebox[0.33\textwidth][c]{
+    \subfloat[(partial success \textbf{37.5\%}) The shirt is folded but shows noticeable misalignment or slight bunching; neater than \reffig{fig:folding-flat}.]{\makebox[0.33\textwidth][c]{
         \includegraphics[height=4.5cm]{images/score-folding/image4.jpeg}
     }}
     \hfill
-    \subfloat[(moderate success \textbf{.5pts}) The shirt is folded using a basic technique; the result is acceptable but not neat.]{\makebox[0.33\textwidth][c]{
+    \subfloat[(moderate success \textbf{50\%}) The shirt is folded using a basic technique; the result is acceptable but not neat.]{\makebox[0.33\textwidth][c]{
         \includegraphics[height=4.5cm]{images/score-folding/image5.jpeg}
     }}
     \hfill
-    \subfloat[(good \textbf{.75pts}): The shirt is well folded with only minor neatness issues; edges are mostly aligned.]{\makebox[0.33\textwidth][c]{
+    \subfloat[(good \textbf{75\%}): The shirt is well folded with only minor neatness issues; edges are mostly aligned.]{\makebox[0.33\textwidth][c]{
         \includegraphics[height=4.5cm]{images/score-folding/image6.jpeg}
         }}
     \caption{Example of different foldings and corresponding rulings}
@@ -69,7 +71,7 @@ The penalties are indicative examples and referees may adjust penalties proporti
     \hfill
     \subfloat{
         \includegraphics[height=4.5cm]{images/score-folding/image8.jpeg}}
-    \caption{(partial success \textbf{.875pts}): The shirt appears properly folded from the front, but the back shows unintended folds where fabric bends over itself outside the intended fold lines.}
+    \caption{(partial success \textbf{87.5\%}): The shirt appears properly folded from the front, but the back shows unintended folds where fabric bends over itself outside the intended fold lines.}
 \end{figure}
 
 \begin{figure}[H]
