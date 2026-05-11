@@ -1,0 +1,97 @@
+\chapter{Doing Laundry: Folding Score Examples}\label{app:score-folding}
+
+\captionsetup[subfloat]{margin=1.0em}
+
+\section*{Definition}
+
+Folding a t-shirt means taking a flat, spread-out shirt and folding one part over another along an intended fold line, reducing the shirt size in at least one dimension.
+
+A fold is considered successful if:
+\begin{itemize}[nosep]
+    \item the folded section lies flat without significant bunching,
+    \item edges are reasonably aligned, and
+    \item no major unintended creases or folds appear outside the intended fold line.
+\end{itemize}
+
+A folding task consists of a sequence of folds resulting in a neat, approximately rectangular shape.
+
+
+\section*{Folding Quality Evaluation}
+\textbf{Folding quality is evaluated based on neatness, flatness, and alignment}
+
+All percentages in this appendix refer to the maximum available folding score. Assistance penalties are applied as deductions from the maximum folding score, independent of the achieved folding quality score.
+
+Penalties for human assistance during folding are proportional to the amount of help provided:
+\begin{itemize}
+    \item \textbf{Minimal help} (e.g., smoothing wrinkles, stabilizing cloth): small penalty (12.5\% points).
+    \item \textbf{Partial folding} (e.g., folding one half or aligning edges): moderate penalty (25\% points).
+    \item \textbf{Major help} (e.g., completing entire fold/stack): maximum penalty (100\% points).
+\end{itemize}
+
+The penalties are indicative examples and referees may adjust penalties proportionally to the level of assistance provided.
+
+\section*{Examples}
+
+\newgeometry{left=2em, right=2em}
+
+\begin{figure}[H]
+    \centering
+    \subfloat[(failure \textbf{0 points}): The shirt is completely unfolded; no fold was attempted.]{\makebox[0.33\textwidth][c]{
+        \includegraphics[height=5.5cm]{images/score-folding/image1.jpeg}
+        }}
+    \hfill
+    \subfloat[(laying flat \textbf{25\%}): A human spread the clothing flat (\textbf{25\%} point penalty).]{\label{fig:folding-flat}\makebox[0.33\textwidth][c]{
+        \includegraphics[height=5.5cm]{images/score-folding/image2.jpeg}
+        }}
+    \hfill
+    \subfloat[(initial folding \textbf{31.25\%}): The robot only grasped one side, a human assisted, folded one half of the shirt (\textbf{25\%} point penalty).]{\makebox[0.33\textwidth][c]{
+        \includegraphics[height=5.cm]{images/score-folding/image3.jpeg}
+    }}
+    \caption{Example of different foldings and corresponding rulings}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \subfloat[(partial success \textbf{37.5\%}) The shirt is folded but shows noticeable misalignment or slight bunching; neater than \reffig{fig:folding-flat}.]{\makebox[0.33\textwidth][c]{
+        \includegraphics[height=5.5cm]{images/score-folding/image4.jpeg}
+    }}
+    \hfill
+    \subfloat[(moderate success \textbf{50\%}) The shirt is folded using a basic technique; the result is acceptable but not neat.]{\makebox[0.33\textwidth][c]{
+        \includegraphics[height=5.5cm]{images/score-folding/image5.jpeg}
+    }}
+    \hfill
+    \subfloat[(good \textbf{75\%}): The shirt is well folded with only minor neatness issues; edges are mostly aligned.]{\makebox[0.33\textwidth][c]{
+        \includegraphics[height=5.5cm]{images/score-folding/image6.jpeg}
+        }}
+    \caption{Example of different foldings and corresponding rulings}
+\end{figure}
+
+\restoregeometry
+
+\begin{figure}[H]
+    \centering
+    \subfloat{
+        \includegraphics[height=5.5cm]{images/score-folding/image7.jpeg}}
+    \hfill
+    \subfloat{
+        \includegraphics[height=5.5cm]{images/score-folding/image8.jpeg}}
+    \caption{(partial success \textbf{87.5\%}): The shirt appears properly folded from the front, but the back shows unintended folds where fabric bends over itself outside the intended fold lines.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5.5cm]{images/score-folding/image10.jpeg}
+    \caption{(success \textbf{Full points}): The shirt is neatly folded, flat, and well aligned.}
+\end{figure}
+
+
+
+%\begin{figure}[H]
+%    \centering
+%    \subfloat{
+%        \includegraphics[height=4.5cm]{images/score-folding/image11.jpeg}}
+%    \hfill
+%    \subfloat{
+%        \includegraphics[height=4.5cm]{images/score-folding/image12.jpeg}}
+%    \caption{Example from Japan Open}
+%\end{figure}
