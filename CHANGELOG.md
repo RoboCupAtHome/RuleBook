@@ -19,7 +19,7 @@ All notable changes to this project will be documented in this file.
   * Robot skills tested in Restaurant will be integrated into other tasks in the future
 * [#1056](https://github.com/RoboCupAtHome/RuleBook/pull/1056) Improve the **Restart Rule** and setup timing
   * During a restart, the robot is moved to the entrance inside the arena instead of outside it.
-  * The next team may begin setup once the previous robot enters the arena and must be ready within 30 seconds after the preceding task ends, reducing delays between attempts.
+  * The next team may begin setup once the previous robot enters the arena for its task, and must be ready within 30 seconds after the preceding task ends, reducing delays between attempts.
 
 ## Rulebook [2026.2] - 2026-05-??
 
