@@ -2,139 +2,196 @@
 \label{test:human-robot-interaction-challenge}
 
 \subsection*{Description}
-The robot is working as a receptionist at a party. The robot has to take two new guests to the living room, offer a free place to sit and introduce them to eachother. The second guest brings a bag for the robot to carry.\\
-    
-\textbf{Main goal:}
-    The robot welcomes and assists two newcomers at a party and offers them a seat, while maintaining appropriate gaze direction during conversation. The second guest brings a bag to be placed somewhere in the house.
+The robot assists people during a social event taking place throughout the
+\Arena{}. Several people are present, but only some of them require assistance.
+The robot must explore the house, recognize natural requests for attention,
+approach only people requesting assistance, and understand and fulfil their
+requests.
 
-% \vspace{-5pt}
-\textbf{Additional goals:}
+\textbf{Main goal:}
+The robot autonomously discovers who requires assistance and completes requests
+through natural, attentive human--robot interaction. It must not rely on knowing
+in advance who needs help, where that person is located, or what they will ask.
+
+\textbf{Interaction types:}
+The task focuses on natural human--robot interaction rather than general-purpose
+command understanding and execution. Interactions may require the robot to:
 \begin{enumerate}[nosep]
-	\item Detect doorbell sound as a signal that a guest has arrived.
-	\item Open the entrance door for each arriving guest.
-	\item Visually describe the first guest to the second guest.
-	\item Understand each guest's name and favorite drink without asking any confirmation or correction questions (non-essential questions).
+	\item provide information during a conversation;
+	\item request an object from the barman and deliver it to the requester.
 \end{enumerate}
 
 \subsection*{Focus}
-\emph{\SysI{}}, \emph{\HRI{}}, \emph{\PerDet{}}, \emph{\PerRec{}}
-% human detection and recognition, safe navigation and human-robot interaction with unknown people.
+\emph{\SysI{}}, \emph{\HRI{}}, \emph{person detection},
+\emph{gesture and sound-source recognition}, \emph{social attention},
+\emph{knowledge questions}, and \emph{navigation}.
 
 \subsection*{Setup}
 \begin{itemize}
-	\item \textbf{Location}: 
+	\item \textbf{Location:}
 	\begin{itemize}
-	\item The test takes place in the living room.	
-	\item The robot starts inside the \Arena{} at a predefined location near where guests are sitting.
-	\item \textbf{Entrance:} The entrance door is open by default. The team leader can request it to be closed to allow the robot to earn additional points by opening it for the guests.
-	\end{itemize}
-	
-	\item \textbf{People:} 
-	\begin{itemize}
-	\item \textbf{Arriving Guests:} Both guests have a name and a favorite drink. An arriving guest will wait by the door, and the robot has to move to meet guests by the door. A guest will not move inside the house until the robot has initiated conversation. It is not allowed to instruct guests to move in front of the robot to recognize the guest and start the conversation. The robot is the one that must approach the guest. Guests have to be guided to the living room where the robot will offer a free place to sit and introduce the guests to each other. Each guest will arrive separately. 
-	\item \textbf{Passive Guests:} A few individuals, including possibly spectators, can be anywhere in the arena — sitting or standing in relevant places, e.g., on the couch, near the seats, or in the area with the drinks.
+		\item The test takes place throughout the domestic environment during a
+		social event or party.
+		\item The robot starts outside the \Arena{} and enters when the entrance
+		door is opened.
 	\end{itemize}
 
+	\item \textbf{People:}
+	\begin{itemize}
+		\item Seven designated requesters are distributed naturally across several
+		rooms and may be sitting, standing, talking, or performing activities
+		appropriate to the event.
+		\item Additional people may be present in the house as bystanders. The
+		number, roles, and locations of all people are not announced to the team.
+		\item Both designated requesters and bystanders may move naturally around
+		the house, as people would during a normal social event.
+		\item A person requiring assistance calls or waves to attract the robot's
+		attention only while the robot is in the same room as that person.
+		\item People not requesting assistance behave as bystanders and must not be
+		approached as requesters.
+	\end{itemize}
+
+	\item \textbf{Requests:}
+	\begin{itemize}
+		\item The content and location of requests are not announced to the team
+		before the test.
+		\item Requests are part of the interaction scenarios described below. The
+		specific interaction variants are defined by the TC and OC.
+		\item Objects used by an interaction scenario follow the applicable object
+		and arena rules.
+	\end{itemize}
+
+	\item \textbf{Barman table:}
+	\begin{itemize}
+		\item A barman table containing all objects that may be requested is located
+		inside the \Arena{}.
+		\item A barman stands behind the table. The robot does not search for or pick
+		up requested objects itself; the barman places the requested object on the
+		robot.
+	\end{itemize}
 \end{itemize}
+
+\subsection*{Interaction types}
+Each request uses one of the following two interaction types and is presented
+through one of the interaction scenarios defined below.
+\begin{enumerate}[nosep]
+	\item \textbf{Provide information:} The robot answers a question during the
+	conversation. Questions are limited to objects and object classes, rooms and
+	furniture inside the \Arena{}, the date and time, the competition, or the
+	robot and its team, including the team's history and past events in which the
+	team participated.
+	\item \textbf{Deliver an object:} The robot goes to the barman table, informs
+	the barman which object was requested, and asks the barman to place it on the
+	robot. The barman may not be paying attention. The robot must confirm, in any
+	way it considers suitable, that the object is in its possession before
+	returning to the requester and delivering the object.
+\end{enumerate}
 
 \subsection*{Procedure}
-Both guests arrive separately. A doorbell will ring to signal the guest has arrived. 
-The doorbell will only ring if the robot is waiting for a new guest at the starting position.
-The robot either opens the door for the guest or meets them at the door.
-It greets the guest and asks for their name and favorite drink.
-The robot escorts the guests to the living room and offers a free seat. 
-Once both guests are seated, the robot introduces them to each other. To introduce the two guests, the robot must (for both guests) look at a guest and state the other arriving guest name and favorite drink.
-The second guest will bring a bag for the host. The robot should ask for the bag to be handed over and move to the host. The host is already waiting and instructs the robot to follow him/her. The host will move to a random place in the house and inform the robot it can drop the bag there.   
-\begin{itemize}
+\begin{enumerate}[nosep]
+	\item \textbf{Test start:} The entrance door is opened and the robot enters
+	the \Arena{}.
+	\item \textbf{Discover people requesting assistance:} The robot explores the
+	house and attends to the people present. It must determine whether a person is
+	requesting assistance from natural social cues. The robot must only approach a
+	person as a requester after that person has requested its attention.
+	\item \textbf{Understand the request:} The robot approaches the requester and
+	interacts with them to determine what assistance is required.
+	\item \textbf{Complete the interaction:} The robot responds according to the
+	assigned interaction scenario, maintaining attention and conversational
+	context as required by that scenario.
+	\item \textbf{Continue assisting:} After completing an interaction, the robot
+	continues exploring and looking for other people requesting assistance until
+	the test ends.
+\end{enumerate}
 
-	\item \textbf{Doorbell:} A doorbell sound will be played when a guest is by the door ready to be met. The doorbell sound will not be provided beforehand and may be any traditional doorbell sound. As an alternative, if no doorbell sound is available, the guest can knock on the door. Waiting for the doorbell is optional, robots can bypass it and directly meet the guest at the door. In order for the doorbell sound to be considered detected, the robot must be waiting at the starting position and react instantly to the sound.
-	
-	\item \textbf{Greeting guests:} The names of the guests can be any popular english names. The favorite drinks of the guests can be any english named popular drink (it may not be in the list of objects provided).
-	The guest paces slightly to the left and right during the conversation with the robot. Other people might appear in the background. 
-	
-	\item \textbf{Looking at person:} The robot must look at the person it is talking to. Guests will move slightly to confirm the robot dynamically follows them with its gaze. Points for gaze tracking are awarded only if the robot continuously tracks the moving person.
-	
-	\item \textbf{Looking at direction of navigation:} The robot must look in the direction it is navigating. Persistently looking in an unrelated direction or at unrelated people during navigation results in a score deduction.
-    
-	\item \textbf{Seating People:} The robot must clearly indicate or point to a location or seat for each guest.
-
-	\item \textbf{Switching Places:} After being seated, guests may switch seats.
-	
-	\item \textbf{Introductions:} When introducing guests, the robot must clearly identify the person being introduced and state their name and favorite drink. The robot must be looking at a guest and state the other arriving guest name and favorite drink. The robot must do this for both guests. The Robot is allowed to break eye contact if it is natural to do so, e.g. looking at the guest while stating their name or indicating a free seat.
-	Introducing two people means to introduce them to each other.
-	
-	\item \textbf{Non-Essential Questions:} If the robot does not ask any non-essential questions to help understand, confirm, or correct information, bonus points are awarded. 
-		Questions such as "Did you say your name is James?" or "Is your favorite drink milk?" are considered non-essential questions. 
-		However, asking a guest to repeat an answer because the robot could not hear is not considered a non-essential question.
-
-	\item \textbf{Bag handover:} The robot must grab the bag from the second guest hand. If this is not possible, the robot can instruct the guest to place the bag somewhere in its structure 
-
-	\item \textbf{Follow the host:} The host will be sitting in the living room. The robot must inform the host that it has a bag and ask the host for guidance. When requested by the robot, the host will stand in front of the robot.
-	When the robot is ready to follow, it should inform the host. The host then walks naturally toward the designated bag drop location. Once at the correct location, the host informs the robot that it should place the bag on the floor.
-
-	\item \textbf{Not acknowledging people:} If the robot fails to attend to a person attempting to interact with it, e.g., by repeatedly looking away, not orienting towards the speaker, or focusing on unrelated objects during interaction.
-
-\end{itemize}
+\subsection*{Interaction scenarios}
+The seven requesters take part in six different interaction scenarios. The
+two-person drink request involves two requesters; each other scenario involves
+one requester.
+\begin{enumerate}[nosep]
+	\item \textbf{Follow while conversing:} A requester asks the robot to follow
+	them. While the robot is following, the requester starts and maintains a
+	conversation. The robot must follow safely while remaining attentive and
+	responding to the requester.
+	\item \textbf{Full-duplex conversation:} The requester interacts without
+	waiting for rigid speaking turns. The person may respond while the robot is
+	speaking or naturally interrupt it. The robot must recognize the interruption,
+	yield or adapt its response, and continue the conversation without losing the
+	relevant context.
+	\item \textbf{Correcting a request:} The requester gives the robot a command.
+	As the robot starts moving to execute it, the requester calls the robot, asks
+	it to stop, and corrects or changes part of the command. The robot must stop
+	safely, attend to the requester, understand the correction, and continue using
+	the updated command instead of the original one.
+	\item \textbf{Two simultaneous drink requests:} Two requesters ask the robot
+	for different drinks at approximately the same time. The robot must manage the
+	overlapping requests, determine what each person asked for, associate each
+	drink with the correct requester, communicate both orders to the barman, and
+	deliver each drink to the correct person.
+	\item \textbf{Local-language interaction:} The requester speaks a language
+	used in the region hosting the competition. The robot must understand the
+	request and answer in the same language. The local language used for this
+	interaction is selected by the OC.
+	\item \textbf{Learning a new drink:} A requester teaches the robot about a
+	drink that is not part of the announced known or common object lists. The
+	person provides information that uniquely distinguishes the drink. The
+	requester then asks for that drink. The robot must use the information learned
+	during the interaction to communicate the correct order to the barman and
+	deliver the drink provided by the barman.
+\end{enumerate}
 
 \subsection*{Additional rules and remarks}
 \begin{enumerate}[nosep]
-	\item \textbf{Misunderstanding:} Not understanding the guests and asking them again is fine. Continuing with a wrong name or favorite drink causes a score reduction.
-		
-	\item \textbf{Partial Scoring:} The main task allows partial scoring per guest.
-
-	\item \textbf{Additional Seating:} Referees may add chairs to the living room area.
-	
-	\item \textbf{Human Assistance:} Score reduction applies per guest as follows:
-	\begin{itemize}[nosep]
-		\item \textbf{Custom Operator:} Since the main focus of the test is HRI, no custom operator can be chosen.
-		\item \textbf{Alternative HRI:} Using an alternative HRI to understand a guest causes a score reduction per information (name or favorite drink).
-		\item \textbf{Recognizing People:} If the robot has to ask for help to identify people, the score is reduced. 
-		\item \textbf{Follow the host:} Penalties apply if the robot loses the operator and needs help recovering. The following forms of assistance are penalized:
-		\begin{enumerate}
-		\item Natural interaction (e.g., waving and calling)
-		\item Unnatural interaction (e.g., raising both hands and jumping)
-		\item Returning in front of the robot to resume following.
-		\item Physical contact (e.g., pulling the robot's hand)
-		\end{enumerate}
-	\end{itemize}
-
-	\item \textbf{Bag handover:} If the robot has to ask the guest for help during handover, the score is reduced. If the robot tells the guest to place the bag somewhere on its structure, no points are awarded. To score the maximum amout of points:
-	\begin{itemize}[nosep]
-		\item The robot must clearly signal its readiness to receive the item (e.g., by holding its manipulator still, using lights, audio cues, or verbal prompts).
-		\item The manipulator must be positioned atleast within 10 cm of the operator's hand.
-		\item The operator can complete the handover; the robot should not reach, grasp, or initiate dangerous movement toward the human.
-		\item Explicit verbal guidance from the operator (e.g., \textit{"Place the item in my gripper, I'll close it in 3…2…1"}) will result in penalties.
-		\item The robot may, however, issue safety cues such as: \textit{"I detect the object in my hand. I will close my gripper in 3 seconds, please be careful."}.
-	\end{itemize}
+	\item \textbf{No advance request assignment:} Teams are not told which people
+	will request assistance, their positions, or their requests. The robot must use
+	a generic strategy to discover and handle interactions.
+	\item \textbf{Request for attention:} A natural request for attention may be
+	verbal or non-verbal. Calling the robot and waving are canonical examples. A
+	requester calls or waves only while the robot is in the same room; therefore,
+	the robot must explore the house rather than wait for a global call. Detailed
+	cues and interaction variants will be specified by the TC and OC.
+	\item \textbf{Do not disturb bystanders:} The robot may perceive and observe
+	all people while exploring, but it must not initiate a task-oriented
+	conversation with a person who has not requested assistance.
+	\item \textbf{Dynamic gaze:} During a conversation, the robot must direct its
+	gaze toward the person with whom it is interacting. If that person moves, the
+	robot must dynamically adjust its gaze to remain attentive. Brief gaze shifts
+	that are natural or necessary for safe operation are allowed.
 \end{enumerate}
 
 \subsection*{Instructions}
 
 \subsubsection*{To Referee}
-
 The referees need to:
 \begin{itemize}
-	\item Assign name and favorite drink to two volunteers.
-	\item Arrange and rearrange people in the living room.
-	\item Open the entrance door upon request from the robot.
+	\item ensure that only designated requesters use a request-for-attention cue;
+	\item ensure that bystanders behave naturally without misleading the robot;
+	\item give each requester the assigned request privately; and
+	\item brief the requesters on their assigned interaction scenario and ensure
+	they perform it consistently; and
+	\item ensure that the barman follows the prescribed interaction and places
+	the requested object on the robot without requiring the robot to pick it up.
 \end{itemize}
 
 \subsubsection*{To OC}
-
-
-During setup day:
+Before the test, the OC needs to:
 \begin{itemize}
-	\item Announce the bag that will be used for handover.
+	\item recruit seven requesters and enough additional volunteers to act as
+	bystanders, as well as one barman, and distribute them naturally across the
+	house;
+	\item provide the barman table and place all objects that may be requested on
+	it;
+	\item prepare the information, objects, and other materials required by the
+	six interaction scenarios, including the local language and
+	the unannounced drink used for interactive learning; and
+	\item ensure that the selected requests can be executed and scored reliably
+	without revealing requester identities or locations to the teams.
 \end{itemize}
 
-
-At least two hours before test:
-\begin{itemize}
-	\item Announce the starting position.
-	\item Recruit four volunteers: two as arriving guests and two as passive guests.
-
-\end{itemize}
-
-% \newpage
 \subsection*{Score sheet}
 \input{scoresheets/HumanRobotInteractionChallenge.tex}
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:
