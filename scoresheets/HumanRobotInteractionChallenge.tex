@@ -1,39 +1,20 @@
 \begin{scorelist}[startbutton=false,timelimit=7]
-	\scoreheading{Greeting}
-	\scoreitem[2]{30}{Detect the doorbell sound as a signal that a guest has arrived}
-	\scoreitem[2]{200}{Open the entrance door for a guest}
-	\scoreitem[2]{50}{Look at the person talking, when receiving a guest}
-	\scoreitem[2]{100}{Offer a free seat to the new guest}
-	\scoreitem[2]{15}{Look in the direction of navigation or at the navigation goal}
-	\scoreitem[4]{0}{Tell a visual attribute of the first guest to the second guest}
-		\scoremod[4]{20}{Correct attribute}
-		\scorepen[4]{20}{Incorrect attribute}
-	\scoreitem[4]{15}{Not asking non-essential questions to confirm or correct information}
-	
-	\scoreheading{Introduction}
-	\scoreitem[4]{30}{Say name and favorite drink of each guest (during introduction)}
-	\scoreitem[2]{50}{While introducing guests, look to the correct guest while talking about the other guest}
-
-	\scoreheading{Guiding}
-	\scoreitem{50}{Receive the bag from the guest via handover}
-		\scorepen{25}{Requesting handover assistance from the guest}
-		\scorepen{50}{Bag placed on the robot structure instead of being handed over}
-	\scoreitem{200}{Following the host to the bag drop area}
-		\scorepen[1]{50}{Drop the bag while following the host}
-		\scorepen{50}{Rediscovering the operator by natural interaction}
-		\scorepen{50}{Asking the operator to wait}
-		\scorepen{150}{Guiding the robot with physical contact (take by the hand)}
-	\scoreitem{50}{Drop the bag in the correct area}
+	\scoreheading{Request for attention}
+	\scoreitem[7]{50}{Approach a person calling the robot}
+	\scoreitem[7]{300}{Correctly solve an interaction scenario\newline
+	(might be a good idea to specify for each scenario because of different difficulty levels)}
+		\scorepen{50}{Fail to dynamically look at the person speaking}
+		\scoremod{50}{Correctly answer an information question}
+		\scoremod{50}{Correctly inform the barman of the requested item}
+		\scoremod{100}{Deliver a requested object to the correct person}
+		\scorepen{100}{Leave the barman without the requested item}
+		\scorepen{100}{Deliver a requested object to the incorrect person}
 
 	\scoreheading{Penalties}
-	\penaltyitem[4]{40}{Wrong guest information was memorized}
-	\penaltyitem[6]{20}{Alternative HRI}
-	\penaltyitem[2]{200}{Not acknowledging people}
-	
+	\penaltyitem{50}{Approach a person who did not call the robot (per person)}
 \end{scorelist}
 
 
 % Local Variables:
 % TeX-master: "Rulebook"
 % End:
-
