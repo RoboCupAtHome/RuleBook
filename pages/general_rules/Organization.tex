@@ -60,8 +60,6 @@ In cases where there is no significant score difference between teams, the \TC{}
 		}%
 	}
 	\newcommand{\cell}[1]{\wcell{0.2\baselineskip}{#1}}
-	% \newcommand{\mr}[1]{\multirow{2}{*}{#1}}
-
 
 	\begin{tabular}{
 		>{\centering\arraybackslash}m{2.5cm}|c|c|c|c
@@ -74,42 +72,41 @@ In cases where there is no significant score difference between teams, the \TC{}
 		\\\hhline{~---~}
 
 	\cell{Block 1\\\footnotesize(9:00--11:00)}
-		& \cellcolor{color1}\cell{\diagbox{Task 1}{Task 2}}
-		& \cellcolor{color1}\cell{\diagbox{Task 1}{Task 2}}
-		& \cellcolor{color1}\cell{\diagbox{Task 1}{Task 2}}
+		& \cellcolor{color1}\cell{Task 1}
+		& \cellcolor{color1}\cell{Task 1}
+		& \cellcolor{color1}\cell{Task 1}
 		& 
 		\\\hhline{~----}
 
-
+	\cell{Block 2\\\footnotesize(11:30--13:30)}
+		& \cellcolor{color1}\cell{Task 2}
+		& \cellcolor{color1}\cell{Task 2}
+		& \cellcolor{color1}\cell{Task 2}
+		& 
+		\\\hhline{~----}
 
 	\multicolumn{1}{ c }{}
 		& \multicolumn{3}{ c }{\wcell{0.5\baselineskip}{\color{gray}\----Break---\-}}
 		& \multicolumn{1}{|c|}{\cellcolor{color3}\cell{\textbf{Finals}}}
 		\\\hhline{~----}
 
-	\cell{Block 2\\\footnotesize(13:00--15:00)}
-		& \cellcolor{color1}\cell{\diagbox{Task 3}{Task 4}}
-		& \cellcolor{color1}\cell{\diagbox{Task 3}{Task 4}}
-		& \cellcolor{color1}\cell{\diagbox{Task 3}{Task 4}}
+	\cell{Block 3\\\footnotesize(14:00--16:00)}
+		& \cellcolor{color1}\cell{Task 3}
+		& \cellcolor{color1}\cell{Task 3}
+		& \cellcolor{color1}\cell{Task 3}
 		& 
-		\\\hhline{~---}
+		\\\hhline{~----}
 
-	\multicolumn{1}{ c }{}
-		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{}}
-		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{\color{gray}\----Break---\-}}
-		& \multicolumn{1}{ c }{}
-		\\\hhline{~---}
-		
-	\cell{Block 3\\\footnotesize(17:00--19:00)}
+	\cell{Block 4\\\footnotesize(16:30--18:30)}
+		& \cellcolor{color1}\cell{Task 4}
+		& \cellcolor{color1}\cell{Task 4}
+		& \cellcolor{color1}\cell{Task 4}
 		& 
-		& 
-		& 
-		& 
-		\\\hhline{~---}
+		\\\hhline{~----}
 	\end{tabular}
 
 	\caption{Example schedule.
-		Each team has two Test Slots assigned in every Test Block.
+		Each task runs in parallel across all three arenas.
 	}
 	\label{tbl:schedule}
 \end{table}
@@ -118,13 +115,13 @@ In cases where there is no significant score difference between teams, the \TC{}
 \centering
 \renewcommand{\arraystretch}{1.4}
 \setlength{\tabcolsep}{10pt}
-\begin{tabular}{c|c|c|}
-\multicolumn{1}{c}{}  & \multicolumn{1}{c}{Arena 1} & \multicolumn{1}{c}{Arena 2} \\
-\hhline{~--}
-12:00 & \cellcolor{color4}Group A & \cellcolor{color2}Group C \\\hhline{~--}
-12:30 & \cellcolor{color3}Group B & \cellcolor{color1}Group D \\\hhline{~--} 
-13:00 & \cellcolor{color2}Group C & \cellcolor{color4}Group A \\\hhline{~--} 
-13:30 & \cellcolor{color1}Group D & \cellcolor{color3}Group B \\\hhline{~--} 
+\begin{tabular}{c|c|c|c|}
+\multicolumn{1}{c}{}  & \multicolumn{1}{c}{Arena 1} & \multicolumn{1}{c}{Arena 2} & \multicolumn{1}{c}{Arena 3} \\
+\hhline{~---}
+12:00 & \cellcolor{color4}Group A & \cellcolor{color2}Group C & \cellcolor{color1}Group B \\\hhline{~---}
+12:30 & \cellcolor{color3}Group B & \cellcolor{color1}Group D & \cellcolor{color2}Group A \\\hhline{~---} 
+13:00 & \cellcolor{color2}Group C & \cellcolor{color4}Group A & \cellcolor{color3}Group D \\\hhline{~---} 
+13:30 & \cellcolor{color1}Group D & \cellcolor{color3}Group B & \cellcolor{color4}Group C \\\hhline{~---} 
 \end{tabular}
 \caption{Example schedule for one block showing timeslots and group rotation between arenas.}\label{tab:schedule_example_times}
 \end{table}
