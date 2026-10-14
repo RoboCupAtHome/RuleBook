@@ -32,6 +32,7 @@ The robot is asked to understand and execute commands requiring a wide range of 
 \subsection*{Procedure}
 \begin{enumerate}[nosep]
 	\item \textbf{Instruction point:} At least two hours before the test, the referees announce the location of the \textit{Instruction Point}.
+	\item \textbf{Test start:} The robot moves to the \textit{Instruction Point} when the arena door is open.
 	\item \textbf{Command execution:} The robot will decide how the commands will be issued and advise the operator, i.e., either consecutively or one-by-one. If the commands are issued one-by-one, the robot must return to the operator after completing each task.
 	\item \textbf{Back to the instruction point:} The robot goes back to the \textit{Instruction Point} after completing all the commands given by the operator.
 	\item \textbf{Pausing the Timer:} The referee pauses the timer as soon as the robot reaches the instruction point to reset the arena for the next command. The timer resumes once the referee signals the start of the next command.
@@ -43,12 +44,26 @@ The robot is asked to understand and execute commands requiring a wide range of 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Additional Rules and Remarks}
 \begin{enumerate}[nosep]
+	\item \textbf{Command Categories:} GPSR commands are organized into predefined categories. Each category represents a general type of task that the robot may be asked to perform. Commands within a category may vary in their people, objects, locations, and wording. The available categories are:
+	\begin{itemize}[nosep]
+		\item \textbf{Pick and Place:} The robot retrieves a specified object, transports it to another location, and places it at the requested destination or hands it to a person. \textit{Example:} Bring the cereal box from the kitchen counter to the dining table.
+		\item \textbf{Provide Information:} The robot locates the intended recipient and communicates the requested information. \textit{Example:} Find the person in the living room and tell them what day it is.
+		\item \textbf{Guide a Person:} The robot locates a specified person, asks them to follow, guides them to the requested destination, and informs them when they have arrived. \textit{Example:} Find Alex in the kitchen and guide them to the entrance.
+		\item \textbf{Follow a Person:} The robot locates a specified person, indicates that it is ready to follow, follows them while they move, and stops when the destination is reached or the person asks it to stop. \textit{Example:} Find the person near the entrance and follow them to their destination.
+		\item \textbf{Door Interaction:} The robot opens or closes a specified entrance, exit, or interior door. \textit{Example:} Open the entrance door.
+		\item \textbf{Furniture and Appliance Interaction:} The robot operates a specified movable part of domestic furniture or an appliance. \textit{Example:} Close the washing-machine door.
+		\item \textbf{Trash Disposal:} The robot retrieves a specified trash item from the floor, transports it to a trash bin, and places it inside. \textit{Example:} Pick up the milk from the floor in the kitchen and put it in the trash bin.
+	\end{itemize}
+	\item \textbf{Command Category Selection:} Before each test, each team selects the categories to include in its command pool. The selection is fixed for the duration of that test. Selecting fewer categories provides a more predictable command pool but reduces the maximum score available for solving commands. Selecting more categories increases the maximum available score and rewards robots with a broader range of capabilities.
+	\item \textbf{Category Coverage Factor:} The score obtained for solving each command is multiplied by the \textit{Category Coverage Factor}:
+	\[
+		\frac{\text{number of categories selected by the team}}{\text{total number of available categories}}.
+	\]
+	For example, selecting 3 out of 7 available categories results in a \textit{Category Coverage Factor} of approximately 43\%. Only the points obtained for solving commands are multiplied by this factor. All other scores, bonuses, and penalties remain unchanged.
+	\item \textbf{Command generator:} Tasks will be generated using the official command generator\footnote{\url{https://github.com/RoboCupAtHome/CommandGenerator}}. Commands will only be generated from categories selected by the team. Whenever possible, the three commands will be generated from different selected categories. Once a command has been generated it will be entered into an LLM to re-generate a similar phrase, e.g. the generated command is "get me a coke from the kitchen" re-phrased command is "Go to the kitchen, find a coke, and bring it to me". Each command may be re-phrased up to 3 times getting simpler with each rephrasing.
+	\item \textbf{Partial Scoring:} The solution allows partial scoring.
 	\item \textbf{Interleaved Task Bonus:} The robot receives an additional bonus if it successfully completes commands in an interleaved order rather than strictly consecutively. This bonus is awarded only when all three commands are received at once. The interleaved execution must be meaningful, for example by saving time or reducing unnecessary movements.
 	\textit{Example:} The robot first picks up an object, then performs another task along the way, and only afterward delivers the object to its original destination. 
-	\item \textbf{Partial Scoring:} The solution allows partial scoring.
-	\item \textbf{Command generator:} Tasks will be generated using the official command generator\footnote{\url{https://github.com/RoboCupAtHome/CommandGenerator}}. Once a command has been generated it will be entered into an LLM to re-generate a similar phrase, e.g. the generated command is "get me a coke from the kitchen" re-phrased command is "Go to the kitchen, find a coke, and bring it to me". Each command may be re-phrased up to 3 times getting simpler with each rephrasing.   
-	\item \textbf{Test start:} The robot moves to the \textit{Instruction Point} when the arena door is open.
-	\item \textbf{Team Coaching:} Teams are not allowed to coach, or instruct the operators. Doing so results in disqualification from the task.
 	\item \textbf{Custom Operators:} A custom operator may be requested by the team or robot to say the commands to the robot. 
 									After the referee attempts the three re-phrased commands, the custom operator can be requested. 
 									The custom operator can only choose between the three re-phrased commands to give.
@@ -62,6 +77,7 @@ The robot is asked to understand and execute commands requiring a wide range of 
 		\item Instructing a human assistant to perform the whole task.
 		\item QR codes will not be available.
 	\end{itemize}
+	\item \textbf{Team Coaching:} Teams are not allowed to coach, or instruct the operators. Doing so results in disqualification from the task.
 \end{enumerate}
 
 \subsection*{Referee Instructions}
