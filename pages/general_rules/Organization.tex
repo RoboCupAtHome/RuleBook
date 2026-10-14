@@ -32,15 +32,10 @@ In cases where there is no significant score difference between teams, the \TC{}
 \subsection{Schedule}\label{rule:schedule}
 
 \begin{enumerate}
-	 \item \textbf{Daily Task Runs:} 
+	\item \textbf{Daily Task Runs:}
 	Each competition day features the same set of four tasks.
-	Two tasks are executed in parallel in different arenas.
-	Once a team completes its run in one arena, it proceeds to the other arena according to the schedule.
-
-	\item \textbf{Team Groups:}
-	Teams are assigned to fixed groups (e.g.\ A, B, C, D).
-	Each block has predetermined start times for the arenas and tasks.
-	This ensures an even distribution of teams across arenas and reduced waiting time.
+	Unless scheduled otherwise by \LOC{} the same task is executed in parallel across all arenas.
+	Across the three competition days, teams complete all task-arena combinations.
 
 	\item \textbf{Test Slots:} Within each arena, teams are allocated a specific Test Slot that defines the maximum time available to complete the task. 
     Teams must be ready at their assigned block start time.
@@ -60,8 +55,6 @@ In cases where there is no significant score difference between teams, the \TC{}
 		}%
 	}
 	\newcommand{\cell}[1]{\wcell{0.2\baselineskip}{#1}}
-	% \newcommand{\mr}[1]{\multirow{2}{*}{#1}}
-
 
 	\begin{tabular}{
 		>{\centering\arraybackslash}m{2.5cm}|c|c|c|c
@@ -74,61 +67,44 @@ In cases where there is no significant score difference between teams, the \TC{}
 		\\\hhline{~---~}
 
 	\cell{Block 1\\\footnotesize(9:00--11:00)}
-		& \cellcolor{color1}\cell{\diagbox{Task 1}{Task 2}}
-		& \cellcolor{color1}\cell{\diagbox{Task 1}{Task 2}}
-		& \cellcolor{color1}\cell{\diagbox{Task 1}{Task 2}}
+		& \cellcolor{color1}\cell{Task 1}
+		& \cellcolor{color1}\cell{Task 1}
+		& \cellcolor{color1}\cell{Task 1}
 		& 
 		\\\hhline{~----}
 
-
+	\cell{Block 2\\\footnotesize(11:30--13:30)}
+		& \cellcolor{color1}\cell{Task 2}
+		& \cellcolor{color1}\cell{Task 2}
+		& \cellcolor{color1}\cell{Task 2}
+		& 
+		\\\hhline{~----}
 
 	\multicolumn{1}{ c }{}
 		& \multicolumn{3}{ c }{\wcell{0.5\baselineskip}{\color{gray}\----Break---\-}}
 		& \multicolumn{1}{|c|}{\cellcolor{color3}\cell{\textbf{Finals}}}
 		\\\hhline{~----}
 
-	\cell{Block 2\\\footnotesize(13:00--15:00)}
-		& \cellcolor{color1}\cell{\diagbox{Task 3}{Task 4}}
-		& \cellcolor{color1}\cell{\diagbox{Task 3}{Task 4}}
-		& \cellcolor{color1}\cell{\diagbox{Task 3}{Task 4}}
+	\cell{Block 3\\\footnotesize(14:00--16:00)}
+		& \cellcolor{color1}\cell{Task 3}
+		& \cellcolor{color1}\cell{Task 3}
+		& \cellcolor{color1}\cell{Task 3}
 		& 
-		\\\hhline{~---}
+		\\\hhline{~----}
 
-	\multicolumn{1}{ c }{}
-		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{}}
-		& \multicolumn{1}{ c }{\wcell{0.5\baselineskip}{\color{gray}\----Break---\-}}
-		& \multicolumn{1}{ c }{}
-		\\\hhline{~---}
-		
-	\cell{Block 3\\\footnotesize(17:00--19:00)}
+	\cell{Block 4\\\footnotesize(16:30--18:30)}
+		& \cellcolor{color1}\cell{Task 4}
+		& \cellcolor{color1}\cell{Task 4}
+		& \cellcolor{color1}\cell{Task 4}
 		& 
-		& 
-		& 
-		& 
-		\\\hhline{~---}
+		\\\hhline{~----}
 	\end{tabular}
 
 	\caption{Example schedule.
-		Each team has two Test Slots assigned in every Test Block.
+		Each task runs in parallel across all three arenas.
 	}
 	\label{tbl:schedule}
 \end{table}
-
-\begin{table}[h]
-\centering
-\renewcommand{\arraystretch}{1.4}
-\setlength{\tabcolsep}{10pt}
-\begin{tabular}{c|c|c|}
-\multicolumn{1}{c}{}  & \multicolumn{1}{c}{Arena 1} & \multicolumn{1}{c}{Arena 2} \\
-\hhline{~--}
-12:00 & \cellcolor{color4}Group A & \cellcolor{color2}Group C \\\hhline{~--}
-12:30 & \cellcolor{color3}Group B & \cellcolor{color1}Group D \\\hhline{~--} 
-13:00 & \cellcolor{color2}Group C & \cellcolor{color4}Group A \\\hhline{~--} 
-13:30 & \cellcolor{color1}Group D & \cellcolor{color3}Group B \\\hhline{~--} 
-\end{tabular}
-\caption{Example schedule for one block showing timeslots and group rotation between arenas.}\label{tab:schedule_example_times}
-\end{table}
-
 
 
 \noindent Note that the actual allocation of blocks will be announced by the \OC{} during the \SetupDays{} (see Table~\ref{tbl:schedule}).
