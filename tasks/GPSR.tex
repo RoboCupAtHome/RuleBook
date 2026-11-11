@@ -66,8 +66,9 @@ The robot is asked to understand and execute commands requiring a wide range of 
 	For example, selecting 3 out of 10 available categories results in a \textit{Category Coverage Factor} of 30\%. Only the points obtained for solving commands are multiplied by this factor. All other scores, bonuses, and penalties remain unchanged.
 	\item \textbf{Command generator:} Commands will be generated using the official command generator\footnote{\url{https://github.com/RoboCupAtHome/CommandGenerator}}. Commands will only be generated from categories selected by the team. Whenever possible, the three commands will be generated from different selected categories. Once a command has been generated it will be entered into an LLM to re-generate a similar phrase, e.g. the generated command is "get me a coke from the kitchen" re-phrased command is "Go to the kitchen, find a coke, and bring it to me". Each command may be re-phrased up to 3 times getting simpler with each rephrasing.
 	\item \textbf{Partial Scoring:} The task allows partial scoring. Solving part of a command will apply a percentage penalty according to similar scores in other tests.
-	\item \textbf{Interleaved Task Bonus:} The robot receives an additional bonus if it successfully completes commands in an interleaved order rather than strictly consecutively. This bonus is awarded only when all three commands are received at once. The interleaved execution must be meaningful, for example by saving time or reducing unnecessary movements.
+	\item \textbf{Interleaved Task:} The robot receives an additional reward if it successfully completes commands in an interleaved order rather than strictly consecutively. This reward is awarded only when all three commands are received at once. The interleaved execution must be meaningful, for example by saving time or reducing unnecessary movements.
 	\textit{Example:} The robot first picks up an object, then performs another task along the way, and only afterward delivers the object to its original destination. 
+	\item \textbf{Dynamic Command Adaptation:} During the execution of one of the three commands, the referee approaches the robot and calls for its attention. If the robot acknowledges the interruption and asks how it can help, the referee requests a change to one element of the active command, such as an object, person, location, furniture item, or other command parameter. The modification must remain within the original \textit{Command Category}. The robot must acknowledge the change and continue by executing the updated command. If the robot does not respond when called, the referee does not repeat or pursue the interruption, and the robot may continue executing the original command without penalty.
 	\item \textbf{Speech Recognition:} Bypassing speech recognition is not permitted in this task. Commands must be received through spoken interaction with the professional operator or, when requested, a custom operator.
 	\item \textbf{Custom Operators:} A custom operator may be requested by the team or robot to say the commands to the robot. 
 									After the referee attempts the three re-phrased commands, the custom operator can be requested. 
@@ -83,9 +84,11 @@ The robot is asked to understand and execute commands requiring a wide range of 
 	\item \textbf{Team Coaching:} Teams are not allowed to coach, or instruct the operators. Doing so results in disqualification from the task.
 \end{enumerate}
 
+\newpage
 \subsection*{Referee Instructions}
 \begin{itemize}[nosep]
 	\item Provide the commands to the operators.
+	\item Select one command for the dynamic command adaptation interruption and prepare a valid replacement for one of its parameters. Attempt the interruption only once during the test.
 \end{itemize}
 
 \subsection*{OC Instructions}
