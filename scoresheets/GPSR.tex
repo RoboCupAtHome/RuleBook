@@ -1,11 +1,18 @@
+\makeatletter
+\newcommand{\gpsrCCFscoreitem}[1]{%
+	\addtocounter{currTestScore}{500}%
+	\@scoreitem{$500 \times \mathrm{CCF}$}{#1}%
+}
+\makeatother
+
 \begin{scorelist}[timelimit=7]
 	\scoreheading{Main Goal}
 	\scoreitem[3]{50}{Understand the spoken command}
 		\scorepen[6]{20}{Request a rephrasing}
 		\scorepen[3]{10}{Using a custom operator}
-	\scoreitem[1]{500}{Solving the first command}
-	\scoreitem[1]{500}{Solving the second command}
-	\scoreitem[1]{500}{Solving the third command}
+	\gpsrCCFscoreitem{Solving the first command}
+	\gpsrCCFscoreitem{Solving the second command}
+	\gpsrCCFscoreitem{Solving the third command}
 
 	\scoreheading{Extra Rewards}
 	\scoreitem{300}{Interleaved Task Bonus}
