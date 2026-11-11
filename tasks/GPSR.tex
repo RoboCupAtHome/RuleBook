@@ -31,6 +31,7 @@ The robot is asked to understand and execute commands requiring a wide range of 
 % %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Procedure}
 \begin{enumerate}[nosep]
+	\item \textbf{Category selection:} At least two hours before the test, each team submits its selected \textit{Command Categories} to the OC. The selection becomes final at the submission deadline and remains fixed for that test. If a team does not submit its selection by the deadline, all available \textit{Command Categories} are selected by default.
 	\item \textbf{Instruction point:} At least two hours before the test, the referees announce the location of the \textit{Instruction Point}.
 	\item \textbf{Test start:} The robot moves to the \textit{Instruction Point} when the arena door is open.
 	\item \textbf{Command execution:} The robot will decide how the commands will be issued and advise the operator, i.e., either consecutively or one-by-one. If the commands are issued one-by-one, the robot must return to the operator after completing each task.
@@ -89,9 +90,14 @@ The robot is asked to understand and execute commands requiring a wide range of 
 
 At least two hours before the test:
 \begin{itemize}[nosep]
-	\item Generate the robot commands and pass through LLM to get a similar command (do not reveal them to the teams).
+	\item Collect each team's category selection.
 	\item Announce the location of the instruction point.
 	\item Recruit volunteers to assist during the test.
+\end{itemize}
+
+\noindent Just prior to the test:
+\begin{itemize}[nosep]
+	\item Generate the team's robot commands using its selected \textit{Command Categories} and pass them through the LLM to obtain similar commands. These cannot be revealed to the team before being said to the robot.
 \end{itemize}
 
 \noindent During the test:
