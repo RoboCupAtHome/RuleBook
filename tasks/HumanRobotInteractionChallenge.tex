@@ -1,140 +1,282 @@
 \section{Human Robot Interaction Challenge}
 \label{test:human-robot-interaction-challenge}
 
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Description
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Description}
-The robot is working as a receptionist at a party. The robot has to take two new guests to the living room, offer a free place to sit and introduce them to eachother. The second guest brings a bag for the robot to carry.\\
-    
-\textbf{Main goal:}
-    The robot welcomes and assists two newcomers at a party and offers them a seat, while maintaining appropriate gaze direction during conversation. The second guest brings a bag to be placed somewhere in the house.
+The Human-Robot Interaction Challenge evaluates a robot's ability to interact naturally and effectively with people in a dynamic social environment.
 
-% \vspace{-5pt}
-\textbf{Additional goals:}
-\begin{enumerate}[nosep]
-	\item Detect doorbell sound as a signal that a guest has arrived.
-	\item Open the entrance door for each arriving guest.
-	\item Visually describe the first guest to the second guest.
-	\item Understand each guest's name and favorite drink without asking any confirmation or correction questions (non-essential questions).
-\end{enumerate}
+The challenge is conducted in the \Arena{} where people may request assistance through natural verbal and non-verbal behaviours.
 
-\subsection*{Focus}
-\emph{\SysI{}}, \emph{\HRI{}}, \emph{\PerDet{}}, \emph{\PerRec{}}
-% human detection and recognition, safe navigation and human-robot interaction with unknown people.
+The robot must recognise opportunities for interaction, approach people appropriately, engage in conversation, maintain context across interactions, and manage increasingly complex social situations involving multiple people.
 
+The challenge focuses on demonstrating general human-robot interaction capabilities. Tasks may vary from year to year while continuing to assess the underlying HRI skills required for competent operation in human-centred environments.
+
+\medskip
+\noindent \textbf{Main goal:}
+Demonstrate robust human-robot interaction capabilities through the successful completion of skill-focused tasks requiring natural communication, social awareness, and effective interaction management in a dynamic social environment.
+
+\medskip
+\noindent \textbf{Evaluation approach:}
+The challenge evaluates human-robot interaction capabilities through scenario-based, skill-focused tasks. The specific scenarios may change between competitions, while the underlying capabilities being evaluated remain consistent. This encourages the development of general solutions rather than systems tailored to a particular scenario.
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Task Framework
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Task Framework}
+\begin{itemize}
+	\item \textbf{General:}
+	\begin{itemize}
+		\item The challenge consists of three tasks representing increasing levels of interaction complexity.
+		\item Each task evaluates multiple human-robot interaction capabilities through scenario-based interactions.
+		\item The robot attempts the tasks declared by the team, in the declared order, during the allotted time.
+		\item The specific scenarios used to evaluate the tasks are defined in the Tasks section.
+		\item The variable components of the task will be decided by the TC/OC before the challenge starts and will be the same for all teams.
+		\item The tasks are divided into three difficulty levels, with one task per level.
+	\end{itemize}
+	\item \textbf{Easy:}
+	\begin{itemize}
+		\item Focuses on direct interaction between the robot and a single person.
+		\item The robot is expected to recognise a request for assistance, approach appropriately, engage in conversation, and successfully conclude the interaction.
+	\end{itemize}
+	\item \textbf{Medium:}
+	\begin{itemize}
+		\item Focuses on interactions that require the robot to gather, retain, and use information throughout a multi-step interaction.
+		\item The robot is expected to maintain conversational context, resolve incomplete information, and apply information acquired earlier in the interaction.
+	\end{itemize}
+	\item \textbf{Hard:}
+	\begin{itemize}
+		\item Focuses on interactions involving multiple people and competing conversational demands.
+		\item The robot is expected to manage interruptions, maintain context across multiple participants, and complete interactions while correctly tracking people, requests, and conversational commitments.
+	\end{itemize}
+\end{itemize}
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Setup
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Setup}
 \begin{itemize}
-	\item \textbf{Location}: 
+	\item \textbf{General conditions:}
 	\begin{itemize}
-	\item The test takes place in the living room.	
-	\item The robot starts inside the \Arena{} at a predefined location near where guests are sitting.
-	\item \textbf{Entrance:} The entrance door is open by default. The team leader can request it to be closed to allow the robot to earn additional points by opening it for the guests.
+		\item There is one task per difficulty level: Easy, Medium, and Hard.
+		\item Teams decide which tasks the robot will attempt and in which order. Teams must declare the selected tasks and their order to the TC/OC before the test so that the \Arena{} and volunteers can be prepared.
+		\item Requesters and guests behave naturally.
+		\item No object manipulation is required.
 	\end{itemize}
-	
-	\item \textbf{People:} 
+	\item \textbf{Location:}
 	\begin{itemize}
-	\item \textbf{Arriving Guests:} Both guests have a name and a favorite drink. An arriving guest will wait by the door, and the robot has to move to meet guests by the door. A guest will not move inside the house until the robot has initiated conversation. It is not allowed to instruct guests to move in front of the robot to recognize the guest and start the conversation. The robot is the one that must approach the guest. Guests have to be guided to the living room where the robot will offer a free place to sit and introduce the guests to each other. Each guest will arrive separately. 
-	\item \textbf{Passive Guests:} A few individuals, including possibly spectators, can be anywhere in the arena — sitting or standing in relevant places, e.g., on the couch, near the seats, or in the area with the drinks.
+		\item The tests can take place in any room in the \Arena{}.
+		\item The robot starts outside the \Arena{} and enters when the entrance door is opened.
+		\item If a restart is performed, the robot can start at the current location.
 	\end{itemize}
-
+	\item \textbf{People:}
+	\begin{itemize}
+		\item Requesters, target guests and bystanders may be distributed naturally throughout the \Arena{}.
+		\item The number and role of participants are determined by the tasks.
+	\end{itemize}
 \end{itemize}
 
-\subsection*{Procedure}
-Both guests arrive separately. A doorbell will ring to signal the guest has arrived. 
-The doorbell will only ring if the robot is waiting for a new guest at the starting position.
-The robot either opens the door for the guest or meets them at the door.
-It greets the guest and asks for their name and favorite drink.
-The robot escorts the guests to the living room and offers a free seat. 
-Once both guests are seated, the robot introduces them to each other. To introduce the two guests, the robot must (for both guests) look at a guest and state the other arriving guest name and favorite drink.
-The second guest will bring a bag for the host. The robot should ask for the bag to be handed over and move to the host. The host is already waiting and instructs the robot to follow him/her. The host will move to a random place in the house and inform the robot it can drop the bag there.   
-\begin{itemize}
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tasks
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Tasks}
 
-	\item \textbf{Doorbell:} A doorbell sound will be played when a guest is by the door ready to be met. The doorbell sound will not be provided beforehand and may be any traditional doorbell sound. As an alternative, if no doorbell sound is available, the guest can knock on the door. Waiting for the doorbell is optional, robots can bypass it and directly meet the guest at the door. In order for the doorbell sound to be considered detected, the robot must be waiting at the starting position and react instantly to the sound.
-	
-	\item \textbf{Greeting guests:} The names of the guests can be any popular english names. The favorite drinks of the guests can be any english named popular drink (it may not be in the list of objects provided).
-	The guest paces slightly to the left and right during the conversation with the robot. Other people might appear in the background. 
-	
-	\item \textbf{Looking at person:} The robot must look at the person it is talking to. Guests will move slightly to confirm the robot dynamically follows them with its gaze. Points for gaze tracking are awarded only if the robot continuously tracks the moving person.
-	
-	\item \textbf{Looking at direction of navigation:} The robot must look in the direction it is navigating. Persistently looking in an unrelated direction or at unrelated people during navigation results in a score deduction.
-    
-	\item \textbf{Seating People:} The robot must clearly indicate or point to a location or seat for each guest.
+% ---------------------------------------------------------
+% Easy Task
+% ---------------------------------------------------------
+\subsubsection*{Easy Task --- Social Information Assistant}
 
-	\item \textbf{Switching Places:} After being seated, guests may switch seats.
-	
-	\item \textbf{Introductions:} When introducing guests, the robot must clearly identify the person being introduced and state their name and favorite drink. The robot must be looking at a guest and state the other arriving guest name and favorite drink. The robot must do this for both guests. The Robot is allowed to break eye contact if it is natural to do so, e.g. looking at the guest while stating their name or indicating a free seat.
-	Introducing two people means to introduce them to each other.
-	
-	\item \textbf{Non-Essential Questions:} If the robot does not ask any non-essential questions to help understand, confirm, or correct information, bonus points are awarded. 
-		Questions such as "Did you say your name is James?" or "Is your favorite drink milk?" are considered non-essential questions. 
-		However, asking a guest to repeat an answer because the robot could not hear is not considered a non-essential question.
+\noindent \textbf{Theme:}
+Providing information and assistance to attendees during a social event.
 
-	\item \textbf{Bag handover:} The robot must grab the bag from the second guest hand. If this is not possible, the robot can instruct the guest to place the bag somewhere in its structure 
+\medskip
+\noindent \textbf{Capabilities tested:}
+\emph{Engagement Detection}, \emph{Requester Identification}, \emph{Social Navigation}, \emph{Dynamic Gaze}, \emph{Speaker Tracking}, \emph{Conversation Closure}.
 
-	\item \textbf{Follow the host:} The host will be sitting in the living room. The robot must inform the host that it has a bag and ask the host for guidance. When requested by the robot, the host will stand in front of the robot.
-	When the robot is ready to follow, it should inform the host. The host then walks naturally toward the designated bag drop location. Once at the correct location, the host informs the robot that it should place the bag on the floor.
-
-	\item \textbf{Not acknowledging people:} If the robot fails to attend to a person attempting to interact with it, e.g., by repeatedly looking away, not orienting towards the speaker, or focusing on unrelated objects during interaction.
-
-\end{itemize}
-
-\subsection*{Additional rules and remarks}
+\medskip
+\noindent \textbf{Procedure:}
 \begin{enumerate}[nosep]
-	\item \textbf{Misunderstanding:} Not understanding the guests and asking them again is fine. Continuing with a wrong name or favorite drink causes a score reduction.
-		
-	\item \textbf{Partial Scoring:} The main task allows partial scoring per guest.
-
-	\item \textbf{Additional Seating:} Referees may add chairs to the living room area.
-	
-	\item \textbf{Human Assistance:} Score reduction applies per guest as follows:
-	\begin{itemize}[nosep]
-		\item \textbf{Custom Operator:} Since the main focus of the test is HRI, no custom operator can be chosen.
-		\item \textbf{Alternative HRI:} Using an alternative HRI to understand a guest causes a score reduction per information (name or favorite drink).
-		\item \textbf{Recognizing People:} If the robot has to ask for help to identify people, the score is reduced. 
-		\item \textbf{Follow the host:} Penalties apply if the robot loses the operator and needs help recovering. The following forms of assistance are penalized:
-		\begin{enumerate}
-		\item Natural interaction (e.g., waving and calling)
-		\item Unnatural interaction (e.g., raising both hands and jumping)
-		\item Returning in front of the robot to resume following.
-		\item Physical contact (e.g., pulling the robot's hand)
-		\end{enumerate}
-	\end{itemize}
-
-	\item \textbf{Bag handover:} If the robot has to ask the guest for help during handover, the score is reduced. If the robot tells the guest to place the bag somewhere on its structure, no points are awarded. To score the maximum amout of points:
-	\begin{itemize}[nosep]
-		\item The robot must clearly signal its readiness to receive the item (e.g., by holding its manipulator still, using lights, audio cues, or verbal prompts).
-		\item The manipulator must be positioned atleast within 10 cm of the operator's hand.
-		\item The operator can complete the handover; the robot should not reach, grasp, or initiate dangerous movement toward the human.
-		\item Explicit verbal guidance from the operator (e.g., \textit{"Place the item in my gripper, I'll close it in 3…2…1"}) will result in penalties.
-		\item The robot may, however, issue safety cues such as: \textit{"I detect the object in my hand. I will close my gripper in 3 seconds, please be careful."}.
-	\end{itemize}
+	\item The robot proceeds to the Easy Task area, located in the room nearest the \Arena{} entrance.
+	\item A guest at the social event requires assistance obtaining information.
+	\item The guest requests the robot's attention using a natural verbal or non-verbal cue.
+	\item The robot must recognise the request for attention, identify the requester, approach the guest, establish a suitable interaction position, and engage in conversation.
+	\item The guest asks how to reach a room within the \Arena{}.
+	\item The robot provides directions to the requested room while maintaining attention on the guest throughout the interaction. The robot does not need to physically take the person to the room.
+	\item Once the robot considers the request complete, it should determine whether the guest requires further assistance and conclude the interaction appropriately.
 \end{enumerate}
 
+\medskip
+\noindent \textbf{Additional rules and remarks:}
+\begin{enumerate}[nosep]
+	\item \textbf{Request for attention:} The guest may use verbal or non-verbal methods to attract the robot's attention. Examples include waving, calling the robot, or raising a hand. The specific cue is not announced beforehand.
+	\item \textbf{Approaching the guest:} The robot should approach the guest in a socially appropriate manner. The approach should allow the guest to observe the robot's arrival and establish an appropriate interaction distance and orientation.
+	\item \textbf{Interaction position:} The robot should stop at a position that allows natural conversation without requiring the guest to significantly reposition themselves.
+	\item \textbf{Maintaining attention:} During the interaction, the robot should direct its attention towards the guest. The guest may move slightly while speaking to verify attention tracking behaviour.
+	\item \textbf{Information requests:} Questions are limited to information about the \Arena{}, the competition, the robot, its team, and information provided by the TC and OC. The emphasis is on natural conversational interaction rather than general knowledge recall.
+	\item \textbf{Conversation closure:} The robot should recognise when the conversation has naturally ended. If the guest does not explicitly close the interaction, the robot should perform an appropriate closing check before leaving.
+	\item \textbf{Social navigation:} Additional bystanders may be present in the room or on the route to the next task. The robot should navigate appropriately around them and only engage with the person requesting assistance.
+\end{enumerate}
+
+% ---------------------------------------------------------
+% Medium Task
+% ---------------------------------------------------------
+\subsubsection*{Medium Task --- Social Messenger}
+
+\noindent \textbf{Theme:}
+Assisting guests by helping them communicate with one another.
+
+\medskip
+\noindent \textbf{Capabilities tested:}
+\emph{Engagement Detection}, \emph{Requester Identification}, \emph{Social Navigation}, \emph{Dynamic Gaze}, \emph{Speaker Tracking}, \emph{Conversation Closure}, \emph{Clarification Behaviour}, \emph{Reference Resolution}, \emph{Context Maintenance}, \emph{Conversational Memory}.
+
+\medskip
+\noindent \textbf{Procedure:}
+\begin{enumerate}[nosep]
+	\item The robot moves to the kitchen.
+	\item A guest at the social event requires assistance communicating with another attendee.
+	\item The guest attracts the robot's attention and requests help.
+	\item The request initially lacks sufficient information for successful completion. The robot must recognise that information is missing and obtain the necessary details through dialogue before attempting the task.
+	\item Once sufficient information has been gathered, the robot identifies and approaches the target guest.
+	\item The robot communicates the message or question, obtains the response, and returns to the original guest.
+	\item The robot reports the response to the requester.
+	\item Once the interaction has been completed, the robot should determine whether the guest requires further assistance and conclude the interaction appropriately.
+\end{enumerate}
+
+\medskip
+\noindent \textbf{Additional rules and remarks:}
+\begin{enumerate}[nosep]
+	\item \textbf{Incomplete requests:} The requester initially omits information required for task completion. The robot is expected to obtain the missing information before proceeding.
+	\item \textbf{Clarification behaviour:} The robot should ask appropriate questions whenever the provided information is insufficient to identify the target guest or complete the task. Proceeding without clarification may result in scoring penalties.
+	\item \textbf{Target identification:} The target guest is identified through descriptive information rather than location alone. The robot is expected to use the information provided by the requester to identify the correct person.
+	\item \textbf{Approaching the target guest:} The robot should approach the target guest in a socially appropriate manner and establish a suitable interaction position before initiating conversation.
+	\item \textbf{Maintaining attention:} During conversations with both the requester and target guest, the robot should direct its attention towards the active conversational partner. Participants may move slightly while conversing to verify attention tracking behaviour.
+	\item \textbf{Message delivery:} The robot should accurately communicate the requester's message or question to the target guest, retain the response, return to the requester, and deliver the response.
+	\item \textbf{Conversation closure:} The robot should recognise when the interaction has naturally ended. If the requester does not explicitly close the interaction, the robot should perform an appropriate closing check before leaving.
+\end{enumerate}
+
+% ---------------------------------------------------------
+% Hard Task
+% ---------------------------------------------------------
+\subsubsection*{Hard Task --- Social Coordinator}
+
+\noindent \textbf{Theme:}
+Managing a naturally occurring conversation involving multiple people.
+
+\medskip
+\noindent \textbf{Capabilities tested:}
+\emph{Engagement Detection}, \emph{Requester Identification}, \emph{Social Navigation}, \emph{Dynamic Gaze}, \emph{Speaker Tracking}, \emph{Conversation Closure}, \emph{Context Maintenance}, \emph{Conversational Memory}, \emph{Interruption Detection}, \emph{Conversation Management}, \emph{Multi-Person Interaction}, \emph{Commitment Management}.
+
+\medskip
+\noindent \textbf{Procedure:}
+\begin{enumerate}[nosep]
+	\item The robot proceeds to the Hard Task location.
+	\item A guest at the social event requires information about the current state of the \Arena{}.
+	\item The guest requests the robot's attention and engages the robot in a short conversation consisting of one or more related questions about a room, object, facility, refreshment, or activity within the \Arena{}. For example, the guest may ask whether a dining table is available, whether it has been cleaned, or where an available table can be found.
+	\item The robot answers the questions while maintaining attention on the guest throughout the interaction.
+	\item While the interaction is in progress, a second attendee attempts to interact with the robot. For example, the second attendee may interrupt by asking a question such as ``Where can I get a drink?'' while the robot is responding to the first guest. The interruption may occur while the robot is speaking or during a conversational transition.
+	\item The robot must recognise the interruption, determine whether it requires immediate attention, and respond appropriately without losing the context of the ongoing conversation.
+	\item The robot must maintain context of the ongoing conversation, manage the interruption appropriately, and conclude the interaction with the original guest.
+	\item After completing the original interaction, the robot returns to the waiting attendee without additional prompting.
+	\item The robot then answers the second attendee's original request, without requiring the attendee to repeat it, and concludes the interaction appropriately.
+\end{enumerate}
+
+\medskip
+\noindent \textbf{Additional rules and remarks:}
+\begin{enumerate}[nosep]
+	\item \textbf{Interruption handling:} The robot should acknowledge a person attempting to interact while maintaining its current conversational commitment. Acknowledgement may be verbal, non-verbal, or a combination of both.
+	\item \textbf{Maintaining commitments:} The robot should complete the original interaction before attending to the interrupted request unless safety or task requirements dictate otherwise.
+	\item \textbf{Returning to the waiting attendee:} After completing the original interaction, the robot should return to the waiting attendee without requiring additional prompts or requests for attention.
+	\item \textbf{Multi-person interaction:} The robot should correctly associate requests, replies, and conversational context with the appropriate person throughout the interaction.
+	\item \textbf{Speaker tracking:} The robot should direct responses towards the person currently speaking and appropriately shift attention when conversational ownership changes.
+	\item \textbf{Full-duplex conversation:} Participants may speak while the robot is speaking. The robot should appropriately manage overlapping speech and interruption events without unnecessarily abandoning or restarting the conversation.
+	\item \textbf{Dynamic gaze:} The robot should visually attend to the active speaker. Participants may move slightly while speaking to verify attention tracking behaviour.
+	\item \textbf{Context maintenance:} Information obtained during earlier stages of the interaction should remain available after interruptions occur.
+	\item \textbf{Conversational memory:} The robot should remember the request made by the interrupting attendee and address it when it returns, without asking the attendee to repeat it.
+	\item \textbf{Conversation management:} The robot should recognise conversational openings, interruptions, resumptions, and closures without requiring participants to follow a fixed script.
+	\item \textbf{Conversation closure:} The robot should recognise when an interaction has naturally ended. If a participant does not explicitly close the interaction, the robot should perform an appropriate closing check before leaving.
+\end{enumerate}
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Instructions
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Instructions}
 
 \subsubsection*{To Referee}
-
 The referees need to:
 \begin{itemize}
-	\item Assign name and favorite drink to two volunteers.
-	\item Arrange and rearrange people in the living room.
-	\item Open the entrance door upon request from the robot.
+	\item ensure that requesters, target guests, and bystanders behave according to their briefing cards;
+	\item ensure that bystanders behave naturally without intentionally assisting the robot;
+	\item brief participants before the test; and
+	\item ensure that task variants and selected parameters are applied consistently across teams.
 \end{itemize}
 
 \subsubsection*{To OC}
-
-
-During setup day:
+Before the test, the OC needs to:
 \begin{itemize}
-	\item Announce the bag that will be used for handover.
+	\item recruit enough volunteers to act as requesters, target guests, and bystanders;
+	\item prepare briefing cards or any supporting materials required for the tasks; and
+	\item ensure that task parameters remain consistent across all teams.
 \end{itemize}
 
+\subsubsection*{Natural Interaction Variability}
+Requesters, target guests, and bystanders are expected to behave naturally.
 
-At least two hours before test:
-\begin{itemize}
-	\item Announce the starting position.
-	\item Recruit four volunteers: two as arriving guests and two as passive guests.
+The robot should be robust to variations in wording, timing, pauses, conversational style, and other natural human behaviours.
 
+Natural variation in volunteer behaviour is considered part of the challenge and should not be treated as an error.
+
+\subsubsection*{Volunteer Errors}
+A volunteer error occurs when a participant deviates from their briefing card in a way that prevents or substantially reduces the robot's opportunity to demonstrate a scored capability.
+
+Examples include:
+\begin{itemize}[nosep]
+	\item providing information before the robot has requested it when clarification behaviour is being evaluated;
+	\item identifying a target guest before reference resolution can be demonstrated;
+	\item failing to perform a required interruption;
+	\item omitting a required follow-up question;
+	\item removing a capability trigger from the interaction.
 \end{itemize}
 
-% \newpage
+If a volunteer error occurs, the referee may instruct the volunteer to correct the error immediately, provided the interaction can continue naturally.
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendix
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Appendix: Capability Mapping}
+
+\begin{table}[h]
+	\centering
+	\caption{Capability mapping across task difficulty levels}
+	\label{tab:hri_capability_mapping}
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Capability} & \textbf{Easy} & \textbf{Medium} & \textbf{Hard} \\
+		\midrule
+		Engagement Detection     & \checkmark & \checkmark & \checkmark \\
+		Requester Identification & \checkmark & \checkmark & \checkmark \\
+		Social Navigation        & \checkmark & \checkmark & \checkmark \\
+		Dynamic Gaze             & \checkmark & \checkmark & \checkmark \\
+		Speaker Tracking         & \checkmark & \checkmark & \checkmark \\
+		Conversation Closure     & \checkmark & \checkmark & \checkmark \\
+		Clarification Behaviour  &            & \checkmark &            \\
+		Reference Resolution     &            & \checkmark &            \\
+		Context Maintenance      &            & \checkmark & \checkmark \\
+		Conversational Memory    &            & \checkmark & \checkmark \\
+		Interruption Detection   &            &            & \checkmark \\
+		Conversation Management  &            &            & \checkmark \\
+		Multi-Person Interaction &            &            & \checkmark \\
+		Commitment Management    &            &            & \checkmark \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Score sheet
+% %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Score sheet}
 \input{scoresheets/HumanRobotInteractionChallenge.tex}
+
+% Local Variables:
+% TeX-master: "Rulebook"
+% End:

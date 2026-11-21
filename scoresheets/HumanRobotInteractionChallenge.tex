@@ -1,39 +1,56 @@
 \begin{scorelist}[startbutton=false,timelimit=7]
-	\scoreheading{Greeting}
-	\scoreitem[2]{30}{Detect the doorbell sound as a signal that a guest has arrived}
-	\scoreitem[2]{200}{Open the entrance door for a guest}
-	\scoreitem[2]{50}{Look at the person talking, when receiving a guest}
-	\scoreitem[2]{100}{Offer a free seat to the new guest}
-	\scoreitem[2]{15}{Look in the direction of navigation or at the navigation goal}
-	\scoreitem[4]{0}{Tell a visual attribute of the first guest to the second guest}
-		\scoremod[4]{20}{Correct attribute}
-		\scorepen[4]{20}{Incorrect attribute}
-	\scoreitem[4]{15}{Not asking non-essential questions to confirm or correct information}
-	
-	\scoreheading{Introduction}
-	\scoreitem[4]{30}{Say name and favorite drink of each guest (during introduction)}
-	\scoreitem[2]{50}{While introducing guests, look to the correct guest while talking about the other guest}
 
-	\scoreheading{Guiding}
-	\scoreitem{50}{Receive the bag from the guest via handover}
-		\scorepen{25}{Requesting handover assistance from the guest}
-		\scorepen{50}{Bag placed on the robot structure instead of being handed over}
-	\scoreitem{200}{Following the host to the bag drop area}
-		\scorepen[1]{50}{Drop the bag while following the host}
-		\scorepen{50}{Rediscovering the operator by natural interaction}
-		\scorepen{50}{Asking the operator to wait}
-		\scorepen{150}{Guiding the robot with physical contact (take by the hand)}
-	\scoreitem{50}{Drop the bag in the correct area}
+	\scoreheading{Easy Task --- Social Information Assistant}
+	\scoreitem{50}{Correctly detect the request for attention}
+	\scoreitem{50}{Correctly identify the requester}
+	\scoreitem{100}{Approach the requester appropriately in path, distance, and orientation}
+	\scoreitem{50}{Establish an appropriate interaction position}
+	\scoreitem{100}{Maintain attention on the requester throughout the interaction}
+	\scoreitem{100}{Provide accurate directions to the requested room}
+	\scoreitem{25}{Perform an appropriate closing check}
+	\scoreitem{25}{Conclude the interaction appropriately}
+
+	\scoreheading{Medium Task --- Social Messenger}
+	\scoreitem{25}{Correctly detect and acknowledge the requester}
+	\scoreitem{50}{Approach the requester and establish an appropriate interaction position}
+	\scoreitem{25}{Recognise that required information is missing}
+	\scoreitem{100}{Obtain the missing information through clarification}
+	\scoreitem{50}{Maintain attention on the active conversational partner throughout the task}
+	\scoreitem{100}{Correctly identify the target guest}
+	\scoreitem{50}{Approach the target guest appropriately}
+	\scoreitem{75}{Correctly communicate the message or question}
+	\scoreitem{75}{Obtain and retain the target guest's response}
+	\scoreitem{25}{Return to the original requester}
+	\scoreitem{100}{Correctly report the response}
+	\scoreitem{25}{Conclude the interaction appropriately}
+
+	\scoreheading{Hard Task --- Social Coordinator}
+	\scoreitem{50}{Detect the first guest's request for attention and approach appropriately}
+	\scoreitem{100}{Correctly answer the first guest's questions}
+	\scoreitem{75}{Correctly detect an interruption or additional participant}
+	\scoreitem{75}{Acknowledge the interrupting attendee appropriately}
+	\scoreitem{75}{Maintain context of the original interaction}
+	\scoreitem{75}{Complete the original interaction before attending to the interrupting attendee}
+	\scoreitem{50}{Correctly manage speaker transitions}
+	\scoreitem{50}{Direct attention towards the active speaker}
+	\scoreitem{75}{Demonstrate appropriate full-duplex conversation behaviour}
+	\scoreitem{75}{Maintain correct associations between people, requests, and responses}
+	\scoreitem{50}{Return to the waiting attendee without additional prompting}
+	\scoreitem{75}{Address the waiting attendee's request without asking them to repeat it}
+	\scoreitem{50}{Correctly answer the waiting attendee's request}
+	\scoreitem{25}{Conclude both interactions appropriately}
 
 	\scoreheading{Penalties}
-	\penaltyitem[4]{40}{Wrong guest information was memorized}
-	\penaltyitem[6]{20}{Alternative HRI}
-	\penaltyitem[2]{200}{Not acknowledging people}
-	
+	\penaltyitem{50}{Approach a person who did not request assistance}
+	\penaltyitem{25}{Approach an incorrect target guest}
+	\penaltyitem{25}{Attempt the Medium Task before obtaining the missing information}
+	\penaltyitem{25}{Abandon an interaction without appropriate closure}
+	\penaltyitem{50}{Fail to return to a waiting attendee after acknowledgement}
+	\penaltyitem{25}{Incorrectly associate people, requests, or responses}
+	\penaltyitem{25}{Direct responses to the wrong participant during a multi-person interaction}
 \end{scorelist}
 
 
 % Local Variables:
 % TeX-master: "Rulebook"
 % End:
-
