@@ -14,7 +14,7 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
-* [#TBD](https://github.com/RoboCupAtHome/RuleBook/pull/TBD) Rework **Human Robot Interaction Challenge** into skill-focused tasks
+* [#1068](https://github.com/RoboCupAtHome/RuleBook/pull/1068) Rework **Human Robot Interaction Challenge** into skill-focused tasks
   * Replace the receptionist scenario with three tasks of increasing difficulty: **Social Information Assistant** (Easy), **Social Messenger** (Medium), and **Social Coordinator** (Hard).
   * The robot starts outside the arena; teams declare which tasks the robot will attempt, and in which order, to the TC/OC before the test.
   * Add a capability mapping appendix and volunteer error guidelines.
