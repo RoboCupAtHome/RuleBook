@@ -14,6 +14,9 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#1062](https://github.com/RoboCupAtHome/RuleBook/pull/1062) Laundry updates:
+  * Expanded the setup and to include trousers
+  * Start the tasks with a flattened T-shirt already on the table.
 * [#1059](https://github.com/RoboCupAtHome/RuleBook/pull/1059) Remove **Restaurant**
   * The task did not align with the new stageless format. Previously run only once, it required complex scheduling and had qualification barriers in 2026.
   * Robot skills tested in Restaurant will be integrated into other tasks in the future
