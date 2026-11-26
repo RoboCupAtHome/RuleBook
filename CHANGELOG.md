@@ -14,6 +14,11 @@ All notable changes to this project will be documented in this file.
 
 ## Rulebook [Current Draft]
 
+* [#1068](https://github.com/RoboCupAtHome/RuleBook/pull/1068) Rework **Human Robot Interaction Challenge** into skill-focused tasks
+  * Replace the receptionist scenario with three tasks of increasing difficulty: **Social Information Assistant** (Easy), **Social Messenger** (Medium), and **Social Coordinator** (Hard).
+  * The robot starts outside the arena; teams declare which tasks the robot will attempt, and in which order, to the TC/OC before the test.
+  * Add a capability mapping appendix and volunteer error guidelines.
+  * Replace the score sheet with per-task scoring (500 / 700 / 900 points) and rebalanced penalties.
 * [#1059](https://github.com/RoboCupAtHome/RuleBook/pull/1059) Remove **Restaurant**
   * The task did not align with the new stageless format. Previously run only once, it required complex scheduling and had qualification barriers in 2026.
   * Robot skills tested in Restaurant will be integrated into other tasks in the future
